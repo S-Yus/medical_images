@@ -3,66 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Images</title>
+    <title>MedGraph Free - 医学部生のためのレポート素材集</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f5f5f5;
-            padding: 2rem;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 2rem;
+            font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+            background: #f0f4f8;
             color: #333;
+            line-height: 1.7;
         }
-        .gallery {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86ab 60%, #48b1bf 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
         }
-        .gallery figure {
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .hero .subtitle {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .hero .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 999px;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Nav */
+        .toc {
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.6rem 1rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.3rem;
         }
-        .gallery img {
+        .toc a {
+            text-decoration: none;
+            color: #1a5276;
+            font-size: 0.82rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+            transition: background 0.2s;
+        }
+        .toc a:hover { background: #e8f4f8; }
+
+        /* Section */
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a5276;
+            margin: 3rem 0 0.5rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 3px solid #2e86ab;
+            display: inline-block;
+        }
+        .section-desc {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Card Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .card img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 4px;
+            border-bottom: 1px solid #eee;
         }
-        .gallery figcaption {
-            text-align: center;
-            padding: 0.75rem 0 0.25rem;
+        .card-body {
+            padding: 1rem 1.2rem;
+        }
+        .card-body h3 {
+            font-size: 1rem;
+            color: #1a5276;
+            margin-bottom: 0.3rem;
+        }
+        .card-body p {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 0.6rem;
+        }
+        .card-body .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+        }
+        .tag {
+            background: #e8f4f8;
+            color: #2e86ab;
+            font-size: 0.72rem;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .btn-download {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.35rem 1rem;
+            background: #2e86ab;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: background 0.2s;
+        }
+        .btn-download:hover { background: #1a5276; }
+
+        /* How to use */
+        .howto {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        }
+        .howto h2 {
+            color: #1a5276;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .howto ol {
+            padding-left: 1.5rem;
+        }
+        .howto li {
+            margin-bottom: 0.5rem;
             color: #555;
-            font-size: 0.9rem;
         }
+        .howto code {
+            background: #f0f4f8;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #999;
+            font-size: 0.82rem;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 3rem;
+        }
+        footer a { color: #2e86ab; text-decoration: none; }
+
+        /* License Banner */
+        .license-banner {
+            background: linear-gradient(90deg, #e8f8f0, #e8f4f8);
+            border: 1px solid #b2dfdb;
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .license-banner strong { color: #1a5276; }
+        .license-banner p { font-size: 0.9rem; color: #555; margin: 0.3rem 0; }
     </style>
 </head>
 <body>
-    <h1>Images</h1>
-    <p style="text-align:center; color:#777; margin-bottom:2rem; font-size:0.95rem;">
-        これらの画像は著作権フリーです。商用・非商用を問わず、許可なく自由にご利用いただけます。<br>
-        All images are free to use. No permission required for any purpose, including commercial use.
-    </p>
-    <div class="gallery">
-        <figure>
-            <img src="triaxial_template.png" alt="Triaxial Template">
-            <figcaption>triaxial_template.png</figcaption>
-        </figure>
-        <figure>
-            <img src="vecg_template.png" alt="VECG Template">
-            <figcaption>vecg_template.png</figcaption>
-        </figure>
-        <figure>
-            <img src="triaxial_vecg_template.png" alt="Triaxial VECG Template">
-            <figcaption>triaxial_vecg_template.png</figcaption>
-        </figure>
+
+<!-- Hero -->
+<header class="hero">
+    <h1>MedGraph Free</h1>
+    <p class="subtitle">医学部生のためのレポート用グラフ・図表素材集</p>
+    <span class="badge">All contents are free to use &mdash; CC0 / Public Domain</span>
+</header>
+
+<!-- Navigation -->
+<nav class="toc">
+    <a href="#about">About</a>
+    <a href="#statistics">統計グラフ</a>
+    <a href="#clinical">臨床研究</a>
+    <a href="#templates">テンプレート</a>
+    <a href="#howto">使い方</a>
+</nav>
+
+<div class="container">
+
+    <!-- About -->
+    <div class="license-banner" id="about">
+        <strong>全素材 著作権フリー（CC0 / パブリックドメイン）</strong>
+        <p>商用・非商用を問わず、クレジット表記不要で自由にご利用いただけます。</p>
+        <p>レポート・論文・発表スライド・SNS等、あらゆる用途にお使いください。</p>
+        <p style="font-size:0.8rem; color:#999; margin-top:0.5rem;">
+            All images on this site are released under CC0 (Public Domain). No attribution required.
+        </p>
     </div>
+
+    <!-- Section: Statistics -->
+    <h2 class="section-title" id="statistics">統計グラフ</h2>
+    <p class="section-desc">基本的な統計解析で頻出するグラフのテンプレートです。データは架空のものです。</p>
+    <div class="card-grid">
+
+        <div class="card">
+            <img src="boxplot_comparison.png" alt="Box Plot">
+            <div class="card-body">
+                <h3>箱ひげ図（群間比較）</h3>
+                <p>コントロール群と薬剤群の比較。個々のデータ点をジッタープロットで重ね合わせ。</p>
+                <div class="tags">
+                    <span class="tag">t検定</span>
+                    <span class="tag">ANOVA</span>
+                    <span class="tag">群間比較</span>
+                </div>
+                <a href="boxplot_comparison.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="histogram_normal.png" alt="Histogram">
+            <div class="card-body">
+                <h3>ヒストグラム + 正規分布曲線</h3>
+                <p>データの分布を視覚化し、正規分布との比較を行うグラフ。</p>
+                <div class="tags">
+                    <span class="tag">正規分布</span>
+                    <span class="tag">記述統計</span>
+                    <span class="tag">分布</span>
+                </div>
+                <a href="histogram_normal.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="scatter_regression.png" alt="Scatter Plot">
+            <div class="card-body">
+                <h3>散布図 + 回帰直線</h3>
+                <p>2変数間の関係性を示す散布図に線形回帰と95%信頼区間を追加。</p>
+                <div class="tags">
+                    <span class="tag">相関</span>
+                    <span class="tag">回帰分析</span>
+                    <span class="tag">95%CI</span>
+                </div>
+                <a href="scatter_regression.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="barplot_errorbars.png" alt="Bar Plot">
+            <div class="card-body">
+                <h3>棒グラフ + エラーバー</h3>
+                <p>用量反応関係を示す棒グラフ。標準誤差のエラーバー付き。</p>
+                <div class="tags">
+                    <span class="tag">用量反応</span>
+                    <span class="tag">SE</span>
+                    <span class="tag">薬理学</span>
+                </div>
+                <a href="barplot_errorbars.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="heatmap_correlation.png" alt="Heatmap">
+            <div class="card-body">
+                <h3>相関行列ヒートマップ</h3>
+                <p>複数の臨床指標間の相関係数を色の濃淡で可視化。</p>
+                <div class="tags">
+                    <span class="tag">相関行列</span>
+                    <span class="tag">多変量</span>
+                    <span class="tag">EDA</span>
+                </div>
+                <a href="heatmap_correlation.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="paired_before_after.png" alt="Paired Plot">
+            <div class="card-body">
+                <h3>対応のある前後比較</h3>
+                <p>治療前後の個別変化を線で結び、全体の平均変化を強調。</p>
+                <div class="tags">
+                    <span class="tag">対応のあるt検定</span>
+                    <span class="tag">前後比較</span>
+                </div>
+                <a href="paired_before_after.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section: Clinical Research -->
+    <h2 class="section-title" id="clinical">臨床研究グラフ</h2>
+    <p class="section-desc">臨床研究や疫学研究で使用される専門的なグラフです。</p>
+    <div class="card-grid">
+
+        <div class="card">
+            <img src="km_survival_curve.png" alt="Kaplan-Meier Curve">
+            <div class="card-body">
+                <h3>Kaplan-Meier 生存曲線</h3>
+                <p>2群の生存時間を比較するKM曲線。臨床試験で最も頻出するグラフの一つ。</p>
+                <div class="tags">
+                    <span class="tag">生存分析</span>
+                    <span class="tag">Log-rank検定</span>
+                    <span class="tag">RCT</span>
+                </div>
+                <a href="km_survival_curve.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="roc_curve.png" alt="ROC Curve">
+            <div class="card-body">
+                <h3>ROC曲線</h3>
+                <p>診断検査の感度・特異度のトレードオフを示す。AUC値を表示。</p>
+                <div class="tags">
+                    <span class="tag">診断精度</span>
+                    <span class="tag">AUC</span>
+                    <span class="tag">感度・特異度</span>
+                </div>
+                <a href="roc_curve.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="forest_plot.png" alt="Forest Plot">
+            <div class="card-body">
+                <h3>フォレストプロット</h3>
+                <p>メタアナリシスの結果を視覚化。各研究のオッズ比と95%信頼区間を表示。</p>
+                <div class="tags">
+                    <span class="tag">メタアナリシス</span>
+                    <span class="tag">OR</span>
+                    <span class="tag">EBM</span>
+                </div>
+                <a href="forest_plot.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="bland_altman.png" alt="Bland-Altman Plot">
+            <div class="card-body">
+                <h3>Bland-Altman プロット</h3>
+                <p>2つの測定法の一致度を評価。平均差と95%一致限界を表示。</p>
+                <div class="tags">
+                    <span class="tag">測定一致度</span>
+                    <span class="tag">LOA</span>
+                    <span class="tag">検査医学</span>
+                </div>
+                <a href="bland_altman.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section: Templates -->
+    <h2 class="section-title" id="templates">テンプレート素材</h2>
+    <p class="section-desc">三軸心電図やベクトル心電図などの専門テンプレートです。</p>
+    <div class="card-grid">
+
+        <div class="card">
+            <img src="triaxial_template.png" alt="Triaxial Template">
+            <div class="card-body">
+                <h3>三軸図テンプレート</h3>
+                <p>心電図の電気軸を記載するための三軸図テンプレート。</p>
+                <div class="tags">
+                    <span class="tag">心電図</span>
+                    <span class="tag">電気軸</span>
+                </div>
+                <a href="triaxial_template.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="vecg_template.png" alt="VECG Template">
+            <div class="card-body">
+                <h3>ベクトル心電図テンプレート</h3>
+                <p>ベクトル心電図（VECG）の描画用テンプレート。</p>
+                <div class="tags">
+                    <span class="tag">VECG</span>
+                    <span class="tag">心電図</span>
+                </div>
+                <a href="vecg_template.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="triaxial_vecg_template.png" alt="Triaxial VECG Template">
+            <div class="card-body">
+                <h3>三軸 + VECG 統合テンプレート</h3>
+                <p>三軸図とベクトル心電図を組み合わせた統合テンプレート。</p>
+                <div class="tags">
+                    <span class="tag">三軸図</span>
+                    <span class="tag">VECG</span>
+                    <span class="tag">統合</span>
+                </div>
+                <a href="triaxial_vecg_template.png" download class="btn-download">Download PNG</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- How to Use -->
+    <div class="howto" id="howto">
+        <h2>使い方</h2>
+        <ol>
+            <li>使いたい画像の <strong>Download PNG</strong> ボタンをクリック、または画像を右クリックして保存</li>
+            <li>Word・PowerPoint・LaTeX などに貼り付けてご利用ください</li>
+            <li>直接リンクで埋め込む場合は、画像を右クリック → 「画像アドレスをコピー」</li>
+            <li>クレジット表記は不要ですが、記載いただける場合は <code>MedGraph Free</code> とお書きください</li>
+        </ol>
+    </div>
+
+    <!-- Direct URLs -->
+    <div class="howto">
+        <h2>画像の直接URL（Markdown / HTML 埋め込み用）</h2>
+        <p style="color:#666; font-size:0.9rem; margin-bottom:1rem;">以下のURLをコピーしてお使いください。</p>
+        <div style="background:#f0f4f8; padding:1rem; border-radius:8px; font-family:monospace; font-size:0.78rem; line-height:2; overflow-x:auto;">
+            https://s-yus.github.io/medical_images/km_survival_curve.png<br>
+            https://s-yus.github.io/medical_images/roc_curve.png<br>
+            https://s-yus.github.io/medical_images/boxplot_comparison.png<br>
+            https://s-yus.github.io/medical_images/barplot_errorbars.png<br>
+            https://s-yus.github.io/medical_images/scatter_regression.png<br>
+            https://s-yus.github.io/medical_images/histogram_normal.png<br>
+            https://s-yus.github.io/medical_images/forest_plot.png<br>
+            https://s-yus.github.io/medical_images/bland_altman.png<br>
+            https://s-yus.github.io/medical_images/heatmap_correlation.png<br>
+            https://s-yus.github.io/medical_images/paired_before_after.png<br>
+            https://s-yus.github.io/medical_images/triaxial_template.png<br>
+            https://s-yus.github.io/medical_images/vecg_template.png<br>
+            https://s-yus.github.io/medical_images/triaxial_vecg_template.png
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>MedGraph Free &mdash; 医学部生のためのレポート素材集</p>
+    <p>全コンテンツは <strong>CC0（パブリックドメイン）</strong> です。自由にご利用ください。</p>
+    <p style="margin-top:0.5rem;">
+        Graphs generated with <a href="https://www.r-project.org/" target="_blank">R</a> +
+        <a href="https://ggplot2.tidyverse.org/" target="_blank">ggplot2</a>
+    </p>
+</footer>
+
 </body>
 </html>
