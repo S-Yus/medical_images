@@ -34,7 +34,8 @@ h1.page-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
 .desc{font-size:15px;color:#555;margin-bottom:20px}
 .tags{margin-bottom:20px}.tags span{display:inline-block;background:#e8f0fe;color:#1a56db;padding:3px 10px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0}
 .preview-section{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:24px}
-.style-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.switcher-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;align-items:flex-start}
+.style-tabs{display:flex;gap:8px;flex-wrap:wrap}
 .style-tabs button{padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;transition:.2s}
 .style-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
 .style-tabs button:hover:not(.active){background:#f0f4ff}
@@ -74,12 +75,19 @@ footer a{color:#60a5fa}
 <p class="desc">フローサイトメトリー散布図テンプレート。CD4/CD8等の二重染色解析に使用。</p>
 <div class="tags"><span>FACS</span><span>フローサイトメトリー</span><span>CD4</span><span>CD8</span></div>
 <section class="preview-section">
-<div class="style-tabs">
-<button class="active" onclick="sw(this,'standard')">Standard</button>
-<button onclick="sw(this,'minimal')">Minimal</button>
-<button onclick="sw(this,'classic')">Classic</button>
-<button onclick="sw(this,'presentation')">Presentation</button>
-<button onclick="sw(this,'dark')">Dark</button>
+<div class="switcher-row">
+<div class="style-tabs" id="styleTabs">
+<button class="active" onclick="swStyle(this,'standard')">Standard</button>
+<button onclick="swStyle(this,'minimal')">Minimal</button>
+<button onclick="swStyle(this,'classic')">Classic</button>
+<button onclick="swStyle(this,'presentation')">Presentation</button>
+<button onclick="swStyle(this,'dark')">Dark</button>
+</div>
+<div class="style-tabs" id="langTabs">
+<button class="active" onclick="swLang(this,'en')">English</button>
+<button onclick="swLang(this,'ja')">日本語</button>
+<button onclick="swLang(this,'none')">テキストなし</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/immuno_facs_dot_plot.png" alt="フローサイトメトリー散布図"></div>
 <div class="dl-buttons">
@@ -123,14 +131,25 @@ ggplot(df, aes(x = x, y = y)) +
 </footer>
 <script>
 const B="immuno_facs_dot_plot";
-function sw(btn,s){
-  document.querySelectorAll(".style-tabs button").forEach(b=>b.classList.remove("active"));
+let curLang="",curStyle="";
+function swStyle(btn,s){
+  document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  const sfx=s==="standard"?"":"_"+s;
-  document.getElementById("pv").src="../img/"+B+sfx+".png";
-  document.getElementById("dl1").href="../img/"+B+sfx+".png";
-  document.getElementById("dl2").href="../img/"+B+sfx+"_wide.png";
-  document.getElementById("dl3").href="../img/"+B+sfx+"_square.png";
+  curStyle=s==="standard"?"":"_"+s;
+  upd();
+}
+function swLang(btn,l){
+  document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
+  upd();
+}
+function upd(){
+  const p="../img/"+B+curLang+curStyle;
+  document.getElementById("pv").src=p+".png";
+  document.getElementById("dl1").href=p+".png";
+  document.getElementById("dl2").href=p+"_wide.png";
+  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;

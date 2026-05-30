@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MedGraph Free | 医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
-<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全24分野407種類・6105ダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
+<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全24分野407種類・18315ダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
 <meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -30,12 +30,19 @@ a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
 .hero .stat{text-align:center}.hero .stat .num{font-size:32px;font-weight:bold}.hero .stat .lbl{font-size:13px;color:rgba(255,255,255,.7)}
 .nav-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 0;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
 .nav-bar .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:nowrap}
+.nav-bar .inner::after{content:"";min-width:20px;flex-shrink:0}
 .nav-bar a{padding:6px 12px;border-radius:6px;font-size:12px;color:#475569;white-space:nowrap}
 .nav-bar a:hover{background:#f0f4ff;text-decoration:none}
 .cats-grid{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.cat-card{background:#fff;border-radius:10px;padding:16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
+.cat-card{background:#fff;border-radius:10px;padding:18px 16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s;border-left:3px solid #2563eb}
 .cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
-.cat-icon{font-size:28px;margin-bottom:6px}.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666}
+.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666;margin-top:2px}
+.request-section{max-width:1200px;margin:40px auto;padding:0 20px;text-align:center}
+.request-card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.request-card h2{font-size:20px;color:#1e3a5f;margin-bottom:8px}
+.request-card p{font-size:14px;color:#666;margin-bottom:16px}
+.request-btn{display:inline-block;padding:12px 28px;background:#2563eb;color:#fff;border-radius:8px;font-size:15px;transition:.2s}
+.request-btn:hover{background:#1d4ed8;text-decoration:none}
 .cat-section{max-width:1200px;margin:30px auto;padding:0 20px}
 .cat-section h2{font-size:22px;color:#1e3a5f;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #2563eb}
 .cat-section h2 a{color:#1e3a5f}
@@ -59,37 +66,37 @@ footer a{color:#60a5fa}
 <p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表にそのまま使えます。</p>
 <div class="stats">
 <div class="stat"><div class="num">407</div><div class="lbl">Templates</div></div>
-<div class="stat"><div class="num">6105</div><div class="lbl">Downloads</div></div>
+<div class="stat"><div class="num">18315</div><div class="lbl">Downloads</div></div>
 <div class="stat"><div class="num">24</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
 <div class="search-box"><input type="text" id="search" placeholder="Search templates..." oninput="filterCards(this.value)"></div>
 </section>
 <nav class="nav-bar"><div class="inner"><a href="#biochem">生化学</a><a href="#cardio">循環器</a><a href="#chem">臨床検査</a><a href="#emer">救急</a><a href="#endo">内分泌</a><a href="#epi">疫学・公衆衛生</a><a href="#eye">眼科</a><a href="#gi">消化器</a><a href="#hemato">血液</a><a href="#immuno">免疫学</a><a href="#micro">微生物学</a><a href="#nephro">腎臓</a><a href="#neuro">神経科学</a><a href="#obgyn">産婦人科</a><a href="#ortho">整形外科</a><a href="#path">病理学</a><a href="#peds">小児科</a><a href="#pharm">薬理学</a><a href="#physiol">生理学</a><a href="#psych">精神科</a><a href="#pulm">呼吸器</a><a href="#radio">放射線</a><a href="#stat">臨床統計</a><a href="#surg">外科・麻酔</a></div></nav>
-<div class="cats-grid"><a href="c/biochem.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">生化学</div><div class="cat-count">30 templates</div></a>
-<a href="c/cardio.html" class="cat-card"><div class="cat-icon">❤</div><div class="cat-name">循環器</div><div class="cat-count">22 templates</div></a>
-<a href="c/chem.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">臨床検査</div><div class="cat-count">10 templates</div></a>
-<a href="c/emer.html" class="cat-card"><div class="cat-icon">🛑</div><div class="cat-name">救急</div><div class="cat-count">10 templates</div></a>
-<a href="c/endo.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">内分泌</div><div class="cat-count">18 templates</div></a>
-<a href="c/epi.html" class="cat-card"><div class="cat-icon">📊</div><div class="cat-name">疫学・公衆衛生</div><div class="cat-count">18 templates</div></a>
-<a href="c/eye.html" class="cat-card"><div class="cat-icon">👁</div><div class="cat-name">眼科</div><div class="cat-count">10 templates</div></a>
-<a href="c/gi.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">消化器</div><div class="cat-count">12 templates</div></a>
-<a href="c/hemato.html" class="cat-card"><div class="cat-icon">🩸</div><div class="cat-name">血液</div><div class="cat-count">18 templates</div></a>
-<a href="c/immuno.html" class="cat-card"><div class="cat-icon">🦬</div><div class="cat-name">免疫学</div><div class="cat-count">20 templates</div></a>
-<a href="c/micro.html" class="cat-card"><div class="cat-icon">🦠</div><div class="cat-name">微生物学</div><div class="cat-count">20 templates</div></a>
-<a href="c/nephro.html" class="cat-card"><div class="cat-icon">🦷</div><div class="cat-name">腎臓</div><div class="cat-count">15 templates</div></a>
-<a href="c/neuro.html" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-name">神経科学</div><div class="cat-count">22 templates</div></a>
-<a href="c/obgyn.html" class="cat-card"><div class="cat-icon">👶</div><div class="cat-name">産婦人科</div><div class="cat-count">15 templates</div></a>
-<a href="c/ortho.html" class="cat-card"><div class="cat-icon">🦴</div><div class="cat-name">整形外科</div><div class="cat-count">10 templates</div></a>
-<a href="c/path.html" class="cat-card"><div class="cat-icon">🔬</div><div class="cat-name">病理学</div><div class="cat-count">12 templates</div></a>
-<a href="c/peds.html" class="cat-card"><div class="cat-icon">👶</div><div class="cat-name">小児科</div><div class="cat-count">15 templates</div></a>
-<a href="c/pharm.html" class="cat-card"><div class="cat-icon">💊</div><div class="cat-name">薬理学</div><div class="cat-count">25 templates</div></a>
-<a href="c/physiol.html" class="cat-card"><div class="cat-icon">🧬</div><div class="cat-name">生理学</div><div class="cat-count">34 templates</div></a>
-<a href="c/psych.html" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-name">精神科</div><div class="cat-count">10 templates</div></a>
-<a href="c/pulm.html" class="cat-card"><div class="cat-icon">🫁</div><div class="cat-name">呼吸器</div><div class="cat-count">15 templates</div></a>
-<a href="c/radio.html" class="cat-card"><div class="cat-icon">☢</div><div class="cat-name">放射線</div><div class="cat-count">8 templates</div></a>
-<a href="c/stat.html" class="cat-card"><div class="cat-icon">📈</div><div class="cat-name">臨床統計</div><div class="cat-count">28 templates</div></a>
-<a href="c/surg.html" class="cat-card"><div class="cat-icon">🩺</div><div class="cat-name">外科・麻酔</div><div class="cat-count">10 templates</div></a></div>
+<div class="cats-grid"><a href="c/biochem.html" class="cat-card"><div class="cat-name">生化学</div><div class="cat-count">30 templates</div></a>
+<a href="c/cardio.html" class="cat-card"><div class="cat-name">循環器</div><div class="cat-count">22 templates</div></a>
+<a href="c/chem.html" class="cat-card"><div class="cat-name">臨床検査</div><div class="cat-count">10 templates</div></a>
+<a href="c/emer.html" class="cat-card"><div class="cat-name">救急</div><div class="cat-count">10 templates</div></a>
+<a href="c/endo.html" class="cat-card"><div class="cat-name">内分泌</div><div class="cat-count">18 templates</div></a>
+<a href="c/epi.html" class="cat-card"><div class="cat-name">疫学・公衆衛生</div><div class="cat-count">18 templates</div></a>
+<a href="c/eye.html" class="cat-card"><div class="cat-name">眼科</div><div class="cat-count">10 templates</div></a>
+<a href="c/gi.html" class="cat-card"><div class="cat-name">消化器</div><div class="cat-count">12 templates</div></a>
+<a href="c/hemato.html" class="cat-card"><div class="cat-name">血液</div><div class="cat-count">18 templates</div></a>
+<a href="c/immuno.html" class="cat-card"><div class="cat-name">免疫学</div><div class="cat-count">20 templates</div></a>
+<a href="c/micro.html" class="cat-card"><div class="cat-name">微生物学</div><div class="cat-count">20 templates</div></a>
+<a href="c/nephro.html" class="cat-card"><div class="cat-name">腎臓</div><div class="cat-count">15 templates</div></a>
+<a href="c/neuro.html" class="cat-card"><div class="cat-name">神経科学</div><div class="cat-count">22 templates</div></a>
+<a href="c/obgyn.html" class="cat-card"><div class="cat-name">産婦人科</div><div class="cat-count">15 templates</div></a>
+<a href="c/ortho.html" class="cat-card"><div class="cat-name">整形外科</div><div class="cat-count">10 templates</div></a>
+<a href="c/path.html" class="cat-card"><div class="cat-name">病理学</div><div class="cat-count">12 templates</div></a>
+<a href="c/peds.html" class="cat-card"><div class="cat-name">小児科</div><div class="cat-count">15 templates</div></a>
+<a href="c/pharm.html" class="cat-card"><div class="cat-name">薬理学</div><div class="cat-count">25 templates</div></a>
+<a href="c/physiol.html" class="cat-card"><div class="cat-name">生理学</div><div class="cat-count">34 templates</div></a>
+<a href="c/psych.html" class="cat-card"><div class="cat-name">精神科</div><div class="cat-count">10 templates</div></a>
+<a href="c/pulm.html" class="cat-card"><div class="cat-name">呼吸器</div><div class="cat-count">15 templates</div></a>
+<a href="c/radio.html" class="cat-card"><div class="cat-name">放射線</div><div class="cat-count">8 templates</div></a>
+<a href="c/stat.html" class="cat-card"><div class="cat-name">臨床統計</div><div class="cat-count">28 templates</div></a>
+<a href="c/surg.html" class="cat-card"><div class="cat-name">外科・麻酔</div><div class="cat-count">10 templates</div></a></div>
 <section class="cat-section" id="biochem"><h2><a href="c/biochem.html">生化学 (30)</a></h2><div class="card-grid"><a href="biochem/michaelis-menten.html" class="card"><img src="img/biochem_michaelis_menten.png" alt="ミカエリス・メンテンプロット" loading="lazy"><div class="card-body"><h3>ミカエリス・メンテンプロット</h3><p>酵素反応速度論の基本グラフ。基質濃度[S]と反応速度vの双曲線関係をプロットするテンプレート。</p></div></a>
 <a href="biochem/lineweaver-burk.html" class="card"><img src="img/biochem_lineweaver_burk.png" alt="ラインウィーバー・バークプロット" loading="lazy"><div class="card-body"><h3>ラインウィーバー・バークプロット</h3><p>二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレ</p></div></a>
 <a href="biochem/titration.html" class="card"><img src="img/biochem_titration.png" alt="pH滴定曲線" loading="lazy"><div class="card-body"><h3>pH滴定曲線</h3><p>酸塩基滴定のpH変化を記録するテンプレート。当量点や緩衝域の解析に使用。</p></div></a>
@@ -497,6 +504,13 @@ footer a{color:#60a5fa}
 <a href="surg/wound-class.html" class="card"><img src="img/surg_wound_class.png" alt="手術創分類" loading="lazy"><div class="card-body"><h3>手術創分類</h3><p>手術創分類テンプレート。清潔/準清潔/汚染/感染の感染リスクをプロット。</p></div></a>
 <a href="surg/anesthesia-monitor.html" class="card"><img src="img/surg_anesthesia_monitor.png" alt="麻酔モニタリング" loading="lazy"><div class="card-body"><h3>麻酔モニタリング</h3><p>麻酔モニタリングテンプレート。HR/BP/SpO2/EtCO2の経時変化をプロット。</p></div></a>
 <a href="surg/surgical-checklist.html" class="card"><img src="img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="card-body"><h3>手術チェックリスト</h3><p>手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</p></div></a></div></section>
+<section class="request-section">
+<div class="request-card">
+<h2>テンプレートのリクエスト</h2>
+<p>欲しいグラフテンプレートがありましたらお気軽にリクエストください。</p>
+<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request&body=リクエストするテンプレート名：%0A分野：%0A用途・説明：" class="request-btn" target="_blank" rel="noopener">リクエストを送る</a>
+</div>
+</section>
 <footer>
 <p>MedGraph Free &mdash; All templates are CC0 (Public Domain). Free for any use including commercial.</p>
 <p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
@@ -507,6 +521,16 @@ function filterCards(q){
   document.querySelectorAll(".card").forEach(c=>{
     const t=c.textContent.toLowerCase();
     c.style.display=t.includes(q)?"":"none";
+  });
+  document.querySelectorAll(".cat-section").forEach(s=>{
+    const cards=s.querySelectorAll(".card");
+    let any=false;
+    cards.forEach(c=>{if(c.style.display!=="none")any=true;});
+    s.style.display=(any||!q)?"":"none";
+  });
+  document.querySelectorAll(".cat-card").forEach(c=>{
+    if(!q){c.style.display="";return;}
+    c.style.display=c.textContent.toLowerCase().includes(q)?"":"none";
   });
 }
 </script>

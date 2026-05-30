@@ -93,42 +93,46 @@ make_theme <- function(style = "standard", base_size = 14) {
 }
 
 # ── Plot Generator ──
-make_plot <- function(t, style = "standard") {
+# lang: "en" = English labels, "ja" = Japanese title, "none" = no text
+make_plot <- function(t, style = "standard", lang = "en") {
   empty <- data.frame(x = numeric(0), y = numeric(0))
   p <- ggplot(empty, aes(x, y)) + geom_blank()
 
+  # Axis labels based on language
+  x_label <- if (lang == "none") "" else t$xl
+  y_label <- if (lang == "none") "" else t$yl
+
   # X axis
   if (isTRUE(t$xlog)) {
-    xargs <- list(name=t$xl, limits=t$xr)
+    xargs <- list(name=x_label, limits=t$xr)
     if (!is.null(t$xb)) xargs$breaks <- t$xb
-    if (!is.null(t$xlb)) xargs$labels <- t$xlb
+    if (!is.null(t$xlb) && lang != "none") xargs$labels <- t$xlb
     p <- p + do.call(scale_x_log10, xargs)
   } else {
-    xargs <- list(name=t$xl, limits=t$xr, expand=c(0,0))
+    xargs <- list(name=x_label, limits=t$xr, expand=c(0,0))
     if (!is.null(t$xb)) xargs$breaks <- t$xb
-    if (!is.null(t$xlb)) xargs$labels <- t$xlb
+    if (!is.null(t$xlb) && lang != "none") xargs$labels <- t$xlb
     p <- p + do.call(scale_x_continuous, xargs)
   }
   # Y axis
   if (isTRUE(t$ylog)) {
-    yargs <- list(name=t$yl, limits=t$yr)
+    yargs <- list(name=y_label, limits=t$yr)
     if (!is.null(t$yb)) yargs$breaks <- t$yb
-    if (!is.null(t$ylb)) yargs$labels <- t$ylb
+    if (!is.null(t$ylb) && lang != "none") yargs$labels <- t$ylb
     p <- p + do.call(scale_y_log10, yargs)
   } else {
-    yargs <- list(name=t$yl, limits=t$yr, expand=c(0,0))
+    yargs <- list(name=y_label, limits=t$yr, expand=c(0,0))
     if (!is.null(t$yb)) yargs$breaks <- t$yb
-    if (!is.null(t$ylb)) yargs$labels <- t$ylb
+    if (!is.null(t$ylb) && lang != "none") yargs$labels <- t$ylb
     p <- p + do.call(scale_y_continuous, yargs)
   }
 
-  # Horizontal reference lines: list(c(y, "label", "color"))
-  # Note: c() coerces numbers to character when mixed with strings, so use as.numeric()
+  # Horizontal reference lines (lines always shown; labels only if lang != "none")
   if (!is.null(t$hl)) for (h in t$hl) {
     yval <- as.numeric(h[[1]])
     col <- if (length(h)>=3) as.character(h[[3]]) else "grey60"
     p <- p + geom_hline(yintercept=yval, linetype="dashed", color=col, linewidth=0.4)
-    if (length(h)>=2 && nchar(as.character(h[[2]]))>0)
+    if (lang != "none" && length(h)>=2 && nchar(as.character(h[[2]]))>0)
       p <- p + annotate("text", x=t$xr[1]+diff(t$xr)*0.03, y=yval+diff(t$yr)*0.02,
                          label=as.character(h[[2]]), color="grey50", hjust=0, size=3)
   }
@@ -137,17 +141,17 @@ make_plot <- function(t, style = "standard") {
     xval <- as.numeric(v[[1]])
     col <- if (length(v)>=3) as.character(v[[3]]) else "grey60"
     p <- p + geom_vline(xintercept=xval, linetype="dotted", color=col, linewidth=0.4)
-    if (length(v)>=2 && nchar(as.character(v[[2]]))>0)
+    if (lang != "none" && length(v)>=2 && nchar(as.character(v[[2]]))>0)
       p <- p + annotate("text", x=xval+diff(t$xr)*0.01, y=t$yr[2]*0.96,
                          label=as.character(v[[2]]), color="grey50", hjust=0, size=3)
   }
-  # Text annotations: list(c(x, y, "label", "color", size))
-  if (!is.null(t$ann)) for (a in t$ann) {
+  # Text annotations (skip for lang="none")
+  if (lang != "none" && !is.null(t$ann)) for (a in t$ann) {
     col <- if (length(a)>=4) as.character(a[[4]]) else "grey55"
     sz  <- if (length(a)>=5) as.numeric(a[[5]]) else 3.5
     p <- p + annotate("text", x=as.numeric(a[[1]]), y=as.numeric(a[[2]]), label=as.character(a[[3]]), color=col, size=sz)
   }
-  # Shaded zones: list(c(xmin, xmax, ymin, ymax, "fill", alpha))
+  # Shaded zones (always shown - they are visual, not text)
   if (!is.null(t$zones)) for (z in t$zones) {
     fl <- if (length(z)>=5) as.character(z[[5]]) else "blue"
     al <- if (length(z)>=6) as.numeric(z[[6]]) else 0.06
@@ -155,41 +159,53 @@ make_plot <- function(t, style = "standard") {
   }
 
   # Title
-  if (!is.null(t$sub)) p <- p + labs(title=t$en, subtitle=t$sub)
-  else p <- p + labs(title=t$en)
+  if (lang == "none") {
+    # No title for text-free version
+  } else {
+    title_text <- if (lang == "ja") t$ja else t$en
+    if (!is.null(t$sub)) p <- p + labs(title=title_text, subtitle=t$sub)
+    else p <- p + labs(title=title_text)
+  }
 
   p + make_theme(style)
 }
 
 # ── Image Generation ──
-generate_all_images <- function(templates) {
+# langs: "en" (no suffix), "ja" (_ja suffix), "none" (_notxt suffix)
+generate_all_images <- function(templates, only_lang=NULL) {
   styles <- c("standard","minimal","classic","presentation","dark")
   sizes <- list(standard=c(800,600), wide=c(1200,600), square=c(700,700))
-  total <- length(templates) * length(styles) * length(sizes)
-  cat(sprintf("Generating %d images...\n", total))
-  n <- 0
+  langs <- if (!is.null(only_lang)) only_lang else c("en","ja","none")
+  total <- length(templates) * length(styles) * length(sizes) * length(langs)
+  cat(sprintf("Generating %d images (%s)...\n", total, paste(langs, collapse="+")))
+  n <- 0; skipped <- 0
   for (t in templates) {
-    for (sty in styles) {
-      for (szn in names(sizes)) {
-        sz <- sizes[[szn]]
-        sfx <- ""
-        if (sty != "standard") sfx <- paste0(sfx, "_", sty)
-        if (szn != "standard") sfx <- paste0(sfx, "_", szn)
-        fn <- file.path(IMG_DIR, sprintf("%s_%s%s.png", t$cat, gsub("-","_",t$id), sfx))
-        tryCatch({
-          png(fn, width=sz[1], height=sz[2], res=150)
-          print(make_plot(t, sty))
-          dev.off()
-        }, error=function(e) {
-          cat(sprintf("ERR: %s - %s\n", fn, e$message))
-          try(dev.off(), silent=TRUE)
-        })
-        n <- n + 1
-        if (n %% 200 == 0) cat(sprintf("  %d / %d (%.0f%%)\n", n, total, n/total*100))
+    for (lng in langs) {
+      lang_sfx <- switch(lng, en="", ja="_ja", none="_notxt")
+      for (sty in styles) {
+        for (szn in names(sizes)) {
+          sz <- sizes[[szn]]
+          sfx <- lang_sfx
+          if (sty != "standard") sfx <- paste0(sfx, "_", sty)
+          if (szn != "standard") sfx <- paste0(sfx, "_", szn)
+          fn <- file.path(IMG_DIR, sprintf("%s_%s%s.png", t$cat, gsub("-","_",t$id), sfx))
+          # Skip if already exists (for incremental builds)
+          if (file.exists(fn)) { n <- n+1; skipped <- skipped+1; next }
+          tryCatch({
+            png(fn, width=sz[1], height=sz[2], res=150)
+            print(make_plot(t, sty, lng))
+            dev.off()
+          }, error=function(e) {
+            cat(sprintf("ERR: %s - %s\n", fn, e$message))
+            try(dev.off(), silent=TRUE)
+          })
+          n <- n + 1
+          if (n %% 200 == 0) cat(sprintf("  %d / %d (%.0f%%)\n", n, total, n/total*100))
+        }
       }
     }
   }
-  cat(sprintf("Images done: %d\n", n))
+  cat(sprintf("Images done: %d (skipped %d existing)\n", n, skipped))
   return(n)
 }
 
@@ -234,7 +250,8 @@ h1.page-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
 .desc{font-size:15px;color:#555;margin-bottom:20px}
 .tags{margin-bottom:20px}.tags span{display:inline-block;background:#e8f0fe;color:#1a56db;padding:3px 10px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0}
 .preview-section{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:24px}
-.style-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.switcher-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;align-items:flex-start}
+.style-tabs{display:flex;gap:8px;flex-wrap:wrap}
 .style-tabs button{padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;transition:.2s}
 .style-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
 .style-tabs button:hover:not(.active){background:#f0f4ff}
@@ -316,12 +333,19 @@ generate_template_page <- function(t, all_t) {
 <p class="desc">%s</p>
 <div class="tags">%s</div>
 <section class="preview-section">
-<div class="style-tabs">
-<button class="active" onclick="sw(this,\'standard\')">Standard</button>
-<button onclick="sw(this,\'minimal\')">Minimal</button>
-<button onclick="sw(this,\'classic\')">Classic</button>
-<button onclick="sw(this,\'presentation\')">Presentation</button>
-<button onclick="sw(this,\'dark\')">Dark</button>
+<div class="switcher-row">
+<div class="style-tabs" id="styleTabs">
+<button class="active" onclick="swStyle(this,\'standard\')">Standard</button>
+<button onclick="swStyle(this,\'minimal\')">Minimal</button>
+<button onclick="swStyle(this,\'classic\')">Classic</button>
+<button onclick="swStyle(this,\'presentation\')">Presentation</button>
+<button onclick="swStyle(this,\'dark\')">Dark</button>
+</div>
+<div class="style-tabs" id="langTabs">
+<button class="active" onclick="swLang(this,\'en\')">English</button>
+<button onclick="swLang(this,\'ja\')">日本語</button>
+<button onclick="swLang(this,\'none\')">テキストなし</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/%s.png" alt="%s"></div>
 <div class="dl-buttons">
@@ -342,14 +366,25 @@ generate_template_page <- function(t, all_t) {
 </footer>
 <script>
 const B="%s";
-function sw(btn,s){
-  document.querySelectorAll(".style-tabs button").forEach(b=>b.classList.remove("active"));
+let curLang="",curStyle="";
+function swStyle(btn,s){
+  document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  const sfx=s==="standard"?"":"_"+s;
-  document.getElementById("pv").src="../img/"+B+sfx+".png";
-  document.getElementById("dl1").href="../img/"+B+sfx+".png";
-  document.getElementById("dl2").href="../img/"+B+sfx+"_wide.png";
-  document.getElementById("dl3").href="../img/"+B+sfx+"_square.png";
+  curStyle=s==="standard"?"":"_"+s;
+  upd();
+}
+function swLang(btn,l){
+  document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
+  upd();
+}
+function upd(){
+  const p="../img/"+B+curLang+curStyle;
+  document.getElementById("pv").src=p+".png";
+  document.getElementById("dl1").href=p+".png";
+  document.getElementById("dl2").href=p+"_wide.png";
+  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;
@@ -447,16 +482,14 @@ generate_index <- function(all_t) {
   # Group by category
   by_cat <- split(all_t, sapply(all_t, function(x) x$cat))
   total <- length(all_t)
-  total_dl <- total * 15  # 5 styles * 3 sizes
+  total_dl <- total * 45  # 5 styles * 3 sizes * 3 languages
 
-  # Category cards
+  # Category cards (text only, no emoji)
   cat_cards <- paste(sapply(names(by_cat), function(cn) {
     ts <- by_cat[[cn]]
     cja <- CATS[[cn]]$ja
-    # Show first template image as thumbnail
-    first_img <- sprintf("%s_%s", ts[[1]]$cat, gsub("-","_", ts[[1]]$id))
-    sprintf('<a href="c/%s.html" class="cat-card"><div class="cat-icon">%s</div><div class="cat-name">%s</div><div class="cat-count">%d templates</div></a>',
-            cn, CATS[[cn]]$icon, cja, length(ts))
+    sprintf('<a href="c/%s.html" class="cat-card"><div class="cat-name">%s</div><div class="cat-count">%d templates</div></a>',
+            cn, cja, length(ts))
   }), collapse="\n")
 
   # All template cards grouped by category
@@ -509,12 +542,19 @@ a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
 .hero .stat{text-align:center}.hero .stat .num{font-size:32px;font-weight:bold}.hero .stat .lbl{font-size:13px;color:rgba(255,255,255,.7)}
 .nav-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 0;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
 .nav-bar .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:nowrap}
+.nav-bar .inner::after{content:"";min-width:20px;flex-shrink:0}
 .nav-bar a{padding:6px 12px;border-radius:6px;font-size:12px;color:#475569;white-space:nowrap}
 .nav-bar a:hover{background:#f0f4ff;text-decoration:none}
 .cats-grid{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.cat-card{background:#fff;border-radius:10px;padding:16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
+.cat-card{background:#fff;border-radius:10px;padding:18px 16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s;border-left:3px solid #2563eb}
 .cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
-.cat-icon{font-size:28px;margin-bottom:6px}.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666}
+.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666;margin-top:2px}
+.request-section{max-width:1200px;margin:40px auto;padding:0 20px;text-align:center}
+.request-card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.request-card h2{font-size:20px;color:#1e3a5f;margin-bottom:8px}
+.request-card p{font-size:14px;color:#666;margin-bottom:16px}
+.request-btn{display:inline-block;padding:12px 28px;background:#2563eb;color:#fff;border-radius:8px;font-size:15px;transition:.2s}
+.request-btn:hover{background:#1d4ed8;text-decoration:none}
 .cat-section{max-width:1200px;margin:30px auto;padding:0 20px}
 .cat-section h2{font-size:22px;color:#1e3a5f;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #2563eb}
 .cat-section h2 a{color:#1e3a5f}
@@ -547,6 +587,13 @@ footer a{color:#60a5fa}
 <nav class="nav-bar"><div class="inner">%s</div></nav>
 <div class="cats-grid">%s</div>
 %s
+<section class="request-section">
+<div class="request-card">
+<h2>テンプレートのリクエスト</h2>
+<p>欲しいグラフテンプレートがありましたらお気軽にリクエストください。</p>
+<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request&body=リクエストするテンプレート名：%%0A分野：%%0A用途・説明：" class="request-btn" target="_blank" rel="noopener">リクエストを送る</a>
+</div>
+</section>
 <footer>
 <p>MedGraph Free &mdash; All templates are CC0 (Public Domain). Free for any use including commercial.</p>
 <p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
@@ -557,6 +604,16 @@ function filterCards(q){
   document.querySelectorAll(".card").forEach(c=>{
     const t=c.textContent.toLowerCase();
     c.style.display=t.includes(q)?"":"none";
+  });
+  document.querySelectorAll(".cat-section").forEach(s=>{
+    const cards=s.querySelectorAll(".card");
+    let any=false;
+    cards.forEach(c=>{if(c.style.display!=="none")any=true;});
+    s.style.display=(any||!q)?"":"none";
+  });
+  document.querySelectorAll(".cat-card").forEach(c=>{
+    if(!q){c.style.display="";return;}
+    c.style.display=c.textContent.toLowerCase().includes(q)?"":"none";
   });
 }
 </script>
