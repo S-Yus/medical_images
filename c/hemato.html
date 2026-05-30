@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>血液（Hematology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="血液のレポート用グラフテンプレート一覧。24種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="血液のレポート用グラフテンプレート一覧。26種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,31 +39,47 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 血液</div>
 <main>
 <h1 class="cat-title">血液 (Hematology)</h1>
-<p class="count">24 templates available</p>
-<div class="grid"><a href="../hemato/cbc-reference.html" class="tcard"><img src="../img/hemato_cbc_reference.png" alt="CBC基準値" loading="lazy"><div class="tname">CBC基準値</div><div class="tdesc">CBC（全血球算定）基準値テンプレート。各血球系の基準範囲をプロット。</div></a>
-<a href="../hemato/hb-electrophoresis.html" class="tcard"><img src="../img/hemato_hb_electrophoresis.png" alt="ヘモグロビン電気泳動" loading="lazy"><div class="tname">ヘモグロビン電気泳動</div><div class="tdesc">ヘモグロビン電気泳動テンプレート。HbA/HbS/HbC等の分離パターンをプロット。</div></a>
-<a href="../hemato/iron-studies.html" class="tcard"><img src="../img/hemato_iron_studies.png" alt="鉄代謝パネル" loading="lazy"><div class="tname">鉄代謝パネル</div><div class="tdesc">鉄代謝パネルテンプレート。Fe/TIBC/フェリチン/TSAT等をプロット。</div></a>
-<a href="../hemato/coagulation-cascade.html" class="tcard"><img src="../img/hemato_coagulation_cascade.png" alt="凝固カスケード" loading="lazy"><div class="tname">凝固カスケード</div><div class="tdesc">凝固カスケードテンプレート。各凝固因子の活性を時間経過でプロット。</div></a>
-<a href="../hemato/pt-inr.html" class="tcard"><img src="../img/hemato_pt_inr.png" alt="PT/INRモニタリング" loading="lazy"><div class="tname">PT/INRモニタリング</div><div class="tdesc">PT/INRモニタリングテンプレート。ワーファリン投与中のINR推移をプロット。</div></a>
-<a href="../hemato/aptt-curve.html" class="tcard"><img src="../img/hemato_aptt_curve.png" alt="aPTT曲線" loading="lazy"><div class="tname">aPTT曲線</div><div class="tdesc">aPTT曲線テンプレート。ヘパリン投与量とaPTTの関係をプロット。</div></a>
-<a href="../hemato/platelet-aggregation.html" class="tcard"><img src="../img/hemato_platelet_aggregation.png" alt="血小板凝集" loading="lazy"><div class="tname">血小板凝集</div><div class="tdesc">血小板凝集テンプレート。ADP/コラーゲン等の刺激剤別応答をプロット。</div></a>
-<a href="../hemato/reticulocyte.html" class="tcard"><img src="../img/hemato_reticulocyte.png" alt="網赤血球数" loading="lazy"><div class="tname">網赤血球数</div><div class="tdesc">網赤血球数の経時変化テンプレート。貧血治療効果の評価に使用。</div></a>
-<a href="../hemato/esr-curve.html" class="tcard"><img src="../img/hemato_esr_curve.png" alt="赤沈曲線" loading="lazy"><div class="tname">赤沈曲線</div><div class="tdesc">赤沈曲線テンプレート。赤血球沈降速度の経時変化をプロット。</div></a>
-<a href="../hemato/d-dimer.html" class="tcard"><img src="../img/hemato_d_dimer.png" alt="Dダイマー値" loading="lazy"><div class="tname">Dダイマー値</div><div class="tdesc">Dダイマー値の経時変化テンプレート。DICやDVTのモニタリングに使用。</div></a>
-<a href="../hemato/hemolysis-markers.html" class="tcard"><img src="../img/hemato_hemolysis_markers.png" alt="溶血マーカー" loading="lazy"><div class="tname">溶血マーカー</div><div class="tdesc">溶血マーカーテンプレート。LDH/Haptoglobin/間接Bil等をプロット。</div></a>
-<a href="../hemato/dic-scoring.html" class="tcard"><img src="../img/hemato_dic_scoring.png" alt="DICスコアリング" loading="lazy"><div class="tname">DICスコアリング</div><div class="tdesc">DIC診断スコアリングテンプレート。血小板/PT/FDP/フィブリノーゲンをスコア化。</div></a>
-<a href="../hemato/blood-type.html" class="tcard"><img src="../img/hemato_blood_type.png" alt="血液型テンプレート" loading="lazy"><div class="tname">血液型テンプレート</div><div class="tdesc">血液型判定テンプレート。抗A/抗B/抗D血清との凝集反応をプロット。</div></a>
-<a href="../hemato/thromboelastography.html" class="tcard"><img src="../img/hemato_thromboelastography.png" alt="トロンボエラストグラフィー" loading="lazy"><div class="tname">トロンボエラストグラフィー</div><div class="tdesc">TEGテンプレート。凝固・線溶の全過程を評価。R/K/MA/Lyをプロット。</div></a>
-<a href="../hemato/coag-factor-levels.html" class="tcard"><img src="../img/hemato_coag_factor_levels.png" alt="凝固因子レベル" loading="lazy"><div class="tname">凝固因子レベル</div><div class="tdesc">凝固因子活性レベルテンプレート。各因子の活性を正常値と比較。</div></a>
-<a href="../hemato/peripheral-smear.html" class="tcard"><img src="../img/hemato_peripheral_smear.png" alt="末梢血塗抹テンプレート" loading="lazy"><div class="tname">末梢血塗抹テンプレート</div><div class="tdesc">末梢血塗抹テンプレート。白血球分画と形態異常の記録に使用。</div></a>
-<a href="../hemato/bleeding-time.html" class="tcard"><img src="../img/hemato_bleeding_time.png" alt="出血時間" loading="lazy"><div class="tname">出血時間</div><div class="tdesc">出血時間テンプレート。一次止血の評価に使用。</div></a>
-<a href="../hemato/crossmatch.html" class="tcard"><img src="../img/hemato_crossmatch.png" alt="交差適合試験テンプレート" loading="lazy"><div class="tname">交差適合試験テンプレート</div><div class="tdesc">交差適合試験テンプレート。主試験・副試験の結果記録に使用。</div></a>
-<a href="../hemato/ternary-cell-diff.html" class="tcard"><img src="../img/hemato_ternary_cell_diff.png" alt="細胞分画三角図" loading="lazy"><div class="tname">細胞分画三角図</div><div class="tdesc">血球分画の三角図テンプレート。3系統の細胞比率を可視化。</div></a>
-<a href="../hemato/coagulation-cascade.html" class="tcard"><img src="../img/hemato_coagulation_cascade.png" alt="凝固因子活性推移" loading="lazy"><div class="tname">凝固因子活性推移</div><div class="tdesc">凝固因子活性推移テンプレート。DICやワーファリン療法のモニタリングに使用。</div></a>
-<a href="../hemato/cbc-trend.html" class="tcard"><img src="../img/hemato_cbc_trend.png" alt="血算推移チャート" loading="lazy"><div class="tname">血算推移チャート</div><div class="tdesc">血算推移チャートテンプレート。WBC・Hb・Plt等の経時的変化を記録。</div></a>
-<a href="../hemato/reticulocyte-response.html" class="tcard"><img src="../img/hemato_reticulocyte_response.png" alt="網赤血球反応" loading="lazy"><div class="tname">網赤血球反応</div><div class="tdesc">網赤血球反応テンプレート。貧血治療後の骨髄反応を評価。</div></a>
-<a href="../hemato/hemolysis-markers.html" class="tcard"><img src="../img/hemato_hemolysis_markers.png" alt="溶血マーカー推移" loading="lazy"><div class="tname">溶血マーカー推移</div><div class="tdesc">溶血マーカー推移テンプレート。LDH・ハプトグロビン・間接ビリルビンの変化を記録。</div></a>
-<a href="../hemato/iron-studies.html" class="tcard"><img src="../img/hemato_iron_studies.png" alt="鉄代謝ダイアグラム" loading="lazy"><div class="tname">鉄代謝ダイアグラム</div><div class="tdesc">鉄代謝ダイアグラムテンプレート。鉄欠乏・鉄過剰の鑑別に使用。</div></a></div>
+<p class="count">26 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">26</span></button><button class="tab" data-sc="cbc">血算・血球<span class="tab-count">10</span></button><button class="tab" data-sc="coagulation">凝固・線溶<span class="tab-count">9</span></button><button class="tab" data-sc="anemia">貧血・鉄代謝<span class="tab-count">1</span></button><button class="tab" data-sc="malig_h">血液腫瘍<span class="tab-count">2</span></button><button class="tab" data-sc="other">その他<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../hemato/cbc-reference.html" class="tcard" data-sc="cbc"><img src="../img/hemato_cbc_reference.png" alt="CBC基準値" loading="lazy"><div class="tname">CBC基準値</div><div class="tdesc">CBC（全血球算定）基準値テンプレート。各血球系の基準範囲をプロット。</div></a>
+<a href="../hemato/hb-electrophoresis.html" class="tcard" data-sc="cbc"><img src="../img/hemato_hb_electrophoresis.png" alt="ヘモグロビン電気泳動" loading="lazy"><div class="tname">ヘモグロビン電気泳動</div><div class="tdesc">ヘモグロビン電気泳動テンプレート。HbA/HbS/HbC等の分離パターンをプロット。</div></a>
+<a href="../hemato/iron-studies.html" class="tcard" data-sc="anemia"><img src="../img/hemato_iron_studies.png" alt="鉄代謝パネル" loading="lazy"><div class="tname">鉄代謝パネル</div><div class="tdesc">鉄代謝パネルテンプレート。Fe/TIBC/フェリチン/TSAT等をプロット。</div></a>
+<a href="../hemato/coagulation-cascade.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_coagulation_cascade.png" alt="凝固カスケード" loading="lazy"><div class="tname">凝固カスケード</div><div class="tdesc">凝固カスケードテンプレート。各凝固因子の活性を時間経過でプロット。</div></a>
+<a href="../hemato/pt-inr.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_pt_inr.png" alt="PT/INRモニタリング" loading="lazy"><div class="tname">PT/INRモニタリング</div><div class="tdesc">PT/INRモニタリングテンプレート。ワーファリン投与中のINR推移をプロット。</div></a>
+<a href="../hemato/aptt-curve.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_aptt_curve.png" alt="aPTT曲線" loading="lazy"><div class="tname">aPTT曲線</div><div class="tdesc">aPTT曲線テンプレート。ヘパリン投与量とaPTTの関係をプロット。</div></a>
+<a href="../hemato/platelet-aggregation.html" class="tcard" data-sc="cbc"><img src="../img/hemato_platelet_aggregation.png" alt="血小板凝集" loading="lazy"><div class="tname">血小板凝集</div><div class="tdesc">血小板凝集テンプレート。ADP/コラーゲン等の刺激剤別応答をプロット。</div></a>
+<a href="../hemato/reticulocyte.html" class="tcard" data-sc="cbc"><img src="../img/hemato_reticulocyte.png" alt="網赤血球数" loading="lazy"><div class="tname">網赤血球数</div><div class="tdesc">網赤血球数の経時変化テンプレート。貧血治療効果の評価に使用。</div></a>
+<a href="../hemato/esr-curve.html" class="tcard" data-sc="other"><img src="../img/hemato_esr_curve.png" alt="赤沈曲線" loading="lazy"><div class="tname">赤沈曲線</div><div class="tdesc">赤沈曲線テンプレート。赤血球沈降速度の経時変化をプロット。</div></a>
+<a href="../hemato/d-dimer.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_d_dimer.png" alt="Dダイマー値" loading="lazy"><div class="tname">Dダイマー値</div><div class="tdesc">Dダイマー値の経時変化テンプレート。DICやDVTのモニタリングに使用。</div></a>
+<a href="../hemato/hemolysis-markers.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_hemolysis_markers.png" alt="溶血マーカー" loading="lazy"><div class="tname">溶血マーカー</div><div class="tdesc">溶血マーカーテンプレート。LDH/Haptoglobin/間接Bil等をプロット。</div></a>
+<a href="../hemato/dic-scoring.html" class="tcard" data-sc="cbc"><img src="../img/hemato_dic_scoring.png" alt="DICスコアリング" loading="lazy"><div class="tname">DICスコアリング</div><div class="tdesc">DIC診断スコアリングテンプレート。血小板/PT/FDP/フィブリノーゲンをスコア化。</div></a>
+<a href="../hemato/blood-type.html" class="tcard" data-sc="other"><img src="../img/hemato_blood_type.png" alt="血液型テンプレート" loading="lazy"><div class="tname">血液型テンプレート</div><div class="tdesc">血液型判定テンプレート。抗A/抗B/抗D血清との凝集反応をプロット。</div></a>
+<a href="../hemato/thromboelastography.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_thromboelastography.png" alt="トロンボエラストグラフィー" loading="lazy"><div class="tname">トロンボエラストグラフィー</div><div class="tdesc">TEGテンプレート。凝固・線溶の全過程を評価。R/K/MA/Lyをプロット。</div></a>
+<a href="../hemato/coag-factor-levels.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_coag_factor_levels.png" alt="凝固因子レベル" loading="lazy"><div class="tname">凝固因子レベル</div><div class="tdesc">凝固因子活性レベルテンプレート。各因子の活性を正常値と比較。</div></a>
+<a href="../hemato/peripheral-smear.html" class="tcard" data-sc="other"><img src="../img/hemato_peripheral_smear.png" alt="末梢血塗抹テンプレート" loading="lazy"><div class="tname">末梢血塗抹テンプレート</div><div class="tdesc">末梢血塗抹テンプレート。白血球分画と形態異常の記録に使用。</div></a>
+<a href="../hemato/bleeding-time.html" class="tcard" data-sc="cbc"><img src="../img/hemato_bleeding_time.png" alt="出血時間" loading="lazy"><div class="tname">出血時間</div><div class="tdesc">出血時間テンプレート。一次止血の評価に使用。</div></a>
+<a href="../hemato/crossmatch.html" class="tcard" data-sc="other"><img src="../img/hemato_crossmatch.png" alt="交差適合試験テンプレート" loading="lazy"><div class="tname">交差適合試験テンプレート</div><div class="tdesc">交差適合試験テンプレート。主試験・副試験の結果記録に使用。</div></a>
+<a href="../hemato/ternary-cell-diff.html" class="tcard" data-sc="malig_h"><img src="../img/hemato_ternary_cell_diff.png" alt="細胞分画三角図" loading="lazy"><div class="tname">細胞分画三角図</div><div class="tdesc">血球分画の三角図テンプレート。3系統の細胞比率を可視化。</div></a>
+<a href="../hemato/cbc-trend.html" class="tcard" data-sc="cbc"><img src="../img/hemato_cbc_trend.png" alt="血算推移チャート" loading="lazy"><div class="tname">血算推移チャート</div><div class="tdesc">血算推移チャートテンプレート。WBC・Hb・Plt等の経時的変化を記録。</div></a>
+<a href="../hemato/reticulocyte-response.html" class="tcard" data-sc="cbc"><img src="../img/hemato_reticulocyte_response.png" alt="網赤血球反応" loading="lazy"><div class="tname">網赤血球反応</div><div class="tdesc">網赤血球反応テンプレート。貧血治療後の骨髄反応を評価。</div></a>
+<a href="../hemato/hemoglobin-box.html" class="tcard" data-sc="cbc"><img src="../img/hemato_hemoglobin_box.png" alt="貧血型別Hb（箱ひげ図）" loading="lazy"><div class="tname">貧血型別Hb（箱ひげ図）</div><div class="tdesc">貧血タイプ別のヘモグロビン分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../hemato/heatmap-cbc-trend.html" class="tcard" data-sc="cbc"><img src="../img/hemato_heatmap_cbc_trend.png" alt="血算推移ヒートマップ" loading="lazy"><div class="tname">血算推移ヒートマップ</div><div class="tdesc">血算値の経時変化をヒートマップで表示するテンプレート。化学療法モニタリング等に使用。</div></a>
+<a href="../hemato/radar-bleeding.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_radar_bleeding.png" alt="出血評価レーダー" loading="lazy"><div class="tname">出血評価レーダー</div><div class="tdesc">出血リスクの多面的評価レーダーチャートテンプレート。</div></a>
+<a href="../hemato/km-leukemia.html" class="tcard" data-sc="malig_h"><img src="../img/hemato_km_leukemia.png" alt="白血病生存曲線" loading="lazy"><div class="tname">白血病生存曲線</div><div class="tdesc">白血病の治療法別生存曲線テンプレート。</div></a>
+<a href="../hemato/forest-anticoag.html" class="tcard" data-sc="coagulation"><img src="../img/hemato_forest_anticoag.png" alt="抗凝固薬メタアナリシス" loading="lazy"><div class="tname">抗凝固薬メタアナリシス</div><div class="tdesc">抗凝固薬のメタアナリシスフォレストプロットテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

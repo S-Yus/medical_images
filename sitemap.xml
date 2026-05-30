@@ -28,6 +28,7 @@
   <url><loc>https://med-graph.com/c/derm.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://med-graph.com/c/ent.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://med-graph.com/c/uro.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://med-graph.com/c/anat.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url>
     <loc>https://med-graph.com/biochem/michaelis-menten.html</loc>
     <changefreq>monthly</changefreq>
@@ -927,12 +928,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/stat_forest_plot.png</image:loc><image:title>フォレストプロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/stat/bland-altman.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/stat_bland_altman.png</image:loc><image:title>ブランド・アルトマンプロット</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/stat/calibration-plot.html</loc>
@@ -2057,12 +2052,6 @@
     <image:image><image:loc>https://med-graph.com/img/eye_visual_acuity.png</image:loc><image:title>視力検査</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/eye/visual-field.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/eye_visual_field.png</image:loc><image:title>視野検査</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/eye/iop.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -2573,28 +2562,10 @@
     <image:image><image:loc>https://med-graph.com/img/stat_funnel_meta.png</image:loc><image:title>ファンネルプロット</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/stat/qq-plot.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/stat_qq_plot.png</image:loc><image:title>Q-Qプロット</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/chem/control-chart.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/chem_control_chart.png</image:loc><image:title>シューハート管理図</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/stat/tornado-sensitivity.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/stat_tornado_sensitivity.png</image:loc><image:title>トルネード図</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/stat/swimmer-treatment.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/stat_swimmer_treatment.png</image:loc><image:title>スイマープロット</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/epi/population-pyramid.html</loc>
@@ -2631,12 +2602,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/stat_box_plot_groups.png</image:loc><image:title>箱ひげ図（群間比較）</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/stat/violin-plot.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/stat_violin_plot.png</image:loc><image:title>バイオリンプロット</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/epi/stacked-area.html</loc>
@@ -3053,30 +3018,6 @@
     <image:image><image:loc>https://med-graph.com/img/stat_calibration_risk.png</image:loc><image:title>リスク較正プロット</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/biochem/michaelis-menten.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_michaelis_menten.png</image:loc><image:title>ミカエリス・メンテン曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/lineweaver-burk.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_lineweaver_burk.png</image:loc><image:title>ラインウィーバー・バークプロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/eadie-hofstee.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_eadie_hofstee.png</image:loc><image:title>イーディー・ホフスティープロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/hanes-woolf.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_hanes_woolf.png</image:loc><image:title>ヘインズ・ウルフプロット</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/biochem/enzyme-inhibition.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3089,64 +3030,16 @@
     <image:image><image:loc>https://med-graph.com/img/biochem_ph_titration.png</image:loc><image:title>pH滴定曲線</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/biochem/protein-denaturation.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_protein_denaturation.png</image:loc><image:title>タンパク質変性曲線</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/biochem/binding-curve.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/biochem_binding_curve.png</image:loc><image:title>リガンド結合曲線</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/biochem/scatchard.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_scatchard.png</image:loc><image:title>スキャッチャードプロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/hill-plot.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_hill_plot.png</image:loc><image:title>ヒルプロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/elisa-standard.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_elisa_standard.png</image:loc><image:title>ELISA標準曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/western-blot-quant.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_western_blot_quant.png</image:loc><image:title>ウェスタンブロット定量プロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/biochem/chromatography.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/biochem_chromatography.png</image:loc><image:title>クロマトグラム</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/biochem/electrophoresis-gel.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/biochem_electrophoresis_gel.png</image:loc><image:title>電気泳動パターン</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/physiol/o2-dissociation.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/physiol_o2_dissociation.png</image:loc><image:title>酸素解離曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/physiol/frank-starling.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/physiol_frank_starling.png</image:loc><image:title>フランク・スターリング曲線</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/physiol/action-potential-nerve.html</loc>
@@ -3167,12 +3060,6 @@
     <image:image><image:loc>https://med-graph.com/img/physiol_muscle_length_tension.png</image:loc><image:title>筋長力曲線</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/physiol/force-velocity.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/physiol_force_velocity.png</image:loc><image:title>力-速度曲線</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/physiol/compliance-curve.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3183,12 +3070,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/physiol_wiggers_diagram.png</image:loc><image:title>ウィガース図テンプレート</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/physiol/starling-forces.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/physiol_starling_forces.png</image:loc><image:title>スターリング力図</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/physiol/co2-response.html</loc>
@@ -3203,52 +3084,10 @@
     <image:image><image:loc>https://med-graph.com/img/physiol_renal_clearance.png</image:loc><image:title>腎クリアランス曲線</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/physiol/glucose-titration.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/physiol_glucose_titration.png</image:loc><image:title>ブドウ糖排泄閾値曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/nephro/countercurrent.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/nephro_countercurrent.png</image:loc><image:title>対向流増幅機構</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/dose-response-graded.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_dose_response_graded.png</image:loc><image:title>用量反応曲線（量的）</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/dose-response-quantal.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_dose_response_quantal.png</image:loc><image:title>用量反応曲線（質的）</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/therapeutic-window.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_therapeutic_window.png</image:loc><image:title>治療域</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/pharm/pk-single-dose.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/pharm_pk_single_dose.png</image:loc><image:title>単回投与薬物動態曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/pk-multiple-dose.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_pk_multiple_dose.png</image:loc><image:title>反復投与薬物動態曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/pk-iv-bolus.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_pk_iv_bolus.png</image:loc><image:title>静注ボーラスPK（片対数）</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/pharm/receptor-binding.html</loc>
@@ -3261,18 +3100,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/pharm_agonist_antagonist.png</image:loc><image:title>作動薬-拮抗薬曲線</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/isobologram.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_isobologram.png</image:loc><image:title>アイソボログラム</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pharm/time-kill.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pharm_time_kill.png</image:loc><image:title>タイムキル曲線</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/micro/mic-distribution.html</loc>
@@ -3299,12 +3126,6 @@
     <image:image><image:loc>https://med-graph.com/img/cardio_jvp_waveform.png</image:loc><image:title>頸静脈圧波形</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/cardio/coronary-flow.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/cardio_coronary_flow.png</image:loc><image:title>冠血流予備能</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/cardio/valsalva-phases.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3329,22 +3150,10 @@
     <image:image><image:loc>https://med-graph.com/img/nephro_urine_osmolality.png</image:loc><image:title>尿浸透圧ダイアグラム</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/pulm/lung-volumes.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pulm_lung_volumes.png</image:loc><image:title>肺気量分画ダイアグラム</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/pulm/ventilation-perfusion.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/pulm_ventilation_perfusion.png</image:loc><image:title>換気血流比ダイアグラム</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/pulm/o2-co2-diagram.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/pulm_o2_co2_diagram.png</image:loc><image:title>O2-CO2ダイアグラム</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/pulm/peak-flow-diary.html</loc>
@@ -3377,24 +3186,6 @@
     <image:image><image:loc>https://med-graph.com/img/endo_thyroid_function.png</image:loc><image:title>甲状腺機能チャート</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/endo/cortisol-diurnal.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/endo_cortisol_diurnal.png</image:loc><image:title>コルチゾール日内変動</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/endo/calcium-pth.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/endo_calcium_pth.png</image:loc><image:title>カルシウム-PTH関係</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/hemato/coagulation-cascade.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/hemato_coagulation_cascade.png</image:loc><image:title>凝固因子活性推移</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/hemato/cbc-trend.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3405,24 +3196,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/hemato_reticulocyte_response.png</image:loc><image:title>網赤血球反応</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/hemato/hemolysis-markers.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/hemato_hemolysis_markers.png</image:loc><image:title>溶血マーカー推移</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/hemato/iron-studies.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/hemato_iron_studies.png</image:loc><image:title>鉄代謝ダイアグラム</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/immuno/antibody-titer.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/immuno_antibody_titer.png</image:loc><image:title>抗体価動態</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/immuno/complement-pathway.html</loc>
@@ -3491,12 +3264,6 @@
     <image:image><image:loc>https://med-graph.com/img/obgyn_nst_trace.png</image:loc><image:title>NSTトレーステンプレート</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/obgyn/bishop-score.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/obgyn_bishop_score.png</image:loc><image:title>ビショップスコア表</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/ortho/rom-chart.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3509,28 +3276,10 @@
     <image:image><image:loc>https://med-graph.com/img/ortho_bone_density.png</image:loc><image:title>骨密度Tスコア</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/ortho/fracture-healing.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/ortho_fracture_healing.png</image:loc><image:title>骨折治癒曲線</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/surg/anesthesia-record.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/surg_anesthesia_record.png</image:loc><image:title>麻酔記録チャート</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/surg/fluid-balance.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/surg_fluid_balance.png</image:loc><image:title>水分出納チャート</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/surg/wound-healing.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/surg_wound_healing.png</image:loc><image:title>創傷治癒経過</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/emer/sepsis-bundle.html</loc>
@@ -3579,12 +3328,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/chem_bland_altman_lab.png</image:loc><image:title>検査法比較プロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/chem/levey-jennings.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/chem_levey_jennings.png</image:loc><image:title>レビー・ジェニングスチャート</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/chem/standard-curve.html</loc>
@@ -3707,12 +3450,6 @@
     <image:image><image:loc>https://med-graph.com/img/stat_dose_escalation.png</image:loc><image:title>用量漸増チャート</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/epi/incidence-time.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/epi_incidence_time.png</image:loc><image:title>罹患率経時変化</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/epi/prevalence-map.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3743,22 +3480,10 @@
     <image:image><image:loc>https://med-graph.com/img/peds_apgar_chart.png</image:loc><image:title>アプガースコアチャート</image:title></image:image>
   </url>
   <url>
-    <loc>https://med-graph.com/peds/vaccine-schedule.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/peds_vaccine_schedule.png</image:loc><image:title>予防接種スケジュール</image:title></image:image>
-  </url>
-  <url>
     <loc>https://med-graph.com/peds/developmental-milestones.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/peds_developmental_milestones.png</image:loc><image:title>発達マイルストーン</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/peds/bilirubin-nomogram.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/peds_bilirubin_nomogram.png</image:loc><image:title>ビリルビンノモグラム</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/micro/growth-curve-bacteria.html</loc>
@@ -3789,12 +3514,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/stat_cnv_plot.png</image:loc><image:title>コピー数変異プロット</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://med-graph.com/path/pcr-amplification.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <image:image><image:loc>https://med-graph.com/img/path_pcr_amplification.png</image:loc><image:title>PCR増幅曲線</image:title></image:image>
   </url>
   <url>
     <loc>https://med-graph.com/path/melting-curve.html</loc>
@@ -3843,5 +3562,689 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://med-graph.com/img/neuro_radar_neuro_exam.png</image:loc><image:title>神経学的検査レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/bp-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_bp_comparison_box.png</image:loc><image:title>治療法別血圧（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/ecg-heatmap.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_ecg_heatmap.png</image:loc><image:title>心電図所見ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/radar-cardiac-risk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_radar_cardiac_risk.png</image:loc><image:title>心臓リスクレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/km-heart-failure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_km_heart_failure.png</image:loc><image:title>心不全生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/roc-troponin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_roc_troponin.png</image:loc><image:title>トロポニンROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/forest-antihypertensive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_forest_antihypertensive.png</image:loc><image:title>降圧薬メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/cardio/bar-valve-gradient.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/cardio_bar_valve_gradient.png</image:loc><image:title>弁膜症圧較差比較</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pulm/fev1-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pulm_fev1_comparison_box.png</image:loc><image:title>疾患別FEV1（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pulm/heatmap-abg.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pulm_heatmap_abg.png</image:loc><image:title>血液ガス解釈ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pulm/radar-copd-assess.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pulm_radar_copd_assess.png</image:loc><image:title>COPD評価レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pulm/km-lung-cancer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pulm_km_lung_cancer.png</image:loc><image:title>肺癌生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pulm/roc-ctpa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pulm_roc_ctpa.png</image:loc><image:title>肺塞栓診断ROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/nephro/gfr-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/nephro_gfr_comparison_box.png</image:loc><image:title>CKDステージ別GFR（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/nephro/heatmap-electrolyte.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/nephro_heatmap_electrolyte.png</image:loc><image:title>電解質パネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/nephro/radar-ckd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/nephro_radar_ckd.png</image:loc><image:title>CKD合併症レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/nephro/km-transplant.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/nephro_km_transplant.png</image:loc><image:title>腎移植生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/nephro/roc-aki.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/nephro_roc_aki.png</image:loc><image:title>AKIバイオマーカーROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/endo/hba1c-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/endo_hba1c_comparison_box.png</image:loc><image:title>治療法別HbA1c（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/endo/heatmap-hormone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/endo_heatmap_hormone.png</image:loc><image:title>ホルモンパネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/endo/radar-dm-control.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/endo_radar_dm_control.png</image:loc><image:title>糖尿病管理レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/endo/km-dm-complication.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/endo_km_dm_complication.png</image:loc><image:title>糖尿病合併症発症曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/liver-enzyme-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_liver_enzyme_box.png</image:loc><image:title>疾患別肝酵素（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/heatmap-liver-panel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_heatmap_liver_panel.png</image:loc><image:title>肝機能パネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/radar-ibd.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_radar_ibd.png</image:loc><image:title>IBD活動性レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/km-hcc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_km_hcc.png</image:loc><image:title>肝細胞癌生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/roc-fibrosis.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_roc_fibrosis.png</image:loc><image:title>肝線維化診断ROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/gi/forest-ppi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/gi_forest_ppi.png</image:loc><image:title>PPI有効性メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/hemato/hemoglobin-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/hemato_hemoglobin_box.png</image:loc><image:title>貧血型別Hb（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/hemato/heatmap-cbc-trend.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/hemato_heatmap_cbc_trend.png</image:loc><image:title>血算推移ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/hemato/radar-bleeding.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/hemato_radar_bleeding.png</image:loc><image:title>出血評価レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/hemato/km-leukemia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/hemato_km_leukemia.png</image:loc><image:title>白血病生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/hemato/forest-anticoag.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/hemato_forest_anticoag.png</image:loc><image:title>抗凝固薬メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/obgyn/birthweight-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/obgyn_birthweight_box.png</image:loc><image:title>在胎週数別出生体重（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/obgyn/heatmap-prenatal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/obgyn_heatmap_prenatal.png</image:loc><image:title>出生前スクリーニングヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/obgyn/radar-maternal-risk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/obgyn_radar_maternal_risk.png</image:loc><image:title>母体リスクレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/obgyn/km-cervical.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/obgyn_km_cervical.png</image:loc><image:title>子宮頸癌生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/obgyn/roc-preeclampsia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/obgyn_roc_preeclampsia.png</image:loc><image:title>妊娠高血圧腎症スクリーニングROC</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/peds/height-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/peds_height_comparison_box.png</image:loc><image:title>年齢群別身長（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/peds/heatmap-vaccine-status.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/peds_heatmap_vaccine_status.png</image:loc><image:title>予防接種状況ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/peds/radar-dev-milestone.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/peds_radar_dev_milestone.png</image:loc><image:title>発達マイルストーンレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/peds/km-childhood-cancer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/peds_km_childhood_cancer.png</image:loc><image:title>小児がん生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/peds/roc-sepsis-pediatric.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/peds_roc_sepsis_pediatric.png</image:loc><image:title>小児敗血症診断ROC</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/neuro/nihss-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/neuro_nihss_comparison_box.png</image:loc><image:title>脳卒中型別NIHSS（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/neuro/heatmap-eeg-power.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/neuro_heatmap_eeg_power.png</image:loc><image:title>脳波パワーヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/neuro/radar-stroke-risk.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/neuro_radar_stroke_risk.png</image:loc><image:title>脳卒中リスクレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/neuro/km-glioma.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/neuro_km_glioma.png</image:loc><image:title>神経膠腫生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/neuro/roc-cognitive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/neuro_roc_cognitive.png</image:loc><image:title>認知機能スクリーニングROC</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ortho/rom-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ortho_rom_comparison_box.png</image:loc><image:title>関節別ROM（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ortho/heatmap-pain-location.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ortho_heatmap_pain_location.png</image:loc><image:title>疼痛部位ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ortho/radar-knee-function.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ortho_radar_knee_function.png</image:loc><image:title>膝関節機能レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ortho/km-arthroplasty.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ortho_km_arthroplasty.png</image:loc><image:title>人工関節生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ortho/forest-fracture-fix.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ortho_forest_fracture_fix.png</image:loc><image:title>骨折固定法メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/eye/iop-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/eye_iop_comparison_box.png</image:loc><image:title>緑内障型別眼圧（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/eye/heatmap-oct.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/eye_heatmap_oct.png</image:loc><image:title>OCT層別ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/eye/radar-visual-function.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/eye_radar_visual_function.png</image:loc><image:title>視機能レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/eye/km-retinal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/eye_km_retinal.png</image:loc><image:title>網膜剥離予後曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/psych/phq9-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/psych_phq9_comparison_box.png</image:loc><image:title>治療法別PHQ-9（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/psych/heatmap-symptom-psych.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/psych_heatmap_symptom_psych.png</image:loc><image:title>精神症状ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/psych/radar-mental-status.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/psych_radar_mental_status.png</image:loc><image:title>精神状態検査レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/psych/km-schizophrenia.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/psych_km_schizophrenia.png</image:loc><image:title>統合失調症無再発曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/psych/forest-antidepressant.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/psych_forest_antidepressant.png</image:loc><image:title>抗うつ薬メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/emer/lactate-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/emer_lactate_comparison_box.png</image:loc><image:title>重症度別乳酸値（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/emer/heatmap-trauma-injury.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/emer_heatmap_trauma_injury.png</image:loc><image:title>外傷損傷ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/emer/radar-sepsis-severity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/emer_radar_sepsis_severity.png</image:loc><image:title>敗血症重症度レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/emer/km-trauma.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/emer_km_trauma.png</image:loc><image:title>外傷生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/surg/operative-time-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/surg_operative_time_box.png</image:loc><image:title>術式別手術時間（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/surg/heatmap-ssi.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/surg_heatmap_ssi.png</image:loc><image:title>手術部位感染ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/surg/km-surgery-outcome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/surg_km_surgery_outcome.png</image:loc><image:title>術後生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/surg/forest-surgical.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/surg_forest_surgical.png</image:loc><image:title>術式メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/path/biomarker-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/path_biomarker_comparison_box.png</image:loc><image:title>グレード別バイオマーカー（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/path/heatmap-ihc.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/path_heatmap_ihc.png</image:loc><image:title>免疫染色パネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/path/radar-tumor-profile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/path_radar_tumor_profile.png</image:loc><image:title>腫瘍プロファイルレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/path/forest-biomarker.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/path_forest_biomarker.png</image:loc><image:title>バイオマーカー予後メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/radio/hounsfield-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/radio_hounsfield_comparison_box.png</image:loc><image:title>組織別HU値（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/radio/heatmap-dose.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/radio_heatmap_dose.png</image:loc><image:title>放射線量ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/radio/radar-image-quality.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/radio_radar_image_quality.png</image:loc><image:title>画質評価レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/radio/roc-lesion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/radio_roc_lesion.png</image:loc><image:title>病変検出ROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/pasi-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_pasi_comparison_box.png</image:loc><image:title>治療法別PASI（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/heatmap-patch-test.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_heatmap_patch_test.png</image:loc><image:title>パッチテストヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/radar-skin-severity.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_radar_skin_severity.png</image:loc><image:title>皮膚疾患重症度レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/km-melanoma.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_km_melanoma.png</image:loc><image:title>悪性黒色腫生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/roc-dermoscopy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_roc_dermoscopy.png</image:loc><image:title>ダーモスコピーROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/derm/forest-biologic-psoriasis.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/derm_forest_biologic_psoriasis.png</image:loc><image:title>乾癬生物学的製剤メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ent/hearing-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ent_hearing_comparison_box.png</image:loc><image:title>周波数別聴力（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ent/heatmap-vestibular.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ent_heatmap_vestibular.png</image:loc><image:title>前庭機能検査ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ent/radar-voice.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ent_radar_voice.png</image:loc><image:title>音声品質レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ent/km-head-neck.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ent_km_head_neck.png</image:loc><image:title>頭頸部癌生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/ent/roc-hearing-screen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/ent_roc_hearing_screen.png</image:loc><image:title>聴力スクリーニングROC</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/uro/psa-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/uro_psa_comparison_box.png</image:loc><image:title>診断別PSA（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/uro/heatmap-urodynamic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/uro_heatmap_urodynamic.png</image:loc><image:title>尿流動態検査ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/uro/radar-luts.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/uro_radar_luts.png</image:loc><image:title>下部尿路症状レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/uro/km-prostate.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/uro_km_prostate.png</image:loc><image:title>前立腺癌生存曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/uro/roc-psa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/uro_roc_psa.png</image:loc><image:title>PSA診断ROC曲線</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/micro/mic-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/micro_mic_comparison_box.png</image:loc><image:title>抗菌薬別MIC（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/micro/heatmap-antibiogram.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/micro_heatmap_antibiogram.png</image:loc><image:title>アンチバイオグラムヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/micro/radar-infection-control.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/micro_radar_infection_control.png</image:loc><image:title>感染管理レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/micro/forest-antibiotic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/micro_forest_antibiotic.png</image:loc><image:title>抗菌薬有効性メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/immuno/ig-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/immuno_ig_comparison_box.png</image:loc><image:title>疾患別免疫グロブリン（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/immuno/heatmap-autoantibody.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/immuno_heatmap_autoantibody.png</image:loc><image:title>自己抗体パネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/immuno/radar-immune-status.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/immuno_radar_immune_status.png</image:loc><image:title>免疫状態レーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/immuno/forest-biologic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/immuno_forest_biologic.png</image:loc><image:title>生物学的製剤メタアナリシス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/biochem/enzyme-activity-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/biochem_enzyme_activity_box.png</image:loc><image:title>条件別酵素活性（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/biochem/heatmap-metabolic.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/biochem_heatmap_metabolic.png</image:loc><image:title>代謝経路ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/physiol/cardiac-output-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/physiol_cardiac_output_box.png</image:loc><image:title>状態別心拍出量（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/physiol/heatmap-reflex.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/physiol_heatmap_reflex.png</image:loc><image:title>反射弧ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pharm/drug-efficacy-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pharm_drug_efficacy_box.png</image:loc><image:title>薬効比較（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/pharm/heatmap-drug-interaction-2.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/pharm_heatmap_drug_interaction_2.png</image:loc><image:title>薬物相互作用マトリックス</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/epi/prevalence-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/epi_prevalence_comparison_box.png</image:loc><image:title>地域別有病率（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/epi/heatmap-outbreak.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/epi_heatmap_outbreak.png</image:loc><image:title>アウトブレイク症例ヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/chem/lab-comparison-box.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/chem_lab_comparison_box.png</image:loc><image:title>状態別検査値（箱ひげ図）</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/chem/heatmap-lab-panel.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/chem_heatmap_lab_panel.png</image:loc><image:title>検査パネルヒートマップ</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/chem/radar-lab-profile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/chem_radar_lab_profile.png</image:loc><image:title>検査プロファイルレーダー</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/chem/roc-lab-marker.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/chem_roc_lab_marker.png</image:loc><image:title>検査マーカー診断ROC</image:title></image:image>
+  </url>
+  <url>
+    <loc>https://med-graph.com/anat/heatmap-dermatome.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image><image:loc>https://med-graph.com/img/anat_heatmap_dermatome.png</image:loc><image:title>デルマトームヒートマップ</image:title></image:image>
   </url>
 </urlset>

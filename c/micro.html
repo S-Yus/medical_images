@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>微生物学（Microbiology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="微生物学のレポート用グラフテンプレート一覧。25種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="微生物学のレポート用グラフテンプレート一覧。29種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,32 +39,50 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 微生物学</div>
 <main>
 <h1 class="cat-title">微生物学 (Microbiology)</h1>
-<p class="count">25 templates available</p>
-<div class="grid"><a href="../micro/bacterial-growth.html" class="tcard"><img src="../img/micro_bacterial_growth.png" alt="細菌増殖曲線" loading="lazy"><div class="tname">細菌増殖曲線</div><div class="tdesc">細菌増殖曲線テンプレート。Lag・Log・Stationary・Death phaseをプロット。</div></a>
-<a href="../micro/time-kill.html" class="tcard"><img src="../img/micro_time_kill.png" alt="Time-Kill曲線" loading="lazy"><div class="tname">Time-Kill曲線</div><div class="tdesc">Time-Kill曲線テンプレート。抗菌薬濃度別の殺菌効果を時間経過でプロット。</div></a>
-<a href="../micro/mic-determination.html" class="tcard"><img src="../img/micro_mic_determination.png" alt="MIC測定" loading="lazy"><div class="tname">MIC測定</div><div class="tdesc">MIC（最小発育阻止濃度）測定テンプレート。微量液体希釈法での結果をプロット。</div></a>
-<a href="../micro/disk-diffusion.html" class="tcard"><img src="../img/micro_disk_diffusion.png" alt="ディスク拡散法" loading="lazy"><div class="tname">ディスク拡散法</div><div class="tdesc">ディスク拡散法（阻止円）テンプレート。抗菌薬ごとの阻止円径をプロット。</div></a>
-<a href="../micro/biofilm-formation.html" class="tcard"><img src="../img/micro_biofilm_formation.png" alt="バイオフィルム形成曲線" loading="lazy"><div class="tname">バイオフィルム形成曲線</div><div class="tdesc">バイオフィルム形成曲線テンプレート。付着・成熟・分散の各段階をプロット。</div></a>
-<a href="../micro/virus-growth.html" class="tcard"><img src="../img/micro_virus_growth.png" alt="一段階増殖曲線" loading="lazy"><div class="tname">一段階増殖曲線</div><div class="tdesc">ウイルスの一段階増殖曲線テンプレート。暗黒期・放出期をプロット。</div></a>
-<a href="../micro/pcr-amplification.html" class="tcard"><img src="../img/micro_pcr_amplification.png" alt="PCR増幅曲線" loading="lazy"><div class="tname">PCR増幅曲線</div><div class="tdesc">リアルタイムPCR増幅曲線テンプレート。Ct値の決定に使用。</div></a>
-<a href="../micro/qpcr.html" class="tcard"><img src="../img/micro_qpcr.png" alt="リアルタイムqPCR" loading="lazy"><div class="tname">リアルタイムqPCR</div><div class="tdesc">定量PCRテンプレート。複数サンプルのCt値を比較プロット。</div></a>
-<a href="../micro/serial-dilution.html" class="tcard"><img src="../img/micro_serial_dilution.png" alt="段階希釈プロット" loading="lazy"><div class="tname">段階希釈プロット</div><div class="tdesc">段階希釈法による菌数計測テンプレート。希釈倍率と集落数の関係をプロット。</div></a>
-<a href="../micro/temp-growth.html" class="tcard"><img src="../img/micro_temp_growth.png" alt="温度-増殖速度" loading="lazy"><div class="tname">温度-増殖速度</div><div class="tdesc">温度と増殖速度の関係テンプレート。至適温度の決定に使用。</div></a>
-<a href="../micro/ph-growth.html" class="tcard"><img src="../img/micro_ph_growth.png" alt="pH-増殖速度" loading="lazy"><div class="tname">pH-増殖速度</div><div class="tdesc">pHと増殖速度の関係テンプレート。至適pHの決定に使用。</div></a>
-<a href="../micro/antimicrobial-combo.html" class="tcard"><img src="../img/micro_antimicrobial_combo.png" alt="抗菌薬併用効果（FIC）" loading="lazy"><div class="tname">抗菌薬併用効果（FIC）</div><div class="tdesc">FICインデックスによる抗菌薬併用効果テンプレート。相乗・相加・拮抗を判定。</div></a>
-<a href="../micro/mutation-rate.html" class="tcard"><img src="../img/micro_mutation_rate.png" alt="突然変異率" loading="lazy"><div class="tname">突然変異率</div><div class="tdesc">突然変異率テンプレート。世代数と変異頻度の関係をプロット。</div></a>
-<a href="../micro/antibiogram.html" class="tcard"><img src="../img/micro_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="tname">アンチバイオグラム</div><div class="tdesc">アンチバイオグラムテンプレート。菌種ごとの抗菌薬感受性パターンをプロット。</div></a>
-<a href="../micro/growth-log-phase.html" class="tcard"><img src="../img/micro_growth_log_phase.png" alt="増殖曲線（対数期）" loading="lazy"><div class="tname">増殖曲線（対数期）</div><div class="tdesc">対数増殖期のプロットテンプレート。比増殖速度と倍加時間の決定に使用。</div></a>
-<a href="../micro/sterilization.html" class="tcard"><img src="../img/micro_sterilization.png" alt="滅菌曲線" loading="lazy"><div class="tname">滅菌曲線</div><div class="tdesc">滅菌曲線テンプレート。D値（decimal reduction time）の決定に使用。</div></a>
-<a href="../micro/plaque-assay.html" class="tcard"><img src="../img/micro_plaque_assay.png" alt="プラークアッセイ" loading="lazy"><div class="tname">プラークアッセイ</div><div class="tdesc">プラークアッセイによるウイルス価測定テンプレート。</div></a>
-<a href="../micro/gel-electrophoresis.html" class="tcard"><img src="../img/micro_gel_electrophoresis.png" alt="ゲル電気泳動" loading="lazy"><div class="tname">ゲル電気泳動</div><div class="tdesc">アガロースゲル電気泳動の分子量推定テンプレート。DNA断片のサイズ推定に使用。</div></a>
-<a href="../micro/kill-kinetics.html" class="tcard"><img src="../img/micro_kill_kinetics.png" alt="殺菌速度論" loading="lazy"><div class="tname">殺菌速度論</div><div class="tdesc">殺菌速度論テンプレート。生残率の時間変化をプロット。</div></a>
-<a href="../micro/cfu-count.html" class="tcard"><img src="../img/micro_cfu_count.png" alt="CFUカウントプロット" loading="lazy"><div class="tname">CFUカウントプロット</div><div class="tdesc">コロニー形成単位（CFU）のカウントプロットテンプレート。</div></a>
-<a href="../micro/heatmap-antibiogram.html" class="tcard"><img src="../img/micro_heatmap_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="tname">アンチバイオグラム</div><div class="tdesc">抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。</div></a>
-<a href="../micro/mic-distribution.html" class="tcard"><img src="../img/micro_mic_distribution.png" alt="MIC分布" loading="lazy"><div class="tname">MIC分布</div><div class="tdesc">MIC分布テンプレート。最小発育阻止濃度の分布を表示。</div></a>
-<a href="../micro/growth-curve-bacteria.html" class="tcard"><img src="../img/micro_growth_curve_bacteria.png" alt="細菌増殖曲線" loading="lazy"><div class="tname">細菌増殖曲線</div><div class="tdesc">細菌増殖曲線テンプレート。対数期・定常期・死滅期の記録に使用。</div></a>
-<a href="../micro/antibiotic-pk-pd.html" class="tcard"><img src="../img/micro_antibiotic_pk_pd.png" alt="抗菌薬PK/PDプロファイル" loading="lazy"><div class="tname">抗菌薬PK/PDプロファイル</div><div class="tdesc">抗菌薬PK/PDプロファイルテンプレート。AUC/MIC・Cmax/MIC・T>MICの表示に使用。</div></a>
-<a href="../micro/zone-diameter.html" class="tcard"><img src="../img/micro_zone_diameter.png" alt="阻止円径分布" loading="lazy"><div class="tname">阻止円径分布</div><div class="tdesc">阻止円径分布テンプレート。ディスク拡散法の結果解析に使用。</div></a></div>
+<p class="count">29 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">29</span></button><button class="tab" data-sc="growth_curve">増殖・動態<span class="tab-count">12</span></button><button class="tab" data-sc="resistance">薬剤感受性<span class="tab-count">11</span></button><button class="tab" data-sc="diagnostics">診断・検査<span class="tab-count">1</span></button><button class="tab" data-sc="epi_micro">疫学・疾患<span class="tab-count">2</span></button><button class="tab" data-sc="other">その他<span class="tab-count">3</span></button></div>
+<div class="grid"><a href="../micro/bacterial-growth.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_bacterial_growth.png" alt="細菌増殖曲線" loading="lazy"><div class="tname">細菌増殖曲線</div><div class="tdesc">細菌増殖曲線テンプレート。Lag・Log・Stationary・Death phaseをプロット。</div></a>
+<a href="../micro/time-kill.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_time_kill.png" alt="Time-Kill曲線" loading="lazy"><div class="tname">Time-Kill曲線</div><div class="tdesc">Time-Kill曲線テンプレート。抗菌薬濃度別の殺菌効果を時間経過でプロット。</div></a>
+<a href="../micro/mic-determination.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_mic_determination.png" alt="MIC測定" loading="lazy"><div class="tname">MIC測定</div><div class="tdesc">MIC（最小発育阻止濃度）測定テンプレート。微量液体希釈法での結果をプロット。</div></a>
+<a href="../micro/disk-diffusion.html" class="tcard" data-sc="resistance"><img src="../img/micro_disk_diffusion.png" alt="ディスク拡散法" loading="lazy"><div class="tname">ディスク拡散法</div><div class="tdesc">ディスク拡散法（阻止円）テンプレート。抗菌薬ごとの阻止円径をプロット。</div></a>
+<a href="../micro/biofilm-formation.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_biofilm_formation.png" alt="バイオフィルム形成曲線" loading="lazy"><div class="tname">バイオフィルム形成曲線</div><div class="tdesc">バイオフィルム形成曲線テンプレート。付着・成熟・分散の各段階をプロット。</div></a>
+<a href="../micro/virus-growth.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_virus_growth.png" alt="一段階増殖曲線" loading="lazy"><div class="tname">一段階増殖曲線</div><div class="tdesc">ウイルスの一段階増殖曲線テンプレート。暗黒期・放出期をプロット。</div></a>
+<a href="../micro/pcr-amplification.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_pcr_amplification.png" alt="PCR増幅曲線" loading="lazy"><div class="tname">PCR増幅曲線</div><div class="tdesc">リアルタイムPCR増幅曲線テンプレート。Ct値の決定に使用。</div></a>
+<a href="../micro/qpcr.html" class="tcard" data-sc="diagnostics"><img src="../img/micro_qpcr.png" alt="リアルタイムqPCR" loading="lazy"><div class="tname">リアルタイムqPCR</div><div class="tdesc">定量PCRテンプレート。複数サンプルのCt値を比較プロット。</div></a>
+<a href="../micro/serial-dilution.html" class="tcard" data-sc="other"><img src="../img/micro_serial_dilution.png" alt="段階希釈プロット" loading="lazy"><div class="tname">段階希釈プロット</div><div class="tdesc">段階希釈法による菌数計測テンプレート。希釈倍率と集落数の関係をプロット。</div></a>
+<a href="../micro/temp-growth.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_temp_growth.png" alt="温度-増殖速度" loading="lazy"><div class="tname">温度-増殖速度</div><div class="tdesc">温度と増殖速度の関係テンプレート。至適温度の決定に使用。</div></a>
+<a href="../micro/ph-growth.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_ph_growth.png" alt="pH-増殖速度" loading="lazy"><div class="tname">pH-増殖速度</div><div class="tdesc">pHと増殖速度の関係テンプレート。至適pHの決定に使用。</div></a>
+<a href="../micro/antimicrobial-combo.html" class="tcard" data-sc="resistance"><img src="../img/micro_antimicrobial_combo.png" alt="抗菌薬併用効果（FIC）" loading="lazy"><div class="tname">抗菌薬併用効果（FIC）</div><div class="tdesc">FICインデックスによる抗菌薬併用効果テンプレート。相乗・相加・拮抗を判定。</div></a>
+<a href="../micro/mutation-rate.html" class="tcard" data-sc="resistance"><img src="../img/micro_mutation_rate.png" alt="突然変異率" loading="lazy"><div class="tname">突然変異率</div><div class="tdesc">突然変異率テンプレート。世代数と変異頻度の関係をプロット。</div></a>
+<a href="../micro/antibiogram.html" class="tcard" data-sc="resistance"><img src="../img/micro_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="tname">アンチバイオグラム</div><div class="tdesc">アンチバイオグラムテンプレート。菌種ごとの抗菌薬感受性パターンをプロット。</div></a>
+<a href="../micro/growth-log-phase.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_growth_log_phase.png" alt="増殖曲線（対数期）" loading="lazy"><div class="tname">増殖曲線（対数期）</div><div class="tdesc">対数増殖期のプロットテンプレート。比増殖速度と倍加時間の決定に使用。</div></a>
+<a href="../micro/sterilization.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_sterilization.png" alt="滅菌曲線" loading="lazy"><div class="tname">滅菌曲線</div><div class="tdesc">滅菌曲線テンプレート。D値（decimal reduction time）の決定に使用。</div></a>
+<a href="../micro/plaque-assay.html" class="tcard" data-sc="epi_micro"><img src="../img/micro_plaque_assay.png" alt="プラークアッセイ" loading="lazy"><div class="tname">プラークアッセイ</div><div class="tdesc">プラークアッセイによるウイルス価測定テンプレート。</div></a>
+<a href="../micro/gel-electrophoresis.html" class="tcard" data-sc="other"><img src="../img/micro_gel_electrophoresis.png" alt="ゲル電気泳動" loading="lazy"><div class="tname">ゲル電気泳動</div><div class="tdesc">アガロースゲル電気泳動の分子量推定テンプレート。DNA断片のサイズ推定に使用。</div></a>
+<a href="../micro/kill-kinetics.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_kill_kinetics.png" alt="殺菌速度論" loading="lazy"><div class="tname">殺菌速度論</div><div class="tdesc">殺菌速度論テンプレート。生残率の時間変化をプロット。</div></a>
+<a href="../micro/cfu-count.html" class="tcard" data-sc="other"><img src="../img/micro_cfu_count.png" alt="CFUカウントプロット" loading="lazy"><div class="tname">CFUカウントプロット</div><div class="tdesc">コロニー形成単位（CFU）のカウントプロットテンプレート。</div></a>
+<a href="../micro/heatmap-antibiogram.html" class="tcard" data-sc="resistance"><img src="../img/micro_heatmap_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="tname">アンチバイオグラム</div><div class="tdesc">抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。</div></a>
+<a href="../micro/mic-distribution.html" class="tcard" data-sc="resistance"><img src="../img/micro_mic_distribution.png" alt="MIC分布" loading="lazy"><div class="tname">MIC分布</div><div class="tdesc">MIC分布テンプレート。最小発育阻止濃度の分布を表示。</div></a>
+<a href="../micro/growth-curve-bacteria.html" class="tcard" data-sc="growth_curve"><img src="../img/micro_growth_curve_bacteria.png" alt="細菌増殖曲線" loading="lazy"><div class="tname">細菌増殖曲線</div><div class="tdesc">細菌増殖曲線テンプレート。対数期・定常期・死滅期の記録に使用。</div></a>
+<a href="../micro/antibiotic-pk-pd.html" class="tcard" data-sc="resistance"><img src="../img/micro_antibiotic_pk_pd.png" alt="抗菌薬PK/PDプロファイル" loading="lazy"><div class="tname">抗菌薬PK/PDプロファイル</div><div class="tdesc">抗菌薬PK/PDプロファイルテンプレート。AUC/MIC・Cmax/MIC・T>MICの表示に使用。</div></a>
+<a href="../micro/zone-diameter.html" class="tcard" data-sc="resistance"><img src="../img/micro_zone_diameter.png" alt="阻止円径分布" loading="lazy"><div class="tname">阻止円径分布</div><div class="tdesc">阻止円径分布テンプレート。ディスク拡散法の結果解析に使用。</div></a>
+<a href="../micro/mic-comparison-box.html" class="tcard" data-sc="resistance"><img src="../img/micro_mic_comparison_box.png" alt="抗菌薬別MIC（箱ひげ図）" loading="lazy"><div class="tname">抗菌薬別MIC（箱ひげ図）</div><div class="tdesc">抗菌薬別のMIC分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../micro/heatmap-antibiogram.html" class="tcard" data-sc="resistance"><img src="../img/micro_heatmap_antibiogram.png" alt="アンチバイオグラムヒートマップ" loading="lazy"><div class="tname">アンチバイオグラムヒートマップ</div><div class="tdesc">施設アンチバイオグラムをヒートマップで表示するテンプレート。</div></a>
+<a href="../micro/radar-infection-control.html" class="tcard" data-sc="epi_micro"><img src="../img/micro_radar_infection_control.png" alt="感染管理レーダー" loading="lazy"><div class="tname">感染管理レーダー</div><div class="tdesc">感染管理の多面的評価レーダーチャートテンプレート。</div></a>
+<a href="../micro/forest-antibiotic.html" class="tcard" data-sc="resistance"><img src="../img/micro_forest_antibiotic.png" alt="抗菌薬有効性メタアナリシス" loading="lazy"><div class="tname">抗菌薬有効性メタアナリシス</div><div class="tdesc">抗菌薬治療のメタアナリシスフォレストプロットテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

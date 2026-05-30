@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>呼吸器（Pulmonology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="呼吸器のレポート用グラフテンプレート一覧。21種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="呼吸器のレポート用グラフテンプレート一覧。24種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,28 +39,45 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 呼吸器</div>
 <main>
 <h1 class="cat-title">呼吸器 (Pulmonology)</h1>
-<p class="count">21 templates available</p>
-<div class="grid"><a href="../pulm/spirometry-normal.html" class="tcard"><img src="../img/pulm_spirometry_normal.png" alt="スパイロメトリー（正常）" loading="lazy"><div class="tname">スパイロメトリー（正常）</div><div class="tdesc">正常スパイロメトリーテンプレート。FVC・FEV1の正常パターンをプロット。</div></a>
-<a href="../pulm/spirometry-obstructive.html" class="tcard"><img src="../img/pulm_spirometry_obstructive.png" alt="スパイロメトリー（閉塞性）" loading="lazy"><div class="tname">スパイロメトリー（閉塞性）</div><div class="tdesc">閉塞性パターンのスパイロメトリーテンプレート。FEV1/FVC低下をプロット。</div></a>
-<a href="../pulm/spirometry-restrictive.html" class="tcard"><img src="../img/pulm_spirometry_restrictive.png" alt="スパイロメトリー（拘束性）" loading="lazy"><div class="tname">スパイロメトリー（拘束性）</div><div class="tdesc">拘束性パターンのスパイロメトリーテンプレート。FVC低下をプロット。</div></a>
-<a href="../pulm/flow-volume-normal.html" class="tcard"><img src="../img/pulm_flow_volume_normal.png" alt="フローボリューム（正常）" loading="lazy"><div class="tname">フローボリューム（正常）</div><div class="tdesc">正常フローボリュームループテンプレート。呼気・吸気のパターンをプロット。</div></a>
-<a href="../pulm/flow-volume-obstruct.html" class="tcard"><img src="../img/pulm_flow_volume_obstruct.png" alt="フローボリューム（閉塞性）" loading="lazy"><div class="tname">フローボリューム（閉塞性）</div><div class="tdesc">閉塞性フローボリュームループテンプレート。呼気流量低下のパターンをプロット。</div></a>
-<a href="../pulm/flow-volume-restrict.html" class="tcard"><img src="../img/pulm_flow_volume_restrict.png" alt="フローボリューム（拘束性）" loading="lazy"><div class="tname">フローボリューム（拘束性）</div><div class="tdesc">拘束性フローボリュームループテンプレート。肺容量減少のパターンをプロット。</div></a>
-<a href="../pulm/flow-volume-uao.html" class="tcard"><img src="../img/pulm_flow_volume_uao.png" alt="フローボリューム（上気道閉塞）" loading="lazy"><div class="tname">フローボリューム（上気道閉塞）</div><div class="tdesc">上気道閉塞のフローボリュームテンプレート。固定性/可変性閉塞のパターンをプロット。</div></a>
-<a href="../pulm/chest-wall-compliance.html" class="tcard"><img src="../img/pulm_chest_wall_compliance.png" alt="胸壁コンプライアンス" loading="lazy"><div class="tname">胸壁コンプライアンス</div><div class="tdesc">胸壁コンプライアンス曲線テンプレート。胸壁の圧-容量関係をプロット。</div></a>
-<a href="../pulm/total-compliance.html" class="tcard"><img src="../img/pulm_total_compliance.png" alt="呼吸系総コンプライアンス" loading="lazy"><div class="tname">呼吸系総コンプライアンス</div><div class="tdesc">呼吸系総コンプライアンステンプレート。肺+胸壁の合計をプロット。</div></a>
-<a href="../pulm/work-breathing.html" class="tcard"><img src="../img/pulm_work_breathing.png" alt="呼吸仕事量" loading="lazy"><div class="tname">呼吸仕事量</div><div class="tdesc">呼吸仕事量テンプレート。圧-容量曲線で囲まれた面積を評価。</div></a>
-<a href="../pulm/o2-co2-diagram.html" class="tcard"><img src="../img/pulm_o2_co2_diagram.png" alt="O2-CO2ダイアグラム" loading="lazy"><div class="tname">O2-CO2ダイアグラム</div><div class="tdesc">O2-CO2ダイアグラムテンプレート。換気と灌流の関係を評価。</div></a>
-<a href="../pulm/capnography-wave.html" class="tcard"><img src="../img/pulm_capnography_wave.png" alt="カプノグラフィー波形" loading="lazy"><div class="tname">カプノグラフィー波形</div><div class="tdesc">カプノグラフィー波形テンプレート。呼気CO2のモニタリングに使用。</div></a>
-<a href="../pulm/ventilator-waveform.html" class="tcard"><img src="../img/pulm_ventilator_waveform.png" alt="人工呼吸器波形" loading="lazy"><div class="tname">人工呼吸器波形</div><div class="tdesc">人工呼吸器の圧・流量波形テンプレート。</div></a>
-<a href="../pulm/dead-space.html" class="tcard"><img src="../img/pulm_dead_space.png" alt="死腔計算" loading="lazy"><div class="tname">死腔計算</div><div class="tdesc">死腔計算テンプレート。Fowler法による解剖学的死腔の決定に使用。</div></a>
-<a href="../pulm/lung-compliance-disease.html" class="tcard"><img src="../img/pulm_lung_compliance_disease.png" alt="肺コンプライアンス（疾患）" loading="lazy"><div class="tname">肺コンプライアンス（疾患）</div><div class="tdesc">疾患別肺コンプライアンス比較テンプレート。正常/線維症/肺気腫を比較。</div></a>
-<a href="../pulm/flow-volume-loop.html" class="tcard"><img src="../img/pulm_flow_volume_loop.png" alt="フローボリューム曲線" loading="lazy"><div class="tname">フローボリューム曲線</div><div class="tdesc">フローボリューム曲線テンプレート。肺機能検査（スパイロメトリー）の結果記録に使用。</div></a>
-<a href="../pulm/pv-loop-lung.html" class="tcard"><img src="../img/pulm_pv_loop_lung.png" alt="肺圧容積曲線" loading="lazy"><div class="tname">肺圧容積曲線</div><div class="tdesc">肺圧容積曲線テンプレート。肺コンプライアンスの評価に使用。</div></a>
-<a href="../pulm/lung-volumes.html" class="tcard"><img src="../img/pulm_lung_volumes.png" alt="肺気量分画ダイアグラム" loading="lazy"><div class="tname">肺気量分画ダイアグラム</div><div class="tdesc">肺気量分画ダイアグラムテンプレート。TV, IRV, ERV, RV, FRC, VC, TLCの記録に使用。</div></a>
-<a href="../pulm/ventilation-perfusion.html" class="tcard"><img src="../img/pulm_ventilation_perfusion.png" alt="換気血流比ダイアグラム" loading="lazy"><div class="tname">換気血流比ダイアグラム</div><div class="tdesc">換気血流比ダイアグラムテンプレート。肺のV/Qミスマッチの評価に使用。</div></a>
-<a href="../pulm/o2-co2-diagram.html" class="tcard"><img src="../img/pulm_o2_co2_diagram.png" alt="O2-CO2ダイアグラム" loading="lazy"><div class="tname">O2-CO2ダイアグラム</div><div class="tdesc">O2-CO2ダイアグラムテンプレート。ガス交換の評価に使用。</div></a>
-<a href="../pulm/peak-flow-diary.html" class="tcard"><img src="../img/pulm_peak_flow_diary.png" alt="ピークフローダイアリー" loading="lazy"><div class="tname">ピークフローダイアリー</div><div class="tdesc">ピークフローダイアリーテンプレート。喘息の自己管理・経過記録に使用。</div></a></div>
+<p class="count">24 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">24</span></button><button class="tab" data-sc="function">呼吸機能検査<span class="tab-count">10</span></button><button class="tab" data-sc="mech">呼吸力学<span class="tab-count">9</span></button><button class="tab" data-sc="gas_ex">ガス交換<span class="tab-count">2</span></button><button class="tab" data-sc="disease_p">疾患・臨床<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">2</span></button></div>
+<div class="grid"><a href="../pulm/spirometry-normal.html" class="tcard" data-sc="function"><img src="../img/pulm_spirometry_normal.png" alt="スパイロメトリー（正常）" loading="lazy"><div class="tname">スパイロメトリー（正常）</div><div class="tdesc">正常スパイロメトリーテンプレート。FVC・FEV1の正常パターンをプロット。</div></a>
+<a href="../pulm/spirometry-obstructive.html" class="tcard" data-sc="function"><img src="../img/pulm_spirometry_obstructive.png" alt="スパイロメトリー（閉塞性）" loading="lazy"><div class="tname">スパイロメトリー（閉塞性）</div><div class="tdesc">閉塞性パターンのスパイロメトリーテンプレート。FEV1/FVC低下をプロット。</div></a>
+<a href="../pulm/spirometry-restrictive.html" class="tcard" data-sc="function"><img src="../img/pulm_spirometry_restrictive.png" alt="スパイロメトリー（拘束性）" loading="lazy"><div class="tname">スパイロメトリー（拘束性）</div><div class="tdesc">拘束性パターンのスパイロメトリーテンプレート。FVC低下をプロット。</div></a>
+<a href="../pulm/flow-volume-normal.html" class="tcard" data-sc="function"><img src="../img/pulm_flow_volume_normal.png" alt="フローボリューム（正常）" loading="lazy"><div class="tname">フローボリューム（正常）</div><div class="tdesc">正常フローボリュームループテンプレート。呼気・吸気のパターンをプロット。</div></a>
+<a href="../pulm/flow-volume-obstruct.html" class="tcard" data-sc="function"><img src="../img/pulm_flow_volume_obstruct.png" alt="フローボリューム（閉塞性）" loading="lazy"><div class="tname">フローボリューム（閉塞性）</div><div class="tdesc">閉塞性フローボリュームループテンプレート。呼気流量低下のパターンをプロット。</div></a>
+<a href="../pulm/flow-volume-restrict.html" class="tcard" data-sc="function"><img src="../img/pulm_flow_volume_restrict.png" alt="フローボリューム（拘束性）" loading="lazy"><div class="tname">フローボリューム（拘束性）</div><div class="tdesc">拘束性フローボリュームループテンプレート。肺容量減少のパターンをプロット。</div></a>
+<a href="../pulm/flow-volume-uao.html" class="tcard" data-sc="function"><img src="../img/pulm_flow_volume_uao.png" alt="フローボリューム（上気道閉塞）" loading="lazy"><div class="tname">フローボリューム（上気道閉塞）</div><div class="tdesc">上気道閉塞のフローボリュームテンプレート。固定性/可変性閉塞のパターンをプロット。</div></a>
+<a href="../pulm/chest-wall-compliance.html" class="tcard" data-sc="mech"><img src="../img/pulm_chest_wall_compliance.png" alt="胸壁コンプライアンス" loading="lazy"><div class="tname">胸壁コンプライアンス</div><div class="tdesc">胸壁コンプライアンス曲線テンプレート。胸壁の圧-容量関係をプロット。</div></a>
+<a href="../pulm/total-compliance.html" class="tcard" data-sc="mech"><img src="../img/pulm_total_compliance.png" alt="呼吸系総コンプライアンス" loading="lazy"><div class="tname">呼吸系総コンプライアンス</div><div class="tdesc">呼吸系総コンプライアンステンプレート。肺+胸壁の合計をプロット。</div></a>
+<a href="../pulm/work-breathing.html" class="tcard" data-sc="mech"><img src="../img/pulm_work_breathing.png" alt="呼吸仕事量" loading="lazy"><div class="tname">呼吸仕事量</div><div class="tdesc">呼吸仕事量テンプレート。圧-容量曲線で囲まれた面積を評価。</div></a>
+<a href="../pulm/o2-co2-diagram.html" class="tcard" data-sc="mech"><img src="../img/pulm_o2_co2_diagram.png" alt="O2-CO2ダイアグラム" loading="lazy"><div class="tname">O2-CO2ダイアグラム</div><div class="tdesc">O2-CO2ダイアグラムテンプレート。換気と灌流の関係を評価。</div></a>
+<a href="../pulm/capnography-wave.html" class="tcard" data-sc="gas_ex"><img src="../img/pulm_capnography_wave.png" alt="カプノグラフィー波形" loading="lazy"><div class="tname">カプノグラフィー波形</div><div class="tdesc">カプノグラフィー波形テンプレート。呼気CO2のモニタリングに使用。</div></a>
+<a href="../pulm/ventilator-waveform.html" class="tcard" data-sc="mech"><img src="../img/pulm_ventilator_waveform.png" alt="人工呼吸器波形" loading="lazy"><div class="tname">人工呼吸器波形</div><div class="tdesc">人工呼吸器の圧・流量波形テンプレート。</div></a>
+<a href="../pulm/dead-space.html" class="tcard" data-sc="mech"><img src="../img/pulm_dead_space.png" alt="死腔計算" loading="lazy"><div class="tname">死腔計算</div><div class="tdesc">死腔計算テンプレート。Fowler法による解剖学的死腔の決定に使用。</div></a>
+<a href="../pulm/lung-compliance-disease.html" class="tcard" data-sc="mech"><img src="../img/pulm_lung_compliance_disease.png" alt="肺コンプライアンス（疾患）" loading="lazy"><div class="tname">肺コンプライアンス（疾患）</div><div class="tdesc">疾患別肺コンプライアンス比較テンプレート。正常/線維症/肺気腫を比較。</div></a>
+<a href="../pulm/flow-volume-loop.html" class="tcard" data-sc="function"><img src="../img/pulm_flow_volume_loop.png" alt="フローボリューム曲線" loading="lazy"><div class="tname">フローボリューム曲線</div><div class="tdesc">フローボリューム曲線テンプレート。肺機能検査（スパイロメトリー）の結果記録に使用。</div></a>
+<a href="../pulm/pv-loop-lung.html" class="tcard" data-sc="mech"><img src="../img/pulm_pv_loop_lung.png" alt="肺圧容積曲線" loading="lazy"><div class="tname">肺圧容積曲線</div><div class="tdesc">肺圧容積曲線テンプレート。肺コンプライアンスの評価に使用。</div></a>
+<a href="../pulm/ventilation-perfusion.html" class="tcard" data-sc="mech"><img src="../img/pulm_ventilation_perfusion.png" alt="換気血流比ダイアグラム" loading="lazy"><div class="tname">換気血流比ダイアグラム</div><div class="tdesc">換気血流比ダイアグラムテンプレート。肺のV/Qミスマッチの評価に使用。</div></a>
+<a href="../pulm/peak-flow-diary.html" class="tcard" data-sc="function"><img src="../img/pulm_peak_flow_diary.png" alt="ピークフローダイアリー" loading="lazy"><div class="tname">ピークフローダイアリー</div><div class="tdesc">ピークフローダイアリーテンプレート。喘息の自己管理・経過記録に使用。</div></a>
+<a href="../pulm/fev1-comparison-box.html" class="tcard" data-sc="function"><img src="../img/pulm_fev1_comparison_box.png" alt="疾患別FEV1（箱ひげ図）" loading="lazy"><div class="tname">疾患別FEV1（箱ひげ図）</div><div class="tdesc">疾患別のFEV1分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../pulm/heatmap-abg.html" class="tcard" data-sc="gas_ex"><img src="../img/pulm_heatmap_abg.png" alt="血液ガス解釈ヒートマップ" loading="lazy"><div class="tname">血液ガス解釈ヒートマップ</div><div class="tdesc">動脈血ガスのパラメータ別変化パターンをヒートマップ表示するテンプレート。</div></a>
+<a href="../pulm/radar-copd-assess.html" class="tcard" data-sc="disease_p"><img src="../img/pulm_radar_copd_assess.png" alt="COPD評価レーダー" loading="lazy"><div class="tname">COPD評価レーダー</div><div class="tdesc">COPD患者の多面的評価レーダーチャートテンプレート。</div></a>
+<a href="../pulm/km-lung-cancer.html" class="tcard" data-sc="other"><img src="../img/pulm_km_lung_cancer.png" alt="肺癌生存曲線" loading="lazy"><div class="tname">肺癌生存曲線</div><div class="tdesc">肺癌のステージ別生存曲線テンプレート。</div></a>
+<a href="../pulm/roc-ctpa.html" class="tcard" data-sc="other"><img src="../img/pulm_roc_ctpa.png" alt="肺塞栓診断ROC曲線" loading="lazy"><div class="tname">肺塞栓診断ROC曲線</div><div class="tdesc">肺塞栓症の診断マーカー（D-dimer等）のROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

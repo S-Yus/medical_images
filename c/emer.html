@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>救急（Emergency）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="救急のレポート用グラフテンプレート一覧。15種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="救急のレポート用グラフテンプレート一覧。19種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,22 +39,40 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 救急</div>
 <main>
 <h1 class="cat-title">救急 (Emergency)</h1>
-<p class="count">15 templates available</p>
-<div class="grid"><a href="../emer/triage.html" class="tcard"><img src="../img/emer_triage.png" alt="トリアージスコアリング" loading="lazy"><div class="tname">トリアージスコアリング</div><div class="tdesc">トリアージスコアリングテンプレート。緊急度分類に使用。</div></a>
-<a href="../emer/abcde.html" class="tcard"><img src="../img/emer_abcde.png" alt="ABCDE評価" loading="lazy"><div class="tname">ABCDE評価</div><div class="tdesc">ABCDE系統的評価テンプレート。救急初期評価の記録に使用。</div></a>
-<a href="../emer/iss.html" class="tcard"><img src="../img/emer_iss.png" alt="外傷重症度スコア" loading="lazy"><div class="tname">外傷重症度スコア</div><div class="tdesc">ISS（外傷重症度スコア）テンプレート。6領域のAISスコアをプロット。</div></a>
-<a href="../emer/rule-of-9s.html" class="tcard"><img src="../img/emer_rule_of_9s.png" alt="熱傷（9の法則）" loading="lazy"><div class="tname">熱傷（9の法則）</div><div class="tdesc">9の法則による熱傷面積テンプレート。TBSA%の算出に使用。</div></a>
-<a href="../emer/shock-class.html" class="tcard"><img src="../img/emer_shock_class.png" alt="ショック分類" loading="lazy"><div class="tname">ショック分類</div><div class="tdesc">出血性ショック分類テンプレート。I-IV度の出血量と生理学的指標をプロット。</div></a>
-<a href="../emer/resuscitation.html" class="tcard"><img src="../img/emer_resuscitation.png" alt="蘇生タイムライン" loading="lazy"><div class="tname">蘇生タイムライン</div><div class="tdesc">心肺蘇生タイムラインテンプレート。CPR/除細動/薬剤投与のタイミングをプロット。</div></a>
-<a href="../emer/toxicology.html" class="tcard"><img src="../img/emer_toxicology.png" alt="中毒スクリーニング" loading="lazy"><div class="tname">中毒スクリーニング</div><div class="tdesc">中毒スクリーニングテンプレート。薬物/毒物の血中濃度を評価。</div></a>
-<a href="../emer/sepsis-qsofa.html" class="tcard"><img src="../img/emer_sepsis_qsofa.png" alt="敗血症（qSOFA）" loading="lazy"><div class="tname">敗血症（qSOFA）</div><div class="tdesc">qSOFAスコアテンプレート。敗血症のスクリーニングと経過観察に使用。</div></a>
-<a href="../emer/rapid-sequence.html" class="tcard"><img src="../img/emer_rapid_sequence.png" alt="迅速導入挿管" loading="lazy"><div class="tname">迅速導入挿管</div><div class="tdesc">RSI（迅速導入挿管）タイムラインテンプレート。各ステップのタイミングをプロット。</div></a>
-<a href="../emer/acls.html" class="tcard"><img src="../img/emer_acls.png" alt="ACLSアルゴリズム" loading="lazy"><div class="tname">ACLSアルゴリズム</div><div class="tdesc">ACLSアルゴリズムテンプレート。心停止対応のタイミングチャートをプロット。</div></a>
-<a href="../emer/radar-vitals-5.html" class="tcard"><img src="../img/emer_radar_vitals_5.png" alt="バイタルサインレーダーチャート（5軸）" loading="lazy"><div class="tname">バイタルサインレーダーチャート（5軸）</div><div class="tdesc">5軸のバイタルサインレーダーチャート。救急での迅速評価に使用。</div></a>
-<a href="../emer/sofa-trend.html" class="tcard"><img src="../img/emer_sofa_trend.png" alt="SOFAスコア推移" loading="lazy"><div class="tname">SOFAスコア推移</div><div class="tdesc">SOFAスコア推移テンプレート。ICUでの臓器不全の経時的評価に使用。</div></a>
-<a href="../emer/sepsis-bundle.html" class="tcard"><img src="../img/emer_sepsis_bundle.png" alt="敗血症バンドルタイムライン" loading="lazy"><div class="tname">敗血症バンドルタイムライン</div><div class="tdesc">敗血症バンドルタイムラインテンプレート。Hour-1バンドルの実施記録に使用。</div></a>
-<a href="../emer/trauma-vitals.html" class="tcard"><img src="../img/emer_trauma_vitals.png" alt="外傷バイタルチャート" loading="lazy"><div class="tname">外傷バイタルチャート</div><div class="tdesc">外傷バイタルチャートテンプレート。外傷初期対応のバイタル推移を記録。</div></a>
-<a href="../emer/abg-interpretation.html" class="tcard"><img src="../img/emer_abg_interpretation.png" alt="血液ガス解釈マップ" loading="lazy"><div class="tname">血液ガス解釈マップ</div><div class="tdesc">血液ガス解釈マップテンプレート。酸塩基障害の分類・鑑別に使用。</div></a></div>
+<p class="count">19 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">19</span></button><button class="tab" data-sc="resuscitation">蘇生・外傷<span class="tab-count">7</span></button><button class="tab" data-sc="triage">トリアージ・評価<span class="tab-count">6</span></button><button class="tab" data-sc="toxicology">中毒・環境<span class="tab-count">2</span></button><button class="tab" data-sc="procedure">手技・処置<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">3</span></button></div>
+<div class="grid"><a href="../emer/triage.html" class="tcard" data-sc="triage"><img src="../img/emer_triage.png" alt="トリアージスコアリング" loading="lazy"><div class="tname">トリアージスコアリング</div><div class="tdesc">トリアージスコアリングテンプレート。緊急度分類に使用。</div></a>
+<a href="../emer/abcde.html" class="tcard" data-sc="other"><img src="../img/emer_abcde.png" alt="ABCDE評価" loading="lazy"><div class="tname">ABCDE評価</div><div class="tdesc">ABCDE系統的評価テンプレート。救急初期評価の記録に使用。</div></a>
+<a href="../emer/iss.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_iss.png" alt="外傷重症度スコア" loading="lazy"><div class="tname">外傷重症度スコア</div><div class="tdesc">ISS（外傷重症度スコア）テンプレート。6領域のAISスコアをプロット。</div></a>
+<a href="../emer/rule-of-9s.html" class="tcard" data-sc="toxicology"><img src="../img/emer_rule_of_9s.png" alt="熱傷（9の法則）" loading="lazy"><div class="tname">熱傷（9の法則）</div><div class="tdesc">9の法則による熱傷面積テンプレート。TBSA%の算出に使用。</div></a>
+<a href="../emer/shock-class.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_shock_class.png" alt="ショック分類" loading="lazy"><div class="tname">ショック分類</div><div class="tdesc">出血性ショック分類テンプレート。I-IV度の出血量と生理学的指標をプロット。</div></a>
+<a href="../emer/resuscitation.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_resuscitation.png" alt="蘇生タイムライン" loading="lazy"><div class="tname">蘇生タイムライン</div><div class="tdesc">心肺蘇生タイムラインテンプレート。CPR/除細動/薬剤投与のタイミングをプロット。</div></a>
+<a href="../emer/toxicology.html" class="tcard" data-sc="toxicology"><img src="../img/emer_toxicology.png" alt="中毒スクリーニング" loading="lazy"><div class="tname">中毒スクリーニング</div><div class="tdesc">中毒スクリーニングテンプレート。薬物/毒物の血中濃度を評価。</div></a>
+<a href="../emer/sepsis-qsofa.html" class="tcard" data-sc="triage"><img src="../img/emer_sepsis_qsofa.png" alt="敗血症（qSOFA）" loading="lazy"><div class="tname">敗血症（qSOFA）</div><div class="tdesc">qSOFAスコアテンプレート。敗血症のスクリーニングと経過観察に使用。</div></a>
+<a href="../emer/rapid-sequence.html" class="tcard" data-sc="procedure"><img src="../img/emer_rapid_sequence.png" alt="迅速導入挿管" loading="lazy"><div class="tname">迅速導入挿管</div><div class="tdesc">RSI（迅速導入挿管）タイムラインテンプレート。各ステップのタイミングをプロット。</div></a>
+<a href="../emer/acls.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_acls.png" alt="ACLSアルゴリズム" loading="lazy"><div class="tname">ACLSアルゴリズム</div><div class="tdesc">ACLSアルゴリズムテンプレート。心停止対応のタイミングチャートをプロット。</div></a>
+<a href="../emer/radar-vitals-5.html" class="tcard" data-sc="other"><img src="../img/emer_radar_vitals_5.png" alt="バイタルサインレーダーチャート（5軸）" loading="lazy"><div class="tname">バイタルサインレーダーチャート（5軸）</div><div class="tdesc">5軸のバイタルサインレーダーチャート。救急での迅速評価に使用。</div></a>
+<a href="../emer/sofa-trend.html" class="tcard" data-sc="triage"><img src="../img/emer_sofa_trend.png" alt="SOFAスコア推移" loading="lazy"><div class="tname">SOFAスコア推移</div><div class="tdesc">SOFAスコア推移テンプレート。ICUでの臓器不全の経時的評価に使用。</div></a>
+<a href="../emer/sepsis-bundle.html" class="tcard" data-sc="triage"><img src="../img/emer_sepsis_bundle.png" alt="敗血症バンドルタイムライン" loading="lazy"><div class="tname">敗血症バンドルタイムライン</div><div class="tdesc">敗血症バンドルタイムラインテンプレート。Hour-1バンドルの実施記録に使用。</div></a>
+<a href="../emer/trauma-vitals.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_trauma_vitals.png" alt="外傷バイタルチャート" loading="lazy"><div class="tname">外傷バイタルチャート</div><div class="tdesc">外傷バイタルチャートテンプレート。外傷初期対応のバイタル推移を記録。</div></a>
+<a href="../emer/abg-interpretation.html" class="tcard" data-sc="other"><img src="../img/emer_abg_interpretation.png" alt="血液ガス解釈マップ" loading="lazy"><div class="tname">血液ガス解釈マップ</div><div class="tdesc">血液ガス解釈マップテンプレート。酸塩基障害の分類・鑑別に使用。</div></a>
+<a href="../emer/lactate-comparison-box.html" class="tcard" data-sc="triage"><img src="../img/emer_lactate_comparison_box.png" alt="重症度別乳酸値（箱ひげ図）" loading="lazy"><div class="tname">重症度別乳酸値（箱ひげ図）</div><div class="tdesc">重症度別の乳酸値分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../emer/heatmap-trauma-injury.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_heatmap_trauma_injury.png" alt="外傷損傷ヒートマップ" loading="lazy"><div class="tname">外傷損傷ヒートマップ</div><div class="tdesc">外傷の損傷パターンをヒートマップで表示するテンプレート。</div></a>
+<a href="../emer/radar-sepsis-severity.html" class="tcard" data-sc="triage"><img src="../img/emer_radar_sepsis_severity.png" alt="敗血症重症度レーダー" loading="lazy"><div class="tname">敗血症重症度レーダー</div><div class="tdesc">敗血症の重症度を多面的に評価するレーダーチャートテンプレート。</div></a>
+<a href="../emer/km-trauma.html" class="tcard" data-sc="resuscitation"><img src="../img/emer_km_trauma.png" alt="外傷生存曲線" loading="lazy"><div class="tname">外傷生存曲線</div><div class="tdesc">外傷患者のISS別生存曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

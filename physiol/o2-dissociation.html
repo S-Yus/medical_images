@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>酸素解離曲線 テンプレート | MedGraph Free</title>
-<meta name="description" content="酸素解離曲線テンプレート。ヘモグロビンの酸素運搬能を評価。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<meta name="description" content="ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
@@ -12,12 +12,12 @@
 <link rel="canonical" href="https://med-graph.com/physiol/o2-dissociation.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="酸素解離曲線 テンプレート | MedGraph Free">
-<meta property="og:description" content="酸素解離曲線テンプレート。ヘモグロビンの酸素運搬能を評価。">
+<meta property="og:description" content="ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。">
 <meta property="og:image" content="https://med-graph.com/img/physiol_o2_dissociation.png">
 <meta property="og:url" content="https://med-graph.com/physiol/o2-dissociation.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"酸素解離曲線","description":"酸素解離曲線テンプレート。ヘモグロビンの酸素運搬能を評価。","contentUrl":"https://med-graph.com/img/physiol_o2_dissociation.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"酸素解離曲線","description":"ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。","contentUrl":"https://med-graph.com/img/physiol_o2_dissociation.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -72,8 +72,8 @@ footer a{color:#60a5fa}
 <div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/physiol.html">生理学</a> &gt; 酸素解離曲線</div>
 <main>
 <h1 class="page-title">酸素解離曲線</h1>
-<p class="desc">酸素解離曲線テンプレート。ヘモグロビンの酸素運搬能を評価。</p>
-<div class="tags"><span>酸素解離</span><span>ヘモグロビン</span><span>SpO2</span><span>PO2</span></div>
+<p class="desc">ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</p>
+<div class="tags"><span>酸素解離</span><span>ヘモグロビン</span><span>S字型</span><span>SaO2</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -114,7 +114,7 @@ ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
   scale_x_continuous(name = "PO2 (mmHg)", limits = c(0, 100)) +
-  scale_y_continuous(name = "O2 Saturation (%)", limits = c(0, 100)) +
+  scale_y_continuous(name = "O2 saturation (%)", limits = c(0, 100)) +
   labs(title = "O2 Dissociation Curve") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

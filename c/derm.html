@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>皮膚科（Dermatology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="皮膚科のレポート用グラフテンプレート一覧。4種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="皮膚科のレポート用グラフテンプレート一覧。10種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,11 +39,31 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 皮膚科</div>
 <main>
 <h1 class="cat-title">皮膚科 (Dermatology)</h1>
-<p class="count">4 templates available</p>
-<div class="grid"><a href="../derm/body-score-grid.html" class="tcard"><img src="../img/derm_body_score_grid.png" alt="体表面積スコアグリッド" loading="lazy"><div class="tname">体表面積スコアグリッド</div><div class="tdesc">体表面積スコアグリッドテンプレート。皮膚疾患の範囲評価（PASI等）に使用。</div></a>
-<a href="../derm/pasi-trend.html" class="tcard"><img src="../img/derm_pasi_trend.png" alt="PASIスコア推移" loading="lazy"><div class="tname">PASIスコア推移</div><div class="tdesc">PASIスコア推移テンプレート。乾癬の重症度評価・治療効果モニタリングに使用。</div></a>
-<a href="../derm/scorad-trend.html" class="tcard"><img src="../img/derm_scorad_trend.png" alt="SCORADスコア推移" loading="lazy"><div class="tname">SCORADスコア推移</div><div class="tdesc">SCORADスコア推移テンプレート。アトピー性皮膚炎の重症度評価に使用。</div></a>
-<a href="../derm/wound-size.html" class="tcard"><img src="../img/derm_wound_size.png" alt="創傷サイズ推移" loading="lazy"><div class="tname">創傷サイズ推移</div><div class="tdesc">創傷サイズ推移テンプレート。褥瘡等の創傷面積の経時的変化を記録。</div></a></div>
+<p class="count">10 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">10</span></button><button class="tab" data-sc="scoring">重症度評価<span class="tab-count">7</span></button><button class="tab" data-sc="wound_d">創傷・治癒<span class="tab-count">2</span></button><button class="tab" data-sc="photo">光線・アレルギー<span class="tab-count">1</span></button></div>
+<div class="grid"><a href="../derm/body-score-grid.html" class="tcard" data-sc="scoring"><img src="../img/derm_body_score_grid.png" alt="体表面積スコアグリッド" loading="lazy"><div class="tname">体表面積スコアグリッド</div><div class="tdesc">体表面積スコアグリッドテンプレート。皮膚疾患の範囲評価（PASI等）に使用。</div></a>
+<a href="../derm/pasi-trend.html" class="tcard" data-sc="scoring"><img src="../img/derm_pasi_trend.png" alt="PASIスコア推移" loading="lazy"><div class="tname">PASIスコア推移</div><div class="tdesc">PASIスコア推移テンプレート。乾癬の重症度評価・治療効果モニタリングに使用。</div></a>
+<a href="../derm/scorad-trend.html" class="tcard" data-sc="scoring"><img src="../img/derm_scorad_trend.png" alt="SCORADスコア推移" loading="lazy"><div class="tname">SCORADスコア推移</div><div class="tdesc">SCORADスコア推移テンプレート。アトピー性皮膚炎の重症度評価に使用。</div></a>
+<a href="../derm/wound-size.html" class="tcard" data-sc="scoring"><img src="../img/derm_wound_size.png" alt="創傷サイズ推移" loading="lazy"><div class="tname">創傷サイズ推移</div><div class="tdesc">創傷サイズ推移テンプレート。褥瘡等の創傷面積の経時的変化を記録。</div></a>
+<a href="../derm/pasi-comparison-box.html" class="tcard" data-sc="scoring"><img src="../img/derm_pasi_comparison_box.png" alt="治療法別PASI（箱ひげ図）" loading="lazy"><div class="tname">治療法別PASI（箱ひげ図）</div><div class="tdesc">乾癬治療法別のPASI分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../derm/heatmap-patch-test.html" class="tcard" data-sc="wound_d"><img src="../img/derm_heatmap_patch_test.png" alt="パッチテストヒートマップ" loading="lazy"><div class="tname">パッチテストヒートマップ</div><div class="tdesc">パッチテストの結果をヒートマップで表示するテンプレート。</div></a>
+<a href="../derm/radar-skin-severity.html" class="tcard" data-sc="scoring"><img src="../img/derm_radar_skin_severity.png" alt="皮膚疾患重症度レーダー" loading="lazy"><div class="tname">皮膚疾患重症度レーダー</div><div class="tdesc">皮膚疾患の重症度を多面的に評価するレーダーチャートテンプレート。</div></a>
+<a href="../derm/km-melanoma.html" class="tcard" data-sc="photo"><img src="../img/derm_km_melanoma.png" alt="悪性黒色腫生存曲線" loading="lazy"><div class="tname">悪性黒色腫生存曲線</div><div class="tdesc">悪性黒色腫のステージ別生存曲線テンプレート。</div></a>
+<a href="../derm/roc-dermoscopy.html" class="tcard" data-sc="wound_d"><img src="../img/derm_roc_dermoscopy.png" alt="ダーモスコピーROC曲線" loading="lazy"><div class="tname">ダーモスコピーROC曲線</div><div class="tdesc">ダーモスコピーによる悪性腫瘍診断のROC曲線テンプレート。</div></a>
+<a href="../derm/forest-biologic-psoriasis.html" class="tcard" data-sc="scoring"><img src="../img/derm_forest_biologic_psoriasis.png" alt="乾癬生物学的製剤メタアナリシス" loading="lazy"><div class="tname">乾癬生物学的製剤メタアナリシス</div><div class="tdesc">乾癬生物学的製剤のメタアナリシスフォレストプロットテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

@@ -1,0 +1,272 @@
+[
+  {
+    "field": "derm",
+    "field_ja": "皮膚科",
+    "n_templates": 4,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "gi",
+    "field_ja": "消化器",
+    "n_templates": 15,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "ortho",
+    "field_ja": "整形外科",
+    "n_templates": 13,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "psych",
+    "field_ja": "精神科",
+    "n_templates": 14,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "radio",
+    "field_ja": "放射線",
+    "n_templates": 10,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "uro",
+    "field_ja": "泌尿器科",
+    "n_templates": 3,
+    "n_figure_types": 1,
+    "expected_types": 17,
+    "coverage_pct": 5.9,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "ent",
+    "field_ja": "耳鼻咽喉科",
+    "n_templates": 3,
+    "n_figure_types": 2,
+    "expected_types": 18,
+    "coverage_pct": 11.1,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "neuro",
+    "field_ja": "神経科学",
+    "n_templates": 30,
+    "n_figure_types": 2,
+    "expected_types": 18,
+    "coverage_pct": 11.1,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado", "ecg_tracing"],
+    "status": "weak"
+  },
+  {
+    "field": "obgyn",
+    "field_ja": "産婦人科",
+    "n_templates": 21,
+    "n_figure_types": 2,
+    "expected_types": 18,
+    "coverage_pct": 11.1,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado", "growth_chart"],
+    "status": "weak"
+  },
+  {
+    "field": "emer",
+    "field_ja": "救急",
+    "n_templates": 15,
+    "n_figure_types": 2,
+    "expected_types": 17,
+    "coverage_pct": 11.8,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "endo",
+    "field_ja": "内分泌",
+    "n_templates": 26,
+    "n_figure_types": 2,
+    "expected_types": 17,
+    "coverage_pct": 11.8,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "hemato",
+    "field_ja": "血液",
+    "n_templates": 24,
+    "n_figure_types": 2,
+    "expected_types": 17,
+    "coverage_pct": 11.8,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "nephro",
+    "field_ja": "腎臓",
+    "n_templates": 20,
+    "n_figure_types": 2,
+    "expected_types": 17,
+    "coverage_pct": 11.8,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "surg",
+    "field_ja": "外科・麻酔",
+    "n_templates": 14,
+    "n_figure_types": 2,
+    "expected_types": 17,
+    "coverage_pct": 11.8,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "eye",
+    "field_ja": "眼科",
+    "n_templates": 16,
+    "n_figure_types": 3,
+    "expected_types": 18,
+    "coverage_pct": 16.7,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "pulm",
+    "field_ja": "呼吸器",
+    "n_templates": 21,
+    "n_figure_types": 3,
+    "expected_types": 18,
+    "coverage_pct": 16.7,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "peds",
+    "field_ja": "小児科",
+    "n_templates": 28,
+    "n_figure_types": 4,
+    "expected_types": 18,
+    "coverage_pct": 22.2,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "nomogram", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "cardio",
+    "field_ja": "循環器",
+    "n_templates": 32,
+    "n_figure_types": 5,
+    "expected_types": 20,
+    "coverage_pct": 25,
+    "missing_types": ["curve_fit", "scatter_plot", "boxplot", "violin", "bar_chart", "histogram", "kaplan_meier", "roc_curve", "forest_plot", "heatmap", "radar_chart", "dot_plot", "scatter_regression", "calibration_plot", "tornado"],
+    "status": "weak"
+  },
+  {
+    "field": "micro",
+    "field_ja": "微生物学",
+    "n_templates": 25,
+    "n_figure_types": 3,
+    "expected_types": 11,
+    "coverage_pct": 27.3,
+    "missing_types": ["curve_fit", "scatter_plot", "scatter_regression", "bar_chart", "boxplot", "histogram", "radar_chart", "dot_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "pharm",
+    "field_ja": "薬理学",
+    "n_templates": 38,
+    "n_figure_types": 3,
+    "expected_types": 11,
+    "coverage_pct": 27.3,
+    "missing_types": ["curve_fit", "scatter_plot", "scatter_regression", "bar_chart", "boxplot", "histogram", "radar_chart", "dot_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "path",
+    "field_ja": "病理学",
+    "n_templates": 17,
+    "n_figure_types": 4,
+    "expected_types": 13,
+    "coverage_pct": 30.8,
+    "missing_types": ["curve_fit", "log_plot", "scatter_plot", "scatter_regression", "bar_chart", "boxplot", "histogram", "radar_chart", "dot_plot", "manhattan_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "biochem",
+    "field_ja": "生化学",
+    "n_templates": 46,
+    "n_figure_types": 4,
+    "expected_types": 11,
+    "coverage_pct": 36.4,
+    "missing_types": ["scatter_plot", "scatter_regression", "bar_chart", "boxplot", "heatmap", "histogram", "radar_chart", "dot_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "chem",
+    "field_ja": "臨床検査",
+    "n_templates": 19,
+    "n_figure_types": 4,
+    "expected_types": 11,
+    "coverage_pct": 36.4,
+    "missing_types": ["scatter_plot", "bar_chart", "histogram", "roc_curve", "calibration_plot", "dot_plot", "scatter_regression"],
+    "status": "weak"
+  },
+  {
+    "field": "immuno",
+    "field_ja": "免疫学",
+    "n_templates": 24,
+    "n_figure_types": 4,
+    "expected_types": 11,
+    "coverage_pct": 36.4,
+    "missing_types": ["curve_fit", "scatter_regression", "bar_chart", "boxplot", "heatmap", "radar_chart", "dot_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "physiol",
+    "field_ja": "生理学",
+    "n_templates": 47,
+    "n_figure_types": 4,
+    "expected_types": 11,
+    "coverage_pct": 36.4,
+    "missing_types": ["curve_fit", "scatter_plot", "scatter_regression", "boxplot", "heatmap", "histogram", "radar_chart", "dot_plot"],
+    "status": "weak"
+  },
+  {
+    "field": "epi",
+    "field_ja": "疫学・公衆衛生",
+    "n_templates": 33,
+    "n_figure_types": 6,
+    "expected_types": 14,
+    "coverage_pct": 42.9,
+    "missing_types": ["bar_chart", "histogram", "scatter_plot", "heatmap", "kaplan_meier", "roc_curve", "dot_plot", "boxplot"],
+    "status": "weak"
+  },
+  {
+    "field": "stat",
+    "field_ja": "臨床統計",
+    "n_templates": 78,
+    "n_figure_types": 19,
+    "expected_types": 19,
+    "coverage_pct": 100,
+    "missing_types": "scatter_regression",
+    "status": "good"
+  }
+]

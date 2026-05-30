@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>放射線（Radiology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="放射線のレポート用グラフテンプレート一覧。10種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="放射線のレポート用グラフテンプレート一覧。14種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,17 +39,35 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 放射線</div>
 <main>
 <h1 class="cat-title">放射線 (Radiology)</h1>
-<p class="count">10 templates available</p>
-<div class="grid"><a href="../radio/hounsfield.html" class="tcard"><img src="../img/radio_hounsfield.png" alt="ハウンスフィールド値スケール" loading="lazy"><div class="tname">ハウンスフィールド値スケール</div><div class="tdesc">ハウンスフィールド値スケールテンプレート。各組織のCT値をプロット。</div></a>
-<a href="../radio/contrast-enhancement.html" class="tcard"><img src="../img/radio_contrast_enhancement.png" alt="造影効果曲線" loading="lazy"><div class="tname">造影効果曲線</div><div class="tdesc">造影効果曲線テンプレート。ダイナミックCT/MRIの造影パターンをプロット。</div></a>
-<a href="../radio/dwi-adc.html" class="tcard"><img src="../img/radio_dwi_adc.png" alt="DWI/ADCテンプレート" loading="lazy"><div class="tname">DWI/ADCテンプレート</div><div class="tdesc">DWI/ADCテンプレート。拡散強調画像のb値と信号強度の関係をプロット。</div></a>
-<a href="../radio/suv.html" class="tcard"><img src="../img/radio_suv.png" alt="SUV測定テンプレート" loading="lazy"><div class="tname">SUV測定テンプレート</div><div class="tdesc">SUV測定テンプレート。PET検査のSUV値の経時変化をプロット。</div></a>
-<a href="../radio/radiation-dose.html" class="tcard"><img src="../img/radio_radiation_dose.png" alt="放射線量チャート" loading="lazy"><div class="tname">放射線量チャート</div><div class="tdesc">放射線量チャートテンプレート。各検査の被曝線量を比較。</div></a>
-<a href="../radio/ct-window.html" class="tcard"><img src="../img/radio_ct_window.png" alt="CTウィンドウ設定" loading="lazy"><div class="tname">CTウィンドウ設定</div><div class="tdesc">CTウィンドウ設定テンプレート。WW/WLの概念をプロット。</div></a>
-<a href="../radio/mri-signal.html" class="tcard"><img src="../img/radio_mri_signal.png" alt="MRI信号強度" loading="lazy"><div class="tname">MRI信号強度</div><div class="tdesc">MRI信号強度テンプレート。T1WI/T2WIでの組織信号をプロット。</div></a>
-<a href="../radio/us-measurement.html" class="tcard"><img src="../img/radio_us_measurement.png" alt="超音波計測テンプレート" loading="lazy"><div class="tname">超音波計測テンプレート</div><div class="tdesc">超音波計測テンプレート。各臓器の計測値記録に使用。</div></a>
-<a href="../radio/hu-scale.html" class="tcard"><img src="../img/radio_hu_scale.png" alt="ハウンスフィールド値スケール" loading="lazy"><div class="tname">ハウンスフィールド値スケール</div><div class="tdesc">ハウンスフィールド値スケールテンプレート。CT画像の組織密度評価に使用。</div></a>
-<a href="../radio/dicom-window.html" class="tcard"><img src="../img/radio_dicom_window.png" alt="CTウインドウ設定" loading="lazy"><div class="tname">CTウインドウ設定</div><div class="tdesc">CTウインドウ設定テンプレート。各組織・目的別のウインドウ条件を記録。</div></a></div>
+<p class="count">14 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">14</span></button><button class="tab" data-sc="dose">線量・防護<span class="tab-count">7</span></button><button class="tab" data-sc="contrast">造影・画像<span class="tab-count">2</span></button><button class="tab" data-sc="nuclear">核医学<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../radio/hounsfield.html" class="tcard" data-sc="dose"><img src="../img/radio_hounsfield.png" alt="ハウンスフィールド値スケール" loading="lazy"><div class="tname">ハウンスフィールド値スケール</div><div class="tdesc">ハウンスフィールド値スケールテンプレート。各組織のCT値をプロット。</div></a>
+<a href="../radio/contrast-enhancement.html" class="tcard" data-sc="dose"><img src="../img/radio_contrast_enhancement.png" alt="造影効果曲線" loading="lazy"><div class="tname">造影効果曲線</div><div class="tdesc">造影効果曲線テンプレート。ダイナミックCT/MRIの造影パターンをプロット。</div></a>
+<a href="../radio/dwi-adc.html" class="tcard" data-sc="contrast"><img src="../img/radio_dwi_adc.png" alt="DWI/ADCテンプレート" loading="lazy"><div class="tname">DWI/ADCテンプレート</div><div class="tdesc">DWI/ADCテンプレート。拡散強調画像のb値と信号強度の関係をプロット。</div></a>
+<a href="../radio/suv.html" class="tcard" data-sc="nuclear"><img src="../img/radio_suv.png" alt="SUV測定テンプレート" loading="lazy"><div class="tname">SUV測定テンプレート</div><div class="tdesc">SUV測定テンプレート。PET検査のSUV値の経時変化をプロット。</div></a>
+<a href="../radio/radiation-dose.html" class="tcard" data-sc="dose"><img src="../img/radio_radiation_dose.png" alt="放射線量チャート" loading="lazy"><div class="tname">放射線量チャート</div><div class="tdesc">放射線量チャートテンプレート。各検査の被曝線量を比較。</div></a>
+<a href="../radio/ct-window.html" class="tcard" data-sc="dose"><img src="../img/radio_ct_window.png" alt="CTウィンドウ設定" loading="lazy"><div class="tname">CTウィンドウ設定</div><div class="tdesc">CTウィンドウ設定テンプレート。WW/WLの概念をプロット。</div></a>
+<a href="../radio/mri-signal.html" class="tcard" data-sc="contrast"><img src="../img/radio_mri_signal.png" alt="MRI信号強度" loading="lazy"><div class="tname">MRI信号強度</div><div class="tdesc">MRI信号強度テンプレート。T1WI/T2WIでの組織信号をプロット。</div></a>
+<a href="../radio/us-measurement.html" class="tcard" data-sc="other"><img src="../img/radio_us_measurement.png" alt="超音波計測テンプレート" loading="lazy"><div class="tname">超音波計測テンプレート</div><div class="tdesc">超音波計測テンプレート。各臓器の計測値記録に使用。</div></a>
+<a href="../radio/hu-scale.html" class="tcard" data-sc="dose"><img src="../img/radio_hu_scale.png" alt="ハウンスフィールド値スケール" loading="lazy"><div class="tname">ハウンスフィールド値スケール</div><div class="tdesc">ハウンスフィールド値スケールテンプレート。CT画像の組織密度評価に使用。</div></a>
+<a href="../radio/dicom-window.html" class="tcard" data-sc="other"><img src="../img/radio_dicom_window.png" alt="CTウインドウ設定" loading="lazy"><div class="tname">CTウインドウ設定</div><div class="tdesc">CTウインドウ設定テンプレート。各組織・目的別のウインドウ条件を記録。</div></a>
+<a href="../radio/hounsfield-comparison-box.html" class="tcard" data-sc="dose"><img src="../img/radio_hounsfield_comparison_box.png" alt="組織別HU値（箱ひげ図）" loading="lazy"><div class="tname">組織別HU値（箱ひげ図）</div><div class="tdesc">組織別のHU値分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../radio/heatmap-dose.html" class="tcard" data-sc="dose"><img src="../img/radio_heatmap_dose.png" alt="放射線量ヒートマップ" loading="lazy"><div class="tname">放射線量ヒートマップ</div><div class="tdesc">検査法別・部位別の放射線量をヒートマップで表示するテンプレート。</div></a>
+<a href="../radio/radar-image-quality.html" class="tcard" data-sc="other"><img src="../img/radio_radar_image_quality.png" alt="画質評価レーダー" loading="lazy"><div class="tname">画質評価レーダー</div><div class="tdesc">画像品質の多面的評価レーダーチャートテンプレート。</div></a>
+<a href="../radio/roc-lesion.html" class="tcard" data-sc="other"><img src="../img/radio_roc_lesion.png" alt="病変検出ROC曲線" loading="lazy"><div class="tname">病変検出ROC曲線</div><div class="tdesc">画像検査の病変検出能ROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

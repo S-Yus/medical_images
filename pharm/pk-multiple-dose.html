@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>反復投与薬物動態曲線 テンプレート | MedGraph Free</title>
-<meta name="description" content="反復投与薬物動態曲線テンプレート。定常状態への到達を表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>薬物動態（反復投与） テンプレート | MedGraph Free</title>
+<meta name="description" content="反復投与時の血中濃度推移テンプレート。定常状態への到達をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/pharm/pk-multiple-dose.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="反復投与薬物動態曲線 テンプレート | MedGraph Free">
-<meta property="og:description" content="反復投与薬物動態曲線テンプレート。定常状態への到達を表示。">
+<meta property="og:title" content="薬物動態（反復投与） テンプレート | MedGraph Free">
+<meta property="og:description" content="反復投与時の血中濃度推移テンプレート。定常状態への到達をプロット。">
 <meta property="og:image" content="https://med-graph.com/img/pharm_pk_multiple_dose.png">
 <meta property="og:url" content="https://med-graph.com/pharm/pk-multiple-dose.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"反復投与薬物動態曲線","description":"反復投与薬物動態曲線テンプレート。定常状態への到達を表示。","contentUrl":"https://med-graph.com/img/pharm_pk_multiple_dose.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"薬物動態（反復投与）","description":"反復投与時の血中濃度推移テンプレート。定常状態への到達をプロット。","contentUrl":"https://med-graph.com/img/pharm_pk_multiple_dose.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,10 +69,10 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/pharm.html">薬理学</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/pharm.html">薬理学</a> &gt; 反復投与薬物動態曲線</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/pharm.html">薬理学</a> &gt; 薬物動態（反復投与）</div>
 <main>
-<h1 class="page-title">反復投与薬物動態曲線</h1>
-<p class="desc">反復投与薬物動態曲線テンプレート。定常状態への到達を表示。</p>
+<h1 class="page-title">薬物動態（反復投与）</h1>
+<p class="desc">反復投与時の血中濃度推移テンプレート。定常状態への到達をプロット。</p>
 <div class="tags"><span>薬物動態</span><span>反復投与</span><span>定常状態</span><span>蓄積</span></div>
 <section class="preview-section">
 <div class="switcher-row">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/pharm_pk_multiple_dose.png" alt="反復投与薬物動態曲線"></div>
+<div class="preview-img"><img id="pv" src="../img/pharm_pk_multiple_dose.png" alt="薬物動態（反復投与）"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/pharm_pk_multiple_dose.png" download class="dl-btn">Download</a>
 </div>
@@ -103,7 +103,7 @@ footer a{color:#60a5fa}
 <div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
 <pre id="rcode">library(ggplot2)
 
-# ---- Multiple Dose PK Curve ----
+# ---- PK: Multiple Dosing ----
 # あなたのデータを入力してください
 df <- data.frame(
   x = c(),
@@ -113,9 +113,9 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Time (hours)", limits = c(0, 72)) +
-  scale_y_continuous(name = "Plasma Concentration (μg/mL)", limits = c(0, 100)) +
-  labs(title = "Multiple Dose PK Curve") +
+  scale_x_continuous(name = "Time (hr)", limits = c(0, 72)) +
+  scale_y_continuous(name = "Plasma concentration (ug/mL)", limits = c(0, 50)) +
+  labs(title = "PK: Multiple Dosing") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>

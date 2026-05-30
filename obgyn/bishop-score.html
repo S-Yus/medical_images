@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ビショップスコア表 テンプレート | MedGraph Free</title>
-<meta name="description" content="ビショップスコア表テンプレート。子宮頸管熟化度の評価に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>ビショップスコア テンプレート | MedGraph Free</title>
+<meta name="description" content="ビショップスコアテンプレート。頸管成熟度の評価に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/obgyn/bishop-score.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ビショップスコア表 テンプレート | MedGraph Free">
-<meta property="og:description" content="ビショップスコア表テンプレート。子宮頸管熟化度の評価に使用。">
+<meta property="og:title" content="ビショップスコア テンプレート | MedGraph Free">
+<meta property="og:description" content="ビショップスコアテンプレート。頸管成熟度の評価に使用。">
 <meta property="og:image" content="https://med-graph.com/img/obgyn_bishop_score.png">
 <meta property="og:url" content="https://med-graph.com/obgyn/bishop-score.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"ビショップスコア表","description":"ビショップスコア表テンプレート。子宮頸管熟化度の評価に使用。","contentUrl":"https://med-graph.com/img/obgyn_bishop_score.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"ビショップスコア","description":"ビショップスコアテンプレート。頸管成熟度の評価に使用。","contentUrl":"https://med-graph.com/img/obgyn_bishop_score.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/obgyn.html">産婦人科</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/obgyn.html">産婦人科</a> &gt; ビショップスコア表</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/obgyn.html">産婦人科</a> &gt; ビショップスコア</div>
 <main>
-<h1 class="page-title">ビショップスコア表</h1>
-<p class="desc">ビショップスコア表テンプレート。子宮頸管熟化度の評価に使用。</p>
-<div class="tags"><span>ビショップ</span><span>子宮頸管</span><span>分娩誘発</span><span>スコア</span></div>
+<h1 class="page-title">ビショップスコア</h1>
+<p class="desc">ビショップスコアテンプレート。頸管成熟度の評価に使用。</p>
+<div class="tags"><span>ビショップ</span><span>頸管</span><span>誘発分娩</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/obgyn_bishop_score.png" alt="ビショップスコア表"></div>
+<div class="preview-img"><img id="pv" src="../img/obgyn_bishop_score.png" alt="ビショップスコア"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/obgyn_bishop_score.png" download class="dl-btn">Download</a>
 </div>
@@ -103,7 +103,7 @@ footer a{color:#60a5fa}
 <div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
 <pre id="rcode">library(ggplot2)
 
-# ---- Bishop Score Chart ----
+# ---- Bishop Score ----
 # あなたのデータを入力してください
 df <- data.frame(
   x = c(),
@@ -113,9 +113,9 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Assessment", limits = c(0, 6)) +
-  scale_y_continuous(name = "Score", limits = c(0, 13)) +
-  labs(title = "Bishop Score Chart") +
+  scale_x_continuous(name = "Parameter", limits = c(0, 6)) +
+  scale_y_continuous(name = "Score (0-3)", limits = c(0, 3)) +
+  labs(title = "Bishop Score") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>

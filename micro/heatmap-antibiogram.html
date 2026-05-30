@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>アンチバイオグラム テンプレート | MedGraph Free</title>
-<meta name="description" content="抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>アンチバイオグラムヒートマップ テンプレート | MedGraph Free</title>
+<meta name="description" content="施設アンチバイオグラムをヒートマップで表示するテンプレート。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/micro/heatmap-antibiogram.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="アンチバイオグラム テンプレート | MedGraph Free">
-<meta property="og:description" content="抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。">
+<meta property="og:title" content="アンチバイオグラムヒートマップ テンプレート | MedGraph Free">
+<meta property="og:description" content="施設アンチバイオグラムをヒートマップで表示するテンプレート。">
 <meta property="og:image" content="https://med-graph.com/img/micro_heatmap_antibiogram.png">
 <meta property="og:url" content="https://med-graph.com/micro/heatmap-antibiogram.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"アンチバイオグラム","description":"抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。","contentUrl":"https://med-graph.com/img/micro_heatmap_antibiogram.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"アンチバイオグラムヒートマップ","description":"施設アンチバイオグラムをヒートマップで表示するテンプレート。","contentUrl":"https://med-graph.com/img/micro_heatmap_antibiogram.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/micro.html">微生物学</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/micro.html">微生物学</a> &gt; アンチバイオグラム</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/micro.html">微生物学</a> &gt; アンチバイオグラムヒートマップ</div>
 <main>
-<h1 class="page-title">アンチバイオグラム</h1>
-<p class="desc">抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。</p>
-<div class="tags"><span>アンチバイオグラム</span><span>感受性</span><span>抗菌薬</span><span>ヒートマップ</span></div>
+<h1 class="page-title">アンチバイオグラムヒートマップ</h1>
+<p class="desc">施設アンチバイオグラムをヒートマップで表示するテンプレート。</p>
+<div class="tags"><span>アンチバイオグラム</span><span>感受性</span><span>ヒートマップ</span><span>院内</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/micro_heatmap_antibiogram.png" alt="アンチバイオグラム"></div>
+<div class="preview-img"><img id="pv" src="../img/micro_heatmap_antibiogram.png" alt="アンチバイオグラムヒートマップ"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/micro_heatmap_antibiogram.png" download class="dl-btn">Download</a>
 </div>
@@ -113,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Antibiotics", limits = c(0, 10)) +
-  scale_y_continuous(name = "Organisms", limits = c(0, 8)) +
+  scale_x_continuous(name = "Antibiotic", limits = c(0, 6)) +
+  scale_y_continuous(name = "Organism", limits = c(0, 5)) +
   labs(title = "Antibiogram Heatmap") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

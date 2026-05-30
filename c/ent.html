@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>耳鼻咽喉科（ENT）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="耳鼻咽喉科のレポート用グラフテンプレート一覧。3種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="耳鼻咽喉科のレポート用グラフテンプレート一覧。8種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,10 +39,29 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 耳鼻咽喉科</div>
 <main>
 <h1 class="cat-title">耳鼻咽喉科 (ENT)</h1>
-<p class="count">3 templates available</p>
-<div class="grid"><a href="../ent/tympanogram.html" class="tcard"><img src="../img/ent_tympanogram.png" alt="ティンパノグラム" loading="lazy"><div class="tname">ティンパノグラム</div><div class="tdesc">ティンパノグラムテンプレート。中耳機能の評価に使用。Type A/B/Cの分類。</div></a>
-<a href="../ent/audiogram-bilateral.html" class="tcard"><img src="../img/ent_audiogram_bilateral.png" alt="両側オージオグラム" loading="lazy"><div class="tname">両側オージオグラム</div><div class="tdesc">両側オージオグラムテンプレート。左右の聴力検査結果を1枚のグラフに記録。</div></a>
-<a href="../ent/speech-audiogram.html" class="tcard"><img src="../img/ent_speech_audiogram.png" alt="語音聴力検査" loading="lazy"><div class="tname">語音聴力検査</div><div class="tdesc">語音聴力検査テンプレート。語音弁別能の評価に使用。</div></a></div>
+<p class="count">8 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">8</span></button><button class="tab" data-sc="audiology">聴覚・平衡<span class="tab-count">6</span></button><button class="tab" data-sc="airway_e">気道・音声<span class="tab-count">1</span></button><button class="tab" data-sc="nose">鼻・副鼻腔<span class="tab-count">1</span></button></div>
+<div class="grid"><a href="../ent/tympanogram.html" class="tcard" data-sc="audiology"><img src="../img/ent_tympanogram.png" alt="ティンパノグラム" loading="lazy"><div class="tname">ティンパノグラム</div><div class="tdesc">ティンパノグラムテンプレート。中耳機能の評価に使用。Type A/B/Cの分類。</div></a>
+<a href="../ent/audiogram-bilateral.html" class="tcard" data-sc="audiology"><img src="../img/ent_audiogram_bilateral.png" alt="両側オージオグラム" loading="lazy"><div class="tname">両側オージオグラム</div><div class="tdesc">両側オージオグラムテンプレート。左右の聴力検査結果を1枚のグラフに記録。</div></a>
+<a href="../ent/speech-audiogram.html" class="tcard" data-sc="audiology"><img src="../img/ent_speech_audiogram.png" alt="語音聴力検査" loading="lazy"><div class="tname">語音聴力検査</div><div class="tdesc">語音聴力検査テンプレート。語音弁別能の評価に使用。</div></a>
+<a href="../ent/hearing-comparison-box.html" class="tcard" data-sc="audiology"><img src="../img/ent_hearing_comparison_box.png" alt="周波数別聴力（箱ひげ図）" loading="lazy"><div class="tname">周波数別聴力（箱ひげ図）</div><div class="tdesc">周波数別の聴力レベル分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../ent/heatmap-vestibular.html" class="tcard" data-sc="audiology"><img src="../img/ent_heatmap_vestibular.png" alt="前庭機能検査ヒートマップ" loading="lazy"><div class="tname">前庭機能検査ヒートマップ</div><div class="tdesc">前庭機能検査の結果をヒートマップで表示するテンプレート。</div></a>
+<a href="../ent/radar-voice.html" class="tcard" data-sc="airway_e"><img src="../img/ent_radar_voice.png" alt="音声品質レーダー" loading="lazy"><div class="tname">音声品質レーダー</div><div class="tdesc">音声品質の多面的評価レーダーチャートテンプレート。GRBAS尺度に準拠。</div></a>
+<a href="../ent/km-head-neck.html" class="tcard" data-sc="nose"><img src="../img/ent_km_head_neck.png" alt="頭頸部癌生存曲線" loading="lazy"><div class="tname">頭頸部癌生存曲線</div><div class="tdesc">頭頸部癌の生存曲線テンプレート。</div></a>
+<a href="../ent/roc-hearing-screen.html" class="tcard" data-sc="audiology"><img src="../img/ent_roc_hearing_screen.png" alt="聴力スクリーニングROC" loading="lazy"><div class="tname">聴力スクリーニングROC</div><div class="tdesc">聴力スクリーニング検査のROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

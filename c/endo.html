@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>内分泌（Endocrinology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="内分泌のレポート用グラフテンプレート一覧。26種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="内分泌のレポート用グラフテンプレート一覧。28種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,33 +39,49 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 内分泌</div>
 <main>
 <h1 class="cat-title">内分泌 (Endocrinology)</h1>
-<p class="count">26 templates available</p>
-<div class="grid"><a href="../endo/ogtt.html" class="tcard"><img src="../img/endo_ogtt.png" alt="OGTT（経口ブドウ糖負荷試験）" loading="lazy"><div class="tname">OGTT（経口ブドウ糖負荷試験）</div><div class="tdesc">OGTT曲線テンプレート。75gブドウ糖負荷後の血糖変化をプロット。</div></a>
-<a href="../endo/ogtt-insulin.html" class="tcard"><img src="../img/endo_ogtt_insulin.png" alt="OGTT＋インスリン" loading="lazy"><div class="tname">OGTT＋インスリン</div><div class="tdesc">OGTT＋インスリン同時測定テンプレート。血糖とインスリンの応答を比較。</div></a>
-<a href="../endo/insulin-response.html" class="tcard"><img src="../img/endo_insulin_response.png" alt="インスリン応答" loading="lazy"><div class="tname">インスリン応答</div><div class="tdesc">インスリン応答テンプレート。糖負荷後のインスリン分泌パターンをプロット。</div></a>
-<a href="../endo/tsh-feedback.html" class="tcard"><img src="../img/endo_tsh_feedback.png" alt="TSHフィードバック" loading="lazy"><div class="tname">TSHフィードバック</div><div class="tdesc">TSH-T4フィードバックテンプレート。甲状腺ホルモンの負のフィードバックをプロット。</div></a>
-<a href="../endo/cortisol-diurnal.html" class="tcard"><img src="../img/endo_cortisol_diurnal.png" alt="コルチゾール日内変動" loading="lazy"><div class="tname">コルチゾール日内変動</div><div class="tdesc">コルチゾール日内変動テンプレート。朝高値・夜低値のパターンをプロット。</div></a>
-<a href="../endo/gh-pulsatile.html" class="tcard"><img src="../img/endo_gh_pulsatile.png" alt="成長ホルモン拍動性分泌" loading="lazy"><div class="tname">成長ホルモン拍動性分泌</div><div class="tdesc">成長ホルモンの拍動性分泌テンプレート。睡眠時の分泌ピークをプロット。</div></a>
-<a href="../endo/dexamethasone.html" class="tcard"><img src="../img/endo_dexamethasone.png" alt="デキサメタゾン抑制試験" loading="lazy"><div class="tname">デキサメタゾン抑制試験</div><div class="tdesc">デキサメタゾン抑制試験テンプレート。正常応答とクッシング症候群の比較。</div></a>
-<a href="../endo/glucose-clamp.html" class="tcard"><img src="../img/endo_glucose_clamp.png" alt="グルコースクランプ" loading="lazy"><div class="tname">グルコースクランプ</div><div class="tdesc">グルコースクランプテンプレート。インスリン感受性の定量評価に使用。</div></a>
-<a href="../endo/hba1c-glucose.html" class="tcard"><img src="../img/endo_hba1c_glucose.png" alt="HbA1c-血糖相関" loading="lazy"><div class="tname">HbA1c-血糖相関</div><div class="tdesc">HbA1c-平均血糖相関テンプレート。HbA1cと血糖値の対応関係をプロット。</div></a>
-<a href="../endo/calcium-pth.html" class="tcard"><img src="../img/endo_calcium_pth.png" alt="カルシウム-PTH関係" loading="lazy"><div class="tname">カルシウム-PTH関係</div><div class="tdesc">カルシウム-PTH関係テンプレート。血清Caの変化に対するPTH応答をプロット。</div></a>
-<a href="../endo/insulin-tolerance.html" class="tcard"><img src="../img/endo_insulin_tolerance.png" alt="インスリン負荷試験" loading="lazy"><div class="tname">インスリン負荷試験</div><div class="tdesc">インスリン負荷試験テンプレート。GH・コルチゾール分泌の誘発に使用。</div></a>
-<a href="../endo/water-deprivation.html" class="tcard"><img src="../img/endo_water_deprivation.png" alt="水制限試験" loading="lazy"><div class="tname">水制限試験</div><div class="tdesc">水制限試験テンプレート。尿崩症の鑑別に使用。</div></a>
-<a href="../endo/thyroid-levels.html" class="tcard"><img src="../img/endo_thyroid_levels.png" alt="甲状腺ホルモン値" loading="lazy"><div class="tname">甲状腺ホルモン値</div><div class="tdesc">甲状腺ホルモン値テンプレート。甲状腺機能亢進/低下の検査値パターンをプロット。</div></a>
-<a href="../endo/tanner-stages.html" class="tcard"><img src="../img/endo_tanner_stages.png" alt="タナーステージタイムライン" loading="lazy"><div class="tname">タナーステージタイムライン</div><div class="tdesc">タナーステージタイムラインテンプレート。思春期の発達段階をプロット。</div></a>
-<a href="../endo/acth-stimulation.html" class="tcard"><img src="../img/endo_acth_stimulation.png" alt="ACTH負荷試験" loading="lazy"><div class="tname">ACTH負荷試験</div><div class="tdesc">ACTH負荷試験テンプレート。副腎機能の評価に使用。</div></a>
-<a href="../endo/gnrh-pulse.html" class="tcard"><img src="../img/endo_gnrh_pulse.png" alt="GnRHパルスパターン" loading="lazy"><div class="tname">GnRHパルスパターン</div><div class="tdesc">GnRHパルスパターンテンプレート。LH拍動性分泌をプロット。</div></a>
-<a href="../endo/growth-hormone-stim.html" class="tcard"><img src="../img/endo_growth_hormone_stim.png" alt="成長ホルモン負荷試験" loading="lazy"><div class="tname">成長ホルモン負荷試験</div><div class="tdesc">GH負荷試験テンプレート。GH分泌不全症の診断に使用。</div></a>
-<a href="../endo/menstrual-cycle.html" class="tcard"><img src="../img/endo_menstrual_cycle.png" alt="月経周期ホルモン" loading="lazy"><div class="tname">月経周期ホルモン</div><div class="tdesc">月経周期のホルモン変動テンプレート。FSH/LH/E2/Progesteroneの推移をプロット。</div></a>
-<a href="../endo/ternary-body-comp.html" class="tcard"><img src="../img/endo_ternary_body_comp.png" alt="体組成三角図" loading="lazy"><div class="tname">体組成三角図</div><div class="tdesc">体組成の三角図テンプレート。脂肪・筋肉・水分の割合を視覚化。</div></a>
-<a href="../endo/bmi-chart.html" class="tcard"><img src="../img/endo_bmi_chart.png" alt="BMI分類チャート" loading="lazy"><div class="tname">BMI分類チャート</div><div class="tdesc">BMI分類チャートテンプレート。身長・体重からBMIゾーンを表示。</div></a>
-<a href="../endo/hba1c-trend.html" class="tcard"><img src="../img/endo_hba1c_trend.png" alt="HbA1c推移チャート" loading="lazy"><div class="tname">HbA1c推移チャート</div><div class="tdesc">HbA1c推移チャートテンプレート。糖尿病のコントロール状況を長期的に評価。</div></a>
-<a href="../endo/ogtt-curve.html" class="tcard"><img src="../img/endo_ogtt_curve.png" alt="経口ブドウ糖負荷試験曲線" loading="lazy"><div class="tname">経口ブドウ糖負荷試験曲線</div><div class="tdesc">OGTTテンプレート。糖尿病・耐糖能異常の診断に使用。</div></a>
-<a href="../endo/insulin-glucose.html" class="tcard"><img src="../img/endo_insulin_glucose.png" alt="インスリン-血糖関係" loading="lazy"><div class="tname">インスリン-血糖関係</div><div class="tdesc">インスリン-血糖関係テンプレート。インスリン分泌・抵抗性の評価に使用。</div></a>
-<a href="../endo/thyroid-function.html" class="tcard"><img src="../img/endo_thyroid_function.png" alt="甲状腺機能チャート" loading="lazy"><div class="tname">甲状腺機能チャート</div><div class="tdesc">甲状腺機能チャートテンプレート。TSH-FT4の関係から甲状腺疾患を分類。</div></a>
-<a href="../endo/cortisol-diurnal.html" class="tcard"><img src="../img/endo_cortisol_diurnal.png" alt="コルチゾール日内変動" loading="lazy"><div class="tname">コルチゾール日内変動</div><div class="tdesc">コルチゾール日内変動テンプレート。副腎機能・クッシング症候群の評価に使用。</div></a>
-<a href="../endo/calcium-pth.html" class="tcard"><img src="../img/endo_calcium_pth.png" alt="カルシウム-PTH関係" loading="lazy"><div class="tname">カルシウム-PTH関係</div><div class="tdesc">カルシウム-PTH関係テンプレート。副甲状腺疾患の鑑別に使用。</div></a></div>
+<p class="count">28 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">28</span></button><button class="tab" data-sc="glucose">糖代謝<span class="tab-count">12</span></button><button class="tab" data-sc="thyroid">甲状腺<span class="tab-count">4</span></button><button class="tab" data-sc="adrenal">副腎・下垂体<span class="tab-count">6</span></button><button class="tab" data-sc="other">その他<span class="tab-count">6</span></button></div>
+<div class="grid"><a href="../endo/ogtt.html" class="tcard" data-sc="glucose"><img src="../img/endo_ogtt.png" alt="OGTT（経口ブドウ糖負荷試験）" loading="lazy"><div class="tname">OGTT（経口ブドウ糖負荷試験）</div><div class="tdesc">OGTT曲線テンプレート。75gブドウ糖負荷後の血糖変化をプロット。</div></a>
+<a href="../endo/ogtt-insulin.html" class="tcard" data-sc="glucose"><img src="../img/endo_ogtt_insulin.png" alt="OGTT＋インスリン" loading="lazy"><div class="tname">OGTT＋インスリン</div><div class="tdesc">OGTT＋インスリン同時測定テンプレート。血糖とインスリンの応答を比較。</div></a>
+<a href="../endo/insulin-response.html" class="tcard" data-sc="glucose"><img src="../img/endo_insulin_response.png" alt="インスリン応答" loading="lazy"><div class="tname">インスリン応答</div><div class="tdesc">インスリン応答テンプレート。糖負荷後のインスリン分泌パターンをプロット。</div></a>
+<a href="../endo/tsh-feedback.html" class="tcard" data-sc="thyroid"><img src="../img/endo_tsh_feedback.png" alt="TSHフィードバック" loading="lazy"><div class="tname">TSHフィードバック</div><div class="tdesc">TSH-T4フィードバックテンプレート。甲状腺ホルモンの負のフィードバックをプロット。</div></a>
+<a href="../endo/cortisol-diurnal.html" class="tcard" data-sc="adrenal"><img src="../img/endo_cortisol_diurnal.png" alt="コルチゾール日内変動" loading="lazy"><div class="tname">コルチゾール日内変動</div><div class="tdesc">コルチゾール日内変動テンプレート。朝高値・夜低値のパターンをプロット。</div></a>
+<a href="../endo/gh-pulsatile.html" class="tcard" data-sc="adrenal"><img src="../img/endo_gh_pulsatile.png" alt="成長ホルモン拍動性分泌" loading="lazy"><div class="tname">成長ホルモン拍動性分泌</div><div class="tdesc">成長ホルモンの拍動性分泌テンプレート。睡眠時の分泌ピークをプロット。</div></a>
+<a href="../endo/dexamethasone.html" class="tcard" data-sc="adrenal"><img src="../img/endo_dexamethasone.png" alt="デキサメタゾン抑制試験" loading="lazy"><div class="tname">デキサメタゾン抑制試験</div><div class="tdesc">デキサメタゾン抑制試験テンプレート。正常応答とクッシング症候群の比較。</div></a>
+<a href="../endo/glucose-clamp.html" class="tcard" data-sc="glucose"><img src="../img/endo_glucose_clamp.png" alt="グルコースクランプ" loading="lazy"><div class="tname">グルコースクランプ</div><div class="tdesc">グルコースクランプテンプレート。インスリン感受性の定量評価に使用。</div></a>
+<a href="../endo/hba1c-glucose.html" class="tcard" data-sc="glucose"><img src="../img/endo_hba1c_glucose.png" alt="HbA1c-血糖相関" loading="lazy"><div class="tname">HbA1c-血糖相関</div><div class="tdesc">HbA1c-平均血糖相関テンプレート。HbA1cと血糖値の対応関係をプロット。</div></a>
+<a href="../endo/calcium-pth.html" class="tcard" data-sc="thyroid"><img src="../img/endo_calcium_pth.png" alt="カルシウム-PTH関係" loading="lazy"><div class="tname">カルシウム-PTH関係</div><div class="tdesc">カルシウム-PTH関係テンプレート。血清Caの変化に対するPTH応答をプロット。</div></a>
+<a href="../endo/insulin-tolerance.html" class="tcard" data-sc="glucose"><img src="../img/endo_insulin_tolerance.png" alt="インスリン負荷試験" loading="lazy"><div class="tname">インスリン負荷試験</div><div class="tdesc">インスリン負荷試験テンプレート。GH・コルチゾール分泌の誘発に使用。</div></a>
+<a href="../endo/water-deprivation.html" class="tcard" data-sc="other"><img src="../img/endo_water_deprivation.png" alt="水制限試験" loading="lazy"><div class="tname">水制限試験</div><div class="tdesc">水制限試験テンプレート。尿崩症の鑑別に使用。</div></a>
+<a href="../endo/thyroid-levels.html" class="tcard" data-sc="thyroid"><img src="../img/endo_thyroid_levels.png" alt="甲状腺ホルモン値" loading="lazy"><div class="tname">甲状腺ホルモン値</div><div class="tdesc">甲状腺ホルモン値テンプレート。甲状腺機能亢進/低下の検査値パターンをプロット。</div></a>
+<a href="../endo/tanner-stages.html" class="tcard" data-sc="other"><img src="../img/endo_tanner_stages.png" alt="タナーステージタイムライン" loading="lazy"><div class="tname">タナーステージタイムライン</div><div class="tdesc">タナーステージタイムラインテンプレート。思春期の発達段階をプロット。</div></a>
+<a href="../endo/acth-stimulation.html" class="tcard" data-sc="adrenal"><img src="../img/endo_acth_stimulation.png" alt="ACTH負荷試験" loading="lazy"><div class="tname">ACTH負荷試験</div><div class="tdesc">ACTH負荷試験テンプレート。副腎機能の評価に使用。</div></a>
+<a href="../endo/gnrh-pulse.html" class="tcard" data-sc="other"><img src="../img/endo_gnrh_pulse.png" alt="GnRHパルスパターン" loading="lazy"><div class="tname">GnRHパルスパターン</div><div class="tdesc">GnRHパルスパターンテンプレート。LH拍動性分泌をプロット。</div></a>
+<a href="../endo/growth-hormone-stim.html" class="tcard" data-sc="adrenal"><img src="../img/endo_growth_hormone_stim.png" alt="成長ホルモン負荷試験" loading="lazy"><div class="tname">成長ホルモン負荷試験</div><div class="tdesc">GH負荷試験テンプレート。GH分泌不全症の診断に使用。</div></a>
+<a href="../endo/menstrual-cycle.html" class="tcard" data-sc="other"><img src="../img/endo_menstrual_cycle.png" alt="月経周期ホルモン" loading="lazy"><div class="tname">月経周期ホルモン</div><div class="tdesc">月経周期のホルモン変動テンプレート。FSH/LH/E2/Progesteroneの推移をプロット。</div></a>
+<a href="../endo/ternary-body-comp.html" class="tcard" data-sc="other"><img src="../img/endo_ternary_body_comp.png" alt="体組成三角図" loading="lazy"><div class="tname">体組成三角図</div><div class="tdesc">体組成の三角図テンプレート。脂肪・筋肉・水分の割合を視覚化。</div></a>
+<a href="../endo/bmi-chart.html" class="tcard" data-sc="adrenal"><img src="../img/endo_bmi_chart.png" alt="BMI分類チャート" loading="lazy"><div class="tname">BMI分類チャート</div><div class="tdesc">BMI分類チャートテンプレート。身長・体重からBMIゾーンを表示。</div></a>
+<a href="../endo/hba1c-trend.html" class="tcard" data-sc="glucose"><img src="../img/endo_hba1c_trend.png" alt="HbA1c推移チャート" loading="lazy"><div class="tname">HbA1c推移チャート</div><div class="tdesc">HbA1c推移チャートテンプレート。糖尿病のコントロール状況を長期的に評価。</div></a>
+<a href="../endo/ogtt-curve.html" class="tcard" data-sc="glucose"><img src="../img/endo_ogtt_curve.png" alt="経口ブドウ糖負荷試験曲線" loading="lazy"><div class="tname">経口ブドウ糖負荷試験曲線</div><div class="tdesc">OGTTテンプレート。糖尿病・耐糖能異常の診断に使用。</div></a>
+<a href="../endo/insulin-glucose.html" class="tcard" data-sc="glucose"><img src="../img/endo_insulin_glucose.png" alt="インスリン-血糖関係" loading="lazy"><div class="tname">インスリン-血糖関係</div><div class="tdesc">インスリン-血糖関係テンプレート。インスリン分泌・抵抗性の評価に使用。</div></a>
+<a href="../endo/thyroid-function.html" class="tcard" data-sc="thyroid"><img src="../img/endo_thyroid_function.png" alt="甲状腺機能チャート" loading="lazy"><div class="tname">甲状腺機能チャート</div><div class="tdesc">甲状腺機能チャートテンプレート。TSH-FT4の関係から甲状腺疾患を分類。</div></a>
+<a href="../endo/hba1c-comparison-box.html" class="tcard" data-sc="glucose"><img src="../img/endo_hba1c_comparison_box.png" alt="治療法別HbA1c（箱ひげ図）" loading="lazy"><div class="tname">治療法別HbA1c（箱ひげ図）</div><div class="tdesc">治療法別のHbA1c分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../endo/heatmap-hormone.html" class="tcard" data-sc="other"><img src="../img/endo_heatmap_hormone.png" alt="ホルモンパネルヒートマップ" loading="lazy"><div class="tname">ホルモンパネルヒートマップ</div><div class="tdesc">各ホルモン値の疾患別変化パターンをヒートマップで表示するテンプレート。</div></a>
+<a href="../endo/radar-dm-control.html" class="tcard" data-sc="glucose"><img src="../img/endo_radar_dm_control.png" alt="糖尿病管理レーダー" loading="lazy"><div class="tname">糖尿病管理レーダー</div><div class="tdesc">糖尿病の多面的管理状況をレーダーチャートで評価するテンプレート。</div></a>
+<a href="../endo/km-dm-complication.html" class="tcard" data-sc="glucose"><img src="../img/endo_km_dm_complication.png" alt="糖尿病合併症発症曲線" loading="lazy"><div class="tname">糖尿病合併症発症曲線</div><div class="tdesc">糖尿病合併症の無発症生存曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

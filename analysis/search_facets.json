@@ -1,0 +1,8 @@
+{
+  "figure_type": ["audiogram", "bar_chart", "bland_altman", "boxplot", "bullseye", "calibration_plot", "curve_fit", "dot_plot", "ecg_tracing", "epicurve", "flow_volume_loop", "forest_plot", "funnel_plot", "growth_chart", "heatmap", "histogram", "kaplan_meier", "line_chart", "log_plot", "manhattan_plot", "nomogram", "pedigree", "pv_loop", "pyramid", "radar_chart", "roc_curve", "scatter_plot", "swimmer_plot", "table_2x2", "ternary", "tornado", "violin", "visual_field", "volcano_plot"],
+  "data_type": ["categorical", "compositional", "continuous_numeric", "count_frequency", "diagnostic_accuracy", "genomic_molecular", "ordinal_score", "pharmacokinetic", "physiological_signal", "proportion_rate", "spatial_anatomical", "survival_data", "time_series"],
+  "purpose": ["classification", "comparison", "correlation", "diagnostic_eval", "distribution", "dose_response", "epidemiologic_summary", "genetic_analysis", "kinetic_dynamic", "meta_analysis", "quality_assessment", "reference_standard", "screening_triage", "survival_analysis", "trend_monitoring"],
+  "comparison": ["control_vs_treatment", "hierarchical", "multi_group", "paired", "single_entity", "time_course", "two_by_two"],
+  "medical_field": ["biochem", "cardio", "chem", "derm", "emer", "endo", "ent", "epi", "eye", "gi", "hemato", "immuno", "micro", "nephro", "neuro", "obgyn", "ortho", "path", "peds", "pharm", "physiol", "psych", "pulm", "radio", "stat", "surg", "uro"],
+  "use_case": ["case_presentation", "clinical_report", "lab_report", "lecture_handout", "research_paper"]
+}

@@ -1,0 +1,4342 @@
+[
+  {
+    "figure_type": "audiogram",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "ent",
+    "count": 1
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "eye",
+    "count": 1
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "audiogram",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "physiol",
+    "count": 1
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "stat",
+    "count": 3
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "bar_chart",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "chem",
+    "count": 2
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "bland_altman",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "chem",
+    "count": 1
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "boxplot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "cardio",
+    "count": 2
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "bullseye",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "calibration_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "biochem",
+    "count": 1
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "curve_fit",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "dot_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "cardio",
+    "count": 2
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "ecg_tracing",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "epi",
+    "count": 2
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "epicurve",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "peds",
+    "count": 1
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "pulm",
+    "count": 1
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "flow_volume_loop",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "epi",
+    "count": 1
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "forest_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "funnel_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "peds",
+    "count": 4
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "growth_chart",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "chem",
+    "count": 1
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "micro",
+    "count": 1
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "path",
+    "count": 1
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "pharm",
+    "count": 1
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "surg",
+    "count": 1
+  },
+  {
+    "figure_type": "heatmap",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "immuno",
+    "count": 1
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "histogram",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "stat",
+    "count": 5
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "kaplan_meier",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "biochem",
+    "count": 41
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "cardio",
+    "count": 26
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "chem",
+    "count": 15
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "derm",
+    "count": 4
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "emer",
+    "count": 14
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "endo",
+    "count": 25
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "ent",
+    "count": 2
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "epi",
+    "count": 25
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "eye",
+    "count": 13
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "gi",
+    "count": 15
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "hemato",
+    "count": 23
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "immuno",
+    "count": 20
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "micro",
+    "count": 19
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "nephro",
+    "count": 19
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "neuro",
+    "count": 28
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "obgyn",
+    "count": 19
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "ortho",
+    "count": 13
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "path",
+    "count": 14
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "peds",
+    "count": 22
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "pharm",
+    "count": 35
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "physiol",
+    "count": 44
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "psych",
+    "count": 14
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "pulm",
+    "count": 19
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "radio",
+    "count": 10
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "stat",
+    "count": 42
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "surg",
+    "count": 13
+  },
+  {
+    "figure_type": "line_chart",
+    "medical_field": "uro",
+    "count": 3
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "biochem",
+    "count": 2
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "immuno",
+    "count": 2
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "micro",
+    "count": 5
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "pharm",
+    "count": 2
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "physiol",
+    "count": 1
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "log_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "manhattan_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "cardio",
+    "count": 1
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "nephro",
+    "count": 1
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "nomogram",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "pedigree",
+    "medical_field": "obgyn",
+    "count": 2
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "cardio",
+    "count": 1
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "pulm",
+    "count": 1
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "pv_loop",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "epi",
+    "count": 2
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "pyramid",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "emer",
+    "count": 1
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "neuro",
+    "count": 2
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "peds",
+    "count": 1
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "stat",
+    "count": 4
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "radar_chart",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "roc_curve",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "immuno",
+    "count": 1
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "scatter_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "stat",
+    "count": 2
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "swimmer_plot",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "epi",
+    "count": 2
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "table_2x2",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "ternary",
+    "medical_field": "endo",
+    "count": 1
+  },
+  {
+    "figure_type": "ternary",
+    "medical_field": "hemato",
+    "count": 1
+  },
+  {
+    "figure_type": "ternary",
+    "medical_field": "physiol",
+    "count": 1
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "epi",
+    "count": 1
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "tornado",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "path",
+    "count": 1
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "stat",
+    "count": 1
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "violin",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "biochem",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "eye",
+    "count": 2
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "path",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "visual_field",
+    "medical_field": "uro",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "biochem",
+    "count": 2
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "cardio",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "chem",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "derm",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "emer",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "endo",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "ent",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "epi",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "eye",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "gi",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "hemato",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "immuno",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "micro",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "nephro",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "neuro",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "obgyn",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "ortho",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "path",
+    "count": 1
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "peds",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "pharm",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "physiol",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "psych",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "pulm",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "radio",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "stat",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "surg",
+    "count": 0
+  },
+  {
+    "figure_type": "volcano_plot",
+    "medical_field": "uro",
+    "count": 0
+  }
+]

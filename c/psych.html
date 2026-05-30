@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>精神科（Psychiatry）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="精神科のレポート用グラフテンプレート一覧。14種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="精神科のレポート用グラフテンプレート一覧。19種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,21 +39,40 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 精神科</div>
 <main>
 <h1 class="cat-title">精神科 (Psychiatry)</h1>
-<p class="count">14 templates available</p>
-<div class="grid"><a href="../psych/phq9.html" class="tcard"><img src="../img/psych_phq9.png" alt="PHQ-9テンプレート" loading="lazy"><div class="tname">PHQ-9テンプレート</div><div class="tdesc">PHQ-9うつ症状スクリーニングテンプレート。9項目の回答をプロット。</div></a>
-<a href="../psych/gad7.html" class="tcard"><img src="../img/psych_gad7.png" alt="GAD-7テンプレート" loading="lazy"><div class="tname">GAD-7テンプレート</div><div class="tdesc">GAD-7不安症状スクリーニングテンプレート。7項目の回答をプロット。</div></a>
-<a href="../psych/hamd.html" class="tcard"><img src="../img/psych_hamd.png" alt="HAM-Dテンプレート" loading="lazy"><div class="tname">HAM-Dテンプレート</div><div class="tdesc">ハミルトンうつ病評価尺度テンプレート。17項目のスコアをプロット。</div></a>
-<a href="../psych/mmse.html" class="tcard"><img src="../img/psych_mmse.png" alt="MMSEテンプレート" loading="lazy"><div class="tname">MMSEテンプレート</div><div class="tdesc">MMSE（ミニメンタルステート検査）テンプレート。認知機能の評価に使用。</div></a>
-<a href="../psych/drug-monitoring.html" class="tcard"><img src="../img/psych_drug_monitoring.png" alt="薬物血中濃度モニタリング" loading="lazy"><div class="tname">薬物血中濃度モニタリング</div><div class="tdesc">精神科薬物の血中濃度モニタリングテンプレート。治療域内管理に使用。</div></a>
-<a href="../psych/mood-chart.html" class="tcard"><img src="../img/psych_mood_chart.png" alt="気分チャート" loading="lazy"><div class="tname">気分チャート</div><div class="tdesc">気分チャートテンプレート。双極性障害等の日々の気分変動をプロット。</div></a>
-<a href="../psych/sleep-study.html" class="tcard"><img src="../img/psych_sleep_study.png" alt="睡眠検査（PSG）" loading="lazy"><div class="tname">睡眠検査（PSG）</div><div class="tdesc">終夜睡眠ポリグラフテンプレート。睡眠段階の推移をプロット。</div></a>
-<a href="../psych/circadian.html" class="tcard"><img src="../img/psych_circadian.png" alt="概日リズム" loading="lazy"><div class="tname">概日リズム</div><div class="tdesc">概日リズムテンプレート。メラトニンと深部体温の日内変動をプロット。</div></a>
-<a href="../psych/stress-cortisol.html" class="tcard"><img src="../img/psych_stress_cortisol.png" alt="ストレス応答（コルチゾール）" loading="lazy"><div class="tname">ストレス応答（コルチゾール）</div><div class="tdesc">ストレス応答テンプレート。TSST等のストレス負荷後のコルチゾール変化をプロット。</div></a>
-<a href="../psych/cognitive-assessment.html" class="tcard"><img src="../img/psych_cognitive_assessment.png" alt="認知機能評価" loading="lazy"><div class="tname">認知機能評価</div><div class="tdesc">認知機能評価テンプレート。注意/記憶/遂行機能等のドメイン別スコアをプロット。</div></a>
-<a href="../psych/phq9-trend.html" class="tcard"><img src="../img/psych_phq9_trend.png" alt="PHQ-9スコア推移" loading="lazy"><div class="tname">PHQ-9スコア推移</div><div class="tdesc">PHQ-9スコア推移テンプレート。うつ病の重症度評価・治療効果モニタリングに使用。</div></a>
-<a href="../psych/gaf-trend.html" class="tcard"><img src="../img/psych_gaf_trend.png" alt="GAFスコア推移" loading="lazy"><div class="tname">GAFスコア推移</div><div class="tdesc">GAFスコア推移テンプレート。精神機能の全般的評価に使用。</div></a>
-<a href="../psych/mood-diary.html" class="tcard"><img src="../img/psych_mood_diary.png" alt="気分日記チャート" loading="lazy"><div class="tname">気分日記チャート</div><div class="tdesc">気分日記チャートテンプレート。気分の日内変動・日間変動を記録。</div></a>
-<a href="../psych/sleep-architecture.html" class="tcard"><img src="../img/psych_sleep_architecture.png" alt="睡眠構造図" loading="lazy"><div class="tname">睡眠構造図</div><div class="tdesc">睡眠構造図テンプレート。ポリソムノグラフィの睡眠段階推移を記録。</div></a></div>
+<p class="count">19 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">19</span></button><button class="tab" data-sc="scale">評価尺度<span class="tab-count">10</span></button><button class="tab" data-sc="clinical_ps">臨床・治療<span class="tab-count">6</span></button><button class="tab" data-sc="other">その他<span class="tab-count">3</span></button></div>
+<div class="grid"><a href="../psych/phq9.html" class="tcard" data-sc="scale"><img src="../img/psych_phq9.png" alt="PHQ-9テンプレート" loading="lazy"><div class="tname">PHQ-9テンプレート</div><div class="tdesc">PHQ-9うつ症状スクリーニングテンプレート。9項目の回答をプロット。</div></a>
+<a href="../psych/gad7.html" class="tcard" data-sc="scale"><img src="../img/psych_gad7.png" alt="GAD-7テンプレート" loading="lazy"><div class="tname">GAD-7テンプレート</div><div class="tdesc">GAD-7不安症状スクリーニングテンプレート。7項目の回答をプロット。</div></a>
+<a href="../psych/hamd.html" class="tcard" data-sc="scale"><img src="../img/psych_hamd.png" alt="HAM-Dテンプレート" loading="lazy"><div class="tname">HAM-Dテンプレート</div><div class="tdesc">ハミルトンうつ病評価尺度テンプレート。17項目のスコアをプロット。</div></a>
+<a href="../psych/mmse.html" class="tcard" data-sc="scale"><img src="../img/psych_mmse.png" alt="MMSEテンプレート" loading="lazy"><div class="tname">MMSEテンプレート</div><div class="tdesc">MMSE（ミニメンタルステート検査）テンプレート。認知機能の評価に使用。</div></a>
+<a href="../psych/drug-monitoring.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_drug_monitoring.png" alt="薬物血中濃度モニタリング" loading="lazy"><div class="tname">薬物血中濃度モニタリング</div><div class="tdesc">精神科薬物の血中濃度モニタリングテンプレート。治療域内管理に使用。</div></a>
+<a href="../psych/mood-chart.html" class="tcard" data-sc="scale"><img src="../img/psych_mood_chart.png" alt="気分チャート" loading="lazy"><div class="tname">気分チャート</div><div class="tdesc">気分チャートテンプレート。双極性障害等の日々の気分変動をプロット。</div></a>
+<a href="../psych/sleep-study.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_sleep_study.png" alt="睡眠検査（PSG）" loading="lazy"><div class="tname">睡眠検査（PSG）</div><div class="tdesc">終夜睡眠ポリグラフテンプレート。睡眠段階の推移をプロット。</div></a>
+<a href="../psych/circadian.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_circadian.png" alt="概日リズム" loading="lazy"><div class="tname">概日リズム</div><div class="tdesc">概日リズムテンプレート。メラトニンと深部体温の日内変動をプロット。</div></a>
+<a href="../psych/stress-cortisol.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_stress_cortisol.png" alt="ストレス応答（コルチゾール）" loading="lazy"><div class="tname">ストレス応答（コルチゾール）</div><div class="tdesc">ストレス応答テンプレート。TSST等のストレス負荷後のコルチゾール変化をプロット。</div></a>
+<a href="../psych/cognitive-assessment.html" class="tcard" data-sc="scale"><img src="../img/psych_cognitive_assessment.png" alt="認知機能評価" loading="lazy"><div class="tname">認知機能評価</div><div class="tdesc">認知機能評価テンプレート。注意/記憶/遂行機能等のドメイン別スコアをプロット。</div></a>
+<a href="../psych/phq9-trend.html" class="tcard" data-sc="scale"><img src="../img/psych_phq9_trend.png" alt="PHQ-9スコア推移" loading="lazy"><div class="tname">PHQ-9スコア推移</div><div class="tdesc">PHQ-9スコア推移テンプレート。うつ病の重症度評価・治療効果モニタリングに使用。</div></a>
+<a href="../psych/gaf-trend.html" class="tcard" data-sc="scale"><img src="../img/psych_gaf_trend.png" alt="GAFスコア推移" loading="lazy"><div class="tname">GAFスコア推移</div><div class="tdesc">GAFスコア推移テンプレート。精神機能の全般的評価に使用。</div></a>
+<a href="../psych/mood-diary.html" class="tcard" data-sc="scale"><img src="../img/psych_mood_diary.png" alt="気分日記チャート" loading="lazy"><div class="tname">気分日記チャート</div><div class="tdesc">気分日記チャートテンプレート。気分の日内変動・日間変動を記録。</div></a>
+<a href="../psych/sleep-architecture.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_sleep_architecture.png" alt="睡眠構造図" loading="lazy"><div class="tname">睡眠構造図</div><div class="tdesc">睡眠構造図テンプレート。ポリソムノグラフィの睡眠段階推移を記録。</div></a>
+<a href="../psych/phq9-comparison-box.html" class="tcard" data-sc="scale"><img src="../img/psych_phq9_comparison_box.png" alt="治療法別PHQ-9（箱ひげ図）" loading="lazy"><div class="tname">治療法別PHQ-9（箱ひげ図）</div><div class="tdesc">治療段階別のPHQ-9分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../psych/heatmap-symptom-psych.html" class="tcard" data-sc="other"><img src="../img/psych_heatmap_symptom_psych.png" alt="精神症状ヒートマップ" loading="lazy"><div class="tname">精神症状ヒートマップ</div><div class="tdesc">精神症状の経時変化をヒートマップで表示するテンプレート。</div></a>
+<a href="../psych/radar-mental-status.html" class="tcard" data-sc="other"><img src="../img/psych_radar_mental_status.png" alt="精神状態検査レーダー" loading="lazy"><div class="tname">精神状態検査レーダー</div><div class="tdesc">精神状態検査の所見を多面的に表示するレーダーチャートテンプレート。</div></a>
+<a href="../psych/km-schizophrenia.html" class="tcard" data-sc="clinical_ps"><img src="../img/psych_km_schizophrenia.png" alt="統合失調症無再発曲線" loading="lazy"><div class="tname">統合失調症無再発曲線</div><div class="tdesc">統合失調症の薬物治療別無再発曲線テンプレート。</div></a>
+<a href="../psych/forest-antidepressant.html" class="tcard" data-sc="other"><img src="../img/psych_forest_antidepressant.png" alt="抗うつ薬メタアナリシス" loading="lazy"><div class="tname">抗うつ薬メタアナリシス</div><div class="tdesc">抗うつ薬の有効性メタアナリシスフォレストプロットテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

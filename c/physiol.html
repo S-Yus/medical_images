@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>生理学（Physiology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="生理学のレポート用グラフテンプレート一覧。47種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="生理学のレポート用グラフテンプレート一覧。44種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,54 +39,65 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 生理学</div>
 <main>
 <h1 class="cat-title">生理学 (Physiology)</h1>
-<p class="count">47 templates available</p>
-<div class="grid"><a href="../physiol/o2-dissociation.html" class="tcard"><img src="../img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="tname">酸素解離曲線</div><div class="tdesc">ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</div></a>
-<a href="../physiol/o2-dissociation-bohr.html" class="tcard"><img src="../img/physiol_o2_dissociation_bohr.png" alt="酸素解離曲線（ボーア効果）" loading="lazy"><div class="tname">酸素解離曲線（ボーア効果）</div><div class="tdesc">ボーア効果による酸素解離曲線のシフトを示すテンプレート。pH変化の影響を比較。</div></a>
-<a href="../physiol/co2-dissociation.html" class="tcard"><img src="../img/physiol_co2_dissociation.png" alt="CO2解離曲線" loading="lazy"><div class="tname">CO2解離曲線</div><div class="tdesc">CO2解離曲線テンプレート。PCO2とCO2含量の関係をプロット。</div></a>
-<a href="../physiol/frank-starling.html" class="tcard"><img src="../img/physiol_frank_starling.png" alt="フランク・スターリング曲線" loading="lazy"><div class="tname">フランク・スターリング曲線</div><div class="tdesc">フランク・スターリング曲線テンプレート。前負荷と一回拍出量の関係をプロット。</div></a>
-<a href="../physiol/nerve-ap.html" class="tcard"><img src="../img/physiol_nerve_ap.png" alt="神経活動電位" loading="lazy"><div class="tname">神経活動電位</div><div class="tdesc">神経細胞の活動電位テンプレート。脱分極・再分極・過分極のパターンをプロット。</div></a>
-<a href="../physiol/cardiac-ap.html" class="tcard"><img src="../img/physiol_cardiac_ap.png" alt="心筋活動電位" loading="lazy"><div class="tname">心筋活動電位</div><div class="tdesc">心室筋の活動電位テンプレート。Phase 0-4の各段階をプロット。</div></a>
-<a href="../physiol/sa-node-ap.html" class="tcard"><img src="../img/physiol_sa_node_ap.png" alt="洞房結節活動電位" loading="lazy"><div class="tname">洞房結節活動電位</div><div class="tdesc">洞房結節のペースメーカー活動電位テンプレート。自動能をプロット。</div></a>
-<a href="../physiol/flow-volume.html" class="tcard"><img src="../img/physiol_flow_volume.png" alt="フローボリュームループ" loading="lazy"><div class="tname">フローボリュームループ</div><div class="tdesc">フローボリュームループテンプレート。呼気・吸気の流量と容量の関係をプロット。</div></a>
-<a href="../physiol/pv-loop.html" class="tcard"><img src="../img/physiol_pv_loop.png" alt="心臓PVループ" loading="lazy"><div class="tname">心臓PVループ</div><div class="tdesc">心臓の圧-容量ループテンプレート。左室の一心周期の変化をプロット。</div></a>
-<a href="../physiol/wiggers.html" class="tcard"><img src="../img/physiol_wiggers.png" alt="ウィガースダイアグラム" loading="lazy"><div class="tname">ウィガースダイアグラム</div><div class="tdesc">ウィガースダイアグラムテンプレート。心周期の圧・容量・ECG・心音の時間経過。</div></a>
-<a href="../physiol/lung-compliance.html" class="tcard"><img src="../img/physiol_lung_compliance.png" alt="肺コンプライアンス曲線" loading="lazy"><div class="tname">肺コンプライアンス曲線</div><div class="tdesc">肺コンプライアンス曲線テンプレート。圧-容量関係をプロット。</div></a>
-<a href="../physiol/muscle-twitch.html" class="tcard"><img src="../img/physiol_muscle_twitch.png" alt="筋単収縮" loading="lazy"><div class="tname">筋単収縮</div><div class="tdesc">骨格筋の単収縮テンプレート。潜時・収縮期・弛緩期をプロット。</div></a>
-<a href="../physiol/length-tension.html" class="tcard"><img src="../img/physiol_length_tension.png" alt="筋長-張力関係" loading="lazy"><div class="tname">筋長-張力関係</div><div class="tdesc">筋のサルコメア長と張力の関係テンプレート。至適長の決定に使用。</div></a>
-<a href="../physiol/force-velocity.html" class="tcard"><img src="../img/physiol_force_velocity.png" alt="筋力-速度関係" loading="lazy"><div class="tname">筋力-速度関係</div><div class="tdesc">筋力-速度関係テンプレート。負荷と短縮速度の双曲線関係をプロット。</div></a>
-<a href="../physiol/spirometry.html" class="tcard"><img src="../img/physiol_spirometry.png" alt="スパイロメトリー" loading="lazy"><div class="tname">スパイロメトリー</div><div class="tdesc">スパイロメトリーのトレーシングテンプレート。FVC・FEV1の測定に使用。</div></a>
-<a href="../physiol/lung-volumes.html" class="tcard"><img src="../img/physiol_lung_volumes.png" alt="肺容量区分図" loading="lazy"><div class="tname">肺容量区分図</div><div class="tdesc">肺気量区分図テンプレート。TV・IRV・ERV・RV・TLC等をプロット。</div></a>
-<a href="../physiol/vq-ratio.html" class="tcard"><img src="../img/physiol_vq_ratio.png" alt="換気血流比" loading="lazy"><div class="tname">換気血流比</div><div class="tdesc">換気血流比のテンプレート。肺の上部から下部までのV/Q分布をプロット。</div></a>
-<a href="../physiol/starling-forces.html" class="tcard"><img src="../img/physiol_starling_forces.png" alt="スターリングの力" loading="lazy"><div class="tname">スターリングの力</div><div class="tdesc">毛細血管のスターリングの力テンプレート。静水圧と膠質浸透圧の関係をプロット。</div></a>
-<a href="../physiol/venous-return.html" class="tcard"><img src="../img/physiol_venous_return.png" alt="静脈還流曲線" loading="lazy"><div class="tname">静脈還流曲線</div><div class="tdesc">静脈還流曲線テンプレート。右房圧と静脈還流量の関係をプロット。</div></a>
-<a href="../physiol/cardiac-function.html" class="tcard"><img src="../img/physiol_cardiac_function.png" alt="心機能曲線" loading="lazy"><div class="tname">心機能曲線</div><div class="tdesc">心機能曲線テンプレート。右房圧と心拍出量の関係をプロット。</div></a>
-<a href="../physiol/guyton.html" class="tcard"><img src="../img/physiol_guyton.png" alt="ガイトン図" loading="lazy"><div class="tname">ガイトン図</div><div class="tdesc">ガイトン図テンプレート。心機能曲線と静脈還流曲線の交点で心拍出量を決定。</div></a>
-<a href="../physiol/respiratory-pv.html" class="tcard"><img src="../img/physiol_respiratory_pv.png" alt="呼吸系圧-容量曲線" loading="lazy"><div class="tname">呼吸系圧-容量曲線</div><div class="tdesc">呼吸系全体の圧-容量曲線テンプレート。肺と胸壁の合計コンプライアンスをプロット。</div></a>
-<a href="../physiol/fetal-hb.html" class="tcard"><img src="../img/physiol_fetal_hb.png" alt="胎児ヘモグロビン解離曲線" loading="lazy"><div class="tname">胎児ヘモグロビン解離曲線</div><div class="tdesc">胎児ヘモグロビン（HbF）と成人ヘモグロビン（HbA）の酸素解離曲線比較テンプレート。</div></a>
-<a href="../physiol/compliance-comparison.html" class="tcard"><img src="../img/physiol_compliance_comparison.png" alt="コンプライアンス比較" loading="lazy"><div class="tname">コンプライアンス比較</div><div class="tdesc">肺・胸壁・呼吸系全体のコンプライアンス比較テンプレート。</div></a>
-<a href="../physiol/capnography.html" class="tcard"><img src="../img/physiol_capnography.png" alt="カプノグラフィー波形" loading="lazy"><div class="tname">カプノグラフィー波形</div><div class="tdesc">カプノグラフィー波形テンプレート。呼気終末CO2濃度の経時変化をモニタリング。</div></a>
-<a href="../physiol/baroreceptor.html" class="tcard"><img src="../img/physiol_baroreceptor.png" alt="圧受容器反射" loading="lazy"><div class="tname">圧受容器反射</div><div class="tdesc">動脈圧受容器の応答曲線テンプレート。血圧と神経発火頻度の関係をプロット。</div></a>
-<a href="../physiol/renal-autoregulation.html" class="tcard"><img src="../img/physiol_renal_autoregulation.png" alt="腎自動調節" loading="lazy"><div class="tname">腎自動調節</div><div class="tdesc">腎自動調節曲線テンプレート。灌流圧と腎血流の関係をプロット。</div></a>
-<a href="../physiol/countercurrent.html" class="tcard"><img src="../img/physiol_countercurrent.png" alt="対向流増幅系" loading="lazy"><div class="tname">対向流増幅系</div><div class="tdesc">腎臓の対向流増幅系テンプレート。皮質から髄質への浸透圧勾配をプロット。</div></a>
-<a href="../physiol/membrane-potential.html" class="tcard"><img src="../img/physiol_membrane_potential.png" alt="静止膜電位" loading="lazy"><div class="tname">静止膜電位</div><div class="tdesc">細胞外カリウム濃度と静止膜電位の関係テンプレート。Nernst式の検証に使用。</div></a>
-<a href="../physiol/cardiac-output-hr.html" class="tcard"><img src="../img/physiol_cardiac_output_hr.png" alt="心拍出量-心拍数曲線" loading="lazy"><div class="tname">心拍出量-心拍数曲線</div><div class="tdesc">心拍数と心拍出量の関係テンプレート。至適心拍数と最大心拍出量をプロット。</div></a>
-<a href="../physiol/body-fluid.html" class="tcard"><img src="../img/physiol_body_fluid.png" alt="体液区分" loading="lazy"><div class="tname">体液区分</div><div class="tdesc">体液区分テンプレート。ICF・ECF（ISF+Plasma）の容量分布をプロット。</div></a>
-<a href="../physiol/graded-potential.html" class="tcard"><img src="../img/physiol_graded_potential.png" alt="段階電位" loading="lazy"><div class="tname">段階電位</div><div class="tdesc">段階電位のテンプレート。距離に伴う減衰をプロット。活動電位との比較に使用。</div></a>
-<a href="../physiol/smooth-muscle-ap.html" class="tcard"><img src="../img/physiol_smooth_muscle_ap.png" alt="平滑筋活動電位" loading="lazy"><div class="tname">平滑筋活動電位</div><div class="tdesc">平滑筋の活動電位テンプレート。スローウェーブとスパイクのパターンをプロット。</div></a>
-<a href="../physiol/tetanus.html" class="tcard"><img src="../img/physiol_tetanus.png" alt="筋強縮" loading="lazy"><div class="tname">筋強縮</div><div class="tdesc">骨格筋の強縮テンプレート。不完全強縮と完全強縮のパターンをプロット。</div></a>
-<a href="../physiol/ternary-acid-base.html" class="tcard"><img src="../img/physiol_ternary_acid_base.png" alt="酸塩基三角図" loading="lazy"><div class="tname">酸塩基三角図</div><div class="tdesc">酸塩基平衡の三角図テンプレート。呼吸性・代謝性の酸塩基障害分類に使用。</div></a>
-<a href="../physiol/o2-dissociation.html" class="tcard"><img src="../img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="tname">酸素解離曲線</div><div class="tdesc">酸素解離曲線テンプレート。ヘモグロビンの酸素運搬能を評価。</div></a>
-<a href="../physiol/frank-starling.html" class="tcard"><img src="../img/physiol_frank_starling.png" alt="フランク・スターリング曲線" loading="lazy"><div class="tname">フランク・スターリング曲線</div><div class="tdesc">フランク・スターリング曲線テンプレート。前負荷と心拍出量の関係を表示。</div></a>
-<a href="../physiol/action-potential-nerve.html" class="tcard"><img src="../img/physiol_action_potential_nerve.png" alt="神経活動電位" loading="lazy"><div class="tname">神経活動電位</div><div class="tdesc">神経活動電位テンプレート。ニューロンの脱分極・再分極の記録に使用。</div></a>
-<a href="../physiol/action-potential-cardiac.html" class="tcard"><img src="../img/physiol_action_potential_cardiac.png" alt="心筋活動電位" loading="lazy"><div class="tname">心筋活動電位</div><div class="tdesc">心筋活動電位テンプレート。心筋細胞の電気活動の記録に使用。Phase 0-4の各相を表示。</div></a>
-<a href="../physiol/muscle-length-tension.html" class="tcard"><img src="../img/physiol_muscle_length_tension.png" alt="筋長力曲線" loading="lazy"><div class="tname">筋長力曲線</div><div class="tdesc">筋長力曲線テンプレート。骨格筋の長さ-張力関係を表示。</div></a>
-<a href="../physiol/force-velocity.html" class="tcard"><img src="../img/physiol_force_velocity.png" alt="力-速度曲線" loading="lazy"><div class="tname">力-速度曲線</div><div class="tdesc">力-速度曲線テンプレート。筋収縮の力と速度の逆関係を表示。</div></a>
-<a href="../physiol/compliance-curve.html" class="tcard"><img src="../img/physiol_compliance_curve.png" alt="肺コンプライアンス曲線" loading="lazy"><div class="tname">肺コンプライアンス曲線</div><div class="tdesc">肺コンプライアンス曲線テンプレート。吸気・呼気のヒステリシスを表示。</div></a>
-<a href="../physiol/wiggers-diagram.html" class="tcard"><img src="../img/physiol_wiggers_diagram.png" alt="ウィガース図テンプレート" loading="lazy"><div class="tname">ウィガース図テンプレート</div><div class="tdesc">ウィガース図テンプレート。心周期の圧変化・弁の開閉・ECGの対応を記録。</div></a>
-<a href="../physiol/starling-forces.html" class="tcard"><img src="../img/physiol_starling_forces.png" alt="スターリング力図" loading="lazy"><div class="tname">スターリング力図</div><div class="tdesc">スターリング力図テンプレート。毛細血管内外の静水圧・膠質浸透圧のバランスを表示。</div></a>
-<a href="../physiol/co2-response.html" class="tcard"><img src="../img/physiol_co2_response.png" alt="CO2応答曲線" loading="lazy"><div class="tname">CO2応答曲線</div><div class="tdesc">CO2応答曲線テンプレート。中枢化学受容体の換気応答を記録。</div></a>
-<a href="../physiol/renal-clearance.html" class="tcard"><img src="../img/physiol_renal_clearance.png" alt="腎クリアランス曲線" loading="lazy"><div class="tname">腎クリアランス曲線</div><div class="tdesc">腎クリアランス曲線テンプレート。糸球体濾過・分泌・再吸収の関係を表示。</div></a>
-<a href="../physiol/glucose-titration.html" class="tcard"><img src="../img/physiol_glucose_titration.png" alt="ブドウ糖排泄閾値曲線" loading="lazy"><div class="tname">ブドウ糖排泄閾値曲線</div><div class="tdesc">ブドウ糖排泄閾値曲線テンプレート。尿糖の出現する血糖閾値（TmG）を表示。</div></a></div>
+<p class="count">44 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">44</span></button><button class="tab" data-sc="cv">循環器系<span class="tab-count">13</span></button><button class="tab" data-sc="resp">呼吸器系<span class="tab-count">12</span></button><button class="tab" data-sc="neuro">神経・筋<span class="tab-count">12</span></button><button class="tab" data-sc="renal">腎・体液<span class="tab-count">3</span></button><button class="tab" data-sc="gas">血液ガス<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../physiol/o2-dissociation.html" class="tcard" data-sc="gas"><img src="../img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="tname">酸素解離曲線</div><div class="tdesc">ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</div></a>
+<a href="../physiol/o2-dissociation-bohr.html" class="tcard" data-sc="gas"><img src="../img/physiol_o2_dissociation_bohr.png" alt="酸素解離曲線（ボーア効果）" loading="lazy"><div class="tname">酸素解離曲線（ボーア効果）</div><div class="tdesc">ボーア効果による酸素解離曲線のシフトを示すテンプレート。pH変化の影響を比較。</div></a>
+<a href="../physiol/co2-dissociation.html" class="tcard" data-sc="gas"><img src="../img/physiol_co2_dissociation.png" alt="CO2解離曲線" loading="lazy"><div class="tname">CO2解離曲線</div><div class="tdesc">CO2解離曲線テンプレート。PCO2とCO2含量の関係をプロット。</div></a>
+<a href="../physiol/frank-starling.html" class="tcard" data-sc="cv"><img src="../img/physiol_frank_starling.png" alt="フランク・スターリング曲線" loading="lazy"><div class="tname">フランク・スターリング曲線</div><div class="tdesc">フランク・スターリング曲線テンプレート。前負荷と一回拍出量の関係をプロット。</div></a>
+<a href="../physiol/nerve-ap.html" class="tcard" data-sc="neuro"><img src="../img/physiol_nerve_ap.png" alt="神経活動電位" loading="lazy"><div class="tname">神経活動電位</div><div class="tdesc">神経細胞の活動電位テンプレート。脱分極・再分極・過分極のパターンをプロット。</div></a>
+<a href="../physiol/cardiac-ap.html" class="tcard" data-sc="cv"><img src="../img/physiol_cardiac_ap.png" alt="心筋活動電位" loading="lazy"><div class="tname">心筋活動電位</div><div class="tdesc">心室筋の活動電位テンプレート。Phase 0-4の各段階をプロット。</div></a>
+<a href="../physiol/sa-node-ap.html" class="tcard" data-sc="neuro"><img src="../img/physiol_sa_node_ap.png" alt="洞房結節活動電位" loading="lazy"><div class="tname">洞房結節活動電位</div><div class="tdesc">洞房結節のペースメーカー活動電位テンプレート。自動能をプロット。</div></a>
+<a href="../physiol/flow-volume.html" class="tcard" data-sc="resp"><img src="../img/physiol_flow_volume.png" alt="フローボリュームループ" loading="lazy"><div class="tname">フローボリュームループ</div><div class="tdesc">フローボリュームループテンプレート。呼気・吸気の流量と容量の関係をプロット。</div></a>
+<a href="../physiol/pv-loop.html" class="tcard" data-sc="cv"><img src="../img/physiol_pv_loop.png" alt="心臓PVループ" loading="lazy"><div class="tname">心臓PVループ</div><div class="tdesc">心臓の圧-容量ループテンプレート。左室の一心周期の変化をプロット。</div></a>
+<a href="../physiol/wiggers.html" class="tcard" data-sc="cv"><img src="../img/physiol_wiggers.png" alt="ウィガースダイアグラム" loading="lazy"><div class="tname">ウィガースダイアグラム</div><div class="tdesc">ウィガースダイアグラムテンプレート。心周期の圧・容量・ECG・心音の時間経過。</div></a>
+<a href="../physiol/lung-compliance.html" class="tcard" data-sc="resp"><img src="../img/physiol_lung_compliance.png" alt="肺コンプライアンス曲線" loading="lazy"><div class="tname">肺コンプライアンス曲線</div><div class="tdesc">肺コンプライアンス曲線テンプレート。圧-容量関係をプロット。</div></a>
+<a href="../physiol/muscle-twitch.html" class="tcard" data-sc="neuro"><img src="../img/physiol_muscle_twitch.png" alt="筋単収縮" loading="lazy"><div class="tname">筋単収縮</div><div class="tdesc">骨格筋の単収縮テンプレート。潜時・収縮期・弛緩期をプロット。</div></a>
+<a href="../physiol/length-tension.html" class="tcard" data-sc="neuro"><img src="../img/physiol_length_tension.png" alt="筋長-張力関係" loading="lazy"><div class="tname">筋長-張力関係</div><div class="tdesc">筋のサルコメア長と張力の関係テンプレート。至適長の決定に使用。</div></a>
+<a href="../physiol/force-velocity.html" class="tcard" data-sc="neuro"><img src="../img/physiol_force_velocity.png" alt="筋力-速度関係" loading="lazy"><div class="tname">筋力-速度関係</div><div class="tdesc">筋力-速度関係テンプレート。負荷と短縮速度の双曲線関係をプロット。</div></a>
+<a href="../physiol/spirometry.html" class="tcard" data-sc="resp"><img src="../img/physiol_spirometry.png" alt="スパイロメトリー" loading="lazy"><div class="tname">スパイロメトリー</div><div class="tdesc">スパイロメトリーのトレーシングテンプレート。FVC・FEV1の測定に使用。</div></a>
+<a href="../physiol/lung-volumes.html" class="tcard" data-sc="resp"><img src="../img/physiol_lung_volumes.png" alt="肺容量区分図" loading="lazy"><div class="tname">肺容量区分図</div><div class="tdesc">肺気量区分図テンプレート。TV・IRV・ERV・RV・TLC等をプロット。</div></a>
+<a href="../physiol/vq-ratio.html" class="tcard" data-sc="resp"><img src="../img/physiol_vq_ratio.png" alt="換気血流比" loading="lazy"><div class="tname">換気血流比</div><div class="tdesc">換気血流比のテンプレート。肺の上部から下部までのV/Q分布をプロット。</div></a>
+<a href="../physiol/starling-forces.html" class="tcard" data-sc="cv"><img src="../img/physiol_starling_forces.png" alt="スターリングの力" loading="lazy"><div class="tname">スターリングの力</div><div class="tdesc">毛細血管のスターリングの力テンプレート。静水圧と膠質浸透圧の関係をプロット。</div></a>
+<a href="../physiol/venous-return.html" class="tcard" data-sc="cv"><img src="../img/physiol_venous_return.png" alt="静脈還流曲線" loading="lazy"><div class="tname">静脈還流曲線</div><div class="tdesc">静脈還流曲線テンプレート。右房圧と静脈還流量の関係をプロット。</div></a>
+<a href="../physiol/cardiac-function.html" class="tcard" data-sc="cv"><img src="../img/physiol_cardiac_function.png" alt="心機能曲線" loading="lazy"><div class="tname">心機能曲線</div><div class="tdesc">心機能曲線テンプレート。右房圧と心拍出量の関係をプロット。</div></a>
+<a href="../physiol/guyton.html" class="tcard" data-sc="cv"><img src="../img/physiol_guyton.png" alt="ガイトン図" loading="lazy"><div class="tname">ガイトン図</div><div class="tdesc">ガイトン図テンプレート。心機能曲線と静脈還流曲線の交点で心拍出量を決定。</div></a>
+<a href="../physiol/respiratory-pv.html" class="tcard" data-sc="resp"><img src="../img/physiol_respiratory_pv.png" alt="呼吸系圧-容量曲線" loading="lazy"><div class="tname">呼吸系圧-容量曲線</div><div class="tdesc">呼吸系全体の圧-容量曲線テンプレート。肺と胸壁の合計コンプライアンスをプロット。</div></a>
+<a href="../physiol/fetal-hb.html" class="tcard" data-sc="gas"><img src="../img/physiol_fetal_hb.png" alt="胎児ヘモグロビン解離曲線" loading="lazy"><div class="tname">胎児ヘモグロビン解離曲線</div><div class="tdesc">胎児ヘモグロビン（HbF）と成人ヘモグロビン（HbA）の酸素解離曲線比較テンプレート。</div></a>
+<a href="../physiol/compliance-comparison.html" class="tcard" data-sc="resp"><img src="../img/physiol_compliance_comparison.png" alt="コンプライアンス比較" loading="lazy"><div class="tname">コンプライアンス比較</div><div class="tdesc">肺・胸壁・呼吸系全体のコンプライアンス比較テンプレート。</div></a>
+<a href="../physiol/capnography.html" class="tcard" data-sc="resp"><img src="../img/physiol_capnography.png" alt="カプノグラフィー波形" loading="lazy"><div class="tname">カプノグラフィー波形</div><div class="tdesc">カプノグラフィー波形テンプレート。呼気終末CO2濃度の経時変化をモニタリング。</div></a>
+<a href="../physiol/baroreceptor.html" class="tcard" data-sc="cv"><img src="../img/physiol_baroreceptor.png" alt="圧受容器反射" loading="lazy"><div class="tname">圧受容器反射</div><div class="tdesc">動脈圧受容器の応答曲線テンプレート。血圧と神経発火頻度の関係をプロット。</div></a>
+<a href="../physiol/renal-autoregulation.html" class="tcard" data-sc="renal"><img src="../img/physiol_renal_autoregulation.png" alt="腎自動調節" loading="lazy"><div class="tname">腎自動調節</div><div class="tdesc">腎自動調節曲線テンプレート。灌流圧と腎血流の関係をプロット。</div></a>
+<a href="../physiol/countercurrent.html" class="tcard" data-sc="renal"><img src="../img/physiol_countercurrent.png" alt="対向流増幅系" loading="lazy"><div class="tname">対向流増幅系</div><div class="tdesc">腎臓の対向流増幅系テンプレート。皮質から髄質への浸透圧勾配をプロット。</div></a>
+<a href="../physiol/membrane-potential.html" class="tcard" data-sc="neuro"><img src="../img/physiol_membrane_potential.png" alt="静止膜電位" loading="lazy"><div class="tname">静止膜電位</div><div class="tdesc">細胞外カリウム濃度と静止膜電位の関係テンプレート。Nernst式の検証に使用。</div></a>
+<a href="../physiol/cardiac-output-hr.html" class="tcard" data-sc="cv"><img src="../img/physiol_cardiac_output_hr.png" alt="心拍出量-心拍数曲線" loading="lazy"><div class="tname">心拍出量-心拍数曲線</div><div class="tdesc">心拍数と心拍出量の関係テンプレート。至適心拍数と最大心拍出量をプロット。</div></a>
+<a href="../physiol/body-fluid.html" class="tcard" data-sc="resp"><img src="../img/physiol_body_fluid.png" alt="体液区分" loading="lazy"><div class="tname">体液区分</div><div class="tdesc">体液区分テンプレート。ICF・ECF（ISF+Plasma）の容量分布をプロット。</div></a>
+<a href="../physiol/graded-potential.html" class="tcard" data-sc="neuro"><img src="../img/physiol_graded_potential.png" alt="段階電位" loading="lazy"><div class="tname">段階電位</div><div class="tdesc">段階電位のテンプレート。距離に伴う減衰をプロット。活動電位との比較に使用。</div></a>
+<a href="../physiol/smooth-muscle-ap.html" class="tcard" data-sc="neuro"><img src="../img/physiol_smooth_muscle_ap.png" alt="平滑筋活動電位" loading="lazy"><div class="tname">平滑筋活動電位</div><div class="tdesc">平滑筋の活動電位テンプレート。スローウェーブとスパイクのパターンをプロット。</div></a>
+<a href="../physiol/tetanus.html" class="tcard" data-sc="neuro"><img src="../img/physiol_tetanus.png" alt="筋強縮" loading="lazy"><div class="tname">筋強縮</div><div class="tdesc">骨格筋の強縮テンプレート。不完全強縮と完全強縮のパターンをプロット。</div></a>
+<a href="../physiol/ternary-acid-base.html" class="tcard" data-sc="resp"><img src="../img/physiol_ternary_acid_base.png" alt="酸塩基三角図" loading="lazy"><div class="tname">酸塩基三角図</div><div class="tdesc">酸塩基平衡の三角図テンプレート。呼吸性・代謝性の酸塩基障害分類に使用。</div></a>
+<a href="../physiol/action-potential-nerve.html" class="tcard" data-sc="neuro"><img src="../img/physiol_action_potential_nerve.png" alt="神経活動電位" loading="lazy"><div class="tname">神経活動電位</div><div class="tdesc">神経活動電位テンプレート。ニューロンの脱分極・再分極の記録に使用。</div></a>
+<a href="../physiol/action-potential-cardiac.html" class="tcard" data-sc="cv"><img src="../img/physiol_action_potential_cardiac.png" alt="心筋活動電位" loading="lazy"><div class="tname">心筋活動電位</div><div class="tdesc">心筋活動電位テンプレート。心筋細胞の電気活動の記録に使用。Phase 0-4の各相を表示。</div></a>
+<a href="../physiol/muscle-length-tension.html" class="tcard" data-sc="neuro"><img src="../img/physiol_muscle_length_tension.png" alt="筋長力曲線" loading="lazy"><div class="tname">筋長力曲線</div><div class="tdesc">筋長力曲線テンプレート。骨格筋の長さ-張力関係を表示。</div></a>
+<a href="../physiol/compliance-curve.html" class="tcard" data-sc="resp"><img src="../img/physiol_compliance_curve.png" alt="肺コンプライアンス曲線" loading="lazy"><div class="tname">肺コンプライアンス曲線</div><div class="tdesc">肺コンプライアンス曲線テンプレート。吸気・呼気のヒステリシスを表示。</div></a>
+<a href="../physiol/wiggers-diagram.html" class="tcard" data-sc="cv"><img src="../img/physiol_wiggers_diagram.png" alt="ウィガース図テンプレート" loading="lazy"><div class="tname">ウィガース図テンプレート</div><div class="tdesc">ウィガース図テンプレート。心周期の圧変化・弁の開閉・ECGの対応を記録。</div></a>
+<a href="../physiol/co2-response.html" class="tcard" data-sc="resp"><img src="../img/physiol_co2_response.png" alt="CO2応答曲線" loading="lazy"><div class="tname">CO2応答曲線</div><div class="tdesc">CO2応答曲線テンプレート。中枢化学受容体の換気応答を記録。</div></a>
+<a href="../physiol/renal-clearance.html" class="tcard" data-sc="renal"><img src="../img/physiol_renal_clearance.png" alt="腎クリアランス曲線" loading="lazy"><div class="tname">腎クリアランス曲線</div><div class="tdesc">腎クリアランス曲線テンプレート。糸球体濾過・分泌・再吸収の関係を表示。</div></a>
+<a href="../physiol/cardiac-output-box.html" class="tcard" data-sc="cv"><img src="../img/physiol_cardiac_output_box.png" alt="状態別心拍出量（箱ひげ図）" loading="lazy"><div class="tname">状態別心拍出量（箱ひげ図）</div><div class="tdesc">生理的状態別の心拍出量分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../physiol/heatmap-reflex.html" class="tcard" data-sc="neuro"><img src="../img/physiol_heatmap_reflex.png" alt="反射弧ヒートマップ" loading="lazy"><div class="tname">反射弧ヒートマップ</div><div class="tdesc">反射弧の構成要素と関連をヒートマップで表示するテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

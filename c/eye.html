@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>眼科（Ophthalmology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="眼科のレポート用グラフテンプレート一覧。16種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="眼科のレポート用グラフテンプレート一覧。19種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,23 +39,40 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 眼科</div>
 <main>
 <h1 class="cat-title">眼科 (Ophthalmology)</h1>
-<p class="count">16 templates available</p>
-<div class="grid"><a href="../eye/visual-acuity.html" class="tcard"><img src="../img/eye_visual_acuity.png" alt="視力検査" loading="lazy"><div class="tname">視力検査</div><div class="tdesc">視力検査テンプレート。矯正/非矯正視力の記録に使用。</div></a>
-<a href="../eye/visual-field.html" class="tcard"><img src="../img/eye_visual_field.png" alt="視野検査" loading="lazy"><div class="tname">視野検査</div><div class="tdesc">視野検査テンプレート。自動視野計の結果をプロット。</div></a>
-<a href="../eye/iop.html" class="tcard"><img src="../img/eye_iop.png" alt="眼圧" loading="lazy"><div class="tname">眼圧</div><div class="tdesc">眼圧日内変動テンプレート。緑内障の評価に使用。</div></a>
-<a href="../eye/dark-adaptation.html" class="tcard"><img src="../img/eye_dark_adaptation.png" alt="暗順応曲線" loading="lazy"><div class="tname">暗順応曲線</div><div class="tdesc">暗順応曲線テンプレート。錐体-杆体の二段階適応をプロット。</div></a>
-<a href="../eye/accommodation.html" class="tcard"><img src="../img/eye_accommodation.png" alt="調節力曲線" loading="lazy"><div class="tname">調節力曲線</div><div class="tdesc">調節力-年齢曲線テンプレート。加齢による調節力低下をプロット。</div></a>
-<a href="../eye/erg.html" class="tcard"><img src="../img/eye_erg.png" alt="網膜電図" loading="lazy"><div class="tname">網膜電図</div><div class="tdesc">ERGテンプレート。a波/b波の振幅と潜時を測定。</div></a>
-<a href="../eye/fundus.html" class="tcard"><img src="../img/eye_fundus.png" alt="眼底図" loading="lazy"><div class="tname">眼底図</div><div class="tdesc">眼底図テンプレート。所見の記録とスケッチに使用。</div></a>
-<a href="../eye/corneal-topography.html" class="tcard"><img src="../img/eye_corneal_topography.png" alt="角膜トポグラフィー" loading="lazy"><div class="tname">角膜トポグラフィー</div><div class="tdesc">角膜トポグラフィーテンプレート。角膜形状の解析に使用。</div></a>
-<a href="../eye/color-vision.html" class="tcard"><img src="../img/eye_color_vision.png" alt="色覚検査" loading="lazy"><div class="tname">色覚検査</div><div class="tdesc">色覚検査テンプレート。石原表等の結果記録に使用。</div></a>
-<a href="../eye/oct.html" class="tcard"><img src="../img/eye_oct.png" alt="OCT層構造テンプレート" loading="lazy"><div class="tname">OCT層構造テンプレート</div><div class="tdesc">OCT網膜層構造テンプレート。黄斑厚の測定に使用。</div></a>
-<a href="../eye/audiogram.html" class="tcard"><img src="../img/eye_audiogram.png" alt="標準オージオグラム" loading="lazy"><div class="tname">標準オージオグラム</div><div class="tdesc">標準オージオグラムテンプレート。純音聴力検査結果の記録に使用。</div></a>
-<a href="../eye/visual-field.html" class="tcard"><img src="../img/eye_visual_field.png" alt="ゴールドマン視野" loading="lazy"><div class="tname">ゴールドマン視野</div><div class="tdesc">ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。</div></a>
-<a href="../eye/visual-field-humphrey.html" class="tcard"><img src="../img/eye_visual_field_humphrey.png" alt="ハンフリー視野" loading="lazy"><div class="tname">ハンフリー視野</div><div class="tdesc">ハンフリー自動視野計テンプレート。中心30度の視野感度を記録。</div></a>
-<a href="../eye/visual-acuity-trend.html" class="tcard"><img src="../img/eye_visual_acuity_trend.png" alt="視力推移" loading="lazy"><div class="tname">視力推移</div><div class="tdesc">視力推移テンプレート。治療前後の視力変化を記録。</div></a>
-<a href="../eye/iop-trend.html" class="tcard"><img src="../img/eye_iop_trend.png" alt="眼圧推移チャート" loading="lazy"><div class="tname">眼圧推移チャート</div><div class="tdesc">眼圧推移チャートテンプレート。緑内障の治療効果モニタリングに使用。</div></a>
-<a href="../eye/oct-thickness.html" class="tcard"><img src="../img/eye_oct_thickness.png" alt="OCT網膜厚マップ" loading="lazy"><div class="tname">OCT網膜厚マップ</div><div class="tdesc">OCT網膜厚マップテンプレート。黄斑部の網膜厚を記録。</div></a></div>
+<p class="count">19 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">19</span></button><button class="tab" data-sc="visual">視力・視野<span class="tab-count">5</span></button><button class="tab" data-sc="pressure_e">眼圧・緑内障<span class="tab-count">3</span></button><button class="tab" data-sc="retina">網膜・眼底<span class="tab-count">6</span></button><button class="tab" data-sc="lens">水晶体・屈折<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../eye/visual-acuity.html" class="tcard" data-sc="visual"><img src="../img/eye_visual_acuity.png" alt="視力検査" loading="lazy"><div class="tname">視力検査</div><div class="tdesc">視力検査テンプレート。矯正/非矯正視力の記録に使用。</div></a>
+<a href="../eye/iop.html" class="tcard" data-sc="pressure_e"><img src="../img/eye_iop.png" alt="眼圧" loading="lazy"><div class="tname">眼圧</div><div class="tdesc">眼圧日内変動テンプレート。緑内障の評価に使用。</div></a>
+<a href="../eye/dark-adaptation.html" class="tcard" data-sc="other"><img src="../img/eye_dark_adaptation.png" alt="暗順応曲線" loading="lazy"><div class="tname">暗順応曲線</div><div class="tdesc">暗順応曲線テンプレート。錐体-杆体の二段階適応をプロット。</div></a>
+<a href="../eye/accommodation.html" class="tcard" data-sc="other"><img src="../img/eye_accommodation.png" alt="調節力曲線" loading="lazy"><div class="tname">調節力曲線</div><div class="tdesc">調節力-年齢曲線テンプレート。加齢による調節力低下をプロット。</div></a>
+<a href="../eye/erg.html" class="tcard" data-sc="retina"><img src="../img/eye_erg.png" alt="網膜電図" loading="lazy"><div class="tname">網膜電図</div><div class="tdesc">ERGテンプレート。a波/b波の振幅と潜時を測定。</div></a>
+<a href="../eye/fundus.html" class="tcard" data-sc="retina"><img src="../img/eye_fundus.png" alt="眼底図" loading="lazy"><div class="tname">眼底図</div><div class="tdesc">眼底図テンプレート。所見の記録とスケッチに使用。</div></a>
+<a href="../eye/corneal-topography.html" class="tcard" data-sc="lens"><img src="../img/eye_corneal_topography.png" alt="角膜トポグラフィー" loading="lazy"><div class="tname">角膜トポグラフィー</div><div class="tdesc">角膜トポグラフィーテンプレート。角膜形状の解析に使用。</div></a>
+<a href="../eye/color-vision.html" class="tcard" data-sc="other"><img src="../img/eye_color_vision.png" alt="色覚検査" loading="lazy"><div class="tname">色覚検査</div><div class="tdesc">色覚検査テンプレート。石原表等の結果記録に使用。</div></a>
+<a href="../eye/oct.html" class="tcard" data-sc="retina"><img src="../img/eye_oct.png" alt="OCT層構造テンプレート" loading="lazy"><div class="tname">OCT層構造テンプレート</div><div class="tdesc">OCT網膜層構造テンプレート。黄斑厚の測定に使用。</div></a>
+<a href="../eye/audiogram.html" class="tcard" data-sc="other"><img src="../img/eye_audiogram.png" alt="標準オージオグラム" loading="lazy"><div class="tname">標準オージオグラム</div><div class="tdesc">標準オージオグラムテンプレート。純音聴力検査結果の記録に使用。</div></a>
+<a href="../eye/visual-field.html" class="tcard" data-sc="visual"><img src="../img/eye_visual_field.png" alt="ゴールドマン視野" loading="lazy"><div class="tname">ゴールドマン視野</div><div class="tdesc">ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。</div></a>
+<a href="../eye/visual-field-humphrey.html" class="tcard" data-sc="visual"><img src="../img/eye_visual_field_humphrey.png" alt="ハンフリー視野" loading="lazy"><div class="tname">ハンフリー視野</div><div class="tdesc">ハンフリー自動視野計テンプレート。中心30度の視野感度を記録。</div></a>
+<a href="../eye/visual-acuity-trend.html" class="tcard" data-sc="visual"><img src="../img/eye_visual_acuity_trend.png" alt="視力推移" loading="lazy"><div class="tname">視力推移</div><div class="tdesc">視力推移テンプレート。治療前後の視力変化を記録。</div></a>
+<a href="../eye/iop-trend.html" class="tcard" data-sc="pressure_e"><img src="../img/eye_iop_trend.png" alt="眼圧推移チャート" loading="lazy"><div class="tname">眼圧推移チャート</div><div class="tdesc">眼圧推移チャートテンプレート。緑内障の治療効果モニタリングに使用。</div></a>
+<a href="../eye/oct-thickness.html" class="tcard" data-sc="retina"><img src="../img/eye_oct_thickness.png" alt="OCT網膜厚マップ" loading="lazy"><div class="tname">OCT網膜厚マップ</div><div class="tdesc">OCT網膜厚マップテンプレート。黄斑部の網膜厚を記録。</div></a>
+<a href="../eye/iop-comparison-box.html" class="tcard" data-sc="pressure_e"><img src="../img/eye_iop_comparison_box.png" alt="緑内障型別眼圧（箱ひげ図）" loading="lazy"><div class="tname">緑内障型別眼圧（箱ひげ図）</div><div class="tdesc">緑内障タイプ別の眼圧分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../eye/heatmap-oct.html" class="tcard" data-sc="retina"><img src="../img/eye_heatmap_oct.png" alt="OCT層別ヒートマップ" loading="lazy"><div class="tname">OCT層別ヒートマップ</div><div class="tdesc">OCT網膜各層の厚さをヒートマップで表示するテンプレート。</div></a>
+<a href="../eye/radar-visual-function.html" class="tcard" data-sc="visual"><img src="../img/eye_radar_visual_function.png" alt="視機能レーダー" loading="lazy"><div class="tname">視機能レーダー</div><div class="tdesc">視機能の多面的評価レーダーチャートテンプレート。</div></a>
+<a href="../eye/km-retinal.html" class="tcard" data-sc="retina"><img src="../img/eye_km_retinal.png" alt="網膜剥離予後曲線" loading="lazy"><div class="tname">網膜剥離予後曲線</div><div class="tdesc">網膜剥離手術後の解剖学的成功率曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

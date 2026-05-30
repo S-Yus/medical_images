@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>循環器（Cardiology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="循環器のレポート用グラフテンプレート一覧。32種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="循環器のレポート用グラフテンプレート一覧。38種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,39 +39,59 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 循環器</div>
 <main>
 <h1 class="cat-title">循環器 (Cardiology)</h1>
-<p class="count">32 templates available</p>
-<div class="grid"><a href="../cardio/ecg-normal.html" class="tcard"><img src="../img/cardio_ecg_normal.png" alt="正常心電図" loading="lazy"><div class="tname">正常心電図</div><div class="tdesc">正常心電図テンプレート。P-QRS-T波形の各要素をプロット。</div></a>
-<a href="../cardio/ecg-st-elevation.html" class="tcard"><img src="../img/cardio_ecg_st_elevation.png" alt="心電図：ST上昇" loading="lazy"><div class="tname">心電図：ST上昇</div><div class="tdesc">ST上昇型心電図テンプレート。急性心筋梗塞のST変化をプロット。</div></a>
-<a href="../cardio/ecg-st-depression.html" class="tcard"><img src="../img/cardio_ecg_st_depression.png" alt="心電図：ST低下" loading="lazy"><div class="tname">心電図：ST低下</div><div class="tdesc">ST低下型心電図テンプレート。虚血性変化のST低下をプロット。</div></a>
-<a href="../cardio/ecg-afib.html" class="tcard"><img src="../img/cardio_ecg_afib.png" alt="心電図：心房細動" loading="lazy"><div class="tname">心電図：心房細動</div><div class="tdesc">心房細動の心電図テンプレート。不整なRR間隔とf波をプロット。</div></a>
-<a href="../cardio/ecg-1st-block.html" class="tcard"><img src="../img/cardio_ecg_1st_block.png" alt="心電図：1度房室ブロック" loading="lazy"><div class="tname">心電図：1度房室ブロック</div><div class="tdesc">1度房室ブロックの心電図テンプレート。PR間隔延長をプロット。</div></a>
-<a href="../cardio/ecg-2nd-block.html" class="tcard"><img src="../img/cardio_ecg_2nd_block.png" alt="心電図：2度房室ブロック" loading="lazy"><div class="tname">心電図：2度房室ブロック</div><div class="tdesc">2度房室ブロックの心電図テンプレート。Wenckebach/Mobitz II型をプロット。</div></a>
-<a href="../cardio/ecg-3rd-block.html" class="tcard"><img src="../img/cardio_ecg_3rd_block.png" alt="心電図：3度房室ブロック" loading="lazy"><div class="tname">心電図：3度房室ブロック</div><div class="tdesc">3度（完全）房室ブロックの心電図テンプレート。P波とQRSの解離をプロット。</div></a>
-<a href="../cardio/ecg-long-qt.html" class="tcard"><img src="../img/cardio_ecg_long_qt.png" alt="心電図：QT延長" loading="lazy"><div class="tname">心電図：QT延長</div><div class="tdesc">QT延長症候群の心電図テンプレート。延長したQT間隔をプロット。</div></a>
-<a href="../cardio/arterial-pressure.html" class="tcard"><img src="../img/cardio_arterial_pressure.png" alt="動脈圧波形" loading="lazy"><div class="tname">動脈圧波形</div><div class="tdesc">動脈圧波形テンプレート。収縮期・拡張期圧とnotchをプロット。</div></a>
-<a href="../cardio/cvp.html" class="tcard"><img src="../img/cardio_cvp.png" alt="中心静脈圧" loading="lazy"><div class="tname">中心静脈圧</div><div class="tdesc">中心静脈圧波形テンプレート。a/c/v波をプロット。</div></a>
-<a href="../cardio/pa-pressure.html" class="tcard"><img src="../img/cardio_pa_pressure.png" alt="肺動脈圧" loading="lazy"><div class="tname">肺動脈圧</div><div class="tdesc">肺動脈圧波形テンプレート。収縮期・拡張期の肺動脈圧をプロット。</div></a>
-<a href="../cardio/pcwp.html" class="tcard"><img src="../img/cardio_pcwp.png" alt="肺動脈楔入圧" loading="lazy"><div class="tname">肺動脈楔入圧</div><div class="tdesc">肺動脈楔入圧テンプレート。左房圧の間接的測定をプロット。</div></a>
-<a href="../cardio/jvp.html" class="tcard"><img src="../img/cardio_jvp.png" alt="頸静脈波" loading="lazy"><div class="tname">頸静脈波</div><div class="tdesc">頸静脈波テンプレート。a/c/v波とx/y谷をプロット。</div></a>
-<a href="../cardio/coronary-flow.html" class="tcard"><img src="../img/cardio_coronary_flow.png" alt="冠血流量" loading="lazy"><div class="tname">冠血流量</div><div class="tdesc">冠血流自動調節テンプレート。灌流圧と冠血流の関係をプロット。</div></a>
-<a href="../cardio/aortic-stenosis.html" class="tcard"><img src="../img/cardio_aortic_stenosis.png" alt="大動脈弁狭窄圧較差" loading="lazy"><div class="tname">大動脈弁狭窄圧較差</div><div class="tdesc">大動脈弁狭窄症の圧較差テンプレート。左室圧と大動脈圧の差をプロット。</div></a>
-<a href="../cardio/cardiac-cycle.html" class="tcard"><img src="../img/cardio_cardiac_cycle.png" alt="心周期イベント" loading="lazy"><div class="tname">心周期イベント</div><div class="tdesc">心周期の主要イベントテンプレート。弁開閉のタイミングをプロット。</div></a>
-<a href="../cardio/thermodilution.html" class="tcard"><img src="../img/cardio_thermodilution.png" alt="熱希釈曲線" loading="lazy"><div class="tname">熱希釈曲線</div><div class="tdesc">熱希釈法による心拍出量測定テンプレート。温度変化曲線をプロット。</div></a>
-<a href="../cardio/preload-afterload.html" class="tcard"><img src="../img/cardio_preload_afterload.png" alt="前負荷-後負荷相互作用" loading="lazy"><div class="tname">前負荷-後負荷相互作用</div><div class="tdesc">前負荷と後負荷の相互作用テンプレート。心機能曲線の変化をプロット。</div></a>
-<a href="../cardio/bp-waveform.html" class="tcard"><img src="../img/cardio_bp_waveform.png" alt="血圧波形" loading="lazy"><div class="tname">血圧波形</div><div class="tdesc">血圧波形テンプレート。動脈血圧の経時変化をモニタリング。</div></a>
-<a href="../cardio/ecg-vt.html" class="tcard"><img src="../img/cardio_ecg_vt.png" alt="心電図：心室頻拍" loading="lazy"><div class="tname">心電図：心室頻拍</div><div class="tdesc">心室頻拍の心電図テンプレート。幅広QRS波形の連続をプロット。</div></a>
-<a href="../cardio/ecg-aflutter.html" class="tcard"><img src="../img/cardio_ecg_aflutter.png" alt="心電図：心房粗動" loading="lazy"><div class="tname">心電図：心房粗動</div><div class="tdesc">心房粗動の心電図テンプレート。鋸歯状のflutter波をプロット。</div></a>
-<a href="../cardio/mitral-stenosis.html" class="tcard"><img src="../img/cardio_mitral_stenosis.png" alt="僧帽弁狭窄圧較差" loading="lazy"><div class="tname">僧帽弁狭窄圧較差</div><div class="tdesc">僧帽弁狭窄症の圧較差テンプレート。左房圧と左室拡張期圧の差をプロット。</div></a>
-<a href="../cardio/ecg-12lead.html" class="tcard"><img src="../img/cardio_ecg_12lead.png" alt="12誘導心電図グリッド" loading="lazy"><div class="tname">12誘導心電図グリッド</div><div class="tdesc">12誘導心電図グリッドテンプレート。標準的な心電図記録用紙。</div></a>
-<a href="../cardio/ecg-rhythm.html" class="tcard"><img src="../img/cardio_ecg_rhythm.png" alt="リズムストリップグリッド" loading="lazy"><div class="tname">リズムストリップグリッド</div><div class="tdesc">リズムストリップグリッドテンプレート。長時間心電図モニター記録用。</div></a>
-<a href="../cardio/pv-loop-cardiac.html" class="tcard"><img src="../img/cardio_pv_loop_cardiac.png" alt="心臓PVループ" loading="lazy"><div class="tname">心臓PVループ</div><div class="tdesc">心臓圧容積ループテンプレート。心機能の評価に使用。</div></a>
-<a href="../cardio/bullseye-17seg.html" class="tcard"><img src="../img/cardio_bullseye_17seg.png" alt="17セグメントブルズアイ" loading="lazy"><div class="tname">17セグメントブルズアイ</div><div class="tdesc">心臓17セグメントブルズアイテンプレート。心エコーやMRIの壁運動評価に使用。</div></a>
-<a href="../cardio/bullseye-perfusion.html" class="tcard"><img src="../img/cardio_bullseye_perfusion.png" alt="心筋血流ブルズアイ" loading="lazy"><div class="tname">心筋血流ブルズアイ</div><div class="tdesc">心筋血流ブルズアイテンプレート。心筋シンチグラフィの結果記録に使用。</div></a>
-<a href="../cardio/nomogram-cv.html" class="tcard"><img src="../img/cardio_nomogram_cv.png" alt="心血管リスクノモグラム" loading="lazy"><div class="tname">心血管リスクノモグラム</div><div class="tdesc">心血管リスクノモグラムテンプレート。心血管疾患のリスク予測に使用。</div></a>
-<a href="../cardio/hemodynamic-waveform.html" class="tcard"><img src="../img/cardio_hemodynamic_waveform.png" alt="血行動態波形" loading="lazy"><div class="tname">血行動態波形</div><div class="tdesc">血行動態波形テンプレート。各心腔の圧波形を記録。</div></a>
-<a href="../cardio/jvp-waveform.html" class="tcard"><img src="../img/cardio_jvp_waveform.png" alt="頸静脈圧波形" loading="lazy"><div class="tname">頸静脈圧波形</div><div class="tdesc">頸静脈圧波形テンプレート。a波・c波・v波・x谷・y谷の記録に使用。</div></a>
-<a href="../cardio/coronary-flow.html" class="tcard"><img src="../img/cardio_coronary_flow.png" alt="冠血流予備能" loading="lazy"><div class="tname">冠血流予備能</div><div class="tdesc">冠血流予備能テンプレート。冠動脈の自己調節能を表示。</div></a>
-<a href="../cardio/valsalva-phases.html" class="tcard"><img src="../img/cardio_valsalva_phases.png" alt="バルサルバ手技位相" loading="lazy"><div class="tname">バルサルバ手技位相</div><div class="tdesc">バルサルバ手技位相テンプレート。自律神経機能評価の圧変化記録。</div></a></div>
+<p class="count">38 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">38</span></button><button class="tab" data-sc="hemodynamics">血行動態<span class="tab-count">19</span></button><button class="tab" data-sc="rhythm">不整脈・心電図<span class="tab-count">12</span></button><button class="tab" data-sc="coronary">冠動脈・虚血<span class="tab-count">1</span></button><button class="tab" data-sc="vascular">血管・弁膜<span class="tab-count">1</span></button><button class="tab" data-sc="imaging_c">心エコー・画像<span class="tab-count">2</span></button><button class="tab" data-sc="other">その他<span class="tab-count">3</span></button></div>
+<div class="grid"><a href="../cardio/ecg-normal.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_normal.png" alt="正常心電図" loading="lazy"><div class="tname">正常心電図</div><div class="tdesc">正常心電図テンプレート。P-QRS-T波形の各要素をプロット。</div></a>
+<a href="../cardio/ecg-st-elevation.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_st_elevation.png" alt="心電図：ST上昇" loading="lazy"><div class="tname">心電図：ST上昇</div><div class="tdesc">ST上昇型心電図テンプレート。急性心筋梗塞のST変化をプロット。</div></a>
+<a href="../cardio/ecg-st-depression.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_st_depression.png" alt="心電図：ST低下" loading="lazy"><div class="tname">心電図：ST低下</div><div class="tdesc">ST低下型心電図テンプレート。虚血性変化のST低下をプロット。</div></a>
+<a href="../cardio/ecg-afib.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_afib.png" alt="心電図：心房細動" loading="lazy"><div class="tname">心電図：心房細動</div><div class="tdesc">心房細動の心電図テンプレート。不整なRR間隔とf波をプロット。</div></a>
+<a href="../cardio/ecg-1st-block.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_1st_block.png" alt="心電図：1度房室ブロック" loading="lazy"><div class="tname">心電図：1度房室ブロック</div><div class="tdesc">1度房室ブロックの心電図テンプレート。PR間隔延長をプロット。</div></a>
+<a href="../cardio/ecg-2nd-block.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_2nd_block.png" alt="心電図：2度房室ブロック" loading="lazy"><div class="tname">心電図：2度房室ブロック</div><div class="tdesc">2度房室ブロックの心電図テンプレート。Wenckebach/Mobitz II型をプロット。</div></a>
+<a href="../cardio/ecg-3rd-block.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_3rd_block.png" alt="心電図：3度房室ブロック" loading="lazy"><div class="tname">心電図：3度房室ブロック</div><div class="tdesc">3度（完全）房室ブロックの心電図テンプレート。P波とQRSの解離をプロット。</div></a>
+<a href="../cardio/ecg-long-qt.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_long_qt.png" alt="心電図：QT延長" loading="lazy"><div class="tname">心電図：QT延長</div><div class="tdesc">QT延長症候群の心電図テンプレート。延長したQT間隔をプロット。</div></a>
+<a href="../cardio/arterial-pressure.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_arterial_pressure.png" alt="動脈圧波形" loading="lazy"><div class="tname">動脈圧波形</div><div class="tdesc">動脈圧波形テンプレート。収縮期・拡張期圧とnotchをプロット。</div></a>
+<a href="../cardio/cvp.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_cvp.png" alt="中心静脈圧" loading="lazy"><div class="tname">中心静脈圧</div><div class="tdesc">中心静脈圧波形テンプレート。a/c/v波をプロット。</div></a>
+<a href="../cardio/pa-pressure.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_pa_pressure.png" alt="肺動脈圧" loading="lazy"><div class="tname">肺動脈圧</div><div class="tdesc">肺動脈圧波形テンプレート。収縮期・拡張期の肺動脈圧をプロット。</div></a>
+<a href="../cardio/pcwp.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_pcwp.png" alt="肺動脈楔入圧" loading="lazy"><div class="tname">肺動脈楔入圧</div><div class="tdesc">肺動脈楔入圧テンプレート。左房圧の間接的測定をプロット。</div></a>
+<a href="../cardio/jvp.html" class="tcard" data-sc="vascular"><img src="../img/cardio_jvp.png" alt="頸静脈波" loading="lazy"><div class="tname">頸静脈波</div><div class="tdesc">頸静脈波テンプレート。a/c/v波とx/y谷をプロット。</div></a>
+<a href="../cardio/coronary-flow.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_coronary_flow.png" alt="冠血流量" loading="lazy"><div class="tname">冠血流量</div><div class="tdesc">冠血流自動調節テンプレート。灌流圧と冠血流の関係をプロット。</div></a>
+<a href="../cardio/aortic-stenosis.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_aortic_stenosis.png" alt="大動脈弁狭窄圧較差" loading="lazy"><div class="tname">大動脈弁狭窄圧較差</div><div class="tdesc">大動脈弁狭窄症の圧較差テンプレート。左室圧と大動脈圧の差をプロット。</div></a>
+<a href="../cardio/cardiac-cycle.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_cardiac_cycle.png" alt="心周期イベント" loading="lazy"><div class="tname">心周期イベント</div><div class="tdesc">心周期の主要イベントテンプレート。弁開閉のタイミングをプロット。</div></a>
+<a href="../cardio/thermodilution.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_thermodilution.png" alt="熱希釈曲線" loading="lazy"><div class="tname">熱希釈曲線</div><div class="tdesc">熱希釈法による心拍出量測定テンプレート。温度変化曲線をプロット。</div></a>
+<a href="../cardio/preload-afterload.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_preload_afterload.png" alt="前負荷-後負荷相互作用" loading="lazy"><div class="tname">前負荷-後負荷相互作用</div><div class="tdesc">前負荷と後負荷の相互作用テンプレート。心機能曲線の変化をプロット。</div></a>
+<a href="../cardio/bp-waveform.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_bp_waveform.png" alt="血圧波形" loading="lazy"><div class="tname">血圧波形</div><div class="tdesc">血圧波形テンプレート。動脈血圧の経時変化をモニタリング。</div></a>
+<a href="../cardio/ecg-vt.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_ecg_vt.png" alt="心電図：心室頻拍" loading="lazy"><div class="tname">心電図：心室頻拍</div><div class="tdesc">心室頻拍の心電図テンプレート。幅広QRS波形の連続をプロット。</div></a>
+<a href="../cardio/ecg-aflutter.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_aflutter.png" alt="心電図：心房粗動" loading="lazy"><div class="tname">心電図：心房粗動</div><div class="tdesc">心房粗動の心電図テンプレート。鋸歯状のflutter波をプロット。</div></a>
+<a href="../cardio/mitral-stenosis.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_mitral_stenosis.png" alt="僧帽弁狭窄圧較差" loading="lazy"><div class="tname">僧帽弁狭窄圧較差</div><div class="tdesc">僧帽弁狭窄症の圧較差テンプレート。左房圧と左室拡張期圧の差をプロット。</div></a>
+<a href="../cardio/ecg-12lead.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_12lead.png" alt="12誘導心電図グリッド" loading="lazy"><div class="tname">12誘導心電図グリッド</div><div class="tdesc">12誘導心電図グリッドテンプレート。標準的な心電図記録用紙。</div></a>
+<a href="../cardio/ecg-rhythm.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_rhythm.png" alt="リズムストリップグリッド" loading="lazy"><div class="tname">リズムストリップグリッド</div><div class="tdesc">リズムストリップグリッドテンプレート。長時間心電図モニター記録用。</div></a>
+<a href="../cardio/pv-loop-cardiac.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_pv_loop_cardiac.png" alt="心臓PVループ" loading="lazy"><div class="tname">心臓PVループ</div><div class="tdesc">心臓圧容積ループテンプレート。心機能の評価に使用。</div></a>
+<a href="../cardio/bullseye-17seg.html" class="tcard" data-sc="imaging_c"><img src="../img/cardio_bullseye_17seg.png" alt="17セグメントブルズアイ" loading="lazy"><div class="tname">17セグメントブルズアイ</div><div class="tdesc">心臓17セグメントブルズアイテンプレート。心エコーやMRIの壁運動評価に使用。</div></a>
+<a href="../cardio/bullseye-perfusion.html" class="tcard" data-sc="imaging_c"><img src="../img/cardio_bullseye_perfusion.png" alt="心筋血流ブルズアイ" loading="lazy"><div class="tname">心筋血流ブルズアイ</div><div class="tdesc">心筋血流ブルズアイテンプレート。心筋シンチグラフィの結果記録に使用。</div></a>
+<a href="../cardio/nomogram-cv.html" class="tcard" data-sc="other"><img src="../img/cardio_nomogram_cv.png" alt="心血管リスクノモグラム" loading="lazy"><div class="tname">心血管リスクノモグラム</div><div class="tdesc">心血管リスクノモグラムテンプレート。心血管疾患のリスク予測に使用。</div></a>
+<a href="../cardio/hemodynamic-waveform.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_hemodynamic_waveform.png" alt="血行動態波形" loading="lazy"><div class="tname">血行動態波形</div><div class="tdesc">血行動態波形テンプレート。各心腔の圧波形を記録。</div></a>
+<a href="../cardio/jvp-waveform.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_jvp_waveform.png" alt="頸静脈圧波形" loading="lazy"><div class="tname">頸静脈圧波形</div><div class="tdesc">頸静脈圧波形テンプレート。a波・c波・v波・x谷・y谷の記録に使用。</div></a>
+<a href="../cardio/valsalva-phases.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_valsalva_phases.png" alt="バルサルバ手技位相" loading="lazy"><div class="tname">バルサルバ手技位相</div><div class="tdesc">バルサルバ手技位相テンプレート。自律神経機能評価の圧変化記録。</div></a>
+<a href="../cardio/bp-comparison-box.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_bp_comparison_box.png" alt="治療法別血圧（箱ひげ図）" loading="lazy"><div class="tname">治療法別血圧（箱ひげ図）</div><div class="tdesc">治療法別の収縮期血圧分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../cardio/ecg-heatmap.html" class="tcard" data-sc="rhythm"><img src="../img/cardio_ecg_heatmap.png" alt="心電図所見ヒートマップ" loading="lazy"><div class="tname">心電図所見ヒートマップ</div><div class="tdesc">12誘導心電図の所見をヒートマップで可視化するテンプレート。</div></a>
+<a href="../cardio/radar-cardiac-risk.html" class="tcard" data-sc="other"><img src="../img/cardio_radar_cardiac_risk.png" alt="心臓リスクレーダー" loading="lazy"><div class="tname">心臓リスクレーダー</div><div class="tdesc">心血管リスク因子のレーダーチャートテンプレート。多面的リスク評価に使用。</div></a>
+<a href="../cardio/km-heart-failure.html" class="tcard" data-sc="other"><img src="../img/cardio_km_heart_failure.png" alt="心不全生存曲線" loading="lazy"><div class="tname">心不全生存曲線</div><div class="tdesc">心不全の生存曲線テンプレート。NYHA分類別の予後比較に使用。</div></a>
+<a href="../cardio/roc-troponin.html" class="tcard" data-sc="coronary"><img src="../img/cardio_roc_troponin.png" alt="トロポニンROC曲線" loading="lazy"><div class="tname">トロポニンROC曲線</div><div class="tdesc">心筋トロポニンの診断性能を評価するROC曲線テンプレート。</div></a>
+<a href="../cardio/forest-antihypertensive.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_forest_antihypertensive.png" alt="降圧薬メタアナリシス" loading="lazy"><div class="tname">降圧薬メタアナリシス</div><div class="tdesc">降圧薬の有効性メタアナリシスのフォレストプロットテンプレート。</div></a>
+<a href="../cardio/bar-valve-gradient.html" class="tcard" data-sc="hemodynamics"><img src="../img/cardio_bar_valve_gradient.png" alt="弁膜症圧較差比較" loading="lazy"><div class="tname">弁膜症圧較差比較</div><div class="tdesc">心臓弁別の平均圧較差を比較するバーチャートテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

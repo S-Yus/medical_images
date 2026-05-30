@@ -46,6 +46,312 @@ CATS <- list(
   uro     = list(ja="泌尿器科", en="Urology", icon="\U0001F9EA")
 )
 
+# ── Sub-category Definitions (topic-based tabs per category) ──
+SUBCATS <- list(
+  biochem = list(
+    list(id="enzyme",   ja="酵素動力学",
+         kw=c("enzyme","酵素","km","vmax","michaelis","lineweaver","eadie","hanes","kinetic","速度","inhibit","阻害","substrate","基質","allosteric","アロステリック","cooperat","協同")),
+    list(id="quant",    ja="検量線・定量",
+         kw=c("standard curve","検量","bradford","bca","beer","lambert","吸光","assay","定量","spectro","分光","western","blot","バンド")),
+    list(id="protein",  ja="タンパク質・核酸",
+         kw=c("protein","タンパク","dna","rna","sds","page","scatchard","hill","denaturation","変性","melting","融解","binding","結合")),
+    list(id="ph",       ja="pH・緩衝液",
+         kw=c("ph","titration","滴定","henderson","hasselbalch","buffer","緩衝","amino acid","アミノ酸","pka")),
+    list(id="reaction", ja="反応・熱力学",
+         kw=c("arrhenius","reaction","反応座標","temperature","温度","energy","エネルギー","chromatography","クロマトグラフィー","溶出"))
+  ),
+  physiol = list(
+    list(id="cv",   ja="循環器系",
+         kw=c("cardiac","心","frank","starling","pv loop","wiggers","venous","return","guyton","baroreceptor","圧受容","心拍","output","血圧","coronary")),
+    list(id="resp", ja="呼吸器系",
+         kw=c("lung","肺","spirometry","スパイロ","flow.volume","compliance","コンプライアンス","capnography","カプノ","respiratory","呼吸","v/q","換気","volume")),
+    list(id="neuro",ja="神経・筋",
+         kw=c("nerve","神経","action potential","活動電位","muscle","筋","twitch","収縮","tetanus","強縮","membrane","膜電位","smooth","平滑","graded","段階","sa node","洞房")),
+    list(id="renal",ja="腎・体液",
+         kw=c("renal","腎","countercurrent","対向流","osmol","浸透","body fluid","体液","starling force","毛細血管")),
+    list(id="gas",  ja="血液ガス",
+         kw=c("o2","co2","oxygen","酸素","dissociation","解離","hemoglobin","ヘモグロビン","bohr","fetal","胎児"))
+  ),
+  pharm = list(
+    list(id="dr",   ja="用量反応",
+         kw=c("dose","用量","response","反応","ec50","ed50","ld50","td50","graded","quantal","量子","段階")),
+    list(id="pk",   ja="薬物動態",
+         kw=c("pk","pharmacokinet","薬物動態","iv","oral","bolus","multiple","反復","concentration","血中濃度","half","半減","semilog","bioavail","first.pass","loading","maintenance","clearance","accumul","蓄積")),
+    list(id="interact",ja="拮抗薬・相互作用",
+         kw=c("antagonist","拮抗","agonist","作動","competitive","noncompetitive","partial","相互作用","synergy","相乗","isobolo","schild")),
+    list(id="safety",ja="治療域・安全性",
+         kw=c("therapeutic","治療","window","index","safety","安全","receptor","受容体","occupancy","占有"))
+  ),
+  micro = list(
+    list(id="growth_curve",ja="増殖・動態",
+         kw=c("growth","増殖","kill","殺菌","time.kill","curve","動態","pk.pd")),
+    list(id="resistance", ja="薬剤感受性",
+         kw=c("antibiotic","抗菌","抗生","mic","zone","阻止","感受性","resistance","耐性")),
+    list(id="diagnostics",ja="診断・検査",
+         kw=c("titer","力価","elisa","pcr","増幅","serology","抗体","gram","染色")),
+    list(id="epi_micro",  ja="疫学・疾患",
+         kw=c("epidemic","流行","outbreak","アウトブレイク","infection","感染","hiv","viral","ウイルス","incubation","潜伏"))
+  ),
+  immuno = list(
+    list(id="antibody", ja="抗体・免疫応答",
+         kw=c("antibody","抗体","immunoglobulin","ig","titer","力価","response","応答","primary","secondary","一次","二次")),
+    list(id="cells",    ja="細胞・サイトカイン",
+         kw=c("cell","細胞","cytokine","サイトカイン","t cell","b cell","lymphocyte","リンパ","nk","マクロファージ","complement","補体")),
+    list(id="allergy",  ja="アレルギー・自己免疫",
+         kw=c("allergy","アレルギー","hypersensitivity","過敏","autoimmune","自己免疫","ige","histamine","ヒスタミン")),
+    list(id="vaccine",  ja="ワクチン・免疫学的検査",
+         kw=c("vaccine","ワクチン","immunization","免疫化","elisa","facs","flow cytometry","フローサイトメトリー","hla"))
+  ),
+  epi = list(
+    list(id="measure",  ja="疫学指標",
+         kw=c("incidence","罹患","prevalence","有病","rate","率","risk","リスク","odds","ratio","比","relative","相対","absolute","nnt","arr")),
+    list(id="study",    ja="研究デザイン",
+         kw=c("cohort","コホート","case.control","症例対照","rct","trial","試験","bias","バイアス","confound","交絡","power","検出力","sample","標本")),
+    list(id="screen",   ja="スクリーニング",
+         kw=c("screen","スクリーニング","sensitivity","感度","specificity","特異度","ppv","npv","likelihood","尤度","roc","diagnostic")),
+    list(id="pop",      ja="人口・疾病統計",
+         kw=c("population","人口","pyramid","ピラミッド","mortality","死亡","life table","生命表","demographic","人口動態","age","年齢"))
+  ),
+  stat = list(
+    list(id="descriptive",ja="記述統計・分布",
+         kw=c("boxplot","箱ひげ","violin","バイオリン","histogram","ヒストグラム","qq","正規","distribution","分布","descriptive","記述","dot plot","ドット","scatter","散布")),
+    list(id="inference", ja="検定・推定",
+         kw=c("bland","altman","一致","regression","回帰","correlation","相関","confidence","信頼","p value","sample size","標本","effect size","効果量","power","検出力")),
+    list(id="survival",  ja="生存分析",
+         kw=c("kaplan","meier","生存","survival","km","hazard","ハザード","cox","累積","incidence")),
+    list(id="diagnostic",ja="診断・検査統計",
+         kw=c("roc","sensitivity","感度","specificity","特異度","auc","calibration","キャリブレーション","nomogram","ノモグラム","2x2","二値")),
+    list(id="meta",      ja="メタアナリシス",
+         kw=c("forest","フォレスト","funnel","ファネル","meta","メタ","heterogeneity","異質性","publication bias","出版バイアス")),
+    list(id="special",   ja="特殊プロット",
+         kw=c("swimmer","スイマー","tornado","トルネード","waterfall","ウォーターフォール","radar","レーダー","heatmap","ヒートマップ","manhattan","マンハッタン","volcano","ボルケーノ","lod","cnv","genomic"))
+  ),
+  neuro = list(
+    list(id="electro",  ja="電気生理・波形",
+         kw=c("eeg","脳波","evoked","誘発電位","emg","筋電","nerve conduction","神経伝導","action potential","活動電位","波形")),
+    list(id="cognitive",ja="認知・精神機能",
+         kw=c("cognitive","認知","mmse","moca","memory","記憶","attention","注意","reaction time","反応時間","learning","学習")),
+    list(id="neuro_anat",ja="神経解剖・機能",
+         kw=c("dermatome","デルマトーム","homunculus","ホムンクルス","cerebral","大脳","icp","頭蓋内圧","csf","髄液","blood.brain","血液脳")),
+    list(id="clinical_n",ja="臨床神経学",
+         kw=c("stroke","脳卒中","glasgow","gcs","nihss","seizure","てんかん","pain","疼痛","nrs","vas"))
+  ),
+  cardio = list(
+    list(id="hemodynamics",ja="血行動態",
+         kw=c("pressure","圧","cardiac output","心拍出","frank","starling","pv","loop","wiggers","ventricular","心室","aortic","大動脈","sv","前負荷","後負荷")),
+    list(id="rhythm",   ja="不整脈・心電図",
+         kw=c("ecg","ekg","心電図","arrhythmia","不整脈","qt","st","interval","hr","心拍","リズム","ペースメーカー")),
+    list(id="coronary", ja="冠動脈・虚血",
+         kw=c("coronary","冠動脈","ischemia","虚血","troponin","トロポニン","stemi","acs","flow","blood flow","冠血流")),
+    list(id="vascular", ja="血管・弁膜",
+         kw=c("valve","弁","stenosis","狭窄","regurgitation","逆流","murmur","心雑音","aneurysm","動脈瘤","hypertension","高血圧","pulse","脈")),
+    list(id="imaging_c",ja="心エコー・画像",
+         kw=c("echo","エコー","ejection","駆出","bullseye","ブルズアイ","strain","ストレイン","doppler","ドプラ"))
+  ),
+  pulm = list(
+    list(id="function", ja="呼吸機能検査",
+         kw=c("spirometry","スパイロ","fev","fvc","flow.volume","フローボリューム","peak","ピーク","dlco","肺活量")),
+    list(id="mech",     ja="呼吸力学",
+         kw=c("compliance","コンプライアンス","resistance","気道抵抗","pressure","volume","圧","ventilat","換気")),
+    list(id="gas_ex",   ja="ガス交換",
+         kw=c("oxygen","酸素","co2","capno","カプノ","v/q","換気血流","abg","ガス","diffus","拡散")),
+    list(id="disease_p",ja="疾患・臨床",
+         kw=c("asthma","喘息","copd","fibrosis","線維","pneumo","肺炎","ards","sleep","睡眠","apnea","無呼吸"))
+  ),
+  nephro = list(
+    list(id="physiol_n",ja="腎生理",
+         kw=c("gfr","糸球体","clearance","クリアランス","autoregulation","自動調節","tubul","尿細管","countercurrent","対向流","concentration","濃縮")),
+    list(id="electrolyte",ja="電解質・酸塩基",
+         kw=c("sodium","na","ナトリウム","potassium","k","カリウム","calcium","ca","カルシウム","acid","base","酸","塩基","ph","bicarbonate","重炭酸","anion gap")),
+    list(id="disease_n",ja="腎疾患・透析",
+         kw=c("ckd","akut","急性","慢性","dialysis","透析","proteinuria","蛋白尿","creatinine","クレアチニン","bun","urea"))
+  ),
+  endo = list(
+    list(id="glucose",  ja="糖代謝",
+         kw=c("glucose","血糖","insulin","インスリン","hba1c","ogtt","糖負荷","diabetes","糖尿","pancrea","膵")),
+    list(id="thyroid",  ja="甲状腺",
+         kw=c("thyroid","甲状腺","tsh","t3","t4","thyroxine")),
+    list(id="adrenal",  ja="副腎・下垂体",
+         kw=c("cortisol","コルチゾール","acth","adrenal","副腎","pituitary","下垂体","aldosterone","アルドステロン","gh","growth hormone","成長ホルモン","diurnal","日内変動")),
+    list(id="calcium_e",ja="カルシウム・骨代謝",
+         kw=c("calcium","カルシウム","pth","parathyroid","副甲状腺","vitamin d","ビタミンd","bone","骨","phosphat","リン"))
+  ),
+  gi = list(
+    list(id="motility", ja="消化管運動",
+         kw=c("motility","運動","peristal","蠕動","gastric","胃","emptying","排出","swallow","嚥下")),
+    list(id="secretion",ja="分泌・消化",
+         kw=c("acid","酸","pepsin","ペプシン","secretion","分泌","bile","胆汁","enzyme","消化","absorption","吸収")),
+    list(id="liver",    ja="肝・胆・膵",
+         kw=c("liver","肝","hepat","alt","ast","bilirubin","ビリルビン","gallbladder","胆嚢","child","pugh","meld")),
+    list(id="clinical_g",ja="臨床・内視鏡",
+         kw=c("endoscop","内視鏡","stool","便","calprotectin","colonoscop","bristol","scoring","スコア"))
+  ),
+  hemato = list(
+    list(id="cbc",      ja="血算・血球",
+         kw=c("cbc","hemoglobin","ヘモグロビン","hematocrit","ヘマトクリット","rbc","wbc","platelet","血小板","reticulocyte","網赤血球","mcv")),
+    list(id="coagulation",ja="凝固・線溶",
+         kw=c("coagulation","凝固","pt","aptt","inr","fibrinogen","フィブリノゲン","d.dimer","Dダイマー","dic","cascade","カスケード","thrombo","血栓","anticoagul","抗凝固")),
+    list(id="anemia",   ja="貧血・鉄代謝",
+         kw=c("anemia","貧血","iron","鉄","ferritin","フェリチン","transferrin","トランスフェリン","hemolysis","溶血","b12","folate","葉酸")),
+    list(id="malig_h",  ja="血液腫瘍",
+         kw=c("leukemia","白血病","lymphoma","リンパ腫","survival","生存","bone marrow","骨髄","blast","芽球","治療"))
+  ),
+  obgyn = list(
+    list(id="pregnancy",ja="妊娠・分娩",
+         kw=c("pregnan","妊娠","fetal","胎児","contraction","収縮","ctg","bishop","ビショップ","labor","分娩","cervical","子宮頸","partogram")),
+    list(id="fetal",    ja="胎児発育・評価",
+         kw=c("growth","成長","biophysical","bpp","nst","amniotic","羊水","weight","体重","ultrasound","超音波","bpd","fl")),
+    list(id="hormone_o",ja="ホルモン・月経",
+         kw=c("hormone","ホルモン","estrogen","エストロゲン","progester","プロゲステロン","menstr","月経","ovul","排卵","hcg","lh","fsh")),
+    list(id="gyn",      ja="婦人科疾患",
+         kw=c("cervical cancer","子宮","ovarian","卵巣","endometri","内膜","fibroid","筋腫","screen","スクリーニング"))
+  ),
+  peds = list(
+    list(id="growth_p", ja="成長・発達",
+         kw=c("growth","成長","height","身長","weight","体重","percentile","パーセンタイル","bmi","head","頭囲","developmental","発達","milestone","マイルストーン")),
+    list(id="neonatal", ja="新生児",
+         kw=c("neonatal","新生児","apgar","アプガー","bilirubin","ビリルビン","jaundice","黄疸","gestational","在胎")),
+    list(id="vaccine_p",ja="予防接種・感染",
+         kw=c("vaccine","ワクチン","immuniz","予防接種","infection","感染","fever","発熱")),
+    list(id="clinical_p",ja="臨床・栄養",
+         kw=c("nutrition","栄養","fluid","輸液","dehydration","脱水","pain","疼痛","score","スコア","assess","評価","radar","レーダー"))
+  ),
+  ortho = list(
+    list(id="bone",     ja="骨・骨折",
+         kw=c("bone","骨","fracture","骨折","healing","治癒","density","骨密度","dexa","osteopor","骨粗鬆")),
+    list(id="joint",    ja="関節・可動域",
+         kw=c("joint","関節","rom","range","可動域","goniometry","角度","arthritis","関節炎","cartilage","軟骨")),
+    list(id="rehab",    ja="リハビリ・機能",
+         kw=c("rehab","リハビリ","function","機能","strength","筋力","gait","歩行","pain","疼痛","score","スコア","outcome","転帰"))
+  ),
+  eye = list(
+    list(id="visual",   ja="視力・視野",
+         kw=c("visual","視力","acuity","field","視野","perimetry","ペリメトリー","blind","盲点","scotoma","暗点")),
+    list(id="pressure_e",ja="眼圧・緑内障",
+         kw=c("pressure","眼圧","glaucoma","緑内障","iop","tonometry","トノメトリー")),
+    list(id="retina",   ja="網膜・眼底",
+         kw=c("retina","網膜","macula","黄斑","oct","angiography","造影","diabetic","糖尿病","fundus","眼底")),
+    list(id="lens",     ja="水晶体・屈折",
+         kw=c("lens","水晶体","cataract","白内障","refraction","屈折","myopia","近視","astigmatism","乱視"))
+  ),
+  psych = list(
+    list(id="scale",    ja="評価尺度",
+         kw=c("score","スコア","scale","尺度","rating","評価","phq","gad","hdrs","madrs","bdi","stai","panss")),
+    list(id="cognitive_p",ja="認知機能",
+         kw=c("cognitive","認知","mmse","moca","memory","記憶","dementia","認知症","intelligence","知能")),
+    list(id="clinical_ps",ja="臨床・治療",
+         kw=c("treatment","治療","response","反応","remission","寛解","relapse","再発","sleep","睡眠","circadian","概日","side effect","副作用")),
+    list(id="substance",ja="依存・発達",
+         kw=c("alcohol","アルコール","substance","物質","addiction","依存","withdrawal","離脱","autism","自閉","adhd","発達障害"))
+  ),
+  path = list(
+    list(id="histopath",ja="組織病理",
+         kw=c("histolog","組織","patholog","病理","grade","グレード","stage","ステージ","tnm","classification","分類")),
+    list(id="molecular",ja="分子病理",
+         kw=c("pcr","増幅","melting","融解","gene","遺伝子","mutation","変異","expression","発現","immunohistochem","免疫染色","biomarker","バイオマーカー")),
+    list(id="cytology", ja="細胞診・血液",
+         kw=c("cytology","細胞","smear","塗抹","flow","フローサイトメトリー","cell count","細胞数","leukocyte","白血球")),
+    list(id="autopsy",  ja="剖検・法医学",
+         kw=c("autopsy","剖検","forensic","法医","death","死亡","decomp","腐敗","toxicol","中毒"))
+  ),
+  radio = list(
+    list(id="dose",     ja="線量・防護",
+         kw=c("dose","線量","radiation","放射線","exposure","被曝","protection","防護","hounsfield","hu")),
+    list(id="contrast", ja="造影・画像",
+         kw=c("contrast","造影","enhancement","増強","signal","信号","roi","関心領域","snr")),
+    list(id="planning", ja="治療計画",
+         kw=c("plan","計画","dvh","target","標的","isodose","等線量","fractionation","分割")),
+    list(id="nuclear",  ja="核医学",
+         kw=c("nuclear","核医学","pet","spect","uptake","取り込み","suv","thyroid","甲状腺","scintigraphy","シンチ"))
+  ),
+  surg = list(
+    list(id="anesthesia",ja="麻酔・モニタリング",
+         kw=c("anesthesia","麻酔","monitor","モニタリング","mac","蒸気圧","vaporizer","気化器","airway","気道","intubation","挿管")),
+    list(id="operative",ja="手術・術式",
+         kw=c("operative","手術","surgical","外科","blood loss","出血","suture","縫合","wound","創傷","healing","治癒")),
+    list(id="periop",   ja="周術期管理",
+         kw=c("perioper","周術期","recovery","回復","complication","合併症","risk","リスク","asa","score","スコア","dvt","vte"))
+  ),
+  emer = list(
+    list(id="resuscitation",ja="蘇生・外傷",
+         kw=c("resuscitation","蘇生","cpr","心肺","acls","bls","trauma","外傷","shock","ショック","hemorrh","出血")),
+    list(id="triage",   ja="トリアージ・評価",
+         kw=c("triage","トリアージ","severity","重症度","score","スコア","sofa","qsofa","apache","gcs","glasgow")),
+    list(id="toxicology",ja="中毒・環境",
+         kw=c("poison","中毒","toxicol","overdose","過量","antidote","拮抗薬","decontam","除染","burn","熱傷","hypothermia","低体温")),
+    list(id="procedure",ja="手技・処置",
+         kw=c("procedure","処置","intubation","挿管","line","ライン","drainage","ドレナージ","sepsis","敗血症","bundle"))
+  ),
+  chem = list(
+    list(id="qc",       ja="精度管理",
+         kw=c("qc","精度管理","levey","jennings","westgard","control","管理図","cv","変動係数","calibration","校正")),
+    list(id="clinical_c",ja="臨床検査値",
+         kw=c("reference","基準","range","範囲","normal","正常","panel","パネル","trend","推移","critical","緊急")),
+    list(id="method",   ja="検査法・原理",
+         kw=c("method","方法","assay","アッセイ","elisa","immunoassay","免疫測定","chromatography","クロマトグラフィー","mass","質量分析")),
+    list(id="interpret",ja="結果解釈",
+         kw=c("interpret","解釈","decision","判断","algorithm","アルゴリズム","cutoff","カットオフ","roi","delta","変動"))
+  ),
+  derm = list(
+    list(id="scoring",  ja="重症度評価",
+         kw=c("score","スコア","severity","重症度","pasi","scorad","easi","bsa","面積")),
+    list(id="wound_d",  ja="創傷・治癒",
+         kw=c("wound","創傷","healing","治癒","burn","熱傷","ulcer","潰瘍","skin","皮膚")),
+    list(id="photo",    ja="光線・アレルギー",
+         kw=c("uv","紫外","phototherapy","光線","patch test","パッチテスト","allergy","アレルギー","melanoma","黒色腫"))
+  ),
+  ent = list(
+    list(id="audiology",ja="聴覚・平衡",
+         kw=c("audio","聴力","hearing","聴覚","tympan","ティンパノメトリー","abr","oae","vertigo","めまい","nystagmus","眼振","vestibular","前庭")),
+    list(id="airway_e", ja="気道・音声",
+         kw=c("voice","音声","vocal","声帯","larynx","喉頭","pharynx","咽頭","airway","気道","sleep","睡眠","apnea","無呼吸")),
+    list(id="nose",     ja="鼻・副鼻腔",
+         kw=c("nasal","鼻","sinus","副鼻腔","rhinitis","鼻炎","smell","嗅覚","olfactory"))
+  ),
+  uro = list(
+    list(id="voiding",  ja="排尿機能",
+         kw=c("void","排尿","urodynamic","尿流動態","flow","尿流","residual","残尿","frequency","頻尿","bladder","膀胱")),
+    list(id="prostate", ja="前立腺・腫瘍",
+         kw=c("prostate","前立腺","psa","cancer","がん","staging","病期","gleason","グリソン")),
+    list(id="stone",    ja="結石・感染",
+         kw=c("stone","結石","calcul","尿路","uti","感染","urine","尿","creatinine","クレアチニン"))
+  ),
+  anat = list(
+    list(id="gross",    ja="肉眼解剖",
+         kw=c("dermatome","デルマトーム","myotome","筋節","anatomy","解剖","region","部位","surface","体表")),
+    list(id="hist",     ja="組織学",
+         kw=c("histology","組織","cell","細胞","microscop","顕微鏡","staining","染色")),
+    list(id="embryo",   ja="発生学",
+         kw=c("embryo","発生","develop","分化","organogen","器官形成","fetal","胎児"))
+  )
+)
+
+# Auto-classify a template into its subcategory
+classify_subcat <- function(t) {
+  cat_subcats <- SUBCATS[[t$cat]]
+  if (is.null(cat_subcats)) return("other")
+
+  txt <- tolower(paste(t$en, t$ja, t$tags, t$dj, t$xl, t$yl,
+                        if (!is.null(t$sub)) t$sub else ""))
+
+  for (sc in cat_subcats) {
+    for (kw in sc$kw) {
+      if (grepl(kw, txt, fixed = TRUE)) return(sc$id)
+    }
+  }
+  "other"
+}
+
+# Get subcategory display name
+get_subcat_ja <- function(cat_id, subcat_id) {
+  cat_subcats <- SUBCATS[[cat_id]]
+  if (is.null(cat_subcats)) return(NULL)
+  for (sc in cat_subcats) {
+    if (sc$id == subcat_id) return(sc$ja)
+  }
+  NULL
+}
+
 # ── Template Definition Helper ──
 D <- function(id, cat, en, ja, xl, yl, xr, yr, dj, tags="",
               sub=NULL, xlog=FALSE, ylog=FALSE,
@@ -225,7 +531,7 @@ make_roc <- function(t, style, lang) {
 # ── Forest Plot Template ──
 make_forest <- function(t, style, lang) {
   C <- spcols(style)
-  n <- max(3L,as.integer(t$yr[2]))
+  n <- if(!is.null(t$ylb)) length(t$ylb) else max(3L,as.integer(t$yr[2]))
   lbls <- if(!is.null(t$ylb)) head(t$ylb,n) else paste("Study",1:n)
   df <- data.frame(y=1:n,lab=lbls)
   p <- ggplot(df,aes(x=0,y=y))+geom_blank()
@@ -295,7 +601,7 @@ make_bland_altman <- function(t, style, lang) {
 # ── Box Plot Template ──
 make_boxplot <- function(t, style, lang) {
   C <- spcols(style)
-  ng <- max(2L,as.integer(t$xr[2]))
+  ng <- if(!is.null(t$xlb)) length(t$xlb) else max(2L,as.integer(t$xr[2]))
   glb <- if(!is.null(t$xlb)) head(t$xlb,ng) else paste("Group",1:ng)
   df <- data.frame(g=factor(rep(1:ng,each=5),labels=glb),
                    v=rep(c(0.2,0.35,0.5,0.65,0.8),ng)*diff(as.numeric(t$yr))+as.numeric(t$yr[1]))
@@ -1079,11 +1385,57 @@ generate_category_page <- function(cat_id, cat_templates) {
   cen <- CATS[[cat_id]]$en
   dir.create("c", showWarnings=FALSE)
 
-  cards <- paste(sapply(cat_templates, function(t) {
+  # Classify each template into subcategory
+  sc_map <- sapply(cat_templates, classify_subcat)
+  sc_ids <- unique(sc_map)
+
+  # Build tab buttons — "全て" first, then subcategories
+  sc_defs <- SUBCATS[[cat_id]]
+  has_tabs <- !is.null(sc_defs) && length(sc_ids) > 1
+  tab_html <- ""
+  if (has_tabs) {
+    btns <- sprintf('<button class="tab active" data-sc="all">全て<span class="tab-count">%d</span></button>',
+                    length(cat_templates))
+    for (sc_def in sc_defs) {
+      n <- sum(sc_map == sc_def$id)
+      if (n > 0) {
+        btns <- paste0(btns, sprintf(
+          '<button class="tab" data-sc="%s">%s<span class="tab-count">%d</span></button>',
+          sc_def$id, sc_def$ja, n))
+      }
+    }
+    # "Other" tab if any templates don't match
+    n_other <- sum(sc_map == "other")
+    if (n_other > 0) {
+      btns <- paste0(btns, sprintf(
+        '<button class="tab" data-sc="other">その他<span class="tab-count">%d</span></button>',
+        n_other))
+    }
+    tab_html <- sprintf('<div class="tabs">%s</div>', btns)
+  }
+
+  # Template cards with data-sc attribute
+  cards <- paste(sapply(seq_along(cat_templates), function(i) {
+    t <- cat_templates[[i]]
     ib <- sprintf("%s_%s", t$cat, gsub("-","_",t$id))
-    sprintf('<a href="../%s/%s.html" class="tcard"><img src="../img/%s.png" alt="%s" loading="lazy"><div class="tname">%s</div><div class="tdesc">%s</div></a>',
-            t$cat, t$id, ib, t$ja, t$ja, substr(t$dj, 1, 60))
+    sprintf('<a href="../%s/%s.html" class="tcard" data-sc="%s"><img src="../img/%s.png" alt="%s" loading="lazy"><div class="tname">%s</div><div class="tdesc">%s</div></a>',
+            t$cat, t$id, sc_map[i], ib, t$ja, t$ja, substr(t$dj, 1, 60))
   }), collapse="\n")
+
+  # Tab filtering JavaScript
+  tab_js <- if (has_tabs) '
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>' else ""
 
   html <- sprintf('<!DOCTYPE html>
 <html lang="ja">
@@ -1105,7 +1457,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -1121,12 +1479,14 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <main>
 <h1 class="cat-title">%s (%s)</h1>
 <p class="count">%d templates available</p>
+%s
 <div class="grid">%s</div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+%s
 </body></html>',
   cja, cen, cja, length(cat_templates), SITE_URL, cat_id,
-  cja, cja, cen, length(cat_templates), cards)
+  cja, cja, cen, length(cat_templates), tab_html, cards, tab_js)
 
   writeLines(html, file.path("c", paste0(cat_id, ".html")), useBytes=TRUE)
 }

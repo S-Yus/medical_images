@@ -1,0 +1,752 @@
+[
+  {
+    "id": "protein-standard",
+    "en": "BCA Protein Standard Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "cardiac-function",
+    "en": "Cardiac Function Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "compliance-comparison",
+    "en": "Compliance Comparison",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "dose-response-graded",
+    "en": "Graded Dose-Response",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "pk-semilog",
+    "en": "PK: Semi-log Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "temp-growth",
+    "en": "Temperature-Growth Rate",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ph-growth",
+    "en": "pH-Growth Rate",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "mutation-rate",
+    "en": "Mutation Rate",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "plaque-assay",
+    "en": "Plaque Assay",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "kill-kinetics",
+    "en": "Kill Kinetics",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "cfu-count",
+    "en": "CFU Count Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "neutralization",
+    "en": "Neutralization Assay",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "western-blot",
+    "en": "Western Blot Template",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "survival-generic",
+    "en": "Survival Curve (Generic)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "case-control",
+    "en": "Case-Control Study",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "funnel-plot",
+    "en": "Funnel Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "qq-plot",
+    "en": "Q-Q Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "residual-plot",
+    "en": "Residual Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "histogram-template",
+    "en": "Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "bar-error",
+    "en": "Bar Chart with Error Bars",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "heatmap-template",
+    "en": "Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "competing-risks",
+    "en": "Competing Risks",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "subgroup-forest",
+    "en": "Subgroup Analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "cvp",
+    "en": "Central Venous Pressure",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "pcwp",
+    "en": "PCWP Tracing",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "jvp",
+    "en": "Jugular Venous Pulse",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "bp-waveform",
+    "en": "Blood Pressure Waveform",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "work-breathing",
+    "en": "Work of Breathing",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ventilator-waveform",
+    "en": "Ventilator Waveform",
+    "reason": "very_short_description",
+    "detail": "Description only 19 chars"
+  },
+  {
+    "id": "rpf",
+    "en": "Renal Plasma Flow",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "filtration-fraction",
+    "en": "Filtration Fraction",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "water-deprivation",
+    "en": "Water Deprivation Test",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "acth-stimulation",
+    "en": "ACTH Stimulation Test",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "growth-hormone-stim",
+    "en": "GH Stimulation Test",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "gastric-acid",
+    "en": "Gastric Acid Secretion",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "meld-score",
+    "en": "MELD Score",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "bilirubin-metabolism",
+    "en": "Bilirubin Metabolism",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "esr-curve",
+    "en": "ESR Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "peripheral-smear",
+    "en": "Peripheral Smear Template",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "bleeding-time",
+    "en": "Bleeding Time",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "crossmatch",
+    "en": "Crossmatch Template",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ncv",
+    "en": "Nerve Conduction Study",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "emg-normal",
+    "en": "EMG (Normal)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ssep",
+    "en": "Somatosensory Evoked Potential",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "icp-waveform",
+    "en": "ICP Waveform",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "gcs",
+    "en": "Glasgow Coma Scale",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "nihss",
+    "en": "NIHSS Stroke Scale",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "pupil-reflex",
+    "en": "Pupil Reflex",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "bishop-score",
+    "en": "Bishop Score",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "partograph",
+    "en": "Partograph",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "fundal-height",
+    "en": "Fundal Height",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "head-circumference",
+    "en": "Head Circumference",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "bmi-age",
+    "en": "BMI-for-Age",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "weight-for-length",
+    "en": "Weight-for-Length",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "dexa",
+    "en": "Bone Density (DEXA)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "gait-analysis",
+    "en": "Gait Analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "cobb-angle",
+    "en": "Scoliosis (Cobb Angle)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "joint-space",
+    "en": "Joint Space Measurement",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "bone-age",
+    "en": "Bone Age Assessment",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "asa-score",
+    "en": "ASA Physical Status",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "visual-acuity",
+    "en": "Visual Acuity",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "visual-field",
+    "en": "Visual Field (Perimetry)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "iop",
+    "en": "Intraocular Pressure",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "dark-adaptation",
+    "en": "Dark Adaptation",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "erg",
+    "en": "Electroretinogram",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "fundus",
+    "en": "Fundus Diagram",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "corneal-topography",
+    "en": "Corneal Topography",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "color-vision",
+    "en": "Color Vision Test",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "oct",
+    "en": "OCT Layer Template",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "sleep-study",
+    "en": "Sleep Study (PSG)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "tumor-growth",
+    "en": "Tumor Growth (Gompertz)",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "ki67",
+    "en": "Ki-67 Proliferation Index",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "metastasis",
+    "en": "Metastatic Cascade",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "radiation-dose",
+    "en": "Radiation Dose Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "us-measurement",
+    "en": "Ultrasound Measurement",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "mac-values",
+    "en": "MAC Values",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "triage",
+    "en": "Triage Scoring",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "linearity",
+    "en": "Linearity Assessment",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "method-comparison",
+    "en": "Method Comparison",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "interference",
+    "en": "Interference Study",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "reference-range",
+    "en": "Reference Range",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "analytical-sensitivity",
+    "en": "Analytical Sensitivity",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "clinical-limits",
+    "en": "Clinical Decision Limits",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "radar-motor-6",
+    "en": "Motor Function Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ternary-cell-diff",
+    "en": "Cell Differential Ternary",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "heatmap-schedule",
+    "en": "Drug Schedule Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "visual-field",
+    "en": "Goldmann Visual Field",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "qq-plot",
+    "en": "Q-Q Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "control-chart",
+    "en": "Shewhart Control Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "population-pyramid",
+    "en": "Population Pyramid",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "dumbbell-prepost",
+    "en": "Pre-Post Dumbbell Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "difference-plot",
+    "en": "Difference Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "pedigree-grid",
+    "en": "Pedigree Chart Grid",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "partogram",
+    "en": "Partogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "growth-head",
+    "en": "Head Circumference Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "km-overall",
+    "en": "Overall Survival Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "km-disease-free",
+    "en": "Disease-Free Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "km-progression",
+    "en": "Progression-Free Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "funnel-basic",
+    "en": "Funnel Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "pv-loop-cardiac",
+    "en": "Cardiac PV Loop",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "pv-loop-lung",
+    "en": "Pulmonary PV Loop",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "growth-weight-pct",
+    "en": "Weight Percentile Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "growth-height-pct",
+    "en": "Height Percentile Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "pop-pyramid",
+    "en": "Population Pyramid",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "table2x2-diagnostic",
+    "en": "Diagnostic 2x2 Table",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ph-titration",
+    "en": "pH Titration Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "muscle-length-tension",
+    "en": "Length-Tension Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "dose-response-graded",
+    "en": "Graded Dose-Response",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "mic-distribution",
+    "en": "MIC Distribution",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "hemodynamic-waveform",
+    "en": "Hemodynamic Waveform",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "gfr-age",
+    "en": "GFR vs Age",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ogtt-curve",
+    "en": "OGTT Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "reticulocyte-response",
+    "en": "Reticulocyte Response",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "eeg-grid",
+    "en": "EEG Grid Template",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "bishop-score",
+    "en": "Bishop Score Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "gaf-trend",
+    "en": "GAF Score Trend",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "bland-altman-lab",
+    "en": "Lab Method Comparison",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "standard-curve",
+    "en": "Standard Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "visual-acuity-trend",
+    "en": "Visual Acuity Trend",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "oct-thickness",
+    "en": "OCT Retinal Thickness",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "speech-audiogram",
+    "en": "Speech Audiogram",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "uroflowmetry",
+    "en": "Uroflowmetry Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "prevalence-map",
+    "en": "Prevalence by Region",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "zone-diameter",
+    "en": "Zone Diameter Distribution",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "melting-curve",
+    "en": "Melting Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  }
+]

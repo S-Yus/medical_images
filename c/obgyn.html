@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>産婦人科（OB/GYN）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="産婦人科のレポート用グラフテンプレート一覧。21種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="産婦人科のレポート用グラフテンプレート一覧。25種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,28 +39,46 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 産婦人科</div>
 <main>
 <h1 class="cat-title">産婦人科 (OB/GYN)</h1>
-<p class="count">21 templates available</p>
-<div class="grid"><a href="../obgyn/fetal-growth.html" class="tcard"><img src="../img/obgyn_fetal_growth.png" alt="胎児発育曲線" loading="lazy"><div class="tname">胎児発育曲線</div><div class="tdesc">胎児発育曲線テンプレート。在胎週数と推定体重の関係をプロット。</div></a>
-<a href="../obgyn/fhr-normal.html" class="tcard"><img src="../img/obgyn_fhr_normal.png" alt="胎児心拍数（正常）" loading="lazy"><div class="tname">胎児心拍数（正常）</div><div class="tdesc">正常胎児心拍モニタリングテンプレート。基線と基線細変動をプロット。</div></a>
-<a href="../obgyn/fhr-variable.html" class="tcard"><img src="../img/obgyn_fhr_variable.png" alt="胎児心拍（変動一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（変動一過性徐脈）</div><div class="tdesc">変動一過性徐脈の胎児心拍テンプレート。臍帯圧迫パターンをプロット。</div></a>
-<a href="../obgyn/fhr-late.html" class="tcard"><img src="../img/obgyn_fhr_late.png" alt="胎児心拍（遅発一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（遅発一過性徐脈）</div><div class="tdesc">遅発一過性徐脈の胎児心拍テンプレート。胎盤機能不全パターンをプロット。</div></a>
-<a href="../obgyn/bishop-score.html" class="tcard"><img src="../img/obgyn_bishop_score.png" alt="ビショップスコア" loading="lazy"><div class="tname">ビショップスコア</div><div class="tdesc">ビショップスコアテンプレート。頸管成熟度の評価に使用。</div></a>
-<a href="../obgyn/partograph.html" class="tcard"><img src="../img/obgyn_partograph.png" alt="パルトグラフ" loading="lazy"><div class="tname">パルトグラフ</div><div class="tdesc">パルトグラフテンプレート。分娩進行の監視に使用。</div></a>
-<a href="../obgyn/pregnancy-hormones.html" class="tcard"><img src="../img/obgyn_pregnancy_hormones.png" alt="妊娠ホルモン" loading="lazy"><div class="tname">妊娠ホルモン</div><div class="tdesc">妊娠中ホルモン変動テンプレート。hCG/E2/P4の推移をプロット。</div></a>
-<a href="../obgyn/fundal-height.html" class="tcard"><img src="../img/obgyn_fundal_height.png" alt="子宮底長" loading="lazy"><div class="tname">子宮底長</div><div class="tdesc">子宮底長テンプレート。在胎週数と子宮底長の関係をプロット。</div></a>
-<a href="../obgyn/afi.html" class="tcard"><img src="../img/obgyn_afi.png" alt="羊水指数" loading="lazy"><div class="tname">羊水指数</div><div class="tdesc">羊水指数テンプレート。在胎週数とAFIの正常範囲をプロット。</div></a>
-<a href="../obgyn/bpp.html" class="tcard"><img src="../img/obgyn_bpp.png" alt="バイオフィジカルプロファイル" loading="lazy"><div class="tname">バイオフィジカルプロファイル</div><div class="tdesc">バイオフィジカルプロファイルテンプレート。胎児well-beingの評価に使用。</div></a>
-<a href="../obgyn/friedman-curve.html" class="tcard"><img src="../img/obgyn_friedman_curve.png" alt="フリードマン曲線" loading="lazy"><div class="tname">フリードマン曲線</div><div class="tdesc">フリードマン曲線テンプレート。正常分娩進行のS字型パターンをプロット。</div></a>
-<a href="../obgyn/apgar.html" class="tcard"><img src="../img/obgyn_apgar.png" alt="アプガースコア" loading="lazy"><div class="tname">アプガースコア</div><div class="tdesc">アプガースコアテンプレート。1分/5分/10分のスコア変化をプロット。</div></a>
-<a href="../obgyn/gestational-growth.html" class="tcard"><img src="../img/obgyn_gestational_growth.png" alt="在胎週数別成長曲線" loading="lazy"><div class="tname">在胎週数別成長曲線</div><div class="tdesc">在胎週数別成長曲線テンプレート。SGA/AGA/LGAの判定に使用。</div></a>
-<a href="../obgyn/fhr-early.html" class="tcard"><img src="../img/obgyn_fhr_early.png" alt="胎児心拍（早発一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（早発一過性徐脈）</div><div class="tdesc">早発一過性徐脈の胎児心拍テンプレート。児頭圧迫パターンをプロット。</div></a>
-<a href="../obgyn/menstrual-cycle-obgyn.html" class="tcard"><img src="../img/obgyn_menstrual_cycle_obgyn.png" alt="月経周期" loading="lazy"><div class="tname">月経周期</div><div class="tdesc">月経周期テンプレート。ホルモン変動と子宮内膜変化をプロット。</div></a>
-<a href="../obgyn/pedigree-grid.html" class="tcard"><img src="../img/obgyn_pedigree_grid.png" alt="家系図グリッド" loading="lazy"><div class="tname">家系図グリッド</div><div class="tdesc">家系図テンプレートグリッド。遺伝疾患の家族歴記録に使用。</div></a>
-<a href="../obgyn/partogram.html" class="tcard"><img src="../img/obgyn_partogram.png" alt="パルトグラム" loading="lazy"><div class="tname">パルトグラム</div><div class="tdesc">パルトグラムテンプレート。分娩進行の記録・評価に使用。</div></a>
-<a href="../obgyn/pedigree-basic.html" class="tcard"><img src="../img/obgyn_pedigree_basic.png" alt="基本家系図" loading="lazy"><div class="tname">基本家系図</div><div class="tdesc">基本家系図テンプレート。遺伝疾患の家族歴記録に使用。□=男性、○=女性。</div></a>
-<a href="../obgyn/pedigree-ar.html" class="tcard"><img src="../img/obgyn_pedigree_ar.png" alt="常染色体劣性遺伝家系図" loading="lazy"><div class="tname">常染色体劣性遺伝家系図</div><div class="tdesc">常染色体劣性遺伝家系図テンプレート。AR遺伝パターンの記録・教育に使用。</div></a>
-<a href="../obgyn/nst-trace.html" class="tcard"><img src="../img/obgyn_nst_trace.png" alt="NSTトレーステンプレート" loading="lazy"><div class="tname">NSTトレーステンプレート</div><div class="tdesc">NSTトレーステンプレート。胎児心拍数モニタリングの記録に使用。</div></a>
-<a href="../obgyn/bishop-score.html" class="tcard"><img src="../img/obgyn_bishop_score.png" alt="ビショップスコア表" loading="lazy"><div class="tname">ビショップスコア表</div><div class="tdesc">ビショップスコア表テンプレート。子宮頸管熟化度の評価に使用。</div></a></div>
+<p class="count">25 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">25</span></button><button class="tab" data-sc="pregnancy">妊娠・分娩<span class="tab-count">16</span></button><button class="tab" data-sc="fetal">胎児発育・評価<span class="tab-count">4</span></button><button class="tab" data-sc="gyn">婦人科疾患<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../obgyn/fetal-growth.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fetal_growth.png" alt="胎児発育曲線" loading="lazy"><div class="tname">胎児発育曲線</div><div class="tdesc">胎児発育曲線テンプレート。在胎週数と推定体重の関係をプロット。</div></a>
+<a href="../obgyn/fhr-normal.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fhr_normal.png" alt="胎児心拍数（正常）" loading="lazy"><div class="tname">胎児心拍数（正常）</div><div class="tdesc">正常胎児心拍モニタリングテンプレート。基線と基線細変動をプロット。</div></a>
+<a href="../obgyn/fhr-variable.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fhr_variable.png" alt="胎児心拍（変動一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（変動一過性徐脈）</div><div class="tdesc">変動一過性徐脈の胎児心拍テンプレート。臍帯圧迫パターンをプロット。</div></a>
+<a href="../obgyn/fhr-late.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fhr_late.png" alt="胎児心拍（遅発一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（遅発一過性徐脈）</div><div class="tdesc">遅発一過性徐脈の胎児心拍テンプレート。胎盤機能不全パターンをプロット。</div></a>
+<a href="../obgyn/bishop-score.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_bishop_score.png" alt="ビショップスコア" loading="lazy"><div class="tname">ビショップスコア</div><div class="tdesc">ビショップスコアテンプレート。頸管成熟度の評価に使用。</div></a>
+<a href="../obgyn/partograph.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_partograph.png" alt="パルトグラフ" loading="lazy"><div class="tname">パルトグラフ</div><div class="tdesc">パルトグラフテンプレート。分娩進行の監視に使用。</div></a>
+<a href="../obgyn/pregnancy-hormones.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_pregnancy_hormones.png" alt="妊娠ホルモン" loading="lazy"><div class="tname">妊娠ホルモン</div><div class="tdesc">妊娠中ホルモン変動テンプレート。hCG/E2/P4の推移をプロット。</div></a>
+<a href="../obgyn/fundal-height.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fundal_height.png" alt="子宮底長" loading="lazy"><div class="tname">子宮底長</div><div class="tdesc">子宮底長テンプレート。在胎週数と子宮底長の関係をプロット。</div></a>
+<a href="../obgyn/afi.html" class="tcard" data-sc="fetal"><img src="../img/obgyn_afi.png" alt="羊水指数" loading="lazy"><div class="tname">羊水指数</div><div class="tdesc">羊水指数テンプレート。在胎週数とAFIの正常範囲をプロット。</div></a>
+<a href="../obgyn/bpp.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_bpp.png" alt="バイオフィジカルプロファイル" loading="lazy"><div class="tname">バイオフィジカルプロファイル</div><div class="tdesc">バイオフィジカルプロファイルテンプレート。胎児well-beingの評価に使用。</div></a>
+<a href="../obgyn/friedman-curve.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_friedman_curve.png" alt="フリードマン曲線" loading="lazy"><div class="tname">フリードマン曲線</div><div class="tdesc">フリードマン曲線テンプレート。正常分娩進行のS字型パターンをプロット。</div></a>
+<a href="../obgyn/apgar.html" class="tcard" data-sc="other"><img src="../img/obgyn_apgar.png" alt="アプガースコア" loading="lazy"><div class="tname">アプガースコア</div><div class="tdesc">アプガースコアテンプレート。1分/5分/10分のスコア変化をプロット。</div></a>
+<a href="../obgyn/gestational-growth.html" class="tcard" data-sc="fetal"><img src="../img/obgyn_gestational_growth.png" alt="在胎週数別成長曲線" loading="lazy"><div class="tname">在胎週数別成長曲線</div><div class="tdesc">在胎週数別成長曲線テンプレート。SGA/AGA/LGAの判定に使用。</div></a>
+<a href="../obgyn/fhr-early.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_fhr_early.png" alt="胎児心拍（早発一過性徐脈）" loading="lazy"><div class="tname">胎児心拍（早発一過性徐脈）</div><div class="tdesc">早発一過性徐脈の胎児心拍テンプレート。児頭圧迫パターンをプロット。</div></a>
+<a href="../obgyn/menstrual-cycle-obgyn.html" class="tcard" data-sc="fetal"><img src="../img/obgyn_menstrual_cycle_obgyn.png" alt="月経周期" loading="lazy"><div class="tname">月経周期</div><div class="tdesc">月経周期テンプレート。ホルモン変動と子宮内膜変化をプロット。</div></a>
+<a href="../obgyn/pedigree-grid.html" class="tcard" data-sc="other"><img src="../img/obgyn_pedigree_grid.png" alt="家系図グリッド" loading="lazy"><div class="tname">家系図グリッド</div><div class="tdesc">家系図テンプレートグリッド。遺伝疾患の家族歴記録に使用。</div></a>
+<a href="../obgyn/partogram.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_partogram.png" alt="パルトグラム" loading="lazy"><div class="tname">パルトグラム</div><div class="tdesc">パルトグラムテンプレート。分娩進行の記録・評価に使用。</div></a>
+<a href="../obgyn/pedigree-basic.html" class="tcard" data-sc="other"><img src="../img/obgyn_pedigree_basic.png" alt="基本家系図" loading="lazy"><div class="tname">基本家系図</div><div class="tdesc">基本家系図テンプレート。遺伝疾患の家族歴記録に使用。□=男性、○=女性。</div></a>
+<a href="../obgyn/pedigree-ar.html" class="tcard" data-sc="other"><img src="../img/obgyn_pedigree_ar.png" alt="常染色体劣性遺伝家系図" loading="lazy"><div class="tname">常染色体劣性遺伝家系図</div><div class="tdesc">常染色体劣性遺伝家系図テンプレート。AR遺伝パターンの記録・教育に使用。</div></a>
+<a href="../obgyn/nst-trace.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_nst_trace.png" alt="NSTトレーステンプレート" loading="lazy"><div class="tname">NSTトレーステンプレート</div><div class="tdesc">NSTトレーステンプレート。胎児心拍数モニタリングの記録に使用。</div></a>
+<a href="../obgyn/birthweight-box.html" class="tcard" data-sc="fetal"><img src="../img/obgyn_birthweight_box.png" alt="在胎週数別出生体重（箱ひげ図）" loading="lazy"><div class="tname">在胎週数別出生体重（箱ひげ図）</div><div class="tdesc">在胎週数別の出生体重分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../obgyn/heatmap-prenatal.html" class="tcard" data-sc="gyn"><img src="../img/obgyn_heatmap_prenatal.png" alt="出生前スクリーニングヒートマップ" loading="lazy"><div class="tname">出生前スクリーニングヒートマップ</div><div class="tdesc">出生前スクリーニング検査の結果パターンをヒートマップで表示するテンプレート。</div></a>
+<a href="../obgyn/radar-maternal-risk.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_radar_maternal_risk.png" alt="母体リスクレーダー" loading="lazy"><div class="tname">母体リスクレーダー</div><div class="tdesc">妊婦のリスク因子を多面的に評価するレーダーチャートテンプレート。</div></a>
+<a href="../obgyn/km-cervical.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_km_cervical.png" alt="子宮頸癌生存曲線" loading="lazy"><div class="tname">子宮頸癌生存曲線</div><div class="tdesc">子宮頸癌のステージ別生存曲線テンプレート。</div></a>
+<a href="../obgyn/roc-preeclampsia.html" class="tcard" data-sc="pregnancy"><img src="../img/obgyn_roc_preeclampsia.png" alt="妊娠高血圧腎症スクリーニングROC" loading="lazy"><div class="tname">妊娠高血圧腎症スクリーニングROC</div><div class="tdesc">妊娠高血圧腎症のスクリーニングマーカーROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

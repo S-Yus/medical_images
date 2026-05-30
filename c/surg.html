@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>外科・麻酔（Surgery）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="外科・麻酔のレポート用グラフテンプレート一覧。14種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="外科・麻酔のレポート用グラフテンプレート一覧。16種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,21 +39,37 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 外科・麻酔</div>
 <main>
 <h1 class="cat-title">外科・麻酔 (Surgery)</h1>
-<p class="count">14 templates available</p>
-<div class="grid"><a href="../surg/asa-classification.html" class="tcard"><img src="../img/surg_asa_classification.png" alt="ASA分類" loading="lazy"><div class="tname">ASA分類</div><div class="tdesc">ASA身体状態分類テンプレート。I-VI類の術前リスク評価に使用。</div></a>
-<a href="../surg/mallampati.html" class="tcard"><img src="../img/surg_mallampati.png" alt="マランパティスコア" loading="lazy"><div class="tname">マランパティスコア</div><div class="tdesc">マランパティスコアテンプレート。気管挿管困難度の予測に使用。</div></a>
-<a href="../surg/fluid-balance.html" class="tcard"><img src="../img/surg_fluid_balance.png" alt="水分バランスチャート" loading="lazy"><div class="tname">水分バランスチャート</div><div class="tdesc">水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。</div></a>
-<a href="../surg/blood-gas.html" class="tcard"><img src="../img/surg_blood_gas.png" alt="血液ガスモニタリング" loading="lazy"><div class="tname">血液ガスモニタリング</div><div class="tdesc">血液ガスモニタリングテンプレート。pH/PO2/PCO2の経時変化をプロット。</div></a>
-<a href="../surg/ventilator-wave-surg.html" class="tcard"><img src="../img/surg_ventilator_wave_surg.png" alt="人工呼吸器波形（術中）" loading="lazy"><div class="tname">人工呼吸器波形（術中）</div><div class="tdesc">術中人工呼吸器波形テンプレート。圧・流量・容量波形をプロット。</div></a>
-<a href="../surg/mac-values.html" class="tcard"><img src="../img/surg_mac_values.png" alt="MAC値" loading="lazy"><div class="tname">MAC値</div><div class="tdesc">MAC値テンプレート。吸入麻酔薬のMAC値比較に使用。</div></a>
-<a href="../surg/pain-ladder.html" class="tcard"><img src="../img/surg_pain_ladder.png" alt="疼痛管理ラダー" loading="lazy"><div class="tname">疼痛管理ラダー</div><div class="tdesc">WHO疼痛管理ラダーテンプレート。3段階の鎮痛法をプロット。</div></a>
-<a href="../surg/wound-class.html" class="tcard"><img src="../img/surg_wound_class.png" alt="手術創分類" loading="lazy"><div class="tname">手術創分類</div><div class="tdesc">手術創分類テンプレート。清潔/準清潔/汚染/感染の感染リスクをプロット。</div></a>
-<a href="../surg/anesthesia-monitor.html" class="tcard"><img src="../img/surg_anesthesia_monitor.png" alt="麻酔モニタリング" loading="lazy"><div class="tname">麻酔モニタリング</div><div class="tdesc">麻酔モニタリングテンプレート。HR/BP/SpO2/EtCO2の経時変化をプロット。</div></a>
-<a href="../surg/surgical-checklist.html" class="tcard"><img src="../img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="tname">手術チェックリスト</div><div class="tdesc">手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</div></a>
-<a href="../surg/heatmap-schedule.html" class="tcard"><img src="../img/surg_heatmap_schedule.png" alt="投薬スケジュール表" loading="lazy"><div class="tname">投薬スケジュール表</div><div class="tdesc">投薬スケジュールヒートマップ。術後の薬剤投与計画を可視化。</div></a>
-<a href="../surg/anesthesia-record.html" class="tcard"><img src="../img/surg_anesthesia_record.png" alt="麻酔記録チャート" loading="lazy"><div class="tname">麻酔記録チャート</div><div class="tdesc">麻酔記録チャートテンプレート。術中のバイタルサイン・薬剤投与を記録。</div></a>
-<a href="../surg/fluid-balance.html" class="tcard"><img src="../img/surg_fluid_balance.png" alt="水分出納チャート" loading="lazy"><div class="tname">水分出納チャート</div><div class="tdesc">水分出納チャートテンプレート。術後の輸液・尿量・ドレーン排液量を記録。</div></a>
-<a href="../surg/wound-healing.html" class="tcard"><img src="../img/surg_wound_healing.png" alt="創傷治癒経過" loading="lazy"><div class="tname">創傷治癒経過</div><div class="tdesc">創傷治癒経過テンプレート。創傷面積の経時的縮小を記録。</div></a></div>
+<p class="count">16 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">16</span></button><button class="tab" data-sc="anesthesia">麻酔・モニタリング<span class="tab-count">6</span></button><button class="tab" data-sc="operative">手術・術式<span class="tab-count">6</span></button><button class="tab" data-sc="periop">周術期管理<span class="tab-count">1</span></button><button class="tab" data-sc="other">その他<span class="tab-count">3</span></button></div>
+<div class="grid"><a href="../surg/asa-classification.html" class="tcard" data-sc="periop"><img src="../img/surg_asa_classification.png" alt="ASA分類" loading="lazy"><div class="tname">ASA分類</div><div class="tdesc">ASA身体状態分類テンプレート。I-VI類の術前リスク評価に使用。</div></a>
+<a href="../surg/mallampati.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_mallampati.png" alt="マランパティスコア" loading="lazy"><div class="tname">マランパティスコア</div><div class="tdesc">マランパティスコアテンプレート。気管挿管困難度の予測に使用。</div></a>
+<a href="../surg/fluid-balance.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_fluid_balance.png" alt="水分バランスチャート" loading="lazy"><div class="tname">水分バランスチャート</div><div class="tdesc">水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。</div></a>
+<a href="../surg/blood-gas.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_blood_gas.png" alt="血液ガスモニタリング" loading="lazy"><div class="tname">血液ガスモニタリング</div><div class="tdesc">血液ガスモニタリングテンプレート。pH/PO2/PCO2の経時変化をプロット。</div></a>
+<a href="../surg/ventilator-wave-surg.html" class="tcard" data-sc="other"><img src="../img/surg_ventilator_wave_surg.png" alt="人工呼吸器波形（術中）" loading="lazy"><div class="tname">人工呼吸器波形（術中）</div><div class="tdesc">術中人工呼吸器波形テンプレート。圧・流量・容量波形をプロット。</div></a>
+<a href="../surg/mac-values.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_mac_values.png" alt="MAC値" loading="lazy"><div class="tname">MAC値</div><div class="tdesc">MAC値テンプレート。吸入麻酔薬のMAC値比較に使用。</div></a>
+<a href="../surg/pain-ladder.html" class="tcard" data-sc="other"><img src="../img/surg_pain_ladder.png" alt="疼痛管理ラダー" loading="lazy"><div class="tname">疼痛管理ラダー</div><div class="tdesc">WHO疼痛管理ラダーテンプレート。3段階の鎮痛法をプロット。</div></a>
+<a href="../surg/wound-class.html" class="tcard" data-sc="operative"><img src="../img/surg_wound_class.png" alt="手術創分類" loading="lazy"><div class="tname">手術創分類</div><div class="tdesc">手術創分類テンプレート。清潔/準清潔/汚染/感染の感染リスクをプロット。</div></a>
+<a href="../surg/anesthesia-monitor.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_anesthesia_monitor.png" alt="麻酔モニタリング" loading="lazy"><div class="tname">麻酔モニタリング</div><div class="tdesc">麻酔モニタリングテンプレート。HR/BP/SpO2/EtCO2の経時変化をプロット。</div></a>
+<a href="../surg/surgical-checklist.html" class="tcard" data-sc="operative"><img src="../img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="tname">手術チェックリスト</div><div class="tdesc">手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</div></a>
+<a href="../surg/heatmap-schedule.html" class="tcard" data-sc="other"><img src="../img/surg_heatmap_schedule.png" alt="投薬スケジュール表" loading="lazy"><div class="tname">投薬スケジュール表</div><div class="tdesc">投薬スケジュールヒートマップ。術後の薬剤投与計画を可視化。</div></a>
+<a href="../surg/anesthesia-record.html" class="tcard" data-sc="anesthesia"><img src="../img/surg_anesthesia_record.png" alt="麻酔記録チャート" loading="lazy"><div class="tname">麻酔記録チャート</div><div class="tdesc">麻酔記録チャートテンプレート。術中のバイタルサイン・薬剤投与を記録。</div></a>
+<a href="../surg/operative-time-box.html" class="tcard" data-sc="operative"><img src="../img/surg_operative_time_box.png" alt="術式別手術時間（箱ひげ図）" loading="lazy"><div class="tname">術式別手術時間（箱ひげ図）</div><div class="tdesc">術式別の手術時間分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../surg/heatmap-ssi.html" class="tcard" data-sc="operative"><img src="../img/surg_heatmap_ssi.png" alt="手術部位感染ヒートマップ" loading="lazy"><div class="tname">手術部位感染ヒートマップ</div><div class="tdesc">手術部位感染の発生パターンをヒートマップで表示するテンプレート。</div></a>
+<a href="../surg/km-surgery-outcome.html" class="tcard" data-sc="operative"><img src="../img/surg_km_surgery_outcome.png" alt="術後生存曲線" loading="lazy"><div class="tname">術後生存曲線</div><div class="tdesc">術式別の術後生存曲線テンプレート。</div></a>
+<a href="../surg/forest-surgical.html" class="tcard" data-sc="operative"><img src="../img/surg_forest_surgical.png" alt="術式メタアナリシス" loading="lazy"><div class="tname">術式メタアナリシス</div><div class="tdesc">術式比較のメタアナリシスフォレストプロットテンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

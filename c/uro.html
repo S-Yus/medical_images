@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>泌尿器科（Urology）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="泌尿器科のレポート用グラフテンプレート一覧。3種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="泌尿器科のレポート用グラフテンプレート一覧。8種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,10 +39,29 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 泌尿器科</div>
 <main>
 <h1 class="cat-title">泌尿器科 (Urology)</h1>
-<p class="count">3 templates available</p>
-<div class="grid"><a href="../uro/uroflowmetry.html" class="tcard"><img src="../img/uro_uroflowmetry.png" alt="尿流量測定チャート" loading="lazy"><div class="tname">尿流量測定チャート</div><div class="tdesc">尿流量測定チャートテンプレート。排尿機能の評価に使用。</div></a>
-<a href="../uro/psa-trend.html" class="tcard"><img src="../img/uro_psa_trend.png" alt="PSA推移チャート" loading="lazy"><div class="tname">PSA推移チャート</div><div class="tdesc">PSA推移チャートテンプレート。前立腺がんのスクリーニング・経過観察に使用。</div></a>
-<a href="../uro/cystometry.html" class="tcard"><img src="../img/uro_cystometry.png" alt="膀胱内圧測定図" loading="lazy"><div class="tname">膀胱内圧測定図</div><div class="tdesc">膀胱内圧測定図テンプレート。膀胱機能（蓄尿・排尿）の評価に使用。</div></a></div>
+<p class="count">8 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">8</span></button><button class="tab" data-sc="voiding">排尿機能<span class="tab-count">4</span></button><button class="tab" data-sc="prostate">前立腺・腫瘍<span class="tab-count">4</span></button></div>
+<div class="grid"><a href="../uro/uroflowmetry.html" class="tcard" data-sc="voiding"><img src="../img/uro_uroflowmetry.png" alt="尿流量測定チャート" loading="lazy"><div class="tname">尿流量測定チャート</div><div class="tdesc">尿流量測定チャートテンプレート。排尿機能の評価に使用。</div></a>
+<a href="../uro/psa-trend.html" class="tcard" data-sc="prostate"><img src="../img/uro_psa_trend.png" alt="PSA推移チャート" loading="lazy"><div class="tname">PSA推移チャート</div><div class="tdesc">PSA推移チャートテンプレート。前立腺がんのスクリーニング・経過観察に使用。</div></a>
+<a href="../uro/cystometry.html" class="tcard" data-sc="voiding"><img src="../img/uro_cystometry.png" alt="膀胱内圧測定図" loading="lazy"><div class="tname">膀胱内圧測定図</div><div class="tdesc">膀胱内圧測定図テンプレート。膀胱機能（蓄尿・排尿）の評価に使用。</div></a>
+<a href="../uro/psa-comparison-box.html" class="tcard" data-sc="prostate"><img src="../img/uro_psa_comparison_box.png" alt="診断別PSA（箱ひげ図）" loading="lazy"><div class="tname">診断別PSA（箱ひげ図）</div><div class="tdesc">診断別のPSA値分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../uro/heatmap-urodynamic.html" class="tcard" data-sc="voiding"><img src="../img/uro_heatmap_urodynamic.png" alt="尿流動態検査ヒートマップ" loading="lazy"><div class="tname">尿流動態検査ヒートマップ</div><div class="tdesc">尿流動態検査の結果パターンをヒートマップで表示するテンプレート。</div></a>
+<a href="../uro/radar-luts.html" class="tcard" data-sc="voiding"><img src="../img/uro_radar_luts.png" alt="下部尿路症状レーダー" loading="lazy"><div class="tname">下部尿路症状レーダー</div><div class="tdesc">下部尿路症状の多面的評価レーダーチャートテンプレート。IPSS準拠。</div></a>
+<a href="../uro/km-prostate.html" class="tcard" data-sc="prostate"><img src="../img/uro_km_prostate.png" alt="前立腺癌生存曲線" loading="lazy"><div class="tname">前立腺癌生存曲線</div><div class="tdesc">前立腺癌の治療法別生存曲線テンプレート。</div></a>
+<a href="../uro/roc-psa.html" class="tcard" data-sc="prostate"><img src="../img/uro_roc_psa.png" alt="PSA診断ROC曲線" loading="lazy"><div class="tname">PSA診断ROC曲線</div><div class="tdesc">PSA検査の前立腺癌診断性能ROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>

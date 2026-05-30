@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>臨床検査（Clinical Chemistry）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="臨床検査のレポート用グラフテンプレート一覧。19種類の著作権フリー白紙テンプレート。Rコード付き。">
+<meta name="description" content="臨床検査のレポート用グラフテンプレート一覧。22種類の著作権フリー白紙テンプレート。Rコード付き。">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -18,7 +18,13 @@ a{color:#2563eb;text-decoration:none}
 .bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
 main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
 h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:20px;font-size:14px}
+.count{color:#666;margin-bottom:8px;font-size:14px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
+.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
+.tab:hover{background:#f1f5f9;border-color:#94a3b8}
+.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
+.tab.active .tab-count{background:rgba(255,255,255,.25)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
 .tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
 .tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
@@ -33,26 +39,43 @@ footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font
 <div class="bc"><a href="../">HOME</a> &gt; 臨床検査</div>
 <main>
 <h1 class="cat-title">臨床検査 (Clinical Chemistry)</h1>
-<p class="count">19 templates available</p>
-<div class="grid"><a href="../chem/calibration-curve.html" class="tcard"><img src="../img/chem_calibration_curve.png" alt="検量線" loading="lazy"><div class="tname">検量線</div><div class="tdesc">汎用検量線テンプレート。標準液濃度と測定値の直線関係をプロット。</div></a>
-<a href="../chem/linearity.html" class="tcard"><img src="../img/chem_linearity.png" alt="直線性評価" loading="lazy"><div class="tname">直線性評価</div><div class="tdesc">直線性評価テンプレート。測定法の直線範囲の確認に使用。</div></a>
-<a href="../chem/precision-profile.html" class="tcard"><img src="../img/chem_precision_profile.png" alt="精密度プロファイル" loading="lazy"><div class="tname">精密度プロファイル</div><div class="tdesc">精密度プロファイルテンプレート。濃度別の変動係数をプロット。</div></a>
-<a href="../chem/method-comparison.html" class="tcard"><img src="../img/chem_method_comparison.png" alt="方法比較" loading="lazy"><div class="tname">方法比較</div><div class="tdesc">方法比較テンプレート。参照法と新法の相関をプロット。</div></a>
-<a href="../chem/interference.html" class="tcard"><img src="../img/chem_interference.png" alt="干渉試験" loading="lazy"><div class="tname">干渉試験</div><div class="tdesc">干渉試験テンプレート。共存物質の影響を評価。</div></a>
-<a href="../chem/reference-range.html" class="tcard"><img src="../img/chem_reference_range.png" alt="基準範囲" loading="lazy"><div class="tname">基準範囲</div><div class="tdesc">基準範囲テンプレート。各検査項目の正常値範囲をプロット。</div></a>
-<a href="../chem/qc-chart.html" class="tcard"><img src="../img/chem_qc_chart.png" alt="QC管理図" loading="lazy"><div class="tname">QC管理図</div><div class="tdesc">レビー・ジェニングスQC管理図テンプレート。日常の精度管理に使用。</div></a>
-<a href="../chem/westgard.html" class="tcard"><img src="../img/chem_westgard.png" alt="ウエストガードルール" loading="lazy"><div class="tname">ウエストガードルール</div><div class="tdesc">ウエストガードルールテンプレート。QCデータの異常判定に使用。</div></a>
-<a href="../chem/analytical-sensitivity.html" class="tcard"><img src="../img/chem_analytical_sensitivity.png" alt="分析感度" loading="lazy"><div class="tname">分析感度</div><div class="tdesc">分析感度テンプレート。LOD/LOQの決定に使用。</div></a>
-<a href="../chem/clinical-limits.html" class="tcard"><img src="../img/chem_clinical_limits.png" alt="臨床判断値" loading="lazy"><div class="tname">臨床判断値</div><div class="tdesc">臨床判断値テンプレート。カットオフ値の設定に使用。</div></a>
-<a href="../chem/control-chart.html" class="tcard"><img src="../img/chem_control_chart.png" alt="シューハート管理図" loading="lazy"><div class="tname">シューハート管理図</div><div class="tdesc">シューハート管理図テンプレート。臨床検査のQC管理に使用。</div></a>
-<a href="../chem/pareto-chart.html" class="tcard"><img src="../img/chem_pareto_chart.png" alt="パレート図" loading="lazy"><div class="tname">パレート図</div><div class="tdesc">パレート図テンプレート。品質管理における問題の優先順位付けに使用。</div></a>
-<a href="../chem/bland-altman-pct.html" class="tcard"><img src="../img/chem_bland_altman_pct.png" alt="ブランド・アルトマン（%差）" loading="lazy"><div class="tname">ブランド・アルトマン（%差）</div><div class="tdesc">パーセント差のブランド・アルトマンプロット。臨床検査の方法比較に使用。</div></a>
-<a href="../chem/boxplot-lab.html" class="tcard"><img src="../img/chem_boxplot_lab.png" alt="検査値ボックスプロット" loading="lazy"><div class="tname">検査値ボックスプロット</div><div class="tdesc">検査値ボックスプロットテンプレート。臨床検査データの分布表示に使用。</div></a>
-<a href="../chem/bland-altman-lab.html" class="tcard"><img src="../img/chem_bland_altman_lab.png" alt="検査法比較プロット" loading="lazy"><div class="tname">検査法比較プロット</div><div class="tdesc">検査法比較プロットテンプレート。新旧検査法の一致度を評価。</div></a>
-<a href="../chem/levey-jennings.html" class="tcard"><img src="../img/chem_levey_jennings.png" alt="レビー・ジェニングスチャート" loading="lazy"><div class="tname">レビー・ジェニングスチャート</div><div class="tdesc">レビー・ジェニングスチャートテンプレート。内部精度管理に使用。</div></a>
-<a href="../chem/standard-curve.html" class="tcard"><img src="../img/chem_standard_curve.png" alt="標準曲線（検量線）" loading="lazy"><div class="tname">標準曲線（検量線）</div><div class="tdesc">標準曲線（検量線）テンプレート。定量分析の基盤。</div></a>
-<a href="../chem/westgard-rules.html" class="tcard"><img src="../img/chem_westgard_rules.png" alt="ウェスターガードルールチャート" loading="lazy"><div class="tname">ウェスターガードルールチャート</div><div class="tdesc">ウェスターガードルールチャートテンプレート。臨床検査の品質管理に使用。</div></a>
-<a href="../chem/heatmap-lab-trend.html" class="tcard"><img src="../img/chem_heatmap_lab_trend.png" alt="検査値推移ヒートマップ" loading="lazy"><div class="tname">検査値推移ヒートマップ</div><div class="tdesc">検査値推移ヒートマップテンプレート。複数検査値の正常/異常パターンを一覧表示。</div></a></div>
+<p class="count">22 templates available</p>
+<div class="tabs"><button class="tab active" data-sc="all">全て<span class="tab-count">22</span></button><button class="tab" data-sc="qc">精度管理<span class="tab-count">6</span></button><button class="tab" data-sc="clinical_c">臨床検査値<span class="tab-count">5</span></button><button class="tab" data-sc="method">検査法・原理<span class="tab-count">2</span></button><button class="tab" data-sc="interpret">結果解釈<span class="tab-count">2</span></button><button class="tab" data-sc="other">その他<span class="tab-count">7</span></button></div>
+<div class="grid"><a href="../chem/calibration-curve.html" class="tcard" data-sc="qc"><img src="../img/chem_calibration_curve.png" alt="検量線" loading="lazy"><div class="tname">検量線</div><div class="tdesc">汎用検量線テンプレート。標準液濃度と測定値の直線関係をプロット。</div></a>
+<a href="../chem/linearity.html" class="tcard" data-sc="clinical_c"><img src="../img/chem_linearity.png" alt="直線性評価" loading="lazy"><div class="tname">直線性評価</div><div class="tdesc">直線性評価テンプレート。測定法の直線範囲の確認に使用。</div></a>
+<a href="../chem/precision-profile.html" class="tcard" data-sc="qc"><img src="../img/chem_precision_profile.png" alt="精密度プロファイル" loading="lazy"><div class="tname">精密度プロファイル</div><div class="tdesc">精密度プロファイルテンプレート。濃度別の変動係数をプロット。</div></a>
+<a href="../chem/method-comparison.html" class="tcard" data-sc="clinical_c"><img src="../img/chem_method_comparison.png" alt="方法比較" loading="lazy"><div class="tname">方法比較</div><div class="tdesc">方法比較テンプレート。参照法と新法の相関をプロット。</div></a>
+<a href="../chem/interference.html" class="tcard" data-sc="other"><img src="../img/chem_interference.png" alt="干渉試験" loading="lazy"><div class="tname">干渉試験</div><div class="tdesc">干渉試験テンプレート。共存物質の影響を評価。</div></a>
+<a href="../chem/reference-range.html" class="tcard" data-sc="clinical_c"><img src="../img/chem_reference_range.png" alt="基準範囲" loading="lazy"><div class="tname">基準範囲</div><div class="tdesc">基準範囲テンプレート。各検査項目の正常値範囲をプロット。</div></a>
+<a href="../chem/qc-chart.html" class="tcard" data-sc="qc"><img src="../img/chem_qc_chart.png" alt="QC管理図" loading="lazy"><div class="tname">QC管理図</div><div class="tdesc">レビー・ジェニングスQC管理図テンプレート。日常の精度管理に使用。</div></a>
+<a href="../chem/westgard.html" class="tcard" data-sc="qc"><img src="../img/chem_westgard.png" alt="ウエストガードルール" loading="lazy"><div class="tname">ウエストガードルール</div><div class="tdesc">ウエストガードルールテンプレート。QCデータの異常判定に使用。</div></a>
+<a href="../chem/analytical-sensitivity.html" class="tcard" data-sc="other"><img src="../img/chem_analytical_sensitivity.png" alt="分析感度" loading="lazy"><div class="tname">分析感度</div><div class="tdesc">分析感度テンプレート。LOD/LOQの決定に使用。</div></a>
+<a href="../chem/clinical-limits.html" class="tcard" data-sc="interpret"><img src="../img/chem_clinical_limits.png" alt="臨床判断値" loading="lazy"><div class="tname">臨床判断値</div><div class="tdesc">臨床判断値テンプレート。カットオフ値の設定に使用。</div></a>
+<a href="../chem/control-chart.html" class="tcard" data-sc="qc"><img src="../img/chem_control_chart.png" alt="シューハート管理図" loading="lazy"><div class="tname">シューハート管理図</div><div class="tdesc">シューハート管理図テンプレート。臨床検査のQC管理に使用。</div></a>
+<a href="../chem/pareto-chart.html" class="tcard" data-sc="other"><img src="../img/chem_pareto_chart.png" alt="パレート図" loading="lazy"><div class="tname">パレート図</div><div class="tdesc">パレート図テンプレート。品質管理における問題の優先順位付けに使用。</div></a>
+<a href="../chem/bland-altman-pct.html" class="tcard" data-sc="method"><img src="../img/chem_bland_altman_pct.png" alt="ブランド・アルトマン（%差）" loading="lazy"><div class="tname">ブランド・アルトマン（%差）</div><div class="tdesc">パーセント差のブランド・アルトマンプロット。臨床検査の方法比較に使用。</div></a>
+<a href="../chem/boxplot-lab.html" class="tcard" data-sc="other"><img src="../img/chem_boxplot_lab.png" alt="検査値ボックスプロット" loading="lazy"><div class="tname">検査値ボックスプロット</div><div class="tdesc">検査値ボックスプロットテンプレート。臨床検査データの分布表示に使用。</div></a>
+<a href="../chem/bland-altman-lab.html" class="tcard" data-sc="method"><img src="../img/chem_bland_altman_lab.png" alt="検査法比較プロット" loading="lazy"><div class="tname">検査法比較プロット</div><div class="tdesc">検査法比較プロットテンプレート。新旧検査法の一致度を評価。</div></a>
+<a href="../chem/standard-curve.html" class="tcard" data-sc="other"><img src="../img/chem_standard_curve.png" alt="標準曲線（検量線）" loading="lazy"><div class="tname">標準曲線（検量線）</div><div class="tdesc">標準曲線（検量線）テンプレート。定量分析の基盤。</div></a>
+<a href="../chem/westgard-rules.html" class="tcard" data-sc="qc"><img src="../img/chem_westgard_rules.png" alt="ウェスターガードルールチャート" loading="lazy"><div class="tname">ウェスターガードルールチャート</div><div class="tdesc">ウェスターガードルールチャートテンプレート。臨床検査の品質管理に使用。</div></a>
+<a href="../chem/heatmap-lab-trend.html" class="tcard" data-sc="clinical_c"><img src="../img/chem_heatmap_lab_trend.png" alt="検査値推移ヒートマップ" loading="lazy"><div class="tname">検査値推移ヒートマップ</div><div class="tdesc">検査値推移ヒートマップテンプレート。複数検査値の正常/異常パターンを一覧表示。</div></a>
+<a href="../chem/lab-comparison-box.html" class="tcard" data-sc="other"><img src="../img/chem_lab_comparison_box.png" alt="状態別検査値（箱ひげ図）" loading="lazy"><div class="tname">状態別検査値（箱ひげ図）</div><div class="tdesc">臨床状態別の検査値分布を比較する箱ひげ図テンプレート。</div></a>
+<a href="../chem/heatmap-lab-panel.html" class="tcard" data-sc="clinical_c"><img src="../img/chem_heatmap_lab_panel.png" alt="検査パネルヒートマップ" loading="lazy"><div class="tname">検査パネルヒートマップ</div><div class="tdesc">検査パネルの経時変化をヒートマップで表示するテンプレート。</div></a>
+<a href="../chem/radar-lab-profile.html" class="tcard" data-sc="other"><img src="../img/chem_radar_lab_profile.png" alt="検査プロファイルレーダー" loading="lazy"><div class="tname">検査プロファイルレーダー</div><div class="tdesc">検査プロファイルの概要をレーダーチャートで表示するテンプレート。</div></a>
+<a href="../chem/roc-lab-marker.html" class="tcard" data-sc="interpret"><img src="../img/chem_roc_lab_marker.png" alt="検査マーカー診断ROC" loading="lazy"><div class="tname">検査マーカー診断ROC</div><div class="tdesc">検査マーカーの診断性能ROC曲線テンプレート。</div></a></div>
 </main>
 <footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+
+<script>
+document.querySelectorAll(".tab").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    document.querySelectorAll(".tab").forEach(function(b){b.classList.remove("active")});
+    btn.classList.add("active");
+    var sc=btn.getAttribute("data-sc");
+    document.querySelectorAll(".tcard").forEach(function(card){
+      card.style.display=(sc==="all"||card.getAttribute("data-sc")===sc)?"":"none";
+    });
+  });
+});
+</script>
 </body></html>
