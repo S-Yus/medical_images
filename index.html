@@ -1,9 +1,144 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedGraph Free - 医学部生のためのグラフテンプレート集</title>
+
+    <!-- SEO: Title & Description -->
+    <title>MedGraph Free｜医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
+    <meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料で提供。生化学・生理学・薬理学・微生物学・免疫学・疫学・統計など全23分野54種類。著作権フリー（CC0）で商用利用可。R + ggplot2のソースコード付きで自分のデータをすぐプロットできます。">
+    <meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,生化学,生理学,薬理学,微生物学,免疫学,疫学,統計,Michaelis-Menten,Kaplan-Meier,ROC曲線,用量反応曲線,酸素解離曲線,フォレストプロット,医学生,テンプレート,素材">
+    <meta name="author" content="MedGraph Free">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://s-yus.github.io/medical_images/">
+
+    <!-- Open Graph (Facebook, LINE, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MedGraph Free｜医学部生のための無料グラフテンプレート集">
+    <meta property="og:description" content="全23分野54種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。レポートや発表にすぐ使えます。">
+    <meta property="og:url" content="https://s-yus.github.io/medical_images/">
+    <meta property="og:site_name" content="MedGraph Free">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MedGraph Free｜医学部生のための無料グラフテンプレート集">
+    <meta name="twitter:description" content="全23分野54種類の白紙グラフテンプレート。著作権フリー（CC0）・Rコード付き。">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MedGraph Free",
+      "alternateName": "メドグラフフリー",
+      "url": "https://s-yus.github.io/medical_images/",
+      "description": "医学部生のためのレポート用グラフテンプレートを無料で提供するサイト。全23分野54種類。著作権フリー（CC0）。R + ggplot2のソースコード付き。",
+      "inLanguage": "ja",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "keywords": "医学部, グラフテンプレート, レポート, 無料, CC0, R, ggplot2"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "医学部生のための無料グラフテンプレート集",
+      "description": "生化学・生理学・薬理学・微生物学・免疫学・疫学・統計など全23分野54種類のブランクグラフテンプレート",
+      "url": "https://s-yus.github.io/medical_images/",
+      "inLanguage": "ja",
+      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "isAccessibleForFree": true,
+      "numberOfItems": 54,
+      "about": [
+        {"@type": "Thing", "name": "生化学 (Biochemistry)"},
+        {"@type": "Thing", "name": "生理学 (Physiology)"},
+        {"@type": "Thing", "name": "薬理学 (Pharmacology)"},
+        {"@type": "Thing", "name": "微生物学 (Microbiology)"},
+        {"@type": "Thing", "name": "免疫学 (Immunology)"},
+        {"@type": "Thing", "name": "疫学 (Epidemiology)"},
+        {"@type": "Thing", "name": "臨床研究・統計 (Clinical Statistics)"},
+        {"@type": "Thing", "name": "腎臓内科 (Nephrology)"},
+        {"@type": "Thing", "name": "酸塩基平衡 (Acid-Base)"},
+        {"@type": "Thing", "name": "血液学 (Hematology)"},
+        {"@type": "Thing", "name": "内分泌学 (Endocrinology)"},
+        {"@type": "Thing", "name": "神経科学 (Neuroscience)"},
+        {"@type": "Thing", "name": "循環器学 (Cardiology)"},
+        {"@type": "Thing", "name": "呼吸器学 (Pulmonology)"},
+        {"@type": "Thing", "name": "消化器学 (Gastroenterology)"},
+        {"@type": "Thing", "name": "産婦人科 (Obstetrics/Gynecology)"},
+        {"@type": "Thing", "name": "小児科 (Pediatrics)"},
+        {"@type": "Thing", "name": "整形外科 (Orthopedics)"},
+        {"@type": "Thing", "name": "眼科 (Ophthalmology)"},
+        {"@type": "Thing", "name": "精神科 (Psychiatry)"},
+        {"@type": "Thing", "name": "解剖学 (Anatomy)"},
+        {"@type": "Thing", "name": "病理学 (Pathology)"},
+        {"@type": "Thing", "name": "心電図 (ECG)"}
+      ],
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 54,
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Michaelis-Menten プロット", "url": "https://s-yus.github.io/medical_images/biochem_michaelis_menten.png"},
+          {"@type": "ListItem", "position": 2, "name": "Lineweaver-Burk プロット", "url": "https://s-yus.github.io/medical_images/biochem_lineweaver_burk.png"},
+          {"@type": "ListItem", "position": 3, "name": "pH 滴定曲線", "url": "https://s-yus.github.io/medical_images/biochem_titration.png"},
+          {"@type": "ListItem", "position": 4, "name": "酵素阻害テンプレート", "url": "https://s-yus.github.io/medical_images/biochem_enzyme_inhibition.png"},
+          {"@type": "ListItem", "position": 5, "name": "酸素解離曲線", "url": "https://s-yus.github.io/medical_images/physiol_o2_dissociation.png"},
+          {"@type": "ListItem", "position": 6, "name": "Frank-Starling 曲線", "url": "https://s-yus.github.io/medical_images/physiol_frank_starling.png"},
+          {"@type": "ListItem", "position": 7, "name": "活動電位テンプレート", "url": "https://s-yus.github.io/medical_images/physiol_action_potential.png"},
+          {"@type": "ListItem", "position": 8, "name": "心筋活動電位", "url": "https://s-yus.github.io/medical_images/physiol_cardiac_ap.png"},
+          {"@type": "ListItem", "position": 9, "name": "フローボリューム曲線", "url": "https://s-yus.github.io/medical_images/physiol_flow_volume.png"},
+          {"@type": "ListItem", "position": 10, "name": "心臓圧-容積ループ", "url": "https://s-yus.github.io/medical_images/physiol_pv_loop.png"},
+          {"@type": "ListItem", "position": 11, "name": "用量反応曲線", "url": "https://s-yus.github.io/medical_images/pharm_dose_response.png"},
+          {"@type": "ListItem", "position": 12, "name": "薬物動態曲線", "url": "https://s-yus.github.io/medical_images/pharm_pk_curve.png"},
+          {"@type": "ListItem", "position": 13, "name": "ROC曲線", "url": "https://s-yus.github.io/medical_images/stat_roc_curve.png"},
+          {"@type": "ListItem", "position": 14, "name": "Kaplan-Meier生存曲線", "url": "https://s-yus.github.io/medical_images/stat_kaplan_meier.png"},
+          {"@type": "ListItem", "position": 15, "name": "フォレストプロット", "url": "https://s-yus.github.io/medical_images/stat_forest_plot.png"}
+        ]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "MedGraph Free のテンプレートは無料で使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、全テンプレートは CC0（パブリックドメイン）として公開しており、商用・非商用を問わず完全に無料でご利用いただけます。クレジット表記も不要です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "テンプレートに自分のデータを入れるにはどうすればよいですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "各テンプレートに R + ggplot2 のソースコードが付属しています。「R Code」ボタンをクリックしてコードをコピーし、RStudio に貼り付けて geom_point() や geom_line() で自分のデータを追加できます。また、PNG画像をダウンロードして PowerPoint や Word に貼り付け、上から描画することもできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "どんな分野のテンプレートがありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "生化学、生理学、薬理学、微生物学、免疫学、疫学・公衆衛生、臨床研究・統計、腎臓、酸塩基平衡、血液、内分泌、神経科学、循環器、呼吸器、消化器、産婦人科、小児科、整形外科、眼科、精神科、解剖学、病理、心電図の全23分野54種類をカバーしています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "レポートや論文に使っても著作権の問題はありませんか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "問題ありません。全テンプレートは R + ggplot2 でオリジナル生成しており、CC0（パブリックドメイン）ライセンスで公開しています。レポート、論文、学会発表、SNS、商用利用など、あらゆる目的で自由にお使いいただけます。"
+          }
+        }
+      ]
+    }
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -2013,12 +2148,42 @@ ggplot(cell_df, aes(x = cell, y = 0)) +
 
 </div>
 
+    <!-- SEO: 自然文テキストコンテンツ -->
+    <section class="howto" style="margin-top:2rem;">
+        <h2>MedGraph Free について</h2>
+        <p style="color:#555; font-size:0.9rem; line-height:1.8;">
+            MedGraph Free は、医学部生がレポートや発表で使えるグラフテンプレートを無料で提供するサイトです。
+            生化学（Michaelis-Menten プロット、Lineweaver-Burk プロット、pH 滴定曲線）、
+            生理学（酸素解離曲線、Frank-Starling 曲線、活動電位、心臓 PV ループ、フローボリューム曲線）、
+            薬理学（用量反応曲線、薬物動態曲線、治療域テンプレート）、
+            微生物学（細菌増殖曲線、MIC 測定、Time-Kill 曲線、ディスク拡散法）、
+            免疫学（一次/二次免疫応答、ELISA 標準曲線、フローサイトメトリー）、
+            疫学（流行曲線、2×2 分割表、PPV/NPV）、
+            臨床研究・統計（ROC 曲線、Kaplan-Meier 生存曲線、フォレストプロット、Bland-Altman プロット）
+            など、医学部の全23分野をカバーする54種類のテンプレートを揃えています。
+        </p>
+        <p style="color:#555; font-size:0.9rem; line-height:1.8; margin-top:0.8rem;">
+            すべてのテンプレートはデータが入っていない白紙の状態で、自分の実験データや臨床データをプロットして使うことができます。
+            各テンプレートには R（ggplot2）のソースコードが付属しており、コピー＆ペーストですぐにカスタマイズ可能です。
+            軸のスケール変更、データの追加、色の変更など、自由に編集できます。
+            また、PNG 画像としてダウンロードして PowerPoint や Word に貼り付け、印刷して手書きで記入する使い方もできます。
+        </p>
+        <p style="color:#555; font-size:0.9rem; line-height:1.8; margin-top:0.8rem;">
+            全コンテンツは CC0（パブリックドメイン）ライセンスで公開しており、
+            商用利用・非商用利用を問わず、クレジット表記不要で自由にご利用いただけます。
+            医学部のレポート、卒業論文、学会発表のスライド、研究論文の図表作成などにご活用ください。
+        </p>
+    </section>
+
 <footer>
-    <p><strong>MedGraph Free</strong> &mdash; 医学部生のためのグラフテンプレート集</p>
+    <p><strong>MedGraph Free</strong> &mdash; 医学部生のための無料グラフテンプレート集</p>
     <p>全コンテンツは <strong>CC0（パブリックドメイン）</strong> です。</p>
     <p style="margin-top:0.4rem;">
-        Generated with <a href="https://www.r-project.org/" target="_blank">R</a> +
-        <a href="https://ggplot2.tidyverse.org/" target="_blank">ggplot2</a>
+        Generated with <a href="https://www.r-project.org/" target="_blank" rel="noopener">R</a> +
+        <a href="https://ggplot2.tidyverse.org/" target="_blank" rel="noopener">ggplot2</a>
+    </p>
+    <p style="margin-top:0.3rem; font-size:0.75rem; color:#bbb;">
+        医学部 グラフ テンプレート 無料 | 医学 レポート 図表 素材 フリー | 医学生 R ggplot2 | Medical graph template free
     </p>
 </footer>
 

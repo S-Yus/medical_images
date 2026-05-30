@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://s-yus.github.io/medical_images/</loc>
+    <lastmod>2026-05-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <!-- 生化学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/biochem_michaelis_menten.png</image:loc><image:title>Michaelis-Menten プロット テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/biochem_lineweaver_burk.png</image:loc><image:title>Lineweaver-Burk プロット テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/biochem_titration.png</image:loc><image:title>pH 滴定曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/biochem_enzyme_inhibition.png</image:loc><image:title>酵素阻害テンプレート</image:title></image:image>
+    <!-- 生理学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_o2_dissociation.png</image:loc><image:title>酸素解離曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_frank_starling.png</image:loc><image:title>Frank-Starling 曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_action_potential.png</image:loc><image:title>活動電位テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_cardiac_ap.png</image:loc><image:title>心筋活動電位テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_flow_volume.png</image:loc><image:title>フローボリューム曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/physiol_pv_loop.png</image:loc><image:title>心臓PVループテンプレート</image:title></image:image>
+    <!-- 薬理学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/pharm_dose_response.png</image:loc><image:title>用量反応曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/pharm_pk_curve.png</image:loc><image:title>薬物動態曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/pharm_pk_semilog.png</image:loc><image:title>薬物動態片対数テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/pharm_therapeutic_window.png</image:loc><image:title>治療域テンプレート</image:title></image:image>
+    <!-- 微生物学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/micro_growth_curve.png</image:loc><image:title>細菌増殖曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/micro_time_kill.png</image:loc><image:title>Time-Kill Curve テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/micro_mic.png</image:loc><image:title>MIC測定テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/micro_disk_diffusion.png</image:loc><image:title>ディスク拡散法テンプレート</image:title></image:image>
+    <!-- 免疫学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/immuno_response.png</image:loc><image:title>一次二次免疫応答テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/immuno_elisa.png</image:loc><image:title>ELISA標準曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/immuno_ch50.png</image:loc><image:title>補体活性CH50テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/immuno_facs.png</image:loc><image:title>フローサイトメトリーテンプレート</image:title></image:image>
+    <!-- 臨床統計 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/stat_roc_curve.png</image:loc><image:title>ROC曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/stat_kaplan_meier.png</image:loc><image:title>Kaplan-Meier生存曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/stat_forest_plot.png</image:loc><image:title>フォレストプロットテンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/stat_bland_altman.png</image:loc><image:title>Bland-Altmanプロットテンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/stat_calibration.png</image:loc><image:title>Calibrationプロットテンプレート</image:title></image:image>
+    <!-- 疫学 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/epi_epidemic_curve.png</image:loc><image:title>流行曲線テンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/epi_2x2_table.png</image:loc><image:title>2x2分割表テンプレート</image:title></image:image>
+    <!-- その他 -->
+    <image:image><image:loc>https://s-yus.github.io/medical_images/nephro_clearance.png</image:loc><image:title>腎クリアランステンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/acidbase_davenport.png</image:loc><image:title>Davenport Diagramテンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/endo_ogtt.png</image:loc><image:title>OGTTテンプレート</image:title></image:image>
+    <image:image><image:loc>https://s-yus.github.io/medical_images/cardio_wiggers.png</image:loc><image:title>Wiggers Diagramテンプレート</image:title></image:image>
+  </url>
+</urlset>

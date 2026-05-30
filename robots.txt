@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://s-yus.github.io/medical_images/sitemap.xml
