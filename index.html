@@ -1,2207 +1,509 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO: Title & Description -->
-    <title>MedGraph Free｜医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
-    <meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料で提供。生化学・生理学・薬理学・微生物学・免疫学・疫学・統計など全23分野54種類。著作権フリー（CC0）で商用利用可。R + ggplot2のソースコード付きで自分のデータをすぐプロットできます。">
-    <meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,生化学,生理学,薬理学,微生物学,免疫学,疫学,統計,Michaelis-Menten,Kaplan-Meier,ROC曲線,用量反応曲線,酸素解離曲線,フォレストプロット,医学生,テンプレート,素材">
-    <meta name="author" content="MedGraph Free">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
-    <link rel="canonical" href="https://med-graph.com/">
-
-    <!-- Open Graph (Facebook, LINE, etc.) -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="MedGraph Free｜医学部生のための無料グラフテンプレート集">
-    <meta property="og:description" content="全23分野54種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。レポートや発表にすぐ使えます。">
-    <meta property="og:url" content="https://med-graph.com/">
-    <meta property="og:site_name" content="MedGraph Free">
-    <meta property="og:locale" content="ja_JP">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="MedGraph Free｜医学部生のための無料グラフテンプレート集">
-    <meta name="twitter:description" content="全23分野54種類の白紙グラフテンプレート。著作権フリー（CC0）・Rコード付き。">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "MedGraph Free",
-      "alternateName": "メドグラフフリー",
-      "url": "https://med-graph.com/",
-      "description": "医学部生のためのレポート用グラフテンプレートを無料で提供するサイト。全23分野54種類。著作権フリー（CC0）。R + ggplot2のソースコード付き。",
-      "inLanguage": "ja",
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "keywords": "医学部, グラフテンプレート, レポート, 無料, CC0, R, ggplot2"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "医学部生のための無料グラフテンプレート集",
-      "description": "生化学・生理学・薬理学・微生物学・免疫学・疫学・統計など全23分野54種類のブランクグラフテンプレート",
-      "url": "https://med-graph.com/",
-      "inLanguage": "ja",
-      "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-      "isAccessibleForFree": true,
-      "numberOfItems": 54,
-      "about": [
-        {"@type": "Thing", "name": "生化学 (Biochemistry)"},
-        {"@type": "Thing", "name": "生理学 (Physiology)"},
-        {"@type": "Thing", "name": "薬理学 (Pharmacology)"},
-        {"@type": "Thing", "name": "微生物学 (Microbiology)"},
-        {"@type": "Thing", "name": "免疫学 (Immunology)"},
-        {"@type": "Thing", "name": "疫学 (Epidemiology)"},
-        {"@type": "Thing", "name": "臨床研究・統計 (Clinical Statistics)"},
-        {"@type": "Thing", "name": "腎臓内科 (Nephrology)"},
-        {"@type": "Thing", "name": "酸塩基平衡 (Acid-Base)"},
-        {"@type": "Thing", "name": "血液学 (Hematology)"},
-        {"@type": "Thing", "name": "内分泌学 (Endocrinology)"},
-        {"@type": "Thing", "name": "神経科学 (Neuroscience)"},
-        {"@type": "Thing", "name": "循環器学 (Cardiology)"},
-        {"@type": "Thing", "name": "呼吸器学 (Pulmonology)"},
-        {"@type": "Thing", "name": "消化器学 (Gastroenterology)"},
-        {"@type": "Thing", "name": "産婦人科 (Obstetrics/Gynecology)"},
-        {"@type": "Thing", "name": "小児科 (Pediatrics)"},
-        {"@type": "Thing", "name": "整形外科 (Orthopedics)"},
-        {"@type": "Thing", "name": "眼科 (Ophthalmology)"},
-        {"@type": "Thing", "name": "精神科 (Psychiatry)"},
-        {"@type": "Thing", "name": "解剖学 (Anatomy)"},
-        {"@type": "Thing", "name": "病理学 (Pathology)"},
-        {"@type": "Thing", "name": "心電図 (ECG)"}
-      ],
-      "mainEntity": {
-        "@type": "ItemList",
-        "numberOfItems": 54,
-        "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "Michaelis-Menten プロット", "url": "https://med-graph.com/biochem_michaelis_menten.png"},
-          {"@type": "ListItem", "position": 2, "name": "Lineweaver-Burk プロット", "url": "https://med-graph.com/biochem_lineweaver_burk.png"},
-          {"@type": "ListItem", "position": 3, "name": "pH 滴定曲線", "url": "https://med-graph.com/biochem_titration.png"},
-          {"@type": "ListItem", "position": 4, "name": "酵素阻害テンプレート", "url": "https://med-graph.com/biochem_enzyme_inhibition.png"},
-          {"@type": "ListItem", "position": 5, "name": "酸素解離曲線", "url": "https://med-graph.com/physiol_o2_dissociation.png"},
-          {"@type": "ListItem", "position": 6, "name": "Frank-Starling 曲線", "url": "https://med-graph.com/physiol_frank_starling.png"},
-          {"@type": "ListItem", "position": 7, "name": "活動電位テンプレート", "url": "https://med-graph.com/physiol_action_potential.png"},
-          {"@type": "ListItem", "position": 8, "name": "心筋活動電位", "url": "https://med-graph.com/physiol_cardiac_ap.png"},
-          {"@type": "ListItem", "position": 9, "name": "フローボリューム曲線", "url": "https://med-graph.com/physiol_flow_volume.png"},
-          {"@type": "ListItem", "position": 10, "name": "心臓圧-容積ループ", "url": "https://med-graph.com/physiol_pv_loop.png"},
-          {"@type": "ListItem", "position": 11, "name": "用量反応曲線", "url": "https://med-graph.com/pharm_dose_response.png"},
-          {"@type": "ListItem", "position": 12, "name": "薬物動態曲線", "url": "https://med-graph.com/pharm_pk_curve.png"},
-          {"@type": "ListItem", "position": 13, "name": "ROC曲線", "url": "https://med-graph.com/stat_roc_curve.png"},
-          {"@type": "ListItem", "position": 14, "name": "Kaplan-Meier生存曲線", "url": "https://med-graph.com/stat_kaplan_meier.png"},
-          {"@type": "ListItem", "position": 15, "name": "フォレストプロット", "url": "https://med-graph.com/stat_forest_plot.png"}
-        ]
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "MedGraph Free のテンプレートは無料で使えますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "はい、全テンプレートは CC0（パブリックドメイン）として公開しており、商用・非商用を問わず完全に無料でご利用いただけます。クレジット表記も不要です。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "テンプレートに自分のデータを入れるにはどうすればよいですか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "各テンプレートに R + ggplot2 のソースコードが付属しています。「R Code」ボタンをクリックしてコードをコピーし、RStudio に貼り付けて geom_point() や geom_line() で自分のデータを追加できます。また、PNG画像をダウンロードして PowerPoint や Word に貼り付け、上から描画することもできます。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "どんな分野のテンプレートがありますか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "生化学、生理学、薬理学、微生物学、免疫学、疫学・公衆衛生、臨床研究・統計、腎臓、酸塩基平衡、血液、内分泌、神経科学、循環器、呼吸器、消化器、産婦人科、小児科、整形外科、眼科、精神科、解剖学、病理、心電図の全23分野54種類をカバーしています。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "レポートや論文に使っても著作権の問題はありませんか？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "問題ありません。全テンプレートは R + ggplot2 でオリジナル生成しており、CC0（パブリックドメイン）ライセンスで公開しています。レポート、論文、学会発表、SNS、商用利用など、あらゆる目的で自由にお使いいただけます。"
-          }
-        }
-      ]
-    }
-    </script>
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-            background: #f0f4f8; color: #333; line-height: 1.7;
-        }
-        .hero {
-            background: linear-gradient(135deg, #1a5276 0%, #2e86ab 60%, #48b1bf 100%);
-            color: #fff; text-align: center; padding: 3.5rem 1.5rem 2.5rem;
-        }
-        .hero h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
-        .hero .subtitle { font-size: 1.1rem; opacity: 0.92; margin-bottom: 0.6rem; }
-        .hero .desc { font-size: 0.92rem; opacity: 0.78; max-width: 640px; margin: 0 auto 1.2rem; }
-        .badge {
-            display: inline-block; background: rgba(255,255,255,0.18);
-            border: 1px solid rgba(255,255,255,0.35); border-radius: 999px;
-            padding: 0.35rem 1.1rem; font-size: 0.82rem; backdrop-filter: blur(4px);
-        }
-        .toc {
-            background: #fff; border-bottom: 1px solid #e0e0e0;
-            position: sticky; top: 0; z-index: 100;
-            padding: 0.55rem 1rem;
-            display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem;
-        }
-        .toc a {
-            text-decoration: none; color: #1a5276; font-size: 0.8rem;
-            padding: 0.25rem 0.7rem; border-radius: 999px; transition: background 0.2s;
-        }
-        .toc a:hover { background: #e8f4f8; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 2rem; }
-        .license-banner {
-            background: linear-gradient(90deg, #e8f8f0, #e8f4f8);
-            border: 1px solid #b2dfdb; border-radius: 10px;
-            padding: 1.1rem 1.4rem; margin: 1.5rem 0 2rem; text-align: center;
-        }
-        .license-banner strong { color: #1a5276; }
-        .license-banner p { font-size: 0.88rem; color: #555; margin: 0.2rem 0; }
-        .section-header {
-            margin: 2.5rem 0 0.4rem; padding-bottom: 0.35rem;
-            border-bottom: 3px solid #2e86ab;
-            display: flex; align-items: baseline; gap: 0.6rem;
-        }
-        .section-header h2 { font-size: 1.4rem; font-weight: 700; color: #1a5276; }
-        .field-tag {
-            font-size: 0.72rem; background: #1a5276; color: #fff;
-            padding: 0.15rem 0.6rem; border-radius: 999px; font-weight: 600;
-        }
-        .section-desc { color: #666; margin-bottom: 1.2rem; font-size: 0.9rem; }
-        .card-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.3rem;
-        }
-        .card {
-            background: #fff; border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            overflow: hidden; transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: auto; display: block; border-bottom: 1px solid #eee; }
-        .card-body { padding: 0.9rem 1.1rem; }
-        .card-body h3 { font-size: 0.95rem; color: #1a5276; margin-bottom: 0.25rem; }
-        .card-body p { font-size: 0.82rem; color: #777; margin-bottom: 0.5rem; }
-        .tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
-        .tag {
-            background: #e8f4f8; color: #2e86ab; font-size: 0.7rem;
-            padding: 0.12rem 0.5rem; border-radius: 999px; font-weight: 600;
-        }
-        .btn-row { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
-        .btn-dl {
-            display: inline-block; padding: 0.3rem 0.9rem;
-            background: #2e86ab; color: #fff; border-radius: 5px;
-            text-decoration: none; font-size: 0.78rem; transition: background 0.2s;
-            border: none; cursor: pointer;
-        }
-        .btn-dl:hover { background: #1a5276; }
-        .btn-code {
-            display: inline-block; padding: 0.3rem 0.9rem;
-            background: #fff; color: #2e86ab; border: 1px solid #2e86ab;
-            border-radius: 5px; font-size: 0.78rem; cursor: pointer;
-            transition: background 0.2s; font-family: inherit;
-        }
-        .btn-code:hover { background: #e8f4f8; }
-        .code-block {
-            display: none; margin-top: 0.6rem; background: #1e293b; color: #e2e8f0;
-            border-radius: 6px; padding: 0.8rem; font-size: 0.72rem;
-            font-family: "Consolas", "Monaco", "Courier New", monospace;
-            line-height: 1.5; overflow-x: auto; position: relative;
-            white-space: pre; max-height: 350px; overflow-y: auto;
-        }
-        .code-block.open { display: block; }
-        .btn-copy {
-            position: absolute; top: 0.4rem; right: 0.4rem;
-            background: rgba(255,255,255,0.15); color: #94a3b8; border: none;
-            border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.68rem;
-            cursor: pointer; transition: background 0.2s;
-        }
-        .btn-copy:hover { background: rgba(255,255,255,0.25); color: #fff; }
-        .howto {
-            background: #fff; border-radius: 10px; padding: 1.5rem 1.8rem;
-            margin: 2.5rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-        }
-        .howto h2 { color: #1a5276; margin-bottom: 0.8rem; font-size: 1.2rem; }
-        .howto ol { padding-left: 1.4rem; }
-        .howto li { margin-bottom: 0.4rem; color: #555; font-size: 0.92rem; }
-        footer {
-            text-align: center; padding: 1.8rem 1rem; color: #999;
-            font-size: 0.8rem; border-top: 1px solid #e0e0e0; margin-top: 2rem;
-        }
-        footer a { color: #2e86ab; text-decoration: none; }
-        .r-kw { color: #7dd3fc; }
-        .r-str { color: #86efac; }
-        .r-num { color: #fbbf24; }
-        .r-fn { color: #c4b5fd; }
-        .r-cmt { color: #64748b; font-style: italic; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>MedGraph Free | 医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
+<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全24分野407種類・6105ダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
+<meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート">
+<meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
+<link rel="canonical" href="https://med-graph.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MedGraph Free | 医学部生のための無料グラフテンプレート集">
+<meta property="og:description" content="全24分野407種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
+<meta property="og:url" content="https://med-graph.com/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"https://med-graph.com/","description":"医学部生のためのグラフテンプレート集。全24分野407種類。CC0。Rコード付き。","inLanguage":"ja"}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif;background:#f8f9fa;color:#333;line-height:1.7}
+a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(135deg,#0f172a,#1e3a5f 40%,#2563eb);color:#fff;padding:60px 20px;text-align:center}
+.hero h1{font-size:36px;margin-bottom:10px}.hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:700px;margin:0 auto 20px}
+.hero .stats{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
+.hero .stat{text-align:center}.hero .stat .num{font-size:32px;font-weight:bold}.hero .stat .lbl{font-size:13px;color:rgba(255,255,255,.7)}
+.nav-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 0;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
+.nav-bar .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:nowrap}
+.nav-bar a{padding:6px 12px;border-radius:6px;font-size:12px;color:#475569;white-space:nowrap}
+.nav-bar a:hover{background:#f0f4ff;text-decoration:none}
+.cats-grid{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat-card{background:#fff;border-radius:10px;padding:16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
+.cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
+.cat-icon{font-size:28px;margin-bottom:6px}.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666}
+.cat-section{max-width:1200px;margin:30px auto;padding:0 20px}
+.cat-section h2{font-size:22px;color:#1e3a5f;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #2563eb}
+.cat-section h2 a{color:#1e3a5f}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:30px}
+.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
+.card img{width:100%}
+.card-body{padding:8px 12px 12px}
+.card-body h3{font-size:13px;color:#1e3a5f;margin-bottom:3px}
+.card-body p{font-size:11px;color:#666}
+footer{background:#1e293b;color:#94a3b8;text-align:center;padding:40px 20px;font-size:13px}
+footer a{color:#60a5fa}
+.search-box{max-width:500px;margin:20px auto 0;position:relative}
+.search-box input{width:100%;padding:12px 16px;border-radius:8px;border:none;font-size:15px;outline:none}
+@media(max-width:600px){.hero h1{font-size:24px}.hero .stat .num{font-size:24px}}
+</style>
 </head>
 <body>
-
-<header class="hero">
-    <h1>MedGraph Free</h1>
-    <p class="subtitle">医学部生のためのグラフテンプレート集</p>
-    <p class="desc">データなしの白紙テンプレート。自分のデータをプロットして、レポート・発表に使えます。<br>各テンプレートの R コードも公開 — コピーしてカスタマイズ可能。</p>
-    <span class="badge">CC0 / Public Domain &mdash; 著作権フリー・商用利用可</span>
-</header>
-
-<nav class="toc">
-    <a href="#biochem">生化学</a>
-    <a href="#physiol">生理学</a>
-    <a href="#pharm">薬理学</a>
-    <a href="#micro">微生物学</a>
-    <a href="#immuno">免疫学</a>
-    <a href="#stat">臨床統計</a>
-    <a href="#epi">疫学</a>
-    <a href="#nephro">腎臓</a>
-    <a href="#acidbase">酸塩基</a>
-    <a href="#hemato">血液</a>
-    <a href="#endo">内分泌</a>
-    <a href="#neuro">神経</a>
-    <a href="#cardio">循環器</a>
-    <a href="#pulm">呼吸器</a>
-    <a href="#gi">消化器</a>
-    <a href="#obgyn">産婦人科</a>
-    <a href="#peds">小児科</a>
-    <a href="#ortho">整形外科</a>
-    <a href="#eye">眼科</a>
-    <a href="#psych">精神科</a>
-    <a href="#anat">解剖学</a>
-    <a href="#path">病理</a>
-    <a href="#ecg">心電図</a>
-    <a href="#howto">使い方</a>
-</nav>
-
-<div class="container">
-
-    <div class="license-banner">
-        <strong>全テンプレート著作権フリー（CC0 / パブリックドメイン）</strong>
-        <p>R + ggplot2 で生成。商用・非商用を問わず、クレジット不要で自由にお使いください。</p>
-        <p style="font-size:0.78rem; color:#999; margin-top:0.3rem;">
-            All templates are CC0 (Public Domain). Free for any purpose, no attribution required.
-        </p>
-    </div>
-
-    <!-- ══════════ 生化学 ══════════ -->
-    <div class="section-header" id="biochem">
-        <h2>生化学</h2><span class="field-tag">Biochemistry</span>
-    </div>
-    <p class="section-desc">酵素反応速度論・滴定など、生化学実習で頻出するグラフの白紙テンプレートです。</p>
-    <div class="card-grid">
-
-        <div class="card">
-            <img src="biochem_michaelis_menten.png" alt="Michaelis-Menten">
-            <div class="card-body">
-                <h3>Michaelis-Menten プロット</h3>
-                <p>基質濃度 [S] vs 反応速度 v。Vmax・Km を求めるための基本グラフ。</p>
-                <div class="tags"><span class="tag">酵素反応</span><span class="tag">Vmax</span><span class="tag">Km</span></div>
-                <div class="btn-row">
-                    <a href="biochem_michaelis_menten.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "[S]  (substrate concentration, mM)",
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression(italic(v) ~ " (reaction velocity, " *
-      mu * "mol/min)"),
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  labs(title = "Michaelis-Menten Plot") +
-  theme_bw(base_size = 14)
-
-# ---- 自分のデータを追加する例 ----
-# my_data &lt;- data.frame(S = c(1,2,4,8), v = c(2.5,4.0,5.5,6.8))
-# + geom_point(data = my_data, aes(S, v))
-# + geom_line(data = my_data, aes(S, v))</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="biochem_lineweaver_burk.png" alt="Lineweaver-Burk">
-            <div class="card-body">
-                <h3>Lineweaver-Burk プロット</h3>
-                <p>二重逆数プロット（1/[S] vs 1/v）。直線化して Km・Vmax を算出。</p>
-                <div class="tags"><span class="tag">二重逆数</span><span class="tag">直線化</span><span class="tag">阻害</span></div>
-                <div class="btn-row">
-                    <a href="biochem_lineweaver_burk.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_vline(xintercept = 0, color = "grey50") +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(
-    name = expression("1/[S]  (mM"^-1 * ")"),
-    limits = c(-3, 10), breaks = seq(-3, 10, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("1/" * italic(v) ~ " (" *
-      mu * "mol/min)"^-1),
-    limits = c(-3, 10), breaks = seq(-3, 10, 1),
-    expand = c(0, 0)) +
-  labs(title = "Lineweaver-Burk Plot") +
-  theme_bw(base_size = 14)
-
-# ---- データ追加例 ----
-# my_data &lt;- data.frame(inv_S = 1/c(1,2,4,8),
-#                        inv_v = 1/c(2.5,4,5.5,6.8))
-# + geom_point(data = my_data, aes(inv_S, inv_v))
-# + geom_smooth(method = "lm")</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="biochem_titration.png" alt="Titration">
-            <div class="card-body">
-                <h3>pH 滴定曲線</h3>
-                <p>滴定剤の添加量と pH の関係。緩衝域・当量点を記入。</p>
-                <div class="tags"><span class="tag">滴定</span><span class="tag">pKa</span><span class="tag">緩衝液</span></div>
-                <div class="btn-row">
-                    <a href="biochem_titration.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 7, linetype = "dashed",
-    color = "grey70") +
-  scale_x_continuous(
-    name = "Volume of titrant added (mL)",
-    limits = c(0, 50), breaks = seq(0, 50, 5),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "pH",
-    limits = c(0, 14), breaks = seq(0, 14, 1),
-    expand = c(0, 0)) +
-  labs(title = "pH Titration Curve") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="biochem_enzyme_inhibition.png" alt="Enzyme Inhibition">
-            <div class="card-body">
-                <h3>酵素阻害（MM 重ね描き用）</h3>
-                <p>阻害剤なし・競合阻害・非競合阻害の曲線を重ねて描くためのテンプレート。</p>
-                <div class="tags"><span class="tag">競合阻害</span><span class="tag">非競合阻害</span></div>
-                <div class="btn-row">
-                    <a href="biochem_enzyme_inhibition.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "[S]  (substrate concentration, mM)",
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression(italic(v) ~ " (" * mu * "mol/min)"),
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  labs(title = "Enzyme Kinetics with Inhibitor",
-    subtitle = paste("Plot curves for: No inhibitor /",
-      "Competitive / Non-competitive")) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 生理学 ══════════ -->
-    <div class="section-header" id="physiol">
-        <h2>生理学</h2><span class="field-tag">Physiology</span>
-    </div>
-    <p class="section-desc">活動電位・心機能・呼吸機能など、生理学で頻出するグラフのテンプレートです。</p>
-    <div class="card-grid">
-
-        <div class="card">
-            <img src="physiol_o2_dissociation.png" alt="O2 Dissociation">
-            <div class="card-body">
-                <h3>酸素解離曲線</h3>
-                <p>PO₂ vs SpO₂。右方移動（Bohr効果）・左方移動を書き込み。</p>
-                <div class="tags"><span class="tag">ヘモグロビン</span><span class="tag">Bohr効果</span><span class="tag">呼吸</span></div>
-                <div class="btn-row">
-                    <a href="physiol_o2_dissociation.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = expression("P" * O[2] ~ "(mmHg)"),
-    limits = c(0, 120), breaks = seq(0, 120, 10),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("S" * O[2] ~ "(% saturation)"),
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = expression(
-    "Oxygen-Hemoglobin Dissociation Curve")) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="physiol_frank_starling.png" alt="Frank-Starling">
-            <div class="card-body">
-                <h3>Frank-Starling 曲線</h3>
-                <p>前負荷と1回拍出量の関係。正常・心不全・運動時の曲線を描画。</p>
-                <div class="tags"><span class="tag">心機能</span><span class="tag">前負荷</span><span class="tag">SV</span></div>
-                <div class="btn-row">
-                    <a href="physiol_frank_starling.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "Preload  (End-Diastolic Volume, mL)",
-    limits = c(0, 250), breaks = seq(0, 250, 25),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Stroke Volume (mL) / Cardiac Output (L/min)",
-    limits = c(0, 150), breaks = seq(0, 150, 10),
-    expand = c(0, 0)) +
-  labs(title = "Frank-Starling Curve",
-    subtitle = "Plot: Normal / Heart Failure / Exercise") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="physiol_action_potential.png" alt="Action Potential">
-            <div class="card-body">
-                <h3>活動電位（神経・骨格筋）</h3>
-                <p>時間 vs 膜電位。脱分極・再分極・不応期を記入。</p>
-                <div class="tags"><span class="tag">膜電位</span><span class="tag">Na⁺/K⁺</span><span class="tag">閾値</span></div>
-                <div class="btn-row">
-                    <a href="physiol_action_potential.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(
-    name = "Time (ms)",
-    limits = c(0, 10), breaks = seq(0, 10, 0.5),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Membrane Potential (mV)",
-    limits = c(-100, 60), breaks = seq(-100, 60, 10),
-    expand = c(0, 0)) +
-  labs(title = "Action Potential") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="physiol_cardiac_ap.png" alt="Cardiac AP">
-            <div class="card-body">
-                <h3>心筋活動電位</h3>
-                <p>Phase 0〜4 を記入。心室筋・洞結節の波形を描き分け。</p>
-                <div class="tags"><span class="tag">心筋</span><span class="tag">Ca²⁺</span><span class="tag">Phase 0-4</span></div>
-                <div class="btn-row">
-                    <a href="physiol_cardiac_ap.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(
-    name = "Time (ms)",
-    limits = c(0, 400), breaks = seq(0, 400, 25),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Membrane Potential (mV)",
-    limits = c(-100, 60), breaks = seq(-100, 60, 10),
-    expand = c(0, 0)) +
-  labs(title = "Cardiac Action Potential",
-    subtitle = paste("Phases: 0 (depol.) / 1 (early repol.)",
-      "/ 2 (plateau) / 3 (repol.) / 4 (rest)")) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="physiol_flow_volume.png" alt="Flow-Volume Loop">
-            <div class="card-body">
-                <h3>フローボリューム曲線</h3>
-                <p>呼気・吸気のフローボリュームループ。閉塞性・拘束性パターンの描画に。</p>
-                <div class="tags"><span class="tag">スパイロメトリー</span><span class="tag">FEV₁</span><span class="tag">FVC</span></div>
-                <div class="btn-row">
-                    <a href="physiol_flow_volume.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(
-    name = "Volume (L)",
-    limits = c(0, 6), breaks = seq(0, 6, 0.5),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Flow (L/s)",
-    limits = c(-8, 12), breaks = seq(-8, 12, 1),
-    expand = c(0, 0)) +
-  labs(title = "Flow-Volume Loop (Spirometry)",
-    subtitle = "Above = Expiration / Below = Inspiration") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="physiol_pv_loop.png" alt="PV Loop">
-            <div class="card-body">
-                <h3>心臓 圧-容積ループ</h3>
-                <p>左室の圧-容積関係。等容性収縮期・駆出期・等容性弛緩期・充満期を描画。</p>
-                <div class="tags"><span class="tag">PV loop</span><span class="tag">ESPVR</span><span class="tag">前負荷</span></div>
-                <div class="btn-row">
-                    <a href="physiol_pv_loop.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "Left Ventricular Volume (mL)",
-    limits = c(0, 200), breaks = seq(0, 200, 20),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Left Ventricular Pressure (mmHg)",
-    limits = c(0, 160), breaks = seq(0, 160, 10),
-    expand = c(0, 0)) +
-  labs(title = "Cardiac Pressure-Volume Loop") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 薬理学 ══════════ -->
-    <div class="section-header" id="pharm">
-        <h2>薬理学</h2><span class="field-tag">Pharmacology</span>
-    </div>
-    <p class="section-desc">用量反応曲線・薬物動態のテンプレートです。</p>
-    <div class="card-grid">
-
-        <div class="card">
-            <img src="pharm_dose_response.png" alt="Dose-Response">
-            <div class="card-body">
-                <h3>用量反応曲線（対数）</h3>
-                <p>対数用量 vs 反応率。アゴニスト・競合的/非競合的拮抗薬の曲線を重ね描き。</p>
-                <div class="tags"><span class="tag">EC₅₀</span><span class="tag">Emax</span><span class="tag">拮抗薬</span></div>
-                <div class="btn-row">
-                    <a href="pharm_dose_response.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_log10(
-    name = "Dose / Concentration (log scale)",
-    limits = c(0.001, 1000),
-    breaks = 10^(-3:3),
-    labels = c("0.001","0.01","0.1","1",
-               "10","100","1000")) +
-  scale_y_continuous(
-    name = "Response (% of maximum)",
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = "Dose-Response Curve",
-    subtitle = paste("Plot: Agonist / + Competitive",
-      "/ + Non-competitive antagonist")) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="pharm_pk_curve.png" alt="PK Curve">
-            <div class="card-body">
-                <h3>薬物動態（血中濃度-時間曲線）</h3>
-                <p>投与後の血中濃度推移。Cmax・Tmax・AUC を求める。</p>
-                <div class="tags"><span class="tag">PK</span><span class="tag">Cmax</span><span class="tag">AUC</span></div>
-                <div class="btn-row">
-                    <a href="pharm_pk_curve.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "Time after administration (hr)",
-    limits = c(0, 24), breaks = seq(0, 24, 2),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("Plasma concentration (" *
-      mu * "g/mL)"),
-    limits = c(0, 50), breaks = seq(0, 50, 5),
-    expand = c(0, 0)) +
-  labs(title = "Pharmacokinetic Profile") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="pharm_pk_semilog.png" alt="PK Semi-log">
-            <div class="card-body">
-                <h3>薬物動態（片対数：半減期）</h3>
-                <p>片対数プロットで直線化し、消失速度定数 ke と半減期 t½ を算出。</p>
-                <div class="tags"><span class="tag">半減期</span><span class="tag">ke</span><span class="tag">片対数</span></div>
-                <div class="btn-row">
-                    <a href="pharm_pk_semilog.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "Time after administration (hr)",
-    limits = c(0, 24), breaks = seq(0, 24, 2),
-    expand = c(0, 0)) +
-  scale_y_log10(
-    name = expression("Plasma concentration (" *
-      mu * "g/mL)  [log scale]"),
-    limits = c(0.1, 100),
-    breaks = c(0.1, 0.5, 1, 5, 10, 50, 100)) +
-  labs(title = "Pharmacokinetic Profile (Semi-log)",
-    subtitle = expression("Slope = " * -k[e] *
-      " / 2.303,   " * t["1/2"] * " = 0.693 / " *
-      k[e])) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="pharm_therapeutic_window.png" alt="Therapeutic Window">
-            <div class="card-body">
-                <h3>反復投与と治療域</h3>
-                <p>反復投与時の血中濃度推移。治療域（有効濃度〜中毒濃度）を可視化。</p>
-                <div class="tags"><span class="tag">治療域</span><span class="tag">定常状態</span><span class="tag">TDM</span></div>
-                <div class="btn-row">
-                    <a href="pharm_therapeutic_window.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 20, linetype = "dashed",
-    color = "#E74C3C") +
-  geom_hline(yintercept = 8, linetype = "dashed",
-    color = "#2E86AB") +
-  annotate("rect", xmin = 0, xmax = 72,
-    ymin = 8, ymax = 20,
-    fill = "#2E86AB", alpha = 0.08) +
-  annotate("text", x = 70, y = 21.5,
-    label = "Toxic level", hjust = 1,
-    color = "#E74C3C", fontface = "bold") +
-  annotate("text", x = 70, y = 6.5,
-    label = "Sub-therapeutic", hjust = 1,
-    color = "#2E86AB", fontface = "bold") +
-  scale_x_continuous(
-    name = "Time (hr)",
-    limits = c(0, 72), breaks = seq(0, 72, 6),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("Plasma concentration (" *
-      mu * "g/mL)"),
-    limits = c(0, 30), breaks = seq(0, 30, 2),
-    expand = c(0, 0)) +
-  labs(title = "Repeated Dosing & Therapeutic Window") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 臨床研究・統計 ══════════ -->
-    <div class="section-header" id="stat">
-        <h2>臨床研究・統計</h2><span class="field-tag">Clinical Research / Statistics</span>
-    </div>
-    <p class="section-desc">臨床研究や EBM の論文で頻出するグラフのテンプレートです。</p>
-    <div class="card-grid">
-
-        <div class="card">
-            <img src="stat_roc_curve.png" alt="ROC Curve">
-            <div class="card-body">
-                <h3>ROC 曲線</h3>
-                <p>感度 vs 1-特異度。診断検査の精度評価に。対角線（AUC=0.5）付き。</p>
-                <div class="tags"><span class="tag">AUC</span><span class="tag">感度</span><span class="tag">特異度</span></div>
-                <div class="btn-row">
-                    <a href="stat_roc_curve.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_abline(intercept = 0, slope = 1,
-    linetype = "dashed", color = "grey60") +
-  scale_x_continuous(
-    name = "1 - Specificity  (False Positive Rate)",
-    limits = c(0, 1), breaks = seq(0, 1, 0.1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Sensitivity  (True Positive Rate)",
-    limits = c(0, 1), breaks = seq(0, 1, 0.1),
-    expand = c(0, 0)) +
-  labs(title = "ROC Curve", subtitle = "AUC = ____") +
-  coord_equal() +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="stat_kaplan_meier.png" alt="KM Curve">
-            <div class="card-body">
-                <h3>Kaplan-Meier 生存曲線</h3>
-                <p>時間 vs 生存確率。Log-rank 検定の p 値記入欄付き。</p>
-                <div class="tags"><span class="tag">生存分析</span><span class="tag">Log-rank</span><span class="tag">RCT</span></div>
-                <div class="btn-row">
-                    <a href="stat_kaplan_meier.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = "Time (months)",
-    limits = c(0, 60), breaks = seq(0, 60, 6),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Survival Probability",
-    limits = c(0, 1), breaks = seq(0, 1, 0.1),
-    labels = function(x) paste0(x * 100, "%"),
-    expand = c(0, 0)) +
-  labs(title = "Kaplan-Meier Survival Curve",
-    subtitle = "Log-rank  p = ____") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="stat_forest_plot.png" alt="Forest Plot">
-            <div class="card-body">
-                <h3>フォレストプロット</h3>
-                <p>メタアナリシス用。Study A〜H + Overall の行を用意。対数スケール。</p>
-                <div class="tags"><span class="tag">メタアナリシス</span><span class="tag">OR/HR/RR</span><span class="tag">EBM</span></div>
-                <div class="btn-row">
-                    <a href="stat_forest_plot.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-studies &lt;- c(paste("Study", LETTERS[1:8]), "Overall")
-fp_df &lt;- data.frame(
-  study = factor(studies, levels = rev(studies)))
-
-ggplot(fp_df, aes(x = 1, y = study)) +
-  geom_blank() +
-  geom_vline(xintercept = 1, linetype = "dashed",
-    color = "grey50") +
-  scale_x_continuous(
-    name = "Odds Ratio / HR / RR  (95% CI)",
-    limits = c(0.1, 10), trans = "log10",
-    breaks = c(0.1, 0.2, 0.5, 1, 2, 5, 10)) +
-  labs(title = "Forest Plot", y = "") +
-  annotate("text", x = 0.3, y = 0.6,
-    label = "Favours Treatment",
-    color = "grey50", fontface = "italic") +
-  annotate("text", x = 3.5, y = 0.6,
-    label = "Favours Control",
-    color = "grey50", fontface = "italic") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="stat_bland_altman.png" alt="Bland-Altman">
-            <div class="card-body">
-                <h3>Bland-Altman プロット</h3>
-                <p>2つの測定法の一致度評価。Mean diff / ±1.96 SD の記入欄付き。</p>
-                <div class="tags"><span class="tag">一致度</span><span class="tag">LOA</span><span class="tag">検査医学</span></div>
-                <div class="btn-row">
-                    <a href="stat_bland_altman.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(
-    name = "Mean of Two Methods",
-    limits = c(0, 200), breaks = seq(0, 200, 20),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Difference  (Method A - Method B)",
-    limits = c(-50, 50), breaks = seq(-50, 50, 10),
-    expand = c(0, 0)) +
-  labs(title = "Bland-Altman Plot") +
-  theme_bw(base_size = 14)
-
-# Mean diff, +1.96 SD, -1.96 SD の水平線は
-# 自分のデータから計算して geom_hline() で追加</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="stat_calibration.png" alt="Calibration Plot">
-            <div class="card-body">
-                <h3>Calibration プロット</h3>
-                <p>予測確率 vs 観測確率。予測モデルの校正能を評価。対角線（完全校正）付き。</p>
-                <div class="tags"><span class="tag">予測モデル</span><span class="tag">校正</span><span class="tag">リスク</span></div>
-                <div class="btn-row">
-                    <a href="stat_calibration.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_abline(intercept = 0, slope = 1,
-    linetype = "dashed", color = "grey60") +
-  scale_x_continuous(
-    name = "Predicted Probability",
-    limits = c(0, 1), breaks = seq(0, 1, 0.1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Observed Probability",
-    limits = c(0, 1), breaks = seq(0, 1, 0.1),
-    expand = c(0, 0)) +
-  labs(title = "Calibration Plot") +
-  coord_equal() +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 腎臓 ══════════ -->
-    <div class="section-header" id="nephro">
-        <h2>腎臓・体液</h2><span class="field-tag">Nephrology</span>
-    </div>
-    <p class="section-desc">腎機能評価・糸球体濾過に関するテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="nephro_clearance.png" alt="Renal Clearance">
-            <div class="card-body">
-                <h3>腎クリアランス / Glucose Titration</h3>
-                <p>血漿濃度 vs 各レート。濾過・再吸収・排泄の曲線と Tm を記入。</p>
-                <div class="tags"><span class="tag">GFR</span><span class="tag">Tm</span><span class="tag">糸球体濾過</span></div>
-                <div class="btn-row">
-                    <a href="nephro_clearance.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = expression("Plasma concentration (" *
-      mu * "mol/L)"),
-    limits = c(0, 500), breaks = seq(0, 500, 50),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = paste("Rate (mg/min): Filtration /",
-      "Reabsorption / Excretion / Secretion"),
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = "Renal Handling of Solute",
-    subtitle = "Plot: Filtered / Reabsorbed / Excreted") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 酸塩基 ══════════ -->
-    <div class="section-header" id="acidbase">
-        <h2>酸塩基平衡</h2><span class="field-tag">Acid-Base</span>
-    </div>
-    <p class="section-desc">血液ガス分析の解釈に使うテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="acidbase_davenport.png" alt="Davenport Diagram">
-            <div class="card-body">
-                <h3>Davenport Diagram</h3>
-                <p>pH vs [HCO₃⁻] の酸塩基マップ。代謝性/呼吸性のアシドーシス・アルカローシスの領域表示付き。</p>
-                <div class="tags"><span class="tag">血液ガス</span><span class="tag">ABG</span><span class="tag">代償</span></div>
-                <div class="btn-row">
-                    <a href="acidbase_davenport.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 24, linetype = "dashed",
-    color = "grey70") +
-  geom_vline(xintercept = 7.4, linetype = "dashed",
-    color = "grey70") +
-  annotate("text", x = 7.15, y = 42,
-    label = "Metabolic\nalkalosis", color = "grey55") +
-  annotate("text", x = 7.65, y = 42,
-    label = "Respiratory\nalkalosis", color = "grey55") +
-  annotate("text", x = 7.15, y = 8,
-    label = "Respiratory\nacidosis", color = "grey55") +
-  annotate("text", x = 7.65, y = 8,
-    label = "Metabolic\nacidosis", color = "grey55") +
-  scale_x_continuous(
-    name = "Arterial pH",
-    limits = c(7.0, 7.8), breaks = seq(7.0, 7.8, 0.05),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("[HCO"[3]^{"-"} * "]  (mEq/L)"),
-    limits = c(0, 50), breaks = seq(0, 50, 5),
-    expand = c(0, 0)) +
-  labs(title = "Davenport Diagram (Acid-Base Map)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 血液 ══════════ -->
-    <div class="section-header" id="hemato">
-        <h2>血液</h2><span class="field-tag">Hematology</span>
-    </div>
-    <p class="section-desc">凝固検査の記録に使えるテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="hemato_coag_grid.png" alt="Coagulation Grid">
-            <div class="card-body">
-                <h3>凝固検査（PT / aPTT）記録</h3>
-                <p>各サンプルの凝固時間をプロット。PT・aPTT の正常上限ガイドライン付き。</p>
-                <div class="tags"><span class="tag">PT</span><span class="tag">aPTT</span><span class="tag">凝固</span></div>
-                <div class="btn-row">
-                    <a href="hemato_coag_grid.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 13, linetype = "dashed",
-    color = "#E74C3C") +
-  geom_hline(yintercept = 35, linetype = "dashed",
-    color = "#2E86AB") +
-  annotate("text", x = 0.3, y = 14,
-    label = "PT upper limit",
-    color = "#E74C3C", hjust = 0) +
-  annotate("text", x = 0.3, y = 36,
-    label = "aPTT upper limit",
-    color = "#2E86AB", hjust = 0) +
-  scale_x_continuous(
-    name = "Sample / Time point",
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Clotting Time (seconds)",
-    limits = c(0, 80), breaks = seq(0, 80, 5),
-    expand = c(0, 0)) +
-  labs(title = "Coagulation Test Results (PT / aPTT)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 内分泌 ══════════ -->
-    <div class="section-header" id="endo">
-        <h2>内分泌</h2><span class="field-tag">Endocrinology</span>
-    </div>
-    <p class="section-desc">糖負荷試験やホルモン日内変動のテンプレートです。</p>
-    <div class="card-grid">
-
-        <div class="card">
-            <img src="endo_ogtt.png" alt="OGTT">
-            <div class="card-body">
-                <h3>経口糖負荷試験（OGTT）</h3>
-                <p>時間 vs 血糖値。IGT（140）・DM（200）の診断ラインをガイド表示。</p>
-                <div class="tags"><span class="tag">OGTT</span><span class="tag">糖尿病</span><span class="tag">IGT</span></div>
-                <div class="btn-row">
-                    <a href="endo_ogtt.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 200, linetype = "dashed",
-    color = "#E74C3C") +
-  geom_hline(yintercept = 140, linetype = "dashed",
-    color = "#F39C12") +
-  annotate("text", x = 118, y = 205,
-    label = "Diabetes (200)",
-    color = "#E74C3C", hjust = 1) +
-  annotate("text", x = 118, y = 145,
-    label = "IGT (140)",
-    color = "#F39C12", hjust = 1) +
-  scale_x_continuous(
-    name = "Time after glucose load (min)",
-    limits = c(0, 120), breaks = seq(0, 120, 15),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Blood Glucose (mg/dL)",
-    limits = c(0, 350), breaks = seq(0, 350, 25),
-    expand = c(0, 0)) +
-  labs(title = "Oral Glucose Tolerance Test (OGTT)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="endo_diurnal.png" alt="Diurnal Rhythm">
-            <div class="card-body">
-                <h3>ホルモン日内変動</h3>
-                <p>24時間のホルモン分泌パターン。コルチゾール・GH・メラトニン等を重ね描き。</p>
-                <div class="tags"><span class="tag">日内変動</span><span class="tag">コルチゾール</span><span class="tag">概日リズム</span></div>
-                <div class="btn-row">
-                    <a href="endo_diurnal.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  annotate("rect", xmin = 22, xmax = 30,
-    ymin = 0, ymax = 100,
-    fill = "grey90", alpha = 0.5) +
-  annotate("text", x = 26, y = 95,
-    label = "Sleep", color = "grey50") +
-  scale_x_continuous(
-    name = "Time of day (hr)",
-    limits = c(6, 30), breaks = seq(6, 30, 2),
-    labels = c("6:00","8:00","10:00","12:00",
-      "14:00","16:00","18:00","20:00",
-      "22:00","0:00","2:00","4:00","6:00"),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Hormone level (arbitrary units)",
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = "Hormone Diurnal Rhythm",
-    subtitle = "Plot: Cortisol / GH / Melatonin") +
-  theme_bw(base_size = 14) +
-  theme(axis.text.x = element_text(
-    angle = 45, hjust = 1))</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 微生物学 ══════════ -->
-    <div class="section-header" id="micro">
-        <h2>微生物学</h2><span class="field-tag">Microbiology</span>
-    </div>
-    <p class="section-desc">細菌増殖曲線・抗菌薬感受性試験など、微生物学実習で頻出するテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="micro_growth_curve.png" alt="Bacterial Growth Curve">
-            <div class="card-body">
-                <h3>細菌増殖曲線</h3>
-                <p>Lag / Log / Stationary / Death phase を描画。対数スケール。</p>
-                <div class="tags"><span class="tag">増殖曲線</span><span class="tag">世代時間</span><span class="tag">CFU</span></div>
-                <div class="btn-row">
-                    <a href="micro_growth_curve.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Time (hr)",
-    limits = c(0, 24), breaks = seq(0, 24, 2),
-    expand = c(0, 0)) +
-  scale_y_log10(name = "CFU/mL  (log scale)",
-    limits = c(1e3, 1e10),
-    breaks = 10^(3:10)) +
-  labs(title = "Bacterial Growth Curve") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="micro_time_kill.png" alt="Time-Kill Curve">
-            <div class="card-body">
-                <h3>Time-Kill Curve（殺菌曲線）</h3>
-                <p>抗菌薬の濃度依存性/時間依存性殺菌を評価。3-log reduction ライン付き。</p>
-                <div class="tags"><span class="tag">殺菌</span><span class="tag">MIC</span><span class="tag">PK/PD</span></div>
-                <div class="btn-row">
-                    <a href="micro_time_kill.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 3, linetype = "dashed",
-    color = "#E74C3C") +
-  scale_x_continuous(name = "Time (hr)",
-    limits = c(0, 24), breaks = seq(0, 24, 2),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("Log"[10] * " CFU/mL"),
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  labs(title = "Time-Kill Curve",
-    subtitle = "Plot: Control / 1x / 2x / 4x MIC") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="micro_mic.png" alt="MIC Determination">
-            <div class="card-body">
-                <h3>MIC 測定（微量液体希釈法）</h3>
-                <p>抗菌薬の2倍希釈系列に対する OD600。MIC = 増殖阻止最小濃度。</p>
-                <div class="tags"><span class="tag">MIC</span><span class="tag">感受性</span><span class="tag">OD600</span></div>
-                <div class="btn-row">
-                    <a href="micro_mic.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(
-    name = expression("Antibiotic (" * mu * "g/mL)"),
-    limits = c(0, 10), breaks = 0:10,
-    labels = c("0","0.0625","0.125","0.25","0.5",
-      "1","2","4","8","16","32")) +
-  scale_y_continuous(
-    name = expression("OD"[600]),
-    limits = c(0, 1.5), breaks = seq(0, 1.5, 0.1),
-    expand = c(0, 0)) +
-  labs(title = "MIC Determination") +
-  theme_bw(base_size = 14) +
-  theme(axis.text.x = element_text(
-    angle = 45, hjust = 1))</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="micro_disk_diffusion.png" alt="Disk Diffusion">
-            <div class="card-body">
-                <h3>ディスク拡散法（阻止円径）</h3>
-                <p>各抗菌薬の阻止円径を記録。S / I / R の判定ライン付き。</p>
-                <div class="tags"><span class="tag">阻止円</span><span class="tag">感受性</span><span class="tag">CLSI</span></div>
-                <div class="btn-row">
-                    <a href="micro_disk_diffusion.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 18, linetype = "dashed",
-    color = "#2E86AB") +
-  geom_hline(yintercept = 13, linetype = "dashed",
-    color = "#F39C12") +
-  scale_x_continuous(name = "Antibiotic",
-    limits = c(0, 10), breaks = 1:10,
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Zone diameter (mm)",
-    limits = c(0, 40), breaks = seq(0, 40, 2),
-    expand = c(0, 0)) +
-  labs(title = "Disk Diffusion (Zone of Inhibition)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 免疫学 ══════════ -->
-    <div class="section-header" id="immuno">
-        <h2>免疫学</h2><span class="field-tag">Immunology</span>
-    </div>
-    <p class="section-desc">抗体応答・ELISA・フローサイトメトリーなど免疫学実験で使用するテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="immuno_response.png" alt="Immune Response">
-            <div class="card-body">
-                <h3>一次/二次免疫応答</h3>
-                <p>抗原暴露後の IgM → IgG クラススイッチの推移。2回目の暴露で急速な IgG 上昇。</p>
-                <div class="tags"><span class="tag">IgM</span><span class="tag">IgG</span><span class="tag">クラススイッチ</span></div>
-                <div class="btn-row">
-                    <a href="immuno_response.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_vline(xintercept = 0, linetype = "dotted",
-    color = "grey60") +
-  geom_vline(xintercept = 28, linetype = "dotted",
-    color = "grey60") +
-  scale_x_continuous(name = "Days after antigen exposure",
-    limits = c(0, 56), breaks = seq(0, 56, 7),
-    expand = c(0, 0)) +
-  scale_y_log10(name = "Antibody titer (log scale)",
-    limits = c(1, 10000),
-    breaks = c(1, 10, 100, 1000, 10000)) +
-  labs(title = "Primary & Secondary Immune Response",
-    subtitle = "Plot: IgM / IgG for each exposure") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="immuno_elisa.png" alt="ELISA Standard Curve">
-            <div class="card-body">
-                <h3>ELISA 標準曲線</h3>
-                <p>標準濃度 vs OD450。4パラメータロジスティック曲線でフィット。</p>
-                <div class="tags"><span class="tag">ELISA</span><span class="tag">4-PL</span><span class="tag">定量</span></div>
-                <div class="btn-row">
-                    <a href="immuno_elisa.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_log10(
-    name = "Standard concentration (pg/mL)",
-    limits = c(1, 10000),
-    breaks = c(1, 10, 100, 1000, 10000)) +
-  scale_y_continuous(
-    name = expression("OD"[450]),
-    limits = c(0, 3), breaks = seq(0, 3, 0.25),
-    expand = c(0, 0)) +
-  labs(title = "ELISA Standard Curve (4-PL)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="immuno_ch50.png" alt="CH50">
-            <div class="card-body">
-                <h3>補体活性（CH50）</h3>
-                <p>血清量 vs 溶血率。50% 溶血点が CH50 値。</p>
-                <div class="tags"><span class="tag">補体</span><span class="tag">CH50</span><span class="tag">溶血</span></div>
-                <div class="btn-row">
-                    <a href="immuno_ch50.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 50, linetype = "dashed",
-    color = "#E74C3C") +
-  scale_x_continuous(name = "Serum volume / dilution",
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Hemolysis (%)",
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = "Complement Hemolytic Activity (CH50)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="immuno_facs.png" alt="Flow Cytometry">
-            <div class="card-body">
-                <h3>フローサイトメトリー ドットプロット</h3>
-                <p>CD4 vs CD8 の2次元プロット。Q1〜Q4 の象限分類付き。</p>
-                <div class="tags"><span class="tag">FACS</span><span class="tag">CD4/CD8</span><span class="tag">T細胞</span></div>
-                <div class="btn-row">
-                    <a href="immuno_facs.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 2.5, linetype = "dashed",
-    color = "grey60") +
-  geom_vline(xintercept = 2.5, linetype = "dashed",
-    color = "grey60") +
-  annotate("text", x = 0.5, y = 4.5,
-    label = "Q1\nCD4-/CD8+", color = "grey50") +
-  annotate("text", x = 4.5, y = 4.5,
-    label = "Q2\nCD4+/CD8+", color = "grey50") +
-  annotate("text", x = 0.5, y = 0.5,
-    label = "Q3\nCD4-/CD8-", color = "grey50") +
-  annotate("text", x = 4.5, y = 0.5,
-    label = "Q4\nCD4+/CD8-", color = "grey50") +
-  scale_x_continuous(name = "CD4 (log fluorescence)",
-    limits = c(0, 5), breaks = 0:5,
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "CD8 (log fluorescence)",
-    limits = c(0, 5), breaks = 0:5,
-    expand = c(0, 0)) +
-  labs(title = "Flow Cytometry Dot Plot") +
-  coord_equal() + theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 疫学 (stat の後に挿入されるが、nav順を合わせる) ══════════ -->
-    <div class="section-header" id="epi">
-        <h2>疫学・公衆衛生</h2><span class="field-tag">Epidemiology</span>
-    </div>
-    <p class="section-desc">流行曲線・罹患率・スクリーニング評価など、疫学・公衆衛生で使うテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="epi_epidemic_curve.png" alt="Epidemic Curve">
-            <div class="card-body">
-                <h3>流行曲線（Epi Curve）</h3>
-                <p>日別の症例数をヒストグラムで表示。点源・持続源・伝播型の判別に。</p>
-                <div class="tags"><span class="tag">流行曲線</span><span class="tag">アウトブレイク</span><span class="tag">感染症</span></div>
-                <div class="btn-row">
-                    <a href="epi_epidemic_curve.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-days &lt;- data.frame(day = 1:30)
-ggplot(days, aes(x = day)) + geom_blank() +
-  scale_x_continuous(name = "Day of outbreak",
-    limits = c(0.5, 30.5), breaks = 1:30,
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Number of cases",
-    limits = c(0, 30), breaks = seq(0, 30, 2),
-    expand = c(0, 0)) +
-  labs(title = "Epidemic Curve") +
-  theme_bw(base_size = 14)
-
-# ---- データ追加例 ----
-# cases &lt;- data.frame(day = c(3,3,4,5,5,5,6,6,...))
-# + geom_bar(data = cases, aes(x = day))</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="epi_2x2_table.png" alt="2x2 Table">
-            <div class="card-body">
-                <h3>2×2 分割表</h3>
-                <p>疫学の基本。OR / RR の算出式付き。症例対照研究・コホート研究に。</p>
-                <div class="tags"><span class="tag">OR</span><span class="tag">RR</span><span class="tag">分割表</span></div>
-                <div class="btn-row">
-                    <a href="epi_2x2_table.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-# 2x2 contingency table visualization
-ggplot() +
-  geom_tile(data = data.frame(
-    x = c(1,2,1,2), y = c(2,2,1,1)),
-    aes(x, y), fill = NA, color = "grey30",
-    linewidth = 1.2, width = 0.95, height = 0.95) +
-  annotate("text", x = 1, y = 2.65,
-    label = "Exposed", fontface = "bold") +
-  annotate("text", x = 2, y = 2.65,
-    label = "Unexposed", fontface = "bold") +
-  annotate("text", x = 0.2, y = 2,
-    label = "Disease+", fontface = "bold", hjust = 0) +
-  annotate("text", x = 0.2, y = 1,
-    label = "Disease-", fontface = "bold", hjust = 0) +
-  annotate("text", x = 1, y = 2, label = "a",
-    size = 6, color = "#2E86AB") +
-  annotate("text", x = 2, y = 2, label = "b",
-    size = 6, color = "#2E86AB") +
-  annotate("text", x = 1, y = 1, label = "c",
-    size = 6, color = "#2E86AB") +
-  annotate("text", x = 2, y = 1, label = "d",
-    size = 6, color = "#2E86AB") +
-  annotate("text", x = 1.5, y = 0.2,
-    label = "OR = (axd)/(bxc)", color = "grey40") +
-  labs(title = "2x2 Contingency Table") +
-  theme_void()</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="epi_age_incidence.png" alt="Age-specific Incidence">
-            <div class="card-body">
-                <h3>年齢別罹患率</h3>
-                <p>年齢階級ごとの罹患率を棒グラフまたは折れ線で記録。</p>
-                <div class="tags"><span class="tag">罹患率</span><span class="tag">年齢調整</span><span class="tag">記述疫学</span></div>
-                <div class="btn-row">
-                    <a href="epi_age_incidence.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-age_groups &lt;- data.frame(
-  age = factor(c("0-9","10-19","20-29","30-39",
-    "40-49","50-59","60-69","70-79","80+")))
-ggplot(age_groups, aes(x = age, y = 0)) +
-  geom_blank() +
-  scale_y_continuous(
-    name = "Incidence rate (per 100,000)",
-    limits = c(0, 500), breaks = seq(0, 500, 50),
-    expand = c(0, 0)) +
-  labs(title = "Age-Specific Incidence Rate",
-    x = "Age group") +
-  theme_bw(base_size = 14) +
-  theme(axis.text.x = element_text(
-    angle = 45, hjust = 1))</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="epi_screening.png" alt="Screening PPV NPV">
-            <div class="card-body">
-                <h3>PPV / NPV vs 有病率</h3>
-                <p>感度・特異度一定のもと、有病率の変化に対する PPV / NPV の推移。</p>
-                <div class="tags"><span class="tag">PPV</span><span class="tag">NPV</span><span class="tag">スクリーニング</span></div>
-                <div class="btn-row">
-                    <a href="epi_screening.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Prevalence (%)",
-    limits = c(0, 50), breaks = seq(0, 50, 5),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Predictive Value (%)",
-    limits = c(0, 100), breaks = seq(0, 100, 10),
-    expand = c(0, 0)) +
-  labs(title = "PPV & NPV vs Prevalence",
-    subtitle = "Plot at fixed Se & Sp") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 神経科学 ══════════ -->
-    <div class="section-header" id="neuro">
-        <h2>神経科学</h2><span class="field-tag">Neuroscience</span>
-    </div>
-    <p class="section-desc">脳波・神経伝導・筋電図・瞳孔反射のテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="neuro_eeg.png" alt="EEG Template">
-            <div class="card-body">
-                <h3>脳波（EEG）記録テンプレート</h3>
-                <p>10-20 法の主要10チャンネル × 10秒間。α / β / θ / δ 波を記録。</p>
-                <div class="tags"><span class="tag">EEG</span><span class="tag">10-20法</span><span class="tag">脳波</span></div>
-                <div class="btn-row">
-                    <a href="neuro_eeg.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-channels &lt;- c("Fp1","Fp2","F3","F4","C3",
-               "C4","P3","P4","O1","O2")
-ch_df &lt;- data.frame(
-  channel = factor(channels, levels = rev(channels)))
-ggplot(ch_df, aes(x = 0, y = channel)) +
-  geom_blank() +
-  scale_x_continuous(name = "Time (seconds)",
-    limits = c(0, 10), breaks = seq(0, 10, 0.5),
-    expand = c(0, 0)) +
-  labs(title = "EEG Recording Template", y = "Channel") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="neuro_ncv.png" alt="NCV">
-            <div class="card-body">
-                <h3>神経伝導速度（NCS）</h3>
-                <p>時間 vs 振幅。潜時・振幅・伝導速度の記入欄付き。</p>
-                <div class="tags"><span class="tag">NCV</span><span class="tag">潜時</span><span class="tag">振幅</span></div>
-                <div class="btn-row">
-                    <a href="neuro_ncv.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(name = "Time (ms)",
-    limits = c(0, 20), breaks = seq(0, 20, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Amplitude (mV)",
-    limits = c(-5, 15), breaks = seq(-5, 15, 1),
-    expand = c(0, 0)) +
-  labs(title = "Nerve Conduction Study",
-    subtitle = "Latency=__ms, Amp=__mV, NCV=__m/s") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="neuro_emg.png" alt="EMG">
-            <div class="card-body">
-                <h3>筋電図（EMG）</h3>
-                <p>安静時 / 軽収縮 / 最大収縮での EMG 波形を記録。</p>
-                <div class="tags"><span class="tag">EMG</span><span class="tag">MUP</span><span class="tag">筋電図</span></div>
-                <div class="btn-row">
-                    <a href="neuro_emg.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 0, color = "grey50") +
-  scale_x_continuous(name = "Time (ms)",
-    limits = c(0, 100), breaks = seq(0, 100, 5),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("Amplitude (" * mu * "V)"),
-    limits = c(-500, 500),
-    breaks = seq(-500, 500, 100),
-    expand = c(0, 0)) +
-  labs(title = "Electromyography (EMG)",
-    subtitle = "Rest / Mild / Maximal contraction") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="neuro_pupil.png" alt="Pupil Reflex">
-            <div class="card-body">
-                <h3>瞳孔対光反射</h3>
-                <p>光刺激前後の瞳孔径変化を経時的に記録。光照射区間を表示。</p>
-                <div class="tags"><span class="tag">瞳孔</span><span class="tag">対光反射</span><span class="tag">自律神経</span></div>
-                <div class="btn-row">
-                    <a href="neuro_pupil.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  annotate("rect", xmin = 2, xmax = 4,
-    ymin = 0, ymax = 10,
-    fill = "#fef3c7", alpha = 0.4) +
-  annotate("text", x = 3, y = 9.5,
-    label = "Light ON", color = "#b45309") +
-  scale_x_continuous(name = "Time (seconds)",
-    limits = c(0, 8), breaks = seq(0, 8, 0.5),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Pupil diameter (mm)",
-    limits = c(0, 10), breaks = seq(0, 10, 0.5),
-    expand = c(0, 0)) +
-  labs(title = "Pupillary Light Reflex") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 循環器 ══════════ -->
-    <div class="section-header" id="cardio">
-        <h2>循環器</h2><span class="field-tag">Cardiology</span>
-    </div>
-    <p class="section-desc">Wiggers Diagram など循環器の追加テンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="cardio_wiggers.png" alt="Wiggers Diagram">
-            <div class="card-body">
-                <h3>Wiggers Diagram（心周期）</h3>
-                <p>大動脈圧 / LV圧 / LA圧 / LV容積 / ECG / 心音を1つの時間軸に重ねて描画。</p>
-                <div class="tags"><span class="tag">心周期</span><span class="tag">弁開閉</span><span class="tag">圧曲線</span></div>
-                <div class="btn-row">
-                    <a href="cardio_wiggers.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Time (seconds)",
-    limits = c(0, 0.8), breaks = seq(0, 0.8, 0.05),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Pressure (mmHg) / Volume (mL)",
-    limits = c(0, 140), breaks = seq(0, 140, 10),
-    expand = c(0, 0)) +
-  labs(title = "Wiggers Diagram",
-    subtitle = paste("Aortic P / LV P / LA P /",
-      "LV Vol / ECG / Heart sounds")) +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 呼吸器 ══════════ -->
-    <div class="section-header" id="pulm">
-        <h2>呼吸器</h2><span class="field-tag">Pulmonology</span>
-    </div>
-    <p class="section-desc">肺気量分画・A-aDO₂ など呼吸器のテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="pulm_volumes.png" alt="Lung Volumes">
-            <div class="card-body">
-                <h3>肺気量分画（スパイログラム）</h3>
-                <p>TV / IRV / ERV / RV / VC / FRC / TLC の各肺気量を記録。</p>
-                <div class="tags"><span class="tag">肺気量</span><span class="tag">VC</span><span class="tag">TLC</span></div>
-                <div class="btn-row">
-                    <a href="pulm_volumes.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Time (seconds)",
-    limits = c(0, 30), breaks = seq(0, 30, 2),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Volume (L)",
-    limits = c(0, 7), breaks = seq(0, 7, 0.5),
-    expand = c(0, 0)) +
-  labs(title = "Lung Volumes & Capacities",
-    subtitle = "TV / IRV / ERV / RV / VC / FRC / TLC") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="pulm_aado2.png" alt="A-aDO2">
-            <div class="card-body">
-                <h3>A-a Gradient（A-aDO₂）</h3>
-                <p>肺胞酸素分圧 vs 動脈酸素分圧。正常 A-aDO₂ &lt; 10-15 mmHg。</p>
-                <div class="tags"><span class="tag">A-aDO₂</span><span class="tag">ガス交換</span><span class="tag">低酸素</span></div>
-                <div class="btn-row">
-                    <a href="pulm_aado2.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_abline(intercept = 0, slope = 1,
-    linetype = "dashed", color = "grey60") +
-  scale_x_continuous(
-    name = expression("P"["A"]*O[2]~"(mmHg)"),
-    limits = c(0, 150), breaks = seq(0, 150, 10),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = expression("P"["a"]*O[2]~"(mmHg)"),
-    limits = c(0, 150), breaks = seq(0, 150, 10),
-    expand = c(0, 0)) +
-  labs(title = expression("A-a Gradient")) +
-  coord_equal() + theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 消化器 ══════════ -->
-    <div class="section-header" id="gi">
-        <h2>消化器</h2><span class="field-tag">Gastroenterology</span>
-    </div>
-    <p class="section-desc">胃酸分泌・肝機能検査のテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="gi_acid_secretion.png" alt="Gastric Acid Secretion">
-            <div class="card-body">
-                <h3>胃酸分泌</h3>
-                <p>食事刺激後の胃酸分泌量の推移。頭相・胃相・腸相を記録。</p>
-                <div class="tags"><span class="tag">胃酸</span><span class="tag">頭相</span><span class="tag">ガストリン</span></div>
-                <div class="btn-row">
-                    <a href="gi_acid_secretion.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  annotate("rect", xmin = 0.5, xmax = 1.5,
-    ymin = 0, ymax = 40,
-    fill = "#fef3c7", alpha = 0.3) +
-  annotate("text", x = 1, y = 38,
-    label = "Meal", color = "#b45309") +
-  scale_x_continuous(name = "Time (hr)",
-    limits = c(0, 6), breaks = seq(0, 6, 0.5),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Gastric acid output (mEq/hr)",
-    limits = c(0, 40), breaks = seq(0, 40, 5),
-    expand = c(0, 0)) +
-  labs(title = "Gastric Acid Secretion") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="gi_lft.png" alt="LFT">
-            <div class="card-body">
-                <h3>肝機能検査（LFT）経時変化</h3>
-                <p>AST / ALT / ALP / GGT / T-Bil の経時的推移。正常上限ライン付き。</p>
-                <div class="tags"><span class="tag">AST/ALT</span><span class="tag">肝機能</span><span class="tag">肝炎</span></div>
-                <div class="btn-row">
-                    <a href="gi_lft.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 40, linetype = "dashed",
-    color = "#F39C12") +
-  scale_x_continuous(name = "Days / Weeks",
-    limits = c(0, 30), breaks = seq(0, 30, 2),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Enzyme level (U/L)",
-    limits = c(0, 500), breaks = seq(0, 500, 50),
-    expand = c(0, 0)) +
-  labs(title = "Liver Function Tests Time Course",
-    subtitle = "Plot: AST / ALT / ALP / GGT / T-Bil") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 産婦人科 ══════════ -->
-    <div class="section-header" id="obgyn">
-        <h2>産婦人科</h2><span class="field-tag">Obstetrics / Gynecology</span>
-    </div>
-    <p class="section-desc">パルトグラム・胎児発育曲線のテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="obgyn_partograph.png" alt="Partograph">
-            <div class="card-body">
-                <h3>パルトグラム（子宮口開大曲線）</h3>
-                <p>分娩進行を記録。活動期ライン（4 cm）付き。児頭下降度も記録可能。</p>
-                <div class="tags"><span class="tag">分娩</span><span class="tag">子宮口</span><span class="tag">パルトグラム</span></div>
-                <div class="btn-row">
-                    <a href="obgyn_partograph.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  geom_hline(yintercept = 4, linetype = "dashed",
-    color = "#2E86AB") +
-  annotate("text", x = 0.3, y = 4.3,
-    label = "Active phase (4 cm)",
-    color = "#2E86AB", hjust = 0) +
-  scale_x_continuous(name = "Time (hours)",
-    limits = c(0, 24), breaks = seq(0, 24, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Cervical dilation (cm)",
-    limits = c(0, 10), breaks = seq(0, 10, 1),
-    expand = c(0, 0)) +
-  labs(title = "Partograph (Cervicograph)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="obgyn_fetal_growth.png" alt="Fetal Growth">
-            <div class="card-body">
-                <h3>胎児発育曲線</h3>
-                <p>在胎週数 vs 推定胎児体重。10th / 50th / 90th パーセンタイル用。</p>
-                <div class="tags"><span class="tag">胎児発育</span><span class="tag">SGA/AGA/LGA</span><span class="tag">EFW</span></div>
-                <div class="btn-row">
-                    <a href="obgyn_fetal_growth.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Gestational age (weeks)",
-    limits = c(12, 42), breaks = seq(12, 42, 2),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Estimated fetal weight (g)",
-    limits = c(0, 5000), breaks = seq(0, 5000, 500),
-    expand = c(0, 0)) +
-  labs(title = "Fetal Growth Curve",
-    subtitle = "10th / 50th / 90th percentile") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 小児科 ══════════ -->
-    <div class="section-header" id="peds">
-        <h2>小児科</h2><span class="field-tag">Pediatrics</span>
-    </div>
-    <p class="section-desc">成長曲線（体重・身長）のテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="peds_growth_weight.png" alt="Growth Weight">
-            <div class="card-body">
-                <h3>成長曲線（体重）</h3>
-                <p>0〜36ヶ月の月齢別体重。パーセンタイル曲線を描画。</p>
-                <div class="tags"><span class="tag">成長曲線</span><span class="tag">体重</span><span class="tag">パーセンタイル</span></div>
-                <div class="btn-row">
-                    <a href="peds_growth_weight.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Age (months)",
-    limits = c(0, 36), breaks = seq(0, 36, 3),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Weight (kg)",
-    limits = c(0, 18), breaks = seq(0, 18, 1),
-    expand = c(0, 0)) +
-  labs(title = "Growth Chart (Weight, 0-36 months)",
-    subtitle = "3rd / 15th / 50th / 85th / 97th") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="peds_growth_height.png" alt="Growth Height">
-            <div class="card-body">
-                <h3>成長曲線（身長）</h3>
-                <p>0〜20歳の年齢別身長。パーセンタイル曲線と実測値を記録。</p>
-                <div class="tags"><span class="tag">成長曲線</span><span class="tag">身長</span><span class="tag">思春期</span></div>
-                <div class="btn-row">
-                    <a href="peds_growth_height.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Age (years)",
-    limits = c(0, 20), breaks = seq(0, 20, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "Height (cm)",
-    limits = c(40, 190), breaks = seq(40, 190, 10),
-    expand = c(0, 0)) +
-  labs(title = "Growth Chart (Height, 0-20 years)",
-    subtitle = "3rd / 50th / 97th percentile") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 整形外科 ══════════ -->
-    <div class="section-header" id="ortho">
-        <h2>整形外科</h2><span class="field-tag">Orthopedics</span>
-    </div>
-    <p class="section-desc">関節可動域（ROM）の記録用テンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="ortho_rom.png" alt="ROM">
-            <div class="card-body">
-                <h3>関節可動域（ROM）チャート</h3>
-                <p>主要関節の ROM を測定・記録。正常値との比較に。</p>
-                <div class="tags"><span class="tag">ROM</span><span class="tag">関節</span><span class="tag">リハビリ</span></div>
-                <div class="btn-row">
-                    <a href="ortho_rom.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-joints &lt;- c("Shoulder\nFlexion","Shoulder\nAbduction",
-  "Elbow\nFlexion","Wrist\nFlexion",
-  "Hip\nFlexion","Hip\nAbduction",
-  "Knee\nFlexion","Ankle\nDorsiflexion")
-joint_df &lt;- data.frame(
-  joint = factor(joints, levels = joints))
-ggplot(joint_df, aes(x = joint, y = 0)) +
-  geom_blank() +
-  scale_y_continuous(name = "Range of Motion (degrees)",
-    limits = c(0, 180), breaks = seq(0, 180, 10),
-    expand = c(0, 0)) +
-  labs(title = "Joint ROM Chart", x = "") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 眼科 ══════════ -->
-    <div class="section-header" id="eye">
-        <h2>眼科</h2><span class="field-tag">Ophthalmology</span>
-    </div>
-    <p class="section-desc">視力経過の記録テンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="eye_visual_acuity.png" alt="Visual Acuity">
-            <div class="card-body">
-                <h3>視力経過（LogMAR）</h3>
-                <p>治療前後の視力推移を LogMAR で記録。Snellen 換算値ガイド付き。</p>
-                <div class="tags"><span class="tag">LogMAR</span><span class="tag">視力</span><span class="tag">経過</span></div>
-                <div class="btn-row">
-                    <a href="eye_visual_acuity.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Time (weeks / months)",
-    limits = c(0, 12), breaks = seq(0, 12, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(name = "LogMAR Visual Acuity",
-    limits = c(-0.2, 1.5),
-    breaks = seq(-0.2, 1.5, 0.1),
-    expand = c(0, 0)) +
-  annotate("text", x = 11.5, y = 0,
-    label = "20/20", color = "grey50", hjust = 1) +
-  annotate("text", x = 11.5, y = 0.3,
-    label = "20/40", color = "grey50", hjust = 1) +
-  annotate("text", x = 11.5, y = 1.0,
-    label = "20/200", color = "grey50", hjust = 1) +
-  labs(title = "Visual Acuity Over Time (LogMAR)") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 精神科 ══════════ -->
-    <div class="section-header" id="psych">
-        <h2>精神科</h2><span class="field-tag">Psychiatry</span>
-    </div>
-    <p class="section-desc">精神科評価尺度の経時変化を記録するテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="psych_rating_scale.png" alt="Rating Scale">
-            <div class="card-body">
-                <h3>症状評価尺度の経時変化</h3>
-                <p>HAM-D / PANSS / MADRS 等の治療経過を記録。</p>
-                <div class="tags"><span class="tag">HAM-D</span><span class="tag">PANSS</span><span class="tag">治療反応</span></div>
-                <div class="btn-row">
-                    <a href="psych_rating_scale.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
-  geom_blank() +
-  scale_x_continuous(name = "Week of treatment",
-    limits = c(0, 12), breaks = seq(0, 12, 1),
-    expand = c(0, 0)) +
-  scale_y_continuous(
-    name = "Symptom score (HAM-D / PANSS / MADRS)",
-    limits = c(0, 50), breaks = seq(0, 50, 5),
-    expand = c(0, 0)) +
-  labs(title = "Psychiatric Symptom Rating Scale",
-    subtitle = "Plot treatment response over time") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 解剖学 ══════════ -->
-    <div class="section-header" id="anat">
-        <h2>解剖学</h2><span class="field-tag">Anatomy</span>
-    </div>
-    <p class="section-desc">デルマトーム評価の記録テンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="anat_dermatome.png" alt="Dermatome">
-            <div class="card-body">
-                <h3>デルマトーム知覚評価</h3>
-                <p>C2〜S5 の各脊髄レベルの知覚スコア（0/1/2）を記録。</p>
-                <div class="tags"><span class="tag">デルマトーム</span><span class="tag">脊髄</span><span class="tag">知覚</span></div>
-                <div class="btn-row">
-                    <a href="anat_dermatome.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-levels &lt;- c("C2","C3","C4","C5","C6","C7","C8",
-  "T1","T2","T3","T4","T5","T6","T7","T8",
-  "T9","T10","T11","T12",
-  "L1","L2","L3","L4","L5",
-  "S1","S2","S3","S4","S5")
-derm_df &lt;- data.frame(
-  level = factor(levels, levels = levels))
-ggplot(derm_df, aes(x = level, y = 0)) +
-  geom_blank() +
-  scale_y_continuous(
-    name = "Score (0=absent, 1=impaired, 2=normal)",
-    limits = c(0, 2), breaks = 0:2) +
-  labs(title = "Dermatome Sensory Assessment",
-    x = "Spinal level") +
-  theme_bw(base_size = 14) +
-  theme(axis.text.x = element_text(
-    angle = 90, hjust = 1, vjust = 0.5))</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 病理 ══════════ -->
-    <div class="section-header" id="path">
-        <h2>病理</h2><span class="field-tag">Pathology</span>
-    </div>
-    <p class="section-desc">白血球分画カウントのテンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="path_cell_count.png" alt="Differential Count">
-            <div class="card-body">
-                <h3>白血球分画（Differential Count）</h3>
-                <p>好中球・リンパ球・単球・好酸球・好塩基球の割合を記録。</p>
-                <div class="tags"><span class="tag">白血球</span><span class="tag">分画</span><span class="tag">CBC</span></div>
-                <div class="btn-row">
-                    <a href="path_cell_count.png" download class="btn-dl">Download</a>
-                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
-                </div>
-                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
-
-cells &lt;- c("Neutrophil","Lymphocyte","Monocyte",
-            "Eosinophil","Basophil")
-cell_df &lt;- data.frame(
-  cell = factor(cells, levels = cells))
-ggplot(cell_df, aes(x = cell, y = 0)) +
-  geom_blank() +
-  scale_y_continuous(name = "Percentage (%)",
-    limits = c(0, 80), breaks = seq(0, 80, 5),
-    expand = c(0, 0)) +
-  labs(title = "Differential WBC Count",
-    x = "Cell type") +
-  theme_bw(base_size = 14)</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 心電図 ══════════ -->
-    <div class="section-header" id="ecg">
-        <h2>心電図テンプレート</h2><span class="field-tag">ECG</span>
-    </div>
-    <p class="section-desc">三軸図・ベクトル心電図の描画用テンプレートです。</p>
-    <div class="card-grid">
-        <div class="card">
-            <img src="triaxial_template.png" alt="Triaxial Template">
-            <div class="card-body">
-                <h3>三軸図テンプレート</h3>
-                <p>心電図の電気軸を記載するための三軸図。</p>
-                <div class="tags"><span class="tag">電気軸</span><span class="tag">四肢誘導</span></div>
-                <div class="btn-row"><a href="triaxial_template.png" download class="btn-dl">Download</a></div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="vecg_template.png" alt="VECG Template">
-            <div class="card-body">
-                <h3>ベクトル心電図テンプレート</h3>
-                <p>ベクトル心電図（VECG）の描画用テンプレート。</p>
-                <div class="tags"><span class="tag">VECG</span><span class="tag">ベクトルループ</span></div>
-                <div class="btn-row"><a href="vecg_template.png" download class="btn-dl">Download</a></div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="triaxial_vecg_template.png" alt="Triaxial VECG Template">
-            <div class="card-body">
-                <h3>三軸 + VECG 統合テンプレート</h3>
-                <p>三軸図とベクトル心電図を組み合わせた統合テンプレート。</p>
-                <div class="tags"><span class="tag">三軸図</span><span class="tag">VECG</span><span class="tag">統合</span></div>
-                <div class="btn-row"><a href="triaxial_vecg_template.png" download class="btn-dl">Download</a></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══════════ 使い方 ══════════ -->
-    <div class="howto" id="howto">
-        <h2>使い方</h2>
-        <ol>
-            <li><strong>Download</strong> ボタンで PNG をダウンロード → Word / PowerPoint / Keynote に貼り付け</li>
-            <li><strong>R Code</strong> ボタンでコードを表示 → <strong>Copy</strong> して RStudio に貼り付け</li>
-            <li>コード内の <code>limits</code>, <code>breaks</code>, <code>name</code> を編集して軸をカスタマイズ</li>
-            <li>自分のデータを <code>geom_point()</code> / <code>geom_line()</code> で追加してプロット</li>
-            <li>印刷して手書きでデータを書き込む使い方もできます</li>
-        </ol>
-    </div>
-
-    <div class="howto">
-        <h2>R ソースコード一括ダウンロード</h2>
-        <p style="color:#666; font-size:0.88rem;">
-            全テンプレートの生成コードを1ファイルにまとめたものです。
-            <a href="generate_templates.R" download class="btn-dl" style="margin-left:0.5rem;">generate_templates.R</a>
-        </p>
-    </div>
-
+<section class="hero">
+<h1>MedGraph Free</h1>
+<p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表にそのまま使えます。</p>
+<div class="stats">
+<div class="stat"><div class="num">407</div><div class="lbl">Templates</div></div>
+<div class="stat"><div class="num">6105</div><div class="lbl">Downloads</div></div>
+<div class="stat"><div class="num">24</div><div class="lbl">Categories</div></div>
+<div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-
-    <!-- SEO: 自然文テキストコンテンツ -->
-    <section class="howto" style="margin-top:2rem;">
-        <h2>MedGraph Free について</h2>
-        <p style="color:#555; font-size:0.9rem; line-height:1.8;">
-            MedGraph Free は、医学部生がレポートや発表で使えるグラフテンプレートを無料で提供するサイトです。
-            生化学（Michaelis-Menten プロット、Lineweaver-Burk プロット、pH 滴定曲線）、
-            生理学（酸素解離曲線、Frank-Starling 曲線、活動電位、心臓 PV ループ、フローボリューム曲線）、
-            薬理学（用量反応曲線、薬物動態曲線、治療域テンプレート）、
-            微生物学（細菌増殖曲線、MIC 測定、Time-Kill 曲線、ディスク拡散法）、
-            免疫学（一次/二次免疫応答、ELISA 標準曲線、フローサイトメトリー）、
-            疫学（流行曲線、2×2 分割表、PPV/NPV）、
-            臨床研究・統計（ROC 曲線、Kaplan-Meier 生存曲線、フォレストプロット、Bland-Altman プロット）
-            など、医学部の全23分野をカバーする54種類のテンプレートを揃えています。
-        </p>
-        <p style="color:#555; font-size:0.9rem; line-height:1.8; margin-top:0.8rem;">
-            すべてのテンプレートはデータが入っていない白紙の状態で、自分の実験データや臨床データをプロットして使うことができます。
-            各テンプレートには R（ggplot2）のソースコードが付属しており、コピー＆ペーストですぐにカスタマイズ可能です。
-            軸のスケール変更、データの追加、色の変更など、自由に編集できます。
-            また、PNG 画像としてダウンロードして PowerPoint や Word に貼り付け、印刷して手書きで記入する使い方もできます。
-        </p>
-        <p style="color:#555; font-size:0.9rem; line-height:1.8; margin-top:0.8rem;">
-            全コンテンツは CC0（パブリックドメイン）ライセンスで公開しており、
-            商用利用・非商用利用を問わず、クレジット表記不要で自由にご利用いただけます。
-            医学部のレポート、卒業論文、学会発表のスライド、研究論文の図表作成などにご活用ください。
-        </p>
-    </section>
-
+<div class="search-box"><input type="text" id="search" placeholder="Search templates..." oninput="filterCards(this.value)"></div>
+</section>
+<nav class="nav-bar"><div class="inner"><a href="#biochem">生化学</a><a href="#cardio">循環器</a><a href="#chem">臨床検査</a><a href="#emer">救急</a><a href="#endo">内分泌</a><a href="#epi">疫学・公衆衛生</a><a href="#eye">眼科</a><a href="#gi">消化器</a><a href="#hemato">血液</a><a href="#immuno">免疫学</a><a href="#micro">微生物学</a><a href="#nephro">腎臓</a><a href="#neuro">神経科学</a><a href="#obgyn">産婦人科</a><a href="#ortho">整形外科</a><a href="#path">病理学</a><a href="#peds">小児科</a><a href="#pharm">薬理学</a><a href="#physiol">生理学</a><a href="#psych">精神科</a><a href="#pulm">呼吸器</a><a href="#radio">放射線</a><a href="#stat">臨床統計</a><a href="#surg">外科・麻酔</a></div></nav>
+<div class="cats-grid"><a href="c/biochem.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">生化学</div><div class="cat-count">30 templates</div></a>
+<a href="c/cardio.html" class="cat-card"><div class="cat-icon">❤</div><div class="cat-name">循環器</div><div class="cat-count">22 templates</div></a>
+<a href="c/chem.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">臨床検査</div><div class="cat-count">10 templates</div></a>
+<a href="c/emer.html" class="cat-card"><div class="cat-icon">🛑</div><div class="cat-name">救急</div><div class="cat-count">10 templates</div></a>
+<a href="c/endo.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">内分泌</div><div class="cat-count">18 templates</div></a>
+<a href="c/epi.html" class="cat-card"><div class="cat-icon">📊</div><div class="cat-name">疫学・公衆衛生</div><div class="cat-count">18 templates</div></a>
+<a href="c/eye.html" class="cat-card"><div class="cat-icon">👁</div><div class="cat-name">眼科</div><div class="cat-count">10 templates</div></a>
+<a href="c/gi.html" class="cat-card"><div class="cat-icon">🧪</div><div class="cat-name">消化器</div><div class="cat-count">12 templates</div></a>
+<a href="c/hemato.html" class="cat-card"><div class="cat-icon">🩸</div><div class="cat-name">血液</div><div class="cat-count">18 templates</div></a>
+<a href="c/immuno.html" class="cat-card"><div class="cat-icon">🦬</div><div class="cat-name">免疫学</div><div class="cat-count">20 templates</div></a>
+<a href="c/micro.html" class="cat-card"><div class="cat-icon">🦠</div><div class="cat-name">微生物学</div><div class="cat-count">20 templates</div></a>
+<a href="c/nephro.html" class="cat-card"><div class="cat-icon">🦷</div><div class="cat-name">腎臓</div><div class="cat-count">15 templates</div></a>
+<a href="c/neuro.html" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-name">神経科学</div><div class="cat-count">22 templates</div></a>
+<a href="c/obgyn.html" class="cat-card"><div class="cat-icon">👶</div><div class="cat-name">産婦人科</div><div class="cat-count">15 templates</div></a>
+<a href="c/ortho.html" class="cat-card"><div class="cat-icon">🦴</div><div class="cat-name">整形外科</div><div class="cat-count">10 templates</div></a>
+<a href="c/path.html" class="cat-card"><div class="cat-icon">🔬</div><div class="cat-name">病理学</div><div class="cat-count">12 templates</div></a>
+<a href="c/peds.html" class="cat-card"><div class="cat-icon">👶</div><div class="cat-name">小児科</div><div class="cat-count">15 templates</div></a>
+<a href="c/pharm.html" class="cat-card"><div class="cat-icon">💊</div><div class="cat-name">薬理学</div><div class="cat-count">25 templates</div></a>
+<a href="c/physiol.html" class="cat-card"><div class="cat-icon">🧬</div><div class="cat-name">生理学</div><div class="cat-count">34 templates</div></a>
+<a href="c/psych.html" class="cat-card"><div class="cat-icon">🧠</div><div class="cat-name">精神科</div><div class="cat-count">10 templates</div></a>
+<a href="c/pulm.html" class="cat-card"><div class="cat-icon">🫁</div><div class="cat-name">呼吸器</div><div class="cat-count">15 templates</div></a>
+<a href="c/radio.html" class="cat-card"><div class="cat-icon">☢</div><div class="cat-name">放射線</div><div class="cat-count">8 templates</div></a>
+<a href="c/stat.html" class="cat-card"><div class="cat-icon">📈</div><div class="cat-name">臨床統計</div><div class="cat-count">28 templates</div></a>
+<a href="c/surg.html" class="cat-card"><div class="cat-icon">🩺</div><div class="cat-name">外科・麻酔</div><div class="cat-count">10 templates</div></a></div>
+<section class="cat-section" id="biochem"><h2><a href="c/biochem.html">生化学 (30)</a></h2><div class="card-grid"><a href="biochem/michaelis-menten.html" class="card"><img src="img/biochem_michaelis_menten.png" alt="ミカエリス・メンテンプロット" loading="lazy"><div class="card-body"><h3>ミカエリス・メンテンプロット</h3><p>酵素反応速度論の基本グラフ。基質濃度[S]と反応速度vの双曲線関係をプロットするテンプレート。</p></div></a>
+<a href="biochem/lineweaver-burk.html" class="card"><img src="img/biochem_lineweaver_burk.png" alt="ラインウィーバー・バークプロット" loading="lazy"><div class="card-body"><h3>ラインウィーバー・バークプロット</h3><p>二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレ</p></div></a>
+<a href="biochem/titration.html" class="card"><img src="img/biochem_titration.png" alt="pH滴定曲線" loading="lazy"><div class="card-body"><h3>pH滴定曲線</h3><p>酸塩基滴定のpH変化を記録するテンプレート。当量点や緩衝域の解析に使用。</p></div></a>
+<a href="biochem/competitive-inhibition.html" class="card"><img src="img/biochem_competitive_inhibition.png" alt="拮抗阻害" loading="lazy"><div class="card-body"><h3>拮抗阻害</h3><p>拮抗阻害の酵素反応速度。Km変化・Vmax不変をプロットするテンプレート。</p></div></a>
+<a href="biochem/uncompetitive-inhibition.html" class="card"><img src="img/biochem_uncompetitive_inhibition.png" alt="不拮抗阻害" loading="lazy"><div class="card-body"><h3>不拮抗阻害</h3><p>不拮抗阻害の酵素反応速度。Km・Vmax共に変化するパターンをプロットするテンプレート。</p></div></a>
+<a href="biochem/noncompetitive-inhibition.html" class="card"><img src="img/biochem_noncompetitive_inhibition.png" alt="非拮抗阻害" loading="lazy"><div class="card-body"><h3>非拮抗阻害</h3><p>非拮抗阻害の酵素反応速度。Km不変・Vmax低下をプロットするテンプレート。</p></div></a>
+<a href="biochem/mixed-inhibition.html" class="card"><img src="img/biochem_mixed_inhibition.png" alt="混合阻害" loading="lazy"><div class="card-body"><h3>混合阻害</h3><p>混合阻害の酵素反応速度。KmとVmaxの両方が変化するパターンのテンプレート。</p></div></a>
+<a href="biochem/eadie-hofstee.html" class="card"><img src="img/biochem_eadie_hofstee.png" alt="イーディ・ホフステープロット" loading="lazy"><div class="card-body"><h3>イーディ・ホフステープロット</h3><p>Eadie-Hofsteeプロット。v対v/[S]のプロットでVmaxとKmを決定するテンプレート。</p></div></a>
+<a href="biochem/hanes-woolf.html" class="card"><img src="img/biochem_hanes_woolf.png" alt="ヘインズ・ウルフプロット" loading="lazy"><div class="card-body"><h3>ヘインズ・ウルフプロット</h3><p>Hanes-Woolfプロット。[S]/v対[S]の線形プロットでKmとVmaxを求めるテンプレート</p></div></a>
+<a href="biochem/hill-plot.html" class="card"><img src="img/biochem_hill_plot.png" alt="ヒルプロット" loading="lazy"><div class="card-body"><h3>ヒルプロット</h3><p>ヒルプロット。協同結合の度合い（Hill係数n）を求めるためのテンプレート。</p></div></a>
+<a href="biochem/scatchard.html" class="card"><img src="img/biochem_scatchard.png" alt="スキャッチャードプロット" loading="lazy"><div class="card-body"><h3>スキャッチャードプロット</h3><p>スキャッチャードプロット。受容体結合解析でKdとBmaxを求めるテンプレート。</p></div></a>
+<a href="biochem/protein-denaturation.html" class="card"><img src="img/biochem_protein_denaturation.png" alt="タンパク質変性曲線" loading="lazy"><div class="card-body"><h3>タンパク質変性曲線</h3><p>タンパク質の熱変性曲線。温度上昇に伴う折り畳み構造の喪失をプロットするテンプレート。</p></div></a>
+<a href="biochem/beer-lambert.html" class="card"><img src="img/biochem_beer_lambert.png" alt="ベール・ランベルトプロット" loading="lazy"><div class="card-body"><h3>ベール・ランベルトプロット</h3><p>ベール・ランベルトの法則の検量線。濃度と吸光度の線形関係をプロットするテンプレート。</p></div></a>
+<a href="biochem/bradford-assay.html" class="card"><img src="img/biochem_bradford_assay.png" alt="ブラッドフォード検量線" loading="lazy"><div class="card-body"><h3>ブラッドフォード検量線</h3><p>ブラッドフォードアッセイの検量線。タンパク質定量に使用するテンプレート。</p></div></a>
+<a href="biochem/spectrophotometry.html" class="card"><img src="img/biochem_spectrophotometry.png" alt="分光光度法検量線" loading="lazy"><div class="card-body"><h3>分光光度法検量線</h3><p>分光光度法の標準検量線テンプレート。任意の物質の濃度-吸光度関係をプロット。</p></div></a>
+<a href="biochem/substrate-saturation.html" class="card"><img src="img/biochem_substrate_saturation.png" alt="基質飽和曲線" loading="lazy"><div class="card-body"><h3>基質飽和曲線</h3><p>基質飽和曲線。高基質濃度域でのVmaxへの収束をプロットするテンプレート。</p></div></a>
+<a href="biochem/allosteric-enzyme.html" class="card"><img src="img/biochem_allosteric_enzyme.png" alt="アロステリック酵素（S字型）" loading="lazy"><div class="card-body"><h3>アロステリック酵素（S字型）</h3><p>アロステリック酵素のS字型（シグモイド）速度曲線テンプレート。協同性の解析に使用。</p></div></a>
+<a href="biochem/reaction-coordinate.html" class="card"><img src="img/biochem_reaction_coordinate.png" alt="反応座標図" loading="lazy"><div class="card-body"><h3>反応座標図</h3><p>反応座標図。活性化エネルギーや遷移状態のエネルギープロファイルを描くテンプレート。</p></div></a>
+<a href="biochem/arrhenius.html" class="card"><img src="img/biochem_arrhenius.png" alt="アレニウスプロット" loading="lazy"><div class="card-body"><h3>アレニウスプロット</h3><p>アレニウスプロット。温度と反応速度定数の関係から活性化エネルギーを求めるテンプレート。</p></div></a>
+<a href="biochem/buffer-capacity.html" class="card"><img src="img/biochem_buffer_capacity.png" alt="緩衝能曲線" loading="lazy"><div class="card-body"><h3>緩衝能曲線</h3><p>緩衝能曲線。pHに対する緩衝能の変化をプロットするテンプレート。</p></div></a>
+<a href="biochem/chromatography.html" class="card"><img src="img/biochem_chromatography.png" alt="クロマトグラフィー溶出プロファイル" loading="lazy"><div class="card-body"><h3>クロマトグラフィー溶出プロファイル</h3><p>カラムクロマトグラフィーの溶出プロファイルテンプレート。ピーク分離の解析に使用。</p></div></a>
+<a href="biochem/enzyme-ph.html" class="card"><img src="img/biochem_enzyme_ph.png" alt="酵素活性-pH曲線" loading="lazy"><div class="card-body"><h3>酵素活性-pH曲線</h3><p>酵素活性とpHの関係を示す曲線テンプレート。至適pHの決定に使用。</p></div></a>
+<a href="biochem/enzyme-temp.html" class="card"><img src="img/biochem_enzyme_temp.png" alt="酵素活性-温度曲線" loading="lazy"><div class="card-body"><h3>酵素活性-温度曲線</h3><p>酵素活性と温度の関係を示す曲線テンプレート。至適温度の決定に使用。</p></div></a>
+<a href="biochem/dna-melting.html" class="card"><img src="img/biochem_dna_melting.png" alt="DNA融解曲線" loading="lazy"><div class="card-body"><h3>DNA融解曲線</h3><p>DNA融解曲線（Tm測定）。温度上昇に伴う吸光度変化をプロットするテンプレート。</p></div></a>
+<a href="biochem/amino-acid-titration.html" class="card"><img src="img/biochem_amino_acid_titration.png" alt="アミノ酸滴定曲線" loading="lazy"><div class="card-body"><h3>アミノ酸滴定曲線</h3><p>アミノ酸の滴定曲線テンプレート。pKa値とpIの決定に使用。</p></div></a>
+<a href="biochem/sds-page.html" class="card"><img src="img/biochem_sds_page.png" alt="SDS-PAGE分子量推定" loading="lazy"><div class="card-body"><h3>SDS-PAGE分子量推定</h3><p>SDS-PAGE分子量推定の検量線テンプレート。Rf値と分子量の対数関係をプロット。</p></div></a>
+<a href="biochem/western-blot-quant.html" class="card"><img src="img/biochem_western_blot_quant.png" alt="ウエスタンブロット定量" loading="lazy"><div class="card-body"><h3>ウエスタンブロット定量</h3><p>ウエスタンブロットのバンド強度定量テンプレート。タンパク質量との関係をプロット。</p></div></a>
+<a href="biochem/henderson-hasselbalch.html" class="card"><img src="img/biochem_henderson_hasselbalch.png" alt="ヘンダーソン・ハッセルバルヒ曲線" loading="lazy"><div class="card-body"><h3>ヘンダーソン・ハッセルバルヒ曲線</h3><p>ヘンダーソン・ハッセルバルヒ式に基づくpH計算テンプレート。</p></div></a>
+<a href="biochem/protein-standard.html" class="card"><img src="img/biochem_protein_standard.png" alt="BCA検量線" loading="lazy"><div class="card-body"><h3>BCA検量線</h3><p>BCAアッセイの検量線テンプレート。タンパク質定量に使用。</p></div></a>
+<a href="biochem/km-vmax-comparison.html" class="card"><img src="img/biochem_km_vmax_comparison.png" alt="Km/Vmax比較プロット" loading="lazy"><div class="card-body"><h3>Km/Vmax比較プロット</h3><p>複数酵素のKm/Vmax比較テンプレート。異なる酵素の速度論パラメータを比較。</p></div></a></div></section>
+<section class="cat-section" id="cardio"><h2><a href="c/cardio.html">循環器 (22)</a></h2><div class="card-grid"><a href="cardio/ecg-normal.html" class="card"><img src="img/cardio_ecg_normal.png" alt="正常心電図" loading="lazy"><div class="card-body"><h3>正常心電図</h3><p>正常心電図テンプレート。P-QRS-T波形の各要素をプロット。</p></div></a>
+<a href="cardio/ecg-st-elevation.html" class="card"><img src="img/cardio_ecg_st_elevation.png" alt="心電図：ST上昇" loading="lazy"><div class="card-body"><h3>心電図：ST上昇</h3><p>ST上昇型心電図テンプレート。急性心筋梗塞のST変化をプロット。</p></div></a>
+<a href="cardio/ecg-st-depression.html" class="card"><img src="img/cardio_ecg_st_depression.png" alt="心電図：ST低下" loading="lazy"><div class="card-body"><h3>心電図：ST低下</h3><p>ST低下型心電図テンプレート。虚血性変化のST低下をプロット。</p></div></a>
+<a href="cardio/ecg-afib.html" class="card"><img src="img/cardio_ecg_afib.png" alt="心電図：心房細動" loading="lazy"><div class="card-body"><h3>心電図：心房細動</h3><p>心房細動の心電図テンプレート。不整なRR間隔とf波をプロット。</p></div></a>
+<a href="cardio/ecg-1st-block.html" class="card"><img src="img/cardio_ecg_1st_block.png" alt="心電図：1度房室ブロック" loading="lazy"><div class="card-body"><h3>心電図：1度房室ブロック</h3><p>1度房室ブロックの心電図テンプレート。PR間隔延長をプロット。</p></div></a>
+<a href="cardio/ecg-2nd-block.html" class="card"><img src="img/cardio_ecg_2nd_block.png" alt="心電図：2度房室ブロック" loading="lazy"><div class="card-body"><h3>心電図：2度房室ブロック</h3><p>2度房室ブロックの心電図テンプレート。Wenckebach/Mobitz II型をプロット。</p></div></a>
+<a href="cardio/ecg-3rd-block.html" class="card"><img src="img/cardio_ecg_3rd_block.png" alt="心電図：3度房室ブロック" loading="lazy"><div class="card-body"><h3>心電図：3度房室ブロック</h3><p>3度（完全）房室ブロックの心電図テンプレート。P波とQRSの解離をプロット。</p></div></a>
+<a href="cardio/ecg-long-qt.html" class="card"><img src="img/cardio_ecg_long_qt.png" alt="心電図：QT延長" loading="lazy"><div class="card-body"><h3>心電図：QT延長</h3><p>QT延長症候群の心電図テンプレート。延長したQT間隔をプロット。</p></div></a>
+<a href="cardio/arterial-pressure.html" class="card"><img src="img/cardio_arterial_pressure.png" alt="動脈圧波形" loading="lazy"><div class="card-body"><h3>動脈圧波形</h3><p>動脈圧波形テンプレート。収縮期・拡張期圧とnotchをプロット。</p></div></a>
+<a href="cardio/cvp.html" class="card"><img src="img/cardio_cvp.png" alt="中心静脈圧" loading="lazy"><div class="card-body"><h3>中心静脈圧</h3><p>中心静脈圧波形テンプレート。a/c/v波をプロット。</p></div></a>
+<a href="cardio/pa-pressure.html" class="card"><img src="img/cardio_pa_pressure.png" alt="肺動脈圧" loading="lazy"><div class="card-body"><h3>肺動脈圧</h3><p>肺動脈圧波形テンプレート。収縮期・拡張期の肺動脈圧をプロット。</p></div></a>
+<a href="cardio/pcwp.html" class="card"><img src="img/cardio_pcwp.png" alt="肺動脈楔入圧" loading="lazy"><div class="card-body"><h3>肺動脈楔入圧</h3><p>肺動脈楔入圧テンプレート。左房圧の間接的測定をプロット。</p></div></a>
+<a href="cardio/jvp.html" class="card"><img src="img/cardio_jvp.png" alt="頸静脈波" loading="lazy"><div class="card-body"><h3>頸静脈波</h3><p>頸静脈波テンプレート。a/c/v波とx/y谷をプロット。</p></div></a>
+<a href="cardio/coronary-flow.html" class="card"><img src="img/cardio_coronary_flow.png" alt="冠血流量" loading="lazy"><div class="card-body"><h3>冠血流量</h3><p>冠血流自動調節テンプレート。灌流圧と冠血流の関係をプロット。</p></div></a>
+<a href="cardio/aortic-stenosis.html" class="card"><img src="img/cardio_aortic_stenosis.png" alt="大動脈弁狭窄圧較差" loading="lazy"><div class="card-body"><h3>大動脈弁狭窄圧較差</h3><p>大動脈弁狭窄症の圧較差テンプレート。左室圧と大動脈圧の差をプロット。</p></div></a>
+<a href="cardio/cardiac-cycle.html" class="card"><img src="img/cardio_cardiac_cycle.png" alt="心周期イベント" loading="lazy"><div class="card-body"><h3>心周期イベント</h3><p>心周期の主要イベントテンプレート。弁開閉のタイミングをプロット。</p></div></a>
+<a href="cardio/thermodilution.html" class="card"><img src="img/cardio_thermodilution.png" alt="熱希釈曲線" loading="lazy"><div class="card-body"><h3>熱希釈曲線</h3><p>熱希釈法による心拍出量測定テンプレート。温度変化曲線をプロット。</p></div></a>
+<a href="cardio/preload-afterload.html" class="card"><img src="img/cardio_preload_afterload.png" alt="前負荷-後負荷相互作用" loading="lazy"><div class="card-body"><h3>前負荷-後負荷相互作用</h3><p>前負荷と後負荷の相互作用テンプレート。心機能曲線の変化をプロット。</p></div></a>
+<a href="cardio/bp-waveform.html" class="card"><img src="img/cardio_bp_waveform.png" alt="血圧波形" loading="lazy"><div class="card-body"><h3>血圧波形</h3><p>血圧波形テンプレート。動脈血圧の経時変化をモニタリング。</p></div></a>
+<a href="cardio/ecg-vt.html" class="card"><img src="img/cardio_ecg_vt.png" alt="心電図：心室頻拍" loading="lazy"><div class="card-body"><h3>心電図：心室頻拍</h3><p>心室頻拍の心電図テンプレート。幅広QRS波形の連続をプロット。</p></div></a>
+<a href="cardio/ecg-aflutter.html" class="card"><img src="img/cardio_ecg_aflutter.png" alt="心電図：心房粗動" loading="lazy"><div class="card-body"><h3>心電図：心房粗動</h3><p>心房粗動の心電図テンプレート。鋸歯状のflutter波をプロット。</p></div></a>
+<a href="cardio/mitral-stenosis.html" class="card"><img src="img/cardio_mitral_stenosis.png" alt="僧帽弁狭窄圧較差" loading="lazy"><div class="card-body"><h3>僧帽弁狭窄圧較差</h3><p>僧帽弁狭窄症の圧較差テンプレート。左房圧と左室拡張期圧の差をプロット。</p></div></a></div></section>
+<section class="cat-section" id="chem"><h2><a href="c/chem.html">臨床検査 (10)</a></h2><div class="card-grid"><a href="chem/calibration-curve.html" class="card"><img src="img/chem_calibration_curve.png" alt="検量線" loading="lazy"><div class="card-body"><h3>検量線</h3><p>汎用検量線テンプレート。標準液濃度と測定値の直線関係をプロット。</p></div></a>
+<a href="chem/linearity.html" class="card"><img src="img/chem_linearity.png" alt="直線性評価" loading="lazy"><div class="card-body"><h3>直線性評価</h3><p>直線性評価テンプレート。測定法の直線範囲の確認に使用。</p></div></a>
+<a href="chem/precision-profile.html" class="card"><img src="img/chem_precision_profile.png" alt="精密度プロファイル" loading="lazy"><div class="card-body"><h3>精密度プロファイル</h3><p>精密度プロファイルテンプレート。濃度別の変動係数をプロット。</p></div></a>
+<a href="chem/method-comparison.html" class="card"><img src="img/chem_method_comparison.png" alt="方法比較" loading="lazy"><div class="card-body"><h3>方法比較</h3><p>方法比較テンプレート。参照法と新法の相関をプロット。</p></div></a>
+<a href="chem/interference.html" class="card"><img src="img/chem_interference.png" alt="干渉試験" loading="lazy"><div class="card-body"><h3>干渉試験</h3><p>干渉試験テンプレート。共存物質の影響を評価。</p></div></a>
+<a href="chem/reference-range.html" class="card"><img src="img/chem_reference_range.png" alt="基準範囲" loading="lazy"><div class="card-body"><h3>基準範囲</h3><p>基準範囲テンプレート。各検査項目の正常値範囲をプロット。</p></div></a>
+<a href="chem/qc-chart.html" class="card"><img src="img/chem_qc_chart.png" alt="QC管理図" loading="lazy"><div class="card-body"><h3>QC管理図</h3><p>レビー・ジェニングスQC管理図テンプレート。日常の精度管理に使用。</p></div></a>
+<a href="chem/westgard.html" class="card"><img src="img/chem_westgard.png" alt="ウエストガードルール" loading="lazy"><div class="card-body"><h3>ウエストガードルール</h3><p>ウエストガードルールテンプレート。QCデータの異常判定に使用。</p></div></a>
+<a href="chem/analytical-sensitivity.html" class="card"><img src="img/chem_analytical_sensitivity.png" alt="分析感度" loading="lazy"><div class="card-body"><h3>分析感度</h3><p>分析感度テンプレート。LOD/LOQの決定に使用。</p></div></a>
+<a href="chem/clinical-limits.html" class="card"><img src="img/chem_clinical_limits.png" alt="臨床判断値" loading="lazy"><div class="card-body"><h3>臨床判断値</h3><p>臨床判断値テンプレート。カットオフ値の設定に使用。</p></div></a></div></section>
+<section class="cat-section" id="emer"><h2><a href="c/emer.html">救急 (10)</a></h2><div class="card-grid"><a href="emer/triage.html" class="card"><img src="img/emer_triage.png" alt="トリアージスコアリング" loading="lazy"><div class="card-body"><h3>トリアージスコアリング</h3><p>トリアージスコアリングテンプレート。緊急度分類に使用。</p></div></a>
+<a href="emer/abcde.html" class="card"><img src="img/emer_abcde.png" alt="ABCDE評価" loading="lazy"><div class="card-body"><h3>ABCDE評価</h3><p>ABCDE系統的評価テンプレート。救急初期評価の記録に使用。</p></div></a>
+<a href="emer/iss.html" class="card"><img src="img/emer_iss.png" alt="外傷重症度スコア" loading="lazy"><div class="card-body"><h3>外傷重症度スコア</h3><p>ISS（外傷重症度スコア）テンプレート。6領域のAISスコアをプロット。</p></div></a>
+<a href="emer/rule-of-9s.html" class="card"><img src="img/emer_rule_of_9s.png" alt="熱傷（9の法則）" loading="lazy"><div class="card-body"><h3>熱傷（9の法則）</h3><p>9の法則による熱傷面積テンプレート。TBSA%の算出に使用。</p></div></a>
+<a href="emer/shock-class.html" class="card"><img src="img/emer_shock_class.png" alt="ショック分類" loading="lazy"><div class="card-body"><h3>ショック分類</h3><p>出血性ショック分類テンプレート。I-IV度の出血量と生理学的指標をプロット。</p></div></a>
+<a href="emer/resuscitation.html" class="card"><img src="img/emer_resuscitation.png" alt="蘇生タイムライン" loading="lazy"><div class="card-body"><h3>蘇生タイムライン</h3><p>心肺蘇生タイムラインテンプレート。CPR/除細動/薬剤投与のタイミングをプロット。</p></div></a>
+<a href="emer/toxicology.html" class="card"><img src="img/emer_toxicology.png" alt="中毒スクリーニング" loading="lazy"><div class="card-body"><h3>中毒スクリーニング</h3><p>中毒スクリーニングテンプレート。薬物/毒物の血中濃度を評価。</p></div></a>
+<a href="emer/sepsis-qsofa.html" class="card"><img src="img/emer_sepsis_qsofa.png" alt="敗血症（qSOFA）" loading="lazy"><div class="card-body"><h3>敗血症（qSOFA）</h3><p>qSOFAスコアテンプレート。敗血症のスクリーニングと経過観察に使用。</p></div></a>
+<a href="emer/rapid-sequence.html" class="card"><img src="img/emer_rapid_sequence.png" alt="迅速導入挿管" loading="lazy"><div class="card-body"><h3>迅速導入挿管</h3><p>RSI（迅速導入挿管）タイムラインテンプレート。各ステップのタイミングをプロット。</p></div></a>
+<a href="emer/acls.html" class="card"><img src="img/emer_acls.png" alt="ACLSアルゴリズム" loading="lazy"><div class="card-body"><h3>ACLSアルゴリズム</h3><p>ACLSアルゴリズムテンプレート。心停止対応のタイミングチャートをプロット。</p></div></a></div></section>
+<section class="cat-section" id="endo"><h2><a href="c/endo.html">内分泌 (18)</a></h2><div class="card-grid"><a href="endo/ogtt.html" class="card"><img src="img/endo_ogtt.png" alt="OGTT（経口ブドウ糖負荷試験）" loading="lazy"><div class="card-body"><h3>OGTT（経口ブドウ糖負荷試験）</h3><p>OGTT曲線テンプレート。75gブドウ糖負荷後の血糖変化をプロット。</p></div></a>
+<a href="endo/ogtt-insulin.html" class="card"><img src="img/endo_ogtt_insulin.png" alt="OGTT＋インスリン" loading="lazy"><div class="card-body"><h3>OGTT＋インスリン</h3><p>OGTT＋インスリン同時測定テンプレート。血糖とインスリンの応答を比較。</p></div></a>
+<a href="endo/insulin-response.html" class="card"><img src="img/endo_insulin_response.png" alt="インスリン応答" loading="lazy"><div class="card-body"><h3>インスリン応答</h3><p>インスリン応答テンプレート。糖負荷後のインスリン分泌パターンをプロット。</p></div></a>
+<a href="endo/tsh-feedback.html" class="card"><img src="img/endo_tsh_feedback.png" alt="TSHフィードバック" loading="lazy"><div class="card-body"><h3>TSHフィードバック</h3><p>TSH-T4フィードバックテンプレート。甲状腺ホルモンの負のフィードバックをプロット。</p></div></a>
+<a href="endo/cortisol-diurnal.html" class="card"><img src="img/endo_cortisol_diurnal.png" alt="コルチゾール日内変動" loading="lazy"><div class="card-body"><h3>コルチゾール日内変動</h3><p>コルチゾール日内変動テンプレート。朝高値・夜低値のパターンをプロット。</p></div></a>
+<a href="endo/gh-pulsatile.html" class="card"><img src="img/endo_gh_pulsatile.png" alt="成長ホルモン拍動性分泌" loading="lazy"><div class="card-body"><h3>成長ホルモン拍動性分泌</h3><p>成長ホルモンの拍動性分泌テンプレート。睡眠時の分泌ピークをプロット。</p></div></a>
+<a href="endo/dexamethasone.html" class="card"><img src="img/endo_dexamethasone.png" alt="デキサメタゾン抑制試験" loading="lazy"><div class="card-body"><h3>デキサメタゾン抑制試験</h3><p>デキサメタゾン抑制試験テンプレート。正常応答とクッシング症候群の比較。</p></div></a>
+<a href="endo/glucose-clamp.html" class="card"><img src="img/endo_glucose_clamp.png" alt="グルコースクランプ" loading="lazy"><div class="card-body"><h3>グルコースクランプ</h3><p>グルコースクランプテンプレート。インスリン感受性の定量評価に使用。</p></div></a>
+<a href="endo/hba1c-glucose.html" class="card"><img src="img/endo_hba1c_glucose.png" alt="HbA1c-血糖相関" loading="lazy"><div class="card-body"><h3>HbA1c-血糖相関</h3><p>HbA1c-平均血糖相関テンプレート。HbA1cと血糖値の対応関係をプロット。</p></div></a>
+<a href="endo/calcium-pth.html" class="card"><img src="img/endo_calcium_pth.png" alt="カルシウム-PTH関係" loading="lazy"><div class="card-body"><h3>カルシウム-PTH関係</h3><p>カルシウム-PTH関係テンプレート。血清Caの変化に対するPTH応答をプロット。</p></div></a>
+<a href="endo/insulin-tolerance.html" class="card"><img src="img/endo_insulin_tolerance.png" alt="インスリン負荷試験" loading="lazy"><div class="card-body"><h3>インスリン負荷試験</h3><p>インスリン負荷試験テンプレート。GH・コルチゾール分泌の誘発に使用。</p></div></a>
+<a href="endo/water-deprivation.html" class="card"><img src="img/endo_water_deprivation.png" alt="水制限試験" loading="lazy"><div class="card-body"><h3>水制限試験</h3><p>水制限試験テンプレート。尿崩症の鑑別に使用。</p></div></a>
+<a href="endo/thyroid-levels.html" class="card"><img src="img/endo_thyroid_levels.png" alt="甲状腺ホルモン値" loading="lazy"><div class="card-body"><h3>甲状腺ホルモン値</h3><p>甲状腺ホルモン値テンプレート。甲状腺機能亢進/低下の検査値パターンをプロット。</p></div></a>
+<a href="endo/tanner-stages.html" class="card"><img src="img/endo_tanner_stages.png" alt="タナーステージタイムライン" loading="lazy"><div class="card-body"><h3>タナーステージタイムライン</h3><p>タナーステージタイムラインテンプレート。思春期の発達段階をプロット。</p></div></a>
+<a href="endo/acth-stimulation.html" class="card"><img src="img/endo_acth_stimulation.png" alt="ACTH負荷試験" loading="lazy"><div class="card-body"><h3>ACTH負荷試験</h3><p>ACTH負荷試験テンプレート。副腎機能の評価に使用。</p></div></a>
+<a href="endo/gnrh-pulse.html" class="card"><img src="img/endo_gnrh_pulse.png" alt="GnRHパルスパターン" loading="lazy"><div class="card-body"><h3>GnRHパルスパターン</h3><p>GnRHパルスパターンテンプレート。LH拍動性分泌をプロット。</p></div></a>
+<a href="endo/growth-hormone-stim.html" class="card"><img src="img/endo_growth_hormone_stim.png" alt="成長ホルモン負荷試験" loading="lazy"><div class="card-body"><h3>成長ホルモン負荷試験</h3><p>GH負荷試験テンプレート。GH分泌不全症の診断に使用。</p></div></a>
+<a href="endo/menstrual-cycle.html" class="card"><img src="img/endo_menstrual_cycle.png" alt="月経周期ホルモン" loading="lazy"><div class="card-body"><h3>月経周期ホルモン</h3><p>月経周期のホルモン変動テンプレート。FSH/LH/E2/Progesteroneの推移をプロット。</p></div></a></div></section>
+<section class="cat-section" id="epi"><h2><a href="c/epi.html">疫学・公衆衛生 (18)</a></h2><div class="card-grid"><a href="epi/epidemic-point.html" class="card"><img src="img/epi_epidemic_point.png" alt="流行曲線（点源）" loading="lazy"><div class="card-body"><h3>流行曲線（点源）</h3><p>点源型流行曲線テンプレート。一回の曝露による集団発生パターンをプロット。</p></div></a>
+<a href="epi/epidemic-continuous.html" class="card"><img src="img/epi_epidemic_continuous.png" alt="流行曲線（持続）" loading="lazy"><div class="card-body"><h3>流行曲線（持続）</h3><p>持続型流行曲線テンプレート。継続的な曝露による発生パターンをプロット。</p></div></a>
+<a href="epi/epidemic-propagated.html" class="card"><img src="img/epi_epidemic_propagated.png" alt="流行曲線（伝播）" loading="lazy"><div class="card-body"><h3>流行曲線（伝播）</h3><p>伝播型流行曲線テンプレート。人から人への感染伝播パターンをプロット。</p></div></a>
+<a href="epi/2x2-table.html" class="card"><img src="img/epi_2x2_table.png" alt="2x2分割表" loading="lazy"><div class="card-body"><h3>2x2分割表</h3><p>2x2分割表テンプレート。疫学研究のリスク評価（RR/OR）に使用。</p></div></a>
+<a href="epi/survival-generic.html" class="card"><img src="img/epi_survival_generic.png" alt="生存曲線（汎用）" loading="lazy"><div class="card-body"><h3>生存曲線（汎用）</h3><p>汎用生存曲線テンプレート。治療群別の生存確率をプロット。</p></div></a>
+<a href="epi/incidence-time.html" class="card"><img src="img/epi_incidence_time.png" alt="罹患率の推移" loading="lazy"><div class="card-body"><h3>罹患率の推移</h3><p>罹患率の経年推移テンプレート。疾患の時間的トレンドをプロット。</p></div></a>
+<a href="epi/or-forest.html" class="card"><img src="img/epi_or_forest.png" alt="オッズ比フォレストプロット" loading="lazy"><div class="card-body"><h3>オッズ比フォレストプロット</h3><p>オッズ比のフォレストプロットテンプレート。メタ分析の結果表示に使用。</p></div></a>
+<a href="epi/nnt.html" class="card"><img src="img/epi_nnt.png" alt="NNT（治療必要数）" loading="lazy"><div class="card-body"><h3>NNT（治療必要数）</h3><p>NNT（治療必要数）テンプレート。介入効果の臨床的意義を比較。</p></div></a>
+<a href="epi/screening.html" class="card"><img src="img/epi_screening.png" alt="スクリーニング検査特性" loading="lazy"><div class="card-body"><h3>スクリーニング検査特性</h3><p>スクリーニング検査の感度-特異度テンプレート。カットオフ値の最適化に使用。</p></div></a>
+<a href="epi/prevalence-trend.html" class="card"><img src="img/epi_prevalence_trend.png" alt="有病率推移" loading="lazy"><div class="card-body"><h3>有病率推移</h3><p>有病率の経年推移テンプレート。慢性疾患の疫学トレンドをプロット。</p></div></a>
+<a href="epi/age-standardization.html" class="card"><img src="img/epi_age_standardization.png" alt="年齢調整" loading="lazy"><div class="card-body"><h3>年齢調整</h3><p>年齢調整死亡率テンプレート。粗死亡率と年齢調整死亡率の比較に使用。</p></div></a>
+<a href="epi/cohort-diagram.html" class="card"><img src="img/epi_cohort_diagram.png" alt="コホート研究図" loading="lazy"><div class="card-body"><h3>コホート研究図</h3><p>コホート研究のテンプレート。曝露群と非曝露群の累積罹患率を比較。</p></div></a>
+<a href="epi/case-control.html" class="card"><img src="img/epi_case_control.png" alt="症例対照研究" loading="lazy"><div class="card-body"><h3>症例対照研究</h3><p>症例対照研究テンプレート。症例群と対照群の曝露率を比較。</p></div></a>
+<a href="epi/dose-response-epi.html" class="card"><img src="img/epi_dose_response_epi.png" alt="用量反応関係（疫学）" loading="lazy"><div class="card-body"><h3>用量反応関係（疫学）</h3><p>疫学的用量反応関係テンプレート。曝露量と相対リスクの関係をプロット。</p></div></a>
+<a href="epi/outbreak-timeline.html" class="card"><img src="img/epi_outbreak_timeline.png" alt="アウトブレイク調査タイムライン" loading="lazy"><div class="card-body"><h3>アウトブレイク調査タイムライン</h3><p>アウトブレイク調査タイムラインテンプレート。発症者数と対策時期をプロット。</p></div></a>
+<a href="epi/rr-plot.html" class="card"><img src="img/epi_rr_plot.png" alt="リスク比プロット" loading="lazy"><div class="card-body"><h3>リスク比プロット</h3><p>リスク比のプロットテンプレート。コホート研究の結果表示に使用。</p></div></a>
+<a href="epi/lead-time-bias.html" class="card"><img src="img/epi_lead_time_bias.png" alt="リードタイムバイアス" loading="lazy"><div class="card-body"><h3>リードタイムバイアス</h3><p>リードタイムバイアスの概念テンプレート。早期診断が見かけの生存期間に与える影響をプロット。</p></div></a>
+<a href="epi/length-time-bias.html" class="card"><img src="img/epi_length_time_bias.png" alt="レングスタイムバイアス" loading="lazy"><div class="card-body"><h3>レングスタイムバイアス</h3><p>レングスタイムバイアスの概念テンプレート。進行の遅い疾患が多く検出される偏りを示す。</p></div></a></div></section>
+<section class="cat-section" id="eye"><h2><a href="c/eye.html">眼科 (10)</a></h2><div class="card-grid"><a href="eye/visual-acuity.html" class="card"><img src="img/eye_visual_acuity.png" alt="視力検査" loading="lazy"><div class="card-body"><h3>視力検査</h3><p>視力検査テンプレート。矯正/非矯正視力の記録に使用。</p></div></a>
+<a href="eye/visual-field.html" class="card"><img src="img/eye_visual_field.png" alt="視野検査" loading="lazy"><div class="card-body"><h3>視野検査</h3><p>視野検査テンプレート。自動視野計の結果をプロット。</p></div></a>
+<a href="eye/iop.html" class="card"><img src="img/eye_iop.png" alt="眼圧" loading="lazy"><div class="card-body"><h3>眼圧</h3><p>眼圧日内変動テンプレート。緑内障の評価に使用。</p></div></a>
+<a href="eye/dark-adaptation.html" class="card"><img src="img/eye_dark_adaptation.png" alt="暗順応曲線" loading="lazy"><div class="card-body"><h3>暗順応曲線</h3><p>暗順応曲線テンプレート。錐体-杆体の二段階適応をプロット。</p></div></a>
+<a href="eye/accommodation.html" class="card"><img src="img/eye_accommodation.png" alt="調節力曲線" loading="lazy"><div class="card-body"><h3>調節力曲線</h3><p>調節力-年齢曲線テンプレート。加齢による調節力低下をプロット。</p></div></a>
+<a href="eye/erg.html" class="card"><img src="img/eye_erg.png" alt="網膜電図" loading="lazy"><div class="card-body"><h3>網膜電図</h3><p>ERGテンプレート。a波/b波の振幅と潜時を測定。</p></div></a>
+<a href="eye/fundus.html" class="card"><img src="img/eye_fundus.png" alt="眼底図" loading="lazy"><div class="card-body"><h3>眼底図</h3><p>眼底図テンプレート。所見の記録とスケッチに使用。</p></div></a>
+<a href="eye/corneal-topography.html" class="card"><img src="img/eye_corneal_topography.png" alt="角膜トポグラフィー" loading="lazy"><div class="card-body"><h3>角膜トポグラフィー</h3><p>角膜トポグラフィーテンプレート。角膜形状の解析に使用。</p></div></a>
+<a href="eye/color-vision.html" class="card"><img src="img/eye_color_vision.png" alt="色覚検査" loading="lazy"><div class="card-body"><h3>色覚検査</h3><p>色覚検査テンプレート。石原表等の結果記録に使用。</p></div></a>
+<a href="eye/oct.html" class="card"><img src="img/eye_oct.png" alt="OCT層構造テンプレート" loading="lazy"><div class="card-body"><h3>OCT層構造テンプレート</h3><p>OCT網膜層構造テンプレート。黄斑厚の測定に使用。</p></div></a></div></section>
+<section class="cat-section" id="gi"><h2><a href="c/gi.html">消化器 (12)</a></h2><div class="card-grid"><a href="gi/gastric-acid.html" class="card"><img src="img/gi_gastric_acid.png" alt="胃酸分泌曲線" loading="lazy"><div class="card-body"><h3>胃酸分泌曲線</h3><p>胃酸分泌曲線テンプレート。基礎分泌と刺激後分泌をプロット。</p></div></a>
+<a href="gi/intestinal-absorption.html" class="card"><img src="img/gi_intestinal_absorption.png" alt="腸管吸収曲線" loading="lazy"><div class="card-body"><h3>腸管吸収曲線</h3><p>腸管部位別吸収曲線テンプレート。栄養素の吸収部位と効率をプロット。</p></div></a>
+<a href="gi/lft-panel.html" class="card"><img src="img/gi_lft_panel.png" alt="肝機能検査パネル" loading="lazy"><div class="card-body"><h3>肝機能検査パネル</h3><p>肝機能検査パネルテンプレート。AST/ALT/ALP/T-Bil/Alb等をプロット。</p></div></a>
+<a href="gi/child-pugh.html" class="card"><img src="img/gi_child_pugh.png" alt="チャイルド・ピュースコア" loading="lazy"><div class="card-body"><h3>チャイルド・ピュースコア</h3><p>チャイルド・ピュースコアテンプレート。肝硬変の重症度評価に使用。</p></div></a>
+<a href="gi/meld-score.html" class="card"><img src="img/gi_meld_score.png" alt="MELDスコア" loading="lazy"><div class="card-body"><h3>MELDスコア</h3><p>MELDスコアテンプレート。肝移植の優先度評価に使用。</p></div></a>
+<a href="gi/esophageal-ph.html" class="card"><img src="img/gi_esophageal_ph.png" alt="食道pH測定" loading="lazy"><div class="card-body"><h3>食道pH測定</h3><p>24時間食道pHモニタリングテンプレート。GERDの診断に使用。</p></div></a>
+<a href="gi/gastric-emptying.html" class="card"><img src="img/gi_gastric_emptying.png" alt="胃排出曲線" loading="lazy"><div class="card-body"><h3>胃排出曲線</h3><p>胃排出曲線テンプレート。食後の胃内残留率の経時変化をプロット。</p></div></a>
+<a href="gi/hydrogen-breath.html" class="card"><img src="img/gi_hydrogen_breath.png" alt="水素呼気試験" loading="lazy"><div class="card-body"><h3>水素呼気試験</h3><p>水素呼気試験テンプレート。乳糖不耐症やSIBOの診断に使用。</p></div></a>
+<a href="gi/bilirubin-metabolism.html" class="card"><img src="img/gi_bilirubin_metabolism.png" alt="ビリルビン代謝" loading="lazy"><div class="card-body"><h3>ビリルビン代謝</h3><p>ビリルビン代謝テンプレート。直接型/間接型の比較に使用。</p></div></a>
+<a href="gi/liver-elastography.html" class="card"><img src="img/gi_liver_elastography.png" alt="肝エラストグラフィー" loading="lazy"><div class="card-body"><h3>肝エラストグラフィー</h3><p>肝エラストグラフィーテンプレート。肝線維化ステージと硬度の関係をプロット。</p></div></a>
+<a href="gi/pancreatic-function.html" class="card"><img src="img/gi_pancreatic_function.png" alt="膵機能検査" loading="lazy"><div class="card-body"><h3>膵機能検査</h3><p>膵機能検査テンプレート。セクレチン/CCK負荷後の膵外分泌機能を評価。</p></div></a>
+<a href="gi/intestinal-transit.html" class="card"><img src="img/gi_intestinal_transit.png" alt="腸管通過時間" loading="lazy"><div class="card-body"><h3>腸管通過時間</h3><p>腸管通過時間テンプレート。消化管各部位の通過時間をプロット。</p></div></a></div></section>
+<section class="cat-section" id="hemato"><h2><a href="c/hemato.html">血液 (18)</a></h2><div class="card-grid"><a href="hemato/cbc-reference.html" class="card"><img src="img/hemato_cbc_reference.png" alt="CBC基準値" loading="lazy"><div class="card-body"><h3>CBC基準値</h3><p>CBC（全血球算定）基準値テンプレート。各血球系の基準範囲をプロット。</p></div></a>
+<a href="hemato/hb-electrophoresis.html" class="card"><img src="img/hemato_hb_electrophoresis.png" alt="ヘモグロビン電気泳動" loading="lazy"><div class="card-body"><h3>ヘモグロビン電気泳動</h3><p>ヘモグロビン電気泳動テンプレート。HbA/HbS/HbC等の分離パターンをプロット。</p></div></a>
+<a href="hemato/iron-studies.html" class="card"><img src="img/hemato_iron_studies.png" alt="鉄代謝パネル" loading="lazy"><div class="card-body"><h3>鉄代謝パネル</h3><p>鉄代謝パネルテンプレート。Fe/TIBC/フェリチン/TSAT等をプロット。</p></div></a>
+<a href="hemato/coagulation-cascade.html" class="card"><img src="img/hemato_coagulation_cascade.png" alt="凝固カスケード" loading="lazy"><div class="card-body"><h3>凝固カスケード</h3><p>凝固カスケードテンプレート。各凝固因子の活性を時間経過でプロット。</p></div></a>
+<a href="hemato/pt-inr.html" class="card"><img src="img/hemato_pt_inr.png" alt="PT/INRモニタリング" loading="lazy"><div class="card-body"><h3>PT/INRモニタリング</h3><p>PT/INRモニタリングテンプレート。ワーファリン投与中のINR推移をプロット。</p></div></a>
+<a href="hemato/aptt-curve.html" class="card"><img src="img/hemato_aptt_curve.png" alt="aPTT曲線" loading="lazy"><div class="card-body"><h3>aPTT曲線</h3><p>aPTT曲線テンプレート。ヘパリン投与量とaPTTの関係をプロット。</p></div></a>
+<a href="hemato/platelet-aggregation.html" class="card"><img src="img/hemato_platelet_aggregation.png" alt="血小板凝集" loading="lazy"><div class="card-body"><h3>血小板凝集</h3><p>血小板凝集テンプレート。ADP/コラーゲン等の刺激剤別応答をプロット。</p></div></a>
+<a href="hemato/reticulocyte.html" class="card"><img src="img/hemato_reticulocyte.png" alt="網赤血球数" loading="lazy"><div class="card-body"><h3>網赤血球数</h3><p>網赤血球数の経時変化テンプレート。貧血治療効果の評価に使用。</p></div></a>
+<a href="hemato/esr-curve.html" class="card"><img src="img/hemato_esr_curve.png" alt="赤沈曲線" loading="lazy"><div class="card-body"><h3>赤沈曲線</h3><p>赤沈曲線テンプレート。赤血球沈降速度の経時変化をプロット。</p></div></a>
+<a href="hemato/d-dimer.html" class="card"><img src="img/hemato_d_dimer.png" alt="Dダイマー値" loading="lazy"><div class="card-body"><h3>Dダイマー値</h3><p>Dダイマー値の経時変化テンプレート。DICやDVTのモニタリングに使用。</p></div></a>
+<a href="hemato/hemolysis-markers.html" class="card"><img src="img/hemato_hemolysis_markers.png" alt="溶血マーカー" loading="lazy"><div class="card-body"><h3>溶血マーカー</h3><p>溶血マーカーテンプレート。LDH/Haptoglobin/間接Bil等をプロット。</p></div></a>
+<a href="hemato/dic-scoring.html" class="card"><img src="img/hemato_dic_scoring.png" alt="DICスコアリング" loading="lazy"><div class="card-body"><h3>DICスコアリング</h3><p>DIC診断スコアリングテンプレート。血小板/PT/FDP/フィブリノーゲンをスコア化。</p></div></a>
+<a href="hemato/blood-type.html" class="card"><img src="img/hemato_blood_type.png" alt="血液型テンプレート" loading="lazy"><div class="card-body"><h3>血液型テンプレート</h3><p>血液型判定テンプレート。抗A/抗B/抗D血清との凝集反応をプロット。</p></div></a>
+<a href="hemato/thromboelastography.html" class="card"><img src="img/hemato_thromboelastography.png" alt="トロンボエラストグラフィー" loading="lazy"><div class="card-body"><h3>トロンボエラストグラフィー</h3><p>TEGテンプレート。凝固・線溶の全過程を評価。R/K/MA/Lyをプロット。</p></div></a>
+<a href="hemato/coag-factor-levels.html" class="card"><img src="img/hemato_coag_factor_levels.png" alt="凝固因子レベル" loading="lazy"><div class="card-body"><h3>凝固因子レベル</h3><p>凝固因子活性レベルテンプレート。各因子の活性を正常値と比較。</p></div></a>
+<a href="hemato/peripheral-smear.html" class="card"><img src="img/hemato_peripheral_smear.png" alt="末梢血塗抹テンプレート" loading="lazy"><div class="card-body"><h3>末梢血塗抹テンプレート</h3><p>末梢血塗抹テンプレート。白血球分画と形態異常の記録に使用。</p></div></a>
+<a href="hemato/bleeding-time.html" class="card"><img src="img/hemato_bleeding_time.png" alt="出血時間" loading="lazy"><div class="card-body"><h3>出血時間</h3><p>出血時間テンプレート。一次止血の評価に使用。</p></div></a>
+<a href="hemato/crossmatch.html" class="card"><img src="img/hemato_crossmatch.png" alt="交差適合試験テンプレート" loading="lazy"><div class="card-body"><h3>交差適合試験テンプレート</h3><p>交差適合試験テンプレート。主試験・副試験の結果記録に使用。</p></div></a></div></section>
+<section class="cat-section" id="immuno"><h2><a href="c/immuno.html">免疫学 (20)</a></h2><div class="card-grid"><a href="immuno/primary-secondary.html" class="card"><img src="img/immuno_primary_secondary.png" alt="一次二次免疫応答" loading="lazy"><div class="card-body"><h3>一次二次免疫応答</h3><p>一次・二次免疫応答テンプレート。抗体価の時間経過と一次/二次の差をプロット。</p></div></a>
+<a href="immuno/elisa-standard.html" class="card"><img src="img/immuno_elisa_standard.png" alt="ELISA検量線" loading="lazy"><div class="card-body"><h3>ELISA検量線</h3><p>ELISA検量線テンプレート。抗原濃度と吸光度の関係をプロット。定量に使用。</p></div></a>
+<a href="immuno/ch50.html" class="card"><img src="img/immuno_ch50.png" alt="CH50補体活性" loading="lazy"><div class="card-body"><h3>CH50補体活性</h3><p>CH50補体活性テンプレート。血清希釈と溶血率の関係から補体価を決定。</p></div></a>
+<a href="immuno/facs-dot-plot.html" class="card"><img src="img/immuno_facs_dot_plot.png" alt="フローサイトメトリー散布図" loading="lazy"><div class="card-body"><h3>フローサイトメトリー散布図</h3><p>フローサイトメトリー散布図テンプレート。CD4/CD8等の二重染色解析に使用。</p></div></a>
+<a href="immuno/facs-histogram.html" class="card"><img src="img/immuno_facs_histogram.png" alt="フローサイトメトリーヒストグラム" loading="lazy"><div class="card-body"><h3>フローサイトメトリーヒストグラム</h3><p>フローサイトメトリーヒストグラムテンプレート。蛍光強度の分布をプロット。</p></div></a>
+<a href="immuno/antibody-titer.html" class="card"><img src="img/immuno_antibody_titer.png" alt="抗体価曲線" loading="lazy"><div class="card-body"><h3>抗体価曲線</h3><p>ワクチン接種後の抗体価経時変化テンプレート。IgM・IgG等の推移をプロット。</p></div></a>
+<a href="immuno/cell-proliferation.html" class="card"><img src="img/immuno_cell_proliferation.png" alt="細胞増殖アッセイ" loading="lazy"><div class="card-body"><h3>細胞増殖アッセイ</h3><p>リンパ球増殖アッセイテンプレート。刺激濃度と増殖指数の関係をプロット。</p></div></a>
+<a href="immuno/cytotoxicity.html" class="card"><img src="img/immuno_cytotoxicity.png" alt="細胞傷害アッセイ" loading="lazy"><div class="card-body"><h3>細胞傷害アッセイ</h3><p>細胞傷害性アッセイテンプレート。E:T比と特異的溶解率の関係をプロット。</p></div></a>
+<a href="immuno/cytokine-profile.html" class="card"><img src="img/immuno_cytokine_profile.png" alt="サイトカインプロファイル" loading="lazy"><div class="card-body"><h3>サイトカインプロファイル</h3><p>サイトカイン応答プロファイルテンプレート。IL-1/TNF/IL-6等の時間経過をプロット。</p></div></a>
+<a href="immuno/ig-levels-age.html" class="card"><img src="img/immuno_ig_levels_age.png" alt="年齢別免疫グロブリン値" loading="lazy"><div class="card-body"><h3>年齢別免疫グロブリン値</h3><p>年齢別免疫グロブリン値テンプレート。IgG/IgM/IgAの発達変化をプロット。</p></div></a>
+<a href="immuno/vaccine-response.html" class="card"><img src="img/immuno_vaccine_response.png" alt="ワクチン応答曲線" loading="lazy"><div class="card-body"><h3>ワクチン応答曲線</h3><p>ワクチン接種後の免疫応答曲線テンプレート。抗体価の上昇と維持をプロット。</p></div></a>
+<a href="immuno/precipitation.html" class="card"><img src="img/immuno_precipitation.png" alt="沈降反応曲線" loading="lazy"><div class="card-body"><h3>沈降反応曲線</h3><p>沈降反応曲線（Heidelberger-Kendall曲線）テンプレート。至適比をプロット。</p></div></a>
+<a href="immuno/complement-timeline.html" class="card"><img src="img/immuno_complement_timeline.png" alt="補体活性化タイムライン" loading="lazy"><div class="card-body"><h3>補体活性化タイムライン</h3><p>補体活性化の時間経過テンプレート。古典経路・副経路の活性化をプロット。</p></div></a>
+<a href="immuno/affinity-maturation.html" class="card"><img src="img/immuno_affinity_maturation.png" alt="親和性成熟" loading="lazy"><div class="card-body"><h3>親和性成熟</h3><p>親和性成熟テンプレート。二次応答での抗体親和性上昇をプロット。</p></div></a>
+<a href="immuno/neutralization.html" class="card"><img src="img/immuno_neutralization.png" alt="中和試験" loading="lazy"><div class="card-body"><h3>中和試験</h3><p>中和試験テンプレート。血清希釈と中和率の関係をプロット。</p></div></a>
+<a href="immuno/western-blot.html" class="card"><img src="img/immuno_western_blot.png" alt="ウエスタンブロットテンプレート" loading="lazy"><div class="card-body"><h3>ウエスタンブロットテンプレート</h3><p>ウエスタンブロットのバンド強度定量テンプレート。</p></div></a>
+<a href="immuno/mlr.html" class="card"><img src="img/immuno_mlr.png" alt="混合リンパ球反応" loading="lazy"><div class="card-body"><h3>混合リンパ球反応</h3><p>混合リンパ球反応テンプレート。刺激細胞数と増殖応答の関係をプロット。</p></div></a>
+<a href="immuno/immunodiffusion.html" class="card"><img src="img/immuno_immunodiffusion.png" alt="放射免疫拡散" loading="lazy"><div class="card-body"><h3>放射免疫拡散</h3><p>放射免疫拡散法テンプレート。抗原濃度とリング直径の関係をプロット。</p></div></a>
+<a href="immuno/hypersensitivity.html" class="card"><img src="img/immuno_hypersensitivity.png" alt="過敏反応タイムライン" loading="lazy"><div class="card-body"><h3>過敏反応タイムライン</h3><p>過敏反応の時間経過テンプレート。I-IV型の発症時間の違いをプロット。</p></div></a>
+<a href="immuno/lymphocyte-subset.html" class="card"><img src="img/immuno_lymphocyte_subset.png" alt="リンパ球サブセット" loading="lazy"><div class="card-body"><h3>リンパ球サブセット</h3><p>リンパ球サブセットのカウントテンプレート。CD4/CD8/B/NK細胞数をプロット。</p></div></a></div></section>
+<section class="cat-section" id="micro"><h2><a href="c/micro.html">微生物学 (20)</a></h2><div class="card-grid"><a href="micro/bacterial-growth.html" class="card"><img src="img/micro_bacterial_growth.png" alt="細菌増殖曲線" loading="lazy"><div class="card-body"><h3>細菌増殖曲線</h3><p>細菌増殖曲線テンプレート。Lag・Log・Stationary・Death phaseをプロット。</p></div></a>
+<a href="micro/time-kill.html" class="card"><img src="img/micro_time_kill.png" alt="Time-Kill曲線" loading="lazy"><div class="card-body"><h3>Time-Kill曲線</h3><p>Time-Kill曲線テンプレート。抗菌薬濃度別の殺菌効果を時間経過でプロット。</p></div></a>
+<a href="micro/mic-determination.html" class="card"><img src="img/micro_mic_determination.png" alt="MIC測定" loading="lazy"><div class="card-body"><h3>MIC測定</h3><p>MIC（最小発育阻止濃度）測定テンプレート。微量液体希釈法での結果をプロット。</p></div></a>
+<a href="micro/disk-diffusion.html" class="card"><img src="img/micro_disk_diffusion.png" alt="ディスク拡散法" loading="lazy"><div class="card-body"><h3>ディスク拡散法</h3><p>ディスク拡散法（阻止円）テンプレート。抗菌薬ごとの阻止円径をプロット。</p></div></a>
+<a href="micro/biofilm-formation.html" class="card"><img src="img/micro_biofilm_formation.png" alt="バイオフィルム形成曲線" loading="lazy"><div class="card-body"><h3>バイオフィルム形成曲線</h3><p>バイオフィルム形成曲線テンプレート。付着・成熟・分散の各段階をプロット。</p></div></a>
+<a href="micro/virus-growth.html" class="card"><img src="img/micro_virus_growth.png" alt="一段階増殖曲線" loading="lazy"><div class="card-body"><h3>一段階増殖曲線</h3><p>ウイルスの一段階増殖曲線テンプレート。暗黒期・放出期をプロット。</p></div></a>
+<a href="micro/pcr-amplification.html" class="card"><img src="img/micro_pcr_amplification.png" alt="PCR増幅曲線" loading="lazy"><div class="card-body"><h3>PCR増幅曲線</h3><p>リアルタイムPCR増幅曲線テンプレート。Ct値の決定に使用。</p></div></a>
+<a href="micro/qpcr.html" class="card"><img src="img/micro_qpcr.png" alt="リアルタイムqPCR" loading="lazy"><div class="card-body"><h3>リアルタイムqPCR</h3><p>定量PCRテンプレート。複数サンプルのCt値を比較プロット。</p></div></a>
+<a href="micro/serial-dilution.html" class="card"><img src="img/micro_serial_dilution.png" alt="段階希釈プロット" loading="lazy"><div class="card-body"><h3>段階希釈プロット</h3><p>段階希釈法による菌数計測テンプレート。希釈倍率と集落数の関係をプロット。</p></div></a>
+<a href="micro/temp-growth.html" class="card"><img src="img/micro_temp_growth.png" alt="温度-増殖速度" loading="lazy"><div class="card-body"><h3>温度-増殖速度</h3><p>温度と増殖速度の関係テンプレート。至適温度の決定に使用。</p></div></a>
+<a href="micro/ph-growth.html" class="card"><img src="img/micro_ph_growth.png" alt="pH-増殖速度" loading="lazy"><div class="card-body"><h3>pH-増殖速度</h3><p>pHと増殖速度の関係テンプレート。至適pHの決定に使用。</p></div></a>
+<a href="micro/antimicrobial-combo.html" class="card"><img src="img/micro_antimicrobial_combo.png" alt="抗菌薬併用効果（FIC）" loading="lazy"><div class="card-body"><h3>抗菌薬併用効果（FIC）</h3><p>FICインデックスによる抗菌薬併用効果テンプレート。相乗・相加・拮抗を判定。</p></div></a>
+<a href="micro/mutation-rate.html" class="card"><img src="img/micro_mutation_rate.png" alt="突然変異率" loading="lazy"><div class="card-body"><h3>突然変異率</h3><p>突然変異率テンプレート。世代数と変異頻度の関係をプロット。</p></div></a>
+<a href="micro/antibiogram.html" class="card"><img src="img/micro_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="card-body"><h3>アンチバイオグラム</h3><p>アンチバイオグラムテンプレート。菌種ごとの抗菌薬感受性パターンをプロット。</p></div></a>
+<a href="micro/growth-log-phase.html" class="card"><img src="img/micro_growth_log_phase.png" alt="増殖曲線（対数期）" loading="lazy"><div class="card-body"><h3>増殖曲線（対数期）</h3><p>対数増殖期のプロットテンプレート。比増殖速度と倍加時間の決定に使用。</p></div></a>
+<a href="micro/sterilization.html" class="card"><img src="img/micro_sterilization.png" alt="滅菌曲線" loading="lazy"><div class="card-body"><h3>滅菌曲線</h3><p>滅菌曲線テンプレート。D値（decimal reduction time）の決定に使用。</p></div></a>
+<a href="micro/plaque-assay.html" class="card"><img src="img/micro_plaque_assay.png" alt="プラークアッセイ" loading="lazy"><div class="card-body"><h3>プラークアッセイ</h3><p>プラークアッセイによるウイルス価測定テンプレート。</p></div></a>
+<a href="micro/gel-electrophoresis.html" class="card"><img src="img/micro_gel_electrophoresis.png" alt="ゲル電気泳動" loading="lazy"><div class="card-body"><h3>ゲル電気泳動</h3><p>アガロースゲル電気泳動の分子量推定テンプレート。DNA断片のサイズ推定に使用。</p></div></a>
+<a href="micro/kill-kinetics.html" class="card"><img src="img/micro_kill_kinetics.png" alt="殺菌速度論" loading="lazy"><div class="card-body"><h3>殺菌速度論</h3><p>殺菌速度論テンプレート。生残率の時間変化をプロット。</p></div></a>
+<a href="micro/cfu-count.html" class="card"><img src="img/micro_cfu_count.png" alt="CFUカウントプロット" loading="lazy"><div class="card-body"><h3>CFUカウントプロット</h3><p>コロニー形成単位（CFU）のカウントプロットテンプレート。</p></div></a></div></section>
+<section class="cat-section" id="nephro"><h2><a href="c/nephro.html">腎臓 (15)</a></h2><div class="card-grid"><a href="nephro/gfr-measurement.html" class="card"><img src="img/nephro_gfr_measurement.png" alt="GFR測定" loading="lazy"><div class="card-body"><h3>GFR測定</h3><p>GFR測定テンプレート。イヌリンクリアランスによる糸球体濾過量の評価。</p></div></a>
+<a href="nephro/creatinine-clearance.html" class="card"><img src="img/nephro_creatinine_clearance.png" alt="クレアチニンクリアランス" loading="lazy"><div class="card-body"><h3>クレアチニンクリアランス</h3><p>クレアチニンクリアランステンプレート。腎機能の経時的評価に使用。</p></div></a>
+<a href="nephro/glucose-titration.html" class="card"><img src="img/nephro_glucose_titration.png" alt="ブドウ糖滴定曲線（TmG）" loading="lazy"><div class="card-body"><h3>ブドウ糖滴定曲線（TmG）</h3><p>ブドウ糖滴定曲線テンプレート。濾過・再吸収・排泄の関係をプロット。</p></div></a>
+<a href="nephro/pah-titration.html" class="card"><img src="img/nephro_pah_titration.png" alt="PAH滴定曲線" loading="lazy"><div class="card-body"><h3>PAH滴定曲線</h3><p>PAH滴定曲線テンプレート。腎血漿流量（RPF）とTmPAHの決定に使用。</p></div></a>
+<a href="nephro/acidbase-nomogram.html" class="card"><img src="img/nephro_acidbase_nomogram.png" alt="酸塩基平衡ノモグラム" loading="lazy"><div class="card-body"><h3>酸塩基平衡ノモグラム</h3><p>酸塩基平衡ノモグラムテンプレート。pH/HCO3-/PCO2の関係を評価。</p></div></a>
+<a href="nephro/davenport.html" class="card"><img src="img/nephro_davenport.png" alt="ダベンポートダイアグラム" loading="lazy"><div class="card-body"><h3>ダベンポートダイアグラム</h3><p>ダベンポートダイアグラムテンプレート。酸塩基障害の病態を図示。</p></div></a>
+<a href="nephro/anion-gap.html" class="card"><img src="img/nephro_anion_gap.png" alt="アニオンギャップ" loading="lazy"><div class="card-body"><h3>アニオンギャップ</h3><p>アニオンギャップのテンプレート。血清電解質の構成をプロット。</p></div></a>
+<a href="nephro/rta-comparison.html" class="card"><img src="img/nephro_rta_comparison.png" alt="RTA比較" loading="lazy"><div class="card-body"><h3>RTA比較</h3><p>尿細管性アシドーシス（RTA）の型比較テンプレート。I/II/IV型を比較。</p></div></a>
+<a href="nephro/urine-concentration.html" class="card"><img src="img/nephro_urine_concentration.png" alt="尿濃縮" loading="lazy"><div class="card-body"><h3>尿濃縮</h3><p>尿濃縮テンプレート。尿流量と尿浸透圧の関係をプロット。ADHの影響を評価。</p></div></a>
+<a href="nephro/adh-response.html" class="card"><img src="img/nephro_adh_response.png" alt="ADH応答" loading="lazy"><div class="card-body"><h3>ADH応答</h3><p>ADH応答テンプレート。血漿浸透圧とADH分泌の関係をプロット。</p></div></a>
+<a href="nephro/aldosterone-response.html" class="card"><img src="img/nephro_aldosterone_response.png" alt="アルドステロン応答" loading="lazy"><div class="card-body"><h3>アルドステロン応答</h3><p>アルドステロン応答テンプレート。カリウム濃度とアルドステロン分泌の関係をプロット。</p></div></a>
+<a href="nephro/rpf.html" class="card"><img src="img/nephro_rpf.png" alt="腎血漿流量" loading="lazy"><div class="card-body"><h3>腎血漿流量</h3><p>腎血漿流量テンプレート。灌流圧とRPFの関係をプロット。</p></div></a>
+<a href="nephro/filtration-fraction.html" class="card"><img src="img/nephro_filtration_fraction.png" alt="濾過率" loading="lazy"><div class="card-body"><h3>濾過率</h3><p>濾過率テンプレート。GFRとRPFの比をプロット。</p></div></a>
+<a href="nephro/bun-cr-ratio.html" class="card"><img src="img/nephro_bun_cr_ratio.png" alt="BUN/Cr比" loading="lazy"><div class="card-body"><h3>BUN/Cr比</h3><p>BUN/Cr比テンプレート。腎前性/腎性/腎後性の鑑別に使用。</p></div></a>
+<a href="nephro/raas.html" class="card"><img src="img/nephro_raas.png" alt="RAAS応答" loading="lazy"><div class="card-body"><h3>RAAS応答</h3><p>レニン-アンジオテンシン-アルドステロン系応答テンプレート。血圧との関係をプロット。</p></div></a></div></section>
+<section class="cat-section" id="neuro"><h2><a href="c/neuro.html">神経科学 (22)</a></h2><div class="card-grid"><a href="neuro/eeg-normal.html" class="card"><img src="img/neuro_eeg_normal.png" alt="脳波（正常）" loading="lazy"><div class="card-body"><h3>脳波（正常）</h3><p>正常脳波テンプレート。アルファ波（8-13Hz）の正常パターンをプロット。</p></div></a>
+<a href="neuro/eeg-epileptic.html" class="card"><img src="img/neuro_eeg_epileptic.png" alt="脳波（てんかん）" loading="lazy"><div class="card-body"><h3>脳波（てんかん）</h3><p>てんかん脳波テンプレート。棘波/棘徐波複合のパターンをプロット。</p></div></a>
+<a href="neuro/eeg-sleep.html" class="card"><img src="img/neuro_eeg_sleep.png" alt="脳波（睡眠段階）" loading="lazy"><div class="card-body"><h3>脳波（睡眠段階）</h3><p>睡眠段階の脳波テンプレート。N1-N3/REMのサイクルをプロット。</p></div></a>
+<a href="neuro/ncv.html" class="card"><img src="img/neuro_ncv.png" alt="神経伝導検査" loading="lazy"><div class="card-body"><h3>神経伝導検査</h3><p>神経伝導検査テンプレート。伝導速度の測定に使用。</p></div></a>
+<a href="neuro/emg-normal.html" class="card"><img src="img/neuro_emg_normal.png" alt="筋電図（正常）" loading="lazy"><div class="card-body"><h3>筋電図（正常）</h3><p>正常筋電図テンプレート。MUAPの正常パターンをプロット。</p></div></a>
+<a href="neuro/emg-myopathic.html" class="card"><img src="img/neuro_emg_myopathic.png" alt="筋電図（筋原性）" loading="lazy"><div class="card-body"><h3>筋電図（筋原性）</h3><p>筋原性筋電図テンプレート。低振幅・短持続のMUAPをプロット。</p></div></a>
+<a href="neuro/emg-neuropathic.html" class="card"><img src="img/neuro_emg_neuropathic.png" alt="筋電図（神経原性）" loading="lazy"><div class="card-body"><h3>筋電図（神経原性）</h3><p>神経原性筋電図テンプレート。高振幅・長持続のMUAPをプロット。</p></div></a>
+<a href="neuro/vep.html" class="card"><img src="img/neuro_vep.png" alt="視覚誘発電位" loading="lazy"><div class="card-body"><h3>視覚誘発電位</h3><p>VEPテンプレート。P100潜時の測定に使用。視神経疾患の評価。</p></div></a>
+<a href="neuro/abr.html" class="card"><img src="img/neuro_abr.png" alt="聴性脳幹反応" loading="lazy"><div class="card-body"><h3>聴性脳幹反応</h3><p>ABRテンプレート。I-V波の潜時測定に使用。聴神経腫瘍の評価。</p></div></a>
+<a href="neuro/ssep.html" class="card"><img src="img/neuro_ssep.png" alt="体性感覚誘発電位" loading="lazy"><div class="card-body"><h3>体性感覚誘発電位</h3><p>SSEPテンプレート。N20/P37等の潜時測定に使用。</p></div></a>
+<a href="neuro/icp-waveform.html" class="card"><img src="img/neuro_icp_waveform.png" alt="頭蓋内圧波形" loading="lazy"><div class="card-body"><h3>頭蓋内圧波形</h3><p>頭蓋内圧波形テンプレート。P1/P2/P3波の形態を評価。</p></div></a>
+<a href="neuro/cerebral-autoregulation.html" class="card"><img src="img/neuro_cerebral_autoregulation.png" alt="脳血流自動調節" loading="lazy"><div class="card-body"><h3>脳血流自動調節</h3><p>脳血流自動調節テンプレート。MAPとCBFの関係をプロット。</p></div></a>
+<a href="neuro/pain-vas.html" class="card"><img src="img/neuro_pain_vas.png" alt="疼痛スケール（VAS）" loading="lazy"><div class="card-body"><h3>疼痛スケール（VAS）</h3><p>VAS疼痛スケールテンプレート。疼痛強度の経時変化をプロット。</p></div></a>
+<a href="neuro/gcs.html" class="card"><img src="img/neuro_gcs.png" alt="グラスゴー・コーマ・スケール" loading="lazy"><div class="card-body"><h3>グラスゴー・コーマ・スケール</h3><p>GCSテンプレート。意識レベルの経時変化をプロット。</p></div></a>
+<a href="neuro/nihss.html" class="card"><img src="img/neuro_nihss.png" alt="NIHSSスケール" loading="lazy"><div class="card-body"><h3>NIHSSスケール</h3><p>NIHSSテンプレート。脳卒中の重症度と回復をプロット。</p></div></a>
+<a href="neuro/learning-curve.html" class="card"><img src="img/neuro_learning_curve.png" alt="学習・記憶曲線" loading="lazy"><div class="card-body"><h3>学習・記憶曲線</h3><p>学習・記憶曲線テンプレート。試行回数と成績の関係をプロット。</p></div></a>
+<a href="neuro/nerve-fiber-types.html" class="card"><img src="img/neuro_nerve_fiber_types.png" alt="神経線維分類" loading="lazy"><div class="card-body"><h3>神経線維分類</h3><p>神経線維分類テンプレート。線維径と伝導速度の関係をプロット。</p></div></a>
+<a href="neuro/dermatome-map.html" class="card"><img src="img/neuro_dermatome_map.png" alt="デルマトームテンプレート" loading="lazy"><div class="card-body"><h3>デルマトームテンプレート</h3><p>デルマトーム（皮膚分節）テンプレート。脊髄レベルと支配領域の対応をプロット。</p></div></a>
+<a href="neuro/pupil-reflex.html" class="card"><img src="img/neuro_pupil_reflex.png" alt="瞳孔反射" loading="lazy"><div class="card-body"><h3>瞳孔反射</h3><p>瞳孔反射テンプレート。対光反射の潜時と反応をプロット。</p></div></a>
+<a href="neuro/nystagmus.html" class="card"><img src="img/neuro_nystagmus.png" alt="眼振パターン" loading="lazy"><div class="card-body"><h3>眼振パターン</h3><p>眼振パターンテンプレート。急速相と緩徐相の方向と振幅をプロット。</p></div></a>
+<a href="neuro/neurotransmitter.html" class="card"><img src="img/neuro_neurotransmitter.png" alt="神経伝達物質放出" loading="lazy"><div class="card-body"><h3>神経伝達物質放出</h3><p>神経伝達物質放出テンプレート。刺激後の放出と再取り込みの時間経過をプロット。</p></div></a>
+<a href="neuro/csf-analysis.html" class="card"><img src="img/neuro_csf_analysis.png" alt="髄液検査テンプレート" loading="lazy"><div class="card-body"><h3>髄液検査テンプレート</h3><p>髄液検査テンプレート。細胞数/蛋白/糖等の検査値をプロット。</p></div></a></div></section>
+<section class="cat-section" id="obgyn"><h2><a href="c/obgyn.html">産婦人科 (15)</a></h2><div class="card-grid"><a href="obgyn/fetal-growth.html" class="card"><img src="img/obgyn_fetal_growth.png" alt="胎児発育曲線" loading="lazy"><div class="card-body"><h3>胎児発育曲線</h3><p>胎児発育曲線テンプレート。在胎週数と推定体重の関係をプロット。</p></div></a>
+<a href="obgyn/fhr-normal.html" class="card"><img src="img/obgyn_fhr_normal.png" alt="胎児心拍数（正常）" loading="lazy"><div class="card-body"><h3>胎児心拍数（正常）</h3><p>正常胎児心拍モニタリングテンプレート。基線と基線細変動をプロット。</p></div></a>
+<a href="obgyn/fhr-variable.html" class="card"><img src="img/obgyn_fhr_variable.png" alt="胎児心拍（変動一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（変動一過性徐脈）</h3><p>変動一過性徐脈の胎児心拍テンプレート。臍帯圧迫パターンをプロット。</p></div></a>
+<a href="obgyn/fhr-late.html" class="card"><img src="img/obgyn_fhr_late.png" alt="胎児心拍（遅発一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（遅発一過性徐脈）</h3><p>遅発一過性徐脈の胎児心拍テンプレート。胎盤機能不全パターンをプロット。</p></div></a>
+<a href="obgyn/bishop-score.html" class="card"><img src="img/obgyn_bishop_score.png" alt="ビショップスコア" loading="lazy"><div class="card-body"><h3>ビショップスコア</h3><p>ビショップスコアテンプレート。頸管成熟度の評価に使用。</p></div></a>
+<a href="obgyn/partograph.html" class="card"><img src="img/obgyn_partograph.png" alt="パルトグラフ" loading="lazy"><div class="card-body"><h3>パルトグラフ</h3><p>パルトグラフテンプレート。分娩進行の監視に使用。</p></div></a>
+<a href="obgyn/pregnancy-hormones.html" class="card"><img src="img/obgyn_pregnancy_hormones.png" alt="妊娠ホルモン" loading="lazy"><div class="card-body"><h3>妊娠ホルモン</h3><p>妊娠中ホルモン変動テンプレート。hCG/E2/P4の推移をプロット。</p></div></a>
+<a href="obgyn/fundal-height.html" class="card"><img src="img/obgyn_fundal_height.png" alt="子宮底長" loading="lazy"><div class="card-body"><h3>子宮底長</h3><p>子宮底長テンプレート。在胎週数と子宮底長の関係をプロット。</p></div></a>
+<a href="obgyn/afi.html" class="card"><img src="img/obgyn_afi.png" alt="羊水指数" loading="lazy"><div class="card-body"><h3>羊水指数</h3><p>羊水指数テンプレート。在胎週数とAFIの正常範囲をプロット。</p></div></a>
+<a href="obgyn/bpp.html" class="card"><img src="img/obgyn_bpp.png" alt="バイオフィジカルプロファイル" loading="lazy"><div class="card-body"><h3>バイオフィジカルプロファイル</h3><p>バイオフィジカルプロファイルテンプレート。胎児well-beingの評価に使用。</p></div></a>
+<a href="obgyn/friedman-curve.html" class="card"><img src="img/obgyn_friedman_curve.png" alt="フリードマン曲線" loading="lazy"><div class="card-body"><h3>フリードマン曲線</h3><p>フリードマン曲線テンプレート。正常分娩進行のS字型パターンをプロット。</p></div></a>
+<a href="obgyn/apgar.html" class="card"><img src="img/obgyn_apgar.png" alt="アプガースコア" loading="lazy"><div class="card-body"><h3>アプガースコア</h3><p>アプガースコアテンプレート。1分/5分/10分のスコア変化をプロット。</p></div></a>
+<a href="obgyn/gestational-growth.html" class="card"><img src="img/obgyn_gestational_growth.png" alt="在胎週数別成長曲線" loading="lazy"><div class="card-body"><h3>在胎週数別成長曲線</h3><p>在胎週数別成長曲線テンプレート。SGA/AGA/LGAの判定に使用。</p></div></a>
+<a href="obgyn/fhr-early.html" class="card"><img src="img/obgyn_fhr_early.png" alt="胎児心拍（早発一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（早発一過性徐脈）</h3><p>早発一過性徐脈の胎児心拍テンプレート。児頭圧迫パターンをプロット。</p></div></a>
+<a href="obgyn/menstrual-cycle-obgyn.html" class="card"><img src="img/obgyn_menstrual_cycle_obgyn.png" alt="月経周期" loading="lazy"><div class="card-body"><h3>月経周期</h3><p>月経周期テンプレート。ホルモン変動と子宮内膜変化をプロット。</p></div></a></div></section>
+<section class="cat-section" id="ortho"><h2><a href="c/ortho.html">整形外科 (10)</a></h2><div class="card-grid"><a href="ortho/rom.html" class="card"><img src="img/ortho_rom.png" alt="関節可動域" loading="lazy"><div class="card-body"><h3>関節可動域</h3><p>関節可動域テンプレート。各関節の正常ROM値と測定値をプロット。</p></div></a>
+<a href="ortho/fracture-healing.html" class="card"><img src="img/ortho_fracture_healing.png" alt="骨折治癒タイムライン" loading="lazy"><div class="card-body"><h3>骨折治癒タイムライン</h3><p>骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。</p></div></a>
+<a href="ortho/dexa.html" class="card"><img src="img/ortho_dexa.png" alt="骨密度（DEXA）" loading="lazy"><div class="card-body"><h3>骨密度（DEXA）</h3><p>骨密度テンプレート。T-scoreと骨粗鬆症の評価に使用。</p></div></a>
+<a href="ortho/gait-analysis.html" class="card"><img src="img/ortho_gait_analysis.png" alt="歩行分析" loading="lazy"><div class="card-body"><h3>歩行分析</h3><p>歩行分析テンプレート。歩行周期中の関節角度変化をプロット。</p></div></a>
+<a href="ortho/muscle-strength.html" class="card"><img src="img/ortho_muscle_strength.png" alt="筋力評価" loading="lazy"><div class="card-body"><h3>筋力評価</h3><p>徒手筋力テスト（MMT）テンプレート。各筋群のグレードをプロット。</p></div></a>
+<a href="ortho/cobb-angle.html" class="card"><img src="img/ortho_cobb_angle.png" alt="側弯症（コブ角）" loading="lazy"><div class="card-body"><h3>側弯症（コブ角）</h3><p>コブ角測定テンプレート。脊柱側弯の進行評価に使用。</p></div></a>
+<a href="ortho/compartment-pressure.html" class="card"><img src="img/ortho_compartment_pressure.png" alt="コンパートメント内圧" loading="lazy"><div class="card-body"><h3>コンパートメント内圧</h3><p>コンパートメント内圧テンプレート。コンパートメント症候群の診断に使用。</p></div></a>
+<a href="ortho/joint-space.html" class="card"><img src="img/ortho_joint_space.png" alt="関節裂隙測定" loading="lazy"><div class="card-body"><h3>関節裂隙測定</h3><p>関節裂隙測定テンプレート。関節症の進行評価に使用。</p></div></a>
+<a href="ortho/bone-age.html" class="card"><img src="img/ortho_bone_age.png" alt="骨年齢評価" loading="lazy"><div class="card-body"><h3>骨年齢評価</h3><p>骨年齢評価テンプレート。暦年齢との乖離をプロット。</p></div></a>
+<a href="ortho/asa-score.html" class="card"><img src="img/ortho_asa_score.png" alt="ASA身体状態分類" loading="lazy"><div class="card-body"><h3>ASA身体状態分類</h3><p>ASA身体状態分類テンプレート。術前リスク評価に使用。</p></div></a></div></section>
+<section class="cat-section" id="path"><h2><a href="c/path.html">病理学 (12)</a></h2><div class="card-grid"><a href="path/cell-cycle.html" class="card"><img src="img/path_cell_cycle.png" alt="細胞周期" loading="lazy"><div class="card-body"><h3>細胞周期</h3><p>細胞周期テンプレート。G1/S/G2/M期の各段階の所要時間をプロット。</p></div></a>
+<a href="path/tumor-growth.html" class="card"><img src="img/path_tumor_growth.png" alt="腫瘍成長曲線（ゴンペルツ）" loading="lazy"><div class="card-body"><h3>腫瘍成長曲線（ゴンペルツ）</h3><p>ゴンペルツモデルによる腫瘍成長曲線テンプレート。</p></div></a>
+<a href="path/tumor-markers.html" class="card"><img src="img/path_tumor_markers.png" alt="腫瘍マーカー" loading="lazy"><div class="card-body"><h3>腫瘍マーカー</h3><p>腫瘍マーカーの経時変化テンプレート。治療効果と再発のモニタリングに使用。</p></div></a>
+<a href="path/tnm-staging.html" class="card"><img src="img/path_tnm_staging.png" alt="TNMステージング" loading="lazy"><div class="card-body"><h3>TNMステージング</h3><p>TNMステージング別生存率テンプレート。各ステージの予後をプロット。</p></div></a>
+<a href="path/wound-healing.html" class="card"><img src="img/path_wound_healing.png" alt="創傷治癒段階" loading="lazy"><div class="card-body"><h3>創傷治癒段階</h3><p>創傷治癒段階テンプレート。炎症・増殖・成熟の各段階をプロット。</p></div></a>
+<a href="path/inflammation.html" class="card"><img src="img/path_inflammation.png" alt="炎症タイムライン" loading="lazy"><div class="card-body"><h3>炎症タイムライン</h3><p>炎症反応タイムラインテンプレート。急性炎症の時間経過をプロット。</p></div></a>
+<a href="path/ki67.html" class="card"><img src="img/path_ki67.png" alt="Ki-67増殖指数" loading="lazy"><div class="card-body"><h3>Ki-67増殖指数</h3><p>Ki-67増殖指数テンプレート。腫瘍の増殖能を評価。</p></div></a>
+<a href="path/tumor-doubling.html" class="card"><img src="img/path_tumor_doubling.png" alt="腫瘍倍加時間" loading="lazy"><div class="card-body"><h3>腫瘍倍加時間</h3><p>腫瘍倍加時間テンプレート。腫瘍サイズの指数関数的増加をプロット。</p></div></a>
+<a href="path/survival-stage.html" class="card"><img src="img/path_survival_stage.png" alt="ステージ別生存曲線" loading="lazy"><div class="card-body"><h3>ステージ別生存曲線</h3><p>ステージ別生存曲線テンプレート。各ステージの生存確率を比較。</p></div></a>
+<a href="path/recist.html" class="card"><img src="img/path_recist.png" alt="RECIST治療効果判定" loading="lazy"><div class="card-body"><h3>RECIST治療効果判定</h3><p>RECIST基準による治療効果判定テンプレート。標的病変の経時変化をプロット。</p></div></a>
+<a href="path/apoptosis.html" class="card"><img src="img/path_apoptosis.png" alt="アポトーシスマーカー" loading="lazy"><div class="card-body"><h3>アポトーシスマーカー</h3><p>アポトーシスマーカーテンプレート。アポトーシス誘導後の細胞死をプロット。</p></div></a>
+<a href="path/metastasis.html" class="card"><img src="img/path_metastasis.png" alt="転移カスケード" loading="lazy"><div class="card-body"><h3>転移カスケード</h3><p>転移カスケードテンプレート。各段階の効率をプロット。</p></div></a></div></section>
+<section class="cat-section" id="peds"><h2><a href="c/peds.html">小児科 (15)</a></h2><div class="card-grid"><a href="peds/growth-weight-boys.html" class="card"><img src="img/peds_growth_weight_boys.png" alt="成長曲線：体重（男児）" loading="lazy"><div class="card-body"><h3>成長曲線：体重（男児）</h3><p>男児体重成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="peds/growth-weight-girls.html" class="card"><img src="img/peds_growth_weight_girls.png" alt="成長曲線：体重（女児）" loading="lazy"><div class="card-body"><h3>成長曲線：体重（女児）</h3><p>女児体重成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="peds/growth-height-boys.html" class="card"><img src="img/peds_growth_height_boys.png" alt="成長曲線：身長（男児）" loading="lazy"><div class="card-body"><h3>成長曲線：身長（男児）</h3><p>男児身長成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="peds/growth-height-girls.html" class="card"><img src="img/peds_growth_height_girls.png" alt="成長曲線：身長（女児）" loading="lazy"><div class="card-body"><h3>成長曲線：身長（女児）</h3><p>女児身長成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="peds/head-circumference.html" class="card"><img src="img/peds_head_circumference.png" alt="頭囲" loading="lazy"><div class="card-body"><h3>頭囲</h3><p>頭囲成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="peds/bmi-age.html" class="card"><img src="img/peds_bmi_age.png" alt="年齢別BMI" loading="lazy"><div class="card-body"><h3>年齢別BMI</h3><p>年齢別BMI曲線テンプレート。肥満/低体重の評価に使用。</p></div></a>
+<a href="peds/vital-signs-age.html" class="card"><img src="img/peds_vital_signs_age.png" alt="年齢別バイタルサイン" loading="lazy"><div class="card-body"><h3>年齢別バイタルサイン</h3><p>年齢別バイタルサイン基準値テンプレート。HR/RR/BPの正常範囲をプロット。</p></div></a>
+<a href="peds/bilirubin-nomogram.html" class="card"><img src="img/peds_bilirubin_nomogram.png" alt="新生児黄疸ノモグラム" loading="lazy"><div class="card-body"><h3>新生児黄疸ノモグラム</h3><p>新生児黄疸ノモグラムテンプレート。光線療法の適応判定に使用。</p></div></a>
+<a href="peds/growth-velocity.html" class="card"><img src="img/peds_growth_velocity.png" alt="成長速度" loading="lazy"><div class="card-body"><h3>成長速度</h3><p>成長速度曲線テンプレート。思春期のスパートを含む成長速度をプロット。</p></div></a>
+<a href="peds/weight-for-length.html" class="card"><img src="img/peds_weight_for_length.png" alt="身長別体重" loading="lazy"><div class="card-body"><h3>身長別体重</h3><p>身長別体重テンプレート。栄養状態の評価に使用。</p></div></a>
+<a href="peds/milestones.html" class="card"><img src="img/peds_milestones.png" alt="発達マイルストーン" loading="lazy"><div class="card-body"><h3>発達マイルストーン</h3><p>発達マイルストーンテンプレート。粗大運動/微細運動/言語/社会性をプロット。</p></div></a>
+<a href="peds/vaccine-schedule.html" class="card"><img src="img/peds_vaccine_schedule.png" alt="ワクチンスケジュール" loading="lazy"><div class="card-body"><h3>ワクチンスケジュール</h3><p>定期ワクチンスケジュールテンプレート。接種時期と種類をプロット。</p></div></a>
+<a href="peds/fluid-calculation.html" class="card"><img src="img/peds_fluid_calculation.png" alt="小児輸液計算" loading="lazy"><div class="card-body"><h3>小児輸液計算</h3><p>小児輸液計算テンプレート。体重別の維持輸液量をプロット。Holliday-Segar式。</p></div></a>
+<a href="peds/peds-gcs.html" class="card"><img src="img/peds_peds_gcs.png" alt="小児GCS" loading="lazy"><div class="card-body"><h3>小児GCS</h3><p>小児GCSテンプレート。小児用意識レベルスケールの経時変化をプロット。</p></div></a>
+<a href="peds/denver-screening.html" class="card"><img src="img/peds_denver_screening.png" alt="デンバー発達スクリーニング" loading="lazy"><div class="card-body"><h3>デンバー発達スクリーニング</h3><p>デンバー発達スクリーニングテンプレート。年齢別の発達到達度をプロット。</p></div></a></div></section>
+<section class="cat-section" id="pharm"><h2><a href="c/pharm.html">薬理学 (25)</a></h2><div class="card-grid"><a href="pharm/dose-response-graded.html" class="card"><img src="img/pharm_dose_response_graded.png" alt="段階的用量反応曲線" loading="lazy"><div class="card-body"><h3>段階的用量反応曲線</h3><p>段階的用量反応曲線テンプレート。EC50の決定に使用。</p></div></a>
+<a href="pharm/dose-response-quantal.html" class="card"><img src="img/pharm_dose_response_quantal.png" alt="量子的用量反応曲線" loading="lazy"><div class="card-body"><h3>量子的用量反応曲線</h3><p>量子的用量反応曲線テンプレート。ED50・TD50・LD50の決定に使用。</p></div></a>
+<a href="pharm/pk-iv-bolus.html" class="card"><img src="img/pharm_pk_iv_bolus.png" alt="薬物動態（静注ボーラス）" loading="lazy"><div class="card-body"><h3>薬物動態（静注ボーラス）</h3><p>静脈内ボーラス投与後の血中濃度推移テンプレート。一次速度式に基づくモデル。</p></div></a>
+<a href="pharm/pk-oral.html" class="card"><img src="img/pharm_pk_oral.png" alt="薬物動態（経口投与）" loading="lazy"><div class="card-body"><h3>薬物動態（経口投与）</h3><p>経口投与後の血中濃度推移テンプレート。吸収相と消失相をプロット。</p></div></a>
+<a href="pharm/pk-multiple-dose.html" class="card"><img src="img/pharm_pk_multiple_dose.png" alt="薬物動態（反復投与）" loading="lazy"><div class="card-body"><h3>薬物動態（反復投与）</h3><p>反復投与時の血中濃度推移テンプレート。定常状態への到達をプロット。</p></div></a>
+<a href="pharm/pk-semilog.html" class="card"><img src="img/pharm_pk_semilog.png" alt="薬物動態片対数プロット" loading="lazy"><div class="card-body"><h3>薬物動態片対数プロット</h3><p>薬物動態の片対数プロットテンプレート。半減期の決定に使用。</p></div></a>
+<a href="pharm/therapeutic-window.html" class="card"><img src="img/pharm_therapeutic_window.png" alt="治療域" loading="lazy"><div class="card-body"><h3>治療域</h3><p>治療域テンプレート。MEC（最小有効濃度）とMTC（最小中毒濃度）の範囲をプロット。</p></div></a>
+<a href="pharm/schild-plot.html" class="card"><img src="img/pharm_schild_plot.png" alt="シルドプロット" loading="lazy"><div class="card-body"><h3>シルドプロット</h3><p>シルドプロット。競合的拮抗薬のpA2値を決定するテンプレート。</p></div></a>
+<a href="pharm/isobologram.html" class="card"><img src="img/pharm_isobologram.png" alt="アイソボログラム" loading="lazy"><div class="card-body"><h3>アイソボログラム</h3><p>アイソボログラムテンプレート。2薬の相互作用（相乗・相加・拮抗）を評価。</p></div></a>
+<a href="pharm/competitive-antagonist.html" class="card"><img src="img/pharm_competitive_antagonist.png" alt="競合的拮抗薬" loading="lazy"><div class="card-body"><h3>競合的拮抗薬</h3><p>競合的拮抗薬存在下の用量反応曲線テンプレート。右方シフトをプロット。</p></div></a>
+<a href="pharm/noncompetitive-antagonist.html" class="card"><img src="img/pharm_noncompetitive_antagonist.png" alt="非競合的拮抗薬" loading="lazy"><div class="card-body"><h3>非競合的拮抗薬</h3><p>非競合的拮抗薬存在下の用量反応曲線テンプレート。Emax低下をプロット。</p></div></a>
+<a href="pharm/partial-agonist.html" class="card"><img src="img/pharm_partial_agonist.png" alt="部分作動薬" loading="lazy"><div class="card-body"><h3>部分作動薬</h3><p>部分作動薬の用量反応曲線テンプレート。完全作動薬との比較をプロット。</p></div></a>
+<a href="pharm/bioavailability.html" class="card"><img src="img/pharm_bioavailability.png" alt="バイオアベイラビリティ比較" loading="lazy"><div class="card-body"><h3>バイオアベイラビリティ比較</h3><p>投与経路別バイオアベイラビリティ比較テンプレート。AUC比からF値を算出。</p></div></a>
+<a href="pharm/first-pass.html" class="card"><img src="img/pharm_first_pass.png" alt="初回通過効果" loading="lazy"><div class="card-body"><h3>初回通過効果</h3><p>初回通過効果のテンプレート。経口投与vs静注の血中濃度差をプロット。</p></div></a>
+<a href="pharm/loading-maintenance.html" class="card"><img src="img/pharm_loading_maintenance.png" alt="負荷用量・維持用量" loading="lazy"><div class="card-body"><h3>負荷用量・維持用量</h3><p>負荷用量と維持用量の血中濃度推移テンプレート。定常状態への迅速な到達をプロット。</p></div></a>
+<a href="pharm/receptor-occupancy.html" class="card"><img src="img/pharm_receptor_occupancy.png" alt="受容体占有率" loading="lazy"><div class="card-body"><h3>受容体占有率</h3><p>受容体占有率曲線テンプレート。薬物濃度と受容体占有の関係をプロット。</p></div></a>
+<a href="pharm/therapeutic-index.html" class="card"><img src="img/pharm_therapeutic_index.png" alt="治療係数" loading="lazy"><div class="card-body"><h3>治療係数</h3><p>治療係数テンプレート。ED50とTD50の比で安全域を評価。</p></div></a>
+<a href="pharm/accumulation-factor.html" class="card"><img src="img/pharm_accumulation_factor.png" alt="蓄積係数" loading="lazy"><div class="card-body"><h3>蓄積係数</h3><p>蓄積係数テンプレート。反復投与における血中濃度の蓄積をプロット。</p></div></a>
+<a href="pharm/drug-interaction.html" class="card"><img src="img/pharm_drug_interaction.png" alt="薬物相互作用（相乗効果）" loading="lazy"><div class="card-body"><h3>薬物相互作用（相乗効果）</h3><p>薬物相互作用テンプレート。相乗・相加・拮抗効果の比較をプロット。</p></div></a>
+<a href="pharm/clearance.html" class="card"><img src="img/pharm_clearance.png" alt="クリアランスプロット" loading="lazy"><div class="card-body"><h3>クリアランスプロット</h3><p>薬物クリアランスのプロット。血中濃度と消失速度の関係をテンプレート。</p></div></a>
+<a href="pharm/dose-adjustment-renal.html" class="card"><img src="img/pharm_dose_adjustment_renal.png" alt="用量調節（腎機能）" loading="lazy"><div class="card-body"><h3>用量調節（腎機能）</h3><p>腎機能に基づく用量調節テンプレート。GFRと投与量の関係をプロット。</p></div></a>
+<a href="pharm/pk-compartment.html" class="card"><img src="img/pharm_pk_compartment.png" alt="一次速度モデル" loading="lazy"><div class="card-body"><h3>一次速度モデル</h3><p>一室モデルの薬物動態テンプレート。吸収・分布・消失の動態をプロット。</p></div></a>
+<a href="pharm/inverse-agonist.html" class="card"><img src="img/pharm_inverse_agonist.png" alt="逆作動薬" loading="lazy"><div class="card-body"><h3>逆作動薬</h3><p>逆作動薬の用量反応曲線テンプレート。構成的活性の抑制をプロット。</p></div></a>
+<a href="pharm/time-concentration-routes.html" class="card"><img src="img/pharm_time_concentration_routes.png" alt="投与経路別血中濃度" loading="lazy"><div class="card-body"><h3>投与経路別血中濃度</h3><p>投与経路別の血中濃度推移比較テンプレート。IV/IM/SC/PO等を比較。</p></div></a>
+<a href="pharm/volume-distribution.html" class="card"><img src="img/pharm_volume_distribution.png" alt="分布容積" loading="lazy"><div class="card-body"><h3>分布容積</h3><p>分布容積（Vd）の概念テンプレート。体内薬物量と血中濃度の関係をプロット。</p></div></a></div></section>
+<section class="cat-section" id="physiol"><h2><a href="c/physiol.html">生理学 (34)</a></h2><div class="card-grid"><a href="physiol/o2-dissociation.html" class="card"><img src="img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="card-body"><h3>酸素解離曲線</h3><p>ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</p></div></a>
+<a href="physiol/o2-dissociation-bohr.html" class="card"><img src="img/physiol_o2_dissociation_bohr.png" alt="酸素解離曲線（ボーア効果）" loading="lazy"><div class="card-body"><h3>酸素解離曲線（ボーア効果）</h3><p>ボーア効果による酸素解離曲線のシフトを示すテンプレート。pH変化の影響を比較。</p></div></a>
+<a href="physiol/co2-dissociation.html" class="card"><img src="img/physiol_co2_dissociation.png" alt="CO2解離曲線" loading="lazy"><div class="card-body"><h3>CO2解離曲線</h3><p>CO2解離曲線テンプレート。PCO2とCO2含量の関係をプロット。</p></div></a>
+<a href="physiol/frank-starling.html" class="card"><img src="img/physiol_frank_starling.png" alt="フランク・スターリング曲線" loading="lazy"><div class="card-body"><h3>フランク・スターリング曲線</h3><p>フランク・スターリング曲線テンプレート。前負荷と一回拍出量の関係をプロット。</p></div></a>
+<a href="physiol/nerve-ap.html" class="card"><img src="img/physiol_nerve_ap.png" alt="神経活動電位" loading="lazy"><div class="card-body"><h3>神経活動電位</h3><p>神経細胞の活動電位テンプレート。脱分極・再分極・過分極のパターンをプロット。</p></div></a>
+<a href="physiol/cardiac-ap.html" class="card"><img src="img/physiol_cardiac_ap.png" alt="心筋活動電位" loading="lazy"><div class="card-body"><h3>心筋活動電位</h3><p>心室筋の活動電位テンプレート。Phase 0-4の各段階をプロット。</p></div></a>
+<a href="physiol/sa-node-ap.html" class="card"><img src="img/physiol_sa_node_ap.png" alt="洞房結節活動電位" loading="lazy"><div class="card-body"><h3>洞房結節活動電位</h3><p>洞房結節のペースメーカー活動電位テンプレート。自動能をプロット。</p></div></a>
+<a href="physiol/flow-volume.html" class="card"><img src="img/physiol_flow_volume.png" alt="フローボリュームループ" loading="lazy"><div class="card-body"><h3>フローボリュームループ</h3><p>フローボリュームループテンプレート。呼気・吸気の流量と容量の関係をプロット。</p></div></a>
+<a href="physiol/pv-loop.html" class="card"><img src="img/physiol_pv_loop.png" alt="心臓PVループ" loading="lazy"><div class="card-body"><h3>心臓PVループ</h3><p>心臓の圧-容量ループテンプレート。左室の一心周期の変化をプロット。</p></div></a>
+<a href="physiol/wiggers.html" class="card"><img src="img/physiol_wiggers.png" alt="ウィガースダイアグラム" loading="lazy"><div class="card-body"><h3>ウィガースダイアグラム</h3><p>ウィガースダイアグラムテンプレート。心周期の圧・容量・ECG・心音の時間経過。</p></div></a>
+<a href="physiol/lung-compliance.html" class="card"><img src="img/physiol_lung_compliance.png" alt="肺コンプライアンス曲線" loading="lazy"><div class="card-body"><h3>肺コンプライアンス曲線</h3><p>肺コンプライアンス曲線テンプレート。圧-容量関係をプロット。</p></div></a>
+<a href="physiol/muscle-twitch.html" class="card"><img src="img/physiol_muscle_twitch.png" alt="筋単収縮" loading="lazy"><div class="card-body"><h3>筋単収縮</h3><p>骨格筋の単収縮テンプレート。潜時・収縮期・弛緩期をプロット。</p></div></a>
+<a href="physiol/length-tension.html" class="card"><img src="img/physiol_length_tension.png" alt="筋長-張力関係" loading="lazy"><div class="card-body"><h3>筋長-張力関係</h3><p>筋のサルコメア長と張力の関係テンプレート。至適長の決定に使用。</p></div></a>
+<a href="physiol/force-velocity.html" class="card"><img src="img/physiol_force_velocity.png" alt="筋力-速度関係" loading="lazy"><div class="card-body"><h3>筋力-速度関係</h3><p>筋力-速度関係テンプレート。負荷と短縮速度の双曲線関係をプロット。</p></div></a>
+<a href="physiol/spirometry.html" class="card"><img src="img/physiol_spirometry.png" alt="スパイロメトリー" loading="lazy"><div class="card-body"><h3>スパイロメトリー</h3><p>スパイロメトリーのトレーシングテンプレート。FVC・FEV1の測定に使用。</p></div></a>
+<a href="physiol/lung-volumes.html" class="card"><img src="img/physiol_lung_volumes.png" alt="肺容量区分図" loading="lazy"><div class="card-body"><h3>肺容量区分図</h3><p>肺気量区分図テンプレート。TV・IRV・ERV・RV・TLC等をプロット。</p></div></a>
+<a href="physiol/vq-ratio.html" class="card"><img src="img/physiol_vq_ratio.png" alt="換気血流比" loading="lazy"><div class="card-body"><h3>換気血流比</h3><p>換気血流比のテンプレート。肺の上部から下部までのV/Q分布をプロット。</p></div></a>
+<a href="physiol/starling-forces.html" class="card"><img src="img/physiol_starling_forces.png" alt="スターリングの力" loading="lazy"><div class="card-body"><h3>スターリングの力</h3><p>毛細血管のスターリングの力テンプレート。静水圧と膠質浸透圧の関係をプロット。</p></div></a>
+<a href="physiol/venous-return.html" class="card"><img src="img/physiol_venous_return.png" alt="静脈還流曲線" loading="lazy"><div class="card-body"><h3>静脈還流曲線</h3><p>静脈還流曲線テンプレート。右房圧と静脈還流量の関係をプロット。</p></div></a>
+<a href="physiol/cardiac-function.html" class="card"><img src="img/physiol_cardiac_function.png" alt="心機能曲線" loading="lazy"><div class="card-body"><h3>心機能曲線</h3><p>心機能曲線テンプレート。右房圧と心拍出量の関係をプロット。</p></div></a>
+<a href="physiol/guyton.html" class="card"><img src="img/physiol_guyton.png" alt="ガイトン図" loading="lazy"><div class="card-body"><h3>ガイトン図</h3><p>ガイトン図テンプレート。心機能曲線と静脈還流曲線の交点で心拍出量を決定。</p></div></a>
+<a href="physiol/respiratory-pv.html" class="card"><img src="img/physiol_respiratory_pv.png" alt="呼吸系圧-容量曲線" loading="lazy"><div class="card-body"><h3>呼吸系圧-容量曲線</h3><p>呼吸系全体の圧-容量曲線テンプレート。肺と胸壁の合計コンプライアンスをプロット。</p></div></a>
+<a href="physiol/fetal-hb.html" class="card"><img src="img/physiol_fetal_hb.png" alt="胎児ヘモグロビン解離曲線" loading="lazy"><div class="card-body"><h3>胎児ヘモグロビン解離曲線</h3><p>胎児ヘモグロビン（HbF）と成人ヘモグロビン（HbA）の酸素解離曲線比較テンプレート。</p></div></a>
+<a href="physiol/compliance-comparison.html" class="card"><img src="img/physiol_compliance_comparison.png" alt="コンプライアンス比較" loading="lazy"><div class="card-body"><h3>コンプライアンス比較</h3><p>肺・胸壁・呼吸系全体のコンプライアンス比較テンプレート。</p></div></a>
+<a href="physiol/capnography.html" class="card"><img src="img/physiol_capnography.png" alt="カプノグラフィー波形" loading="lazy"><div class="card-body"><h3>カプノグラフィー波形</h3><p>カプノグラフィー波形テンプレート。呼気終末CO2濃度の経時変化をモニタリング。</p></div></a>
+<a href="physiol/baroreceptor.html" class="card"><img src="img/physiol_baroreceptor.png" alt="圧受容器反射" loading="lazy"><div class="card-body"><h3>圧受容器反射</h3><p>動脈圧受容器の応答曲線テンプレート。血圧と神経発火頻度の関係をプロット。</p></div></a>
+<a href="physiol/renal-autoregulation.html" class="card"><img src="img/physiol_renal_autoregulation.png" alt="腎自動調節" loading="lazy"><div class="card-body"><h3>腎自動調節</h3><p>腎自動調節曲線テンプレート。灌流圧と腎血流の関係をプロット。</p></div></a>
+<a href="physiol/countercurrent.html" class="card"><img src="img/physiol_countercurrent.png" alt="対向流増幅系" loading="lazy"><div class="card-body"><h3>対向流増幅系</h3><p>腎臓の対向流増幅系テンプレート。皮質から髄質への浸透圧勾配をプロット。</p></div></a>
+<a href="physiol/membrane-potential.html" class="card"><img src="img/physiol_membrane_potential.png" alt="静止膜電位" loading="lazy"><div class="card-body"><h3>静止膜電位</h3><p>細胞外カリウム濃度と静止膜電位の関係テンプレート。Nernst式の検証に使用。</p></div></a>
+<a href="physiol/cardiac-output-hr.html" class="card"><img src="img/physiol_cardiac_output_hr.png" alt="心拍出量-心拍数曲線" loading="lazy"><div class="card-body"><h3>心拍出量-心拍数曲線</h3><p>心拍数と心拍出量の関係テンプレート。至適心拍数と最大心拍出量をプロット。</p></div></a>
+<a href="physiol/body-fluid.html" class="card"><img src="img/physiol_body_fluid.png" alt="体液区分" loading="lazy"><div class="card-body"><h3>体液区分</h3><p>体液区分テンプレート。ICF・ECF（ISF+Plasma）の容量分布をプロット。</p></div></a>
+<a href="physiol/graded-potential.html" class="card"><img src="img/physiol_graded_potential.png" alt="段階電位" loading="lazy"><div class="card-body"><h3>段階電位</h3><p>段階電位のテンプレート。距離に伴う減衰をプロット。活動電位との比較に使用。</p></div></a>
+<a href="physiol/smooth-muscle-ap.html" class="card"><img src="img/physiol_smooth_muscle_ap.png" alt="平滑筋活動電位" loading="lazy"><div class="card-body"><h3>平滑筋活動電位</h3><p>平滑筋の活動電位テンプレート。スローウェーブとスパイクのパターンをプロット。</p></div></a>
+<a href="physiol/tetanus.html" class="card"><img src="img/physiol_tetanus.png" alt="筋強縮" loading="lazy"><div class="card-body"><h3>筋強縮</h3><p>骨格筋の強縮テンプレート。不完全強縮と完全強縮のパターンをプロット。</p></div></a></div></section>
+<section class="cat-section" id="psych"><h2><a href="c/psych.html">精神科 (10)</a></h2><div class="card-grid"><a href="psych/phq9.html" class="card"><img src="img/psych_phq9.png" alt="PHQ-9テンプレート" loading="lazy"><div class="card-body"><h3>PHQ-9テンプレート</h3><p>PHQ-9うつ症状スクリーニングテンプレート。9項目の回答をプロット。</p></div></a>
+<a href="psych/gad7.html" class="card"><img src="img/psych_gad7.png" alt="GAD-7テンプレート" loading="lazy"><div class="card-body"><h3>GAD-7テンプレート</h3><p>GAD-7不安症状スクリーニングテンプレート。7項目の回答をプロット。</p></div></a>
+<a href="psych/hamd.html" class="card"><img src="img/psych_hamd.png" alt="HAM-Dテンプレート" loading="lazy"><div class="card-body"><h3>HAM-Dテンプレート</h3><p>ハミルトンうつ病評価尺度テンプレート。17項目のスコアをプロット。</p></div></a>
+<a href="psych/mmse.html" class="card"><img src="img/psych_mmse.png" alt="MMSEテンプレート" loading="lazy"><div class="card-body"><h3>MMSEテンプレート</h3><p>MMSE（ミニメンタルステート検査）テンプレート。認知機能の評価に使用。</p></div></a>
+<a href="psych/drug-monitoring.html" class="card"><img src="img/psych_drug_monitoring.png" alt="薬物血中濃度モニタリング" loading="lazy"><div class="card-body"><h3>薬物血中濃度モニタリング</h3><p>精神科薬物の血中濃度モニタリングテンプレート。治療域内管理に使用。</p></div></a>
+<a href="psych/mood-chart.html" class="card"><img src="img/psych_mood_chart.png" alt="気分チャート" loading="lazy"><div class="card-body"><h3>気分チャート</h3><p>気分チャートテンプレート。双極性障害等の日々の気分変動をプロット。</p></div></a>
+<a href="psych/sleep-study.html" class="card"><img src="img/psych_sleep_study.png" alt="睡眠検査（PSG）" loading="lazy"><div class="card-body"><h3>睡眠検査（PSG）</h3><p>終夜睡眠ポリグラフテンプレート。睡眠段階の推移をプロット。</p></div></a>
+<a href="psych/circadian.html" class="card"><img src="img/psych_circadian.png" alt="概日リズム" loading="lazy"><div class="card-body"><h3>概日リズム</h3><p>概日リズムテンプレート。メラトニンと深部体温の日内変動をプロット。</p></div></a>
+<a href="psych/stress-cortisol.html" class="card"><img src="img/psych_stress_cortisol.png" alt="ストレス応答（コルチゾール）" loading="lazy"><div class="card-body"><h3>ストレス応答（コルチゾール）</h3><p>ストレス応答テンプレート。TSST等のストレス負荷後のコルチゾール変化をプロット。</p></div></a>
+<a href="psych/cognitive-assessment.html" class="card"><img src="img/psych_cognitive_assessment.png" alt="認知機能評価" loading="lazy"><div class="card-body"><h3>認知機能評価</h3><p>認知機能評価テンプレート。注意/記憶/遂行機能等のドメイン別スコアをプロット。</p></div></a></div></section>
+<section class="cat-section" id="pulm"><h2><a href="c/pulm.html">呼吸器 (15)</a></h2><div class="card-grid"><a href="pulm/spirometry-normal.html" class="card"><img src="img/pulm_spirometry_normal.png" alt="スパイロメトリー（正常）" loading="lazy"><div class="card-body"><h3>スパイロメトリー（正常）</h3><p>正常スパイロメトリーテンプレート。FVC・FEV1の正常パターンをプロット。</p></div></a>
+<a href="pulm/spirometry-obstructive.html" class="card"><img src="img/pulm_spirometry_obstructive.png" alt="スパイロメトリー（閉塞性）" loading="lazy"><div class="card-body"><h3>スパイロメトリー（閉塞性）</h3><p>閉塞性パターンのスパイロメトリーテンプレート。FEV1/FVC低下をプロット。</p></div></a>
+<a href="pulm/spirometry-restrictive.html" class="card"><img src="img/pulm_spirometry_restrictive.png" alt="スパイロメトリー（拘束性）" loading="lazy"><div class="card-body"><h3>スパイロメトリー（拘束性）</h3><p>拘束性パターンのスパイロメトリーテンプレート。FVC低下をプロット。</p></div></a>
+<a href="pulm/flow-volume-normal.html" class="card"><img src="img/pulm_flow_volume_normal.png" alt="フローボリューム（正常）" loading="lazy"><div class="card-body"><h3>フローボリューム（正常）</h3><p>正常フローボリュームループテンプレート。呼気・吸気のパターンをプロット。</p></div></a>
+<a href="pulm/flow-volume-obstruct.html" class="card"><img src="img/pulm_flow_volume_obstruct.png" alt="フローボリューム（閉塞性）" loading="lazy"><div class="card-body"><h3>フローボリューム（閉塞性）</h3><p>閉塞性フローボリュームループテンプレート。呼気流量低下のパターンをプロット。</p></div></a>
+<a href="pulm/flow-volume-restrict.html" class="card"><img src="img/pulm_flow_volume_restrict.png" alt="フローボリューム（拘束性）" loading="lazy"><div class="card-body"><h3>フローボリューム（拘束性）</h3><p>拘束性フローボリュームループテンプレート。肺容量減少のパターンをプロット。</p></div></a>
+<a href="pulm/flow-volume-uao.html" class="card"><img src="img/pulm_flow_volume_uao.png" alt="フローボリューム（上気道閉塞）" loading="lazy"><div class="card-body"><h3>フローボリューム（上気道閉塞）</h3><p>上気道閉塞のフローボリュームテンプレート。固定性/可変性閉塞のパターンをプロット。</p></div></a>
+<a href="pulm/chest-wall-compliance.html" class="card"><img src="img/pulm_chest_wall_compliance.png" alt="胸壁コンプライアンス" loading="lazy"><div class="card-body"><h3>胸壁コンプライアンス</h3><p>胸壁コンプライアンス曲線テンプレート。胸壁の圧-容量関係をプロット。</p></div></a>
+<a href="pulm/total-compliance.html" class="card"><img src="img/pulm_total_compliance.png" alt="呼吸系総コンプライアンス" loading="lazy"><div class="card-body"><h3>呼吸系総コンプライアンス</h3><p>呼吸系総コンプライアンステンプレート。肺+胸壁の合計をプロット。</p></div></a>
+<a href="pulm/work-breathing.html" class="card"><img src="img/pulm_work_breathing.png" alt="呼吸仕事量" loading="lazy"><div class="card-body"><h3>呼吸仕事量</h3><p>呼吸仕事量テンプレート。圧-容量曲線で囲まれた面積を評価。</p></div></a>
+<a href="pulm/o2-co2-diagram.html" class="card"><img src="img/pulm_o2_co2_diagram.png" alt="O2-CO2ダイアグラム" loading="lazy"><div class="card-body"><h3>O2-CO2ダイアグラム</h3><p>O2-CO2ダイアグラムテンプレート。換気と灌流の関係を評価。</p></div></a>
+<a href="pulm/capnography-wave.html" class="card"><img src="img/pulm_capnography_wave.png" alt="カプノグラフィー波形" loading="lazy"><div class="card-body"><h3>カプノグラフィー波形</h3><p>カプノグラフィー波形テンプレート。呼気CO2のモニタリングに使用。</p></div></a>
+<a href="pulm/ventilator-waveform.html" class="card"><img src="img/pulm_ventilator_waveform.png" alt="人工呼吸器波形" loading="lazy"><div class="card-body"><h3>人工呼吸器波形</h3><p>人工呼吸器の圧・流量波形テンプレート。</p></div></a>
+<a href="pulm/dead-space.html" class="card"><img src="img/pulm_dead_space.png" alt="死腔計算" loading="lazy"><div class="card-body"><h3>死腔計算</h3><p>死腔計算テンプレート。Fowler法による解剖学的死腔の決定に使用。</p></div></a>
+<a href="pulm/lung-compliance-disease.html" class="card"><img src="img/pulm_lung_compliance_disease.png" alt="肺コンプライアンス（疾患）" loading="lazy"><div class="card-body"><h3>肺コンプライアンス（疾患）</h3><p>疾患別肺コンプライアンス比較テンプレート。正常/線維症/肺気腫を比較。</p></div></a></div></section>
+<section class="cat-section" id="radio"><h2><a href="c/radio.html">放射線 (8)</a></h2><div class="card-grid"><a href="radio/hounsfield.html" class="card"><img src="img/radio_hounsfield.png" alt="ハウンスフィールド値スケール" loading="lazy"><div class="card-body"><h3>ハウンスフィールド値スケール</h3><p>ハウンスフィールド値スケールテンプレート。各組織のCT値をプロット。</p></div></a>
+<a href="radio/contrast-enhancement.html" class="card"><img src="img/radio_contrast_enhancement.png" alt="造影効果曲線" loading="lazy"><div class="card-body"><h3>造影効果曲線</h3><p>造影効果曲線テンプレート。ダイナミックCT/MRIの造影パターンをプロット。</p></div></a>
+<a href="radio/dwi-adc.html" class="card"><img src="img/radio_dwi_adc.png" alt="DWI/ADCテンプレート" loading="lazy"><div class="card-body"><h3>DWI/ADCテンプレート</h3><p>DWI/ADCテンプレート。拡散強調画像のb値と信号強度の関係をプロット。</p></div></a>
+<a href="radio/suv.html" class="card"><img src="img/radio_suv.png" alt="SUV測定テンプレート" loading="lazy"><div class="card-body"><h3>SUV測定テンプレート</h3><p>SUV測定テンプレート。PET検査のSUV値の経時変化をプロット。</p></div></a>
+<a href="radio/radiation-dose.html" class="card"><img src="img/radio_radiation_dose.png" alt="放射線量チャート" loading="lazy"><div class="card-body"><h3>放射線量チャート</h3><p>放射線量チャートテンプレート。各検査の被曝線量を比較。</p></div></a>
+<a href="radio/ct-window.html" class="card"><img src="img/radio_ct_window.png" alt="CTウィンドウ設定" loading="lazy"><div class="card-body"><h3>CTウィンドウ設定</h3><p>CTウィンドウ設定テンプレート。WW/WLの概念をプロット。</p></div></a>
+<a href="radio/mri-signal.html" class="card"><img src="img/radio_mri_signal.png" alt="MRI信号強度" loading="lazy"><div class="card-body"><h3>MRI信号強度</h3><p>MRI信号強度テンプレート。T1WI/T2WIでの組織信号をプロット。</p></div></a>
+<a href="radio/us-measurement.html" class="card"><img src="img/radio_us_measurement.png" alt="超音波計測テンプレート" loading="lazy"><div class="card-body"><h3>超音波計測テンプレート</h3><p>超音波計測テンプレート。各臓器の計測値記録に使用。</p></div></a></div></section>
+<section class="cat-section" id="stat"><h2><a href="c/stat.html">臨床統計 (28)</a></h2><div class="card-grid"><a href="stat/roc-curve.html" class="card"><img src="img/stat_roc_curve.png" alt="ROC曲線" loading="lazy"><div class="card-body"><h3>ROC曲線</h3><p>ROC曲線テンプレート。診断検査のAUC（曲線下面積）を評価。</p></div></a>
+<a href="stat/kaplan-meier.html" class="card"><img src="img/stat_kaplan_meier.png" alt="カプラン・マイヤー曲線" loading="lazy"><div class="card-body"><h3>カプラン・マイヤー曲線</h3><p>カプラン・マイヤー生存曲線テンプレート。群間の生存率比較に使用。</p></div></a>
+<a href="stat/forest-plot.html" class="card"><img src="img/stat_forest_plot.png" alt="フォレストプロット" loading="lazy"><div class="card-body"><h3>フォレストプロット</h3><p>フォレストプロットテンプレート。メタ分析の個別研究結果と統合効果をプロット。</p></div></a>
+<a href="stat/bland-altman.html" class="card"><img src="img/stat_bland_altman.png" alt="ブランド・アルトマンプロット" loading="lazy"><div class="card-body"><h3>ブランド・アルトマンプロット</h3><p>ブランド・アルトマンプロットテンプレート。2測定法の一致度を評価。</p></div></a>
+<a href="stat/calibration-plot.html" class="card"><img src="img/stat_calibration_plot.png" alt="較正プロット" loading="lazy"><div class="card-body"><h3>較正プロット</h3><p>較正プロットテンプレート。予測モデルの精度をプロット。45度線からの乖離を評価。</p></div></a>
+<a href="stat/funnel-plot.html" class="card"><img src="img/stat_funnel_plot.png" alt="ファネルプロット" loading="lazy"><div class="card-body"><h3>ファネルプロット</h3><p>ファネルプロットテンプレート。出版バイアスの検出に使用。</p></div></a>
+<a href="stat/qq-plot.html" class="card"><img src="img/stat_qq_plot.png" alt="Q-Qプロット" loading="lazy"><div class="card-body"><h3>Q-Qプロット</h3><p>Q-Qプロットテンプレート。データの正規性を視覚的に評価。</p></div></a>
+<a href="stat/residual-plot.html" class="card"><img src="img/stat_residual_plot.png" alt="残差プロット" loading="lazy"><div class="card-body"><h3>残差プロット</h3><p>残差プロットテンプレート。回帰モデルの妥当性を評価。</p></div></a>
+<a href="stat/scatter-regression.html" class="card"><img src="img/stat_scatter_regression.png" alt="散布図＋回帰直線" loading="lazy"><div class="card-body"><h3>散布図＋回帰直線</h3><p>散布図＋回帰直線テンプレート。2変数の線形関係と回帰式をプロット。</p></div></a>
+<a href="stat/box-plot.html" class="card"><img src="img/stat_box_plot.png" alt="箱ひげ図" loading="lazy"><div class="card-body"><h3>箱ひげ図</h3><p>箱ひげ図テンプレート。群間のデータ分布を比較。中央値・四分位範囲を表示。</p></div></a>
+<a href="stat/box-plot-grouped.html" class="card"><img src="img/stat_box_plot_grouped.png" alt="グループ別箱ひげ図" loading="lazy"><div class="card-body"><h3>グループ別箱ひげ図</h3><p>グループ別箱ひげ図テンプレート。複数群×複数条件の比較に使用。</p></div></a>
+<a href="stat/violin-plot.html" class="card"><img src="img/stat_violin_plot.png" alt="バイオリンプロット" loading="lazy"><div class="card-body"><h3>バイオリンプロット</h3><p>バイオリンプロットテンプレート。データの分布形状を詳細に可視化。</p></div></a>
+<a href="stat/histogram-template.html" class="card"><img src="img/stat_histogram_template.png" alt="ヒストグラム" loading="lazy"><div class="card-body"><h3>ヒストグラム</h3><p>ヒストグラムテンプレート。データの度数分布を可視化。</p></div></a>
+<a href="stat/bar-error.html" class="card"><img src="img/stat_bar_error.png" alt="棒グラフ＋エラーバー" loading="lazy"><div class="card-body"><h3>棒グラフ＋エラーバー</h3><p>棒グラフ＋エラーバーテンプレート。群間の平均値比較に使用。</p></div></a>
+<a href="stat/heatmap-template.html" class="card"><img src="img/stat_heatmap_template.png" alt="ヒートマップ" loading="lazy"><div class="card-body"><h3>ヒートマップ</h3><p>ヒートマップテンプレート。変数間の関係を色で可視化。</p></div></a>
+<a href="stat/waterfall-plot.html" class="card"><img src="img/stat_waterfall_plot.png" alt="ウォーターフォールプロット" loading="lazy"><div class="card-body"><h3>ウォーターフォールプロット</h3><p>ウォーターフォールプロットテンプレート。腫瘍縮小率等を個別にプロット。</p></div></a>
+<a href="stat/swimmer-plot.html" class="card"><img src="img/stat_swimmer_plot.png" alt="スイマープロット" loading="lazy"><div class="card-body"><h3>スイマープロット</h3><p>スイマープロットテンプレート。個々の患者の治療経過を横棒でプロット。</p></div></a>
+<a href="stat/dca.html" class="card"><img src="img/stat_dca.png" alt="決定曲線分析" loading="lazy"><div class="card-body"><h3>決定曲線分析</h3><p>決定曲線分析（DCA）テンプレート。予測モデルの臨床的有用性を評価。</p></div></a>
+<a href="stat/cumulative-incidence.html" class="card"><img src="img/stat_cumulative_incidence.png" alt="累積発生率" loading="lazy"><div class="card-body"><h3>累積発生率</h3><p>累積発生率テンプレート。競合リスク存在下での事象発生率をプロット。</p></div></a>
+<a href="stat/competing-risks.html" class="card"><img src="img/stat_competing_risks.png" alt="競合リスク" loading="lazy"><div class="card-body"><h3>競合リスク</h3><p>競合リスクテンプレート。複数の事象を同時に評価。</p></div></a>
+<a href="stat/subgroup-forest.html" class="card"><img src="img/stat_subgroup_forest.png" alt="サブグループ解析" loading="lazy"><div class="card-body"><h3>サブグループ解析</h3><p>サブグループ解析フォレストプロットテンプレート。</p></div></a>
+<a href="stat/tornado-plot.html" class="card"><img src="img/stat_tornado_plot.png" alt="感度解析トルネードプロット" loading="lazy"><div class="card-body"><h3>感度解析トルネードプロット</h3><p>感度解析トルネードプロットテンプレート。各パラメータの影響度を比較。</p></div></a>
+<a href="stat/passing-bablok.html" class="card"><img src="img/stat_passing_bablok.png" alt="パッシング・バブロック回帰" loading="lazy"><div class="card-body"><h3>パッシング・バブロック回帰</h3><p>パッシング・バブロック回帰テンプレート。2測定法の比較に使用。</p></div></a>
+<a href="stat/levey-jennings.html" class="card"><img src="img/stat_levey_jennings.png" alt="レビー・ジェニングスQC管理図" loading="lazy"><div class="card-body"><h3>レビー・ジェニングスQC管理図</h3><p>レビー・ジェニングスQC管理図テンプレート。分析精度の品質管理に使用。</p></div></a>
+<a href="stat/correlation-matrix.html" class="card"><img src="img/stat_correlation_matrix.png" alt="相関行列" loading="lazy"><div class="card-body"><h3>相関行列</h3><p>相関行列テンプレート。多変量間の相関係数をヒートマップで可視化。</p></div></a>
+<a href="stat/bubble-plot.html" class="card"><img src="img/stat_bubble_plot.png" alt="バブルプロット" loading="lazy"><div class="card-body"><h3>バブルプロット</h3><p>バブルプロットテンプレート。3変数を位置とサイズで同時に可視化。</p></div></a>
+<a href="stat/spider-plot.html" class="card"><img src="img/stat_spider_plot.png" alt="スパイダー/レーダーチャート" loading="lazy"><div class="card-body"><h3>スパイダー/レーダーチャート</h3><p>スパイダー（レーダー）チャートテンプレート。多次元データの比較に使用。</p></div></a>
+<a href="stat/bland-altman-ratio.html" class="card"><img src="img/stat_bland_altman_ratio.png" alt="ブランド・アルトマン（比）" loading="lazy"><div class="card-body"><h3>ブランド・アルトマン（比）</h3><p>比型ブランド・アルトマンプロットテンプレート。対数変換データの一致度評価に使用。</p></div></a></div></section>
+<section class="cat-section" id="surg"><h2><a href="c/surg.html">外科・麻酔 (10)</a></h2><div class="card-grid"><a href="surg/asa-classification.html" class="card"><img src="img/surg_asa_classification.png" alt="ASA分類" loading="lazy"><div class="card-body"><h3>ASA分類</h3><p>ASA身体状態分類テンプレート。I-VI類の術前リスク評価に使用。</p></div></a>
+<a href="surg/mallampati.html" class="card"><img src="img/surg_mallampati.png" alt="マランパティスコア" loading="lazy"><div class="card-body"><h3>マランパティスコア</h3><p>マランパティスコアテンプレート。気管挿管困難度の予測に使用。</p></div></a>
+<a href="surg/fluid-balance.html" class="card"><img src="img/surg_fluid_balance.png" alt="水分バランスチャート" loading="lazy"><div class="card-body"><h3>水分バランスチャート</h3><p>水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。</p></div></a>
+<a href="surg/blood-gas.html" class="card"><img src="img/surg_blood_gas.png" alt="血液ガスモニタリング" loading="lazy"><div class="card-body"><h3>血液ガスモニタリング</h3><p>血液ガスモニタリングテンプレート。pH/PO2/PCO2の経時変化をプロット。</p></div></a>
+<a href="surg/ventilator-wave-surg.html" class="card"><img src="img/surg_ventilator_wave_surg.png" alt="人工呼吸器波形（術中）" loading="lazy"><div class="card-body"><h3>人工呼吸器波形（術中）</h3><p>術中人工呼吸器波形テンプレート。圧・流量・容量波形をプロット。</p></div></a>
+<a href="surg/mac-values.html" class="card"><img src="img/surg_mac_values.png" alt="MAC値" loading="lazy"><div class="card-body"><h3>MAC値</h3><p>MAC値テンプレート。吸入麻酔薬のMAC値比較に使用。</p></div></a>
+<a href="surg/pain-ladder.html" class="card"><img src="img/surg_pain_ladder.png" alt="疼痛管理ラダー" loading="lazy"><div class="card-body"><h3>疼痛管理ラダー</h3><p>WHO疼痛管理ラダーテンプレート。3段階の鎮痛法をプロット。</p></div></a>
+<a href="surg/wound-class.html" class="card"><img src="img/surg_wound_class.png" alt="手術創分類" loading="lazy"><div class="card-body"><h3>手術創分類</h3><p>手術創分類テンプレート。清潔/準清潔/汚染/感染の感染リスクをプロット。</p></div></a>
+<a href="surg/anesthesia-monitor.html" class="card"><img src="img/surg_anesthesia_monitor.png" alt="麻酔モニタリング" loading="lazy"><div class="card-body"><h3>麻酔モニタリング</h3><p>麻酔モニタリングテンプレート。HR/BP/SpO2/EtCO2の経時変化をプロット。</p></div></a>
+<a href="surg/surgical-checklist.html" class="card"><img src="img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="card-body"><h3>手術チェックリスト</h3><p>手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</p></div></a></div></section>
 <footer>
-    <p><strong>MedGraph Free</strong> &mdash; 医学部生のための無料グラフテンプレート集</p>
-    <p>全コンテンツは <strong>CC0（パブリックドメイン）</strong> です。</p>
-    <p style="margin-top:0.4rem;">
-        Generated with <a href="https://www.r-project.org/" target="_blank" rel="noopener">R</a> +
-        <a href="https://ggplot2.tidyverse.org/" target="_blank" rel="noopener">ggplot2</a>
-    </p>
-    <p style="margin-top:0.3rem; font-size:0.75rem; color:#bbb;">
-        医学部 グラフ テンプレート 無料 | 医学 レポート 図表 素材 フリー | 医学生 R ggplot2 | Medical graph template free
-    </p>
+<p>MedGraph Free &mdash; All templates are CC0 (Public Domain). Free for any use including commercial.</p>
+<p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
-
 <script>
-function toggleCode(btn) {
-    const block = btn.parentElement.nextElementSibling;
-    block.classList.toggle('open');
-    btn.textContent = block.classList.contains('open') ? 'Close' : 'R Code';
-}
-function copyCode(btn) {
-    const code = btn.parentElement.textContent.replace('Copy', '').trim();
-    navigator.clipboard.writeText(code).then(() => {
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy', 1500);
-    });
+function filterCards(q){
+  q=q.toLowerCase();
+  document.querySelectorAll(".card").forEach(c=>{
+    const t=c.textContent.toLowerCase();
+    c.style.display=t.includes(q)?"":"none";
+  });
 }
 </script>
-
-</body>
-</html>
+</body></html>
