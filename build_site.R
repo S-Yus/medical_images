@@ -290,6 +290,9 @@ generate_template_page <- function(t, all_t) {
 <title>%s テンプレート | MedGraph Free</title>
 <meta name="description" content="%s 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="%s/%s/%s.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="%s テンプレート | MedGraph Free">
@@ -399,6 +402,9 @@ generate_category_page <- function(cat_id, cat_templates) {
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>%s（%s）グラフテンプレート一覧 | MedGraph Free</title>
 <meta name="description" content="%sのレポート用グラフテンプレート一覧。%d種類の著作権フリー白紙テンプレート。Rコード付き。">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="%s/c/%s.html">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -480,11 +486,15 @@ generate_index <- function(all_t) {
 <meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全%d分野%d種類・%dダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
 <meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="%s/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MedGraph Free | 医学部生のための無料グラフテンプレート集">
 <meta property="og:description" content="全%d分野%d種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
 <meta property="og:url" content="%s/">
+<meta property="og:image" content="%s/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"%s/","description":"医学部生のためのグラフテンプレート集。全%d分野%d種類。CC0。Rコード付き。","inLanguage":"ja"}
@@ -552,7 +562,7 @@ function filterCards(q){
 </script>
 </body></html>',
   length(by_cat), total, total_dl, SITE_URL,
-  length(by_cat), total, SITE_URL, SITE_URL,
+  length(by_cat), total, SITE_URL, SITE_URL, SITE_URL,
   length(by_cat), total,
   total, total_dl, length(by_cat),
   nav_links, cat_cards, all_cards)
@@ -595,8 +605,12 @@ cat("Loading template definitions...\n")
 source("template_defs.R", encoding="UTF-8")
 cat(sprintf("Loaded %d templates\n", length(TEMPLATES)))
 
-# 1. Generate images
-generate_all_images(TEMPLATES)
+# 1. Generate images (skip if SKIP_IMAGES env var is set)
+if (Sys.getenv("SKIP_IMAGES") == "") {
+  generate_all_images(TEMPLATES)
+} else {
+  cat("Skipping image generation (SKIP_IMAGES set)\n")
+}
 
 # 2. Generate individual pages
 cat("Generating individual HTML pages...\n")
