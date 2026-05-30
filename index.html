@@ -132,11 +132,25 @@
     <a href="#biochem">生化学</a>
     <a href="#physiol">生理学</a>
     <a href="#pharm">薬理学</a>
-    <a href="#stat">臨床研究・統計</a>
+    <a href="#micro">微生物学</a>
+    <a href="#immuno">免疫学</a>
+    <a href="#stat">臨床統計</a>
+    <a href="#epi">疫学</a>
     <a href="#nephro">腎臓</a>
     <a href="#acidbase">酸塩基</a>
     <a href="#hemato">血液</a>
     <a href="#endo">内分泌</a>
+    <a href="#neuro">神経</a>
+    <a href="#cardio">循環器</a>
+    <a href="#pulm">呼吸器</a>
+    <a href="#gi">消化器</a>
+    <a href="#obgyn">産婦人科</a>
+    <a href="#peds">小児科</a>
+    <a href="#ortho">整形外科</a>
+    <a href="#eye">眼科</a>
+    <a href="#psych">精神科</a>
+    <a href="#anat">解剖学</a>
+    <a href="#path">病理</a>
     <a href="#ecg">心電図</a>
     <a href="#howto">使い方</a>
 </nav>
@@ -972,6 +986,972 @@ ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
   theme_bw(base_size = 14) +
   theme(axis.text.x = element_text(
     angle = 45, hjust = 1))</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 微生物学 ══════════ -->
+    <div class="section-header" id="micro">
+        <h2>微生物学</h2><span class="field-tag">Microbiology</span>
+    </div>
+    <p class="section-desc">細菌増殖曲線・抗菌薬感受性試験など、微生物学実習で頻出するテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="micro_growth_curve.png" alt="Bacterial Growth Curve">
+            <div class="card-body">
+                <h3>細菌増殖曲線</h3>
+                <p>Lag / Log / Stationary / Death phase を描画。対数スケール。</p>
+                <div class="tags"><span class="tag">増殖曲線</span><span class="tag">世代時間</span><span class="tag">CFU</span></div>
+                <div class="btn-row">
+                    <a href="micro_growth_curve.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Time (hr)",
+    limits = c(0, 24), breaks = seq(0, 24, 2),
+    expand = c(0, 0)) +
+  scale_y_log10(name = "CFU/mL  (log scale)",
+    limits = c(1e3, 1e10),
+    breaks = 10^(3:10)) +
+  labs(title = "Bacterial Growth Curve") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="micro_time_kill.png" alt="Time-Kill Curve">
+            <div class="card-body">
+                <h3>Time-Kill Curve（殺菌曲線）</h3>
+                <p>抗菌薬の濃度依存性/時間依存性殺菌を評価。3-log reduction ライン付き。</p>
+                <div class="tags"><span class="tag">殺菌</span><span class="tag">MIC</span><span class="tag">PK/PD</span></div>
+                <div class="btn-row">
+                    <a href="micro_time_kill.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 3, linetype = "dashed",
+    color = "#E74C3C") +
+  scale_x_continuous(name = "Time (hr)",
+    limits = c(0, 24), breaks = seq(0, 24, 2),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("Log"[10] * " CFU/mL"),
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  labs(title = "Time-Kill Curve",
+    subtitle = "Plot: Control / 1x / 2x / 4x MIC") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="micro_mic.png" alt="MIC Determination">
+            <div class="card-body">
+                <h3>MIC 測定（微量液体希釈法）</h3>
+                <p>抗菌薬の2倍希釈系列に対する OD600。MIC = 増殖阻止最小濃度。</p>
+                <div class="tags"><span class="tag">MIC</span><span class="tag">感受性</span><span class="tag">OD600</span></div>
+                <div class="btn-row">
+                    <a href="micro_mic.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = expression("Antibiotic (" * mu * "g/mL)"),
+    limits = c(0, 10), breaks = 0:10,
+    labels = c("0","0.0625","0.125","0.25","0.5",
+      "1","2","4","8","16","32")) +
+  scale_y_continuous(
+    name = expression("OD"[600]),
+    limits = c(0, 1.5), breaks = seq(0, 1.5, 0.1),
+    expand = c(0, 0)) +
+  labs(title = "MIC Determination") +
+  theme_bw(base_size = 14) +
+  theme(axis.text.x = element_text(
+    angle = 45, hjust = 1))</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="micro_disk_diffusion.png" alt="Disk Diffusion">
+            <div class="card-body">
+                <h3>ディスク拡散法（阻止円径）</h3>
+                <p>各抗菌薬の阻止円径を記録。S / I / R の判定ライン付き。</p>
+                <div class="tags"><span class="tag">阻止円</span><span class="tag">感受性</span><span class="tag">CLSI</span></div>
+                <div class="btn-row">
+                    <a href="micro_disk_diffusion.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 18, linetype = "dashed",
+    color = "#2E86AB") +
+  geom_hline(yintercept = 13, linetype = "dashed",
+    color = "#F39C12") +
+  scale_x_continuous(name = "Antibiotic",
+    limits = c(0, 10), breaks = 1:10,
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Zone diameter (mm)",
+    limits = c(0, 40), breaks = seq(0, 40, 2),
+    expand = c(0, 0)) +
+  labs(title = "Disk Diffusion (Zone of Inhibition)") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 免疫学 ══════════ -->
+    <div class="section-header" id="immuno">
+        <h2>免疫学</h2><span class="field-tag">Immunology</span>
+    </div>
+    <p class="section-desc">抗体応答・ELISA・フローサイトメトリーなど免疫学実験で使用するテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="immuno_response.png" alt="Immune Response">
+            <div class="card-body">
+                <h3>一次/二次免疫応答</h3>
+                <p>抗原暴露後の IgM → IgG クラススイッチの推移。2回目の暴露で急速な IgG 上昇。</p>
+                <div class="tags"><span class="tag">IgM</span><span class="tag">IgG</span><span class="tag">クラススイッチ</span></div>
+                <div class="btn-row">
+                    <a href="immuno_response.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_vline(xintercept = 0, linetype = "dotted",
+    color = "grey60") +
+  geom_vline(xintercept = 28, linetype = "dotted",
+    color = "grey60") +
+  scale_x_continuous(name = "Days after antigen exposure",
+    limits = c(0, 56), breaks = seq(0, 56, 7),
+    expand = c(0, 0)) +
+  scale_y_log10(name = "Antibody titer (log scale)",
+    limits = c(1, 10000),
+    breaks = c(1, 10, 100, 1000, 10000)) +
+  labs(title = "Primary & Secondary Immune Response",
+    subtitle = "Plot: IgM / IgG for each exposure") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="immuno_elisa.png" alt="ELISA Standard Curve">
+            <div class="card-body">
+                <h3>ELISA 標準曲線</h3>
+                <p>標準濃度 vs OD450。4パラメータロジスティック曲線でフィット。</p>
+                <div class="tags"><span class="tag">ELISA</span><span class="tag">4-PL</span><span class="tag">定量</span></div>
+                <div class="btn-row">
+                    <a href="immuno_elisa.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_log10(
+    name = "Standard concentration (pg/mL)",
+    limits = c(1, 10000),
+    breaks = c(1, 10, 100, 1000, 10000)) +
+  scale_y_continuous(
+    name = expression("OD"[450]),
+    limits = c(0, 3), breaks = seq(0, 3, 0.25),
+    expand = c(0, 0)) +
+  labs(title = "ELISA Standard Curve (4-PL)") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="immuno_ch50.png" alt="CH50">
+            <div class="card-body">
+                <h3>補体活性（CH50）</h3>
+                <p>血清量 vs 溶血率。50% 溶血点が CH50 値。</p>
+                <div class="tags"><span class="tag">補体</span><span class="tag">CH50</span><span class="tag">溶血</span></div>
+                <div class="btn-row">
+                    <a href="immuno_ch50.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 50, linetype = "dashed",
+    color = "#E74C3C") +
+  scale_x_continuous(name = "Serum volume / dilution",
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Hemolysis (%)",
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = "Complement Hemolytic Activity (CH50)") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="immuno_facs.png" alt="Flow Cytometry">
+            <div class="card-body">
+                <h3>フローサイトメトリー ドットプロット</h3>
+                <p>CD4 vs CD8 の2次元プロット。Q1〜Q4 の象限分類付き。</p>
+                <div class="tags"><span class="tag">FACS</span><span class="tag">CD4/CD8</span><span class="tag">T細胞</span></div>
+                <div class="btn-row">
+                    <a href="immuno_facs.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 2.5, linetype = "dashed",
+    color = "grey60") +
+  geom_vline(xintercept = 2.5, linetype = "dashed",
+    color = "grey60") +
+  annotate("text", x = 0.5, y = 4.5,
+    label = "Q1\nCD4-/CD8+", color = "grey50") +
+  annotate("text", x = 4.5, y = 4.5,
+    label = "Q2\nCD4+/CD8+", color = "grey50") +
+  annotate("text", x = 0.5, y = 0.5,
+    label = "Q3\nCD4-/CD8-", color = "grey50") +
+  annotate("text", x = 4.5, y = 0.5,
+    label = "Q4\nCD4+/CD8-", color = "grey50") +
+  scale_x_continuous(name = "CD4 (log fluorescence)",
+    limits = c(0, 5), breaks = 0:5,
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "CD8 (log fluorescence)",
+    limits = c(0, 5), breaks = 0:5,
+    expand = c(0, 0)) +
+  labs(title = "Flow Cytometry Dot Plot") +
+  coord_equal() + theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 疫学 (stat の後に挿入されるが、nav順を合わせる) ══════════ -->
+    <div class="section-header" id="epi">
+        <h2>疫学・公衆衛生</h2><span class="field-tag">Epidemiology</span>
+    </div>
+    <p class="section-desc">流行曲線・罹患率・スクリーニング評価など、疫学・公衆衛生で使うテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="epi_epidemic_curve.png" alt="Epidemic Curve">
+            <div class="card-body">
+                <h3>流行曲線（Epi Curve）</h3>
+                <p>日別の症例数をヒストグラムで表示。点源・持続源・伝播型の判別に。</p>
+                <div class="tags"><span class="tag">流行曲線</span><span class="tag">アウトブレイク</span><span class="tag">感染症</span></div>
+                <div class="btn-row">
+                    <a href="epi_epidemic_curve.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+days &lt;- data.frame(day = 1:30)
+ggplot(days, aes(x = day)) + geom_blank() +
+  scale_x_continuous(name = "Day of outbreak",
+    limits = c(0.5, 30.5), breaks = 1:30,
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Number of cases",
+    limits = c(0, 30), breaks = seq(0, 30, 2),
+    expand = c(0, 0)) +
+  labs(title = "Epidemic Curve") +
+  theme_bw(base_size = 14)
+
+# ---- データ追加例 ----
+# cases &lt;- data.frame(day = c(3,3,4,5,5,5,6,6,...))
+# + geom_bar(data = cases, aes(x = day))</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="epi_2x2_table.png" alt="2x2 Table">
+            <div class="card-body">
+                <h3>2×2 分割表</h3>
+                <p>疫学の基本。OR / RR の算出式付き。症例対照研究・コホート研究に。</p>
+                <div class="tags"><span class="tag">OR</span><span class="tag">RR</span><span class="tag">分割表</span></div>
+                <div class="btn-row">
+                    <a href="epi_2x2_table.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+# 2x2 contingency table visualization
+ggplot() +
+  geom_tile(data = data.frame(
+    x = c(1,2,1,2), y = c(2,2,1,1)),
+    aes(x, y), fill = NA, color = "grey30",
+    linewidth = 1.2, width = 0.95, height = 0.95) +
+  annotate("text", x = 1, y = 2.65,
+    label = "Exposed", fontface = "bold") +
+  annotate("text", x = 2, y = 2.65,
+    label = "Unexposed", fontface = "bold") +
+  annotate("text", x = 0.2, y = 2,
+    label = "Disease+", fontface = "bold", hjust = 0) +
+  annotate("text", x = 0.2, y = 1,
+    label = "Disease-", fontface = "bold", hjust = 0) +
+  annotate("text", x = 1, y = 2, label = "a",
+    size = 6, color = "#2E86AB") +
+  annotate("text", x = 2, y = 2, label = "b",
+    size = 6, color = "#2E86AB") +
+  annotate("text", x = 1, y = 1, label = "c",
+    size = 6, color = "#2E86AB") +
+  annotate("text", x = 2, y = 1, label = "d",
+    size = 6, color = "#2E86AB") +
+  annotate("text", x = 1.5, y = 0.2,
+    label = "OR = (axd)/(bxc)", color = "grey40") +
+  labs(title = "2x2 Contingency Table") +
+  theme_void()</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="epi_age_incidence.png" alt="Age-specific Incidence">
+            <div class="card-body">
+                <h3>年齢別罹患率</h3>
+                <p>年齢階級ごとの罹患率を棒グラフまたは折れ線で記録。</p>
+                <div class="tags"><span class="tag">罹患率</span><span class="tag">年齢調整</span><span class="tag">記述疫学</span></div>
+                <div class="btn-row">
+                    <a href="epi_age_incidence.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+age_groups &lt;- data.frame(
+  age = factor(c("0-9","10-19","20-29","30-39",
+    "40-49","50-59","60-69","70-79","80+")))
+ggplot(age_groups, aes(x = age, y = 0)) +
+  geom_blank() +
+  scale_y_continuous(
+    name = "Incidence rate (per 100,000)",
+    limits = c(0, 500), breaks = seq(0, 500, 50),
+    expand = c(0, 0)) +
+  labs(title = "Age-Specific Incidence Rate",
+    x = "Age group") +
+  theme_bw(base_size = 14) +
+  theme(axis.text.x = element_text(
+    angle = 45, hjust = 1))</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="epi_screening.png" alt="Screening PPV NPV">
+            <div class="card-body">
+                <h3>PPV / NPV vs 有病率</h3>
+                <p>感度・特異度一定のもと、有病率の変化に対する PPV / NPV の推移。</p>
+                <div class="tags"><span class="tag">PPV</span><span class="tag">NPV</span><span class="tag">スクリーニング</span></div>
+                <div class="btn-row">
+                    <a href="epi_screening.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Prevalence (%)",
+    limits = c(0, 50), breaks = seq(0, 50, 5),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Predictive Value (%)",
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = "PPV & NPV vs Prevalence",
+    subtitle = "Plot at fixed Se & Sp") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 神経科学 ══════════ -->
+    <div class="section-header" id="neuro">
+        <h2>神経科学</h2><span class="field-tag">Neuroscience</span>
+    </div>
+    <p class="section-desc">脳波・神経伝導・筋電図・瞳孔反射のテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="neuro_eeg.png" alt="EEG Template">
+            <div class="card-body">
+                <h3>脳波（EEG）記録テンプレート</h3>
+                <p>10-20 法の主要10チャンネル × 10秒間。α / β / θ / δ 波を記録。</p>
+                <div class="tags"><span class="tag">EEG</span><span class="tag">10-20法</span><span class="tag">脳波</span></div>
+                <div class="btn-row">
+                    <a href="neuro_eeg.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+channels &lt;- c("Fp1","Fp2","F3","F4","C3",
+               "C4","P3","P4","O1","O2")
+ch_df &lt;- data.frame(
+  channel = factor(channels, levels = rev(channels)))
+ggplot(ch_df, aes(x = 0, y = channel)) +
+  geom_blank() +
+  scale_x_continuous(name = "Time (seconds)",
+    limits = c(0, 10), breaks = seq(0, 10, 0.5),
+    expand = c(0, 0)) +
+  labs(title = "EEG Recording Template", y = "Channel") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="neuro_ncv.png" alt="NCV">
+            <div class="card-body">
+                <h3>神経伝導速度（NCS）</h3>
+                <p>時間 vs 振幅。潜時・振幅・伝導速度の記入欄付き。</p>
+                <div class="tags"><span class="tag">NCV</span><span class="tag">潜時</span><span class="tag">振幅</span></div>
+                <div class="btn-row">
+                    <a href="neuro_ncv.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(name = "Time (ms)",
+    limits = c(0, 20), breaks = seq(0, 20, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Amplitude (mV)",
+    limits = c(-5, 15), breaks = seq(-5, 15, 1),
+    expand = c(0, 0)) +
+  labs(title = "Nerve Conduction Study",
+    subtitle = "Latency=__ms, Amp=__mV, NCV=__m/s") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="neuro_emg.png" alt="EMG">
+            <div class="card-body">
+                <h3>筋電図（EMG）</h3>
+                <p>安静時 / 軽収縮 / 最大収縮での EMG 波形を記録。</p>
+                <div class="tags"><span class="tag">EMG</span><span class="tag">MUP</span><span class="tag">筋電図</span></div>
+                <div class="btn-row">
+                    <a href="neuro_emg.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(name = "Time (ms)",
+    limits = c(0, 100), breaks = seq(0, 100, 5),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("Amplitude (" * mu * "V)"),
+    limits = c(-500, 500),
+    breaks = seq(-500, 500, 100),
+    expand = c(0, 0)) +
+  labs(title = "Electromyography (EMG)",
+    subtitle = "Rest / Mild / Maximal contraction") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="neuro_pupil.png" alt="Pupil Reflex">
+            <div class="card-body">
+                <h3>瞳孔対光反射</h3>
+                <p>光刺激前後の瞳孔径変化を経時的に記録。光照射区間を表示。</p>
+                <div class="tags"><span class="tag">瞳孔</span><span class="tag">対光反射</span><span class="tag">自律神経</span></div>
+                <div class="btn-row">
+                    <a href="neuro_pupil.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  annotate("rect", xmin = 2, xmax = 4,
+    ymin = 0, ymax = 10,
+    fill = "#fef3c7", alpha = 0.4) +
+  annotate("text", x = 3, y = 9.5,
+    label = "Light ON", color = "#b45309") +
+  scale_x_continuous(name = "Time (seconds)",
+    limits = c(0, 8), breaks = seq(0, 8, 0.5),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Pupil diameter (mm)",
+    limits = c(0, 10), breaks = seq(0, 10, 0.5),
+    expand = c(0, 0)) +
+  labs(title = "Pupillary Light Reflex") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 循環器 ══════════ -->
+    <div class="section-header" id="cardio">
+        <h2>循環器</h2><span class="field-tag">Cardiology</span>
+    </div>
+    <p class="section-desc">Wiggers Diagram など循環器の追加テンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="cardio_wiggers.png" alt="Wiggers Diagram">
+            <div class="card-body">
+                <h3>Wiggers Diagram（心周期）</h3>
+                <p>大動脈圧 / LV圧 / LA圧 / LV容積 / ECG / 心音を1つの時間軸に重ねて描画。</p>
+                <div class="tags"><span class="tag">心周期</span><span class="tag">弁開閉</span><span class="tag">圧曲線</span></div>
+                <div class="btn-row">
+                    <a href="cardio_wiggers.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Time (seconds)",
+    limits = c(0, 0.8), breaks = seq(0, 0.8, 0.05),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Pressure (mmHg) / Volume (mL)",
+    limits = c(0, 140), breaks = seq(0, 140, 10),
+    expand = c(0, 0)) +
+  labs(title = "Wiggers Diagram",
+    subtitle = paste("Aortic P / LV P / LA P /",
+      "LV Vol / ECG / Heart sounds")) +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 呼吸器 ══════════ -->
+    <div class="section-header" id="pulm">
+        <h2>呼吸器</h2><span class="field-tag">Pulmonology</span>
+    </div>
+    <p class="section-desc">肺気量分画・A-aDO₂ など呼吸器のテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="pulm_volumes.png" alt="Lung Volumes">
+            <div class="card-body">
+                <h3>肺気量分画（スパイログラム）</h3>
+                <p>TV / IRV / ERV / RV / VC / FRC / TLC の各肺気量を記録。</p>
+                <div class="tags"><span class="tag">肺気量</span><span class="tag">VC</span><span class="tag">TLC</span></div>
+                <div class="btn-row">
+                    <a href="pulm_volumes.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Time (seconds)",
+    limits = c(0, 30), breaks = seq(0, 30, 2),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Volume (L)",
+    limits = c(0, 7), breaks = seq(0, 7, 0.5),
+    expand = c(0, 0)) +
+  labs(title = "Lung Volumes & Capacities",
+    subtitle = "TV / IRV / ERV / RV / VC / FRC / TLC") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="pulm_aado2.png" alt="A-aDO2">
+            <div class="card-body">
+                <h3>A-a Gradient（A-aDO₂）</h3>
+                <p>肺胞酸素分圧 vs 動脈酸素分圧。正常 A-aDO₂ &lt; 10-15 mmHg。</p>
+                <div class="tags"><span class="tag">A-aDO₂</span><span class="tag">ガス交換</span><span class="tag">低酸素</span></div>
+                <div class="btn-row">
+                    <a href="pulm_aado2.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_abline(intercept = 0, slope = 1,
+    linetype = "dashed", color = "grey60") +
+  scale_x_continuous(
+    name = expression("P"["A"]*O[2]~"(mmHg)"),
+    limits = c(0, 150), breaks = seq(0, 150, 10),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("P"["a"]*O[2]~"(mmHg)"),
+    limits = c(0, 150), breaks = seq(0, 150, 10),
+    expand = c(0, 0)) +
+  labs(title = expression("A-a Gradient")) +
+  coord_equal() + theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 消化器 ══════════ -->
+    <div class="section-header" id="gi">
+        <h2>消化器</h2><span class="field-tag">Gastroenterology</span>
+    </div>
+    <p class="section-desc">胃酸分泌・肝機能検査のテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="gi_acid_secretion.png" alt="Gastric Acid Secretion">
+            <div class="card-body">
+                <h3>胃酸分泌</h3>
+                <p>食事刺激後の胃酸分泌量の推移。頭相・胃相・腸相を記録。</p>
+                <div class="tags"><span class="tag">胃酸</span><span class="tag">頭相</span><span class="tag">ガストリン</span></div>
+                <div class="btn-row">
+                    <a href="gi_acid_secretion.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  annotate("rect", xmin = 0.5, xmax = 1.5,
+    ymin = 0, ymax = 40,
+    fill = "#fef3c7", alpha = 0.3) +
+  annotate("text", x = 1, y = 38,
+    label = "Meal", color = "#b45309") +
+  scale_x_continuous(name = "Time (hr)",
+    limits = c(0, 6), breaks = seq(0, 6, 0.5),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Gastric acid output (mEq/hr)",
+    limits = c(0, 40), breaks = seq(0, 40, 5),
+    expand = c(0, 0)) +
+  labs(title = "Gastric Acid Secretion") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="gi_lft.png" alt="LFT">
+            <div class="card-body">
+                <h3>肝機能検査（LFT）経時変化</h3>
+                <p>AST / ALT / ALP / GGT / T-Bil の経時的推移。正常上限ライン付き。</p>
+                <div class="tags"><span class="tag">AST/ALT</span><span class="tag">肝機能</span><span class="tag">肝炎</span></div>
+                <div class="btn-row">
+                    <a href="gi_lft.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 40, linetype = "dashed",
+    color = "#F39C12") +
+  scale_x_continuous(name = "Days / Weeks",
+    limits = c(0, 30), breaks = seq(0, 30, 2),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Enzyme level (U/L)",
+    limits = c(0, 500), breaks = seq(0, 500, 50),
+    expand = c(0, 0)) +
+  labs(title = "Liver Function Tests Time Course",
+    subtitle = "Plot: AST / ALT / ALP / GGT / T-Bil") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 産婦人科 ══════════ -->
+    <div class="section-header" id="obgyn">
+        <h2>産婦人科</h2><span class="field-tag">Obstetrics / Gynecology</span>
+    </div>
+    <p class="section-desc">パルトグラム・胎児発育曲線のテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="obgyn_partograph.png" alt="Partograph">
+            <div class="card-body">
+                <h3>パルトグラム（子宮口開大曲線）</h3>
+                <p>分娩進行を記録。活動期ライン（4 cm）付き。児頭下降度も記録可能。</p>
+                <div class="tags"><span class="tag">分娩</span><span class="tag">子宮口</span><span class="tag">パルトグラム</span></div>
+                <div class="btn-row">
+                    <a href="obgyn_partograph.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 4, linetype = "dashed",
+    color = "#2E86AB") +
+  annotate("text", x = 0.3, y = 4.3,
+    label = "Active phase (4 cm)",
+    color = "#2E86AB", hjust = 0) +
+  scale_x_continuous(name = "Time (hours)",
+    limits = c(0, 24), breaks = seq(0, 24, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Cervical dilation (cm)",
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  labs(title = "Partograph (Cervicograph)") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="obgyn_fetal_growth.png" alt="Fetal Growth">
+            <div class="card-body">
+                <h3>胎児発育曲線</h3>
+                <p>在胎週数 vs 推定胎児体重。10th / 50th / 90th パーセンタイル用。</p>
+                <div class="tags"><span class="tag">胎児発育</span><span class="tag">SGA/AGA/LGA</span><span class="tag">EFW</span></div>
+                <div class="btn-row">
+                    <a href="obgyn_fetal_growth.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Gestational age (weeks)",
+    limits = c(12, 42), breaks = seq(12, 42, 2),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Estimated fetal weight (g)",
+    limits = c(0, 5000), breaks = seq(0, 5000, 500),
+    expand = c(0, 0)) +
+  labs(title = "Fetal Growth Curve",
+    subtitle = "10th / 50th / 90th percentile") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 小児科 ══════════ -->
+    <div class="section-header" id="peds">
+        <h2>小児科</h2><span class="field-tag">Pediatrics</span>
+    </div>
+    <p class="section-desc">成長曲線（体重・身長）のテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="peds_growth_weight.png" alt="Growth Weight">
+            <div class="card-body">
+                <h3>成長曲線（体重）</h3>
+                <p>0〜36ヶ月の月齢別体重。パーセンタイル曲線を描画。</p>
+                <div class="tags"><span class="tag">成長曲線</span><span class="tag">体重</span><span class="tag">パーセンタイル</span></div>
+                <div class="btn-row">
+                    <a href="peds_growth_weight.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Age (months)",
+    limits = c(0, 36), breaks = seq(0, 36, 3),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Weight (kg)",
+    limits = c(0, 18), breaks = seq(0, 18, 1),
+    expand = c(0, 0)) +
+  labs(title = "Growth Chart (Weight, 0-36 months)",
+    subtitle = "3rd / 15th / 50th / 85th / 97th") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="peds_growth_height.png" alt="Growth Height">
+            <div class="card-body">
+                <h3>成長曲線（身長）</h3>
+                <p>0〜20歳の年齢別身長。パーセンタイル曲線と実測値を記録。</p>
+                <div class="tags"><span class="tag">成長曲線</span><span class="tag">身長</span><span class="tag">思春期</span></div>
+                <div class="btn-row">
+                    <a href="peds_growth_height.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Age (years)",
+    limits = c(0, 20), breaks = seq(0, 20, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "Height (cm)",
+    limits = c(40, 190), breaks = seq(40, 190, 10),
+    expand = c(0, 0)) +
+  labs(title = "Growth Chart (Height, 0-20 years)",
+    subtitle = "3rd / 50th / 97th percentile") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 整形外科 ══════════ -->
+    <div class="section-header" id="ortho">
+        <h2>整形外科</h2><span class="field-tag">Orthopedics</span>
+    </div>
+    <p class="section-desc">関節可動域（ROM）の記録用テンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="ortho_rom.png" alt="ROM">
+            <div class="card-body">
+                <h3>関節可動域（ROM）チャート</h3>
+                <p>主要関節の ROM を測定・記録。正常値との比較に。</p>
+                <div class="tags"><span class="tag">ROM</span><span class="tag">関節</span><span class="tag">リハビリ</span></div>
+                <div class="btn-row">
+                    <a href="ortho_rom.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+joints &lt;- c("Shoulder\nFlexion","Shoulder\nAbduction",
+  "Elbow\nFlexion","Wrist\nFlexion",
+  "Hip\nFlexion","Hip\nAbduction",
+  "Knee\nFlexion","Ankle\nDorsiflexion")
+joint_df &lt;- data.frame(
+  joint = factor(joints, levels = joints))
+ggplot(joint_df, aes(x = joint, y = 0)) +
+  geom_blank() +
+  scale_y_continuous(name = "Range of Motion (degrees)",
+    limits = c(0, 180), breaks = seq(0, 180, 10),
+    expand = c(0, 0)) +
+  labs(title = "Joint ROM Chart", x = "") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 眼科 ══════════ -->
+    <div class="section-header" id="eye">
+        <h2>眼科</h2><span class="field-tag">Ophthalmology</span>
+    </div>
+    <p class="section-desc">視力経過の記録テンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="eye_visual_acuity.png" alt="Visual Acuity">
+            <div class="card-body">
+                <h3>視力経過（LogMAR）</h3>
+                <p>治療前後の視力推移を LogMAR で記録。Snellen 換算値ガイド付き。</p>
+                <div class="tags"><span class="tag">LogMAR</span><span class="tag">視力</span><span class="tag">経過</span></div>
+                <div class="btn-row">
+                    <a href="eye_visual_acuity.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Time (weeks / months)",
+    limits = c(0, 12), breaks = seq(0, 12, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(name = "LogMAR Visual Acuity",
+    limits = c(-0.2, 1.5),
+    breaks = seq(-0.2, 1.5, 0.1),
+    expand = c(0, 0)) +
+  annotate("text", x = 11.5, y = 0,
+    label = "20/20", color = "grey50", hjust = 1) +
+  annotate("text", x = 11.5, y = 0.3,
+    label = "20/40", color = "grey50", hjust = 1) +
+  annotate("text", x = 11.5, y = 1.0,
+    label = "20/200", color = "grey50", hjust = 1) +
+  labs(title = "Visual Acuity Over Time (LogMAR)") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 精神科 ══════════ -->
+    <div class="section-header" id="psych">
+        <h2>精神科</h2><span class="field-tag">Psychiatry</span>
+    </div>
+    <p class="section-desc">精神科評価尺度の経時変化を記録するテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="psych_rating_scale.png" alt="Rating Scale">
+            <div class="card-body">
+                <h3>症状評価尺度の経時変化</h3>
+                <p>HAM-D / PANSS / MADRS 等の治療経過を記録。</p>
+                <div class="tags"><span class="tag">HAM-D</span><span class="tag">PANSS</span><span class="tag">治療反応</span></div>
+                <div class="btn-row">
+                    <a href="psych_rating_scale.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(name = "Week of treatment",
+    limits = c(0, 12), breaks = seq(0, 12, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Symptom score (HAM-D / PANSS / MADRS)",
+    limits = c(0, 50), breaks = seq(0, 50, 5),
+    expand = c(0, 0)) +
+  labs(title = "Psychiatric Symptom Rating Scale",
+    subtitle = "Plot treatment response over time") +
+  theme_bw(base_size = 14)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 解剖学 ══════════ -->
+    <div class="section-header" id="anat">
+        <h2>解剖学</h2><span class="field-tag">Anatomy</span>
+    </div>
+    <p class="section-desc">デルマトーム評価の記録テンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="anat_dermatome.png" alt="Dermatome">
+            <div class="card-body">
+                <h3>デルマトーム知覚評価</h3>
+                <p>C2〜S5 の各脊髄レベルの知覚スコア（0/1/2）を記録。</p>
+                <div class="tags"><span class="tag">デルマトーム</span><span class="tag">脊髄</span><span class="tag">知覚</span></div>
+                <div class="btn-row">
+                    <a href="anat_dermatome.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+levels &lt;- c("C2","C3","C4","C5","C6","C7","C8",
+  "T1","T2","T3","T4","T5","T6","T7","T8",
+  "T9","T10","T11","T12",
+  "L1","L2","L3","L4","L5",
+  "S1","S2","S3","S4","S5")
+derm_df &lt;- data.frame(
+  level = factor(levels, levels = levels))
+ggplot(derm_df, aes(x = level, y = 0)) +
+  geom_blank() +
+  scale_y_continuous(
+    name = "Score (0=absent, 1=impaired, 2=normal)",
+    limits = c(0, 2), breaks = 0:2) +
+  labs(title = "Dermatome Sensory Assessment",
+    x = "Spinal level") +
+  theme_bw(base_size = 14) +
+  theme(axis.text.x = element_text(
+    angle = 90, hjust = 1, vjust = 0.5))</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ 病理 ══════════ -->
+    <div class="section-header" id="path">
+        <h2>病理</h2><span class="field-tag">Pathology</span>
+    </div>
+    <p class="section-desc">白血球分画カウントのテンプレートです。</p>
+    <div class="card-grid">
+        <div class="card">
+            <img src="path_cell_count.png" alt="Differential Count">
+            <div class="card-body">
+                <h3>白血球分画（Differential Count）</h3>
+                <p>好中球・リンパ球・単球・好酸球・好塩基球の割合を記録。</p>
+                <div class="tags"><span class="tag">白血球</span><span class="tag">分画</span><span class="tag">CBC</span></div>
+                <div class="btn-row">
+                    <a href="path_cell_count.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+cells &lt;- c("Neutrophil","Lymphocyte","Monocyte",
+            "Eosinophil","Basophil")
+cell_df &lt;- data.frame(
+  cell = factor(cells, levels = cells))
+ggplot(cell_df, aes(x = cell, y = 0)) +
+  geom_blank() +
+  scale_y_continuous(name = "Percentage (%)",
+    limits = c(0, 80), breaks = seq(0, 80, 5),
+    expand = c(0, 0)) +
+  labs(title = "Differential WBC Count",
+    x = "Cell type") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
