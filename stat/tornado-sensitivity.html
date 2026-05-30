@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>トルネード図 テンプレート | MedGraph Free</title>
-<meta name="description" content="トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>感度分析トルネード図 テンプレート | MedGraph Free</title>
+<meta name="description" content="感度分析トルネード図テンプレート。各パラメータの結果への影響を視覚化。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/stat/tornado-sensitivity.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="トルネード図 テンプレート | MedGraph Free">
-<meta property="og:description" content="トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。">
+<meta property="og:title" content="感度分析トルネード図 テンプレート | MedGraph Free">
+<meta property="og:description" content="感度分析トルネード図テンプレート。各パラメータの結果への影響を視覚化。">
 <meta property="og:image" content="https://med-graph.com/img/stat_tornado_sensitivity.png">
 <meta property="og:url" content="https://med-graph.com/stat/tornado-sensitivity.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"トルネード図","description":"トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。","contentUrl":"https://med-graph.com/img/stat_tornado_sensitivity.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"感度分析トルネード図","description":"感度分析トルネード図テンプレート。各パラメータの結果への影響を視覚化。","contentUrl":"https://med-graph.com/img/stat_tornado_sensitivity.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/stat.html">臨床統計</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/stat.html">臨床統計</a> &gt; トルネード図</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/stat.html">臨床統計</a> &gt; 感度分析トルネード図</div>
 <main>
-<h1 class="page-title">トルネード図</h1>
-<p class="desc">トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。</p>
-<div class="tags"><span>トルネード</span><span>感度分析</span><span>影響度</span><span>意思決定</span></div>
+<h1 class="page-title">感度分析トルネード図</h1>
+<p class="desc">感度分析トルネード図テンプレート。各パラメータの結果への影響を視覚化。</p>
+<div class="tags"><span>感度分析</span><span>トルネード</span><span>パラメータ</span><span>影響</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/stat_tornado_sensitivity.png" alt="トルネード図"></div>
+<div class="preview-img"><img id="pv" src="../img/stat_tornado_sensitivity.png" alt="感度分析トルネード図"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/stat_tornado_sensitivity.png" download class="dl-btn">Download</a>
 </div>
@@ -103,7 +103,7 @@ footer a{color:#60a5fa}
 <div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
 <pre id="rcode">library(ggplot2)
 
-# ---- Tornado Diagram ----
+# ---- Sensitivity Analysis Tornado ----
 # あなたのデータを入力してください
 df <- data.frame(
   x = c(),
@@ -114,8 +114,8 @@ ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
   scale_x_continuous(name = "Impact on Outcome", limits = c(-50, 50)) +
-  scale_y_continuous(name = "Variable", limits = c(0, 10)) +
-  labs(title = "Tornado Diagram") +
+  scale_y_continuous(name = "", limits = c(0, 8)) +
+  labs(title = "Sensitivity Analysis Tornado") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>

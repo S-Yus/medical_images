@@ -194,6 +194,534 @@ make_polar_vf <- function(t, style, lang) {
   p+sptheme(style,C)
 }
 
+# ── Kaplan-Meier Survival Curve Template ──
+make_kaplan <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Time"
+  yl <- if(lang=="none") "" else "Survival Probability"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,as.numeric(t$xr[2])),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1),breaks=seq(0,1,.2),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0.5,linetype="dashed",color="grey60",linewidth=0.3)
+  if(lang!="none") p <- p+annotate("text",x=as.numeric(t$xr[2])*0.02,y=0.52,label="Median",color="grey50",hjust=0,size=3)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── ROC Curve Template ──
+make_roc <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "1 - Specificity (FPR)"
+  yl <- if(lang=="none") "" else "Sensitivity (TPR)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,1),breaks=seq(0,1,.2),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1),breaks=seq(0,1,.2),expand=c(0,0))
+  p <- p+geom_abline(slope=1,intercept=0,linetype="dashed",color="grey60",linewidth=0.4)
+  if(lang!="none") p <- p+annotate("text",x=0.65,y=0.55,label="Reference\n(AUC = 0.5)",color="grey50",size=3,angle=35)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+coord_fixed()
+}
+
+# ── Forest Plot Template ──
+make_forest <- function(t, style, lang) {
+  C <- spcols(style)
+  n <- max(3L,as.integer(t$yr[2]))
+  lbls <- if(!is.null(t$ylb)) head(t$ylb,n) else paste("Study",1:n)
+  df <- data.frame(y=1:n,lab=lbls)
+  p <- ggplot(df,aes(x=0,y=y))+geom_blank()
+  p <- p+geom_vline(xintercept=1,linetype="dashed",color="grey50",linewidth=0.5)
+  if(lang!="none") p <- p+geom_vline(xintercept=0,linetype="dotted",color="grey80",linewidth=0.3)
+  for(i in 1:n) p <- p+annotate("segment",x=-0.5,xend=2.5,y=i,yend=i,color=C$gc,linewidth=0.15)
+  xl <- if(lang=="none") "" else if(nchar(t$xl)>0) t$xl else "Odds Ratio (95% CI)"
+  yl <- if(lang=="none") "" else ""
+  p <- p+scale_x_continuous(name=xl,limits=c(-1,3.5))
+  if(lang!="none") {
+    p <- p+scale_y_continuous(name=yl,breaks=1:n,labels=lbls,expand=expansion(add=0.8))
+  } else {
+    p <- p+scale_y_continuous(name=yl,breaks=1:n,labels=rep("",n),expand=expansion(add=0.8))
+  }
+  if(lang!="none"){
+    p <- p+annotate("text",x=-0.8,y=n+0.7,label="Favours\nControl",size=2.5,color="grey50",hjust=0.5)
+    p <- p+annotate("text",x=2.8,y=n+0.7,label="Favours\nTreatment",size=2.5,color="grey50",hjust=0.5)
+  }
+  # Diamond shape for summary
+  dx <- c(0.5,1,1.5,1); dy_off <- c(0,0.2,0,-0.2)
+  dm <- data.frame(x=dx,y=dy_off+0.1)
+  p <- p+geom_polygon(data=dm,aes(x=x,y=y),fill=C$gc,color=C$ac)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Funnel Plot Template ──
+make_funnel <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else if(nchar(t$xl)>0) t$xl else "Effect Size"
+  yl <- if(lang=="none") "" else if(nchar(t$yl)>0) t$yl else "Standard Error"
+  cx <- mean(as.numeric(t$xr))
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr))+
+    scale_y_reverse(name=yl,limits=c(as.numeric(t$yr[2]),0))
+  p <- p+geom_vline(xintercept=cx,linetype="dashed",color="grey50",linewidth=0.4)
+  # Funnel lines
+  se_max <- as.numeric(t$yr[2])
+  p <- p+annotate("segment",x=cx-1.96*se_max,y=se_max,xend=cx,yend=0,linetype="dotted",color="grey60",linewidth=0.3)
+  p <- p+annotate("segment",x=cx+1.96*se_max,y=se_max,xend=cx,yend=0,linetype="dotted",color="grey60",linewidth=0.3)
+  if(lang!="none") p <- p+annotate("text",x=cx,y=se_max*0.05,label="Overall Effect",color="grey50",size=3,vjust=0)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Bland-Altman Plot Template ──
+make_bland_altman <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Mean of Two Methods"
+  yl <- if(lang=="none") "" else "Difference (Method 1 - Method 2)"
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr))
+  p <- p+geom_hline(yintercept=0,linetype="solid",color="grey40",linewidth=0.5)
+  lim <- as.numeric(t$yr[2])*0.6
+  p <- p+geom_hline(yintercept=lim,linetype="dashed",color="#dc2626",linewidth=0.3)
+  p <- p+geom_hline(yintercept=-lim,linetype="dashed",color="#dc2626",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=as.numeric(t$xr[1])+diff(as.numeric(t$xr))*0.02,y=lim*1.1,label="+1.96 SD",color="#dc2626",hjust=0,size=3)
+    p <- p+annotate("text",x=as.numeric(t$xr[1])+diff(as.numeric(t$xr))*0.02,y=-lim*1.1,label="-1.96 SD",color="#dc2626",hjust=0,size=3)
+    p <- p+annotate("text",x=as.numeric(t$xr[1])+diff(as.numeric(t$xr))*0.02,y=0.05*diff(as.numeric(t$yr)),label="Mean Diff",color="grey40",hjust=0,size=3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Box Plot Template ──
+make_boxplot <- function(t, style, lang) {
+  C <- spcols(style)
+  ng <- max(2L,as.integer(t$xr[2]))
+  glb <- if(!is.null(t$xlb)) head(t$xlb,ng) else paste("Group",1:ng)
+  df <- data.frame(g=factor(rep(1:ng,each=5),labels=glb),
+                   v=rep(c(0.2,0.35,0.5,0.65,0.8),ng)*diff(as.numeric(t$yr))+as.numeric(t$yr[1]))
+  xl <- if(lang=="none") "" else t$xl
+  yl <- if(lang=="none") "" else t$yl
+  p <- ggplot(df,aes(x=g,y=v))+geom_boxplot(fill=C$fl,color=C$ac,width=0.5,outlier.shape=NA)
+  if(lang=="none") p <- p+scale_x_discrete(name="",labels=rep("",ng)) else p <- p+labs(x=xl)
+  p <- p+labs(y=yl)+scale_y_continuous(limits=as.numeric(t$yr))
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Violin Plot Template ──
+make_violin <- function(t, style, lang) {
+  C <- spcols(style)
+  ng <- max(2L,as.integer(t$xr[2]))
+  glb <- if(!is.null(t$xlb)) head(t$xlb,ng) else paste("Group",1:ng)
+  set.seed(42)
+  df <- data.frame(g=factor(rep(1:ng,each=100),labels=glb),
+                   v=rnorm(ng*100,mean=mean(as.numeric(t$yr)),sd=diff(as.numeric(t$yr))/6))
+  xl <- if(lang=="none") "" else t$xl
+  yl <- if(lang=="none") "" else t$yl
+  p <- ggplot(df,aes(x=g,y=v))+geom_violin(fill=C$fl,color=C$ac,alpha=0.3,trim=FALSE)
+  if(lang=="none") p <- p+scale_x_discrete(name="",labels=rep("",ng)) else p <- p+labs(x=xl)
+  p <- p+labs(y=yl)+scale_y_continuous(limits=as.numeric(t$yr))
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── ECG Grid Template ──
+make_ecg <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xmax <- as.numeric(t$xr[2]); ymax <- as.numeric(t$yr[2]); ymin <- as.numeric(t$yr[1])
+  # Small grid (1mm = 0.04s x 0.1mV)
+  for(x in seq(0,xmax,0.04)) p <- p+geom_vline(xintercept=x,color="#ffcccc",linewidth=0.1)
+  for(y in seq(ymin,ymax,0.1)) p <- p+geom_hline(yintercept=y,color="#ffcccc",linewidth=0.1)
+  # Large grid (5mm = 0.2s x 0.5mV)
+  for(x in seq(0,xmax,0.2)) p <- p+geom_vline(xintercept=x,color="#ff8888",linewidth=0.25)
+  for(y in seq(ymin,ymax,0.5)) p <- p+geom_hline(yintercept=y,color="#ff8888",linewidth=0.25)
+  xl <- if(lang=="none") "" else "Time (seconds)"
+  yl <- if(lang=="none") "" else "Voltage (mV)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,xmax),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(ymin,ymax),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=xmax*0.98,y=ymax*0.95,label="25 mm/s\n10 mm/mV",color="grey50",hjust=1,size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+theme_minimal(base_size=if(style=="presentation")20 else 14)+
+    theme(panel.grid=element_blank(),
+          plot.title=element_text(hjust=0.5,face="bold",size=if(style=="presentation")24 else 16),
+          plot.background=element_rect(fill=if(style=="dark")"#2d2d2d"else"white",color=NA),
+          axis.text=element_text(color=if(style=="dark")"grey80"else"grey40"),
+          axis.title=element_text(color=if(style=="dark")"grey90"else"grey30"),
+          plot.margin=margin(15,15,10,10))
+}
+
+# ── Flow-Volume Loop (Spirometry) Template ──
+make_flow_volume <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Volume (L)"
+  yl <- if(lang=="none") "" else "Flow (L/s)"
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color="grey40",linewidth=0.5)
+  p <- p+geom_vline(xintercept=0,color="grey40",linewidth=0.5)
+  if(lang!="none"){
+    p <- p+annotate("text",x=as.numeric(t$xr[2])*0.7,y=as.numeric(t$yr[2])*0.85,label="Expiration",color="#2563eb",size=3.5)
+    p <- p+annotate("text",x=as.numeric(t$xr[2])*0.7,y=as.numeric(t$yr[1])*0.7,label="Inspiration",color="#dc2626",size=3.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Pressure-Volume Loop (Cardiac) Template ──
+make_pv_loop <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Volume (mL)"
+  yl <- if(lang=="none") "" else "Pressure (mmHg)"
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=mean(as.numeric(t$xr)),y=as.numeric(t$yr[2])*0.9,label="Isovolumic\nRelaxation",color="grey50",size=3)
+    p <- p+annotate("text",x=as.numeric(t$xr[1])+diff(as.numeric(t$xr))*0.2,y=as.numeric(t$yr[2])*0.5,label="Isovolumic\nContraction",color="grey50",size=3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Growth Chart (Percentile Curves) Template ──
+make_growth <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else t$xl
+  yl <- if(lang=="none") "" else t$yl
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  # Percentile curves as gentle arcs
+  pcts <- c(3,10,25,50,75,90,97)
+  for(i in seq_along(pcts)){
+    frac <- (i-1)/(length(pcts)-1)
+    ybase <- yr[1]+frac*diff(yr)*0.7
+    xs <- seq(xr[1],xr[2],length.out=50)
+    ys <- ybase + diff(yr)*0.15*sqrt((xs-xr[1])/diff(xr))
+    ys <- pmin(ys,yr[2])
+    cdf <- data.frame(x=xs,y=ys)
+    p <- p+geom_line(data=cdf,aes(x,y),color=C$gc,linewidth=0.4,linetype=if(pcts[i]==50)"solid"else"dashed")
+    if(lang!="none") p <- p+annotate("text",x=xr[2]*0.95,y=tail(ys,1),label=paste0(pcts[i],"%"),size=2.5,color=C$fg,hjust=1)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Bullseye (Cardiac 17-segment) Template ──
+make_bullseye <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot()+coord_fixed(xlim=c(-1.5,1.5),ylim=c(-1.5,1.5))
+  segs <- list(
+    list(r1=0,r2=0.25,a1=0,a2=2*pi,n=1),   # Apex (1 segment)
+    list(r1=0.25,r2=0.6,n=4),   # Mid (4 segments)
+    list(r1=0.6,r2=0.9,n=6),    # Mid (6 segments)
+    list(r1=0.9,r2=1.2,n=6)     # Basal (6 segments)
+  )
+  seg_num <- 1
+  seg_labels <- if(!is.null(t$xlb)) t$xlb else as.character(1:17)
+  for(ring in segs){
+    ns <- ring$n
+    for(j in 1:ns){
+      if(ns==1){a1<-0;a2<-2*pi}else{a1<-(j-1)*2*pi/ns;a2<-j*2*pi/ns}
+      th <- seq(a1,a2,length.out=30)
+      if(ring$r1==0){
+        arc <- data.frame(x=c(0,ring$r2*cos(th),0),y=c(0,ring$r2*sin(th),0))
+      } else {
+        arc <- data.frame(
+          x=c(ring$r1*cos(th),rev(ring$r2*cos(th))),
+          y=c(ring$r1*sin(th),rev(ring$r2*sin(th)))
+        )
+      }
+      p <- p+geom_polygon(data=arc,aes(x,y),fill=C$fl,color=C$ac,linewidth=0.3)
+      if(lang!="none"&&seg_num<=length(seg_labels)){
+        rmid <- (ring$r1+ring$r2)/2
+        amid <- (a1+a2)/2
+        p <- p+annotate("text",x=rmid*cos(amid),y=rmid*sin(amid),label=seg_labels[seg_num],size=2.5,color=C$fg)
+      }
+      seg_num <- seg_num+1
+    }
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Swimmer Plot Template ──
+make_swimmer <- function(t, style, lang) {
+  C <- spcols(style)
+  n <- max(3L,as.integer(t$yr[2]))
+  lbls <- if(!is.null(t$ylb)) head(t$ylb,n) else paste("Patient",1:n)
+  df <- data.frame(y=1:n,xend=seq(from=as.numeric(t$xr[2])*0.3,to=as.numeric(t$xr[2])*0.9,length.out=n))
+  p <- ggplot(df,aes(y=y))
+  for(i in 1:n) p <- p+annotate("segment",x=0,xend=df$xend[i],y=i,yend=i,color=C$gc,linewidth=3)
+  xl <- if(lang=="none") "" else if(nchar(t$xl)>0) t$xl else "Time (months)"
+  yl <- if(lang=="none") "" else ""
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr),expand=c(0.02,0))
+  if(lang!="none") {
+    p <- p+scale_y_continuous(name=yl,breaks=1:n,labels=lbls,expand=expansion(add=0.5))
+  } else {
+    p <- p+scale_y_continuous(name=yl,breaks=1:n,labels=rep("",n),expand=expansion(add=0.5))
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.major.y=element_blank())
+}
+
+# ── Tornado/Sensitivity Analysis Diagram ──
+make_tornado <- function(t, style, lang) {
+  C <- spcols(style)
+  n <- max(3L,as.integer(t$yr[2]))
+  lbls <- if(!is.null(t$ylb)) head(t$ylb,n) else paste("Parameter",1:n)
+  vals <- seq(0.3,0.9,length.out=n)*diff(as.numeric(t$xr))/2
+  df <- data.frame(y=1:n,low=-rev(vals),high=rev(vals))
+  p <- ggplot(df,aes(y=y))+geom_vline(xintercept=0,color="grey40",linewidth=0.5)
+  for(i in 1:n){
+    p <- p+annotate("rect",xmin=df$low[i],xmax=df$high[i],ymin=i-0.35,ymax=i+0.35,fill=C$fl,color=C$ac,linewidth=0.3)
+  }
+  xl <- if(lang=="none") "" else if(nchar(t$xl)>0) t$xl else "Impact on Outcome"
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr))
+  if(lang!="none") {
+    p <- p+scale_y_continuous(name="",breaks=1:n,labels=lbls,expand=expansion(add=0.5))
+  } else {
+    p <- p+scale_y_continuous(name="",breaks=1:n,labels=rep("",n),expand=expansion(add=0.5))
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.major.y=element_blank())
+}
+
+# ── Population Pyramid Template ──
+make_pyramid <- function(t, style, lang) {
+  C <- spcols(style)
+  ages <- if(!is.null(t$ylb)) t$ylb else c("0-9","10-19","20-29","30-39","40-49","50-59","60-69","70-79","80+")
+  n <- length(ages)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xmax <- as.numeric(t$xr[2])
+  for(i in 1:n){
+    w <- xmax*0.5*(n-i+1)/n
+    p <- p+annotate("rect",xmin=-w,xmax=0,ymin=i-0.4,ymax=i+0.4,fill=if(C$bg=="#2d2d2d")"#4466aa"else"#b3cde3",color=C$ac,linewidth=0.2)
+    p <- p+annotate("rect",xmin=0,xmax=w*0.9,ymin=i-0.4,ymax=i+0.4,fill=if(C$bg=="#2d2d2d")"#aa4466"else"#fbb4ae",color=C$ac,linewidth=0.2)
+  }
+  p <- p+geom_vline(xintercept=0,color="grey40",linewidth=0.5)
+  xl <- if(lang=="none") "" else "Population"
+  p <- p+scale_x_continuous(name=xl,limits=c(-xmax,xmax))
+  if(lang!="none") {
+    p <- p+scale_y_continuous(name="Age",breaks=1:n,labels=ages,expand=expansion(add=0.5))
+    p <- p+annotate("text",x=-xmax*0.7,y=n+0.5,label="Male",color="#4466aa",size=3.5,fontface="bold")
+    p <- p+annotate("text",x=xmax*0.7,y=n+0.5,label="Female",color="#aa4466",size=3.5,fontface="bold")
+  } else {
+    p <- p+scale_y_continuous(name="",breaks=1:n,labels=rep("",n),expand=expansion(add=0.5))
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.major.y=element_blank())
+}
+
+# ── Manhattan Plot Template ──
+make_manhattan <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Chromosome"
+  yl <- if(lang=="none") "" else expression(-log[10](italic(p)))
+  chroms <- 1:22
+  chr_pos <- seq(0,1,length.out=22)
+  p <- p+scale_x_continuous(name=xl,limits=c(0,1),breaks=chr_pos,
+    labels=if(lang=="none") rep("",22) else as.character(chroms))+
+    scale_y_continuous(name=if(lang=="none")""else"-log10(p)",limits=c(0,as.numeric(t$yr[2])),expand=c(0,0))
+  # Genome-wide significance line
+  gwas_line <- -log10(5e-8)
+  if(gwas_line <= as.numeric(t$yr[2])){
+    p <- p+geom_hline(yintercept=gwas_line,linetype="dashed",color="#dc2626",linewidth=0.4)
+    if(lang!="none") p <- p+annotate("text",x=0.02,y=gwas_line+0.3,label="p = 5e-8",color="#dc2626",hjust=0,size=2.5)
+  }
+  suggestive <- -log10(1e-5)
+  p <- p+geom_hline(yintercept=suggestive,linetype="dotted",color="#2563eb",linewidth=0.3)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Volcano Plot Template ──
+make_volcano <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else expression(log[2]~"Fold Change")
+  yl <- if(lang=="none") "" else expression(-log[10](italic(p)))
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  p <- p+scale_x_continuous(name=if(lang=="none")""else"log2(Fold Change)",limits=xr)+
+    scale_y_continuous(name=if(lang=="none")""else"-log10(p)",limits=yr,expand=c(0,0))
+  p <- p+geom_vline(xintercept=c(-1,1),linetype="dashed",color="#2563eb",linewidth=0.3)
+  p <- p+geom_hline(yintercept=1.3,linetype="dashed",color="#dc2626",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[1]*0.7,y=yr[2]*0.9,label="Down-\nregulated",color="#2563eb",size=3)
+    p <- p+annotate("text",x=xr[2]*0.7,y=yr[2]*0.9,label="Up-\nregulated",color="#dc2626",size=3)
+    p <- p+annotate("text",x=xr[2]*0.9,y=1.5,label="p=0.05",color="#dc2626",hjust=1,size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Dot Plot / Strip Chart Template ──
+make_dot <- function(t, style, lang) {
+  C <- spcols(style)
+  ng <- max(2L,as.integer(t$xr[2]))
+  glb <- if(!is.null(t$xlb)) head(t$xlb,ng) else paste("Group",1:ng)
+  xl <- if(lang=="none") "" else t$xl
+  yl <- if(lang=="none") "" else t$yl
+  p <- ggplot(data.frame(x=factor(glb,levels=glb),y=0),aes(x,y))+geom_blank()
+  if(lang=="none") p <- p+scale_x_discrete(name="",labels=rep("",ng)) else p <- p+labs(x=xl)
+  p <- p+labs(y=yl)+scale_y_continuous(limits=as.numeric(t$yr))
+  for(i in 1:ng) p <- p+annotate("segment",x=i-0.3,xend=i+0.3,y=mean(as.numeric(t$yr)),yend=mean(as.numeric(t$yr)),color=C$gc,linewidth=0.5)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── Nomogram Template ──
+make_nomogram <- function(t, style, lang) {
+  C <- spcols(style)
+  n <- max(3L,as.integer(t$yr[2]))
+  vars <- if(!is.null(t$ylb)) head(t$ylb,n) else paste("Variable",1:n)
+  p <- ggplot()+coord_cartesian(xlim=c(-0.5,10.5),ylim=c(-0.5,n+1.5))
+  # Points scale at top
+  if(lang!="none"){
+    p <- p+annotate("text",x=-0.3,y=n+1,label="Points",size=3,color=C$fg,hjust=1)
+    for(x in seq(0,10,2)) p <- p+annotate("text",x=x,y=n+1,label=x*10,size=2.5,color=C$fg)
+  }
+  p <- p+annotate("segment",x=0,xend=10,y=n+0.7,yend=n+0.7,color=C$ac,linewidth=0.5)
+  for(x in seq(0,10,1)) p <- p+annotate("segment",x=x,xend=x,y=n+0.6,yend=n+0.8,color=C$ac,linewidth=0.3)
+  # Variable scales
+  for(i in 1:n){
+    p <- p+annotate("segment",x=0,xend=10,y=i,yend=i,color=C$gc,linewidth=0.4)
+    for(x in seq(0,10,2)) p <- p+annotate("segment",x=x,xend=x,y=i-0.1,yend=i+0.1,color=C$ac,linewidth=0.3)
+    if(lang!="none") p <- p+annotate("text",x=-0.3,y=i,label=vars[i],size=3,color=C$fg,hjust=1)
+  }
+  # Total points / probability at bottom
+  p <- p+annotate("segment",x=0,xend=10,y=0,yend=0,color=C$ac,linewidth=0.5)
+  if(lang!="none"){
+    p <- p+annotate("text",x=-0.3,y=0,label="Risk",size=3,color=C$fg,hjust=1)
+    for(x in c(0,2,4,6,8,10)) p <- p+annotate("text",x=x,y=-0.3,label=paste0(x*10,"%"),size=2.5,color=C$fg)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Epidemic Curve Template ──
+make_epicurve <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else if(nchar(t$xl)>0) t$xl else "Date of Onset"
+  yl <- if(lang=="none") "" else if(nchar(t$yl)>0) t$yl else "Number of Cases"
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  # Create empty bar outlines
+  nbars <- min(20L, as.integer(diff(xr)))
+  bw <- diff(xr)/nbars
+  for(i in 1:nbars){
+    p <- p+annotate("rect",xmin=xr[1]+(i-1)*bw,xmax=xr[1]+i*bw-bw*0.05,
+                     ymin=0,ymax=yr[2]*0.02,fill=C$fl,color=C$gc,linewidth=0.2)
+  }
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0.02,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
+# ── 2x2 Contingency Table Template ──
+make_table2x2 <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot()+coord_fixed(xlim=c(-0.8,2.8),ylim=c(-0.8,2.8))
+  # Grid
+  for(x in c(0,1,2)) p <- p+annotate("segment",x=x,xend=x,y=0,yend=2,color=C$ac,linewidth=0.5)
+  for(y in c(0,1,2)) p <- p+annotate("segment",x=0,xend=2,y=y,yend=y,color=C$ac,linewidth=0.5)
+  # Fill cells
+  cells <- list(c(0.5,1.5,"a"),c(1.5,1.5,"b"),c(0.5,0.5,"c"),c(1.5,0.5,"d"))
+  for(cl in cells){
+    p <- p+annotate("rect",xmin=as.numeric(cl[1])-0.48,xmax=as.numeric(cl[1])+0.48,
+                     ymin=as.numeric(cl[2])-0.48,ymax=as.numeric(cl[2])+0.48,fill=C$fl,alpha=0.3)
+    p <- p+annotate("text",x=as.numeric(cl[1]),y=as.numeric(cl[2]),label=cl[3],size=6,color=C$fg,fontface="bold")
+  }
+  if(lang!="none"){
+    xlb <- if(!is.null(t$xlb)) t$xlb else c("Disease +","Disease -")
+    ylb <- if(!is.null(t$ylb)) t$ylb else c("Exposure +","Exposure -")
+    p <- p+annotate("text",x=0.5,y=2.4,label=xlb[1],size=3.5,color=C$tc,fontface="bold")
+    p <- p+annotate("text",x=1.5,y=2.4,label=xlb[2],size=3.5,color=C$tc,fontface="bold")
+    p <- p+annotate("text",x=-0.4,y=1.5,label=ylb[1],size=3.5,color=C$tc,fontface="bold",angle=90)
+    p <- p+annotate("text",x=-0.4,y=0.5,label=ylb[2],size=3.5,color=C$tc,fontface="bold",angle=90)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Pedigree Chart Template ──
+make_pedigree <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot()+coord_fixed(xlim=c(-3,3),ylim=c(-3,3))
+  # Generation I: parents
+  # Male = square, Female = circle
+  sq <- function(cx,cy,sz=0.3){
+    data.frame(x=cx+c(-sz,sz,sz,-sz,-sz),y=cy+c(-sz,-sz,sz,sz,-sz))
+  }
+  ci <- function(cx,cy,r=0.3){
+    th <- seq(0,2*pi,length.out=50)
+    data.frame(x=cx+r*cos(th),y=cy+r*sin(th))
+  }
+  # Gen I
+  p <- p+geom_polygon(data=sq(-1,2),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  p <- p+geom_polygon(data=ci(1,2),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  p <- p+annotate("segment",x=-0.7,xend=0.7,y=2,yend=2,color=C$tc,linewidth=0.5)
+  # Gen II
+  p <- p+annotate("segment",x=0,xend=0,y=2,yend=1,color=C$tc,linewidth=0.4)
+  p <- p+annotate("segment",x=-1.5,xend=1.5,y=1,yend=1,color=C$tc,linewidth=0.4)
+  p <- p+geom_polygon(data=sq(-1.5,0),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  p <- p+geom_polygon(data=ci(0,0),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  p <- p+geom_polygon(data=sq(1.5,0),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  for(xx in c(-1.5,0,1.5)) p <- p+annotate("segment",x=xx,xend=xx,y=1,yend=0.3,color=C$tc,linewidth=0.4)
+  # Gen III
+  p <- p+annotate("segment",x=-1.5,xend=-0.7,y=0,yend=0,color=C$tc,linewidth=0.5)
+  p <- p+annotate("segment",x=-1.1,xend=-1.1,y=0,yend=-1,color=C$tc,linewidth=0.4)
+  p <- p+annotate("segment",x=-2,xend=-0.2,y=-1,yend=-1,color=C$tc,linewidth=0.4)
+  p <- p+geom_polygon(data=ci(-2,-2),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  p <- p+geom_polygon(data=sq(-0.2,-2),aes(x,y),fill="white",color=C$tc,linewidth=0.5)
+  for(xx in c(-2,-0.2)) p <- p+annotate("segment",x=xx,xend=xx,y=-1,yend=-1.7,color=C$tc,linewidth=0.4)
+  if(lang!="none"){
+    p <- p+annotate("text",x=-2.8,y=2,label="I",size=4,color=C$fg,fontface="bold")
+    p <- p+annotate("text",x=-2.8,y=0,label="II",size=4,color=C$fg,fontface="bold")
+    p <- p+annotate("text",x=-2.8,y=-2,label="III",size=4,color=C$fg,fontface="bold")
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Calibration Plot Template ──
+make_calibration <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Predicted Probability"
+  yl <- if(lang=="none") "" else "Observed Probability"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,1),breaks=seq(0,1,.2),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1),breaks=seq(0,1,.2),expand=c(0,0))
+  p <- p+geom_abline(slope=1,intercept=0,linetype="dashed",color="grey50",linewidth=0.4)
+  if(lang!="none") p <- p+annotate("text",x=0.75,y=0.65,label="Perfect\nCalibration",color="grey50",size=3,angle=40)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+coord_fixed()
+}
+
+# ── Scatter with Regression Template ──
+make_scatter_reg <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else t$xl
+  yl <- if(lang=="none") "" else t$yl
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  # Diagonal regression line suggestion
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  p <- p+annotate("segment",x=xr[1]+diff(xr)*0.1,xend=xr[2]-diff(xr)*0.1,
+                   y=yr[1]+diff(yr)*0.2,yend=yr[2]-diff(yr)*0.1,
+                   linetype="dashed",color="grey60",linewidth=0.4)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)
+}
+
 # ── Plot Generator ──
 # lang: "en" = English labels, "ja" = Japanese title, "none" = no text
 make_plot <- function(t, style = "standard", lang = "en") {
@@ -201,7 +729,21 @@ make_plot <- function(t, style = "standard", lang = "en") {
   if(tp!="xy") return(switch(tp,
     radar=make_radar(t,style,lang), ternary=make_ternary(t,style,lang),
     heatmap=make_heatmap(t,style,lang), audiogram=make_audiogram(t,style,lang),
-    polar=make_polar_vf(t,style,lang), make_radar(t,style,lang)))
+    polar=make_polar_vf(t,style,lang),
+    kaplan=make_kaplan(t,style,lang), roc=make_roc(t,style,lang),
+    forest=make_forest(t,style,lang), funnel=make_funnel(t,style,lang),
+    bland_altman=make_bland_altman(t,style,lang),
+    boxplot=make_boxplot(t,style,lang), violin=make_violin(t,style,lang),
+    ecg=make_ecg(t,style,lang), flow_volume=make_flow_volume(t,style,lang),
+    pv_loop=make_pv_loop(t,style,lang), growth=make_growth(t,style,lang),
+    bullseye=make_bullseye(t,style,lang), swimmer=make_swimmer(t,style,lang),
+    tornado=make_tornado(t,style,lang), pyramid=make_pyramid(t,style,lang),
+    manhattan=make_manhattan(t,style,lang), volcano=make_volcano(t,style,lang),
+    dot=make_dot(t,style,lang), nomogram=make_nomogram(t,style,lang),
+    epicurve=make_epicurve(t,style,lang), table2x2=make_table2x2(t,style,lang),
+    pedigree=make_pedigree(t,style,lang), calibration=make_calibration(t,style,lang),
+    scatter_reg=make_scatter_reg(t,style,lang),
+    make_radar(t,style,lang)))
 
   empty <- data.frame(x = numeric(0), y = numeric(0))
   p <- ggplot(empty, aes(x, y)) + geom_blank()

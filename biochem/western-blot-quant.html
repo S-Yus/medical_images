@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ウエスタンブロット定量 テンプレート | MedGraph Free</title>
-<meta name="description" content="ウエスタンブロットのバンド強度定量テンプレート。タンパク質量との関係をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>ウェスタンブロット定量プロット テンプレート | MedGraph Free</title>
+<meta name="description" content="ウェスタンブロット定量プロットテンプレート。バンド密度の定量比較に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/biochem/western-blot-quant.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ウエスタンブロット定量 テンプレート | MedGraph Free">
-<meta property="og:description" content="ウエスタンブロットのバンド強度定量テンプレート。タンパク質量との関係をプロット。">
+<meta property="og:title" content="ウェスタンブロット定量プロット テンプレート | MedGraph Free">
+<meta property="og:description" content="ウェスタンブロット定量プロットテンプレート。バンド密度の定量比較に使用。">
 <meta property="og:image" content="https://med-graph.com/img/biochem_western_blot_quant.png">
 <meta property="og:url" content="https://med-graph.com/biochem/western-blot-quant.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"ウエスタンブロット定量","description":"ウエスタンブロットのバンド強度定量テンプレート。タンパク質量との関係をプロット。","contentUrl":"https://med-graph.com/img/biochem_western_blot_quant.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"ウェスタンブロット定量プロット","description":"ウェスタンブロット定量プロットテンプレート。バンド密度の定量比較に使用。","contentUrl":"https://med-graph.com/img/biochem_western_blot_quant.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/biochem.html">生化学</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/biochem.html">生化学</a> &gt; ウエスタンブロット定量</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/biochem.html">生化学</a> &gt; ウェスタンブロット定量プロット</div>
 <main>
-<h1 class="page-title">ウエスタンブロット定量</h1>
-<p class="desc">ウエスタンブロットのバンド強度定量テンプレート。タンパク質量との関係をプロット。</p>
-<div class="tags"><span>ウエスタンブロット</span><span>定量</span><span>バンド強度</span></div>
+<h1 class="page-title">ウェスタンブロット定量プロット</h1>
+<p class="desc">ウェスタンブロット定量プロットテンプレート。バンド密度の定量比較に使用。</p>
+<div class="tags"><span>ウェスタンブロット</span><span>定量</span><span>バンド密度</span><span>タンパク質</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/biochem_western_blot_quant.png" alt="ウエスタンブロット定量"></div>
+<div class="preview-img"><img id="pv" src="../img/biochem_western_blot_quant.png" alt="ウェスタンブロット定量プロット"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/biochem_western_blot_quant.png" download class="dl-btn">Download</a>
 </div>
@@ -113,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Protein amount (ug)", limits = c(0, 50)) +
-  scale_y_continuous(name = "Band intensity (AU)", limits = c(0, 100)) +
+  scale_x_continuous(name = "Sample", limits = c(0, 6)) +
+  scale_y_continuous(name = "Relative Expression", limits = c(0, 3)) +
   labs(title = "Western Blot Quantification") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

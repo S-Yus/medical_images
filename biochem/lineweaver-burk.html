@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ラインウィーバー・バークプロット テンプレート | MedGraph Free</title>
-<meta name="description" content="二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレート。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<meta name="description" content="ラインウィーバー・バークプロットテンプレート。Km・Vmaxの算出に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
@@ -12,12 +12,12 @@
 <link rel="canonical" href="https://med-graph.com/biochem/lineweaver-burk.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ラインウィーバー・バークプロット テンプレート | MedGraph Free">
-<meta property="og:description" content="二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレート。">
+<meta property="og:description" content="ラインウィーバー・バークプロットテンプレート。Km・Vmaxの算出に使用。">
 <meta property="og:image" content="https://med-graph.com/img/biochem_lineweaver_burk.png">
 <meta property="og:url" content="https://med-graph.com/biochem/lineweaver-burk.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"ラインウィーバー・バークプロット","description":"二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレート。","contentUrl":"https://med-graph.com/img/biochem_lineweaver_burk.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"ラインウィーバー・バークプロット","description":"ラインウィーバー・バークプロットテンプレート。Km・Vmaxの算出に使用。","contentUrl":"https://med-graph.com/img/biochem_lineweaver_burk.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -72,8 +72,8 @@ footer a{color:#60a5fa}
 <div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/biochem.html">生化学</a> &gt; ラインウィーバー・バークプロット</div>
 <main>
 <h1 class="page-title">ラインウィーバー・バークプロット</h1>
-<p class="desc">二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレート。</p>
-<div class="tags"><span>二重逆数</span><span>Km</span><span>Vmax</span><span>線形化</span></div>
+<p class="desc">ラインウィーバー・バークプロットテンプレート。Km・Vmaxの算出に使用。</p>
+<div class="tags"><span>ラインウィーバーバーク</span><span>逆数プロット</span><span>酵素</span><span>Km</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -113,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "1/[S] (mM^-1)", limits = c(-3, 10)) +
-  scale_y_continuous(name = "1/v (umol/min)^-1", limits = c(-3, 10)) +
+  scale_x_continuous(name = "1/[S]", limits = c(-0.05, 0.2)) +
+  scale_y_continuous(name = "1/V", limits = c(0, 0.1)) +
   labs(title = "Lineweaver-Burk Plot") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>罹患率の推移 テンプレート | MedGraph Free</title>
-<meta name="description" content="罹患率の経年推移テンプレート。疾患の時間的トレンドをプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>罹患率経時変化 テンプレート | MedGraph Free</title>
+<meta name="description" content="罹患率経時変化テンプレート。疾患の発生動向を年次で表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/epi/incidence-time.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="罹患率の推移 テンプレート | MedGraph Free">
-<meta property="og:description" content="罹患率の経年推移テンプレート。疾患の時間的トレンドをプロット。">
+<meta property="og:title" content="罹患率経時変化 テンプレート | MedGraph Free">
+<meta property="og:description" content="罹患率経時変化テンプレート。疾患の発生動向を年次で表示。">
 <meta property="og:image" content="https://med-graph.com/img/epi_incidence_time.png">
 <meta property="og:url" content="https://med-graph.com/epi/incidence-time.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"罹患率の推移","description":"罹患率の経年推移テンプレート。疾患の時間的トレンドをプロット。","contentUrl":"https://med-graph.com/img/epi_incidence_time.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"罹患率経時変化","description":"罹患率経時変化テンプレート。疾患の発生動向を年次で表示。","contentUrl":"https://med-graph.com/img/epi_incidence_time.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/epi.html">疫学・公衆衛生</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/epi.html">疫学・公衆衛生</a> &gt; 罹患率の推移</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/epi.html">疫学・公衆衛生</a> &gt; 罹患率経時変化</div>
 <main>
-<h1 class="page-title">罹患率の推移</h1>
-<p class="desc">罹患率の経年推移テンプレート。疾患の時間的トレンドをプロット。</p>
-<div class="tags"><span>罹患率</span><span>推移</span><span>トレンド</span></div>
+<h1 class="page-title">罹患率経時変化</h1>
+<p class="desc">罹患率経時変化テンプレート。疾患の発生動向を年次で表示。</p>
+<div class="tags"><span>罹患率</span><span>発生率</span><span>動向</span><span>サーベイランス</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/epi_incidence_time.png" alt="罹患率の推移"></div>
+<div class="preview-img"><img id="pv" src="../img/epi_incidence_time.png" alt="罹患率経時変化"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/epi_incidence_time.png" download class="dl-btn">Download</a>
 </div>
@@ -114,7 +114,7 @@ ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
   scale_x_continuous(name = "Year", limits = c(2000, 2025)) +
-  scale_y_continuous(name = "Incidence rate (per 100,000)", limits = c(0, 100)) +
+  scale_y_continuous(name = "Incidence Rate (per 100,000)", limits = c(0, 100)) +
   labs(title = "Incidence Rate Over Time") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

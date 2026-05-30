@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>治療域 テンプレート | MedGraph Free</title>
-<meta name="description" content="治療域テンプレート。MEC（最小有効濃度）とMTC（最小中毒濃度）の範囲をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<meta name="description" content="治療域テンプレート。有効血中濃度範囲と毒性域を表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
@@ -12,12 +12,12 @@
 <link rel="canonical" href="https://med-graph.com/pharm/therapeutic-window.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="治療域 テンプレート | MedGraph Free">
-<meta property="og:description" content="治療域テンプレート。MEC（最小有効濃度）とMTC（最小中毒濃度）の範囲をプロット。">
+<meta property="og:description" content="治療域テンプレート。有効血中濃度範囲と毒性域を表示。">
 <meta property="og:image" content="https://med-graph.com/img/pharm_therapeutic_window.png">
 <meta property="og:url" content="https://med-graph.com/pharm/therapeutic-window.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"治療域","description":"治療域テンプレート。MEC（最小有効濃度）とMTC（最小中毒濃度）の範囲をプロット。","contentUrl":"https://med-graph.com/img/pharm_therapeutic_window.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"治療域","description":"治療域テンプレート。有効血中濃度範囲と毒性域を表示。","contentUrl":"https://med-graph.com/img/pharm_therapeutic_window.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -72,8 +72,8 @@ footer a{color:#60a5fa}
 <div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/pharm.html">薬理学</a> &gt; 治療域</div>
 <main>
 <h1 class="page-title">治療域</h1>
-<p class="desc">治療域テンプレート。MEC（最小有効濃度）とMTC（最小中毒濃度）の範囲をプロット。</p>
-<div class="tags"><span>治療域</span><span>MEC</span><span>MTC</span></div>
+<p class="desc">治療域テンプレート。有効血中濃度範囲と毒性域を表示。</p>
+<div class="tags"><span>治療域</span><span>血中濃度</span><span>有効域</span><span>毒性</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -113,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Time (hr)", limits = c(0, 48)) +
-  scale_y_continuous(name = "Plasma concentration (ug/mL)", limits = c(0, 50)) +
+  scale_x_continuous(name = "Time (hours)", limits = c(0, 24)) +
+  scale_y_continuous(name = "Plasma Concentration", limits = c(0, 100)) +
   labs(title = "Therapeutic Window") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

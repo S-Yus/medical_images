@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>水分バランスチャート テンプレート | MedGraph Free</title>
-<meta name="description" content="水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>水分出納チャート テンプレート | MedGraph Free</title>
+<meta name="description" content="水分出納チャートテンプレート。術後の輸液・尿量・ドレーン排液量を記録。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/surg/fluid-balance.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="水分バランスチャート テンプレート | MedGraph Free">
-<meta property="og:description" content="水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。">
+<meta property="og:title" content="水分出納チャート テンプレート | MedGraph Free">
+<meta property="og:description" content="水分出納チャートテンプレート。術後の輸液・尿量・ドレーン排液量を記録。">
 <meta property="og:image" content="https://med-graph.com/img/surg_fluid_balance.png">
 <meta property="og:url" content="https://med-graph.com/surg/fluid-balance.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"水分バランスチャート","description":"水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。","contentUrl":"https://med-graph.com/img/surg_fluid_balance.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"水分出納チャート","description":"水分出納チャートテンプレート。術後の輸液・尿量・ドレーン排液量を記録。","contentUrl":"https://med-graph.com/img/surg_fluid_balance.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/surg.html">外科・麻酔</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/surg.html">外科・麻酔</a> &gt; 水分バランスチャート</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/surg.html">外科・麻酔</a> &gt; 水分出納チャート</div>
 <main>
-<h1 class="page-title">水分バランスチャート</h1>
-<p class="desc">水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。</p>
-<div class="tags"><span>水分バランス</span><span>輸液</span><span>IN/OUT</span></div>
+<h1 class="page-title">水分出納チャート</h1>
+<p class="desc">水分出納チャートテンプレート。術後の輸液・尿量・ドレーン排液量を記録。</p>
+<div class="tags"><span>水分出納</span><span>輸液</span><span>尿量</span><span>術後</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/surg_fluid_balance.png" alt="水分バランスチャート"></div>
+<div class="preview-img"><img id="pv" src="../img/surg_fluid_balance.png" alt="水分出納チャート"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/surg_fluid_balance.png" download class="dl-btn">Download</a>
 </div>
@@ -113,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Time (hr)", limits = c(0, 24)) +
-  scale_y_continuous(name = "Cumulative balance (mL)", limits = c(-2000, 3000)) +
+  scale_x_continuous(name = "Time (hours)", limits = c(0, 24)) +
+  scale_y_continuous(name = "Cumulative Volume (mL)", limits = c(-2000, 4000)) +
   labs(title = "Fluid Balance Chart") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>

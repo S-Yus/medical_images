@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>骨折治癒タイムライン テンプレート | MedGraph Free</title>
-<meta name="description" content="骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>骨折治癒曲線 テンプレート | MedGraph Free</title>
+<meta name="description" content="骨折治癒曲線テンプレート。骨折治癒の各期（炎症期・修復期・リモデリング期）を表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/ortho/fracture-healing.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="骨折治癒タイムライン テンプレート | MedGraph Free">
-<meta property="og:description" content="骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。">
+<meta property="og:title" content="骨折治癒曲線 テンプレート | MedGraph Free">
+<meta property="og:description" content="骨折治癒曲線テンプレート。骨折治癒の各期（炎症期・修復期・リモデリング期）を表示。">
 <meta property="og:image" content="https://med-graph.com/img/ortho_fracture_healing.png">
 <meta property="og:url" content="https://med-graph.com/ortho/fracture-healing.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"骨折治癒タイムライン","description":"骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。","contentUrl":"https://med-graph.com/img/ortho_fracture_healing.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"骨折治癒曲線","description":"骨折治癒曲線テンプレート。骨折治癒の各期（炎症期・修復期・リモデリング期）を表示。","contentUrl":"https://med-graph.com/img/ortho_fracture_healing.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/ortho.html">整形外科</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/ortho.html">整形外科</a> &gt; 骨折治癒タイムライン</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/ortho.html">整形外科</a> &gt; 骨折治癒曲線</div>
 <main>
-<h1 class="page-title">骨折治癒タイムライン</h1>
-<p class="desc">骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。</p>
-<div class="tags"><span>骨折</span><span>治癒</span><span>仮骨</span></div>
+<h1 class="page-title">骨折治癒曲線</h1>
+<p class="desc">骨折治癒曲線テンプレート。骨折治癒の各期（炎症期・修復期・リモデリング期）を表示。</p>
+<div class="tags"><span>骨折</span><span>治癒</span><span>リモデリング</span><span>強度</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -94,7 +94,7 @@ footer a{color:#60a5fa}
 <button onclick="swSize(this,'square')">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/ortho_fracture_healing.png" alt="骨折治癒タイムライン"></div>
+<div class="preview-img"><img id="pv" src="../img/ortho_fracture_healing.png" alt="骨折治癒曲線"></div>
 <div class="dl-buttons">
 <a id="dl1" href="../img/ortho_fracture_healing.png" download class="dl-btn">Download</a>
 </div>
@@ -103,7 +103,7 @@ footer a{color:#60a5fa}
 <div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
 <pre id="rcode">library(ggplot2)
 
-# ---- Fracture Healing Timeline ----
+# ---- Fracture Healing Curve ----
 # あなたのデータを入力してください
 df <- data.frame(
   x = c(),
@@ -114,8 +114,8 @@ ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
   scale_x_continuous(name = "Weeks", limits = c(0, 24)) +
-  scale_y_continuous(name = "Healing stage", limits = c(0, 5)) +
-  labs(title = "Fracture Healing Timeline") +
+  scale_y_continuous(name = "Bone Strength (% Normal)", limits = c(0, 100)) +
+  labs(title = "Fracture Healing Curve") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>
