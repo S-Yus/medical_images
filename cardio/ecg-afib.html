@@ -88,12 +88,15 @@ footer a{color:#60a5fa}
 <button onclick="swLang(this,'ja')">日本語</button>
 <button onclick="swLang(this,'none')">テキストなし</button>
 </div>
+<div class="style-tabs" id="sizeTabs">
+<button class="active" onclick="swSize(this,'standard')">800 x 600</button>
+<button onclick="swSize(this,'wide')">1200 x 600</button>
+<button onclick="swSize(this,'square')">700 x 700</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/cardio_ecg_afib.png" alt="心電図：心房細動"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/cardio_ecg_afib.png" download class="dl-btn">Download (800x600)</a>
-<a id="dl2" href="../img/cardio_ecg_afib_wide.png" download class="dl-btn outline">Wide (1200x600)</a>
-<a id="dl3" href="../img/cardio_ecg_afib_square.png" download class="dl-btn outline">Square (700x700)</a>
+<a id="dl1" href="../img/cardio_ecg_afib.png" download class="dl-btn">Download</a>
 </div>
 </section>
 <section class="code-section">
@@ -131,25 +134,26 @@ ggplot(df, aes(x = x, y = y)) +
 </footer>
 <script>
 const B="cardio_ecg_afib";
-let curLang="",curStyle="";
+let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
   document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curStyle=s==="standard"?"":"_"+s;
-  upd();
+  curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
   document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
-  upd();
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
+}
+function swSize(btn,z){
+  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
-  const p="../img/"+B+curLang+curStyle;
+  const p="../img/"+B+curLang+curStyle+curSize;
   document.getElementById("pv").src=p+".png";
   document.getElementById("dl1").href=p+".png";
-  document.getElementById("dl2").href=p+"_wide.png";
-  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>バイオリンプロット テンプレート | MedGraph Free</title>
-<meta name="description" content="バイオリンプロットテンプレート。データの分布形状を詳細に可視化。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<meta name="description" content="バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
@@ -12,12 +12,12 @@
 <link rel="canonical" href="https://med-graph.com/stat/violin-plot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="バイオリンプロット テンプレート | MedGraph Free">
-<meta property="og:description" content="バイオリンプロットテンプレート。データの分布形状を詳細に可視化。">
+<meta property="og:description" content="バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。">
 <meta property="og:image" content="https://med-graph.com/img/stat_violin_plot.png">
 <meta property="og:url" content="https://med-graph.com/stat/violin-plot.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"バイオリンプロット","description":"バイオリンプロットテンプレート。データの分布形状を詳細に可視化。","contentUrl":"https://med-graph.com/img/stat_violin_plot.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"バイオリンプロット","description":"バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。","contentUrl":"https://med-graph.com/img/stat_violin_plot.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -72,8 +72,8 @@ footer a{color:#60a5fa}
 <div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/stat.html">臨床統計</a> &gt; バイオリンプロット</div>
 <main>
 <h1 class="page-title">バイオリンプロット</h1>
-<p class="desc">バイオリンプロットテンプレート。データの分布形状を詳細に可視化。</p>
-<div class="tags"><span>バイオリン</span><span>分布</span><span>密度</span></div>
+<p class="desc">バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。</p>
+<div class="tags"><span>バイオリン</span><span>分布</span><span>密度</span><span>比較</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -88,12 +88,15 @@ footer a{color:#60a5fa}
 <button onclick="swLang(this,'ja')">日本語</button>
 <button onclick="swLang(this,'none')">テキストなし</button>
 </div>
+<div class="style-tabs" id="sizeTabs">
+<button class="active" onclick="swSize(this,'standard')">800 x 600</button>
+<button onclick="swSize(this,'wide')">1200 x 600</button>
+<button onclick="swSize(this,'square')">700 x 700</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/stat_violin_plot.png" alt="バイオリンプロット"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/stat_violin_plot.png" download class="dl-btn">Download (800x600)</a>
-<a id="dl2" href="../img/stat_violin_plot_wide.png" download class="dl-btn outline">Wide (1200x600)</a>
-<a id="dl3" href="../img/stat_violin_plot_square.png" download class="dl-btn outline">Square (700x700)</a>
+<a id="dl1" href="../img/stat_violin_plot.png" download class="dl-btn">Download</a>
 </div>
 </section>
 <section class="code-section">
@@ -110,7 +113,7 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Group", limits = c(0, 4)) +
+  scale_x_continuous(name = "Group", limits = c(0, 6)) +
   scale_y_continuous(name = "Value", limits = c(0, 100)) +
   labs(title = "Violin Plot") +
   theme_bw(base_size = 14) +
@@ -131,25 +134,26 @@ ggplot(df, aes(x = x, y = y)) +
 </footer>
 <script>
 const B="stat_violin_plot";
-let curLang="",curStyle="";
+let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
   document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curStyle=s==="standard"?"":"_"+s;
-  upd();
+  curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
   document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
-  upd();
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
+}
+function swSize(btn,z){
+  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
-  const p="../img/"+B+curLang+curStyle;
+  const p="../img/"+B+curLang+curStyle+curSize;
   document.getElementById("pv").src=p+".png";
   document.getElementById("dl1").href=p+".png";
-  document.getElementById("dl2").href=p+"_wide.png";
-  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;

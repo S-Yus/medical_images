@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>視野検査 テンプレート | MedGraph Free</title>
-<meta name="description" content="視野検査テンプレート。自動視野計の結果をプロット。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>ゴールドマン視野 テンプレート | MedGraph Free</title>
+<meta name="description" content="ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/eye/visual-field.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="視野検査 テンプレート | MedGraph Free">
-<meta property="og:description" content="視野検査テンプレート。自動視野計の結果をプロット。">
+<meta property="og:title" content="ゴールドマン視野 テンプレート | MedGraph Free">
+<meta property="og:description" content="ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。">
 <meta property="og:image" content="https://med-graph.com/img/eye_visual_field.png">
 <meta property="og:url" content="https://med-graph.com/eye/visual-field.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"視野検査","description":"視野検査テンプレート。自動視野計の結果をプロット。","contentUrl":"https://med-graph.com/img/eye_visual_field.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"ゴールドマン視野","description":"ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。","contentUrl":"https://med-graph.com/img/eye_visual_field.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -69,11 +69,11 @@ footer a{color:#60a5fa}
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/eye.html">眼科</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/eye.html">眼科</a> &gt; 視野検査</div>
+<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/eye.html">眼科</a> &gt; ゴールドマン視野</div>
 <main>
-<h1 class="page-title">視野検査</h1>
-<p class="desc">視野検査テンプレート。自動視野計の結果をプロット。</p>
-<div class="tags"><span>視野</span><span>ペリメトリー</span><span>暗点</span></div>
+<h1 class="page-title">ゴールドマン視野</h1>
+<p class="desc">ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。</p>
+<div class="tags"><span>視野</span><span>ゴールドマン</span><span>視野検査</span><span>眼科</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -88,19 +88,22 @@ footer a{color:#60a5fa}
 <button onclick="swLang(this,'ja')">日本語</button>
 <button onclick="swLang(this,'none')">テキストなし</button>
 </div>
+<div class="style-tabs" id="sizeTabs">
+<button class="active" onclick="swSize(this,'standard')">800 x 600</button>
+<button onclick="swSize(this,'wide')">1200 x 600</button>
+<button onclick="swSize(this,'square')">700 x 700</button>
 </div>
-<div class="preview-img"><img id="pv" src="../img/eye_visual_field.png" alt="視野検査"></div>
+</div>
+<div class="preview-img"><img id="pv" src="../img/eye_visual_field.png" alt="ゴールドマン視野"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/eye_visual_field.png" download class="dl-btn">Download (800x600)</a>
-<a id="dl2" href="../img/eye_visual_field_wide.png" download class="dl-btn outline">Wide (1200x600)</a>
-<a id="dl3" href="../img/eye_visual_field_square.png" download class="dl-btn outline">Square (700x700)</a>
+<a id="dl1" href="../img/eye_visual_field.png" download class="dl-btn">Download</a>
 </div>
 </section>
 <section class="code-section">
 <div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
 <pre id="rcode">library(ggplot2)
 
-# ---- Visual Field (Perimetry) ----
+# ---- Goldmann Visual Field ----
 # あなたのデータを入力してください
 df <- data.frame(
   x = c(),
@@ -110,9 +113,9 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Horizontal (degrees)", limits = c(-30, 30)) +
-  scale_y_continuous(name = "Vertical (degrees)", limits = c(-30, 30)) +
-  labs(title = "Visual Field (Perimetry)") +
+  scale_x_continuous(name = "", limits = c(0, 30)) +
+  scale_y_continuous(name = "", limits = c(0, 30)) +
+  labs(title = "Goldmann Visual Field") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>
@@ -131,25 +134,26 @@ ggplot(df, aes(x = x, y = y)) +
 </footer>
 <script>
 const B="eye_visual_field";
-let curLang="",curStyle="";
+let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
   document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curStyle=s==="standard"?"":"_"+s;
-  upd();
+  curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
   document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
-  upd();
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
+}
+function swSize(btn,z){
+  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
-  const p="../img/"+B+curLang+curStyle;
+  const p="../img/"+B+curLang+curStyle+curSize;
   document.getElementById("pv").src=p+".png";
   document.getElementById("dl1").href=p+".png";
-  document.getElementById("dl2").href=p+"_wide.png";
-  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;

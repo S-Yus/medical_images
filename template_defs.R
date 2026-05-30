@@ -1430,7 +1430,246 @@ D("analytical-sensitivity","chem","Analytical Sensitivity","分析感度",
   "分析感度テンプレート。LOD/LOQの決定に使用。","分析感度,LOD,LOQ,検出限界"),
 D("clinical-limits","chem","Clinical Decision Limits","臨床判断値",
   "Analyte value","Clinical outcome probability",c(0,100),c(0,1),
-  "臨床判断値テンプレート。カットオフ値の設定に使用。","臨床判断値,カットオフ,感度特異度")
+  "臨床判断値テンプレート。カットオフ値の設定に使用。","臨床判断値,カットオフ,感度特異度"),
+
+# ================================================================
+# SPECIAL GRAPH TYPES (Radar, Ternary, Heatmap, Polar, etc.)
+# ================================================================
+
+# ── Radar/Spider Charts ──
+D("radar-qol-6","stat","QoL Radar Chart (6-axis)","QoLレーダーチャート（6軸）",
+  "","",c(0,6),c(0,1),
+  "6軸のQuality of Lifeレーダーチャートテンプレート。患者の生活の質を多面的に評価。","QoL,レーダー,スパイダー,多軸",
+  type="radar",xlb=c("Physical","Emotional","Social","Cognitive","Role","Global")),
+D("radar-symptom-8","stat","Symptom Radar Chart (8-axis)","症状レーダーチャート（8軸）",
+  "","",c(0,8),c(0,1),
+  "8軸の症状評価レーダーチャート。複数症状の重症度を一覧表示。","症状,レーダー,スパイダー,評価",
+  type="radar",xlb=c("Pain","Fatigue","Nausea","Dyspnea","Appetite","Sleep","Mood","Function")),
+D("radar-nutrition-5","peds","Nutritional Assessment Radar","栄養評価レーダーチャート（5軸）",
+  "","",c(0,5),c(0,1),
+  "5軸の栄養評価レーダーチャート。小児の栄養状態を多角的に評価。","栄養,レーダー,評価,成長",
+  type="radar",xlb=c("Energy","Protein","Vitamins","Minerals","Hydration")),
+D("radar-motor-6","neuro","Motor Function Radar","運動機能レーダーチャート（6軸）",
+  "","",c(0,6),c(0,1),
+  "6軸の運動機能評価レーダーチャート。神経学的評価に使用。","運動機能,レーダー,神経,評価",
+  type="radar",xlb=c("Strength","Tone","Reflexes","Coordination","Gait","Balance")),
+D("radar-vitals-5","emer","Vital Signs Radar","バイタルサインレーダーチャート（5軸）",
+  "","",c(0,5),c(0,1),
+  "5軸のバイタルサインレーダーチャート。救急での迅速評価に使用。","バイタル,レーダー,救急,評価",
+  type="radar",xlb=c("HR","BP","RR","SpO2","Temp")),
+
+# ── Ternary Diagrams ──
+D("ternary-acid-base","physiol","Acid-Base Ternary Diagram","酸塩基三角図",
+  "","",c(0,1),c(0,1),
+  "酸塩基平衡の三角図テンプレート。呼吸性・代謝性の酸塩基障害分類に使用。","酸塩基,三角図,pH,呼吸性,代謝性",
+  type="ternary",xlb=c("Metabolic\nAcidosis","Metabolic\nAlkalosis","Respiratory")),
+D("ternary-body-comp","endo","Body Composition Ternary","体組成三角図",
+  "","",c(0,1),c(0,1),
+  "体組成の三角図テンプレート。脂肪・筋肉・水分の割合を視覚化。","体組成,三角図,脂肪,筋肉",
+  type="ternary",xlb=c("Fat Mass","Lean Mass","Water")),
+D("ternary-cell-diff","hemato","Cell Differential Ternary","細胞分画三角図",
+  "","",c(0,1),c(0,1),
+  "血球分画の三角図テンプレート。3系統の細胞比率を可視化。","血球,分画,三角図,骨髄",
+  type="ternary",xlb=c("Myeloid","Lymphoid","Erythroid")),
+
+# ── Heatmap Templates ──
+D("heatmap-antibiogram","micro","Antibiogram Heatmap","アンチバイオグラム",
+  "Antibiotics","Organisms",c(0,10),c(0,8),
+  "抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。","アンチバイオグラム,感受性,抗菌薬,ヒートマップ",
+  type="heatmap",xlb=c("AMP","AMX","CEZ","CTX","IPM","VCM","GM","LVFX","MINO","SXT"),
+  ylb=c("S.aureus","MRSA","E.coli","Klebsiella","Pseudomonas","Enterococcus","S.pneumo","H.influenzae")),
+D("heatmap-correlation","stat","Correlation Matrix","相関行列ヒートマップ",
+  "Variables","Variables",c(0,6),c(0,6),
+  "相関行列ヒートマップテンプレート。変数間の相関係数を色で可視化。","相関,行列,ヒートマップ,統計",
+  type="heatmap",xlb=c("Var1","Var2","Var3","Var4","Var5","Var6"),
+  ylb=c("Var1","Var2","Var3","Var4","Var5","Var6")),
+D("heatmap-gene-expr","path","Gene Expression Heatmap","遺伝子発現ヒートマップ",
+  "Samples","Genes",c(0,8),c(0,10),
+  "遺伝子発現ヒートマップテンプレート。複数サンプル間の発現パターンを比較。","遺伝子,発現,ヒートマップ,パスウェイ",
+  type="heatmap"),
+D("heatmap-schedule","surg","Drug Schedule Heatmap","投薬スケジュール表",
+  "Days","Medications",c(0,7),c(0,6),
+  "投薬スケジュールヒートマップ。術後の薬剤投与計画を可視化。","投薬,スケジュール,術後,ヒートマップ",
+  type="heatmap",xlb=c("Day1","Day2","Day3","Day4","Day5","Day6","Day7"),
+  ylb=c("Antibiotic","Analgesic","Anticoag","PPI","Insulin","Fluid")),
+
+# ── Audiogram ──
+D("audiogram","eye","Standard Audiogram","標準オージオグラム",
+  "Frequency (Hz)","Hearing Level (dB HL)",c(125,8000),c(-10,120),
+  "標準オージオグラムテンプレート。純音聴力検査結果の記録に使用。","オージオグラム,聴力,聴力検査,dB",
+  type="audiogram"),
+
+# ── Polar/Visual Field ──
+D("visual-field","eye","Goldmann Visual Field","ゴールドマン視野",
+  "","",c(0,30),c(0,30),
+  "ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。","視野,ゴールドマン,視野検査,眼科",
+  type="polar"),
+D("visual-field-humphrey","eye","Humphrey Visual Field","ハンフリー視野",
+  "","",c(0,30),c(0,30),
+  "ハンフリー自動視野計テンプレート。中心30度の視野感度を記録。","視野,ハンフリー,自動視野計",
+  type="polar"),
+
+# ── Special XY-based Medical Graphs ──
+
+# Waterfall plots (Oncology)
+D("waterfall-tumor","stat","Tumor Response Waterfall","腫瘍縮小率ウォーターフォール",
+  "Patient","Best % Change from Baseline",c(0,30),c(-100,100),
+  "腫瘍縮小率ウォーターフォールプロット。RECIST基準での治療効果を個別に表示。","ウォーターフォール,腫瘍,RECIST,治療効果",
+  hl=list(c(-30,"PR threshold","#2563eb"),c(20,"PD threshold","#dc2626"))),
+
+# Funnel plot
+D("funnel-meta","stat","Funnel Plot","ファンネルプロット",
+  "Effect Size","Standard Error",c(-2,2),c(0,1),
+  "ファンネルプロットテンプレート。メタ分析における出版バイアスの評価に使用。","ファンネル,メタ分析,出版バイアス,対称性",
+  vl=list(c(0,"","grey70")),
+  zones=list(c(-1.96,1.96,0,1,"grey","0.05"))),
+
+# QQ plot
+D("qq-plot","stat","Q-Q Plot","Q-Qプロット",
+  "Theoretical Quantiles","Sample Quantiles",c(-3,3),c(-3,3),
+  "Q-Qプロットテンプレート。データの正規性検定に使用。","QQ,正規性,分布,統計検定"),
+
+# Control chart (Shewhart)
+D("control-chart","chem","Shewhart Control Chart","シューハート管理図",
+  "Sample Number","Measured Value",c(0,30),c(-4,4),
+  "シューハート管理図テンプレート。臨床検査のQC管理に使用。","管理図,QC,シューハート,精度管理",
+  hl=list(c(3,"UCL (+3SD)","#dc2626"),c(2,"+2SD","#f59e0b"),c(0,"Mean","#2563eb"),c(-2,"-2SD","#f59e0b"),c(-3,"LCL (-3SD)","#dc2626"))),
+
+# Tornado/Sensitivity chart
+D("tornado-sensitivity","stat","Tornado Diagram","トルネード図",
+  "Impact on Outcome","Variable",c(-50,50),c(0,10),
+  "トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。","トルネード,感度分析,影響度,意思決定",
+  vl=list(c(0,"Baseline","grey60"))),
+
+# Swimmer plot
+D("swimmer-treatment","stat","Swimmer Plot","スイマープロット",
+  "Time (months)","Patient",c(0,36),c(0,20),
+  "スイマープロットテンプレート。個々の患者の治療経過を時系列で表示。","スイマー,治療経過,タイムライン,腫瘍学"),
+
+# Population pyramid
+D("population-pyramid","epi","Population Pyramid","人口ピラミッド",
+  "Population (%)","Age Group",c(-10,10),c(0,18),
+  "人口ピラミッドテンプレート。年齢別・性別の人口構成を表示。","人口ピラミッド,年齢分布,人口動態,性別",
+  vl=list(c(0,"","grey70")),
+  ylb=c("0-4","5-9","10-14","15-19","20-24","25-29","30-34","35-39","40-44","45-49","50-54","55-59","60-64","65-69","70-74","75-79","80-84","85+"),
+  yb=1:18),
+
+# Bubble chart
+D("bubble-chart","stat","Bubble Chart","バブルチャート",
+  "X Variable","Y Variable",c(0,100),c(0,100),
+  "バブルチャートテンプレート。3変数（X, Y, サイズ）を同時に可視化。","バブル,3変数,散布図,サイズ"),
+
+# Dot plot (Cleveland)
+D("dot-plot","stat","Cleveland Dot Plot","クリーブランドドットプロット",
+  "Value","Category",c(0,100),c(0,10),
+  "クリーブランドドットプロットテンプレート。カテゴリ間の比較に使用。","ドット,比較,クリーブランド,カテゴリ"),
+
+# Lollipop chart
+D("lollipop-chart","stat","Lollipop Chart","ロリポップチャート",
+  "Value","Category",c(0,100),c(0,10),
+  "ロリポップチャートテンプレート。棒グラフの代替として数値比較に使用。","ロリポップ,比較,カテゴリ,値"),
+
+# Dumbbell chart (pre-post)
+D("dumbbell-prepost","stat","Pre-Post Dumbbell Chart","前後比較ダンベルチャート",
+  "Value","Subject",c(0,100),c(0,10),
+  "ダンベルチャートテンプレート。介入前後の変化を個別に表示。","ダンベル,前後比較,介入,変化"),
+
+# Box plot
+D("box-plot-groups","stat","Box Plot (Group Comparison)","箱ひげ図（群間比較）",
+  "Group","Value",c(0,6),c(0,100),
+  "箱ひげ図テンプレート。複数群のデータ分布を比較。中央値・四分位・外れ値を表示。","箱ひげ図,分布,比較,中央値,四分位",
+  xb=1:5,xlb=c("Control","Group A","Group B","Group C","Group D")),
+
+# Violin plot
+D("violin-plot","stat","Violin Plot","バイオリンプロット",
+  "Group","Value",c(0,6),c(0,100),
+  "バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。","バイオリン,分布,密度,比較",
+  xb=1:5,xlb=c("Control","Group A","Group B","Group C","Group D")),
+
+# Stacked area
+D("stacked-area","epi","Stacked Area Chart","積み上げ面グラフ",
+  "Time","Proportion (%)",c(0,12),c(0,100),
+  "積み上げ面グラフテンプレート。時間経過に伴う構成比の変化を可視化。","積み上げ,面グラフ,構成比,時系列"),
+
+# Step function
+D("step-function","stat","Step Function Plot","ステップ関数プロット",
+  "Time","Probability",c(0,10),c(0,1),
+  "ステップ関数プロットテンプレート。生存曲線やイベント発生率の描画に使用。","ステップ,階段,生存,確率"),
+
+# Bland-Altman (already exists but add difference plot variant)
+D("difference-plot","stat","Difference Plot","差分プロット",
+  "Mean of Methods","Difference (Method A - B)",c(0,100),c(-20,20),
+  "差分プロットテンプレート。2測定法の一致度評価に使用。","差分,一致度,測定法,比較",
+  hl=list(c(0,"Mean diff","#2563eb"),c(10,"+1.96SD","#dc2626"),c(-10,"-1.96SD","#dc2626"))),
+
+# Pareto chart
+D("pareto-chart","chem","Pareto Chart","パレート図",
+  "Category","Frequency",c(0,10),c(0,100),
+  "パレート図テンプレート。品質管理における問題の優先順位付けに使用。","パレート,品質管理,頻度,累積"),
+
+# Gantt/timeline
+D("treatment-gantt","pharm","Treatment Timeline","治療タイムライン",
+  "Week","Treatment",c(0,24),c(0,8),
+  "治療タイムラインテンプレート。複数薬剤の投与スケジュールを時系列で表示。","タイムライン,治療,スケジュール,投薬"),
+
+# Nomogram (simplified as xy with scales)
+D("nomogram-risk","stat","Risk Nomogram","リスクノモグラム",
+  "Points","Probability",c(0,200),c(0,1),
+  "リスクノモグラムテンプレート。複数因子からリスク確率を算出するためのスケール。","ノモグラム,リスク,予測,スコア"),
+
+# Pedigree chart (simplified grid)
+D("pedigree-grid","obgyn","Pedigree Chart Grid","家系図グリッド",
+  "Generation Position","Generation",c(0,8),c(0,5),
+  "家系図テンプレートグリッド。遺伝疾患の家族歴記録に使用。","家系図,遺伝,家族歴,系図"),
+
+# Dermatome scoring grid
+D("body-score-grid","derm","Body Area Scoring Grid","体表面積スコアグリッド",
+  "Body Region","Score",c(0,10),c(0,10),
+  "体表面積スコアグリッドテンプレート。皮膚疾患の範囲評価（PASI等）に使用。","体表面積,スコア,PASI,皮膚"),
+
+# GCS trend
+D("gcs-trend","neuro","GCS Trend Chart","GCS経時変化チャート",
+  "Time (hours)","GCS Score",c(0,48),c(3,15),
+  "GCS経時変化テンプレート。グラスゴー・コーマ・スケールの推移を記録。","GCS,意識,経時変化,神経",
+  hl=list(c(8,"Severe/Moderate","#f59e0b"),c(13,"Moderate/Mild","#2563eb")),
+  yb=c(3,5,7,9,11,13,15)),
+
+# APACHE/SOFA trend
+D("sofa-trend","emer","SOFA Score Trend","SOFAスコア推移",
+  "ICU Day","SOFA Score",c(0,14),c(0,24),
+  "SOFAスコア推移テンプレート。ICUでの臓器不全の経時的評価に使用。","SOFA,ICU,臓器不全,重症度",
+  hl=list(c(6,"Moderate","#f59e0b"),c(12,"Severe","#dc2626"))),
+
+# Pain VAS
+D("vas-pain","neuro","Visual Analog Scale","VASペインスケール",
+  "Time","Pain Score (VAS)",c(0,24),c(0,10),
+  "VASペインスケール推移テンプレート。疼痛の経時的評価に使用。","VAS,疼痛,ペイン,評価",
+  hl=list(c(3,"Mild/Moderate","#f59e0b"),c(7,"Moderate/Severe","#dc2626")),
+  yb=0:10),
+
+# Partogram
+D("partogram","obgyn","Partogram","パルトグラム",
+  "Time (hours)","Cervical Dilation (cm)",c(0,12),c(0,10),
+  "パルトグラムテンプレート。分娩進行の記録・評価に使用。","パルトグラム,分娩,子宮口,陣痛",
+  yb=0:10),
+
+# Weight/Growth percentile
+D("growth-weight","peds","Weight Growth Chart","体重成長曲線",
+  "Age (months)","Weight (kg)",c(0,60),c(0,25),
+  "体重成長曲線テンプレート。小児の体重推移をパーセンタイルで評価。","成長曲線,体重,パーセンタイル,小児"),
+D("growth-height","peds","Height Growth Chart","身長成長曲線",
+  "Age (months)","Height (cm)",c(0,60),c(40,120),
+  "身長成長曲線テンプレート。小児の身長推移をパーセンタイルで評価。","成長曲線,身長,パーセンタイル,小児"),
+D("growth-head","peds","Head Circumference Chart","頭囲成長曲線",
+  "Age (months)","Head Circumference (cm)",c(0,36),c(30,55),
+  "頭囲成長曲線テンプレート。乳幼児の頭囲推移を評価。","成長曲線,頭囲,パーセンタイル,乳幼児"),
+
+# BMI chart
+D("bmi-chart","endo","BMI Classification Chart","BMI分類チャート",
+  "Height (cm)","Weight (kg)",c(140,200),c(30,140),
+  "BMI分類チャートテンプレート。身長・体重からBMIゾーンを表示。","BMI,肥満,分類,体格指数",
+  zones=list(c(140,200,30,55,"green","0.05"),c(140,200,55,80,"yellow","0.05"),c(140,200,80,140,"red","0.05")),
+  ann=list(c(170,42,"Normal","green",3),c(170,67,"Overweight","#b8860b",3),c(170,110,"Obese","red",3)))
 
 ) # END TEMPLATES list
 

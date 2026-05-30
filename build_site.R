@@ -50,11 +50,12 @@ CATS <- list(
 D <- function(id, cat, en, ja, xl, yl, xr, yr, dj, tags="",
               sub=NULL, xlog=FALSE, ylog=FALSE,
               hl=NULL, vl=NULL, ann=NULL, zones=NULL,
-              xb=NULL, yb=NULL, xlb=NULL, ylb=NULL) {
+              xb=NULL, yb=NULL, xlb=NULL, ylb=NULL,
+              type="xy") {
   list(id=id, cat=cat, en=en, ja=ja, xl=xl, yl=yl, xr=xr, yr=yr,
        dj=dj, tags=tags, sub=sub, xlog=xlog, ylog=ylog,
        hl=hl, vl=vl, ann=ann, zones=zones,
-       xb=xb, yb=yb, xlb=xlb, ylb=ylb)
+       xb=xb, yb=yb, xlb=xlb, ylb=ylb, type=type)
 }
 
 # ── Theme Generator ──
@@ -92,9 +93,116 @@ make_theme <- function(style = "standard", base_size = 14) {
   return(th)
 }
 
+# ── Special Plot Helpers ──
+spcols <- function(style) {
+  dk <- style=="dark"
+  list(bg=if(dk)"#2d2d2d"else"white", fg=if(dk)"grey80"else"grey40",
+       tc=if(dk)"white"else"black", gc=if(dk)"grey50"else"grey80",
+       ac=if(dk)"grey60"else"grey70", fl=if(dk)"#3d3d3d"else"#f0f4ff")
+}
+sptitle <- function(t, lang) switch(lang, en=t$en, ja=t$ja, NULL)
+sptheme <- function(style, cols) {
+  theme_void(base_size=if(style=="presentation")20 else 14) +
+    theme(plot.background=element_rect(fill=cols$bg,color=NA),
+          plot.title=element_text(hjust=0.5,face="bold",color=cols$tc,
+                                  size=if(style=="presentation")24 else 16),
+          plot.subtitle=element_text(hjust=0.5,color=cols$fg,size=if(style=="presentation")14 else 11),
+          plot.margin=margin(15,15,10,10))
+}
+
+# Radar/Spider chart: xr[2]=num axes, xlb=axis labels
+make_radar <- function(t, style, lang) {
+  C <- spcols(style); n <- max(3L, as.integer(t$xr[2]))
+  a <- seq(0, 2*pi, length.out=n+1)[-(n+1)]
+  p <- ggplot()+coord_fixed(xlim=c(-1.4,1.4),ylim=c(-1.4,1.4))
+  for(r in seq(.2,1,.2)){
+    cr <- data.frame(x=r*cos(seq(0,2*pi,len=100)),y=r*sin(seq(0,2*pi,len=100)))
+    p <- p+geom_path(data=cr,aes(x,y),color=C$gc,linewidth=.3)
+  }
+  for(i in 1:n) p <- p+annotate("segment",x=0,y=0,xend=cos(a[i]),yend=sin(a[i]),color=C$ac,linewidth=.3)
+  if(lang!="none"&&!is.null(t$xlb)) for(i in seq_along(t$xlb))
+    p <- p+annotate("text",x=1.22*cos(a[i]),y=1.22*sin(a[i]),label=t$xlb[i],size=3,color=C$fg)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# Ternary diagram: xlb=c(label_A,label_B,label_C)
+make_ternary <- function(t, style, lang) {
+  C <- spcols(style); h <- sqrt(3)/2
+  tri <- data.frame(x=c(0,1,.5,0),y=c(0,0,h,0))
+  p <- ggplot()+coord_fixed(xlim=c(-.15,1.15),ylim=c(-.12,h+.1))
+  p <- p+geom_path(data=tri,aes(x,y),color=C$ac,linewidth=.6)
+  for(i in 1:9){f<-i/10
+    p <- p+annotate("segment",x=f*.5,y=f*h,xend=1-f*.5,yend=f*h,color=C$gc,linewidth=.15,alpha=.5)
+    p <- p+annotate("segment",x=f,y=0,xend=.5+f*.5,yend=(1-f)*h,color=C$gc,linewidth=.15,alpha=.5)
+    p <- p+annotate("segment",x=f*.5,y=f*h,xend=f,yend=0,color=C$gc,linewidth=.15,alpha=.5)
+  }
+  if(lang!="none"&&!is.null(t$xlb)&&length(t$xlb)>=3){
+    p <- p+annotate("text",x=-.06,y=-.05,label=t$xlb[1],size=3.5,color=C$fg,hjust=1)
+    p <- p+annotate("text",x=1.06,y=-.05,label=t$xlb[2],size=3.5,color=C$fg,hjust=0)
+    p <- p+annotate("text",x=.5,y=h+.06,label=t$xlb[3],size=3.5,color=C$fg,vjust=0)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# Heatmap grid: xr[2]=ncol, yr[2]=nrow, xlb/ylb=labels
+make_heatmap <- function(t, style, lang) {
+  C <- spcols(style)
+  nc <- max(2L,as.integer(t$xr[2])); nr <- max(2L,as.integer(t$yr[2]))
+  g <- expand.grid(x=1:nc,y=1:nr)
+  p <- ggplot(g,aes(x,y))+geom_tile(fill=C$fl,color=C$gc,linewidth=.3)
+  xl <- if(lang=="none")""else t$xl; yl <- if(lang=="none")""else t$yl
+  p <- p+labs(x=xl,y=yl)
+  if(!is.null(t$xlb)&&lang!="none") p<-p+scale_x_continuous(breaks=1:nc,labels=head(t$xlb,nc))
+  if(!is.null(t$ylb)&&lang!="none") p<-p+scale_y_continuous(breaks=1:nr,labels=head(t$ylb,nr))
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# Audiogram: fixed frequency/dB grid, inverted y-axis
+make_audiogram <- function(t, style, lang) {
+  C <- spcols(style)
+  freqs <- c(125,250,500,1000,2000,4000,8000)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none")""else"Frequency (Hz)"
+  yl <- if(lang=="none")""else"Hearing Level (dB HL)"
+  p <- p+scale_x_log10(name=xl,limits=c(100,10000),breaks=freqs,labels=freqs)+
+    scale_y_reverse(name=yl,limits=c(120,-10),breaks=seq(-10,120,10))
+  p <- p+annotate("rect",xmin=100,xmax=10000,ymin=-10,ymax=25,fill="green",alpha=.06)
+  if(lang!="none") p<-p+annotate("text",x=200,y=10,label="Normal",color="grey50",size=3)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt)
+  p+make_theme(style)
+}
+
+# Polar/Visual field: concentric rings with meridians
+make_polar_vf <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot()+coord_fixed(xlim=c(-35,35),ylim=c(-35,35))
+  for(r in seq(10,30,10)){
+    cr <- data.frame(x=r*cos(seq(0,2*pi,len=100)),y=r*sin(seq(0,2*pi,len=100)))
+    p <- p+geom_path(data=cr,aes(x,y),color=C$gc,linewidth=.3)
+  }
+  for(a in seq(0,pi-.01,pi/4))
+    p <- p+annotate("segment",x=-30*cos(a),y=-30*sin(a),xend=30*cos(a),yend=30*sin(a),color=C$gc,linewidth=.2)
+  if(lang!="none"){
+    for(r in c(10,20,30)) p<-p+annotate("text",x=r+1,y=1,label=paste0(r,"°"),size=2.5,color=C$fg)
+    p <- p+annotate("text",x=0,y=-33,label="Inferior",size=3,color=C$fg)
+    p <- p+annotate("text",x=0,y=33,label="Superior",size=3,color=C$fg)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt)
+  p+sptheme(style,C)
+}
+
 # ── Plot Generator ──
 # lang: "en" = English labels, "ja" = Japanese title, "none" = no text
 make_plot <- function(t, style = "standard", lang = "en") {
+  tp <- if(!is.null(t$type)) t$type else "xy"
+  if(tp!="xy") return(switch(tp,
+    radar=make_radar(t,style,lang), ternary=make_ternary(t,style,lang),
+    heatmap=make_heatmap(t,style,lang), audiogram=make_audiogram(t,style,lang),
+    polar=make_polar_vf(t,style,lang), make_radar(t,style,lang)))
+
   empty <- data.frame(x = numeric(0), y = numeric(0))
   p <- ggplot(empty, aes(x, y)) + geom_blank()
 
@@ -346,12 +454,15 @@ generate_template_page <- function(t, all_t) {
 <button onclick="swLang(this,\'ja\')">日本語</button>
 <button onclick="swLang(this,\'none\')">テキストなし</button>
 </div>
+<div class="style-tabs" id="sizeTabs">
+<button class="active" onclick="swSize(this,\'standard\')">800 x 600</button>
+<button onclick="swSize(this,\'wide\')">1200 x 600</button>
+<button onclick="swSize(this,\'square\')">700 x 700</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/%s.png" alt="%s"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/%s.png" download class="dl-btn">Download (800x600)</a>
-<a id="dl2" href="../img/%s_wide.png" download class="dl-btn outline">Wide (1200x600)</a>
-<a id="dl3" href="../img/%s_square.png" download class="dl-btn outline">Square (700x700)</a>
+<a id="dl1" href="../img/%s.png" download class="dl-btn">Download</a>
 </div>
 </section>
 <section class="code-section">
@@ -366,25 +477,26 @@ generate_template_page <- function(t, all_t) {
 </footer>
 <script>
 const B="%s";
-let curLang="",curStyle="";
+let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
   document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curStyle=s==="standard"?"":"_"+s;
-  upd();
+  curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
   document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
-  upd();
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
+}
+function swSize(btn,z){
+  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
-  const p="../img/"+B+curLang+curStyle;
+  const p="../img/"+B+curLang+curStyle+curSize;
   document.getElementById("pv").src=p+".png";
   document.getElementById("dl1").href=p+".png";
-  document.getElementById("dl2").href=p+"_wide.png";
-  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;
@@ -411,7 +523,7 @@ function copyCode(){
   t$cat, cja, t$ja,
   t$ja, t$dj, tags_html,
   img_base, t$ja,
-  img_base, img_base, img_base,
+  img_base,
   r_code, rel_html,
   img_base)
 
@@ -549,6 +661,10 @@ a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
 .cat-card{background:#fff;border-radius:10px;padding:18px 16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s;border-left:3px solid #2563eb}
 .cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
 .cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666;margin-top:2px}
+.no-results{display:none;text-align:center;padding:60px 20px;max-width:1200px;margin:0 auto}
+.no-results.show{display:block}
+.no-results p{font-size:18px;color:#666;margin-bottom:8px}
+.no-results .hint{font-size:14px;color:#999}
 .request-section{max-width:1200px;margin:40px auto;padding:0 20px;text-align:center}
 .request-card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .request-card h2{font-size:20px;color:#1e3a5f;margin-bottom:8px}
@@ -582,10 +698,11 @@ footer a{color:#60a5fa}
 <div class="stat"><div class="num">%d</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-<div class="search-box"><input type="text" id="search" placeholder="Search templates..." oninput="filterCards(this.value)"></div>
+<div class="search-box"><input type="text" id="search" placeholder="テンプレートを検索..." oninput="filterCards(this.value)"></div>
 </section>
 <nav class="nav-bar"><div class="inner">%s</div></nav>
 <div class="cats-grid">%s</div>
+<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p><p class="hint">別のキーワードで検索するか、<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request" target="_blank">リクエスト</a>をお送りください</p></div>
 %s
 <section class="request-section">
 <div class="request-card">
@@ -601,9 +718,12 @@ footer a{color:#60a5fa}
 <script>
 function filterCards(q){
   q=q.toLowerCase();
+  let total=0;
   document.querySelectorAll(".card").forEach(c=>{
     const t=c.textContent.toLowerCase();
-    c.style.display=t.includes(q)?"":"none";
+    const v=t.includes(q);
+    c.style.display=v?"":"none";
+    if(v)total++;
   });
   document.querySelectorAll(".cat-section").forEach(s=>{
     const cards=s.querySelectorAll(".card");
@@ -615,6 +735,8 @@ function filterCards(q){
     if(!q){c.style.display="";return;}
     c.style.display=c.textContent.toLowerCase().includes(q)?"":"none";
   });
+  const nr=document.getElementById("noResults");
+  if(nr) nr.classList.toggle("show",q&&total===0);
 }
 </script>
 </body></html>',

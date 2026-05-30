@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Q-Qプロット テンプレート | MedGraph Free</title>
-<meta name="description" content="Q-Qプロットテンプレート。データの正規性を視覚的に評価。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<meta name="description" content="Q-Qプロットテンプレート。データの正規性検定に使用。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
@@ -12,12 +12,12 @@
 <link rel="canonical" href="https://med-graph.com/stat/qq-plot.html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Q-Qプロット テンプレート | MedGraph Free">
-<meta property="og:description" content="Q-Qプロットテンプレート。データの正規性を視覚的に評価。">
+<meta property="og:description" content="Q-Qプロットテンプレート。データの正規性検定に使用。">
 <meta property="og:image" content="https://med-graph.com/img/stat_qq_plot.png">
 <meta property="og:url" content="https://med-graph.com/stat/qq-plot.html">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"Q-Qプロット","description":"Q-Qプロットテンプレート。データの正規性を視覚的に評価。","contentUrl":"https://med-graph.com/img/stat_qq_plot.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
+{"@context":"https://schema.org","@type":"ImageObject","name":"Q-Qプロット","description":"Q-Qプロットテンプレート。データの正規性検定に使用。","contentUrl":"https://med-graph.com/img/stat_qq_plot.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -72,8 +72,8 @@ footer a{color:#60a5fa}
 <div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/stat.html">臨床統計</a> &gt; Q-Qプロット</div>
 <main>
 <h1 class="page-title">Q-Qプロット</h1>
-<p class="desc">Q-Qプロットテンプレート。データの正規性を視覚的に評価。</p>
-<div class="tags"><span>Q-Q</span><span>正規性</span><span>分布</span></div>
+<p class="desc">Q-Qプロットテンプレート。データの正規性検定に使用。</p>
+<div class="tags"><span>QQ</span><span>正規性</span><span>分布</span><span>統計検定</span></div>
 <section class="preview-section">
 <div class="switcher-row">
 <div class="style-tabs" id="styleTabs">
@@ -88,12 +88,15 @@ footer a{color:#60a5fa}
 <button onclick="swLang(this,'ja')">日本語</button>
 <button onclick="swLang(this,'none')">テキストなし</button>
 </div>
+<div class="style-tabs" id="sizeTabs">
+<button class="active" onclick="swSize(this,'standard')">800 x 600</button>
+<button onclick="swSize(this,'wide')">1200 x 600</button>
+<button onclick="swSize(this,'square')">700 x 700</button>
+</div>
 </div>
 <div class="preview-img"><img id="pv" src="../img/stat_qq_plot.png" alt="Q-Qプロット"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/stat_qq_plot.png" download class="dl-btn">Download (800x600)</a>
-<a id="dl2" href="../img/stat_qq_plot_wide.png" download class="dl-btn outline">Wide (1200x600)</a>
-<a id="dl3" href="../img/stat_qq_plot_square.png" download class="dl-btn outline">Square (700x700)</a>
+<a id="dl1" href="../img/stat_qq_plot.png" download class="dl-btn">Download</a>
 </div>
 </section>
 <section class="code-section">
@@ -110,8 +113,8 @@ df <- data.frame(
 ggplot(df, aes(x = x, y = y)) +
   geom_point(size = 2) +
   geom_line() +
-  scale_x_continuous(name = "Theoretical quantiles", limits = c(-3, 3)) +
-  scale_y_continuous(name = "Sample quantiles", limits = c(-3, 3)) +
+  scale_x_continuous(name = "Theoretical Quantiles", limits = c(-3, 3)) +
+  scale_y_continuous(name = "Sample Quantiles", limits = c(-3, 3)) +
   labs(title = "Q-Q Plot") +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
@@ -131,25 +134,26 @@ ggplot(df, aes(x = x, y = y)) +
 </footer>
 <script>
 const B="stat_qq_plot";
-let curLang="",curStyle="";
+let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
   document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curStyle=s==="standard"?"":"_"+s;
-  upd();
+  curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
   document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";
-  upd();
+  curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
+}
+function swSize(btn,z){
+  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
-  const p="../img/"+B+curLang+curStyle;
+  const p="../img/"+B+curLang+curStyle+curSize;
   document.getElementById("pv").src=p+".png";
   document.getElementById("dl1").href=p+".png";
-  document.getElementById("dl2").href=p+"_wide.png";
-  document.getElementById("dl3").href=p+"_square.png";
 }
 function copyCode(){
   const c=document.getElementById("rcode").textContent;

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>MedGraph Free | 医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
-<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全24分野407種類・18315ダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
+<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全25分野451種類・20295ダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
 <meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -13,12 +13,12 @@
 <link rel="canonical" href="https://med-graph.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="MedGraph Free | 医学部生のための無料グラフテンプレート集">
-<meta property="og:description" content="全24分野407種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
+<meta property="og:description" content="全25分野451種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
 <meta property="og:url" content="https://med-graph.com/">
 <meta property="og:image" content="https://med-graph.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"https://med-graph.com/","description":"医学部生のためのグラフテンプレート集。全24分野407種類。CC0。Rコード付き。","inLanguage":"ja"}
+{"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"https://med-graph.com/","description":"医学部生のためのグラフテンプレート集。全25分野451種類。CC0。Rコード付き。","inLanguage":"ja"}
 </script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -37,6 +37,10 @@ a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
 .cat-card{background:#fff;border-radius:10px;padding:18px 16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s;border-left:3px solid #2563eb}
 .cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
 .cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666;margin-top:2px}
+.no-results{display:none;text-align:center;padding:60px 20px;max-width:1200px;margin:0 auto}
+.no-results.show{display:block}
+.no-results p{font-size:18px;color:#666;margin-bottom:8px}
+.no-results .hint{font-size:14px;color:#999}
 .request-section{max-width:1200px;margin:40px auto;padding:0 20px;text-align:center}
 .request-card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .request-card h2{font-size:20px;color:#1e3a5f;margin-bottom:8px}
@@ -65,38 +69,40 @@ footer a{color:#60a5fa}
 <h1>MedGraph Free</h1>
 <p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表にそのまま使えます。</p>
 <div class="stats">
-<div class="stat"><div class="num">407</div><div class="lbl">Templates</div></div>
-<div class="stat"><div class="num">18315</div><div class="lbl">Downloads</div></div>
-<div class="stat"><div class="num">24</div><div class="lbl">Categories</div></div>
+<div class="stat"><div class="num">451</div><div class="lbl">Templates</div></div>
+<div class="stat"><div class="num">20295</div><div class="lbl">Downloads</div></div>
+<div class="stat"><div class="num">25</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-<div class="search-box"><input type="text" id="search" placeholder="Search templates..." oninput="filterCards(this.value)"></div>
+<div class="search-box"><input type="text" id="search" placeholder="テンプレートを検索..." oninput="filterCards(this.value)"></div>
 </section>
-<nav class="nav-bar"><div class="inner"><a href="#biochem">生化学</a><a href="#cardio">循環器</a><a href="#chem">臨床検査</a><a href="#emer">救急</a><a href="#endo">内分泌</a><a href="#epi">疫学・公衆衛生</a><a href="#eye">眼科</a><a href="#gi">消化器</a><a href="#hemato">血液</a><a href="#immuno">免疫学</a><a href="#micro">微生物学</a><a href="#nephro">腎臓</a><a href="#neuro">神経科学</a><a href="#obgyn">産婦人科</a><a href="#ortho">整形外科</a><a href="#path">病理学</a><a href="#peds">小児科</a><a href="#pharm">薬理学</a><a href="#physiol">生理学</a><a href="#psych">精神科</a><a href="#pulm">呼吸器</a><a href="#radio">放射線</a><a href="#stat">臨床統計</a><a href="#surg">外科・麻酔</a></div></nav>
+<nav class="nav-bar"><div class="inner"><a href="#biochem">生化学</a><a href="#cardio">循環器</a><a href="#chem">臨床検査</a><a href="#derm">皮膚科</a><a href="#emer">救急</a><a href="#endo">内分泌</a><a href="#epi">疫学・公衆衛生</a><a href="#eye">眼科</a><a href="#gi">消化器</a><a href="#hemato">血液</a><a href="#immuno">免疫学</a><a href="#micro">微生物学</a><a href="#nephro">腎臓</a><a href="#neuro">神経科学</a><a href="#obgyn">産婦人科</a><a href="#ortho">整形外科</a><a href="#path">病理学</a><a href="#peds">小児科</a><a href="#pharm">薬理学</a><a href="#physiol">生理学</a><a href="#psych">精神科</a><a href="#pulm">呼吸器</a><a href="#radio">放射線</a><a href="#stat">臨床統計</a><a href="#surg">外科・麻酔</a></div></nav>
 <div class="cats-grid"><a href="c/biochem.html" class="cat-card"><div class="cat-name">生化学</div><div class="cat-count">30 templates</div></a>
 <a href="c/cardio.html" class="cat-card"><div class="cat-name">循環器</div><div class="cat-count">22 templates</div></a>
-<a href="c/chem.html" class="cat-card"><div class="cat-name">臨床検査</div><div class="cat-count">10 templates</div></a>
-<a href="c/emer.html" class="cat-card"><div class="cat-name">救急</div><div class="cat-count">10 templates</div></a>
-<a href="c/endo.html" class="cat-card"><div class="cat-name">内分泌</div><div class="cat-count">18 templates</div></a>
-<a href="c/epi.html" class="cat-card"><div class="cat-name">疫学・公衆衛生</div><div class="cat-count">18 templates</div></a>
-<a href="c/eye.html" class="cat-card"><div class="cat-name">眼科</div><div class="cat-count">10 templates</div></a>
+<a href="c/chem.html" class="cat-card"><div class="cat-name">臨床検査</div><div class="cat-count">12 templates</div></a>
+<a href="c/derm.html" class="cat-card"><div class="cat-name">皮膚科</div><div class="cat-count">1 templates</div></a>
+<a href="c/emer.html" class="cat-card"><div class="cat-name">救急</div><div class="cat-count">12 templates</div></a>
+<a href="c/endo.html" class="cat-card"><div class="cat-name">内分泌</div><div class="cat-count">20 templates</div></a>
+<a href="c/epi.html" class="cat-card"><div class="cat-name">疫学・公衆衛生</div><div class="cat-count">20 templates</div></a>
+<a href="c/eye.html" class="cat-card"><div class="cat-name">眼科</div><div class="cat-count">13 templates</div></a>
 <a href="c/gi.html" class="cat-card"><div class="cat-name">消化器</div><div class="cat-count">12 templates</div></a>
-<a href="c/hemato.html" class="cat-card"><div class="cat-name">血液</div><div class="cat-count">18 templates</div></a>
+<a href="c/hemato.html" class="cat-card"><div class="cat-name">血液</div><div class="cat-count">19 templates</div></a>
 <a href="c/immuno.html" class="cat-card"><div class="cat-name">免疫学</div><div class="cat-count">20 templates</div></a>
-<a href="c/micro.html" class="cat-card"><div class="cat-name">微生物学</div><div class="cat-count">20 templates</div></a>
+<a href="c/micro.html" class="cat-card"><div class="cat-name">微生物学</div><div class="cat-count">21 templates</div></a>
 <a href="c/nephro.html" class="cat-card"><div class="cat-name">腎臓</div><div class="cat-count">15 templates</div></a>
-<a href="c/neuro.html" class="cat-card"><div class="cat-name">神経科学</div><div class="cat-count">22 templates</div></a>
-<a href="c/obgyn.html" class="cat-card"><div class="cat-name">産婦人科</div><div class="cat-count">15 templates</div></a>
+<a href="c/neuro.html" class="cat-card"><div class="cat-name">神経科学</div><div class="cat-count">25 templates</div></a>
+<a href="c/obgyn.html" class="cat-card"><div class="cat-name">産婦人科</div><div class="cat-count">17 templates</div></a>
 <a href="c/ortho.html" class="cat-card"><div class="cat-name">整形外科</div><div class="cat-count">10 templates</div></a>
-<a href="c/path.html" class="cat-card"><div class="cat-name">病理学</div><div class="cat-count">12 templates</div></a>
-<a href="c/peds.html" class="cat-card"><div class="cat-name">小児科</div><div class="cat-count">15 templates</div></a>
-<a href="c/pharm.html" class="cat-card"><div class="cat-name">薬理学</div><div class="cat-count">25 templates</div></a>
-<a href="c/physiol.html" class="cat-card"><div class="cat-name">生理学</div><div class="cat-count">34 templates</div></a>
+<a href="c/path.html" class="cat-card"><div class="cat-name">病理学</div><div class="cat-count">13 templates</div></a>
+<a href="c/peds.html" class="cat-card"><div class="cat-name">小児科</div><div class="cat-count">19 templates</div></a>
+<a href="c/pharm.html" class="cat-card"><div class="cat-name">薬理学</div><div class="cat-count">26 templates</div></a>
+<a href="c/physiol.html" class="cat-card"><div class="cat-name">生理学</div><div class="cat-count">35 templates</div></a>
 <a href="c/psych.html" class="cat-card"><div class="cat-name">精神科</div><div class="cat-count">10 templates</div></a>
 <a href="c/pulm.html" class="cat-card"><div class="cat-name">呼吸器</div><div class="cat-count">15 templates</div></a>
 <a href="c/radio.html" class="cat-card"><div class="cat-name">放射線</div><div class="cat-count">8 templates</div></a>
-<a href="c/stat.html" class="cat-card"><div class="cat-name">臨床統計</div><div class="cat-count">28 templates</div></a>
-<a href="c/surg.html" class="cat-card"><div class="cat-name">外科・麻酔</div><div class="cat-count">10 templates</div></a></div>
+<a href="c/stat.html" class="cat-card"><div class="cat-name">臨床統計</div><div class="cat-count">45 templates</div></a>
+<a href="c/surg.html" class="cat-card"><div class="cat-name">外科・麻酔</div><div class="cat-count">11 templates</div></a></div>
+<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p><p class="hint">別のキーワードで検索するか、<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request" target="_blank">リクエスト</a>をお送りください</p></div>
 <section class="cat-section" id="biochem"><h2><a href="c/biochem.html">生化学 (30)</a></h2><div class="card-grid"><a href="biochem/michaelis-menten.html" class="card"><img src="img/biochem_michaelis_menten.png" alt="ミカエリス・メンテンプロット" loading="lazy"><div class="card-body"><h3>ミカエリス・メンテンプロット</h3><p>酵素反応速度論の基本グラフ。基質濃度[S]と反応速度vの双曲線関係をプロットするテンプレート。</p></div></a>
 <a href="biochem/lineweaver-burk.html" class="card"><img src="img/biochem_lineweaver_burk.png" alt="ラインウィーバー・バークプロット" loading="lazy"><div class="card-body"><h3>ラインウィーバー・バークプロット</h3><p>二重逆数プロット。Michaelis-Menten式を線形化してKmとVmaxを求めるためのテンプレ</p></div></a>
 <a href="biochem/titration.html" class="card"><img src="img/biochem_titration.png" alt="pH滴定曲線" loading="lazy"><div class="card-body"><h3>pH滴定曲線</h3><p>酸塩基滴定のpH変化を記録するテンプレート。当量点や緩衝域の解析に使用。</p></div></a>
@@ -149,7 +155,7 @@ footer a{color:#60a5fa}
 <a href="cardio/ecg-vt.html" class="card"><img src="img/cardio_ecg_vt.png" alt="心電図：心室頻拍" loading="lazy"><div class="card-body"><h3>心電図：心室頻拍</h3><p>心室頻拍の心電図テンプレート。幅広QRS波形の連続をプロット。</p></div></a>
 <a href="cardio/ecg-aflutter.html" class="card"><img src="img/cardio_ecg_aflutter.png" alt="心電図：心房粗動" loading="lazy"><div class="card-body"><h3>心電図：心房粗動</h3><p>心房粗動の心電図テンプレート。鋸歯状のflutter波をプロット。</p></div></a>
 <a href="cardio/mitral-stenosis.html" class="card"><img src="img/cardio_mitral_stenosis.png" alt="僧帽弁狭窄圧較差" loading="lazy"><div class="card-body"><h3>僧帽弁狭窄圧較差</h3><p>僧帽弁狭窄症の圧較差テンプレート。左房圧と左室拡張期圧の差をプロット。</p></div></a></div></section>
-<section class="cat-section" id="chem"><h2><a href="c/chem.html">臨床検査 (10)</a></h2><div class="card-grid"><a href="chem/calibration-curve.html" class="card"><img src="img/chem_calibration_curve.png" alt="検量線" loading="lazy"><div class="card-body"><h3>検量線</h3><p>汎用検量線テンプレート。標準液濃度と測定値の直線関係をプロット。</p></div></a>
+<section class="cat-section" id="chem"><h2><a href="c/chem.html">臨床検査 (12)</a></h2><div class="card-grid"><a href="chem/calibration-curve.html" class="card"><img src="img/chem_calibration_curve.png" alt="検量線" loading="lazy"><div class="card-body"><h3>検量線</h3><p>汎用検量線テンプレート。標準液濃度と測定値の直線関係をプロット。</p></div></a>
 <a href="chem/linearity.html" class="card"><img src="img/chem_linearity.png" alt="直線性評価" loading="lazy"><div class="card-body"><h3>直線性評価</h3><p>直線性評価テンプレート。測定法の直線範囲の確認に使用。</p></div></a>
 <a href="chem/precision-profile.html" class="card"><img src="img/chem_precision_profile.png" alt="精密度プロファイル" loading="lazy"><div class="card-body"><h3>精密度プロファイル</h3><p>精密度プロファイルテンプレート。濃度別の変動係数をプロット。</p></div></a>
 <a href="chem/method-comparison.html" class="card"><img src="img/chem_method_comparison.png" alt="方法比較" loading="lazy"><div class="card-body"><h3>方法比較</h3><p>方法比較テンプレート。参照法と新法の相関をプロット。</p></div></a>
@@ -158,8 +164,11 @@ footer a{color:#60a5fa}
 <a href="chem/qc-chart.html" class="card"><img src="img/chem_qc_chart.png" alt="QC管理図" loading="lazy"><div class="card-body"><h3>QC管理図</h3><p>レビー・ジェニングスQC管理図テンプレート。日常の精度管理に使用。</p></div></a>
 <a href="chem/westgard.html" class="card"><img src="img/chem_westgard.png" alt="ウエストガードルール" loading="lazy"><div class="card-body"><h3>ウエストガードルール</h3><p>ウエストガードルールテンプレート。QCデータの異常判定に使用。</p></div></a>
 <a href="chem/analytical-sensitivity.html" class="card"><img src="img/chem_analytical_sensitivity.png" alt="分析感度" loading="lazy"><div class="card-body"><h3>分析感度</h3><p>分析感度テンプレート。LOD/LOQの決定に使用。</p></div></a>
-<a href="chem/clinical-limits.html" class="card"><img src="img/chem_clinical_limits.png" alt="臨床判断値" loading="lazy"><div class="card-body"><h3>臨床判断値</h3><p>臨床判断値テンプレート。カットオフ値の設定に使用。</p></div></a></div></section>
-<section class="cat-section" id="emer"><h2><a href="c/emer.html">救急 (10)</a></h2><div class="card-grid"><a href="emer/triage.html" class="card"><img src="img/emer_triage.png" alt="トリアージスコアリング" loading="lazy"><div class="card-body"><h3>トリアージスコアリング</h3><p>トリアージスコアリングテンプレート。緊急度分類に使用。</p></div></a>
+<a href="chem/clinical-limits.html" class="card"><img src="img/chem_clinical_limits.png" alt="臨床判断値" loading="lazy"><div class="card-body"><h3>臨床判断値</h3><p>臨床判断値テンプレート。カットオフ値の設定に使用。</p></div></a>
+<a href="chem/control-chart.html" class="card"><img src="img/chem_control_chart.png" alt="シューハート管理図" loading="lazy"><div class="card-body"><h3>シューハート管理図</h3><p>シューハート管理図テンプレート。臨床検査のQC管理に使用。</p></div></a>
+<a href="chem/pareto-chart.html" class="card"><img src="img/chem_pareto_chart.png" alt="パレート図" loading="lazy"><div class="card-body"><h3>パレート図</h3><p>パレート図テンプレート。品質管理における問題の優先順位付けに使用。</p></div></a></div></section>
+<section class="cat-section" id="derm"><h2><a href="c/derm.html">皮膚科 (1)</a></h2><div class="card-grid"><a href="derm/body-score-grid.html" class="card"><img src="img/derm_body_score_grid.png" alt="体表面積スコアグリッド" loading="lazy"><div class="card-body"><h3>体表面積スコアグリッド</h3><p>体表面積スコアグリッドテンプレート。皮膚疾患の範囲評価（PASI等）に使用。</p></div></a></div></section>
+<section class="cat-section" id="emer"><h2><a href="c/emer.html">救急 (12)</a></h2><div class="card-grid"><a href="emer/triage.html" class="card"><img src="img/emer_triage.png" alt="トリアージスコアリング" loading="lazy"><div class="card-body"><h3>トリアージスコアリング</h3><p>トリアージスコアリングテンプレート。緊急度分類に使用。</p></div></a>
 <a href="emer/abcde.html" class="card"><img src="img/emer_abcde.png" alt="ABCDE評価" loading="lazy"><div class="card-body"><h3>ABCDE評価</h3><p>ABCDE系統的評価テンプレート。救急初期評価の記録に使用。</p></div></a>
 <a href="emer/iss.html" class="card"><img src="img/emer_iss.png" alt="外傷重症度スコア" loading="lazy"><div class="card-body"><h3>外傷重症度スコア</h3><p>ISS（外傷重症度スコア）テンプレート。6領域のAISスコアをプロット。</p></div></a>
 <a href="emer/rule-of-9s.html" class="card"><img src="img/emer_rule_of_9s.png" alt="熱傷（9の法則）" loading="lazy"><div class="card-body"><h3>熱傷（9の法則）</h3><p>9の法則による熱傷面積テンプレート。TBSA%の算出に使用。</p></div></a>
@@ -168,8 +177,10 @@ footer a{color:#60a5fa}
 <a href="emer/toxicology.html" class="card"><img src="img/emer_toxicology.png" alt="中毒スクリーニング" loading="lazy"><div class="card-body"><h3>中毒スクリーニング</h3><p>中毒スクリーニングテンプレート。薬物/毒物の血中濃度を評価。</p></div></a>
 <a href="emer/sepsis-qsofa.html" class="card"><img src="img/emer_sepsis_qsofa.png" alt="敗血症（qSOFA）" loading="lazy"><div class="card-body"><h3>敗血症（qSOFA）</h3><p>qSOFAスコアテンプレート。敗血症のスクリーニングと経過観察に使用。</p></div></a>
 <a href="emer/rapid-sequence.html" class="card"><img src="img/emer_rapid_sequence.png" alt="迅速導入挿管" loading="lazy"><div class="card-body"><h3>迅速導入挿管</h3><p>RSI（迅速導入挿管）タイムラインテンプレート。各ステップのタイミングをプロット。</p></div></a>
-<a href="emer/acls.html" class="card"><img src="img/emer_acls.png" alt="ACLSアルゴリズム" loading="lazy"><div class="card-body"><h3>ACLSアルゴリズム</h3><p>ACLSアルゴリズムテンプレート。心停止対応のタイミングチャートをプロット。</p></div></a></div></section>
-<section class="cat-section" id="endo"><h2><a href="c/endo.html">内分泌 (18)</a></h2><div class="card-grid"><a href="endo/ogtt.html" class="card"><img src="img/endo_ogtt.png" alt="OGTT（経口ブドウ糖負荷試験）" loading="lazy"><div class="card-body"><h3>OGTT（経口ブドウ糖負荷試験）</h3><p>OGTT曲線テンプレート。75gブドウ糖負荷後の血糖変化をプロット。</p></div></a>
+<a href="emer/acls.html" class="card"><img src="img/emer_acls.png" alt="ACLSアルゴリズム" loading="lazy"><div class="card-body"><h3>ACLSアルゴリズム</h3><p>ACLSアルゴリズムテンプレート。心停止対応のタイミングチャートをプロット。</p></div></a>
+<a href="emer/radar-vitals-5.html" class="card"><img src="img/emer_radar_vitals_5.png" alt="バイタルサインレーダーチャート（5軸）" loading="lazy"><div class="card-body"><h3>バイタルサインレーダーチャート（5軸）</h3><p>5軸のバイタルサインレーダーチャート。救急での迅速評価に使用。</p></div></a>
+<a href="emer/sofa-trend.html" class="card"><img src="img/emer_sofa_trend.png" alt="SOFAスコア推移" loading="lazy"><div class="card-body"><h3>SOFAスコア推移</h3><p>SOFAスコア推移テンプレート。ICUでの臓器不全の経時的評価に使用。</p></div></a></div></section>
+<section class="cat-section" id="endo"><h2><a href="c/endo.html">内分泌 (20)</a></h2><div class="card-grid"><a href="endo/ogtt.html" class="card"><img src="img/endo_ogtt.png" alt="OGTT（経口ブドウ糖負荷試験）" loading="lazy"><div class="card-body"><h3>OGTT（経口ブドウ糖負荷試験）</h3><p>OGTT曲線テンプレート。75gブドウ糖負荷後の血糖変化をプロット。</p></div></a>
 <a href="endo/ogtt-insulin.html" class="card"><img src="img/endo_ogtt_insulin.png" alt="OGTT＋インスリン" loading="lazy"><div class="card-body"><h3>OGTT＋インスリン</h3><p>OGTT＋インスリン同時測定テンプレート。血糖とインスリンの応答を比較。</p></div></a>
 <a href="endo/insulin-response.html" class="card"><img src="img/endo_insulin_response.png" alt="インスリン応答" loading="lazy"><div class="card-body"><h3>インスリン応答</h3><p>インスリン応答テンプレート。糖負荷後のインスリン分泌パターンをプロット。</p></div></a>
 <a href="endo/tsh-feedback.html" class="card"><img src="img/endo_tsh_feedback.png" alt="TSHフィードバック" loading="lazy"><div class="card-body"><h3>TSHフィードバック</h3><p>TSH-T4フィードバックテンプレート。甲状腺ホルモンの負のフィードバックをプロット。</p></div></a>
@@ -186,8 +197,10 @@ footer a{color:#60a5fa}
 <a href="endo/acth-stimulation.html" class="card"><img src="img/endo_acth_stimulation.png" alt="ACTH負荷試験" loading="lazy"><div class="card-body"><h3>ACTH負荷試験</h3><p>ACTH負荷試験テンプレート。副腎機能の評価に使用。</p></div></a>
 <a href="endo/gnrh-pulse.html" class="card"><img src="img/endo_gnrh_pulse.png" alt="GnRHパルスパターン" loading="lazy"><div class="card-body"><h3>GnRHパルスパターン</h3><p>GnRHパルスパターンテンプレート。LH拍動性分泌をプロット。</p></div></a>
 <a href="endo/growth-hormone-stim.html" class="card"><img src="img/endo_growth_hormone_stim.png" alt="成長ホルモン負荷試験" loading="lazy"><div class="card-body"><h3>成長ホルモン負荷試験</h3><p>GH負荷試験テンプレート。GH分泌不全症の診断に使用。</p></div></a>
-<a href="endo/menstrual-cycle.html" class="card"><img src="img/endo_menstrual_cycle.png" alt="月経周期ホルモン" loading="lazy"><div class="card-body"><h3>月経周期ホルモン</h3><p>月経周期のホルモン変動テンプレート。FSH/LH/E2/Progesteroneの推移をプロット。</p></div></a></div></section>
-<section class="cat-section" id="epi"><h2><a href="c/epi.html">疫学・公衆衛生 (18)</a></h2><div class="card-grid"><a href="epi/epidemic-point.html" class="card"><img src="img/epi_epidemic_point.png" alt="流行曲線（点源）" loading="lazy"><div class="card-body"><h3>流行曲線（点源）</h3><p>点源型流行曲線テンプレート。一回の曝露による集団発生パターンをプロット。</p></div></a>
+<a href="endo/menstrual-cycle.html" class="card"><img src="img/endo_menstrual_cycle.png" alt="月経周期ホルモン" loading="lazy"><div class="card-body"><h3>月経周期ホルモン</h3><p>月経周期のホルモン変動テンプレート。FSH/LH/E2/Progesteroneの推移をプロット。</p></div></a>
+<a href="endo/ternary-body-comp.html" class="card"><img src="img/endo_ternary_body_comp.png" alt="体組成三角図" loading="lazy"><div class="card-body"><h3>体組成三角図</h3><p>体組成の三角図テンプレート。脂肪・筋肉・水分の割合を視覚化。</p></div></a>
+<a href="endo/bmi-chart.html" class="card"><img src="img/endo_bmi_chart.png" alt="BMI分類チャート" loading="lazy"><div class="card-body"><h3>BMI分類チャート</h3><p>BMI分類チャートテンプレート。身長・体重からBMIゾーンを表示。</p></div></a></div></section>
+<section class="cat-section" id="epi"><h2><a href="c/epi.html">疫学・公衆衛生 (20)</a></h2><div class="card-grid"><a href="epi/epidemic-point.html" class="card"><img src="img/epi_epidemic_point.png" alt="流行曲線（点源）" loading="lazy"><div class="card-body"><h3>流行曲線（点源）</h3><p>点源型流行曲線テンプレート。一回の曝露による集団発生パターンをプロット。</p></div></a>
 <a href="epi/epidemic-continuous.html" class="card"><img src="img/epi_epidemic_continuous.png" alt="流行曲線（持続）" loading="lazy"><div class="card-body"><h3>流行曲線（持続）</h3><p>持続型流行曲線テンプレート。継続的な曝露による発生パターンをプロット。</p></div></a>
 <a href="epi/epidemic-propagated.html" class="card"><img src="img/epi_epidemic_propagated.png" alt="流行曲線（伝播）" loading="lazy"><div class="card-body"><h3>流行曲線（伝播）</h3><p>伝播型流行曲線テンプレート。人から人への感染伝播パターンをプロット。</p></div></a>
 <a href="epi/2x2-table.html" class="card"><img src="img/epi_2x2_table.png" alt="2x2分割表" loading="lazy"><div class="card-body"><h3>2x2分割表</h3><p>2x2分割表テンプレート。疫学研究のリスク評価（RR/OR）に使用。</p></div></a>
@@ -204,8 +217,10 @@ footer a{color:#60a5fa}
 <a href="epi/outbreak-timeline.html" class="card"><img src="img/epi_outbreak_timeline.png" alt="アウトブレイク調査タイムライン" loading="lazy"><div class="card-body"><h3>アウトブレイク調査タイムライン</h3><p>アウトブレイク調査タイムラインテンプレート。発症者数と対策時期をプロット。</p></div></a>
 <a href="epi/rr-plot.html" class="card"><img src="img/epi_rr_plot.png" alt="リスク比プロット" loading="lazy"><div class="card-body"><h3>リスク比プロット</h3><p>リスク比のプロットテンプレート。コホート研究の結果表示に使用。</p></div></a>
 <a href="epi/lead-time-bias.html" class="card"><img src="img/epi_lead_time_bias.png" alt="リードタイムバイアス" loading="lazy"><div class="card-body"><h3>リードタイムバイアス</h3><p>リードタイムバイアスの概念テンプレート。早期診断が見かけの生存期間に与える影響をプロット。</p></div></a>
-<a href="epi/length-time-bias.html" class="card"><img src="img/epi_length_time_bias.png" alt="レングスタイムバイアス" loading="lazy"><div class="card-body"><h3>レングスタイムバイアス</h3><p>レングスタイムバイアスの概念テンプレート。進行の遅い疾患が多く検出される偏りを示す。</p></div></a></div></section>
-<section class="cat-section" id="eye"><h2><a href="c/eye.html">眼科 (10)</a></h2><div class="card-grid"><a href="eye/visual-acuity.html" class="card"><img src="img/eye_visual_acuity.png" alt="視力検査" loading="lazy"><div class="card-body"><h3>視力検査</h3><p>視力検査テンプレート。矯正/非矯正視力の記録に使用。</p></div></a>
+<a href="epi/length-time-bias.html" class="card"><img src="img/epi_length_time_bias.png" alt="レングスタイムバイアス" loading="lazy"><div class="card-body"><h3>レングスタイムバイアス</h3><p>レングスタイムバイアスの概念テンプレート。進行の遅い疾患が多く検出される偏りを示す。</p></div></a>
+<a href="epi/population-pyramid.html" class="card"><img src="img/epi_population_pyramid.png" alt="人口ピラミッド" loading="lazy"><div class="card-body"><h3>人口ピラミッド</h3><p>人口ピラミッドテンプレート。年齢別・性別の人口構成を表示。</p></div></a>
+<a href="epi/stacked-area.html" class="card"><img src="img/epi_stacked_area.png" alt="積み上げ面グラフ" loading="lazy"><div class="card-body"><h3>積み上げ面グラフ</h3><p>積み上げ面グラフテンプレート。時間経過に伴う構成比の変化を可視化。</p></div></a></div></section>
+<section class="cat-section" id="eye"><h2><a href="c/eye.html">眼科 (13)</a></h2><div class="card-grid"><a href="eye/visual-acuity.html" class="card"><img src="img/eye_visual_acuity.png" alt="視力検査" loading="lazy"><div class="card-body"><h3>視力検査</h3><p>視力検査テンプレート。矯正/非矯正視力の記録に使用。</p></div></a>
 <a href="eye/visual-field.html" class="card"><img src="img/eye_visual_field.png" alt="視野検査" loading="lazy"><div class="card-body"><h3>視野検査</h3><p>視野検査テンプレート。自動視野計の結果をプロット。</p></div></a>
 <a href="eye/iop.html" class="card"><img src="img/eye_iop.png" alt="眼圧" loading="lazy"><div class="card-body"><h3>眼圧</h3><p>眼圧日内変動テンプレート。緑内障の評価に使用。</p></div></a>
 <a href="eye/dark-adaptation.html" class="card"><img src="img/eye_dark_adaptation.png" alt="暗順応曲線" loading="lazy"><div class="card-body"><h3>暗順応曲線</h3><p>暗順応曲線テンプレート。錐体-杆体の二段階適応をプロット。</p></div></a>
@@ -214,7 +229,10 @@ footer a{color:#60a5fa}
 <a href="eye/fundus.html" class="card"><img src="img/eye_fundus.png" alt="眼底図" loading="lazy"><div class="card-body"><h3>眼底図</h3><p>眼底図テンプレート。所見の記録とスケッチに使用。</p></div></a>
 <a href="eye/corneal-topography.html" class="card"><img src="img/eye_corneal_topography.png" alt="角膜トポグラフィー" loading="lazy"><div class="card-body"><h3>角膜トポグラフィー</h3><p>角膜トポグラフィーテンプレート。角膜形状の解析に使用。</p></div></a>
 <a href="eye/color-vision.html" class="card"><img src="img/eye_color_vision.png" alt="色覚検査" loading="lazy"><div class="card-body"><h3>色覚検査</h3><p>色覚検査テンプレート。石原表等の結果記録に使用。</p></div></a>
-<a href="eye/oct.html" class="card"><img src="img/eye_oct.png" alt="OCT層構造テンプレート" loading="lazy"><div class="card-body"><h3>OCT層構造テンプレート</h3><p>OCT網膜層構造テンプレート。黄斑厚の測定に使用。</p></div></a></div></section>
+<a href="eye/oct.html" class="card"><img src="img/eye_oct.png" alt="OCT層構造テンプレート" loading="lazy"><div class="card-body"><h3>OCT層構造テンプレート</h3><p>OCT網膜層構造テンプレート。黄斑厚の測定に使用。</p></div></a>
+<a href="eye/audiogram.html" class="card"><img src="img/eye_audiogram.png" alt="標準オージオグラム" loading="lazy"><div class="card-body"><h3>標準オージオグラム</h3><p>標準オージオグラムテンプレート。純音聴力検査結果の記録に使用。</p></div></a>
+<a href="eye/visual-field.html" class="card"><img src="img/eye_visual_field.png" alt="ゴールドマン視野" loading="lazy"><div class="card-body"><h3>ゴールドマン視野</h3><p>ゴールドマン視野検査テンプレート。視野欠損の記録と評価に使用。</p></div></a>
+<a href="eye/visual-field-humphrey.html" class="card"><img src="img/eye_visual_field_humphrey.png" alt="ハンフリー視野" loading="lazy"><div class="card-body"><h3>ハンフリー視野</h3><p>ハンフリー自動視野計テンプレート。中心30度の視野感度を記録。</p></div></a></div></section>
 <section class="cat-section" id="gi"><h2><a href="c/gi.html">消化器 (12)</a></h2><div class="card-grid"><a href="gi/gastric-acid.html" class="card"><img src="img/gi_gastric_acid.png" alt="胃酸分泌曲線" loading="lazy"><div class="card-body"><h3>胃酸分泌曲線</h3><p>胃酸分泌曲線テンプレート。基礎分泌と刺激後分泌をプロット。</p></div></a>
 <a href="gi/intestinal-absorption.html" class="card"><img src="img/gi_intestinal_absorption.png" alt="腸管吸収曲線" loading="lazy"><div class="card-body"><h3>腸管吸収曲線</h3><p>腸管部位別吸収曲線テンプレート。栄養素の吸収部位と効率をプロット。</p></div></a>
 <a href="gi/lft-panel.html" class="card"><img src="img/gi_lft_panel.png" alt="肝機能検査パネル" loading="lazy"><div class="card-body"><h3>肝機能検査パネル</h3><p>肝機能検査パネルテンプレート。AST/ALT/ALP/T-Bil/Alb等をプロット。</p></div></a>
@@ -227,7 +245,7 @@ footer a{color:#60a5fa}
 <a href="gi/liver-elastography.html" class="card"><img src="img/gi_liver_elastography.png" alt="肝エラストグラフィー" loading="lazy"><div class="card-body"><h3>肝エラストグラフィー</h3><p>肝エラストグラフィーテンプレート。肝線維化ステージと硬度の関係をプロット。</p></div></a>
 <a href="gi/pancreatic-function.html" class="card"><img src="img/gi_pancreatic_function.png" alt="膵機能検査" loading="lazy"><div class="card-body"><h3>膵機能検査</h3><p>膵機能検査テンプレート。セクレチン/CCK負荷後の膵外分泌機能を評価。</p></div></a>
 <a href="gi/intestinal-transit.html" class="card"><img src="img/gi_intestinal_transit.png" alt="腸管通過時間" loading="lazy"><div class="card-body"><h3>腸管通過時間</h3><p>腸管通過時間テンプレート。消化管各部位の通過時間をプロット。</p></div></a></div></section>
-<section class="cat-section" id="hemato"><h2><a href="c/hemato.html">血液 (18)</a></h2><div class="card-grid"><a href="hemato/cbc-reference.html" class="card"><img src="img/hemato_cbc_reference.png" alt="CBC基準値" loading="lazy"><div class="card-body"><h3>CBC基準値</h3><p>CBC（全血球算定）基準値テンプレート。各血球系の基準範囲をプロット。</p></div></a>
+<section class="cat-section" id="hemato"><h2><a href="c/hemato.html">血液 (19)</a></h2><div class="card-grid"><a href="hemato/cbc-reference.html" class="card"><img src="img/hemato_cbc_reference.png" alt="CBC基準値" loading="lazy"><div class="card-body"><h3>CBC基準値</h3><p>CBC（全血球算定）基準値テンプレート。各血球系の基準範囲をプロット。</p></div></a>
 <a href="hemato/hb-electrophoresis.html" class="card"><img src="img/hemato_hb_electrophoresis.png" alt="ヘモグロビン電気泳動" loading="lazy"><div class="card-body"><h3>ヘモグロビン電気泳動</h3><p>ヘモグロビン電気泳動テンプレート。HbA/HbS/HbC等の分離パターンをプロット。</p></div></a>
 <a href="hemato/iron-studies.html" class="card"><img src="img/hemato_iron_studies.png" alt="鉄代謝パネル" loading="lazy"><div class="card-body"><h3>鉄代謝パネル</h3><p>鉄代謝パネルテンプレート。Fe/TIBC/フェリチン/TSAT等をプロット。</p></div></a>
 <a href="hemato/coagulation-cascade.html" class="card"><img src="img/hemato_coagulation_cascade.png" alt="凝固カスケード" loading="lazy"><div class="card-body"><h3>凝固カスケード</h3><p>凝固カスケードテンプレート。各凝固因子の活性を時間経過でプロット。</p></div></a>
@@ -244,7 +262,8 @@ footer a{color:#60a5fa}
 <a href="hemato/coag-factor-levels.html" class="card"><img src="img/hemato_coag_factor_levels.png" alt="凝固因子レベル" loading="lazy"><div class="card-body"><h3>凝固因子レベル</h3><p>凝固因子活性レベルテンプレート。各因子の活性を正常値と比較。</p></div></a>
 <a href="hemato/peripheral-smear.html" class="card"><img src="img/hemato_peripheral_smear.png" alt="末梢血塗抹テンプレート" loading="lazy"><div class="card-body"><h3>末梢血塗抹テンプレート</h3><p>末梢血塗抹テンプレート。白血球分画と形態異常の記録に使用。</p></div></a>
 <a href="hemato/bleeding-time.html" class="card"><img src="img/hemato_bleeding_time.png" alt="出血時間" loading="lazy"><div class="card-body"><h3>出血時間</h3><p>出血時間テンプレート。一次止血の評価に使用。</p></div></a>
-<a href="hemato/crossmatch.html" class="card"><img src="img/hemato_crossmatch.png" alt="交差適合試験テンプレート" loading="lazy"><div class="card-body"><h3>交差適合試験テンプレート</h3><p>交差適合試験テンプレート。主試験・副試験の結果記録に使用。</p></div></a></div></section>
+<a href="hemato/crossmatch.html" class="card"><img src="img/hemato_crossmatch.png" alt="交差適合試験テンプレート" loading="lazy"><div class="card-body"><h3>交差適合試験テンプレート</h3><p>交差適合試験テンプレート。主試験・副試験の結果記録に使用。</p></div></a>
+<a href="hemato/ternary-cell-diff.html" class="card"><img src="img/hemato_ternary_cell_diff.png" alt="細胞分画三角図" loading="lazy"><div class="card-body"><h3>細胞分画三角図</h3><p>血球分画の三角図テンプレート。3系統の細胞比率を可視化。</p></div></a></div></section>
 <section class="cat-section" id="immuno"><h2><a href="c/immuno.html">免疫学 (20)</a></h2><div class="card-grid"><a href="immuno/primary-secondary.html" class="card"><img src="img/immuno_primary_secondary.png" alt="一次二次免疫応答" loading="lazy"><div class="card-body"><h3>一次二次免疫応答</h3><p>一次・二次免疫応答テンプレート。抗体価の時間経過と一次/二次の差をプロット。</p></div></a>
 <a href="immuno/elisa-standard.html" class="card"><img src="img/immuno_elisa_standard.png" alt="ELISA検量線" loading="lazy"><div class="card-body"><h3>ELISA検量線</h3><p>ELISA検量線テンプレート。抗原濃度と吸光度の関係をプロット。定量に使用。</p></div></a>
 <a href="immuno/ch50.html" class="card"><img src="img/immuno_ch50.png" alt="CH50補体活性" loading="lazy"><div class="card-body"><h3>CH50補体活性</h3><p>CH50補体活性テンプレート。血清希釈と溶血率の関係から補体価を決定。</p></div></a>
@@ -265,7 +284,7 @@ footer a{color:#60a5fa}
 <a href="immuno/immunodiffusion.html" class="card"><img src="img/immuno_immunodiffusion.png" alt="放射免疫拡散" loading="lazy"><div class="card-body"><h3>放射免疫拡散</h3><p>放射免疫拡散法テンプレート。抗原濃度とリング直径の関係をプロット。</p></div></a>
 <a href="immuno/hypersensitivity.html" class="card"><img src="img/immuno_hypersensitivity.png" alt="過敏反応タイムライン" loading="lazy"><div class="card-body"><h3>過敏反応タイムライン</h3><p>過敏反応の時間経過テンプレート。I-IV型の発症時間の違いをプロット。</p></div></a>
 <a href="immuno/lymphocyte-subset.html" class="card"><img src="img/immuno_lymphocyte_subset.png" alt="リンパ球サブセット" loading="lazy"><div class="card-body"><h3>リンパ球サブセット</h3><p>リンパ球サブセットのカウントテンプレート。CD4/CD8/B/NK細胞数をプロット。</p></div></a></div></section>
-<section class="cat-section" id="micro"><h2><a href="c/micro.html">微生物学 (20)</a></h2><div class="card-grid"><a href="micro/bacterial-growth.html" class="card"><img src="img/micro_bacterial_growth.png" alt="細菌増殖曲線" loading="lazy"><div class="card-body"><h3>細菌増殖曲線</h3><p>細菌増殖曲線テンプレート。Lag・Log・Stationary・Death phaseをプロット。</p></div></a>
+<section class="cat-section" id="micro"><h2><a href="c/micro.html">微生物学 (21)</a></h2><div class="card-grid"><a href="micro/bacterial-growth.html" class="card"><img src="img/micro_bacterial_growth.png" alt="細菌増殖曲線" loading="lazy"><div class="card-body"><h3>細菌増殖曲線</h3><p>細菌増殖曲線テンプレート。Lag・Log・Stationary・Death phaseをプロット。</p></div></a>
 <a href="micro/time-kill.html" class="card"><img src="img/micro_time_kill.png" alt="Time-Kill曲線" loading="lazy"><div class="card-body"><h3>Time-Kill曲線</h3><p>Time-Kill曲線テンプレート。抗菌薬濃度別の殺菌効果を時間経過でプロット。</p></div></a>
 <a href="micro/mic-determination.html" class="card"><img src="img/micro_mic_determination.png" alt="MIC測定" loading="lazy"><div class="card-body"><h3>MIC測定</h3><p>MIC（最小発育阻止濃度）測定テンプレート。微量液体希釈法での結果をプロット。</p></div></a>
 <a href="micro/disk-diffusion.html" class="card"><img src="img/micro_disk_diffusion.png" alt="ディスク拡散法" loading="lazy"><div class="card-body"><h3>ディスク拡散法</h3><p>ディスク拡散法（阻止円）テンプレート。抗菌薬ごとの阻止円径をプロット。</p></div></a>
@@ -284,7 +303,8 @@ footer a{color:#60a5fa}
 <a href="micro/plaque-assay.html" class="card"><img src="img/micro_plaque_assay.png" alt="プラークアッセイ" loading="lazy"><div class="card-body"><h3>プラークアッセイ</h3><p>プラークアッセイによるウイルス価測定テンプレート。</p></div></a>
 <a href="micro/gel-electrophoresis.html" class="card"><img src="img/micro_gel_electrophoresis.png" alt="ゲル電気泳動" loading="lazy"><div class="card-body"><h3>ゲル電気泳動</h3><p>アガロースゲル電気泳動の分子量推定テンプレート。DNA断片のサイズ推定に使用。</p></div></a>
 <a href="micro/kill-kinetics.html" class="card"><img src="img/micro_kill_kinetics.png" alt="殺菌速度論" loading="lazy"><div class="card-body"><h3>殺菌速度論</h3><p>殺菌速度論テンプレート。生残率の時間変化をプロット。</p></div></a>
-<a href="micro/cfu-count.html" class="card"><img src="img/micro_cfu_count.png" alt="CFUカウントプロット" loading="lazy"><div class="card-body"><h3>CFUカウントプロット</h3><p>コロニー形成単位（CFU）のカウントプロットテンプレート。</p></div></a></div></section>
+<a href="micro/cfu-count.html" class="card"><img src="img/micro_cfu_count.png" alt="CFUカウントプロット" loading="lazy"><div class="card-body"><h3>CFUカウントプロット</h3><p>コロニー形成単位（CFU）のカウントプロットテンプレート。</p></div></a>
+<a href="micro/heatmap-antibiogram.html" class="card"><img src="img/micro_heatmap_antibiogram.png" alt="アンチバイオグラム" loading="lazy"><div class="card-body"><h3>アンチバイオグラム</h3><p>抗菌薬感受性ヒートマップ（アンチバイオグラム）。菌種×抗菌薬の感受性パターンを表示。</p></div></a></div></section>
 <section class="cat-section" id="nephro"><h2><a href="c/nephro.html">腎臓 (15)</a></h2><div class="card-grid"><a href="nephro/gfr-measurement.html" class="card"><img src="img/nephro_gfr_measurement.png" alt="GFR測定" loading="lazy"><div class="card-body"><h3>GFR測定</h3><p>GFR測定テンプレート。イヌリンクリアランスによる糸球体濾過量の評価。</p></div></a>
 <a href="nephro/creatinine-clearance.html" class="card"><img src="img/nephro_creatinine_clearance.png" alt="クレアチニンクリアランス" loading="lazy"><div class="card-body"><h3>クレアチニンクリアランス</h3><p>クレアチニンクリアランステンプレート。腎機能の経時的評価に使用。</p></div></a>
 <a href="nephro/glucose-titration.html" class="card"><img src="img/nephro_glucose_titration.png" alt="ブドウ糖滴定曲線（TmG）" loading="lazy"><div class="card-body"><h3>ブドウ糖滴定曲線（TmG）</h3><p>ブドウ糖滴定曲線テンプレート。濾過・再吸収・排泄の関係をプロット。</p></div></a>
@@ -300,7 +320,7 @@ footer a{color:#60a5fa}
 <a href="nephro/filtration-fraction.html" class="card"><img src="img/nephro_filtration_fraction.png" alt="濾過率" loading="lazy"><div class="card-body"><h3>濾過率</h3><p>濾過率テンプレート。GFRとRPFの比をプロット。</p></div></a>
 <a href="nephro/bun-cr-ratio.html" class="card"><img src="img/nephro_bun_cr_ratio.png" alt="BUN/Cr比" loading="lazy"><div class="card-body"><h3>BUN/Cr比</h3><p>BUN/Cr比テンプレート。腎前性/腎性/腎後性の鑑別に使用。</p></div></a>
 <a href="nephro/raas.html" class="card"><img src="img/nephro_raas.png" alt="RAAS応答" loading="lazy"><div class="card-body"><h3>RAAS応答</h3><p>レニン-アンジオテンシン-アルドステロン系応答テンプレート。血圧との関係をプロット。</p></div></a></div></section>
-<section class="cat-section" id="neuro"><h2><a href="c/neuro.html">神経科学 (22)</a></h2><div class="card-grid"><a href="neuro/eeg-normal.html" class="card"><img src="img/neuro_eeg_normal.png" alt="脳波（正常）" loading="lazy"><div class="card-body"><h3>脳波（正常）</h3><p>正常脳波テンプレート。アルファ波（8-13Hz）の正常パターンをプロット。</p></div></a>
+<section class="cat-section" id="neuro"><h2><a href="c/neuro.html">神経科学 (25)</a></h2><div class="card-grid"><a href="neuro/eeg-normal.html" class="card"><img src="img/neuro_eeg_normal.png" alt="脳波（正常）" loading="lazy"><div class="card-body"><h3>脳波（正常）</h3><p>正常脳波テンプレート。アルファ波（8-13Hz）の正常パターンをプロット。</p></div></a>
 <a href="neuro/eeg-epileptic.html" class="card"><img src="img/neuro_eeg_epileptic.png" alt="脳波（てんかん）" loading="lazy"><div class="card-body"><h3>脳波（てんかん）</h3><p>てんかん脳波テンプレート。棘波/棘徐波複合のパターンをプロット。</p></div></a>
 <a href="neuro/eeg-sleep.html" class="card"><img src="img/neuro_eeg_sleep.png" alt="脳波（睡眠段階）" loading="lazy"><div class="card-body"><h3>脳波（睡眠段階）</h3><p>睡眠段階の脳波テンプレート。N1-N3/REMのサイクルをプロット。</p></div></a>
 <a href="neuro/ncv.html" class="card"><img src="img/neuro_ncv.png" alt="神経伝導検査" loading="lazy"><div class="card-body"><h3>神経伝導検査</h3><p>神経伝導検査テンプレート。伝導速度の測定に使用。</p></div></a>
@@ -321,8 +341,11 @@ footer a{color:#60a5fa}
 <a href="neuro/pupil-reflex.html" class="card"><img src="img/neuro_pupil_reflex.png" alt="瞳孔反射" loading="lazy"><div class="card-body"><h3>瞳孔反射</h3><p>瞳孔反射テンプレート。対光反射の潜時と反応をプロット。</p></div></a>
 <a href="neuro/nystagmus.html" class="card"><img src="img/neuro_nystagmus.png" alt="眼振パターン" loading="lazy"><div class="card-body"><h3>眼振パターン</h3><p>眼振パターンテンプレート。急速相と緩徐相の方向と振幅をプロット。</p></div></a>
 <a href="neuro/neurotransmitter.html" class="card"><img src="img/neuro_neurotransmitter.png" alt="神経伝達物質放出" loading="lazy"><div class="card-body"><h3>神経伝達物質放出</h3><p>神経伝達物質放出テンプレート。刺激後の放出と再取り込みの時間経過をプロット。</p></div></a>
-<a href="neuro/csf-analysis.html" class="card"><img src="img/neuro_csf_analysis.png" alt="髄液検査テンプレート" loading="lazy"><div class="card-body"><h3>髄液検査テンプレート</h3><p>髄液検査テンプレート。細胞数/蛋白/糖等の検査値をプロット。</p></div></a></div></section>
-<section class="cat-section" id="obgyn"><h2><a href="c/obgyn.html">産婦人科 (15)</a></h2><div class="card-grid"><a href="obgyn/fetal-growth.html" class="card"><img src="img/obgyn_fetal_growth.png" alt="胎児発育曲線" loading="lazy"><div class="card-body"><h3>胎児発育曲線</h3><p>胎児発育曲線テンプレート。在胎週数と推定体重の関係をプロット。</p></div></a>
+<a href="neuro/csf-analysis.html" class="card"><img src="img/neuro_csf_analysis.png" alt="髄液検査テンプレート" loading="lazy"><div class="card-body"><h3>髄液検査テンプレート</h3><p>髄液検査テンプレート。細胞数/蛋白/糖等の検査値をプロット。</p></div></a>
+<a href="neuro/radar-motor-6.html" class="card"><img src="img/neuro_radar_motor_6.png" alt="運動機能レーダーチャート（6軸）" loading="lazy"><div class="card-body"><h3>運動機能レーダーチャート（6軸）</h3><p>6軸の運動機能評価レーダーチャート。神経学的評価に使用。</p></div></a>
+<a href="neuro/gcs-trend.html" class="card"><img src="img/neuro_gcs_trend.png" alt="GCS経時変化チャート" loading="lazy"><div class="card-body"><h3>GCS経時変化チャート</h3><p>GCS経時変化テンプレート。グラスゴー・コーマ・スケールの推移を記録。</p></div></a>
+<a href="neuro/vas-pain.html" class="card"><img src="img/neuro_vas_pain.png" alt="VASペインスケール" loading="lazy"><div class="card-body"><h3>VASペインスケール</h3><p>VASペインスケール推移テンプレート。疼痛の経時的評価に使用。</p></div></a></div></section>
+<section class="cat-section" id="obgyn"><h2><a href="c/obgyn.html">産婦人科 (17)</a></h2><div class="card-grid"><a href="obgyn/fetal-growth.html" class="card"><img src="img/obgyn_fetal_growth.png" alt="胎児発育曲線" loading="lazy"><div class="card-body"><h3>胎児発育曲線</h3><p>胎児発育曲線テンプレート。在胎週数と推定体重の関係をプロット。</p></div></a>
 <a href="obgyn/fhr-normal.html" class="card"><img src="img/obgyn_fhr_normal.png" alt="胎児心拍数（正常）" loading="lazy"><div class="card-body"><h3>胎児心拍数（正常）</h3><p>正常胎児心拍モニタリングテンプレート。基線と基線細変動をプロット。</p></div></a>
 <a href="obgyn/fhr-variable.html" class="card"><img src="img/obgyn_fhr_variable.png" alt="胎児心拍（変動一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（変動一過性徐脈）</h3><p>変動一過性徐脈の胎児心拍テンプレート。臍帯圧迫パターンをプロット。</p></div></a>
 <a href="obgyn/fhr-late.html" class="card"><img src="img/obgyn_fhr_late.png" alt="胎児心拍（遅発一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（遅発一過性徐脈）</h3><p>遅発一過性徐脈の胎児心拍テンプレート。胎盤機能不全パターンをプロット。</p></div></a>
@@ -336,7 +359,9 @@ footer a{color:#60a5fa}
 <a href="obgyn/apgar.html" class="card"><img src="img/obgyn_apgar.png" alt="アプガースコア" loading="lazy"><div class="card-body"><h3>アプガースコア</h3><p>アプガースコアテンプレート。1分/5分/10分のスコア変化をプロット。</p></div></a>
 <a href="obgyn/gestational-growth.html" class="card"><img src="img/obgyn_gestational_growth.png" alt="在胎週数別成長曲線" loading="lazy"><div class="card-body"><h3>在胎週数別成長曲線</h3><p>在胎週数別成長曲線テンプレート。SGA/AGA/LGAの判定に使用。</p></div></a>
 <a href="obgyn/fhr-early.html" class="card"><img src="img/obgyn_fhr_early.png" alt="胎児心拍（早発一過性徐脈）" loading="lazy"><div class="card-body"><h3>胎児心拍（早発一過性徐脈）</h3><p>早発一過性徐脈の胎児心拍テンプレート。児頭圧迫パターンをプロット。</p></div></a>
-<a href="obgyn/menstrual-cycle-obgyn.html" class="card"><img src="img/obgyn_menstrual_cycle_obgyn.png" alt="月経周期" loading="lazy"><div class="card-body"><h3>月経周期</h3><p>月経周期テンプレート。ホルモン変動と子宮内膜変化をプロット。</p></div></a></div></section>
+<a href="obgyn/menstrual-cycle-obgyn.html" class="card"><img src="img/obgyn_menstrual_cycle_obgyn.png" alt="月経周期" loading="lazy"><div class="card-body"><h3>月経周期</h3><p>月経周期テンプレート。ホルモン変動と子宮内膜変化をプロット。</p></div></a>
+<a href="obgyn/pedigree-grid.html" class="card"><img src="img/obgyn_pedigree_grid.png" alt="家系図グリッド" loading="lazy"><div class="card-body"><h3>家系図グリッド</h3><p>家系図テンプレートグリッド。遺伝疾患の家族歴記録に使用。</p></div></a>
+<a href="obgyn/partogram.html" class="card"><img src="img/obgyn_partogram.png" alt="パルトグラム" loading="lazy"><div class="card-body"><h3>パルトグラム</h3><p>パルトグラムテンプレート。分娩進行の記録・評価に使用。</p></div></a></div></section>
 <section class="cat-section" id="ortho"><h2><a href="c/ortho.html">整形外科 (10)</a></h2><div class="card-grid"><a href="ortho/rom.html" class="card"><img src="img/ortho_rom.png" alt="関節可動域" loading="lazy"><div class="card-body"><h3>関節可動域</h3><p>関節可動域テンプレート。各関節の正常ROM値と測定値をプロット。</p></div></a>
 <a href="ortho/fracture-healing.html" class="card"><img src="img/ortho_fracture_healing.png" alt="骨折治癒タイムライン" loading="lazy"><div class="card-body"><h3>骨折治癒タイムライン</h3><p>骨折治癒タイムラインテンプレート。炎症・仮骨形成・リモデリングの各段階をプロット。</p></div></a>
 <a href="ortho/dexa.html" class="card"><img src="img/ortho_dexa.png" alt="骨密度（DEXA）" loading="lazy"><div class="card-body"><h3>骨密度（DEXA）</h3><p>骨密度テンプレート。T-scoreと骨粗鬆症の評価に使用。</p></div></a>
@@ -347,7 +372,7 @@ footer a{color:#60a5fa}
 <a href="ortho/joint-space.html" class="card"><img src="img/ortho_joint_space.png" alt="関節裂隙測定" loading="lazy"><div class="card-body"><h3>関節裂隙測定</h3><p>関節裂隙測定テンプレート。関節症の進行評価に使用。</p></div></a>
 <a href="ortho/bone-age.html" class="card"><img src="img/ortho_bone_age.png" alt="骨年齢評価" loading="lazy"><div class="card-body"><h3>骨年齢評価</h3><p>骨年齢評価テンプレート。暦年齢との乖離をプロット。</p></div></a>
 <a href="ortho/asa-score.html" class="card"><img src="img/ortho_asa_score.png" alt="ASA身体状態分類" loading="lazy"><div class="card-body"><h3>ASA身体状態分類</h3><p>ASA身体状態分類テンプレート。術前リスク評価に使用。</p></div></a></div></section>
-<section class="cat-section" id="path"><h2><a href="c/path.html">病理学 (12)</a></h2><div class="card-grid"><a href="path/cell-cycle.html" class="card"><img src="img/path_cell_cycle.png" alt="細胞周期" loading="lazy"><div class="card-body"><h3>細胞周期</h3><p>細胞周期テンプレート。G1/S/G2/M期の各段階の所要時間をプロット。</p></div></a>
+<section class="cat-section" id="path"><h2><a href="c/path.html">病理学 (13)</a></h2><div class="card-grid"><a href="path/cell-cycle.html" class="card"><img src="img/path_cell_cycle.png" alt="細胞周期" loading="lazy"><div class="card-body"><h3>細胞周期</h3><p>細胞周期テンプレート。G1/S/G2/M期の各段階の所要時間をプロット。</p></div></a>
 <a href="path/tumor-growth.html" class="card"><img src="img/path_tumor_growth.png" alt="腫瘍成長曲線（ゴンペルツ）" loading="lazy"><div class="card-body"><h3>腫瘍成長曲線（ゴンペルツ）</h3><p>ゴンペルツモデルによる腫瘍成長曲線テンプレート。</p></div></a>
 <a href="path/tumor-markers.html" class="card"><img src="img/path_tumor_markers.png" alt="腫瘍マーカー" loading="lazy"><div class="card-body"><h3>腫瘍マーカー</h3><p>腫瘍マーカーの経時変化テンプレート。治療効果と再発のモニタリングに使用。</p></div></a>
 <a href="path/tnm-staging.html" class="card"><img src="img/path_tnm_staging.png" alt="TNMステージング" loading="lazy"><div class="card-body"><h3>TNMステージング</h3><p>TNMステージング別生存率テンプレート。各ステージの予後をプロット。</p></div></a>
@@ -358,8 +383,9 @@ footer a{color:#60a5fa}
 <a href="path/survival-stage.html" class="card"><img src="img/path_survival_stage.png" alt="ステージ別生存曲線" loading="lazy"><div class="card-body"><h3>ステージ別生存曲線</h3><p>ステージ別生存曲線テンプレート。各ステージの生存確率を比較。</p></div></a>
 <a href="path/recist.html" class="card"><img src="img/path_recist.png" alt="RECIST治療効果判定" loading="lazy"><div class="card-body"><h3>RECIST治療効果判定</h3><p>RECIST基準による治療効果判定テンプレート。標的病変の経時変化をプロット。</p></div></a>
 <a href="path/apoptosis.html" class="card"><img src="img/path_apoptosis.png" alt="アポトーシスマーカー" loading="lazy"><div class="card-body"><h3>アポトーシスマーカー</h3><p>アポトーシスマーカーテンプレート。アポトーシス誘導後の細胞死をプロット。</p></div></a>
-<a href="path/metastasis.html" class="card"><img src="img/path_metastasis.png" alt="転移カスケード" loading="lazy"><div class="card-body"><h3>転移カスケード</h3><p>転移カスケードテンプレート。各段階の効率をプロット。</p></div></a></div></section>
-<section class="cat-section" id="peds"><h2><a href="c/peds.html">小児科 (15)</a></h2><div class="card-grid"><a href="peds/growth-weight-boys.html" class="card"><img src="img/peds_growth_weight_boys.png" alt="成長曲線：体重（男児）" loading="lazy"><div class="card-body"><h3>成長曲線：体重（男児）</h3><p>男児体重成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
+<a href="path/metastasis.html" class="card"><img src="img/path_metastasis.png" alt="転移カスケード" loading="lazy"><div class="card-body"><h3>転移カスケード</h3><p>転移カスケードテンプレート。各段階の効率をプロット。</p></div></a>
+<a href="path/heatmap-gene-expr.html" class="card"><img src="img/path_heatmap_gene_expr.png" alt="遺伝子発現ヒートマップ" loading="lazy"><div class="card-body"><h3>遺伝子発現ヒートマップ</h3><p>遺伝子発現ヒートマップテンプレート。複数サンプル間の発現パターンを比較。</p></div></a></div></section>
+<section class="cat-section" id="peds"><h2><a href="c/peds.html">小児科 (19)</a></h2><div class="card-grid"><a href="peds/growth-weight-boys.html" class="card"><img src="img/peds_growth_weight_boys.png" alt="成長曲線：体重（男児）" loading="lazy"><div class="card-body"><h3>成長曲線：体重（男児）</h3><p>男児体重成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
 <a href="peds/growth-weight-girls.html" class="card"><img src="img/peds_growth_weight_girls.png" alt="成長曲線：体重（女児）" loading="lazy"><div class="card-body"><h3>成長曲線：体重（女児）</h3><p>女児体重成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
 <a href="peds/growth-height-boys.html" class="card"><img src="img/peds_growth_height_boys.png" alt="成長曲線：身長（男児）" loading="lazy"><div class="card-body"><h3>成長曲線：身長（男児）</h3><p>男児身長成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
 <a href="peds/growth-height-girls.html" class="card"><img src="img/peds_growth_height_girls.png" alt="成長曲線：身長（女児）" loading="lazy"><div class="card-body"><h3>成長曲線：身長（女児）</h3><p>女児身長成長曲線テンプレート。パーセンタイルラインをプロット。</p></div></a>
@@ -373,8 +399,12 @@ footer a{color:#60a5fa}
 <a href="peds/vaccine-schedule.html" class="card"><img src="img/peds_vaccine_schedule.png" alt="ワクチンスケジュール" loading="lazy"><div class="card-body"><h3>ワクチンスケジュール</h3><p>定期ワクチンスケジュールテンプレート。接種時期と種類をプロット。</p></div></a>
 <a href="peds/fluid-calculation.html" class="card"><img src="img/peds_fluid_calculation.png" alt="小児輸液計算" loading="lazy"><div class="card-body"><h3>小児輸液計算</h3><p>小児輸液計算テンプレート。体重別の維持輸液量をプロット。Holliday-Segar式。</p></div></a>
 <a href="peds/peds-gcs.html" class="card"><img src="img/peds_peds_gcs.png" alt="小児GCS" loading="lazy"><div class="card-body"><h3>小児GCS</h3><p>小児GCSテンプレート。小児用意識レベルスケールの経時変化をプロット。</p></div></a>
-<a href="peds/denver-screening.html" class="card"><img src="img/peds_denver_screening.png" alt="デンバー発達スクリーニング" loading="lazy"><div class="card-body"><h3>デンバー発達スクリーニング</h3><p>デンバー発達スクリーニングテンプレート。年齢別の発達到達度をプロット。</p></div></a></div></section>
-<section class="cat-section" id="pharm"><h2><a href="c/pharm.html">薬理学 (25)</a></h2><div class="card-grid"><a href="pharm/dose-response-graded.html" class="card"><img src="img/pharm_dose_response_graded.png" alt="段階的用量反応曲線" loading="lazy"><div class="card-body"><h3>段階的用量反応曲線</h3><p>段階的用量反応曲線テンプレート。EC50の決定に使用。</p></div></a>
+<a href="peds/denver-screening.html" class="card"><img src="img/peds_denver_screening.png" alt="デンバー発達スクリーニング" loading="lazy"><div class="card-body"><h3>デンバー発達スクリーニング</h3><p>デンバー発達スクリーニングテンプレート。年齢別の発達到達度をプロット。</p></div></a>
+<a href="peds/radar-nutrition-5.html" class="card"><img src="img/peds_radar_nutrition_5.png" alt="栄養評価レーダーチャート（5軸）" loading="lazy"><div class="card-body"><h3>栄養評価レーダーチャート（5軸）</h3><p>5軸の栄養評価レーダーチャート。小児の栄養状態を多角的に評価。</p></div></a>
+<a href="peds/growth-weight.html" class="card"><img src="img/peds_growth_weight.png" alt="体重成長曲線" loading="lazy"><div class="card-body"><h3>体重成長曲線</h3><p>体重成長曲線テンプレート。小児の体重推移をパーセンタイルで評価。</p></div></a>
+<a href="peds/growth-height.html" class="card"><img src="img/peds_growth_height.png" alt="身長成長曲線" loading="lazy"><div class="card-body"><h3>身長成長曲線</h3><p>身長成長曲線テンプレート。小児の身長推移をパーセンタイルで評価。</p></div></a>
+<a href="peds/growth-head.html" class="card"><img src="img/peds_growth_head.png" alt="頭囲成長曲線" loading="lazy"><div class="card-body"><h3>頭囲成長曲線</h3><p>頭囲成長曲線テンプレート。乳幼児の頭囲推移を評価。</p></div></a></div></section>
+<section class="cat-section" id="pharm"><h2><a href="c/pharm.html">薬理学 (26)</a></h2><div class="card-grid"><a href="pharm/dose-response-graded.html" class="card"><img src="img/pharm_dose_response_graded.png" alt="段階的用量反応曲線" loading="lazy"><div class="card-body"><h3>段階的用量反応曲線</h3><p>段階的用量反応曲線テンプレート。EC50の決定に使用。</p></div></a>
 <a href="pharm/dose-response-quantal.html" class="card"><img src="img/pharm_dose_response_quantal.png" alt="量子的用量反応曲線" loading="lazy"><div class="card-body"><h3>量子的用量反応曲線</h3><p>量子的用量反応曲線テンプレート。ED50・TD50・LD50の決定に使用。</p></div></a>
 <a href="pharm/pk-iv-bolus.html" class="card"><img src="img/pharm_pk_iv_bolus.png" alt="薬物動態（静注ボーラス）" loading="lazy"><div class="card-body"><h3>薬物動態（静注ボーラス）</h3><p>静脈内ボーラス投与後の血中濃度推移テンプレート。一次速度式に基づくモデル。</p></div></a>
 <a href="pharm/pk-oral.html" class="card"><img src="img/pharm_pk_oral.png" alt="薬物動態（経口投与）" loading="lazy"><div class="card-body"><h3>薬物動態（経口投与）</h3><p>経口投与後の血中濃度推移テンプレート。吸収相と消失相をプロット。</p></div></a>
@@ -398,8 +428,9 @@ footer a{color:#60a5fa}
 <a href="pharm/pk-compartment.html" class="card"><img src="img/pharm_pk_compartment.png" alt="一次速度モデル" loading="lazy"><div class="card-body"><h3>一次速度モデル</h3><p>一室モデルの薬物動態テンプレート。吸収・分布・消失の動態をプロット。</p></div></a>
 <a href="pharm/inverse-agonist.html" class="card"><img src="img/pharm_inverse_agonist.png" alt="逆作動薬" loading="lazy"><div class="card-body"><h3>逆作動薬</h3><p>逆作動薬の用量反応曲線テンプレート。構成的活性の抑制をプロット。</p></div></a>
 <a href="pharm/time-concentration-routes.html" class="card"><img src="img/pharm_time_concentration_routes.png" alt="投与経路別血中濃度" loading="lazy"><div class="card-body"><h3>投与経路別血中濃度</h3><p>投与経路別の血中濃度推移比較テンプレート。IV/IM/SC/PO等を比較。</p></div></a>
-<a href="pharm/volume-distribution.html" class="card"><img src="img/pharm_volume_distribution.png" alt="分布容積" loading="lazy"><div class="card-body"><h3>分布容積</h3><p>分布容積（Vd）の概念テンプレート。体内薬物量と血中濃度の関係をプロット。</p></div></a></div></section>
-<section class="cat-section" id="physiol"><h2><a href="c/physiol.html">生理学 (34)</a></h2><div class="card-grid"><a href="physiol/o2-dissociation.html" class="card"><img src="img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="card-body"><h3>酸素解離曲線</h3><p>ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</p></div></a>
+<a href="pharm/volume-distribution.html" class="card"><img src="img/pharm_volume_distribution.png" alt="分布容積" loading="lazy"><div class="card-body"><h3>分布容積</h3><p>分布容積（Vd）の概念テンプレート。体内薬物量と血中濃度の関係をプロット。</p></div></a>
+<a href="pharm/treatment-gantt.html" class="card"><img src="img/pharm_treatment_gantt.png" alt="治療タイムライン" loading="lazy"><div class="card-body"><h3>治療タイムライン</h3><p>治療タイムラインテンプレート。複数薬剤の投与スケジュールを時系列で表示。</p></div></a></div></section>
+<section class="cat-section" id="physiol"><h2><a href="c/physiol.html">生理学 (35)</a></h2><div class="card-grid"><a href="physiol/o2-dissociation.html" class="card"><img src="img/physiol_o2_dissociation.png" alt="酸素解離曲線" loading="lazy"><div class="card-body"><h3>酸素解離曲線</h3><p>ヘモグロビンの酸素解離曲線テンプレート。PO2とSaO2のS字型関係をプロット。</p></div></a>
 <a href="physiol/o2-dissociation-bohr.html" class="card"><img src="img/physiol_o2_dissociation_bohr.png" alt="酸素解離曲線（ボーア効果）" loading="lazy"><div class="card-body"><h3>酸素解離曲線（ボーア効果）</h3><p>ボーア効果による酸素解離曲線のシフトを示すテンプレート。pH変化の影響を比較。</p></div></a>
 <a href="physiol/co2-dissociation.html" class="card"><img src="img/physiol_co2_dissociation.png" alt="CO2解離曲線" loading="lazy"><div class="card-body"><h3>CO2解離曲線</h3><p>CO2解離曲線テンプレート。PCO2とCO2含量の関係をプロット。</p></div></a>
 <a href="physiol/frank-starling.html" class="card"><img src="img/physiol_frank_starling.png" alt="フランク・スターリング曲線" loading="lazy"><div class="card-body"><h3>フランク・スターリング曲線</h3><p>フランク・スターリング曲線テンプレート。前負荷と一回拍出量の関係をプロット。</p></div></a>
@@ -432,7 +463,8 @@ footer a{color:#60a5fa}
 <a href="physiol/body-fluid.html" class="card"><img src="img/physiol_body_fluid.png" alt="体液区分" loading="lazy"><div class="card-body"><h3>体液区分</h3><p>体液区分テンプレート。ICF・ECF（ISF+Plasma）の容量分布をプロット。</p></div></a>
 <a href="physiol/graded-potential.html" class="card"><img src="img/physiol_graded_potential.png" alt="段階電位" loading="lazy"><div class="card-body"><h3>段階電位</h3><p>段階電位のテンプレート。距離に伴う減衰をプロット。活動電位との比較に使用。</p></div></a>
 <a href="physiol/smooth-muscle-ap.html" class="card"><img src="img/physiol_smooth_muscle_ap.png" alt="平滑筋活動電位" loading="lazy"><div class="card-body"><h3>平滑筋活動電位</h3><p>平滑筋の活動電位テンプレート。スローウェーブとスパイクのパターンをプロット。</p></div></a>
-<a href="physiol/tetanus.html" class="card"><img src="img/physiol_tetanus.png" alt="筋強縮" loading="lazy"><div class="card-body"><h3>筋強縮</h3><p>骨格筋の強縮テンプレート。不完全強縮と完全強縮のパターンをプロット。</p></div></a></div></section>
+<a href="physiol/tetanus.html" class="card"><img src="img/physiol_tetanus.png" alt="筋強縮" loading="lazy"><div class="card-body"><h3>筋強縮</h3><p>骨格筋の強縮テンプレート。不完全強縮と完全強縮のパターンをプロット。</p></div></a>
+<a href="physiol/ternary-acid-base.html" class="card"><img src="img/physiol_ternary_acid_base.png" alt="酸塩基三角図" loading="lazy"><div class="card-body"><h3>酸塩基三角図</h3><p>酸塩基平衡の三角図テンプレート。呼吸性・代謝性の酸塩基障害分類に使用。</p></div></a></div></section>
 <section class="cat-section" id="psych"><h2><a href="c/psych.html">精神科 (10)</a></h2><div class="card-grid"><a href="psych/phq9.html" class="card"><img src="img/psych_phq9.png" alt="PHQ-9テンプレート" loading="lazy"><div class="card-body"><h3>PHQ-9テンプレート</h3><p>PHQ-9うつ症状スクリーニングテンプレート。9項目の回答をプロット。</p></div></a>
 <a href="psych/gad7.html" class="card"><img src="img/psych_gad7.png" alt="GAD-7テンプレート" loading="lazy"><div class="card-body"><h3>GAD-7テンプレート</h3><p>GAD-7不安症状スクリーニングテンプレート。7項目の回答をプロット。</p></div></a>
 <a href="psych/hamd.html" class="card"><img src="img/psych_hamd.png" alt="HAM-Dテンプレート" loading="lazy"><div class="card-body"><h3>HAM-Dテンプレート</h3><p>ハミルトンうつ病評価尺度テンプレート。17項目のスコアをプロット。</p></div></a>
@@ -466,7 +498,7 @@ footer a{color:#60a5fa}
 <a href="radio/ct-window.html" class="card"><img src="img/radio_ct_window.png" alt="CTウィンドウ設定" loading="lazy"><div class="card-body"><h3>CTウィンドウ設定</h3><p>CTウィンドウ設定テンプレート。WW/WLの概念をプロット。</p></div></a>
 <a href="radio/mri-signal.html" class="card"><img src="img/radio_mri_signal.png" alt="MRI信号強度" loading="lazy"><div class="card-body"><h3>MRI信号強度</h3><p>MRI信号強度テンプレート。T1WI/T2WIでの組織信号をプロット。</p></div></a>
 <a href="radio/us-measurement.html" class="card"><img src="img/radio_us_measurement.png" alt="超音波計測テンプレート" loading="lazy"><div class="card-body"><h3>超音波計測テンプレート</h3><p>超音波計測テンプレート。各臓器の計測値記録に使用。</p></div></a></div></section>
-<section class="cat-section" id="stat"><h2><a href="c/stat.html">臨床統計 (28)</a></h2><div class="card-grid"><a href="stat/roc-curve.html" class="card"><img src="img/stat_roc_curve.png" alt="ROC曲線" loading="lazy"><div class="card-body"><h3>ROC曲線</h3><p>ROC曲線テンプレート。診断検査のAUC（曲線下面積）を評価。</p></div></a>
+<section class="cat-section" id="stat"><h2><a href="c/stat.html">臨床統計 (45)</a></h2><div class="card-grid"><a href="stat/roc-curve.html" class="card"><img src="img/stat_roc_curve.png" alt="ROC曲線" loading="lazy"><div class="card-body"><h3>ROC曲線</h3><p>ROC曲線テンプレート。診断検査のAUC（曲線下面積）を評価。</p></div></a>
 <a href="stat/kaplan-meier.html" class="card"><img src="img/stat_kaplan_meier.png" alt="カプラン・マイヤー曲線" loading="lazy"><div class="card-body"><h3>カプラン・マイヤー曲線</h3><p>カプラン・マイヤー生存曲線テンプレート。群間の生存率比較に使用。</p></div></a>
 <a href="stat/forest-plot.html" class="card"><img src="img/stat_forest_plot.png" alt="フォレストプロット" loading="lazy"><div class="card-body"><h3>フォレストプロット</h3><p>フォレストプロットテンプレート。メタ分析の個別研究結果と統合効果をプロット。</p></div></a>
 <a href="stat/bland-altman.html" class="card"><img src="img/stat_bland_altman.png" alt="ブランド・アルトマンプロット" loading="lazy"><div class="card-body"><h3>ブランド・アルトマンプロット</h3><p>ブランド・アルトマンプロットテンプレート。2測定法の一致度を評価。</p></div></a>
@@ -493,8 +525,25 @@ footer a{color:#60a5fa}
 <a href="stat/correlation-matrix.html" class="card"><img src="img/stat_correlation_matrix.png" alt="相関行列" loading="lazy"><div class="card-body"><h3>相関行列</h3><p>相関行列テンプレート。多変量間の相関係数をヒートマップで可視化。</p></div></a>
 <a href="stat/bubble-plot.html" class="card"><img src="img/stat_bubble_plot.png" alt="バブルプロット" loading="lazy"><div class="card-body"><h3>バブルプロット</h3><p>バブルプロットテンプレート。3変数を位置とサイズで同時に可視化。</p></div></a>
 <a href="stat/spider-plot.html" class="card"><img src="img/stat_spider_plot.png" alt="スパイダー/レーダーチャート" loading="lazy"><div class="card-body"><h3>スパイダー/レーダーチャート</h3><p>スパイダー（レーダー）チャートテンプレート。多次元データの比較に使用。</p></div></a>
-<a href="stat/bland-altman-ratio.html" class="card"><img src="img/stat_bland_altman_ratio.png" alt="ブランド・アルトマン（比）" loading="lazy"><div class="card-body"><h3>ブランド・アルトマン（比）</h3><p>比型ブランド・アルトマンプロットテンプレート。対数変換データの一致度評価に使用。</p></div></a></div></section>
-<section class="cat-section" id="surg"><h2><a href="c/surg.html">外科・麻酔 (10)</a></h2><div class="card-grid"><a href="surg/asa-classification.html" class="card"><img src="img/surg_asa_classification.png" alt="ASA分類" loading="lazy"><div class="card-body"><h3>ASA分類</h3><p>ASA身体状態分類テンプレート。I-VI類の術前リスク評価に使用。</p></div></a>
+<a href="stat/bland-altman-ratio.html" class="card"><img src="img/stat_bland_altman_ratio.png" alt="ブランド・アルトマン（比）" loading="lazy"><div class="card-body"><h3>ブランド・アルトマン（比）</h3><p>比型ブランド・アルトマンプロットテンプレート。対数変換データの一致度評価に使用。</p></div></a>
+<a href="stat/radar-qol-6.html" class="card"><img src="img/stat_radar_qol_6.png" alt="QoLレーダーチャート（6軸）" loading="lazy"><div class="card-body"><h3>QoLレーダーチャート（6軸）</h3><p>6軸のQuality of Lifeレーダーチャートテンプレート。患者の生活の質を多面的に評価。</p></div></a>
+<a href="stat/radar-symptom-8.html" class="card"><img src="img/stat_radar_symptom_8.png" alt="症状レーダーチャート（8軸）" loading="lazy"><div class="card-body"><h3>症状レーダーチャート（8軸）</h3><p>8軸の症状評価レーダーチャート。複数症状の重症度を一覧表示。</p></div></a>
+<a href="stat/heatmap-correlation.html" class="card"><img src="img/stat_heatmap_correlation.png" alt="相関行列ヒートマップ" loading="lazy"><div class="card-body"><h3>相関行列ヒートマップ</h3><p>相関行列ヒートマップテンプレート。変数間の相関係数を色で可視化。</p></div></a>
+<a href="stat/waterfall-tumor.html" class="card"><img src="img/stat_waterfall_tumor.png" alt="腫瘍縮小率ウォーターフォール" loading="lazy"><div class="card-body"><h3>腫瘍縮小率ウォーターフォール</h3><p>腫瘍縮小率ウォーターフォールプロット。RECIST基準での治療効果を個別に表示。</p></div></a>
+<a href="stat/funnel-meta.html" class="card"><img src="img/stat_funnel_meta.png" alt="ファンネルプロット" loading="lazy"><div class="card-body"><h3>ファンネルプロット</h3><p>ファンネルプロットテンプレート。メタ分析における出版バイアスの評価に使用。</p></div></a>
+<a href="stat/qq-plot.html" class="card"><img src="img/stat_qq_plot.png" alt="Q-Qプロット" loading="lazy"><div class="card-body"><h3>Q-Qプロット</h3><p>Q-Qプロットテンプレート。データの正規性検定に使用。</p></div></a>
+<a href="stat/tornado-sensitivity.html" class="card"><img src="img/stat_tornado_sensitivity.png" alt="トルネード図" loading="lazy"><div class="card-body"><h3>トルネード図</h3><p>トルネード図（感度分析）テンプレート。各変数のアウトカムへの影響度を比較。</p></div></a>
+<a href="stat/swimmer-treatment.html" class="card"><img src="img/stat_swimmer_treatment.png" alt="スイマープロット" loading="lazy"><div class="card-body"><h3>スイマープロット</h3><p>スイマープロットテンプレート。個々の患者の治療経過を時系列で表示。</p></div></a>
+<a href="stat/bubble-chart.html" class="card"><img src="img/stat_bubble_chart.png" alt="バブルチャート" loading="lazy"><div class="card-body"><h3>バブルチャート</h3><p>バブルチャートテンプレート。3変数（X, Y, サイズ）を同時に可視化。</p></div></a>
+<a href="stat/dot-plot.html" class="card"><img src="img/stat_dot_plot.png" alt="クリーブランドドットプロット" loading="lazy"><div class="card-body"><h3>クリーブランドドットプロット</h3><p>クリーブランドドットプロットテンプレート。カテゴリ間の比較に使用。</p></div></a>
+<a href="stat/lollipop-chart.html" class="card"><img src="img/stat_lollipop_chart.png" alt="ロリポップチャート" loading="lazy"><div class="card-body"><h3>ロリポップチャート</h3><p>ロリポップチャートテンプレート。棒グラフの代替として数値比較に使用。</p></div></a>
+<a href="stat/dumbbell-prepost.html" class="card"><img src="img/stat_dumbbell_prepost.png" alt="前後比較ダンベルチャート" loading="lazy"><div class="card-body"><h3>前後比較ダンベルチャート</h3><p>ダンベルチャートテンプレート。介入前後の変化を個別に表示。</p></div></a>
+<a href="stat/box-plot-groups.html" class="card"><img src="img/stat_box_plot_groups.png" alt="箱ひげ図（群間比較）" loading="lazy"><div class="card-body"><h3>箱ひげ図（群間比較）</h3><p>箱ひげ図テンプレート。複数群のデータ分布を比較。中央値・四分位・外れ値を表示。</p></div></a>
+<a href="stat/violin-plot.html" class="card"><img src="img/stat_violin_plot.png" alt="バイオリンプロット" loading="lazy"><div class="card-body"><h3>バイオリンプロット</h3><p>バイオリンプロットテンプレート。データ分布の形状と密度を群間で比較。</p></div></a>
+<a href="stat/step-function.html" class="card"><img src="img/stat_step_function.png" alt="ステップ関数プロット" loading="lazy"><div class="card-body"><h3>ステップ関数プロット</h3><p>ステップ関数プロットテンプレート。生存曲線やイベント発生率の描画に使用。</p></div></a>
+<a href="stat/difference-plot.html" class="card"><img src="img/stat_difference_plot.png" alt="差分プロット" loading="lazy"><div class="card-body"><h3>差分プロット</h3><p>差分プロットテンプレート。2測定法の一致度評価に使用。</p></div></a>
+<a href="stat/nomogram-risk.html" class="card"><img src="img/stat_nomogram_risk.png" alt="リスクノモグラム" loading="lazy"><div class="card-body"><h3>リスクノモグラム</h3><p>リスクノモグラムテンプレート。複数因子からリスク確率を算出するためのスケール。</p></div></a></div></section>
+<section class="cat-section" id="surg"><h2><a href="c/surg.html">外科・麻酔 (11)</a></h2><div class="card-grid"><a href="surg/asa-classification.html" class="card"><img src="img/surg_asa_classification.png" alt="ASA分類" loading="lazy"><div class="card-body"><h3>ASA分類</h3><p>ASA身体状態分類テンプレート。I-VI類の術前リスク評価に使用。</p></div></a>
 <a href="surg/mallampati.html" class="card"><img src="img/surg_mallampati.png" alt="マランパティスコア" loading="lazy"><div class="card-body"><h3>マランパティスコア</h3><p>マランパティスコアテンプレート。気管挿管困難度の予測に使用。</p></div></a>
 <a href="surg/fluid-balance.html" class="card"><img src="img/surg_fluid_balance.png" alt="水分バランスチャート" loading="lazy"><div class="card-body"><h3>水分バランスチャート</h3><p>水分バランスチャートテンプレート。IN/OUTバランスの経時的モニタリングに使用。</p></div></a>
 <a href="surg/blood-gas.html" class="card"><img src="img/surg_blood_gas.png" alt="血液ガスモニタリング" loading="lazy"><div class="card-body"><h3>血液ガスモニタリング</h3><p>血液ガスモニタリングテンプレート。pH/PO2/PCO2の経時変化をプロット。</p></div></a>
@@ -503,7 +552,8 @@ footer a{color:#60a5fa}
 <a href="surg/pain-ladder.html" class="card"><img src="img/surg_pain_ladder.png" alt="疼痛管理ラダー" loading="lazy"><div class="card-body"><h3>疼痛管理ラダー</h3><p>WHO疼痛管理ラダーテンプレート。3段階の鎮痛法をプロット。</p></div></a>
 <a href="surg/wound-class.html" class="card"><img src="img/surg_wound_class.png" alt="手術創分類" loading="lazy"><div class="card-body"><h3>手術創分類</h3><p>手術創分類テンプレート。清潔/準清潔/汚染/感染の感染リスクをプロット。</p></div></a>
 <a href="surg/anesthesia-monitor.html" class="card"><img src="img/surg_anesthesia_monitor.png" alt="麻酔モニタリング" loading="lazy"><div class="card-body"><h3>麻酔モニタリング</h3><p>麻酔モニタリングテンプレート。HR/BP/SpO2/EtCO2の経時変化をプロット。</p></div></a>
-<a href="surg/surgical-checklist.html" class="card"><img src="img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="card-body"><h3>手術チェックリスト</h3><p>手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</p></div></a></div></section>
+<a href="surg/surgical-checklist.html" class="card"><img src="img/surg_surgical_checklist.png" alt="手術チェックリスト" loading="lazy"><div class="card-body"><h3>手術チェックリスト</h3><p>手術安全チェックリストテンプレート。Sign In/Time Out/Sign Outの記録に使用。</p></div></a>
+<a href="surg/heatmap-schedule.html" class="card"><img src="img/surg_heatmap_schedule.png" alt="投薬スケジュール表" loading="lazy"><div class="card-body"><h3>投薬スケジュール表</h3><p>投薬スケジュールヒートマップ。術後の薬剤投与計画を可視化。</p></div></a></div></section>
 <section class="request-section">
 <div class="request-card">
 <h2>テンプレートのリクエスト</h2>
@@ -518,9 +568,12 @@ footer a{color:#60a5fa}
 <script>
 function filterCards(q){
   q=q.toLowerCase();
+  let total=0;
   document.querySelectorAll(".card").forEach(c=>{
     const t=c.textContent.toLowerCase();
-    c.style.display=t.includes(q)?"":"none";
+    const v=t.includes(q);
+    c.style.display=v?"":"none";
+    if(v)total++;
   });
   document.querySelectorAll(".cat-section").forEach(s=>{
     const cards=s.querySelectorAll(".card");
@@ -532,6 +585,8 @@ function filterCards(q){
     if(!q){c.style.display="";return;}
     c.style.display=c.textContent.toLowerCase().includes(q)?"":"none";
   });
+  const nr=document.getElementById("noResults");
+  if(nr) nr.classList.toggle("show",q&&total===0);
 }
 </script>
 </body></html>
