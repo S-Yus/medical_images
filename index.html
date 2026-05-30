@@ -8,35 +8,22 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-            background: #f0f4f8;
-            color: #333;
-            line-height: 1.7;
+            background: #f0f4f8; color: #333; line-height: 1.7;
         }
-
-        /* ── Hero ── */
         .hero {
             background: linear-gradient(135deg, #1a5276 0%, #2e86ab 60%, #48b1bf 100%);
-            color: #fff;
-            text-align: center;
-            padding: 3.5rem 1.5rem 2.5rem;
+            color: #fff; text-align: center; padding: 3.5rem 1.5rem 2.5rem;
         }
         .hero h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: 0.04em; margin-bottom: 0.4rem; }
         .hero .subtitle { font-size: 1.1rem; opacity: 0.92; margin-bottom: 0.6rem; }
         .hero .desc { font-size: 0.92rem; opacity: 0.78; max-width: 640px; margin: 0 auto 1.2rem; }
         .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.18);
-            border: 1px solid rgba(255,255,255,0.35);
-            border-radius: 999px;
-            padding: 0.35rem 1.1rem;
-            font-size: 0.82rem;
-            backdrop-filter: blur(4px);
+            display: inline-block; background: rgba(255,255,255,0.18);
+            border: 1px solid rgba(255,255,255,0.35); border-radius: 999px;
+            padding: 0.35rem 1.1rem; font-size: 0.82rem; backdrop-filter: blur(4px);
         }
-
-        /* ── Sticky Nav ── */
         .toc {
-            background: #fff;
-            border-bottom: 1px solid #e0e0e0;
+            background: #fff; border-bottom: 1px solid #e0e0e0;
             position: sticky; top: 0; z-index: 100;
             padding: 0.55rem 1rem;
             display: flex; justify-content: center; flex-wrap: wrap; gap: 0.25rem;
@@ -46,41 +33,27 @@
             padding: 0.25rem 0.7rem; border-radius: 999px; transition: background 0.2s;
         }
         .toc a:hover { background: #e8f4f8; }
-
-        /* ── Container ── */
         .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1.5rem 2rem; }
-
-        /* ── License Banner ── */
         .license-banner {
             background: linear-gradient(90deg, #e8f8f0, #e8f4f8);
-            border: 1px solid #b2dfdb;
-            border-radius: 10px;
-            padding: 1.1rem 1.4rem;
-            margin: 1.5rem 0 2rem;
-            text-align: center;
+            border: 1px solid #b2dfdb; border-radius: 10px;
+            padding: 1.1rem 1.4rem; margin: 1.5rem 0 2rem; text-align: center;
         }
         .license-banner strong { color: #1a5276; }
         .license-banner p { font-size: 0.88rem; color: #555; margin: 0.2rem 0; }
-
-        /* ── Section ── */
         .section-header {
-            margin: 2.5rem 0 0.4rem;
-            padding-bottom: 0.35rem;
+            margin: 2.5rem 0 0.4rem; padding-bottom: 0.35rem;
             border-bottom: 3px solid #2e86ab;
             display: flex; align-items: baseline; gap: 0.6rem;
         }
         .section-header h2 { font-size: 1.4rem; font-weight: 700; color: #1a5276; }
-        .section-header .field-tag {
+        .field-tag {
             font-size: 0.72rem; background: #1a5276; color: #fff;
             padding: 0.15rem 0.6rem; border-radius: 999px; font-weight: 600;
         }
         .section-desc { color: #666; margin-bottom: 1.2rem; font-size: 0.9rem; }
-
-        /* ── Card Grid ── */
         .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 1.3rem;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.3rem;
         }
         .card {
             background: #fff; border-radius: 10px;
@@ -94,18 +67,39 @@
         .card-body p { font-size: 0.82rem; color: #777; margin-bottom: 0.5rem; }
         .tags { display: flex; flex-wrap: wrap; gap: 0.25rem; }
         .tag {
-            background: #e8f4f8; color: #2e86ab;
-            font-size: 0.7rem; padding: 0.12rem 0.5rem;
-            border-radius: 999px; font-weight: 600;
+            background: #e8f4f8; color: #2e86ab; font-size: 0.7rem;
+            padding: 0.12rem 0.5rem; border-radius: 999px; font-weight: 600;
         }
+        .btn-row { display: flex; gap: 0.4rem; margin-top: 0.5rem; flex-wrap: wrap; }
         .btn-dl {
-            display: inline-block; margin-top: 0.5rem;
-            padding: 0.3rem 0.9rem; background: #2e86ab; color: #fff;
-            border-radius: 5px; text-decoration: none; font-size: 0.78rem; transition: background 0.2s;
+            display: inline-block; padding: 0.3rem 0.9rem;
+            background: #2e86ab; color: #fff; border-radius: 5px;
+            text-decoration: none; font-size: 0.78rem; transition: background 0.2s;
+            border: none; cursor: pointer;
         }
         .btn-dl:hover { background: #1a5276; }
-
-        /* ── How-to ── */
+        .btn-code {
+            display: inline-block; padding: 0.3rem 0.9rem;
+            background: #fff; color: #2e86ab; border: 1px solid #2e86ab;
+            border-radius: 5px; font-size: 0.78rem; cursor: pointer;
+            transition: background 0.2s; font-family: inherit;
+        }
+        .btn-code:hover { background: #e8f4f8; }
+        .code-block {
+            display: none; margin-top: 0.6rem; background: #1e293b; color: #e2e8f0;
+            border-radius: 6px; padding: 0.8rem; font-size: 0.72rem;
+            font-family: "Consolas", "Monaco", "Courier New", monospace;
+            line-height: 1.5; overflow-x: auto; position: relative;
+            white-space: pre; max-height: 350px; overflow-y: auto;
+        }
+        .code-block.open { display: block; }
+        .btn-copy {
+            position: absolute; top: 0.4rem; right: 0.4rem;
+            background: rgba(255,255,255,0.15); color: #94a3b8; border: none;
+            border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.68rem;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .btn-copy:hover { background: rgba(255,255,255,0.25); color: #fff; }
         .howto {
             background: #fff; border-radius: 10px; padding: 1.5rem 1.8rem;
             margin: 2.5rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
@@ -113,13 +107,16 @@
         .howto h2 { color: #1a5276; margin-bottom: 0.8rem; font-size: 1.2rem; }
         .howto ol { padding-left: 1.4rem; }
         .howto li { margin-bottom: 0.4rem; color: #555; font-size: 0.92rem; }
-
-        /* ── Footer ── */
         footer {
-            text-align: center; padding: 1.8rem 1rem;
-            color: #999; font-size: 0.8rem; border-top: 1px solid #e0e0e0; margin-top: 2rem;
+            text-align: center; padding: 1.8rem 1rem; color: #999;
+            font-size: 0.8rem; border-top: 1px solid #e0e0e0; margin-top: 2rem;
         }
         footer a { color: #2e86ab; text-decoration: none; }
+        .r-kw { color: #7dd3fc; }
+        .r-str { color: #86efac; }
+        .r-num { color: #fbbf24; }
+        .r-fn { color: #c4b5fd; }
+        .r-cmt { color: #64748b; font-style: italic; }
     </style>
 </head>
 <body>
@@ -127,7 +124,7 @@
 <header class="hero">
     <h1>MedGraph Free</h1>
     <p class="subtitle">医学部生のためのグラフテンプレート集</p>
-    <p class="desc">データなしの白紙テンプレート。自分のデータをプロットして、レポート・発表に使えます。</p>
+    <p class="desc">データなしの白紙テンプレート。自分のデータをプロットして、レポート・発表に使えます。<br>各テンプレートの R コードも公開 — コピーしてカスタマイズ可能。</p>
     <span class="badge">CC0 / Public Domain &mdash; 著作権フリー・商用利用可</span>
 </header>
 
@@ -156,215 +153,622 @@
 
     <!-- ══════════ 生化学 ══════════ -->
     <div class="section-header" id="biochem">
-        <h2>生化学</h2>
-        <span class="field-tag">Biochemistry</span>
+        <h2>生化学</h2><span class="field-tag">Biochemistry</span>
     </div>
     <p class="section-desc">酵素反応速度論・滴定など、生化学実習で頻出するグラフの白紙テンプレートです。</p>
     <div class="card-grid">
+
         <div class="card">
             <img src="biochem_michaelis_menten.png" alt="Michaelis-Menten">
             <div class="card-body">
                 <h3>Michaelis-Menten プロット</h3>
                 <p>基質濃度 [S] vs 反応速度 v。Vmax・Km を求めるための基本グラフ。</p>
                 <div class="tags"><span class="tag">酵素反応</span><span class="tag">Vmax</span><span class="tag">Km</span></div>
-                <a href="biochem_michaelis_menten.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="biochem_michaelis_menten.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "[S]  (substrate concentration, mM)",
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression(italic(v) ~ " (reaction velocity, " *
+      mu * "mol/min)"),
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  labs(title = "Michaelis-Menten Plot") +
+  theme_bw(base_size = 14)
+
+# ---- 自分のデータを追加する例 ----
+# my_data &lt;- data.frame(S = c(1,2,4,8), v = c(2.5,4.0,5.5,6.8))
+# + geom_point(data = my_data, aes(S, v))
+# + geom_line(data = my_data, aes(S, v))</div>
             </div>
         </div>
+
         <div class="card">
             <img src="biochem_lineweaver_burk.png" alt="Lineweaver-Burk">
             <div class="card-body">
                 <h3>Lineweaver-Burk プロット</h3>
                 <p>二重逆数プロット（1/[S] vs 1/v）。直線化して Km・Vmax を算出。</p>
                 <div class="tags"><span class="tag">二重逆数</span><span class="tag">直線化</span><span class="tag">阻害</span></div>
-                <a href="biochem_lineweaver_burk.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="biochem_lineweaver_burk.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_vline(xintercept = 0, color = "grey50") +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(
+    name = expression("1/[S]  (mM"^-1 * ")"),
+    limits = c(-3, 10), breaks = seq(-3, 10, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("1/" * italic(v) ~ " (" *
+      mu * "mol/min)"^-1),
+    limits = c(-3, 10), breaks = seq(-3, 10, 1),
+    expand = c(0, 0)) +
+  labs(title = "Lineweaver-Burk Plot") +
+  theme_bw(base_size = 14)
+
+# ---- データ追加例 ----
+# my_data &lt;- data.frame(inv_S = 1/c(1,2,4,8),
+#                        inv_v = 1/c(2.5,4,5.5,6.8))
+# + geom_point(data = my_data, aes(inv_S, inv_v))
+# + geom_smooth(method = "lm")</div>
             </div>
         </div>
+
         <div class="card">
             <img src="biochem_titration.png" alt="Titration">
             <div class="card-body">
                 <h3>pH 滴定曲線</h3>
                 <p>滴定剤の添加量と pH の関係。緩衝域・当量点を記入。</p>
                 <div class="tags"><span class="tag">滴定</span><span class="tag">pKa</span><span class="tag">緩衝液</span></div>
-                <a href="biochem_titration.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="biochem_titration.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 7, linetype = "dashed",
+    color = "grey70") +
+  scale_x_continuous(
+    name = "Volume of titrant added (mL)",
+    limits = c(0, 50), breaks = seq(0, 50, 5),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "pH",
+    limits = c(0, 14), breaks = seq(0, 14, 1),
+    expand = c(0, 0)) +
+  labs(title = "pH Titration Curve") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="biochem_enzyme_inhibition.png" alt="Enzyme Inhibition">
             <div class="card-body">
                 <h3>酵素阻害（MM 重ね描き用）</h3>
                 <p>阻害剤なし・競合阻害・非競合阻害の曲線を重ねて描くためのテンプレート。</p>
                 <div class="tags"><span class="tag">競合阻害</span><span class="tag">非競合阻害</span></div>
-                <a href="biochem_enzyme_inhibition.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="biochem_enzyme_inhibition.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "[S]  (substrate concentration, mM)",
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression(italic(v) ~ " (" * mu * "mol/min)"),
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  labs(title = "Enzyme Kinetics with Inhibitor",
+    subtitle = paste("Plot curves for: No inhibitor /",
+      "Competitive / Non-competitive")) +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 生理学 ══════════ -->
     <div class="section-header" id="physiol">
-        <h2>生理学</h2>
-        <span class="field-tag">Physiology</span>
+        <h2>生理学</h2><span class="field-tag">Physiology</span>
     </div>
     <p class="section-desc">活動電位・心機能・呼吸機能など、生理学で頻出するグラフのテンプレートです。</p>
     <div class="card-grid">
+
         <div class="card">
             <img src="physiol_o2_dissociation.png" alt="O2 Dissociation">
             <div class="card-body">
                 <h3>酸素解離曲線</h3>
                 <p>PO₂ vs SpO₂。右方移動（Bohr効果）・左方移動を書き込み。</p>
                 <div class="tags"><span class="tag">ヘモグロビン</span><span class="tag">Bohr効果</span><span class="tag">呼吸</span></div>
-                <a href="physiol_o2_dissociation.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_o2_dissociation.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = expression("P" * O[2] ~ "(mmHg)"),
+    limits = c(0, 120), breaks = seq(0, 120, 10),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("S" * O[2] ~ "(% saturation)"),
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = expression(
+    "Oxygen-Hemoglobin Dissociation Curve")) +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="physiol_frank_starling.png" alt="Frank-Starling">
             <div class="card-body">
                 <h3>Frank-Starling 曲線</h3>
                 <p>前負荷と1回拍出量の関係。正常・心不全・運動時の曲線を描画。</p>
                 <div class="tags"><span class="tag">心機能</span><span class="tag">前負荷</span><span class="tag">SV</span></div>
-                <a href="physiol_frank_starling.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_frank_starling.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "Preload  (End-Diastolic Volume, mL)",
+    limits = c(0, 250), breaks = seq(0, 250, 25),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Stroke Volume (mL) / Cardiac Output (L/min)",
+    limits = c(0, 150), breaks = seq(0, 150, 10),
+    expand = c(0, 0)) +
+  labs(title = "Frank-Starling Curve",
+    subtitle = "Plot: Normal / Heart Failure / Exercise") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="physiol_action_potential.png" alt="Action Potential">
             <div class="card-body">
                 <h3>活動電位（神経・骨格筋）</h3>
                 <p>時間 vs 膜電位。脱分極・再分極・不応期を記入。</p>
                 <div class="tags"><span class="tag">膜電位</span><span class="tag">Na⁺/K⁺</span><span class="tag">閾値</span></div>
-                <a href="physiol_action_potential.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_action_potential.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(
+    name = "Time (ms)",
+    limits = c(0, 10), breaks = seq(0, 10, 0.5),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Membrane Potential (mV)",
+    limits = c(-100, 60), breaks = seq(-100, 60, 10),
+    expand = c(0, 0)) +
+  labs(title = "Action Potential") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="physiol_cardiac_ap.png" alt="Cardiac AP">
             <div class="card-body">
                 <h3>心筋活動電位</h3>
                 <p>Phase 0〜4 を記入。心室筋・洞結節の波形を描き分け。</p>
                 <div class="tags"><span class="tag">心筋</span><span class="tag">Ca²⁺</span><span class="tag">Phase 0-4</span></div>
-                <a href="physiol_cardiac_ap.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_cardiac_ap.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(
+    name = "Time (ms)",
+    limits = c(0, 400), breaks = seq(0, 400, 25),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Membrane Potential (mV)",
+    limits = c(-100, 60), breaks = seq(-100, 60, 10),
+    expand = c(0, 0)) +
+  labs(title = "Cardiac Action Potential",
+    subtitle = paste("Phases: 0 (depol.) / 1 (early repol.)",
+      "/ 2 (plateau) / 3 (repol.) / 4 (rest)")) +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="physiol_flow_volume.png" alt="Flow-Volume Loop">
             <div class="card-body">
                 <h3>フローボリューム曲線</h3>
                 <p>呼気・吸気のフローボリュームループ。閉塞性・拘束性パターンの描画に。</p>
                 <div class="tags"><span class="tag">スパイロメトリー</span><span class="tag">FEV₁</span><span class="tag">FVC</span></div>
-                <a href="physiol_flow_volume.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_flow_volume.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(
+    name = "Volume (L)",
+    limits = c(0, 6), breaks = seq(0, 6, 0.5),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Flow (L/s)",
+    limits = c(-8, 12), breaks = seq(-8, 12, 1),
+    expand = c(0, 0)) +
+  labs(title = "Flow-Volume Loop (Spirometry)",
+    subtitle = "Above = Expiration / Below = Inspiration") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="physiol_pv_loop.png" alt="PV Loop">
             <div class="card-body">
                 <h3>心臓 圧-容積ループ</h3>
                 <p>左室の圧-容積関係。等容性収縮期・駆出期・等容性弛緩期・充満期を描画。</p>
                 <div class="tags"><span class="tag">PV loop</span><span class="tag">ESPVR</span><span class="tag">前負荷</span></div>
-                <a href="physiol_pv_loop.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="physiol_pv_loop.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "Left Ventricular Volume (mL)",
+    limits = c(0, 200), breaks = seq(0, 200, 20),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Left Ventricular Pressure (mmHg)",
+    limits = c(0, 160), breaks = seq(0, 160, 10),
+    expand = c(0, 0)) +
+  labs(title = "Cardiac Pressure-Volume Loop") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 薬理学 ══════════ -->
     <div class="section-header" id="pharm">
-        <h2>薬理学</h2>
-        <span class="field-tag">Pharmacology</span>
+        <h2>薬理学</h2><span class="field-tag">Pharmacology</span>
     </div>
     <p class="section-desc">用量反応曲線・薬物動態のテンプレートです。</p>
     <div class="card-grid">
+
         <div class="card">
             <img src="pharm_dose_response.png" alt="Dose-Response">
             <div class="card-body">
                 <h3>用量反応曲線（対数）</h3>
                 <p>対数用量 vs 反応率。アゴニスト・競合的/非競合的拮抗薬の曲線を重ね描き。</p>
                 <div class="tags"><span class="tag">EC₅₀</span><span class="tag">Emax</span><span class="tag">拮抗薬</span></div>
-                <a href="pharm_dose_response.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="pharm_dose_response.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_log10(
+    name = "Dose / Concentration (log scale)",
+    limits = c(0.001, 1000),
+    breaks = 10^(-3:3),
+    labels = c("0.001","0.01","0.1","1",
+               "10","100","1000")) +
+  scale_y_continuous(
+    name = "Response (% of maximum)",
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = "Dose-Response Curve",
+    subtitle = paste("Plot: Agonist / + Competitive",
+      "/ + Non-competitive antagonist")) +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="pharm_pk_curve.png" alt="PK Curve">
             <div class="card-body">
                 <h3>薬物動態（血中濃度-時間曲線）</h3>
                 <p>投与後の血中濃度推移。Cmax・Tmax・AUC を求める。</p>
                 <div class="tags"><span class="tag">PK</span><span class="tag">Cmax</span><span class="tag">AUC</span></div>
-                <a href="pharm_pk_curve.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="pharm_pk_curve.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "Time after administration (hr)",
+    limits = c(0, 24), breaks = seq(0, 24, 2),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("Plasma concentration (" *
+      mu * "g/mL)"),
+    limits = c(0, 50), breaks = seq(0, 50, 5),
+    expand = c(0, 0)) +
+  labs(title = "Pharmacokinetic Profile") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="pharm_pk_semilog.png" alt="PK Semi-log">
             <div class="card-body">
                 <h3>薬物動態（片対数：半減期）</h3>
                 <p>片対数プロットで直線化し、消失速度定数 ke と半減期 t½ を算出。</p>
                 <div class="tags"><span class="tag">半減期</span><span class="tag">ke</span><span class="tag">片対数</span></div>
-                <a href="pharm_pk_semilog.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="pharm_pk_semilog.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "Time after administration (hr)",
+    limits = c(0, 24), breaks = seq(0, 24, 2),
+    expand = c(0, 0)) +
+  scale_y_log10(
+    name = expression("Plasma concentration (" *
+      mu * "g/mL)  [log scale]"),
+    limits = c(0.1, 100),
+    breaks = c(0.1, 0.5, 1, 5, 10, 50, 100)) +
+  labs(title = "Pharmacokinetic Profile (Semi-log)",
+    subtitle = expression("Slope = " * -k[e] *
+      " / 2.303,   " * t["1/2"] * " = 0.693 / " *
+      k[e])) +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="pharm_therapeutic_window.png" alt="Therapeutic Window">
             <div class="card-body">
                 <h3>反復投与と治療域</h3>
                 <p>反復投与時の血中濃度推移。治療域（有効濃度〜中毒濃度）を可視化。</p>
                 <div class="tags"><span class="tag">治療域</span><span class="tag">定常状態</span><span class="tag">TDM</span></div>
-                <a href="pharm_therapeutic_window.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="pharm_therapeutic_window.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 20, linetype = "dashed",
+    color = "#E74C3C") +
+  geom_hline(yintercept = 8, linetype = "dashed",
+    color = "#2E86AB") +
+  annotate("rect", xmin = 0, xmax = 72,
+    ymin = 8, ymax = 20,
+    fill = "#2E86AB", alpha = 0.08) +
+  annotate("text", x = 70, y = 21.5,
+    label = "Toxic level", hjust = 1,
+    color = "#E74C3C", fontface = "bold") +
+  annotate("text", x = 70, y = 6.5,
+    label = "Sub-therapeutic", hjust = 1,
+    color = "#2E86AB", fontface = "bold") +
+  scale_x_continuous(
+    name = "Time (hr)",
+    limits = c(0, 72), breaks = seq(0, 72, 6),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("Plasma concentration (" *
+      mu * "g/mL)"),
+    limits = c(0, 30), breaks = seq(0, 30, 2),
+    expand = c(0, 0)) +
+  labs(title = "Repeated Dosing & Therapeutic Window") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 臨床研究・統計 ══════════ -->
     <div class="section-header" id="stat">
-        <h2>臨床研究・統計</h2>
-        <span class="field-tag">Clinical Research / Statistics</span>
+        <h2>臨床研究・統計</h2><span class="field-tag">Clinical Research / Statistics</span>
     </div>
     <p class="section-desc">臨床研究や EBM の論文で頻出するグラフのテンプレートです。</p>
     <div class="card-grid">
+
         <div class="card">
             <img src="stat_roc_curve.png" alt="ROC Curve">
             <div class="card-body">
                 <h3>ROC 曲線</h3>
                 <p>感度 vs 1-特異度。診断検査の精度評価に。対角線（AUC=0.5）付き。</p>
                 <div class="tags"><span class="tag">AUC</span><span class="tag">感度</span><span class="tag">特異度</span></div>
-                <a href="stat_roc_curve.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="stat_roc_curve.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_abline(intercept = 0, slope = 1,
+    linetype = "dashed", color = "grey60") +
+  scale_x_continuous(
+    name = "1 - Specificity  (False Positive Rate)",
+    limits = c(0, 1), breaks = seq(0, 1, 0.1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Sensitivity  (True Positive Rate)",
+    limits = c(0, 1), breaks = seq(0, 1, 0.1),
+    expand = c(0, 0)) +
+  labs(title = "ROC Curve", subtitle = "AUC = ____") +
+  coord_equal() +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="stat_kaplan_meier.png" alt="KM Curve">
             <div class="card-body">
                 <h3>Kaplan-Meier 生存曲線</h3>
                 <p>時間 vs 生存確率。Log-rank 検定の p 値記入欄付き。</p>
                 <div class="tags"><span class="tag">生存分析</span><span class="tag">Log-rank</span><span class="tag">RCT</span></div>
-                <a href="stat_kaplan_meier.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="stat_kaplan_meier.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = "Time (months)",
+    limits = c(0, 60), breaks = seq(0, 60, 6),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Survival Probability",
+    limits = c(0, 1), breaks = seq(0, 1, 0.1),
+    labels = function(x) paste0(x * 100, "%"),
+    expand = c(0, 0)) +
+  labs(title = "Kaplan-Meier Survival Curve",
+    subtitle = "Log-rank  p = ____") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="stat_forest_plot.png" alt="Forest Plot">
             <div class="card-body">
                 <h3>フォレストプロット</h3>
                 <p>メタアナリシス用。Study A〜H + Overall の行を用意。対数スケール。</p>
                 <div class="tags"><span class="tag">メタアナリシス</span><span class="tag">OR/HR/RR</span><span class="tag">EBM</span></div>
-                <a href="stat_forest_plot.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="stat_forest_plot.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+studies &lt;- c(paste("Study", LETTERS[1:8]), "Overall")
+fp_df &lt;- data.frame(
+  study = factor(studies, levels = rev(studies)))
+
+ggplot(fp_df, aes(x = 1, y = study)) +
+  geom_blank() +
+  geom_vline(xintercept = 1, linetype = "dashed",
+    color = "grey50") +
+  scale_x_continuous(
+    name = "Odds Ratio / HR / RR  (95% CI)",
+    limits = c(0.1, 10), trans = "log10",
+    breaks = c(0.1, 0.2, 0.5, 1, 2, 5, 10)) +
+  labs(title = "Forest Plot", y = "") +
+  annotate("text", x = 0.3, y = 0.6,
+    label = "Favours Treatment",
+    color = "grey50", fontface = "italic") +
+  annotate("text", x = 3.5, y = 0.6,
+    label = "Favours Control",
+    color = "grey50", fontface = "italic") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="stat_bland_altman.png" alt="Bland-Altman">
             <div class="card-body">
                 <h3>Bland-Altman プロット</h3>
                 <p>2つの測定法の一致度評価。Mean diff / ±1.96 SD の記入欄付き。</p>
                 <div class="tags"><span class="tag">一致度</span><span class="tag">LOA</span><span class="tag">検査医学</span></div>
-                <a href="stat_bland_altman.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="stat_bland_altman.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 0, color = "grey50") +
+  scale_x_continuous(
+    name = "Mean of Two Methods",
+    limits = c(0, 200), breaks = seq(0, 200, 20),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Difference  (Method A - Method B)",
+    limits = c(-50, 50), breaks = seq(-50, 50, 10),
+    expand = c(0, 0)) +
+  labs(title = "Bland-Altman Plot") +
+  theme_bw(base_size = 14)
+
+# Mean diff, +1.96 SD, -1.96 SD の水平線は
+# 自分のデータから計算して geom_hline() で追加</div>
             </div>
         </div>
+
         <div class="card">
             <img src="stat_calibration.png" alt="Calibration Plot">
             <div class="card-body">
                 <h3>Calibration プロット</h3>
                 <p>予測確率 vs 観測確率。予測モデルの校正能を評価。対角線（完全校正）付き。</p>
                 <div class="tags"><span class="tag">予測モデル</span><span class="tag">校正</span><span class="tag">リスク</span></div>
-                <a href="stat_calibration.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="stat_calibration.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_abline(intercept = 0, slope = 1,
+    linetype = "dashed", color = "grey60") +
+  scale_x_continuous(
+    name = "Predicted Probability",
+    limits = c(0, 1), breaks = seq(0, 1, 0.1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Observed Probability",
+    limits = c(0, 1), breaks = seq(0, 1, 0.1),
+    expand = c(0, 0)) +
+  labs(title = "Calibration Plot") +
+  coord_equal() +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 腎臓 ══════════ -->
     <div class="section-header" id="nephro">
-        <h2>腎臓・体液</h2>
-        <span class="field-tag">Nephrology</span>
+        <h2>腎臓・体液</h2><span class="field-tag">Nephrology</span>
     </div>
     <p class="section-desc">腎機能評価・糸球体濾過に関するテンプレートです。</p>
     <div class="card-grid">
@@ -374,15 +778,34 @@
                 <h3>腎クリアランス / Glucose Titration</h3>
                 <p>血漿濃度 vs 各レート。濾過・再吸収・排泄の曲線と Tm を記入。</p>
                 <div class="tags"><span class="tag">GFR</span><span class="tag">Tm</span><span class="tag">糸球体濾過</span></div>
-                <a href="nephro_clearance.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="nephro_clearance.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  scale_x_continuous(
+    name = expression("Plasma concentration (" *
+      mu * "mol/L)"),
+    limits = c(0, 500), breaks = seq(0, 500, 50),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = paste("Rate (mg/min): Filtration /",
+      "Reabsorption / Excretion / Secretion"),
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = "Renal Handling of Solute",
+    subtitle = "Plot: Filtered / Reabsorbed / Excreted") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 酸塩基 ══════════ -->
     <div class="section-header" id="acidbase">
-        <h2>酸塩基平衡</h2>
-        <span class="field-tag">Acid-Base</span>
+        <h2>酸塩基平衡</h2><span class="field-tag">Acid-Base</span>
     </div>
     <p class="section-desc">血液ガス分析の解釈に使うテンプレートです。</p>
     <div class="card-grid">
@@ -392,15 +815,43 @@
                 <h3>Davenport Diagram</h3>
                 <p>pH vs [HCO₃⁻] の酸塩基マップ。代謝性/呼吸性のアシドーシス・アルカローシスの領域表示付き。</p>
                 <div class="tags"><span class="tag">血液ガス</span><span class="tag">ABG</span><span class="tag">代償</span></div>
-                <a href="acidbase_davenport.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="acidbase_davenport.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 24, linetype = "dashed",
+    color = "grey70") +
+  geom_vline(xintercept = 7.4, linetype = "dashed",
+    color = "grey70") +
+  annotate("text", x = 7.15, y = 42,
+    label = "Metabolic\nalkalosis", color = "grey55") +
+  annotate("text", x = 7.65, y = 42,
+    label = "Respiratory\nalkalosis", color = "grey55") +
+  annotate("text", x = 7.15, y = 8,
+    label = "Respiratory\nacidosis", color = "grey55") +
+  annotate("text", x = 7.65, y = 8,
+    label = "Metabolic\nacidosis", color = "grey55") +
+  scale_x_continuous(
+    name = "Arterial pH",
+    limits = c(7.0, 7.8), breaks = seq(7.0, 7.8, 0.05),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = expression("[HCO"[3]^{"-"} * "]  (mEq/L)"),
+    limits = c(0, 50), breaks = seq(0, 50, 5),
+    expand = c(0, 0)) +
+  labs(title = "Davenport Diagram (Acid-Base Map)") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 血液 ══════════ -->
     <div class="section-header" id="hemato">
-        <h2>血液</h2>
-        <span class="field-tag">Hematology</span>
+        <h2>血液</h2><span class="field-tag">Hematology</span>
     </div>
     <p class="section-desc">凝固検査の記録に使えるテンプレートです。</p>
     <div class="card-grid">
@@ -410,42 +861,124 @@
                 <h3>凝固検査（PT / aPTT）記録</h3>
                 <p>各サンプルの凝固時間をプロット。PT・aPTT の正常上限ガイドライン付き。</p>
                 <div class="tags"><span class="tag">PT</span><span class="tag">aPTT</span><span class="tag">凝固</span></div>
-                <a href="hemato_coag_grid.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="hemato_coag_grid.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 13, linetype = "dashed",
+    color = "#E74C3C") +
+  geom_hline(yintercept = 35, linetype = "dashed",
+    color = "#2E86AB") +
+  annotate("text", x = 0.3, y = 14,
+    label = "PT upper limit",
+    color = "#E74C3C", hjust = 0) +
+  annotate("text", x = 0.3, y = 36,
+    label = "aPTT upper limit",
+    color = "#2E86AB", hjust = 0) +
+  scale_x_continuous(
+    name = "Sample / Time point",
+    limits = c(0, 10), breaks = seq(0, 10, 1),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Clotting Time (seconds)",
+    limits = c(0, 80), breaks = seq(0, 80, 5),
+    expand = c(0, 0)) +
+  labs(title = "Coagulation Test Results (PT / aPTT)") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 内分泌 ══════════ -->
     <div class="section-header" id="endo">
-        <h2>内分泌</h2>
-        <span class="field-tag">Endocrinology</span>
+        <h2>内分泌</h2><span class="field-tag">Endocrinology</span>
     </div>
     <p class="section-desc">糖負荷試験やホルモン日内変動のテンプレートです。</p>
     <div class="card-grid">
+
         <div class="card">
             <img src="endo_ogtt.png" alt="OGTT">
             <div class="card-body">
                 <h3>経口糖負荷試験（OGTT）</h3>
                 <p>時間 vs 血糖値。IGT（140）・DM（200）の診断ラインをガイド表示。</p>
                 <div class="tags"><span class="tag">OGTT</span><span class="tag">糖尿病</span><span class="tag">IGT</span></div>
-                <a href="endo_ogtt.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="endo_ogtt.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  geom_hline(yintercept = 200, linetype = "dashed",
+    color = "#E74C3C") +
+  geom_hline(yintercept = 140, linetype = "dashed",
+    color = "#F39C12") +
+  annotate("text", x = 118, y = 205,
+    label = "Diabetes (200)",
+    color = "#E74C3C", hjust = 1) +
+  annotate("text", x = 118, y = 145,
+    label = "IGT (140)",
+    color = "#F39C12", hjust = 1) +
+  scale_x_continuous(
+    name = "Time after glucose load (min)",
+    limits = c(0, 120), breaks = seq(0, 120, 15),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Blood Glucose (mg/dL)",
+    limits = c(0, 350), breaks = seq(0, 350, 25),
+    expand = c(0, 0)) +
+  labs(title = "Oral Glucose Tolerance Test (OGTT)") +
+  theme_bw(base_size = 14)</div>
             </div>
         </div>
+
         <div class="card">
             <img src="endo_diurnal.png" alt="Diurnal Rhythm">
             <div class="card-body">
                 <h3>ホルモン日内変動</h3>
                 <p>24時間のホルモン分泌パターン。コルチゾール・GH・メラトニン等を重ね描き。</p>
                 <div class="tags"><span class="tag">日内変動</span><span class="tag">コルチゾール</span><span class="tag">概日リズム</span></div>
-                <a href="endo_diurnal.png" download class="btn-dl">Download</a>
+                <div class="btn-row">
+                    <a href="endo_diurnal.png" download class="btn-dl">Download</a>
+                    <button class="btn-code" onclick="toggleCode(this)">R Code</button>
+                </div>
+                <div class="code-block"><button class="btn-copy" onclick="copyCode(this)">Copy</button>library(ggplot2)
+
+ggplot(data.frame(x=numeric(0), y=numeric(0)), aes(x, y)) +
+  geom_blank() +
+  annotate("rect", xmin = 22, xmax = 30,
+    ymin = 0, ymax = 100,
+    fill = "grey90", alpha = 0.5) +
+  annotate("text", x = 26, y = 95,
+    label = "Sleep", color = "grey50") +
+  scale_x_continuous(
+    name = "Time of day (hr)",
+    limits = c(6, 30), breaks = seq(6, 30, 2),
+    labels = c("6:00","8:00","10:00","12:00",
+      "14:00","16:00","18:00","20:00",
+      "22:00","0:00","2:00","4:00","6:00"),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    name = "Hormone level (arbitrary units)",
+    limits = c(0, 100), breaks = seq(0, 100, 10),
+    expand = c(0, 0)) +
+  labs(title = "Hormone Diurnal Rhythm",
+    subtitle = "Plot: Cortisol / GH / Melatonin") +
+  theme_bw(base_size = 14) +
+  theme(axis.text.x = element_text(
+    angle = 45, hjust = 1))</div>
             </div>
         </div>
     </div>
 
     <!-- ══════════ 心電図 ══════════ -->
     <div class="section-header" id="ecg">
-        <h2>心電図テンプレート</h2>
-        <span class="field-tag">ECG</span>
+        <h2>心電図テンプレート</h2><span class="field-tag">ECG</span>
     </div>
     <p class="section-desc">三軸図・ベクトル心電図の描画用テンプレートです。</p>
     <div class="card-grid">
@@ -455,7 +988,7 @@
                 <h3>三軸図テンプレート</h3>
                 <p>心電図の電気軸を記載するための三軸図。</p>
                 <div class="tags"><span class="tag">電気軸</span><span class="tag">四肢誘導</span></div>
-                <a href="triaxial_template.png" download class="btn-dl">Download</a>
+                <div class="btn-row"><a href="triaxial_template.png" download class="btn-dl">Download</a></div>
             </div>
         </div>
         <div class="card">
@@ -464,7 +997,7 @@
                 <h3>ベクトル心電図テンプレート</h3>
                 <p>ベクトル心電図（VECG）の描画用テンプレート。</p>
                 <div class="tags"><span class="tag">VECG</span><span class="tag">ベクトルループ</span></div>
-                <a href="vecg_template.png" download class="btn-dl">Download</a>
+                <div class="btn-row"><a href="vecg_template.png" download class="btn-dl">Download</a></div>
             </div>
         </div>
         <div class="card">
@@ -473,7 +1006,7 @@
                 <h3>三軸 + VECG 統合テンプレート</h3>
                 <p>三軸図とベクトル心電図を組み合わせた統合テンプレート。</p>
                 <div class="tags"><span class="tag">三軸図</span><span class="tag">VECG</span><span class="tag">統合</span></div>
-                <a href="triaxial_vecg_template.png" download class="btn-dl">Download</a>
+                <div class="btn-row"><a href="triaxial_vecg_template.png" download class="btn-dl">Download</a></div>
             </div>
         </div>
     </div>
@@ -482,19 +1015,19 @@
     <div class="howto" id="howto">
         <h2>使い方</h2>
         <ol>
-            <li><strong>Download</strong> ボタンまたは右クリック → 保存で PNG をダウンロード</li>
-            <li>PowerPoint / Word / Keynote に貼り付け、上からデータをプロット・描画してください</li>
+            <li><strong>Download</strong> ボタンで PNG をダウンロード → Word / PowerPoint / Keynote に貼り付け</li>
+            <li><strong>R Code</strong> ボタンでコードを表示 → <strong>Copy</strong> して RStudio に貼り付け</li>
+            <li>コード内の <code>limits</code>, <code>breaks</code>, <code>name</code> を編集して軸をカスタマイズ</li>
+            <li>自分のデータを <code>geom_point()</code> / <code>geom_line()</code> で追加してプロット</li>
             <li>印刷して手書きでデータを書き込む使い方もできます</li>
-            <li>画像編集ソフト（GIMP, Canva 等）で直接描画することも可能です</li>
-            <li>直接リンクで埋め込む場合は画像を右クリック → 「画像アドレスをコピー」</li>
         </ol>
     </div>
 
     <div class="howto">
-        <h2>ソースコード</h2>
+        <h2>R ソースコード一括ダウンロード</h2>
         <p style="color:#666; font-size:0.88rem;">
-            全テンプレートは R + ggplot2 で生成しています。軸のスケールやラベルをカスタマイズしたい場合は、
-            <a href="generate_templates.R" download>generate_templates.R</a> をダウンロードして編集してください。
+            全テンプレートの生成コードを1ファイルにまとめたものです。
+            <a href="generate_templates.R" download class="btn-dl" style="margin-left:0.5rem;">generate_templates.R</a>
         </p>
     </div>
 
@@ -508,6 +1041,21 @@
         <a href="https://ggplot2.tidyverse.org/" target="_blank">ggplot2</a>
     </p>
 </footer>
+
+<script>
+function toggleCode(btn) {
+    const block = btn.parentElement.nextElementSibling;
+    block.classList.toggle('open');
+    btn.textContent = block.classList.contains('open') ? 'Close' : 'R Code';
+}
+function copyCode(btn) {
+    const code = btn.parentElement.textContent.replace('Copy', '').trim();
+    navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 1500);
+    });
+}
+</script>
 
 </body>
 </html>
