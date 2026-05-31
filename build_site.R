@@ -1471,6 +1471,708 @@ make_consort <- function(t, style, lang) {
   p+sptheme(style,C)
 }
 
+# ── VCG Loop (3-plane vector) ──
+make_vcg <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  lim <- 1.5
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)+geom_vline(xintercept=0,color=C$gc,linewidth=0.3)
+  for(r in seq(0.5,1.5,0.5)) p <- p+annotate("path",x=r*cos(seq(0,2*pi,len=100)),y=r*sin(seq(0,2*pi,len=100)),color=C$gc,linewidth=0.15,linetype="dotted")
+  if(lang!="none"){
+    p <- p+annotate("text",x=lim*0.9,y=0.1,label="Frontal",color="grey50",size=2.5)
+  }
+  xl <- if(lang=="none") "" else "X (mV)"; yl <- if(lang=="none") "" else "Y (mV)"
+  p <- p+scale_x_continuous(name=xl,limits=c(-lim,lim),expand=c(0,0))+scale_y_continuous(name=yl,limits=c(-lim,lim),expand=c(0,0))
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),aspect.ratio=1)
+}
+
+# ── M-mode Echo ──
+make_mmode <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  for(d in seq(yr[1],yr[2],length.out=8)) p <- p+geom_hline(yintercept=d,color=C$gc,linewidth=0.15,linetype="dotted")
+  xl <- if(lang=="none") "" else "Time (sec)"; yl <- if(lang=="none") "" else "Depth (cm)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+scale_y_continuous(name=yl,limits=yr,expand=c(0,0),trans="reverse")
+  if(lang!="none"){
+    structs <- c("RV","IVS","LV","PW")
+    ds <- seq(yr[1]+diff(yr)*0.15,yr[2]-diff(yr)*0.1,length.out=4)
+    for(i in 1:4) p <- p+annotate("text",x=xr[1]+diff(xr)*0.02,y=ds[i],label=structs[i],color="grey50",size=2,hjust=0)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Swan-Ganz Catheter Waveform ──
+make_swan_ganz <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time"; yl <- if(lang=="none") "" else "Pressure (mmHg)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  if(lang!="none"){
+    zones <- c("RA","RV","PA","PCWP")
+    xs <- xr[1]+diff(xr)*c(0.1,0.3,0.55,0.8)
+    for(i in 1:4) p <- p+annotate("text",x=xs[i],y=yr[2]*0.95,label=zones[i],color="#3498db",size=3,fontface="bold")
+    p <- p+geom_vline(xintercept=xr[1]+diff(xr)*c(0.2,0.45,0.7),linetype="dashed",color=C$gc,linewidth=0.3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── V/Q Ratio Distribution ──
+make_va_q <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "VA/Q Ratio"; yl <- if(lang=="none") "" else "Blood Flow / Ventilation"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,3),breaks=seq(0,3,0.5),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1.5),expand=c(0,0))
+  p <- p+geom_vline(xintercept=1.0,linetype="dashed",color="grey50",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=0.3,y=1.3,label="Shunt",color="#e74c3c",size=2.5)+
+      annotate("text",x=2.5,y=1.3,label="Dead Space",color="#3498db",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Acid-Base Map (4-quadrant) ──
+make_acid_base_map <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "PaCO2 (mmHg)",limits=c(10,80),expand=c(0,0))+
+    scale_y_continuous(name=if(lang=="none") "" else "HCO3- (mEq/L)",limits=c(5,45),expand=c(0,0))
+  p <- p+geom_hline(yintercept=24,linetype="dashed",color="grey50",linewidth=0.3)+
+    geom_vline(xintercept=40,linetype="dashed",color="grey50",linewidth=0.3)
+  if(lang!="none"){
+    labs_txt <- c("Resp. Alkalosis\nMetab. Alkalosis","Metab.\nAlkalosis","Resp. Acidosis\nMetab. Acidosis","Metab.\nAcidosis")
+    xs <- c(20,20,60,60); ys <- c(38,12,38,12)
+    for(i in 1:4) p <- p+annotate("text",x=xs[i],y=ys[i],label=labs_txt[i],color="grey50",size=2,lineheight=0.9)
+    p <- p+annotate("point",x=40,y=24,color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Insulin-Glucose Clamp ──
+make_clamp <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (min)",limits=xr,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,2),expand=c(0,0),breaks=NULL)
+  p <- p+geom_hline(yintercept=1,color=C$gc,linewidth=0.5)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[1]+5,y=1.7,label="Glucose (mg/dL)",color="#e74c3c",size=2.5,hjust=0)+
+      annotate("text",x=xr[1]+5,y=0.3,label="Insulin Infusion Rate",color="#3498db",size=2.5,hjust=0)+
+      annotate("rect",xmin=xr[1],xmax=xr[1]+diff(xr)*0.15,ymin=0.95,ymax=1.05,fill="grey80",alpha=0.3)+
+      annotate("text",x=xr[1]+diff(xr)*0.075,y=1.5,label="Baseline",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── HRM (High-Resolution Manometry) ──
+make_hrm <- function(t, style, lang) {
+  C <- spcols(style)
+  nr <- 20; nc <- 30
+  df <- expand.grid(x=1:nc,y=1:nr)
+  df$z <- 0
+  p <- ggplot(df,aes(x,y,fill=z))+geom_tile()+
+    scale_fill_gradient2(low="#3498db",mid="white",high="#e74c3c",midpoint=0,guide="none")
+  xl <- if(lang=="none") "" else "Time (sec)"; yl <- if(lang=="none") "" else "Sensor Position (cm)"
+  p <- p+scale_x_continuous(name=xl,expand=c(0,0))+scale_y_continuous(name=yl,expand=c(0,0),trans="reverse")
+  if(lang!="none"){
+    p <- p+annotate("text",x=2,y=2,label="UES",color="grey30",size=2.5,hjust=0)+
+      annotate("text",x=2,y=18,label="LES",color="grey30",size=2.5,hjust=0)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── CSF/ICP Pressure Waveform ──
+make_csf_pressure <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time (sec)"; yl <- if(lang=="none") "" else "ICP (mmHg)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(5,15,20),linetype=c("dotted","dashed","dashed"),color=c(C$gc,"#f39c12","#e74c3c"),linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.95,y=16,label="Upper Normal",color="#f39c12",size=2,hjust=1)+
+      annotate("text",x=xr[2]*0.95,y=21,label="Elevated",color="#e74c3c",size=2,hjust=1)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Amsler Grid ──
+make_amsler <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  for(i in seq(-5,5,0.5)) p <- p+geom_hline(yintercept=i,color=C$gc,linewidth=0.15)+geom_vline(xintercept=i,color=C$gc,linewidth=0.15)
+  p <- p+annotate("point",x=0,y=0,color=C$fg,size=2)
+  p <- p+scale_x_continuous(name="",limits=c(-5,5),breaks=seq(-5,5,1),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(-5,5),breaks=seq(-5,5,1),expand=c(0,0))
+  if(lang!="none") p <- p+annotate("text",x=0,y=-5.3,label="10° visual field",color="grey50",size=2,vjust=1)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank(),aspect.ratio=1)
+}
+
+# ── Corneal Topography ──
+make_corneal_topo <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  cols <- c("#3498db","#2ecc71","#f1c40f","#e67e22","#e74c3c")
+  for(i in 5:1){
+    r <- i*0.8
+    p <- p+annotate("path",x=r*cos(seq(0,2*pi,len=100)),y=r*sin(seq(0,2*pi,len=100)),color=cols[i],linewidth=0.5)
+  }
+  p <- p+annotate("point",x=0,y=0,color=C$fg,size=1)
+  p <- p+scale_x_continuous(name="",limits=c(-5,5),expand=c(0,0))+scale_y_continuous(name="",limits=c(-5,5),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=4,y=-4.5,label="D (diopters)",color="grey50",size=2)+
+      annotate("text",x=0,y=4.5,label="Superior",color="grey50",size=2)+
+      annotate("text",x=0,y=-4.5,label="Inferior",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank(),aspect.ratio=1)
+}
+
+# ── Hess Chart ──
+make_hess <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  for(i in -2:2) p <- p+geom_hline(yintercept=i*15,color=C$gc,linewidth=0.15)+geom_vline(xintercept=i*15,color=C$gc,linewidth=0.15)
+  dirs <- expand.grid(x=c(-15,0,15),y=c(-15,0,15))
+  p <- p+annotate("point",x=dirs$x,y=dirs$y,color="#e74c3c",size=1.5,shape=3)
+  p <- p+scale_x_continuous(name="",limits=c(-35,35),expand=c(0,0))+scale_y_continuous(name="",limits=c(-35,35),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=-30,y=33,label="Left Eye",color="#e74c3c",size=2.5)+
+      annotate("text",x=30,y=33,label="Right Eye",color="#2ecc71",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank(),aspect.ratio=1)
+}
+
+# ── Caloric Test (Butterfly Chart) ──
+make_caloric <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "SPV (deg/sec)"; yl <- ""
+  p <- p+scale_x_continuous(name=xl,limits=c(-80,80),breaks=seq(-80,80,20),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0.5,4.5),breaks=1:4,labels=if(lang=="none") rep("",4) else c("R-Warm","R-Cool","L-Warm","L-Cool"),expand=c(0.1,0.1))
+  p <- p+geom_vline(xintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=-60,y=4.3,label="Left-beating",color="#3498db",size=2)+
+      annotate("text",x=60,y=4.3,label="Right-beating",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Rhinomanometry ──
+make_rhinomanometry <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Pressure (Pa)"; yl <- if(lang=="none") "" else "Flow (cm³/s)"
+  p <- p+scale_x_continuous(name=xl,limits=c(-300,300),breaks=seq(-300,300,100),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-800,800),breaks=seq(-800,800,200),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)+geom_vline(xintercept=0,color=C$gc,linewidth=0.3)
+  p <- p+geom_vline(xintercept=c(-150,150),linetype="dashed",color="#e74c3c",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=200,y=600,label="Insp.",color="grey50",size=2.5)+
+      annotate("text",x=-200,y=-600,label="Exp.",color="grey50",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Pressure-Flow Study (Schäfer Nomogram) ──
+make_pfs <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Qmax (mL/s)"; yl <- if(lang=="none") "" else "pdet.Qmax (cmH2O)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,30),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,120),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("segment",x=0,xend=15,y=40,yend=40,color="#2ecc71",linewidth=0.5)+
+      annotate("segment",x=0,xend=4,y=100,yend=40,color="#e74c3c",linewidth=0.5)+
+      annotate("text",x=20,y=20,label="Unobstructed",color="#2ecc71",size=2.5)+
+      annotate("text",x=5,y=90,label="Obstructed",color="#e74c3c",size=2.5)+
+      annotate("text",x=12,y=55,label="Equivocal",color="#f39c12",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Gait Analysis ──
+make_gait <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Gait Cycle (%)"; yl <- if(lang=="none") "" else "Angle (deg)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,100),breaks=seq(0,100,10),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  p <- p+geom_vline(xintercept=60,linetype="dashed",color="#e74c3c",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("rect",xmin=0,xmax=60,ymin=t$yr[1],ymax=t$yr[1]+diff(as.numeric(t$yr))*0.05,fill="#3498db",alpha=0.3)+
+      annotate("rect",xmin=60,xmax=100,ymin=t$yr[1],ymax=t$yr[1]+diff(as.numeric(t$yr))*0.05,fill="#2ecc71",alpha=0.3)+
+      annotate("text",x=30,y=t$yr[1]+diff(as.numeric(t$yr))*0.1,label="Stance (60%)",color="#3498db",size=2)+
+      annotate("text",x=80,y=t$yr[1]+diff(as.numeric(t$yr))*0.1,label="Swing (40%)",color="#2ecc71",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Psych Profile (Subtest Line) ──
+make_psych_profile <- function(t, style, lang) {
+  C <- spcols(style)
+  xlb <- if(!is.null(t$xlb)) t$xlb else paste0("S",1:10)
+  n <- length(xlb)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  yl <- if(lang=="none") "" else "Score"
+  p <- p+scale_x_continuous(name="",limits=c(0.5,n+0.5),breaks=1:n,labels=if(lang=="none") rep("",n) else xlb,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  for(v in c(-2,-1,0,1,2)){
+    mid <- mean(as.numeric(t$yr))
+    rng <- diff(as.numeric(t$yr))/2
+    yv <- mid+v*rng/3
+    p <- p+geom_hline(yintercept=yv,color=C$gc,linewidth=0.15,linetype=if(v==0) "solid" else "dotted")
+  }
+  if(lang!="none") p <- p+annotate("text",x=n+0.3,y=mean(as.numeric(t$yr)),label="Mean",color="grey50",size=2,hjust=1)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),axis.text.x=element_text(angle=45,hjust=1,size=5))
+}
+
+# ── Mood Chart ──
+make_mood_chart <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  xl <- if(lang=="none") "" else "Day"; yl <- if(lang=="none") "" else "Mood"
+  p <- p+scale_x_continuous(name=xl,limits=xr,breaks=seq(xr[1],xr[2],7),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-3,3),breaks=-3:3,labels=if(lang=="none") rep("",7) else c("Severe\nDepression","Moderate","Mild","Euthymic","Mild","Moderate","Severe\nMania"),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.5)+
+    geom_hline(yintercept=c(-2,2),linetype="dashed",color="#f39c12",linewidth=0.3)+
+    geom_hline(yintercept=c(-3,3),linetype="dashed",color="#e74c3c",linewidth=0.3)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),axis.text.y=element_text(size=4))
+}
+
+# ── Vital Signs Timeline ──
+make_vital_timeline <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (hours)",limits=xr,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,4),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    vitals <- c("HR (bpm)","BP (mmHg)","SpO2 (%)","Temp (°C)")
+    cols <- c("#e74c3c","#3498db","#2ecc71","#f39c12")
+    for(i in 1:4){
+      yb <- (i-1); yt <- i
+      p <- p+geom_hline(yintercept=yb,color=C$gc,linewidth=0.3)+
+        annotate("text",x=xr[1]+diff(xr)*0.02,y=yb+0.5,label=vitals[i],color=cols[i],size=2,hjust=0,fontface="bold")
+    }
+  }
+  p <- p+geom_hline(yintercept=4,color=C$gc,linewidth=0.3)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── Anesthesia Record ──
+make_anesthesia_record <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (min)",limits=xr,breaks=seq(xr[1],xr[2],30),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,5),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    params <- c("HR","BP","SpO2","EtCO2","MAC")
+    for(i in 1:5){
+      p <- p+geom_hline(yintercept=i-1,color=C$gc,linewidth=0.2)+
+        annotate("text",x=xr[1]+2,y=i-0.5,label=params[i],color="grey40",size=2,hjust=0)
+    }
+    p <- p+geom_hline(yintercept=5,color=C$gc,linewidth=0.2)+
+      annotate("text",x=mean(xr),y=4.8,label="Events / Drugs",color="grey50",size=2,fontface="italic")
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── CT Window Table ──
+make_ct_window <- function(t, style, lang) {
+  C <- spcols(style)
+  tissues <- if(lang=="none") rep("",8) else c("Air","Fat","Water","Muscle","Blood","Bone","Metal","Calcium")
+  hu_min <- c(-1000,-120,0,30,30,400,1000,100)
+  hu_max <- c(-900,-60,0,60,70,2000,4000,300)
+  n <- length(tissues)
+  df <- data.frame(tissue=factor(tissues,levels=rev(tissues)),ymin=hu_min,ymax=hu_max,x=1)
+  p <- ggplot(df,aes(xmin=0.5,xmax=1.5,ymin=ymin,ymax=ymax))+geom_rect(fill="#3498db",alpha=0.3,color="#3498db",linewidth=0.3)
+  p <- p+scale_y_continuous(name=if(lang=="none") "" else "Hounsfield Units (HU)",limits=c(-1100,2100),expand=c(0,0))+
+    scale_x_continuous(name="",limits=c(0,n+0.5),breaks=1:n,labels=tissues,expand=c(0,0))
+  p <- p+coord_flip()
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── CNV Plot ──
+make_cnv <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Chromosome"; yl <- if(lang=="none") "" else "Log2 Ratio"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,23),breaks=1:22,labels=if(lang=="none") rep("",22) else c(1:22),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-2,2),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)+
+    geom_hline(yintercept=c(-1,1),linetype="dashed",color="#e74c3c",linewidth=0.2)
+  for(i in 1:22) p <- p+geom_vline(xintercept=i+0.5,color=C$gc,linewidth=0.1)
+  if(lang!="none"){
+    p <- p+annotate("text",x=22,y=1.7,label="Gain",color="#e74c3c",size=2)+
+      annotate("text",x=22,y=-1.7,label="Loss",color="#3498db",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),axis.text.x=element_text(size=5))
+}
+
+# ── Electrophoresis Pattern ──
+make_electrophoresis <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  bands <- if(lang=="none") rep("",6) else c("Albumin","Alpha-1","Alpha-2","Beta","Gamma","Origin")
+  n <- length(bands)
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Migration",limits=c(0,7),breaks=1:n,labels=bands,expand=c(0.05,0.05))+
+    scale_y_continuous(name=if(lang=="none") "" else "Density",limits=c(0,1),expand=c(0,0))
+  for(i in 1:n) p <- p+geom_vline(xintercept=i,color=C$gc,linewidth=0.1,linetype="dotted")
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Isobologram ──
+make_isobologram <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Drug A Dose"; yl <- if(lang=="none") "" else "Drug B Dose"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+annotate("segment",x=xr[2],xend=0,y=0,yend=yr[2],color="#e74c3c",linewidth=0.5,linetype="dashed")
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.3,y=yr[2]*0.3,label="Synergy",color="#2ecc71",size=3)+
+      annotate("text",x=xr[2]*0.7,y=yr[2]*0.7,label="Antagonism",color="#e74c3c",size=3)+
+      annotate("text",x=xr[2]*0.55,y=yr[2]*0.4,label="Additive",color="grey50",size=2.5,angle=-45)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Schild Plot ──
+make_schild <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "log[Antagonist]"; yl <- if(lang=="none") "" else "log(DR - 1)"
+  p <- p+scale_x_continuous(name=xl,limits=as.numeric(t$xr),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=as.numeric(t$yr),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=mean(as.numeric(t$xr)),y=as.numeric(t$yr)[2]*0.8,label="Slope = 1\n(competitive)",color="#3498db",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Henderson-Hasselbalch Diagram ──
+make_hh_diagram <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "pH"; yl <- if(lang=="none") "" else "[A-]/[HA]"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,14),breaks=0:14,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,100),expand=c(0,0))
+  p <- p+geom_hline(yintercept=50,linetype="dashed",color="#e74c3c",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=3,y=80,label="HA dominant",color="#e74c3c",size=2.5)+
+      annotate("text",x=11,y=80,label="A⁻ dominant",color="#3498db",size=2.5)+
+      annotate("text",x=7,y=55,label="pKa = pH at 50%",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Galbraith Plot ──
+make_galbraith <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "1/SE"; yl <- if(lang=="none") "" else "z-score (ES/SE)"
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)+
+    geom_hline(yintercept=c(-2,2),linetype="dashed",color="#e74c3c",linewidth=0.3)
+  if(lang!="none") p <- p+annotate("text",x=xr[2]*0.8,y=2.3,label="±2 (95% CI)",color="#e74c3c",size=2)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── L'Abbé Plot ──
+make_labbe <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Control Event Rate"; yl <- if(lang=="none") "" else "Treatment Event Rate"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,1),expand=c(0,0))+scale_y_continuous(name=yl,limits=c(0,1),expand=c(0,0))
+  p <- p+annotate("segment",x=0,xend=1,y=0,yend=1,color=C$gc,linewidth=0.5,linetype="dashed")
+  if(lang!="none"){
+    p <- p+annotate("text",x=0.7,y=0.3,label="Treatment\nbetter",color="#2ecc71",size=2.5)+
+      annotate("text",x=0.3,y=0.7,label="Control\nbetter",color="#e74c3c",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),aspect.ratio=1)
+}
+
+# ── Baujat Plot ──
+make_baujat <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Contribution to Overall Result"; yl <- if(lang=="none") "" else "Influence on Heterogeneity"
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  mx <- mean(xr); my <- mean(yr)
+  p <- p+geom_hline(yintercept=my,linetype="dotted",color=C$gc,linewidth=0.3)+
+    geom_vline(xintercept=mx,linetype="dotted",color=C$gc,linewidth=0.3)
+  if(lang!="none") p <- p+annotate("text",x=xr[2]*0.8,y=yr[2]*0.8,label="High influence\n& contribution",color="#e74c3c",size=2)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Deeks Funnel Plot ──
+make_deeks_funnel <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "1/sqrt(ESS)"; yl <- if(lang=="none") "" else "log Diagnostic Odds Ratio"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,0.5),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-3,6),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none") p <- p+annotate("text",x=0.4,y=5,label="Asymmetry\ntest line",color="grey50",size=2)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Lexis Diagram ──
+make_lexis <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Calendar Year"; yl <- if(lang=="none") "" else "Age"
+  p <- p+scale_x_continuous(name=xl,limits=xr,breaks=seq(xr[1],xr[2],5),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,breaks=seq(yr[1],yr[2],10),expand=c(0,0))
+  for(y in seq(xr[1]-yr[2],xr[2],5)){
+    x0 <- max(xr[1],y); x1 <- min(xr[2],y+yr[2])
+    if(x0<x1) p <- p+annotate("segment",x=x0,xend=x1,y=x0-y,yend=x1-y,color=C$gc,linewidth=0.15,linetype="dotted")
+  }
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]-2,y=yr[2]-2,label="Cohort\ndiagonals",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── DAG (Directed Acyclic Graph) ──
+make_dag <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(0,10),expand=c(0,0),breaks=NULL)+
+    scale_y_continuous(name="",limits=c(0,10),expand=c(0,0),breaks=NULL)
+  if(lang!="none"){
+    nodes <- data.frame(x=c(2,8,5,5),y=c(5,5,8,2),label=c("Exposure","Outcome","Confounder","Mediator"))
+    for(i in 1:4) p <- p+annotate("rect",xmin=nodes$x[i]-1.3,xmax=nodes$x[i]+1.3,ymin=nodes$y[i]-0.5,ymax=nodes$y[i]+0.5,fill="white",color=C$fg,linewidth=0.3)+
+      annotate("text",x=nodes$x[i],y=nodes$y[i],label=nodes$label[i],color=C$fg,size=2.5)
+    p <- p+annotate("segment",x=3.3,xend=6.7,y=5,yend=5,arrow=arrow(length=unit(0.1,"in")),color=C$fg,linewidth=0.4)+
+      annotate("segment",x=5,xend=3,y=7.5,yend=5.5,arrow=arrow(length=unit(0.1,"in")),color="#e74c3c",linewidth=0.4)+
+      annotate("segment",x=5,xend=7,y=7.5,yend=5.5,arrow=arrow(length=unit(0.1,"in")),color="#e74c3c",linewidth=0.4)+
+      annotate("segment",x=3.3,xend=5,y=4.7,yend=2.5,arrow=arrow(length=unit(0.1,"in")),color="#3498db",linewidth=0.3)+
+      annotate("segment",x=5,xend=6.7,y=2.5,yend=4.7,arrow=arrow(length=unit(0.1,"in")),color="#3498db",linewidth=0.3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Vaccine Schedule (Gantt) ──
+make_vaccine_schedule <- function(t, style, lang) {
+  C <- spcols(style)
+  vaccines <- if(lang=="none") rep("",8) else c("HepB","Rotavirus","DTaP","Hib","PCV13","IPV","MMR","Varicella")
+  n <- length(vaccines)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Age (months)",limits=c(0,72),breaks=c(0,2,4,6,12,15,18,24,48,72),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0.5,n+0.5),breaks=1:n,labels=rev(vaccines),expand=c(0,0))
+  for(i in 1:n) p <- p+geom_hline(yintercept=i-0.5,color=C$gc,linewidth=0.1)
+  if(lang!="none"){
+    for(i in 1:n){
+      y <- n+1-i
+      xs <- switch(i,c(0,1,6),c(2,4),c(2,4,6,15),c(2,4,6,12),c(2,4,6,12),c(2,4,6),c(12,48),c(12,48))
+      for(x in xs) p <- p+annotate("point",x=x,y=y,color="#3498db",size=1.5)
+    }
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),axis.text.y=element_text(size=5))
+}
+
+# ── Denver Developmental Screening ──
+make_denver <- function(t, style, lang) {
+  C <- spcols(style)
+  domains <- if(lang=="none") rep("",4) else c("Gross Motor","Fine Motor","Language","Personal-Social")
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Age (months)",limits=c(0,72),breaks=seq(0,72,6),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0.5,4.5),breaks=1:4,labels=rev(domains),expand=c(0.05,0.05))
+  cols <- c("#e74c3c","#3498db","#2ecc71","#f39c12")
+  for(i in 1:4) p <- p+geom_hline(yintercept=i-0.5,color=C$gc,linewidth=0.15)+
+    annotate("rect",xmin=0,xmax=72,ymin=i-0.45,ymax=i+0.45,fill=cols[i],alpha=0.05)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Feedback Loop (Hormone Axis) ──
+make_feedback_loop <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    boxes <- data.frame(x=c(5,5,5),y=c(8.5,5.5,2.5),label=c("Hypothalamus","Ant. Pituitary","Target Gland"))
+    for(i in 1:3) p <- p+annotate("rect",xmin=boxes$x[i]-2,xmax=boxes$x[i]+2,ymin=boxes$y[i]-0.6,ymax=boxes$y[i]+0.6,fill="white",color=C$fg,linewidth=0.3)+
+      annotate("text",x=boxes$x[i],y=boxes$y[i],label=boxes$label[i],color=C$fg,size=2.5)
+    p <- p+annotate("segment",x=5,xend=5,y=7.9,yend=6.1,arrow=arrow(length=unit(0.1,"in")),color="#3498db",linewidth=0.4)+
+      annotate("segment",x=5,xend=5,y=4.9,yend=3.1,arrow=arrow(length=unit(0.1,"in")),color="#3498db",linewidth=0.4)+
+      annotate("segment",x=7.5,xend=7.5,y=2.5,yend=8.5,arrow=arrow(length=unit(0.1,"in")),color="#e74c3c",linewidth=0.4,linetype="dashed")+
+      annotate("text",x=8.3,y=5.5,label="(-) Feedback",color="#e74c3c",size=2,angle=90)+
+      annotate("text",x=4,y=7,label="Releasing\nHormone",color="#3498db",size=2)+
+      annotate("text",x=4,y=4,label="Tropic\nHormone",color="#3498db",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── PK Compartment Model ──
+make_pk_compartment <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,6),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("rect",xmin=0.5,xmax=3,ymin=2,ymax=4,fill="white",color="#3498db",linewidth=0.5)+
+      annotate("text",x=1.75,y=3,label="Central\nCompartment",color="#3498db",size=2.5)+
+      annotate("rect",xmin=4.5,xmax=7,ymin=2,ymax=4,fill="white",color="#2ecc71",linewidth=0.5)+
+      annotate("text",x=5.75,y=3,label="Peripheral\nCompartment",color="#2ecc71",size=2.5)+
+      annotate("segment",x=3,xend=4.5,y=3.3,yend=3.3,arrow=arrow(length=unit(0.08,"in")),color=C$fg,linewidth=0.3)+
+      annotate("segment",x=4.5,xend=3,y=2.7,yend=2.7,arrow=arrow(length=unit(0.08,"in")),color=C$fg,linewidth=0.3)+
+      annotate("text",x=3.75,y=3.7,label="k12",color="grey50",size=2)+
+      annotate("text",x=3.75,y=2.3,label="k21",color="grey50",size=2)+
+      annotate("segment",x=1.75,xend=1.75,y=4,yend=5,arrow=arrow(length=unit(0.08,"in"),ends="first"),color="#f39c12",linewidth=0.3)+
+      annotate("text",x=1.75,y=5.3,label="ka (absorption)",color="#f39c12",size=2)+
+      annotate("segment",x=1.75,xend=1.75,y=2,yend=1,arrow=arrow(length=unit(0.08,"in")),color="#e74c3c",linewidth=0.3)+
+      annotate("text",x=1.75,y=0.7,label="ke (elimination)",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── Scoring Table (generic) ──
+make_scoring_table <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xlb <- if(!is.null(t$xlb)) t$xlb else paste0("Item",1:5)
+  n <- length(xlb)
+  p <- p+scale_x_continuous(name="",limits=c(0,4),breaks=0:3,labels=if(lang=="none") rep("",4) else c("0","1","2","3"),expand=c(0.05,0.05))+
+    scale_y_continuous(name="",limits=c(0.5,n+0.5),breaks=1:n,labels=if(lang=="none") rep("",n) else rev(xlb),expand=c(0.05,0.05))
+  for(i in 0:n) p <- p+geom_hline(yintercept=i+0.5,color=C$gc,linewidth=0.2)
+  for(j in 0:3) p <- p+geom_vline(xintercept=j+0.5,color=C$gc,linewidth=0.2)
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank(),axis.text.y=element_text(size=5))
+}
+
+# ── Disk Diffusion (Antibiotic Sensitivity) ──
+make_disk_diffusion <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(-6,6),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(-6,6),breaks=NULL,expand=c(0,0))
+  p <- p+annotate("path",x=5*cos(seq(0,2*pi,len=100)),y=5*sin(seq(0,2*pi,len=100)),color=C$gc,linewidth=0.5)
+  if(lang!="none"){
+    angles <- seq(0,2*pi,length.out=7)[1:6]
+    abx <- c("AMP","CIP","GEN","MER","VAN","TZP")
+    for(i in 1:6){
+      cx <- 3*cos(angles[i]); cy <- 3*sin(angles[i])
+      p <- p+annotate("path",x=cx+0.5*cos(seq(0,2*pi,len=50)),y=cy+0.5*sin(seq(0,2*pi,len=50)),color="#3498db",linewidth=0.3)+
+        annotate("text",x=cx,y=cy,label=abx[i],color="#3498db",size=2)
+      p <- p+annotate("path",x=cx+1.2*cos(seq(0,2*pi,len=50)),y=cy+1.2*sin(seq(0,2*pi,len=50)),color=C$gc,linewidth=0.15,linetype="dotted")
+    }
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank(),aspect.ratio=1)
+}
+
+# ── Phylogenetic Tree ──
+make_phylogenetic <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Genetic Distance",limits=c(0,10),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,8),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    taxa <- c("Species A","Species B","Species C","Species D","Species E")
+    ys <- c(1,2,4,5.5,7)
+    for(i in 1:5) p <- p+annotate("text",x=9.5,y=ys[i],label=taxa[i],color=C$fg,size=2,hjust=1)
+    p <- p+annotate("segment",x=1,xend=1,y=1,yend=7,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=1,xend=3,y=1.5,yend=1.5,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=3,xend=7,y=1,yend=1,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=3,xend=7,y=2,yend=2,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=1,xend=4,y=4.75,yend=4.75,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=4,xend=7,y=4,yend=4,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=4,xend=7,y=5.5,yend=5.5,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=1,xend=7,y=7,yend=7,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=3,xend=3,y=1,yend=2,color=C$fg,linewidth=0.3)+
+      annotate("segment",x=4,xend=4,y=4,yend=5.5,color=C$fg,linewidth=0.3)
+    p <- p+annotate("text",x=0.5,y=0.5,label="Root",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── Westgard Rules Chart ──
+make_westgard <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- c(-4,4)
+  xl <- if(lang=="none") "" else "Run Number"
+  p <- p+scale_x_continuous(name=xl,limits=xr,breaks=seq(xr[1],xr[2],5),expand=c(0,0))+
+    scale_y_continuous(name=if(lang=="none") "" else "SD Units",limits=yr,breaks=-4:4,expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$fg,linewidth=0.3)+
+    geom_hline(yintercept=c(-1,1),color="#2ecc71",linewidth=0.2,linetype="dotted")+
+    geom_hline(yintercept=c(-2,2),color="#f39c12",linewidth=0.3,linetype="dashed")+
+    geom_hline(yintercept=c(-3,3),color="#e74c3c",linewidth=0.3,linetype="dashed")
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2],y=3.5,label="1₃s",color="#e74c3c",size=2,hjust=1)+
+      annotate("text",x=xr[2],y=2.5,label="2₂s",color="#f39c12",size=2,hjust=1)+
+      annotate("text",x=xr[2],y=1.5,label="R₄s",color="#f39c12",size=2,hjust=1)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Interference Experiment ──
+make_interference <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Interferent Concentration"; yl <- if(lang=="none") "" else "% Recovery"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=100,color=C$gc,linewidth=0.3)+
+    geom_hline(yintercept=c(90,110),linetype="dashed",color="#f39c12",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("rect",xmin=xr[1],xmax=xr[2],ymin=90,ymax=110,fill="#2ecc71",alpha=0.05)+
+      annotate("text",x=xr[2]*0.8,y=105,label="±10% tolerance",color="#2ecc71",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
 # ── Plot Generator ──
 # lang: "en" = English labels, "ja" = Japanese title, "none" = no text
 make_plot <- function(t, style = "standard", lang = "en") {
@@ -1500,6 +2202,26 @@ make_plot <- function(t, style = "standard", lang = "en") {
     guyton=make_guyton(t,style,lang), lung_volumes=make_lung_volumes(t,style,lang),
     bbt=make_bbt(t,style,lang), sroc=make_sroc(t,style,lang),
     consort=make_consort(t,style,lang),
+    vcg=make_vcg(t,style,lang), mmode=make_mmode(t,style,lang),
+    swan_ganz=make_swan_ganz(t,style,lang), va_q=make_va_q(t,style,lang),
+    acid_base_map=make_acid_base_map(t,style,lang), clamp=make_clamp(t,style,lang),
+    hrm=make_hrm(t,style,lang), csf_pressure=make_csf_pressure(t,style,lang),
+    amsler=make_amsler(t,style,lang), corneal_topo=make_corneal_topo(t,style,lang),
+    hess=make_hess(t,style,lang), caloric=make_caloric(t,style,lang),
+    rhinomanometry=make_rhinomanometry(t,style,lang), pfs=make_pfs(t,style,lang),
+    gait=make_gait(t,style,lang), psych_profile=make_psych_profile(t,style,lang),
+    mood_chart=make_mood_chart(t,style,lang), vital_timeline=make_vital_timeline(t,style,lang),
+    anesthesia_record=make_anesthesia_record(t,style,lang), ct_window=make_ct_window(t,style,lang),
+    cnv=make_cnv(t,style,lang), electrophoresis=make_electrophoresis(t,style,lang),
+    isobologram=make_isobologram(t,style,lang), schild=make_schild(t,style,lang),
+    hh_diagram=make_hh_diagram(t,style,lang), galbraith=make_galbraith(t,style,lang),
+    labbe=make_labbe(t,style,lang), baujat=make_baujat(t,style,lang),
+    deeks_funnel=make_deeks_funnel(t,style,lang), lexis=make_lexis(t,style,lang),
+    dag=make_dag(t,style,lang), vaccine_schedule=make_vaccine_schedule(t,style,lang),
+    denver=make_denver(t,style,lang), feedback_loop=make_feedback_loop(t,style,lang),
+    pk_compartment=make_pk_compartment(t,style,lang), scoring_table=make_scoring_table(t,style,lang),
+    disk_diffusion=make_disk_diffusion(t,style,lang), phylogenetic=make_phylogenetic(t,style,lang),
+    westgard=make_westgard(t,style,lang), interference=make_interference(t,style,lang),
     make_radar(t,style,lang)))
 
   empty <- data.frame(x = numeric(0), y = numeric(0))
@@ -2047,7 +2769,7 @@ footer a{color:#60a5fa}
 <p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表にそのまま使えます。</p>
 <div class="stats">
 <div class="stat"><div class="num">%d</div><div class="lbl">Templates</div></div>
-<div class="stat"><div class="num">%d</div><div class="lbl">Downloads</div></div>
+<div class="stat"><div class="num">%d</div><div class="lbl">Images</div></div>
 <div class="stat"><div class="num">%d</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>

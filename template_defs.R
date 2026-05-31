@@ -4038,7 +4038,297 @@ D("stat-consort","stat","CONSORT Flow Diagram","CONSORTフロー図",
 D("epi-consort","epi","Epidemiological CONSORT Diagram","疫学CONSORTフロー図",
   "","",c(0,10),c(0,10),
   "疫学CONSORTフロー図テンプレート。研究参加者の選択過程。","consort,フロー図,疫学,研究デザイン",
-  type="consort")
+  type="consort"),
+
+# ── SPECIALTY GRAPHS PHASE 2 ──
+
+# VCG loop
+D("cardio-vcg-loop","cardio","Vectorcardiogram (VCG) Loop","ベクトル心電図ループ",
+  "X (mV)","Y (mV)",c(-1.5,1.5),c(-1.5,1.5),
+  "ベクトル心電図ループテンプレート。3平面のベクトル軌跡表示。","vcg,ベクトル心電図,ループ,前額面",
+  type="vcg"),
+
+# M-mode echo
+D("cardio-mmode","cardio","M-mode Echocardiogram","Mモード心エコー",
+  "Time (sec)","Depth (cm)",c(0,3),c(0,15),
+  "Mモード心エコーテンプレート。時間軸-深度の心臓構造表示。","mmode,Mモード,心エコー,超音波",
+  type="mmode"),
+
+# Swan-Ganz
+D("cardio-swan-ganz","cardio","Swan-Ganz Catheter Waveform","スワンガンツカテーテル波形",
+  "Time","Pressure (mmHg)",c(0,100),c(0,40),
+  "スワンガンツカテーテル波形テンプレート。RA→RV→PA→PCWPの圧遷移。","swan-ganz,スワンガンツ,右心カテーテル,肺動脈圧",
+  type="swan_ganz"),
+D("emer-swan-ganz","emer","Emergency Swan-Ganz Trace","救急スワンガンツトレース",
+  "Time","Pressure (mmHg)",c(0,100),c(0,40),
+  "救急スワンガンツトレーステンプレート。ICUでの血行動態モニタリング。","swan-ganz,スワンガンツ,救急,ICU",
+  type="swan_ganz"),
+
+# V/Q ratio
+D("pulm-va-q","pulm","V/Q Ratio Distribution","換気血流比分布",
+  "VA/Q Ratio","Blood Flow / Ventilation",c(0,3),c(0,1.5),
+  "換気血流比分布テンプレート。VA/Q不均衡の評価。","va-q,換気血流比,シャント,死腔",
+  type="va_q"),
+D("physiol-va-q","physiol","Physiological V/Q Distribution","生理学的換気血流比分布",
+  "VA/Q Ratio","Blood Flow / Ventilation",c(0,3),c(0,1.5),
+  "生理学的換気血流比分布テンプレート。肺の換気血流マッチングの理解。","va-q,換気血流比,生理学",
+  type="va_q"),
+
+# Acid-base map
+D("nephro-acid-base-map","nephro","Acid-Base Map","酸塩基マップ",
+  "PaCO2 (mmHg)","HCO3- (mEq/L)",c(10,80),c(5,45),
+  "酸塩基マップテンプレート。代謝性/呼吸性×アシドーシス/アルカローシスの4象限。","acid-base,酸塩基,マップ,4象限",
+  type="acid_base_map"),
+D("physiol-acid-base-map","physiol","Physiological Acid-Base Map","生理学的酸塩基マップ",
+  "PaCO2 (mmHg)","HCO3- (mEq/L)",c(10,80),c(5,45),
+  "生理学的酸塩基マップテンプレート。酸塩基平衡の基本理解。","acid-base,酸塩基,生理学,マップ",
+  type="acid_base_map"),
+
+# Clamp
+D("endo-clamp","endo","Insulin-Glucose Clamp","インスリン-グルコースクランプ",
+  "Time (min)","",c(0,180),c(0,2),
+  "インスリン-グルコースクランプテンプレート。インスリン抵抗性の定量評価。","clamp,クランプ,インスリン,グルコース",
+  type="clamp"),
+
+# HRM
+D("gi-hrm","gi","High-Resolution Manometry (HRM)","高解像度食道内圧検査",
+  "Time (sec)","Sensor Position (cm)",c(1,30),c(1,20),
+  "高解像度食道内圧検査テンプレート。食道運動障害の評価。","hrm,食道内圧,マノメトリー,嚥下",
+  type="hrm"),
+
+# CSF pressure
+D("neuro-csf-pressure","neuro","ICP Waveform","頭蓋内圧波形",
+  "Time (sec)","ICP (mmHg)",c(0,30),c(0,40),
+  "頭蓋内圧波形テンプレート。ICP波形（A波/B波/C波）の記録。","icp,頭蓋内圧,CSF,脳圧",
+  type="csf_pressure"),
+
+# Amsler
+D("eye-amsler","eye","Amsler Grid","アムスラーチャート",
+  "","",c(-5,5),c(-5,5),
+  "アムスラーチャートテンプレート。黄斑部疾患の中心視野スクリーニング。","amsler,アムスラー,黄斑,中心暗点,変視症",
+  type="amsler"),
+
+# Corneal topography
+D("eye-corneal-topo","eye","Corneal Topography","角膜トポグラフィー",
+  "","",c(-5,5),c(-5,5),
+  "角膜トポグラフィーテンプレート。角膜曲率の同心円カラーマップ。","corneal,角膜,トポグラフィー,曲率",
+  type="corneal_topo"),
+
+# Hess chart
+D("eye-hess","eye","Hess Chart","ヘスチャート",
+  "","",c(-35,35),c(-35,35),
+  "ヘスチャートテンプレート。外眼筋機能の9方向評価。","hess,ヘス,外眼筋,斜視,複視",
+  type="hess"),
+
+# Caloric test
+D("ent-caloric","ent","Caloric Test (Butterfly Chart)","温度刺激検査バタフライチャート",
+  "SPV (deg/sec)","",c(-80,80),c(0.5,4.5),
+  "温度刺激検査テンプレート。前庭機能のカロリックテスト結果表示。","caloric,カロリック,温度眼振,前庭",
+  type="caloric"),
+
+# Rhinomanometry
+D("ent-rhinomanometry","ent","Rhinomanometry","鼻腔通気度検査",
+  "Pressure (Pa)","Flow (cm³/s)",c(-300,300),c(-800,800),
+  "鼻腔通気度検査テンプレート。鼻腔抵抗の圧-流量曲線。","rhinomanometry,鼻腔通気度,鼻閉",
+  type="rhinomanometry"),
+
+# PFS
+D("uro-pfs","uro","Pressure-Flow Study (Schäfer)","圧流量検査シェーファーノモグラム",
+  "Qmax (mL/s)","pdet.Qmax (cmH2O)",c(0,30),c(0,120),
+  "圧流量検査テンプレート。BOO判定のためのシェーファーノモグラム。","pfs,圧流量,schäfer,BOO,排尿障害",
+  type="pfs"),
+
+# Gait analysis
+D("ortho-gait","ortho","Gait Analysis Graph","歩行分析グラフ",
+  "Gait Cycle (%)","Angle (deg)",c(0,100),c(-20,60),
+  "歩行分析グラフテンプレート。関節角度の歩行周期時系列。","gait,歩行分析,関節角度,歩行周期",
+  type="gait"),
+
+# Psych profile
+D("psych-psych-profile","psych","Psychological Test Profile","心理検査プロファイル",
+  "","Score",c(0.5,10.5),c(1,19),
+  "心理検査プロファイルテンプレート。WAIS等のサブテストプロファイル。","psych-profile,心理検査,WAIS,プロファイル",
+  type="psych_profile",xlb=c("VCI","VSI","FRI","WMI","PSI","VC","SI","IN","BD","VP")),
+
+# Mood chart
+D("psych-mood-chart","psych","Mood Chart","気分チャート",
+  "Day","Mood",c(1,30),c(-3,3),
+  "気分チャートテンプレート。日々の気分変動の記録。","mood,気分,チャート,双極性,躁うつ",
+  type="mood_chart"),
+
+# Vital timeline
+D("emer-vital-timeline","emer","Vital Signs Timeline","バイタルサイン経時記録",
+  "Time (hours)","",c(0,24),c(0,4),
+  "バイタルサイン経時記録テンプレート。HR/BP/SpO2/体温の同期表示。","vital,バイタル,経時,モニタリング",
+  type="vital_timeline"),
+D("surg-vital-timeline","surg","Surgical Vital Signs Record","術中バイタル記録",
+  "Time (hours)","",c(0,6),c(0,4),
+  "術中バイタル記録テンプレート。手術中のバイタルサインモニタリング。","vital,バイタル,手術,術中",
+  type="vital_timeline"),
+
+# Anesthesia record
+D("surg-anesthesia-record","surg","Anesthesia Record","麻酔記録",
+  "Time (min)","",c(0,240),c(0,5),
+  "麻酔記録テンプレート。バイタル+薬剤+手術イベントの多段時系列。","anesthesia,麻酔,記録,バイタル",
+  type="anesthesia_record"),
+
+# CT window
+D("radio-ct-window","radio","CT Hounsfield Unit Window","CTハンスフィールド値ウィンドウ表",
+  "","Hounsfield Units (HU)",c(0,8),c(-1100,2100),
+  "CTハンスフィールド値ウィンドウ表テンプレート。各組織のHU範囲表示。","ct,HU,ハンスフィールド,ウィンドウ",
+  type="ct_window"),
+
+# CNV plot
+D("path-cnv","path","Copy Number Variation Plot","コピー数変異プロット",
+  "Chromosome","Log2 Ratio",c(0,23),c(-2,2),
+  "コピー数変異プロットテンプレート。染色体位置別のCNV表示。","cnv,コピー数,変異,染色体",
+  type="cnv"),
+
+# Electrophoresis
+D("biochem-electrophoresis","biochem","Protein Electrophoresis","タンパク質電気泳動",
+  "Migration","Density",c(0,7),c(0,1),
+  "タンパク質電気泳動テンプレート。血清蛋白分画のバンドパターン。","electrophoresis,電気泳動,蛋白分画,アルブミン",
+  type="electrophoresis"),
+D("immuno-electrophoresis","immuno","Immunoelectrophoresis Pattern","免疫電気泳動パターン",
+  "Migration","Density",c(0,7),c(0,1),
+  "免疫電気泳動パターンテンプレート。M蛋白の検出。","immunoelectrophoresis,免疫電気泳動,M蛋白,骨髄腫",
+  type="electrophoresis"),
+
+# Isobologram
+D("pharm-isobologram","pharm","Isobologram","アイソボログラム",
+  "Drug A Dose","Drug B Dose",c(0,100),c(0,100),
+  "アイソボログラムテンプレート。薬物相互作用の等効果線図。","isobologram,アイソボログラム,相互作用,相乗",
+  type="isobologram"),
+
+# Schild plot
+D("pharm-schild","pharm","Schild Plot","シルドプロット",
+  "log[Antagonist]","log(DR - 1)",c(-9,-4),c(-1,3),
+  "シルドプロットテンプレート。拮抗薬のpA2値決定。","schild,シルド,拮抗薬,pA2,用量比",
+  type="schild"),
+
+# Henderson-Hasselbalch
+D("biochem-hh-diagram","biochem","Henderson-Hasselbalch Diagram","ヘンダーソン-ハッセルバルヒ図",
+  "pH","[A-]/[HA]",c(0,14),c(0,100),
+  "ヘンダーソン-ハッセルバルヒ図テンプレート。緩衝液のpH-pKa関係。","henderson-hasselbalch,緩衝液,pH,pKa",
+  type="hh_diagram"),
+D("chem-hh-diagram","chem","Clinical Henderson-Hasselbalch","臨床ヘンダーソン-ハッセルバルヒ図",
+  "pH","[A-]/[HA]",c(0,14),c(0,100),
+  "臨床ヘンダーソン-ハッセルバルヒ図テンプレート。臨床検査での酸塩基理解。","henderson-hasselbalch,pH,pKa,臨床検査",
+  type="hh_diagram"),
+
+# Galbraith
+D("stat-galbraith","stat","Galbraith Plot","ガルブレイスプロット",
+  "1/SE","z-score (ES/SE)",c(0,20),c(-4,4),
+  "ガルブレイスプロットテンプレート。メタ分析の精度評価。","galbraith,ガルブレイス,メタ分析,精度",
+  type="galbraith"),
+
+# L'Abbé
+D("stat-labbe","stat","L'Abbé Plot","ラベプロット",
+  "Control Event Rate","Treatment Event Rate",c(0,1),c(0,1),
+  "ラベプロットテンプレート。メタ分析のイベント率比較。","labbe,ラベ,メタ分析,イベント率",
+  type="labbe"),
+
+# Baujat
+D("stat-baujat","stat","Baujat Plot","ボジャットプロット",
+  "Contribution to Overall Result","Influence on Heterogeneity",c(0,10),c(0,10),
+  "ボジャットプロットテンプレート。メタ分析の異質性寄与評価。","baujat,ボジャット,メタ分析,異質性",
+  type="baujat"),
+
+# Deeks funnel
+D("stat-deeks-funnel","stat","Deeks Funnel Plot","ディークスファネルプロット",
+  "1/sqrt(ESS)","log Diagnostic OR",c(0,0.5),c(-3,6),
+  "ディークスファネルプロットテンプレート。診断メタ分析の出版バイアス検出。","deeks,ディークス,ファネル,出版バイアス",
+  type="deeks_funnel"),
+
+# Lexis
+D("epi-lexis","epi","Lexis Diagram","レクシスダイアグラム",
+  "Calendar Year","Age",c(1990,2020),c(0,100),
+  "レクシスダイアグラムテンプレート。年齢-期間-コホートの分析。","lexis,レクシス,年齢期間コホート,APC",
+  type="lexis"),
+
+# DAG
+D("epi-dag","epi","DAG (Causal Diagram)","DAG（因果ダイアグラム）",
+  "","",c(0,10),c(0,10),
+  "因果ダイアグラムテンプレート。交絡因子の有向非巡回グラフ。","dag,因果,交絡,有向非巡回",
+  type="dag"),
+D("stat-dag","stat","Statistical DAG","統計DAG（因果図）",
+  "","",c(0,10),c(0,10),
+  "統計DAGテンプレート。因果推論のための変数間関係図。","dag,因果,統計,因果推論",
+  type="dag"),
+
+# Vaccine schedule
+D("peds-vaccine-schedule","peds","Vaccination Schedule Chart","予防接種スケジュール表",
+  "Age (months)","",c(0,72),c(0.5,8.5),
+  "予防接種スケジュール表テンプレート。月齢別ワクチン接種時期の表示。","vaccine,予防接種,スケジュール,ワクチン",
+  type="vaccine_schedule"),
+
+# Denver
+D("peds-denver","peds","Denver Developmental Screening","デンバー発達スクリーニング",
+  "Age (months)","",c(0,72),c(0.5,4.5),
+  "デンバー発達スクリーニングテンプレート。発達マイルストーンの帯状チャート。","denver,デンバー,発達,スクリーニング,マイルストーン",
+  type="denver"),
+
+# Feedback loop
+D("endo-feedback-loop","endo","Hormone Feedback Loop","ホルモンフィードバックループ図",
+  "","",c(0,10),c(0,10),
+  "ホルモンフィードバックループ図テンプレート。視床下部-下垂体-末梢軸。","feedback,フィードバック,視床下部,下垂体,HPA",
+  type="feedback_loop"),
+D("physiol-feedback-loop","physiol","Endocrine Feedback Diagram","内分泌フィードバック図",
+  "","",c(0,10),c(0,10),
+  "内分泌フィードバック図テンプレート。ホルモン軸の正負フィードバック。","feedback,フィードバック,内分泌,生理学",
+  type="feedback_loop"),
+
+# PK compartment
+D("pharm-pk-compartment","pharm","PK Compartment Model","PKコンパートメントモデル図",
+  "","",c(0,10),c(0,6),
+  "PKコンパートメントモデル図テンプレート。薬物動態の分布モデル。","pk,コンパートメント,薬物動態,ADME",
+  type="pk_compartment"),
+
+# Scoring tables
+D("gi-child-pugh","gi","Child-Pugh Score Table","Child-Pughスコア表",
+  "","",c(0,4),c(0.5,5.5),
+  "Child-Pughスコア表テンプレート。肝硬変の重症度分類。","child-pugh,スコア,肝硬変,重症度",
+  type="scoring_table",xlb=c("Bilirubin","Albumin","PT/INR","Ascites","Encephalopathy")),
+D("obgyn-bishop","obgyn","Bishop Score Table","ビショップスコア表",
+  "","",c(0,4),c(0.5,5.5),
+  "ビショップスコア表テンプレート。頸管熟化度の評価。","bishop,ビショップ,スコア,頸管,分娩誘発",
+  type="scoring_table",xlb=c("Dilation","Effacement","Station","Consistency","Position")),
+D("emer-gcs","emer","Glasgow Coma Scale","グラスゴーコーマスケール",
+  "","",c(0,4),c(0.5,3.5),
+  "GCSスコア表テンプレート。意識レベルの標準的評価。","gcs,グラスゴー,意識,コーマ",
+  type="scoring_table",xlb=c("Eye","Verbal","Motor")),
+D("surg-asa","surg","ASA-PS Classification","ASA身体状態分類表",
+  "","",c(0,4),c(0.5,6.5),
+  "ASA身体状態分類表テンプレート。麻酔リスクの評価。","asa,ASA-PS,身体状態,麻酔リスク",
+  type="scoring_table",xlb=c("ASA I","ASA II","ASA III","ASA IV","ASA V","ASA VI")),
+
+# Disk diffusion
+D("micro-disk-diffusion","micro","Disk Diffusion Test","ディスク拡散法模式図",
+  "","",c(-6,6),c(-6,6),
+  "ディスク拡散法テンプレート。抗菌薬感受性検査の阻止円配置。","disk,ディスク,拡散法,感受性,阻止円",
+  type="disk_diffusion"),
+
+# Phylogenetic tree
+D("micro-phylogenetic","micro","Phylogenetic Tree","系統樹",
+  "Genetic Distance","",c(0,10),c(0,8),
+  "系統樹テンプレート。微生物の系統関係樹形図。","phylogenetic,系統樹,分子系統,進化",
+  type="phylogenetic"),
+D("path-phylogenetic","path","Molecular Phylogenetic Tree","分子系統樹",
+  "Genetic Distance","",c(0,10),c(0,8),
+  "分子系統樹テンプレート。腫瘍クローン進化の系統解析。","phylogenetic,系統樹,クローン進化,分子",
+  type="phylogenetic"),
+
+# Westgard rules
+D("chem-westgard","chem","Westgard Rules QC Chart","ウエストガードルールQC管理図",
+  "Run Number","SD Units",c(1,30),c(-4,4),
+  "ウエストガードルールQC管理図テンプレート。QCルール判定の視覚化。","westgard,ウエストガード,QC,管理図,精度管理",
+  type="westgard"),
+
+# Interference experiment
+D("chem-interference","chem","Interference Experiment","干渉実験図",
+  "Interferent Concentration","% Recovery",c(0,100),c(70,130),
+  "干渉実験図テンプレート。干渉物質の影響を示す回帰図。","interference,干渉,回復率,臨床検査",
+  type="interference")
 
 ) # END TEMPLATES list
 
