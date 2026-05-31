@@ -2175,6 +2175,450 @@ make_interference <- function(t, style, lang) {
   p+make_theme(style)+theme(panel.grid.minor=element_blank())
 }
 
+# ── Oxygen Dissociation Curve ──
+make_oxy_dissociation <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "PaO2 (mmHg)"; yl <- if(lang=="none") "" else "SpO2 (%)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,120),breaks=seq(0,120,20),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,100),breaks=seq(0,100,10),expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(50,90),linetype="dotted",color=C$gc,linewidth=0.2)+
+    geom_vline(xintercept=c(27,60),linetype="dotted",color=C$gc,linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("point",x=27,y=50,color="#e74c3c",size=2)+
+      annotate("text",x=30,y=45,label="P50 = 27 mmHg",color="#e74c3c",size=2,hjust=0)+
+      annotate("text",x=90,y=60,label="Right shift:\npH↓, T↑, CO2↑\n2,3-DPG↑",color="#3498db",size=2)+
+      annotate("text",x=10,y=85,label="Left shift:\npH↑, T↓, CO2↓\nfetal Hb, CO",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Frank-Starling Curve ──
+make_frank_starling <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Preload (LVEDV)"; yl <- if(lang=="none") "" else "Cardiac Output / Stroke Volume"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,300),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,15),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=250,y=13,label="Sympathetic\nstimulation",color="#2ecc71",size=2.5)+
+      annotate("text",x=250,y=8,label="Normal",color="#3498db",size=2.5)+
+      annotate("text",x=250,y=4,label="Heart failure",color="#e74c3c",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Action Potential ──
+make_action_potential <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time (ms)"; yl <- if(lang=="none") "" else "Membrane Potential (mV)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(-70,0,30),linetype=c("dashed","dotted","dotted"),color=c("#e74c3c",C$gc,C$gc),linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.85,y=-75,label="RMP ≈ -70mV",color="#e74c3c",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.15,y=yr[2]*0.9,label="0: Depol.",color="grey50",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.3,y=yr[2]*0.7,label="1: Early\nRepol.",color="grey50",size=1.8)+
+      annotate("text",x=xr[1]+diff(xr)*0.5,y=yr[2]*0.3,label="2: Plateau",color="grey50",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.7,y=-30,label="3: Repol.",color="grey50",size=2)+
+      annotate("text",x=xr[2]*0.9,y=-60,label="4: Rest",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Starling Forces (Capillary Exchange) ──
+make_starling_forces <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name=if(lang=="none") "" else "Pressure (mmHg)",limits=c(-10,45),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("rect",xmin=1,xmax=4.5,ymin=0,ymax=35,fill="#e74c3c",alpha=0.1)+
+      annotate("rect",xmin=5.5,xmax=9,ymin=0,ymax=15,fill="#3498db",alpha=0.1)+
+      annotate("text",x=2.75,y=40,label="Arteriolar End",color="#e74c3c",size=2.5,fontface="bold")+
+      annotate("text",x=7.25,y=40,label="Venular End",color="#3498db",size=2.5,fontface="bold")+
+      annotate("text",x=2.75,y=32,label="Pc = 35",color="#e74c3c",size=2)+
+      annotate("text",x=7.25,y=12,label="Pc = 15",color="#3498db",size=2)+
+      geom_hline(yintercept=25,linetype="dashed",color="#9b59b6",linewidth=0.4)+
+      annotate("text",x=9.5,y=26,label="πc = 25",color="#9b59b6",size=2,hjust=1)+
+      annotate("text",x=2.75,y=-5,label="Net: Filtration",color="#e74c3c",size=2,fontface="bold")+
+      annotate("text",x=7.25,y=-5,label="Net: Absorption",color="#3498db",size=2,fontface="bold")
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── Renal Clearance Curves ──
+make_renal_clearance <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Plasma Concentration (mg/dL)"; yl <- if(lang=="none") "" else "Rate (mg/min)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,600),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,800),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=500,y=750,label="Filtered",color="#3498db",size=2.5)+
+      annotate("text",x=500,y=350,label="Excreted",color="#e74c3c",size=2.5)+
+      annotate("text",x=300,y=150,label="Reabsorbed",color="#2ecc71",size=2.5)+
+      annotate("text",x=150,y=250,label="Tm",color="#f39c12",size=2.5,fontface="bold")+
+      geom_vline(xintercept=200,linetype="dotted",color="#f39c12",linewidth=0.3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Compliance Curve (P-V Hysteresis) ──
+make_compliance <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Transpulmonary Pressure (cmH2O)"; yl <- if(lang=="none") "" else "Volume (L)"
+  p <- p+scale_x_continuous(name=xl,limits=c(-5,30),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,6),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=20,y=5,label="Inflation",color="#e74c3c",size=2.5)+
+      annotate("text",x=8,y=3.5,label="Deflation",color="#3498db",size=2.5)+
+      annotate("text",x=15,y=1,label="Hysteresis",color="grey50",size=2,fontface="italic")+
+      annotate("text",x=25,y=3,label="(surfactant\neffect)",color="grey50",size=1.8)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Wiggers Diagram (Cardiac Cycle) ──
+make_wiggers <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (sec)",limits=c(0,0.8),breaks=seq(0,0.8,0.1),expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,6),breaks=NULL,expand=c(0,0))
+  for(y in 1:5) p <- p+geom_hline(yintercept=y,color=C$gc,linewidth=0.2)
+  if(lang!="none"){
+    panels <- c("ECG","Heart Sounds","Aortic Pressure","Ventricular\nPressure","Ventricular\nVolume")
+    ys <- c(5.5,4.5,3.5,2.5,0.5)
+    cols <- c("#2ecc71","#9b59b6","#e74c3c","#3498db","#f39c12")
+    for(i in 1:5) p <- p+annotate("text",x=0.02,y=ys[i]+0.4,label=panels[i],color=cols[i],size=1.8,hjust=0,fontface="bold",lineheight=0.8)
+    p <- p+geom_vline(xintercept=c(0.1,0.38,0.48),linetype="dotted",color="grey70",linewidth=0.2)+
+      annotate("text",x=0.24,y=5.9,label="Systole",color="grey50",size=2)+
+      annotate("text",x=0.6,y=5.9,label="Diastole",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── JVP Waveform ──
+make_jvp <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time"; yl <- if(lang=="none") "" else "JVP (cmH2O)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  if(lang!="none"){
+    xs <- xr[1]+diff(xr)*c(0.08,0.18,0.3,0.42,0.55)
+    p <- p+annotate("text",x=xs[1],y=yr[2]*0.9,label="a",color="#e74c3c",size=3,fontface="bold")+
+      annotate("text",x=xs[2],y=yr[1]+diff(yr)*0.3,label="x",color="#3498db",size=3,fontface="bold")+
+      annotate("text",x=xs[3],y=yr[2]*0.7,label="c",color="#e74c3c",size=3,fontface="bold")+
+      annotate("text",x=xs[4],y=yr[2]*0.85,label="v",color="#e74c3c",size=3,fontface="bold")+
+      annotate("text",x=xs[5],y=yr[1]+diff(yr)*0.25,label="y",color="#3498db",size=3,fontface="bold")+
+      annotate("text",x=xr[1]+diff(xr)*0.85,y=yr[2]*0.9,label="a=atrial\nc=tricuspid\nv=venous filling\nx,y=descents",color="grey50",size=1.5,lineheight=0.9)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Phonocardiogram ──
+make_phonocardiogram <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (sec)",limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=if(lang=="none") "" else "Amplitude",limits=c(-1,1),expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    cycle <- diff(xr)/2
+    for(i in 0:1){
+      s1x <- xr[1]+i*cycle+cycle*0.05
+      s2x <- xr[1]+i*cycle+cycle*0.45
+      p <- p+annotate("rect",xmin=s1x-cycle*0.02,xmax=s1x+cycle*0.02,ymin=-0.8,ymax=0.8,fill="#e74c3c",alpha=0.3)+
+        annotate("text",x=s1x,y=-0.95,label="S1",color="#e74c3c",size=2.5,fontface="bold")+
+        annotate("rect",xmin=s2x-cycle*0.015,xmax=s2x+cycle*0.015,ymin=-0.6,ymax=0.6,fill="#3498db",alpha=0.3)+
+        annotate("text",x=s2x,y=-0.95,label="S2",color="#3498db",size=2.5,fontface="bold")+
+        annotate("text",x=(s1x+s2x)/2,y=0.95,label="Systole",color="grey50",size=2)
+    }
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── CO2 Dissociation Curve ──
+make_co2_dissociation <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "PCO2 (mmHg)"; yl <- if(lang=="none") "" else "CO2 Content (mL/dL)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,80),breaks=seq(0,80,10),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,70),expand=c(0,0))
+  p <- p+geom_vline(xintercept=c(40,46),linetype="dotted",color=C$gc,linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("text",x=60,y=55,label="Reduced Hb\n(venous)",color="#3498db",size=2.5)+
+      annotate("text",x=60,y=40,label="Oxygenated Hb\n(arterial)",color="#e74c3c",size=2.5)+
+      annotate("text",x=35,y=10,label="Haldane\nEffect",color="grey50",size=2,fontface="italic")+
+      annotate("segment",x=40,xend=46,y=48,yend=52,arrow=arrow(length=unit(0.08,"in"),ends="both"),color="#9b59b6",linewidth=0.3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Log Dose-Response Curve ──
+make_dose_response <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- c(0,100)
+  xl <- if(lang=="none") "" else "log [Drug]"; yl <- if(lang=="none") "" else "% Maximum Response"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,breaks=seq(0,100,25),expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(50,100),linetype="dotted",color=C$gc,linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.9,y=95,label="Emax",color="#e74c3c",size=2.5,hjust=1)+
+      annotate("text",x=mean(xr),y=55,label="EC50",color="#3498db",size=2.5)+
+      annotate("segment",x=mean(xr),xend=mean(xr),y=0,yend=50,linetype="dashed",color="#3498db",linewidth=0.3)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── ADME PK Timeline ──
+make_adme <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  xl <- if(lang=="none") "" else "Time (hours)"; yl <- if(lang=="none") "" else "Plasma Concentration"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1),expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(0.3,0.8),linetype="dashed",color=c("#2ecc71","#e74c3c"),linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.9,y=0.85,label="Toxic level",color="#e74c3c",size=2,hjust=1)+
+      annotate("text",x=xr[2]*0.9,y=0.35,label="MEC",color="#2ecc71",size=2,hjust=1)+
+      annotate("rect",xmin=xr[1],xmax=xr[2],ymin=0.3,ymax=0.8,fill="#3498db",alpha=0.03)+
+      annotate("text",x=xr[2]*0.9,y=0.55,label="Therapeutic\nwindow",color="#3498db",size=2,hjust=1)+
+      annotate("text",x=xr[1]+diff(xr)*0.15,y=0.15,label="Absorption",color="#f39c12",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.55,y=0.15,label="Elimination",color="#9b59b6",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Coagulation Cascade ──
+make_coagulation <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,10),breaks=NULL,expand=c(0,0))
+  if(lang!="none"){
+    box <- function(p,x,y,lab,col) p+annotate("rect",xmin=x-1,xmax=x+1,ymin=y-0.35,ymax=y+0.35,fill="white",color=col,linewidth=0.3)+annotate("text",x=x,y=y,label=lab,color=col,size=2)
+    p <- box(p,2.5,9,"Intrinsic\n(XII→XI→IX→VIII)","#3498db")
+    p <- box(p,7.5,9,"Extrinsic\n(TF + VII)","#e74c3c")
+    p <- box(p,5,6,"Factor X → Xa","#9b59b6")
+    p <- box(p,5,4,"Prothrombin → Thrombin","#f39c12")
+    p <- box(p,5,2,"Fibrinogen → Fibrin","#2ecc71")
+    p <- p+annotate("segment",x=2.5,xend=5,y=8.65,yend=6.35,arrow=arrow(length=unit(0.08,"in")),color="#3498db",linewidth=0.3)+
+      annotate("segment",x=7.5,xend=5,y=8.65,yend=6.35,arrow=arrow(length=unit(0.08,"in")),color="#e74c3c",linewidth=0.3)+
+      annotate("segment",x=5,xend=5,y=5.65,yend=4.35,arrow=arrow(length=unit(0.08,"in")),color="#9b59b6",linewidth=0.3)+
+      annotate("segment",x=5,xend=5,y=3.65,yend=2.35,arrow=arrow(length=unit(0.08,"in")),color="#f39c12",linewidth=0.3)+
+      annotate("text",x=5,y=7.3,label="Common\nPathway",color="grey50",size=2,fontface="italic",lineheight=0.8)+
+      annotate("text",x=2,y=7,label="aPTT",color="#3498db",size=2)+
+      annotate("text",x=8,y=7,label="PT/INR",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+sptheme(style,C)
+}
+
+# ── NCV Waveform ──
+make_ncv <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time (ms)"; yl <- if(lang=="none") "" else "Amplitude (mV)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("segment",x=xr[1]+diff(xr)*0.1,xend=xr[1]+diff(xr)*0.1,y=yr[1]*0.8,yend=yr[2]*0.5,linetype="dashed",color="#f39c12",linewidth=0.3)+
+      annotate("text",x=xr[1]+diff(xr)*0.1,y=yr[1]*0.9,label="Onset\nLatency",color="#f39c12",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.3,y=yr[2]*0.9,label="Amplitude",color="#e74c3c",size=2)+
+      annotate("segment",x=xr[1]+diff(xr)*0.3,xend=xr[1]+diff(xr)*0.3,y=yr[1]*0.5,yend=yr[2]*0.7,color="#e74c3c",linewidth=0.3,arrow=arrow(length=unit(0.06,"in"),ends="both"))+
+      annotate("text",x=xr[2]*0.7,y=yr[1]*0.5,label="Duration",color="#3498db",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Cumulative Incidence (Competing Risk) ──
+make_cumulative_incidence <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  xl <- if(lang=="none") "" else "Time"; yl <- if(lang=="none") "" else "Cumulative Incidence"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,1),breaks=seq(0,1,0.2),expand=c(0,0))
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.7,y=0.7,label="Event of\ninterest",color="#e74c3c",size=2.5)+
+      annotate("text",x=xr[2]*0.7,y=0.3,label="Competing\nrisk",color="#3498db",size=2.5)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Cell Survival Curve (Radiation) ──
+make_cell_survival <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Dose (Gy)"; yl <- if(lang=="none") "" else "Surviving Fraction (log)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,12),breaks=seq(0,12,2),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-4,0),breaks=-4:0,labels=c("0.0001","0.001","0.01","0.1","1"),expand=c(0,0))
+  p <- p+geom_hline(yintercept=-1,linetype="dotted",color=C$gc,linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("text",x=3,y=-0.5,label="Shoulder\n(repair)",color="#2ecc71",size=2)+
+      annotate("text",x=9,y=-3,label="Exponential\n(lethal)",color="#e74c3c",size=2)+
+      annotate("text",x=8,y=-0.5,label="LQ model:\nS = exp(-αD - βD²)",color="grey50",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Fever Pattern ──
+make_fever_pattern <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  xl <- if(lang=="none") "" else "Day"; yl <- if(lang=="none") "" else "Temperature (°C)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,breaks=seq(xr[1],xr[2],1),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(36,41),breaks=seq(36,41,0.5),expand=c(0,0))
+  p <- p+geom_hline(yintercept=37,linetype="dashed",color="#2ecc71",linewidth=0.3)+
+    geom_hline(yintercept=38.3,linetype="dotted",color="#f39c12",linewidth=0.2)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]-0.5,y=37.2,label="Normal",color="#2ecc71",size=2,hjust=1)+
+      annotate("text",x=xr[2]-0.5,y=38.5,label="Fever",color="#f39c12",size=2,hjust=1)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Waterfall Plot ──
+make_waterfall <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  n <- if(!is.null(t$xr)) as.numeric(t$xr)[2] else 30
+  xl <- if(lang=="none") "" else "Patient"; yl <- if(lang=="none") "" else "Best % Change from Baseline"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,n+1),breaks=NULL,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-100,60),breaks=seq(-100,60,20),expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(-30,20),linetype="dashed",color=c("#2ecc71","#e74c3c"),linewidth=0.3)+
+    geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=n*0.9,y=-35,label="PR (−30%)",color="#2ecc71",size=2,hjust=1)+
+      annotate("text",x=n*0.9,y=25,label="PD (+20%)",color="#e74c3c",size=2,hjust=1)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Spider Plot (Individual Trajectories) ──
+make_spider <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr)
+  xl <- if(lang=="none") "" else "Time (weeks)"; yl <- if(lang=="none") "" else "% Change from Baseline"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(-100,100),breaks=seq(-100,100,25),expand=c(0,0))
+  p <- p+geom_hline(yintercept=c(-30,0,20),linetype=c("dashed","solid","dashed"),color=c("#2ecc71",C$gc,"#e74c3c"),linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=xr[2]*0.9,y=-35,label="PR",color="#2ecc71",size=2)+
+      annotate("text",x=xr[2]*0.9,y=25,label="PD",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── Q-Q Plot ──
+make_qq <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "Theoretical Quantiles"; yl <- if(lang=="none") "" else "Sample Quantiles"
+  rng <- as.numeric(t$xr)
+  p <- p+scale_x_continuous(name=xl,limits=rng,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=rng,expand=c(0,0))
+  p <- p+annotate("segment",x=rng[1],xend=rng[2],y=rng[1],yend=rng[2],color="#e74c3c",linewidth=0.5,linetype="dashed")
+  if(lang!="none"){
+    p <- p+annotate("text",x=rng[2]*0.7,y=rng[1]+diff(rng)*0.15,label="Reference line\n(normal distribution)",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank(),aspect.ratio=1)
+}
+
+# ── Partogram ──
+make_partogram <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  p <- p+scale_x_continuous(name=if(lang=="none") "" else "Time (hours)",limits=c(0,16),breaks=0:16,expand=c(0,0))+
+    scale_y_continuous(name="",limits=c(0,2),breaks=NULL,expand=c(0,0))
+  p <- p+geom_hline(yintercept=1,color=C$gc,linewidth=0.5)
+  if(lang!="none"){
+    p <- p+annotate("text",x=0.3,y=1.7,label="Cervical Dilation (cm)",color="#e74c3c",size=2,hjust=0,fontface="bold")+
+      annotate("text",x=0.3,y=0.3,label="Descent (station)",color="#3498db",size=2,hjust=0,fontface="bold")
+    for(d in seq(0,10,2)) p <- p+annotate("text",x=0.1,y=1+d/20,label=d,color="grey50",size=1.5)
+    p <- p+annotate("segment",x=4,xend=10,y=1.1,yend=1.5,linetype="dashed",color="#f39c12",linewidth=0.3)+
+      annotate("text",x=7,y=1.55,label="Alert line",color="#f39c12",size=2)+
+      annotate("segment",x=8,xend=14,y=1.1,yend=1.5,linetype="dashed",color="#e74c3c",linewidth=0.3)+
+      annotate("text",x=11,y=1.55,label="Action line",color="#e74c3c",size=2)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid=element_blank())
+}
+
+# ── ERG (Electroretinogram) ──
+make_erg <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Time (ms)"; yl <- if(lang=="none") "" else "Amplitude (µV)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)+
+    geom_vline(xintercept=0,linetype="dashed",color="#f39c12",linewidth=0.3)
+  if(lang!="none"){
+    p <- p+annotate("text",x=0,y=yr[2]*0.9,label="Flash",color="#f39c12",size=2)+
+      annotate("text",x=xr[1]+diff(xr)*0.15,y=yr[1]*0.7,label="a-wave",color="#e74c3c",size=2.5,fontface="bold")+
+      annotate("text",x=xr[1]+diff(xr)*0.35,y=yr[2]*0.7,label="b-wave",color="#3498db",size=2.5,fontface="bold")
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
+# ── ABR (Auditory Brainstem Response) ──
+make_abr <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xr <- as.numeric(t$xr); yr <- as.numeric(t$yr)
+  xl <- if(lang=="none") "" else "Latency (ms)"; yl <- if(lang=="none") "" else "Amplitude (µV)"
+  p <- p+scale_x_continuous(name=xl,limits=xr,expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=yr,expand=c(0,0))
+  p <- p+geom_hline(yintercept=0,color=C$gc,linewidth=0.3)
+  if(lang!="none"){
+    waves <- c("I","II","III","IV","V")
+    lats <- c(1.5,2.5,3.5,4.8,5.5)
+    sites <- c("AN","CN","SOC","LL","IC")
+    for(i in 1:5){
+      p <- p+annotate("text",x=lats[i],y=yr[2]*0.85,label=waves[i],color="#e74c3c",size=3,fontface="bold")+
+        annotate("text",x=lats[i],y=yr[2]*0.6,label=paste0("(",sites[i],")"),color="grey50",size=1.5)
+      p <- p+geom_vline(xintercept=lats[i],linetype="dotted",color=C$gc,linewidth=0.1)
+    }
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
 # ── Plot Generator ──
 # lang: "en" = English labels, "ja" = Japanese title, "none" = no text
 make_plot <- function(t, style = "standard", lang = "en") {
@@ -2224,6 +2668,18 @@ make_plot <- function(t, style = "standard", lang = "en") {
     pk_compartment=make_pk_compartment(t,style,lang), scoring_table=make_scoring_table(t,style,lang),
     disk_diffusion=make_disk_diffusion(t,style,lang), phylogenetic=make_phylogenetic(t,style,lang),
     westgard=make_westgard(t,style,lang), interference=make_interference(t,style,lang),
+    oxy_dissociation=make_oxy_dissociation(t,style,lang), frank_starling=make_frank_starling(t,style,lang),
+    action_potential=make_action_potential(t,style,lang), starling_forces=make_starling_forces(t,style,lang),
+    renal_clearance=make_renal_clearance(t,style,lang), compliance=make_compliance(t,style,lang),
+    wiggers=make_wiggers(t,style,lang), jvp=make_jvp(t,style,lang),
+    phonocardiogram=make_phonocardiogram(t,style,lang), co2_dissociation=make_co2_dissociation(t,style,lang),
+    dose_response=make_dose_response(t,style,lang), adme=make_adme(t,style,lang),
+    coagulation=make_coagulation(t,style,lang), ncv=make_ncv(t,style,lang),
+    cumulative_incidence=make_cumulative_incidence(t,style,lang), cell_survival=make_cell_survival(t,style,lang),
+    fever_pattern=make_fever_pattern(t,style,lang), waterfall=make_waterfall(t,style,lang),
+    spider=make_spider(t,style,lang), qq=make_qq(t,style,lang),
+    partogram=make_partogram(t,style,lang), erg=make_erg(t,style,lang),
+    abr=make_abr(t,style,lang),
     make_radar(t,style,lang)))
 
   empty <- data.frame(x = numeric(0), y = numeric(0))
