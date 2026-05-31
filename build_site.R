@@ -1805,14 +1805,16 @@ make_anesthesia_record <- function(t, style, lang) {
 # ── CT Window Table ──
 make_ct_window <- function(t, style, lang) {
   C <- spcols(style)
-  tissues <- if(lang=="none") rep("",8) else c("Air","Fat","Water","Muscle","Blood","Bone","Metal","Calcium")
+  tissue_names <- c("Air","Fat","Water","Muscle","Blood","Bone","Metal","Calcium")
+  tissues <- if(lang=="none") paste0(" ",seq_along(tissue_names)) else tissue_names
   hu_min <- c(-1000,-120,0,30,30,400,1000,100)
   hu_max <- c(-900,-60,0,60,70,2000,4000,300)
   n <- length(tissues)
   df <- data.frame(tissue=factor(tissues,levels=rev(tissues)),ymin=hu_min,ymax=hu_max,x=1)
   p <- ggplot(df,aes(xmin=0.5,xmax=1.5,ymin=ymin,ymax=ymax))+geom_rect(fill="#3498db",alpha=0.3,color="#3498db",linewidth=0.3)
+  show_labels <- if(lang=="none") rep("",n) else tissues
   p <- p+scale_y_continuous(name=if(lang=="none") "" else "Hounsfield Units (HU)",limits=c(-1100,2100),expand=c(0,0))+
-    scale_x_continuous(name="",limits=c(0,n+0.5),breaks=1:n,labels=tissues,expand=c(0,0))
+    scale_x_continuous(name="",limits=c(0,n+0.5),breaks=1:n,labels=show_labels,expand=c(0,0))
   p <- p+coord_flip()
   tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
   p+make_theme(style)+theme(panel.grid.minor=element_blank())
