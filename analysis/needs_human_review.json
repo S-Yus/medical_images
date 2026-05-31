@@ -366,12 +366,6 @@
     "detail": "Description only 26 chars"
   },
   {
-    "id": "visual-field",
-    "en": "Visual Field (Perimetry)",
-    "reason": "very_short_description",
-    "detail": "Description only 25 chars"
-  },
-  {
     "id": "iop",
     "en": "Intraocular Pressure",
     "reason": "very_short_description",
@@ -516,18 +510,6 @@
     "detail": "Description only 29 chars"
   },
   {
-    "id": "visual-field",
-    "en": "Goldmann Visual Field",
-    "reason": "very_short_description",
-    "detail": "Description only 25 chars"
-  },
-  {
-    "id": "qq-plot",
-    "en": "Q-Q Plot",
-    "reason": "very_short_description",
-    "detail": "Description only 29 chars"
-  },
-  {
     "id": "control-chart",
     "en": "Shewhart Control Chart",
     "reason": "very_short_description",
@@ -642,12 +624,6 @@
     "detail": "Description only 27 chars"
   },
   {
-    "id": "dose-response-graded",
-    "en": "Graded Dose-Response",
-    "reason": "very_short_description",
-    "detail": "Description only 27 chars"
-  },
-  {
     "id": "mic-distribution",
     "en": "MIC Distribution",
     "reason": "very_short_description",
@@ -680,12 +656,6 @@
   {
     "id": "eeg-grid",
     "en": "EEG Grid Template",
-    "reason": "very_short_description",
-    "detail": "Description only 27 chars"
-  },
-  {
-    "id": "bishop-score",
-    "en": "Bishop Score Chart",
     "reason": "very_short_description",
     "detail": "Description only 27 chars"
   },
@@ -748,5 +718,959 @@
     "en": "Melting Curve",
     "reason": "very_short_description",
     "detail": "Description only 26 chars"
+  },
+  {
+    "id": "bp-comparison-box",
+    "en": "Blood Pressure by Treatment (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "roc-troponin",
+    "en": "Troponin ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "bar-valve-gradient",
+    "en": "Valve Gradient Comparison",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "fev1-comparison-box",
+    "en": "FEV1 by Disease (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "radar-copd-assess",
+    "en": "COPD Assessment Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "km-lung-cancer",
+    "en": "Lung Cancer Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 19 chars"
+  },
+  {
+    "id": "radar-ckd",
+    "en": "CKD Complication Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "km-transplant",
+    "en": "Renal Transplant Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 20 chars"
+  },
+  {
+    "id": "hba1c-comparison-box",
+    "en": "HbA1c by Treatment (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-dm-complication",
+    "en": "DM Complication-Free Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 21 chars"
+  },
+  {
+    "id": "liver-enzyme-box",
+    "en": "Liver Enzymes by Disease (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "km-hcc",
+    "en": "HCC Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 21 chars"
+  },
+  {
+    "id": "forest-ppi",
+    "en": "PPI Efficacy Meta-analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radar-bleeding",
+    "en": "Bleeding Assessment Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "km-leukemia",
+    "en": "Leukemia Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 19 chars"
+  },
+  {
+    "id": "forest-anticoag",
+    "en": "Anticoagulant Meta-analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "birthweight-box",
+    "en": "Birth Weight by GA (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-cervical",
+    "en": "Cervical Cancer Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 21 chars"
+  },
+  {
+    "id": "height-comparison-box",
+    "en": "Height by Age Group (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "heatmap-vaccine-status",
+    "en": "Vaccination Status Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "km-childhood-cancer",
+    "en": "Childhood Cancer Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "roc-sepsis-pediatric",
+    "en": "Pediatric Sepsis ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "km-glioma",
+    "en": "Glioma Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "rom-comparison-box",
+    "en": "ROM by Joint (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "heatmap-pain-location",
+    "en": "Pain Location Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "km-arthroplasty",
+    "en": "Joint Replacement Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "forest-fracture-fix",
+    "en": "Fracture Fixation Meta-analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "iop-comparison-box",
+    "en": "IOP by Glaucoma Type (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "heatmap-oct",
+    "en": "OCT Layer Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radar-visual-function",
+    "en": "Visual Function Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "km-retinal",
+    "en": "Retinal Detachment Outcome",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "phq9-comparison-box",
+    "en": "PHQ-9 by Treatment (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "heatmap-symptom-psych",
+    "en": "Psychiatric Symptom Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-schizophrenia",
+    "en": "Schizophrenia Relapse-Free",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "lactate-comparison-box",
+    "en": "Lactate by Severity (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "heatmap-trauma-injury",
+    "en": "Trauma Injury Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-trauma",
+    "en": "Trauma Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 20 chars"
+  },
+  {
+    "id": "operative-time-box",
+    "en": "Operative Time by Procedure (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "km-surgery-outcome",
+    "en": "Surgical Outcome Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 17 chars"
+  },
+  {
+    "id": "forest-surgical",
+    "en": "Surgical Technique Meta-analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "hounsfield-comparison-box",
+    "en": "Hounsfield by Tissue (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "radar-image-quality",
+    "en": "Image Quality Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "roc-lesion",
+    "en": "Lesion Detection ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "pasi-comparison-box",
+    "en": "PASI by Treatment (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "heatmap-patch-test",
+    "en": "Patch Test Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-melanoma",
+    "en": "Melanoma Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "roc-dermoscopy",
+    "en": "Dermoscopy ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "hearing-comparison-box",
+    "en": "Hearing Level by Frequency (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "heatmap-vestibular",
+    "en": "Vestibular Test Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "km-head-neck",
+    "en": "Head & Neck Cancer Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 16 chars"
+  },
+  {
+    "id": "roc-hearing-screen",
+    "en": "Hearing Screening ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "psa-comparison-box",
+    "en": "PSA by Diagnosis (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "km-prostate",
+    "en": "Prostate Cancer Survival",
+    "reason": "very_short_description",
+    "detail": "Description only 20 chars"
+  },
+  {
+    "id": "roc-psa",
+    "en": "PSA Diagnostic ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "mic-comparison-box",
+    "en": "MIC by Antibiotic (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "radar-infection-control",
+    "en": "Infection Control Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "forest-antibiotic",
+    "en": "Antibiotic Efficacy Meta-analysis",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ig-comparison-box",
+    "en": "Immunoglobulin by Disease (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radar-immune-status",
+    "en": "Immune Status Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "enzyme-activity-box",
+    "en": "Enzyme Activity by Condition (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "heatmap-metabolic",
+    "en": "Metabolic Pathway Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "cardiac-output-box",
+    "en": "Cardiac Output by State (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "drug-efficacy-box",
+    "en": "Drug Efficacy Comparison (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 22 chars"
+  },
+  {
+    "id": "prevalence-comparison-box",
+    "en": "Prevalence by Region (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "lab-comparison-box",
+    "en": "Lab Values by Condition (Boxplot)",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "heatmap-lab-panel",
+    "en": "Lab Panel Heatmap",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "roc-lab-marker",
+    "en": "Lab Marker Diagnostic ROC",
+    "reason": "very_short_description",
+    "detail": "Description only 23 chars"
+  },
+  {
+    "id": "scatter-reg-generic",
+    "en": "Scatter with Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "immuno-binding-curve",
+    "en": "Antibody Binding Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "epi-incidence-bar",
+    "en": "Incidence Rate Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "biochem-conc-scatter",
+    "en": "Concentration Scatter Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "biochem-enzyme-dot",
+    "en": "Enzyme Activity Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "physiol-length-tension-curve",
+    "en": "Length-Tension Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "physiol-bp-histogram",
+    "en": "Blood Pressure Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "physiol-electrolyte-dot",
+    "en": "Electrolyte Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "micro-zone-histogram",
+    "en": "Inhibition Zone Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "micro-organism-dot",
+    "en": "Organism Isolation Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "chem-method-scatter",
+    "en": "Method Comparison Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "chem-analyte-bar",
+    "en": "Analyte Concentration Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "chem-result-histogram",
+    "en": "Lab Result Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "chem-assay-calibration",
+    "en": "Assay Calibration Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "chem-reagent-scatter-reg",
+    "en": "Reagent Lot Scatter Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "path-staining-curve",
+    "en": "Staining Intensity Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "path-tumor-type-bar",
+    "en": "Tumor Type Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "path-grade-histogram",
+    "en": "Pathological Grade Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "pharm-dose-efficacy-scatter-reg",
+    "en": "Dose-Efficacy Scatter Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "cardio-valve-bar",
+    "en": "Valve Disease Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "cardio-hr-histogram",
+    "en": "Heart Rate Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "neuro-recovery-curve",
+    "en": "Neurological Recovery Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "neuro-volume-scatter",
+    "en": "Brain Volume Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "endo-dm-complication-bar",
+    "en": "DM Complication Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "endo-dm-nomogram",
+    "en": "DM Complication Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "gi-motility-curve",
+    "en": "GI Motility Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "gi-fibrosis-scatter",
+    "en": "Fibrosis Score Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "gi-etiology-bar",
+    "en": "Liver Disease Etiology Bar",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "gi-alt-histogram",
+    "en": "ALT Distribution Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "gi-cirrhosis-nomogram",
+    "en": "Cirrhosis Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 24 chars"
+  },
+  {
+    "id": "gi-liver-enzyme-dot",
+    "en": "Liver Enzyme Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "hemato-blood-type-bar",
+    "en": "Blood Type Distribution Bar",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "hemato-hb-histogram",
+    "en": "Hemoglobin Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "hemato-cbc-dot",
+    "en": "CBC Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "nephro-gfr-decline-curve",
+    "en": "GFR Decline Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "nephro-cr-bun-scatter",
+    "en": "Cr vs BUN Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "nephro-electrolyte-violin",
+    "en": "Electrolyte Violin",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "nephro-cr-histogram",
+    "en": "Creatinine Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "nephro-urine-dot",
+    "en": "Urinalysis Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "obgyn-hcg-curve",
+    "en": "hCG Rise Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "obgyn-delivery-bar",
+    "en": "Delivery Mode Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "obgyn-bw-histogram",
+    "en": "Birth Weight Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "peds-bmi-scatter",
+    "en": "BMI-Age Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "peds-weight-histogram",
+    "en": "Weight Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "peds-risk-nomogram",
+    "en": "Pediatric Risk Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "peds-risk-calibration",
+    "en": "Pediatric Risk Calibration",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ortho-healing-curve",
+    "en": "Fracture Healing Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ortho-fracture-bar",
+    "en": "Fracture Site Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ortho-frax-nomogram",
+    "en": "FRAX Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "ortho-oa-calibration",
+    "en": "OA Progression Calibration",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "psych-remission-curve",
+    "en": "Remission Rate Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "psych-symptom-scatter",
+    "en": "Symptom Severity Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "psych-diagnosis-bar",
+    "en": "Diagnosis Frequency Bar",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "psych-suicide-nomogram",
+    "en": "Suicide Risk Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "eye-iop-curve",
+    "en": "IOP Diurnal Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "eye-acuity-scatter",
+    "en": "VA vs Age Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "eye-disease-bar",
+    "en": "Eye Disease Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "eye-iop-histogram",
+    "en": "IOP Distribution Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "ent-hearing-loss-curve",
+    "en": "Hearing Loss Progression Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "ent-hearing-histogram",
+    "en": "Hearing Level Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "ent-hearing-nomogram",
+    "en": "Hearing Loss Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "ent-pta-scatter-reg",
+    "en": "PTA vs Age Scatter Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "ent-hearing-calibration",
+    "en": "Hearing Test Calibration",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "uro-surgery-bar",
+    "en": "Urological Surgery Bar",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "uro-psa-histogram",
+    "en": "PSA Distribution Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "uro-prostate-nomogram",
+    "en": "Prostate Cancer Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "uro-renal-function-dot",
+    "en": "Renal Function Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "uro-psa-scatter-reg",
+    "en": "PSA vs Volume Scatter Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "uro-risk-calibration",
+    "en": "Urological Risk Calibration",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "derm-wound-healing-curve",
+    "en": "Wound Healing Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "derm-lesion-bar",
+    "en": "Skin Lesion Type Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "derm-melanoma-nomogram",
+    "en": "Melanoma Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "pulm-disease-bar",
+    "en": "Lung Disease Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "pulm-gas-dot",
+    "en": "Blood Gas Dot Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "surg-healing-curve",
+    "en": "Surgical Wound Healing Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "surg-procedure-bar",
+    "en": "Surgical Procedure Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 25 chars"
+  },
+  {
+    "id": "surg-op-time-histogram",
+    "en": "Operative Time Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "surg-asa-radar",
+    "en": "Preoperative Assessment Radar",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "surg-risk-nomogram",
+    "en": "Surgical Risk Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radio-suv-scatter",
+    "en": "SUV Scatter Plot",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radio-hu-histogram",
+    "en": "HU Distribution Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "radio-rt-survival-km",
+    "en": "Radiotherapy Survival Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "emer-resuscitation-curve",
+    "en": "Resuscitation Response Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "emer-lactate-scatter",
+    "en": "Lactate vs Mortality Scatter",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "emer-chief-complaint-bar",
+    "en": "Chief Complaint Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "emer-age-histogram",
+    "en": "ED Age Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 27 chars"
+  },
+  {
+    "id": "emer-trauma-nomogram",
+    "en": "Trauma Mortality Nomogram",
+    "reason": "very_short_description",
+    "detail": "Description only 29 chars"
+  },
+  {
+    "id": "anat-allometry-curve",
+    "en": "Allometric Growth Curve",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "anat-cell-count-log",
+    "en": "Cell Count Semi-log",
+    "reason": "very_short_description",
+    "detail": "Description only 26 chars"
+  },
+  {
+    "id": "anat-organ-weight-scatter-reg",
+    "en": "Organ Weight Scatter Regression",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "anat-tissue-composition-bar",
+    "en": "Tissue Composition Bar Chart",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
+  },
+  {
+    "id": "anat-bone-density-histogram",
+    "en": "Bone Density Histogram",
+    "reason": "very_short_description",
+    "detail": "Description only 28 chars"
   }
 ]
