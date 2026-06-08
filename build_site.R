@@ -2619,6 +2619,25 @@ make_abr <- function(t, style, lang) {
   p+make_theme(style)+theme(panel.grid.minor=element_blank())
 }
 
+# ── Forrester Classification ──
+make_forrester <- function(t, style, lang) {
+  C <- spcols(style)
+  p <- ggplot(data.frame(x=0,y=0),aes(x,y))+geom_blank()
+  xl <- if(lang=="none") "" else "PCWP (mmHg)"; yl <- if(lang=="none") "" else "CI (L/min/m²)"
+  p <- p+scale_x_continuous(name=xl,limits=c(0,30),breaks=seq(0,30,5),expand=c(0,0))+
+    scale_y_continuous(name=yl,limits=c(0,5),breaks=seq(0,5,0.5),expand=c(0,0))
+  p <- p+geom_hline(yintercept=2.2,linetype="dashed",color="#e74c3c",linewidth=0.4)+
+    geom_vline(xintercept=18,linetype="dashed",color="#e74c3c",linewidth=0.4)
+  if(lang!="none"){
+    p <- p+annotate("text",x=9,y=3.8,label="I\nNormal",color="#2ecc71",size=3,fontface="bold")+
+      annotate("text",x=24,y=3.8,label="II\nPulm.\nCongestion",color="#f39c12",size=2.5,fontface="bold",lineheight=0.8)+
+      annotate("text",x=9,y=1.2,label="III\nLow\nPerfusion",color="#3498db",size=2.5,fontface="bold",lineheight=0.8)+
+      annotate("text",x=24,y=1.2,label="IV\nCardiogenic\nShock",color="#e74c3c",size=2.5,fontface="bold",lineheight=0.8)
+  }
+  tt <- sptitle(t,lang); if(!is.null(tt)) p <- p+labs(title=tt,subtitle=t$sub)
+  p+make_theme(style)+theme(panel.grid.minor=element_blank())
+}
+
 # ── Plot Generator ──
 # lang: "en" = English labels, "ja" = Japanese title, "none" = no text
 make_plot <- function(t, style = "standard", lang = "en") {
@@ -2679,7 +2698,7 @@ make_plot <- function(t, style = "standard", lang = "en") {
     fever_pattern=make_fever_pattern(t,style,lang), waterfall=make_waterfall(t,style,lang),
     spider=make_spider(t,style,lang), qq=make_qq(t,style,lang),
     partogram=make_partogram(t,style,lang), erg=make_erg(t,style,lang),
-    abr=make_abr(t,style,lang),
+    abr=make_abr(t,style,lang), forrester=make_forrester(t,style,lang),
     make_radar(t,style,lang)))
 
   empty <- data.frame(x = numeric(0), y = numeric(0))
