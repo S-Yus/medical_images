@@ -2840,51 +2840,8 @@ ggplot(df, aes(x = x, y = y)) +
     ysc, gsub('"', '\\\\"', t$yl), t$yr[1], t$yr[2], t$en)
 }
 
-# ── CSS for Individual Pages ──
-PAGE_CSS <- '
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif;background:#f8f9fa;color:#333;line-height:1.7}
-a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
-.site-header{background:linear-gradient(135deg,#1e3a5f,#2563eb);color:#fff;padding:12px 0;position:sticky;top:0;z-index:100}
-.site-header .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-.site-header h1{font-size:18px}.site-header h1 a{color:#fff}
-.site-header nav a{color:rgba(255,255,255,.85);margin-left:20px;font-size:14px}
-.breadcrumb{max-width:1000px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
-.breadcrumb a{color:#2563eb}
-main{max-width:1000px;margin:20px auto 40px;padding:0 20px}
-h1.page-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.desc{font-size:15px;color:#555;margin-bottom:20px}
-.tags{margin-bottom:20px}.tags span{display:inline-block;background:#e8f0fe;color:#1a56db;padding:3px 10px;border-radius:12px;font-size:12px;margin:2px 4px 2px 0}
-.preview-section{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:24px}
-.switcher-row{display:flex;gap:16px;margin-bottom:16px;flex-wrap:wrap;align-items:flex-start}
-.style-tabs{display:flex;gap:8px;flex-wrap:wrap}
-.style-tabs button{padding:8px 16px;border:1px solid #ddd;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;transition:.2s}
-.style-tabs button.active{background:#2563eb;color:#fff;border-color:#2563eb}
-.style-tabs button:hover:not(.active){background:#f0f4ff}
-.preview-img{text-align:center;margin-bottom:16px}
-.preview-img img{max-width:100%;border:1px solid #eee;border-radius:8px}
-.dl-buttons{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
-.dl-btn{display:inline-block;padding:10px 20px;background:#2563eb;color:#fff;border-radius:8px;font-size:14px;transition:.2s}
-.dl-btn:hover{background:#1d4ed8;text-decoration:none}
-.dl-btn.outline{background:#fff;color:#2563eb;border:1px solid #2563eb}
-.dl-btn.outline:hover{background:#f0f4ff}
-.code-section{background:#fff;border-radius:12px;padding:24px;box-shadow:0 2px 8px rgba(0,0,0,.06);margin-bottom:24px}
-.code-section h2{font-size:20px;margin-bottom:12px;color:#1e3a5f}
-.code-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.copy-btn{padding:6px 14px;background:#f3f4f6;border:1px solid #ddd;border-radius:6px;cursor:pointer;font-size:13px}
-.copy-btn:hover{background:#e5e7eb}
-pre{background:#1e293b;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6}
-.related{margin-bottom:40px}
-.related h2{font-size:20px;margin-bottom:16px;color:#1e3a5f}
-.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
-.related-card{background:#fff;border-radius:8px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,.06);text-align:center;transition:.2s}
-.related-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
-.related-card img{width:100%;border-radius:6px;margin-bottom:6px}
-.related-card span{font-size:12px;color:#333;display:block}
-footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font-size:13px}
-footer a{color:#60a5fa}
-@media(max-width:600px){h1.page-title{font-size:22px}.dl-buttons{flex-direction:column}.style-tabs{gap:4px}}
-'
+# ── CSS: external stylesheet ──
+PAGE_CSS_LINK <- '<link rel="stylesheet" href="../style.css">'
 
 # ── HTML Page Generator for Individual Templates ──
 generate_template_page <- function(t, all_t) {
@@ -2926,7 +2883,7 @@ generate_template_page <- function(t, all_t) {
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ImageObject","name":"%s","description":"%s","contentUrl":"%s/img/%s.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"%s/"}
 </script>
-<style>%s</style>
+%s
 </head>
 <body>
 <header class="site-header"><div class="inner">
@@ -3016,7 +2973,7 @@ function copyCode(){
   SITE_URL, img_base,
   SITE_URL, t$cat, t$id,
   t$ja, t$dj, SITE_URL, img_base, SITE_URL,
-  PAGE_CSS,
+  PAGE_CSS_LINK,
   t$cat, cja,
   t$cat, cja, t$ja,
   t$ja, t$dj, tags_html,
@@ -3097,31 +3054,7 @@ document.querySelectorAll(".tab").forEach(function(btn){
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="%s/c/%s.html">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif;background:#f8f9fa;color:#333;line-height:1.7}
-a{color:#2563eb;text-decoration:none}
-.hd{background:linear-gradient(135deg,#1e3a5f,#2563eb);color:#fff;padding:12px 0}
-.hd .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
-.hd h1{font-size:18px}.hd h1 a{color:#fff}.hd nav a{color:rgba(255,255,255,.85);margin-left:20px;font-size:14px}
-.bc{max-width:1200px;margin:20px auto 0;padding:0 20px;font-size:13px;color:#666}
-main{max-width:1200px;margin:20px auto 40px;padding:0 20px}
-h1.cat-title{font-size:28px;margin:16px 0 8px;color:#1e3a5f}
-.count{color:#666;margin-bottom:8px;font-size:14px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid #e2e8f0}
-.tab{padding:6px 14px;border:1px solid #cbd5e1;border-radius:20px;background:#fff;cursor:pointer;font-size:13px;color:#475569;transition:.15s;display:flex;align-items:center;gap:5px}
-.tab:hover{background:#f1f5f9;border-color:#94a3b8}
-.tab.active{background:#2563eb;color:#fff;border-color:#2563eb}
-.tab-count{font-size:11px;background:rgba(0,0,0,.1);padding:1px 6px;border-radius:10px}
-.tab.active .tab-count{background:rgba(255,255,255,.25)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.tcard{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.2s}
-.tcard:hover{transform:translateY(-3px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
-.tcard img{width:100%%}
-.tname{padding:8px 12px 2px;font-weight:bold;font-size:14px;color:#1e3a5f}
-.tdesc{padding:2px 12px 10px;font-size:12px;color:#666}
-footer{background:#1e293b;color:#94a3b8;text-align:center;padding:30px 20px;font-size:13px}
-</style>
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <header class="hd"><div class="inner"><h1><a href="../">MedGraph Free</a></h1><nav><a href="../">HOME</a></nav></div></header>
@@ -3196,49 +3129,7 @@ generate_index <- function(all_t) {
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"%s/","description":"医学部生のためのグラフテンプレート集。全%d分野%d種類。CC0。Rコード付き。","inLanguage":"ja"}
 </script>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:"Helvetica Neue",Arial,"Hiragino Sans",sans-serif;background:#f8f9fa;color:#333;line-height:1.7}
-a{color:#2563eb;text-decoration:none}a:hover{text-decoration:underline}
-.hero{background:linear-gradient(135deg,#0f172a,#1e3a5f 40%%,#2563eb);color:#fff;padding:60px 20px;text-align:center}
-.hero h1{font-size:36px;margin-bottom:10px}.hero p{font-size:16px;color:rgba(255,255,255,.85);max-width:700px;margin:0 auto 20px}
-.hero .stats{display:flex;gap:30px;justify-content:center;flex-wrap:wrap}
-.hero .stat{text-align:center}.hero .stat .num{font-size:32px;font-weight:bold}.hero .stat .lbl{font-size:13px;color:rgba(255,255,255,.7)}
-.nav-bar{background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 0;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
-.nav-bar .inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;gap:6px;flex-wrap:nowrap}
-.nav-bar .inner::after{content:"";min-width:20px;flex-shrink:0}
-.nav-bar a{padding:6px 12px;border-radius:6px;font-size:12px;color:#475569;white-space:nowrap}
-.nav-bar a:hover{background:#f0f4ff;text-decoration:none}
-.cats-grid{max-width:1200px;margin:30px auto;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
-.cat-card{background:#fff;border-radius:10px;padding:18px 16px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s;border-left:3px solid #2563eb}
-.cat-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1);text-decoration:none}
-.cat-name{font-size:14px;font-weight:bold;color:#1e3a5f}.cat-count{font-size:11px;color:#666;margin-top:2px}
-.no-results{display:none;text-align:center;padding:60px 20px;max-width:1200px;margin:0 auto}
-.no-results.show{display:block}
-.no-results p{font-size:18px;color:#666;margin-bottom:8px}
-.no-results .hint{font-size:14px;color:#999}
-.request-section{max-width:1200px;margin:40px auto;padding:0 20px;text-align:center}
-.request-card{background:#fff;border-radius:12px;padding:30px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.request-card h2{font-size:20px;color:#1e3a5f;margin-bottom:8px}
-.request-card p{font-size:14px;color:#666;margin-bottom:16px}
-.request-btn{display:inline-block;padding:12px 28px;background:#2563eb;color:#fff;border-radius:8px;font-size:15px;transition:.2s}
-.request-btn:hover{background:#1d4ed8;text-decoration:none}
-.cat-section{max-width:1200px;margin:30px auto;padding:0 20px}
-.cat-section h2{font-size:22px;color:#1e3a5f;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #2563eb}
-.cat-section h2 a{color:#1e3a5f}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:30px}
-.card{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.1);text-decoration:none}
-.card img{width:100%%}
-.card-body{padding:8px 12px 12px}
-.card-body h3{font-size:13px;color:#1e3a5f;margin-bottom:3px}
-.card-body p{font-size:11px;color:#666}
-footer{background:#1e293b;color:#94a3b8;text-align:center;padding:40px 20px;font-size:13px}
-footer a{color:#60a5fa}
-.search-box{max-width:500px;margin:20px auto 0;position:relative}
-.search-box input{width:100%%;padding:12px 16px;border-radius:8px;border:none;font-size:15px;outline:none}
-@media(max-width:600px){.hero h1{font-size:24px}.hero .stat .num{font-size:24px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <section class="hero">
