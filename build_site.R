@@ -2843,9 +2843,10 @@ ggplot(df, aes(x = x, y = y)) +
 # ── CSS: external stylesheet ──
 PAGE_CSS_LINK <- '<link rel="stylesheet" href="../style.css">'
 
-# ── HTML Page Generator for Individual Templates ──
+# ── HTML Page Generator for Individual Templates (SEO enhanced) ──
 generate_template_page <- function(t, all_t) {
   cja <- CATS[[t$cat]]$ja
+  cen <- CATS[[t$cat]]$en
   img_base <- sprintf("%s_%s", t$cat, gsub("-","_",t$id))
   r_code <- make_r_code(t)
 
@@ -2854,35 +2855,52 @@ generate_template_page <- function(t, all_t) {
   rel <- head(rel, 8)
   rel_html <- paste(sapply(rel, function(r) {
     ri <- sprintf("%s_%s", r$cat, gsub("-","_",r$id))
-    sprintf('<a href="%s.html" class="related-card"><img src="../img/%s.png" alt="%s" loading="lazy"><span>%s</span></a>',
-            r$id, ri, r$ja, r$ja)
+    sprintf('<a href="%s.html" class="related-card"><img src="../img/%s.png" alt="%s - %sグラフテンプレート" loading="lazy"><span>%s</span></a>',
+            r$id, ri, r$ja, CATS[[r$cat]]$ja, r$ja)
   }), collapse="\n")
 
   # Tags
   tag_list <- strsplit(t$tags, ",")[[1]]
   tags_html <- paste(sapply(trimws(tag_list), function(tg) sprintf('<span>%s</span>', tg)), collapse="")
+  keywords <- paste(c(trimws(tag_list), cja, cen, "グラフテンプレート", "医学部", "CC0", "無料", "R", "ggplot2"), collapse=",")
+
+  # SEO: enhanced description
+  seo_desc <- sprintf('%s %s（%s）の白紙グラフテンプレート。著作権フリー（CC0）で医学部レポート・発表・論文にそのまま使用可能。5スタイル×3サイズ×3言語で合計45パターン。R+ggplot2コード付き。PNG形式で即ダウンロード。',
+                      t$dj, cja, cen)
+
+  # SEO: BreadcrumbList + ImageObject + HowTo schema
+  ld_json <- sprintf('[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"%s/"},{"@type":"ListItem","position":2,"name":"%s","item":"%s/c/%s.html"},{"@type":"ListItem","position":3,"name":"%s"}]},{"@context":"https://schema.org","@type":"ImageObject","name":"%s","description":"%s","contentUrl":"%s/img/%s.png","thumbnailUrl":"%s/img/%s.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"%s/","creator":{"@type":"Organization","name":"MedGraph Free"},"copyrightNotice":"CC0 Public Domain","encodingFormat":"image/png"},{"@context":"https://schema.org","@type":"HowTo","name":"%sの使い方","description":"Rコードで%sを作成する方法","step":[{"@type":"HowToStep","name":"テンプレートをダウンロード","text":"好みのスタイル・サイズを選択してPNG画像をダウンロード"},{"@type":"HowToStep","name":"Rコードをコピー","text":"ggplot2コードをコピーしてRStudioに貼り付け"},{"@type":"HowToStep","name":"データを入力","text":"自分の実験データをdata.frameに入力して実行"}]}]',
+    SITE_URL, cja, SITE_URL, t$cat, t$ja,
+    t$ja, gsub('"', '\\\\"', t$dj), SITE_URL, img_base, SITE_URL, img_base, SITE_URL,
+    t$ja, t$ja)
 
   html <- sprintf('<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>%s テンプレート | MedGraph Free</title>
-<meta name="description" content="%s 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>%s テンプレート【無料・著作権フリー】| MedGraph Free</title>
+<meta name="description" content="%s">
+<meta name="keywords" content="%s">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="%s/%s/%s.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="%s テンプレート | MedGraph Free">
+<meta property="og:title" content="%s テンプレート【無料・CC0】| MedGraph Free">
 <meta property="og:description" content="%s">
 <meta property="og:image" content="%s/img/%s.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="600">
 <meta property="og:url" content="%s/%s/%s.html">
+<meta property="og:site_name" content="MedGraph Free">
+<meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"%s","description":"%s","contentUrl":"%s/img/%s.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"%s/"}
-</script>
+<meta name="twitter:title" content="%s テンプレート | MedGraph Free">
+<meta name="twitter:description" content="%s">
+<meta name="twitter:image" content="%s/img/%s.png">
+<script type="application/ld+json">%s</script>
 %s
 </head>
 <body>
@@ -2890,62 +2908,65 @@ generate_template_page <- function(t, all_t) {
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/%s.html">%s</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/%s.html">%s</a> &gt; %s</div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">HOME</a> &gt; <a href="../c/%s.html">%s</a> &gt; %s</nav>
 <main>
+<article>
 <h1 class="page-title">%s</h1>
 <p class="desc">%s</p>
-<div class="tags">%s</div>
+<div class="tags" role="list" aria-label="タグ">%s</div>
 <section class="preview-section">
+<h2 class="sr-only">プレビューとダウンロード</h2>
 <div class="switcher-row">
-<div class="style-tabs" id="styleTabs">
-<button class="active" onclick="swStyle(this,\'standard\')">Standard</button>
-<button onclick="swStyle(this,\'minimal\')">Minimal</button>
-<button onclick="swStyle(this,\'classic\')">Classic</button>
-<button onclick="swStyle(this,\'presentation\')">Presentation</button>
-<button onclick="swStyle(this,\'dark\')">Dark</button>
+<div class="style-tabs" id="styleTabs" role="tablist" aria-label="スタイル選択">
+<button class="active" onclick="swStyle(this,\'standard\')" role="tab" aria-selected="true">Standard</button>
+<button onclick="swStyle(this,\'minimal\')" role="tab">Minimal</button>
+<button onclick="swStyle(this,\'classic\')" role="tab">Classic</button>
+<button onclick="swStyle(this,\'presentation\')" role="tab">Presentation</button>
+<button onclick="swStyle(this,\'dark\')" role="tab">Dark</button>
 </div>
-<div class="style-tabs" id="langTabs">
-<button class="active" onclick="swLang(this,\'en\')">English</button>
-<button onclick="swLang(this,\'ja\')">日本語</button>
-<button onclick="swLang(this,\'none\')">テキストなし</button>
+<div class="style-tabs" id="langTabs" role="tablist" aria-label="言語選択">
+<button class="active" onclick="swLang(this,\'en\')" role="tab" aria-selected="true">English</button>
+<button onclick="swLang(this,\'ja\')" role="tab">日本語</button>
+<button onclick="swLang(this,\'none\')" role="tab">テキストなし</button>
 </div>
-<div class="style-tabs" id="sizeTabs">
-<button class="active" onclick="swSize(this,\'standard\')">800 x 600</button>
-<button onclick="swSize(this,\'wide\')">1200 x 600</button>
-<button onclick="swSize(this,\'square\')">700 x 700</button>
+<div class="style-tabs" id="sizeTabs" role="tablist" aria-label="サイズ選択">
+<button class="active" onclick="swSize(this,\'standard\')" role="tab" aria-selected="true">800 x 600</button>
+<button onclick="swSize(this,\'wide\')" role="tab">1200 x 600</button>
+<button onclick="swSize(this,\'square\')" role="tab">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/%s.png" alt="%s"></div>
+<div class="preview-img"><img id="pv" src="../img/%s.png" alt="%s - %sグラフテンプレート（著作権フリー・CC0）" width="800" height="600"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/%s.png" download class="dl-btn">Download</a>
+<a id="dl1" href="../img/%s.png" download class="dl-btn">PNG をダウンロード</a>
 </div>
 </section>
 <section class="code-section">
-<div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
+<div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">コードをコピー</button></div>
 <pre id="rcode">%s</pre>
 </section>
-<section class="related"><h2>Related Templates</h2><div class="related-grid">%s</div></section>
+</article>
+<aside class="related" aria-label="関連テンプレート"><h2>関連する%sテンプレート</h2><div class="related-grid">%s</div></aside>
 </main>
 <footer>
-<p>MedGraph Free &mdash; CC0 (Public Domain). Free for any use.</p>
-<p><a href="../">Back to Home</a></p>
+<p>MedGraph Free &mdash; 全テンプレートCC0（パブリックドメイン）。商用利用を含むあらゆる用途に無料で使用可能。</p>
+<p><a href="../">テンプレート一覧に戻る</a> | <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
 <script>
 const B="%s";
 let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
-  document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#styleTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
-  document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#langTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
 }
 function swSize(btn,z){
-  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#sizeTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
@@ -2957,29 +2978,26 @@ function copyCode(){
   const c=document.getElementById("rcode").textContent;
   navigator.clipboard.writeText(c).then(()=>{
     const b=document.querySelector(".copy-btn");b.textContent="Copied!";
-    setTimeout(()=>b.textContent="Copy",2000);
+    setTimeout(()=>b.textContent="コードをコピー",2000);
   });
 }
 </script>
 </body>
 </html>',
-  # title, desc, canonical x3, og:title, og:desc, og:image x2, og:url x2,
-  # ld name, ld desc, ld img x2, ld license,
-  # css, nav cat x2, breadcrumb cat x2 + name, h1, desc, tags,
-  # preview img, alt, dl x3, rcode, related, js base
-  t$ja, t$dj,
+  t$ja, seo_desc, keywords,
   SITE_URL, t$cat, t$id,
-  t$ja, t$dj,
+  t$ja, gsub('"', '\\"', substr(t$dj, 1, 80)),
   SITE_URL, img_base,
   SITE_URL, t$cat, t$id,
-  t$ja, t$dj, SITE_URL, img_base, SITE_URL,
-  PAGE_CSS_LINK,
+  t$ja, gsub('"', '\\"', substr(t$dj, 1, 80)),
+  SITE_URL, img_base,
+  ld_json, PAGE_CSS_LINK,
   t$cat, cja,
   t$cat, cja, t$ja,
   t$ja, t$dj, tags_html,
-  img_base, t$ja,
+  img_base, t$ja, cja,
   img_base,
-  r_code, rel_html,
+  r_code, cja, rel_html,
   img_base)
 
   dir.create(t$cat, showWarnings=FALSE, recursive=TRUE)
@@ -3044,32 +3062,79 @@ document.querySelectorAll(".tab").forEach(function(btn){
 });
 </script>' else ""
 
+  # SEO: enhanced description
+  seo_desc <- sprintf('%s（%s）の医学部レポート・発表用グラフテンプレート一覧。%d種類の著作権フリー（CC0）白紙テンプレートを無料提供。R+ggplot2コード付き。5スタイル×3サイズ×3言語。PNG形式で即ダウンロード可能。',
+                      cja, cen, length(cat_templates))
+  seo_kw <- paste(c(cja, cen, "グラフテンプレート", "医学部", "レポート", "無料", "著作権フリー", "CC0", "R", "ggplot2", "テンプレート"), collapse=",")
+
+  # SEO: BreadcrumbList + CollectionPage + ItemList schema
+  item_list_items <- paste(sapply(seq_along(cat_templates), function(i) {
+    tt <- cat_templates[[i]]
+    sprintf('{"@type":"ListItem","position":%d,"url":"%s/%s/%s.html","name":"%s"}', i, SITE_URL, tt$cat, tt$id, tt$ja)
+  }), collapse=",")
+
+  ld_json <- sprintf('[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"%s/"},{"@type":"ListItem","position":2,"name":"%s"}]},{"@context":"https://schema.org","@type":"CollectionPage","name":"%s グラフテンプレート一覧","description":"%s","url":"%s/c/%s.html","isPartOf":{"@type":"WebSite","name":"MedGraph Free","url":"%s/"},"numberOfItems":%d,"mainEntity":{"@type":"ItemList","numberOfItems":%d,"itemListElement":[%s]}}]',
+    SITE_URL, cja,
+    cja, gsub('"', '\\\\"', seo_desc), SITE_URL, cat_id, SITE_URL,
+    length(cat_templates), length(cat_templates), item_list_items)
+
+  # SEO: first template image for OG
+  first_img <- sprintf("%s_%s", cat_templates[[1]]$cat, gsub("-","_",cat_templates[[1]]$id))
+
   html <- sprintf('<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>%s（%s）グラフテンプレート一覧 | MedGraph Free</title>
-<meta name="description" content="%sのレポート用グラフテンプレート一覧。%d種類の著作権フリー白紙テンプレート。Rコード付き。">
+<title>%s（%s）グラフテンプレート一覧【%d種類・無料】| MedGraph Free</title>
+<meta name="description" content="%s">
+<meta name="keywords" content="%s">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="%s/c/%s.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="%s グラフテンプレート一覧【%d種類・無料・CC0】">
+<meta property="og:description" content="%s">
+<meta property="og:image" content="%s/img/%s.png">
+<meta property="og:url" content="%s/c/%s.html">
+<meta property="og:site_name" content="MedGraph Free">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="%s グラフテンプレート一覧 | MedGraph Free">
+<meta name="twitter:description" content="%d種類の%sグラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
+<script type="application/ld+json">%s</script>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <header class="hd"><div class="inner"><h1><a href="../">MedGraph Free</a></h1><nav><a href="../">HOME</a></nav></div></header>
-<div class="bc"><a href="../">HOME</a> &gt; %s</div>
+<nav class="bc" aria-label="パンくずリスト"><a href="../">HOME</a> &gt; %s</nav>
 <main>
 <h1 class="cat-title">%s (%s)</h1>
-<p class="count">%d templates available</p>
+<p class="count">%d種類のテンプレート</p>
 %s
 <div class="grid">%s</div>
+<section class="seo-text" style="max-width:800px;margin:24px 0;font-size:13px;color:#666;line-height:1.7">
+<h2 style="font-size:16px;color:#1a1a1a;margin-bottom:8px">%sグラフテンプレートについて</h2>
+<p>MedGraph Freeの%s（%s）カテゴリでは、%d種類の白紙グラフテンプレートを著作権フリー（CC0・パブリックドメイン）で提供しています。医学部の講義レポート、実習レポート、研究発表、ポスター発表、卒業論文などに、ダウンロードしてそのまま利用できます。各テンプレートにはR言語（ggplot2）のコードが付属しており、自分のデータを入力するだけでグラフを再現可能です。Standard・Minimal・Classic・Presentation・Darkの5スタイル、800×600・1200×600・700×700の3サイズ、英語・日本語・テキストなしの3言語から選択できます。</p>
+</section>
 </main>
-<footer><p>MedGraph Free &mdash; CC0 (Public Domain)</p></footer>
+<footer><p>MedGraph Free &mdash; 全テンプレートCC0（パブリックドメイン）</p><p><a href="../">テンプレート一覧</a> | <a href="https://github.com/S-Yus/medical_images">GitHub</a></p></footer>
 %s
 </body></html>',
-  cja, cen, cja, length(cat_templates), SITE_URL, cat_id,
-  cja, cja, cen, length(cat_templates), tab_html, cards, tab_js)
+  cja, cen, length(cat_templates),
+  seo_desc, seo_kw,
+  SITE_URL, cat_id,
+  cja, length(cat_templates),
+  gsub('"', '\\"', substr(seo_desc, 1, 100)),
+  SITE_URL, first_img,
+  SITE_URL, cat_id,
+  cja, length(cat_templates), cja,
+  ld_json,
+  cja,
+  cja, cen, length(cat_templates),
+  tab_html, cards,
+  cja, cja, cen, length(cat_templates),
+  tab_js)
 
   writeLines(html, file.path("c", paste0(cat_id, ".html")), useBytes=TRUE)
 }
@@ -3081,25 +3146,26 @@ generate_index <- function(all_t) {
   total <- length(all_t)
   total_dl <- total * 45  # 5 styles * 3 sizes * 3 languages
 
-  # Category cards (text only, no emoji)
+  # Category cards
   cat_cards <- paste(sapply(names(by_cat), function(cn) {
     ts <- by_cat[[cn]]
     cja <- CATS[[cn]]$ja
-    sprintf('<a href="c/%s.html" class="cat-card"><div class="cat-name">%s</div><div class="cat-count">%d templates</div></a>',
+    sprintf('<a href="c/%s.html" class="cat-card"><div class="cat-name">%s</div><div class="cat-count">%d種類</div></a>',
             cn, cja, length(ts))
   }), collapse="\n")
 
   # All template cards grouped by category
   all_cards <- paste(sapply(names(by_cat), function(cn) {
     cja <- CATS[[cn]]$ja
+    cen <- CATS[[cn]]$en
     ts <- by_cat[[cn]]
     tcards <- paste(sapply(ts, function(t) {
       ib <- sprintf("%s_%s", t$cat, gsub("-","_",t$id))
-      sprintf('<a href="%s/%s.html" class="card"><img src="img/%s.png" alt="%s" loading="lazy"><div class="card-body"><h3>%s</h3><p>%s</p></div></a>',
-              t$cat, t$id, ib, t$ja, t$ja, substr(t$dj,1,50))
+      sprintf('<a href="%s/%s.html" class="card"><img src="img/%s.png" alt="%s - %sグラフテンプレート" loading="lazy" width="800" height="600"><div class="card-body"><h3>%s</h3><p>%s</p></div></a>',
+              t$cat, t$id, ib, t$ja, cja, t$ja, substr(t$dj,1,60))
     }), collapse="\n")
-    sprintf('<section class="cat-section" id="%s"><h2><a href="c/%s.html">%s (%d)</a></h2><div class="card-grid">%s</div></section>',
-            cn, cn, cja, length(ts), tcards)
+    sprintf('<section class="cat-section" id="%s"><h2><a href="c/%s.html">%s（%s）- %d種類</a></h2><div class="card-grid">%s</div></section>',
+            cn, cn, cja, cen, length(ts), tcards)
   }), collapse="\n")
 
   # Navigation links
@@ -3107,46 +3173,74 @@ generate_index <- function(all_t) {
     sprintf('<a href="#%s">%s</a>', cn, CATS[[cn]]$ja)
   }), collapse="")
 
+  # SEO: category list for structured data
+  cat_list_items <- paste(sapply(seq_along(names(by_cat)), function(i) {
+    cn <- names(by_cat)[i]
+    cja <- CATS[[cn]]$ja
+    sprintf('{"@type":"ListItem","position":%d,"url":"%s/c/%s.html","name":"%s グラフテンプレート"}', i, SITE_URL, cn, cja)
+  }), collapse=",")
+
+  # SEO: FAQ schema
+  faq_items <- paste(c(
+    '{"@type":"Question","name":"MedGraph Freeとは何ですか？","acceptedAnswer":{"@type":"Answer","text":"MedGraph Freeは医学部生のための無料グラフテンプレート集です。生化学・生理学・薬理学など28分野のグラフテンプレートを著作権フリー（CC0）で提供しています。"}}',
+    '{"@type":"Question","name":"テンプレートは無料で使えますか？","acceptedAnswer":{"@type":"Answer","text":"はい、全テンプレートはCC0（パブリックドメイン）ライセンスです。商用利用を含むあらゆる用途に、許可不要・帰属表示不要で無料で使用できます。"}}',
+    '{"@type":"Question","name":"どのような形式でダウンロードできますか？","acceptedAnswer":{"@type":"Answer","text":"PNG形式でダウンロードできます。各テンプレートは5スタイル（Standard・Minimal・Classic・Presentation・Dark）×3サイズ（800×600・1200×600・700×700）×3言語（英語・日本語・テキストなし）の計45パターンから選択可能です。"}}',
+    '{"@type":"Question","name":"Rコードは付いていますか？","acceptedAnswer":{"@type":"Answer","text":"はい、各テンプレートにR言語（ggplot2パッケージ）のコードが付属しています。自分のデータをdata.frameに入力するだけでグラフを再現できます。"}}'
+  ), collapse=",")
+
+  ld_json <- sprintf('[{"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","alternateName":"メドグラフ フリー","url":"%s/","description":"医学部生のためのグラフテンプレート集。全%d分野%d種類。著作権フリー（CC0）。R+ggplot2コード付き。","inLanguage":"ja","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"%s/?q={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"https://schema.org","@type":"ItemList","name":"医学グラフテンプレート カテゴリ一覧","numberOfItems":%d,"itemListElement":[%s]},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[%s]}]',
+    SITE_URL, length(by_cat), total, SITE_URL,
+    length(by_cat), cat_list_items, faq_items)
+
   html <- sprintf('<!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>MedGraph Free | 医学部生のための無料グラフテンプレート集【著作権フリー・Rコード付き】</title>
-<meta name="description" content="医学部のレポート・発表用グラフテンプレートを無料提供。全%d分野%d種類・%dダウンロード可能。著作権フリー（CC0）。R+ggplot2コード付き。5スタイル×3サイズ。">
-<meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート">
+<title>MedGraph Free | 医学部生のための無料グラフテンプレート集【%d分野%d種類・著作権フリー・Rコード付き】</title>
+<meta name="description" content="医学部のレポート・発表・論文用グラフテンプレートを無料提供。全%d分野%d種類・合計%dパターンをPNG形式で即ダウンロード。著作権フリー（CC0）で商用利用も可。R+ggplot2コード付き。生化学・生理学・薬理学・循環器・病理学など全28分野対応。">
+<meta name="keywords" content="医学部,グラフテンプレート,レポート,無料,著作権フリー,CC0,R,ggplot2,医学生,テンプレート,白紙グラフ,実習レポート,生化学,生理学,薬理学,病理学,公衆衛生,臨床検査,ダウンロード,PNG">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="%s/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MedGraph Free | 医学部生のための無料グラフテンプレート集">
+<meta property="og:title" content="MedGraph Free | 医学部生のための無料グラフテンプレート集【%d種類・CC0】">
 <meta property="og:description" content="全%d分野%d種類の白紙グラフテンプレートを無料提供。著作権フリー（CC0）・Rコード付き。">
 <meta property="og:url" content="%s/">
 <meta property="og:image" content="%s/og-image.png">
+<meta property="og:site_name" content="MedGraph Free">
+<meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","name":"MedGraph Free","url":"%s/","description":"医学部生のためのグラフテンプレート集。全%d分野%d種類。CC0。Rコード付き。","inLanguage":"ja"}
-</script>
+<meta name="twitter:title" content="MedGraph Free | 医学部グラフテンプレート%d種類【無料・CC0】">
+<meta name="twitter:description" content="医学部のレポート・発表用グラフテンプレートを全%d分野%d種類無料提供。著作権フリー（CC0）・Rコード付き。">
+<script type="application/ld+json">%s</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<section class="hero">
+<header class="hero" role="banner">
 <h1>MedGraph Free</h1>
-<p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表にそのまま使えます。</p>
-<div class="stats">
+<p>医学部生のための無料グラフテンプレート集。著作権フリー（CC0）でレポート・発表・論文にそのまま使えます。</p>
+<div class="stats" aria-label="サイト統計">
 <div class="stat"><div class="num">%d</div><div class="lbl">Templates</div></div>
 <div class="stat"><div class="num">%d</div><div class="lbl">Images</div></div>
 <div class="stat"><div class="num">%d</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-<div class="search-box"><input type="text" id="search" placeholder="テンプレートを検索..." oninput="filterCards(this.value)"></div>
-</section>
-<nav class="nav-bar"><div class="inner">%s</div></nav>
-<div class="cats-grid">%s</div>
-<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p><p class="hint">別のキーワードで検索するか、<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request" target="_blank">リクエスト</a>をお送りください</p></div>
+<div class="search-box"><input type="search" id="search" placeholder="テンプレートを検索（例: 心電図, 酵素, 用量反応）" oninput="filterCards(this.value)" aria-label="テンプレート検索"></div>
+</header>
+<nav class="nav-bar" aria-label="カテゴリナビゲーション"><div class="inner">%s</div></nav>
+<main>
+<section aria-label="カテゴリ一覧"><div class="cats-grid">%s</div></section>
+<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p><p class="hint">別のキーワードで検索するか、<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request" target="_blank" rel="noopener">リクエスト</a>をお送りください</p></div>
 %s
+<section class="seo-text" style="max-width:900px;margin:32px auto;padding:0 20px;font-size:13px;color:#666;line-height:1.8">
+<h2 style="font-size:18px;color:#1a1a1a;margin-bottom:12px;font-family:Georgia,serif;font-weight:normal">MedGraph Free について</h2>
+<p>MedGraph Freeは、医学部生のためのグラフテンプレート集です。<strong>生化学</strong>（ミカエリス・メンテンプロット、ラインウィーバー・バークプロット、pH滴定曲線など）、<strong>生理学</strong>（酸素解離曲線、フランク・スターリング曲線、活動電位など）、<strong>薬理学</strong>（用量反応曲線、薬物動態曲線など）をはじめ、<strong>循環器</strong>（心電図、血圧波形、PVループ）、<strong>病理学</strong>、<strong>疫学・公衆衛生</strong>、<strong>臨床統計</strong>など全%d分野・%d種類のテンプレートを収録しています。</p>
+<p>すべてのテンプレートは<strong>著作権フリー（CC0・パブリックドメイン）</strong>で、商用利用を含むあらゆる用途に許可不要・帰属表示不要で使用できます。講義レポート、実習レポート、研究発表、ポスター発表、卒業論文、学会発表スライドなどにそのままお使いいただけます。</p>
+<p>各テンプレートは<strong>5スタイル</strong>（Standard・Minimal・Classic・Presentation・Dark）× <strong>3サイズ</strong>（800×600・1200×600・700×700）× <strong>3言語</strong>（英語・日本語・テキストなし）の合計45パターンで提供。PNG形式で即ダウンロード可能です。さらに、各テンプレートには<strong>R言語（ggplot2）のコード</strong>が付属しており、自分のデータを入力するだけでグラフを再現できます。</p>
+</section>
 <section class="request-section">
 <div class="request-card">
 <h2>テンプレートのリクエスト</h2>
@@ -3154,8 +3248,9 @@ generate_index <- function(all_t) {
 <a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request&body=リクエストするテンプレート名：%%0A分野：%%0A用途・説明：" class="request-btn" target="_blank" rel="noopener">リクエストを送る</a>
 </div>
 </section>
+</main>
 <footer>
-<p>MedGraph Free &mdash; All templates are CC0 (Public Domain). Free for any use including commercial.</p>
+<p>MedGraph Free &mdash; 全テンプレートCC0（パブリックドメイン）。商用利用を含むあらゆる用途に無料で使用可能。</p>
 <p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
 <script>
@@ -3183,30 +3278,36 @@ function filterCards(q){
 }
 </script>
 </body></html>',
-  length(by_cat), total, total_dl, SITE_URL,
-  length(by_cat), total, SITE_URL, SITE_URL, SITE_URL,
   length(by_cat), total,
+  length(by_cat), total, total_dl,
+  SITE_URL,
+  total, length(by_cat), total, SITE_URL, SITE_URL,
+  total, length(by_cat), total,
+  ld_json,
   total, total_dl, length(by_cat),
-  nav_links, cat_cards, all_cards)
+  nav_links, cat_cards, all_cards,
+  length(by_cat), total)
 
   writeLines(html, "index.html", useBytes=TRUE)
   cat(sprintf("index.html generated (%d categories, %d templates)\n", length(by_cat), total))
 }
 
-# ── Sitemap Generator ──
+# ── Sitemap Generator (SEO enhanced with lastmod) ──
 generate_sitemap <- function(all_t) {
-  urls <- sprintf('  <url><loc>%s/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>', SITE_URL)
+  today <- format(Sys.Date(), "%Y-%m-%d")
+
+  urls <- sprintf('  <url><loc>%s/</loc><lastmod>%s</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>', SITE_URL, today)
 
   # Category pages
   cat_urls <- sapply(unique(sapply(all_t, function(x) x$cat)), function(cn) {
-    sprintf('  <url><loc>%s/c/%s.html</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>', SITE_URL, cn)
+    sprintf('  <url><loc>%s/c/%s.html</loc><lastmod>%s</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>', SITE_URL, cn, today)
   })
 
   # Template pages with image
   tmpl_urls <- sapply(all_t, function(t) {
     ib <- sprintf("%s_%s", t$cat, gsub("-","_",t$id))
-    sprintf('  <url>\n    <loc>%s/%s/%s.html</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n    <image:image><image:loc>%s/img/%s.png</image:loc><image:title>%s</image:title></image:image>\n  </url>',
-            SITE_URL, t$cat, t$id, SITE_URL, ib, t$ja)
+    sprintf('  <url>\n    <loc>%s/%s/%s.html</loc>\n    <lastmod>%s</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n    <image:image>\n      <image:loc>%s/img/%s.png</image:loc>\n      <image:title>%s</image:title>\n      <image:caption>%s</image:caption>\n      <image:license>https://creativecommons.org/publicdomain/zero/1.0/</image:license>\n    </image:image>\n  </url>',
+            SITE_URL, t$cat, t$id, today, SITE_URL, ib, t$ja, gsub('"', '&quot;', substr(t$dj, 1, 100)))
   })
 
   xml <- paste(c(
@@ -3218,6 +3319,35 @@ generate_sitemap <- function(all_t) {
 
   writeLines(xml, "sitemap.xml", useBytes=TRUE)
   cat(sprintf("sitemap.xml generated (%d URLs)\n", 1 + length(cat_urls) + length(tmpl_urls)))
+}
+
+# ── 404 Page Generator ──
+generate_404 <- function() {
+  html <- '<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ページが見つかりません | MedGraph Free</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="site-header"><div class="inner">
+<h1><a href="/">MedGraph Free</a></h1>
+<nav><a href="/">HOME</a></nav>
+</div></header>
+<main style="text-align:center;padding:60px 20px">
+<h1 class="page-title" style="font-size:48px;margin-bottom:16px">404</h1>
+<p class="desc">お探しのページは見つかりませんでした。</p>
+<p style="margin-top:20px"><a href="/" style="font-size:15px">テンプレート一覧に戻る</a></p>
+</main>
+<footer>
+<p>MedGraph Free &mdash; CC0 (Public Domain)</p>
+</footer>
+</body></html>'
+  writeLines(html, "404.html", useBytes=TRUE)
+  cat("404.html generated\n")
 }
 
 # ============================
@@ -3249,5 +3379,8 @@ generate_index(TEMPLATES)
 
 # 5. Generate sitemap
 generate_sitemap(TEMPLATES)
+
+# 6. Generate 404 page
+generate_404()
 
 cat(sprintf("\n=== BUILD COMPLETE ===\nTime: %s\n", Sys.time()))

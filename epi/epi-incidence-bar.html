@@ -3,22 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>罹患率棒グラフ テンプレート | MedGraph Free</title>
-<meta name="description" content="罹患率棒グラフテンプレート。疾患別の発生率を比較表示。 著作権フリー（CC0）の白紙グラフテンプレート。5スタイル・3サイズ。Rコード付き。医学部レポート・発表用。">
+<title>罹患率棒グラフ テンプレート【無料・著作権フリー】| MedGraph Free</title>
+<meta name="description" content="罹患率棒グラフテンプレート。疾患別の発生率を比較表示。 疫学・公衆衛生（Epidemiology）の白紙グラフテンプレート。著作権フリー（CC0）で医学部レポート・発表・論文にそのまま使用可能。5スタイル×3サイズ×3言語で合計45パターン。R+ggplot2コード付き。PNG形式で即ダウンロード。">
+<meta name="keywords" content="罹患率,bar,棒グラフ,発生率,疫学,疫学・公衆衛生,Epidemiology,グラフテンプレート,医学部,CC0,無料,R,ggplot2">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-48.png" sizes="48x48" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="canonical" href="https://med-graph.com/epi/epi-incidence-bar.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="罹患率棒グラフ テンプレート | MedGraph Free">
+<meta property="og:title" content="罹患率棒グラフ テンプレート【無料・CC0】| MedGraph Free">
 <meta property="og:description" content="罹患率棒グラフテンプレート。疾患別の発生率を比較表示。">
 <meta property="og:image" content="https://med-graph.com/img/epi_epi_incidence_bar.png">
+<meta property="og:image:width" content="800">
+<meta property="og:image:height" content="600">
 <meta property="og:url" content="https://med-graph.com/epi/epi-incidence-bar.html">
+<meta property="og:site_name" content="MedGraph Free">
+<meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ImageObject","name":"罹患率棒グラフ","description":"罹患率棒グラフテンプレート。疾患別の発生率を比較表示。","contentUrl":"https://med-graph.com/img/epi_epi_incidence_bar.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/"}
-</script>
+<meta name="twitter:title" content="罹患率棒グラフ テンプレート | MedGraph Free">
+<meta name="twitter:description" content="罹患率棒グラフテンプレート。疾患別の発生率を比較表示。">
+<meta name="twitter:image" content="https://med-graph.com/img/epi_epi_incidence_bar.png">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://med-graph.com/"},{"@type":"ListItem","position":2,"name":"疫学・公衆衛生","item":"https://med-graph.com/c/epi.html"},{"@type":"ListItem","position":3,"name":"罹患率棒グラフ"}]},{"@context":"https://schema.org","@type":"ImageObject","name":"罹患率棒グラフ","description":"罹患率棒グラフテンプレート。疾患別の発生率を比較表示。","contentUrl":"https://med-graph.com/img/epi_epi_incidence_bar.png","thumbnailUrl":"https://med-graph.com/img/epi_epi_incidence_bar.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"https://med-graph.com/","creator":{"@type":"Organization","name":"MedGraph Free"},"copyrightNotice":"CC0 Public Domain","encodingFormat":"image/png"},{"@context":"https://schema.org","@type":"HowTo","name":"罹患率棒グラフの使い方","description":"Rコードで罹患率棒グラフを作成する方法","step":[{"@type":"HowToStep","name":"テンプレートをダウンロード","text":"好みのスタイル・サイズを選択してPNG画像をダウンロード"},{"@type":"HowToStep","name":"Rコードをコピー","text":"ggplot2コードをコピーしてRStudioに貼り付け"},{"@type":"HowToStep","name":"データを入力","text":"自分の実験データをdata.frameに入力して実行"}]}]</script>
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -26,38 +32,40 @@
 <h1><a href="../">MedGraph Free</a></h1>
 <nav><a href="../">HOME</a><a href="../c/epi.html">疫学・公衆衛生</a></nav>
 </div></header>
-<div class="breadcrumb"><a href="../">HOME</a> &gt; <a href="../c/epi.html">疫学・公衆衛生</a> &gt; 罹患率棒グラフ</div>
+<nav class="breadcrumb" aria-label="パンくずリスト"><a href="../">HOME</a> &gt; <a href="../c/epi.html">疫学・公衆衛生</a> &gt; 罹患率棒グラフ</nav>
 <main>
+<article>
 <h1 class="page-title">罹患率棒グラフ</h1>
 <p class="desc">罹患率棒グラフテンプレート。疾患別の発生率を比較表示。</p>
-<div class="tags"><span>罹患率</span><span>bar</span><span>棒グラフ</span><span>発生率</span><span>疫学</span></div>
+<div class="tags" role="list" aria-label="タグ"><span>罹患率</span><span>bar</span><span>棒グラフ</span><span>発生率</span><span>疫学</span></div>
 <section class="preview-section">
+<h2 class="sr-only">プレビューとダウンロード</h2>
 <div class="switcher-row">
-<div class="style-tabs" id="styleTabs">
-<button class="active" onclick="swStyle(this,'standard')">Standard</button>
-<button onclick="swStyle(this,'minimal')">Minimal</button>
-<button onclick="swStyle(this,'classic')">Classic</button>
-<button onclick="swStyle(this,'presentation')">Presentation</button>
-<button onclick="swStyle(this,'dark')">Dark</button>
+<div class="style-tabs" id="styleTabs" role="tablist" aria-label="スタイル選択">
+<button class="active" onclick="swStyle(this,'standard')" role="tab" aria-selected="true">Standard</button>
+<button onclick="swStyle(this,'minimal')" role="tab">Minimal</button>
+<button onclick="swStyle(this,'classic')" role="tab">Classic</button>
+<button onclick="swStyle(this,'presentation')" role="tab">Presentation</button>
+<button onclick="swStyle(this,'dark')" role="tab">Dark</button>
 </div>
-<div class="style-tabs" id="langTabs">
-<button class="active" onclick="swLang(this,'en')">English</button>
-<button onclick="swLang(this,'ja')">日本語</button>
-<button onclick="swLang(this,'none')">テキストなし</button>
+<div class="style-tabs" id="langTabs" role="tablist" aria-label="言語選択">
+<button class="active" onclick="swLang(this,'en')" role="tab" aria-selected="true">English</button>
+<button onclick="swLang(this,'ja')" role="tab">日本語</button>
+<button onclick="swLang(this,'none')" role="tab">テキストなし</button>
 </div>
-<div class="style-tabs" id="sizeTabs">
-<button class="active" onclick="swSize(this,'standard')">800 x 600</button>
-<button onclick="swSize(this,'wide')">1200 x 600</button>
-<button onclick="swSize(this,'square')">700 x 700</button>
+<div class="style-tabs" id="sizeTabs" role="tablist" aria-label="サイズ選択">
+<button class="active" onclick="swSize(this,'standard')" role="tab" aria-selected="true">800 x 600</button>
+<button onclick="swSize(this,'wide')" role="tab">1200 x 600</button>
+<button onclick="swSize(this,'square')" role="tab">700 x 700</button>
 </div>
 </div>
-<div class="preview-img"><img id="pv" src="../img/epi_epi_incidence_bar.png" alt="罹患率棒グラフ"></div>
+<div class="preview-img"><img id="pv" src="../img/epi_epi_incidence_bar.png" alt="罹患率棒グラフ - 疫学・公衆衛生グラフテンプレート（著作権フリー・CC0）" width="800" height="600"></div>
 <div class="dl-buttons">
-<a id="dl1" href="../img/epi_epi_incidence_bar.png" download class="dl-btn">Download</a>
+<a id="dl1" href="../img/epi_epi_incidence_bar.png" download class="dl-btn">PNG をダウンロード</a>
 </div>
 </section>
 <section class="code-section">
-<div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">Copy</button></div>
+<div class="code-header"><h2>R Code (ggplot2)</h2><button class="copy-btn" onclick="copyCode()">コードをコピー</button></div>
 <pre id="rcode">library(ggplot2)
 
 # ---- Incidence Rate Bar Chart ----
@@ -76,35 +84,36 @@ ggplot(df, aes(x = x, y = y)) +
   theme_bw(base_size = 14) +
   theme(plot.title = element_text(face = "bold", hjust = 0.5))</pre>
 </section>
-<section class="related"><h2>Related Templates</h2><div class="related-grid"><a href="epidemic-point.html" class="related-card"><img src="../img/epi_epidemic_point.png" alt="流行曲線（点源）" loading="lazy"><span>流行曲線（点源）</span></a>
-<a href="epidemic-continuous.html" class="related-card"><img src="../img/epi_epidemic_continuous.png" alt="流行曲線（持続）" loading="lazy"><span>流行曲線（持続）</span></a>
-<a href="epidemic-propagated.html" class="related-card"><img src="../img/epi_epidemic_propagated.png" alt="流行曲線（伝播）" loading="lazy"><span>流行曲線（伝播）</span></a>
-<a href="2x2-table.html" class="related-card"><img src="../img/epi_2x2_table.png" alt="2x2分割表" loading="lazy"><span>2x2分割表</span></a>
-<a href="survival-generic.html" class="related-card"><img src="../img/epi_survival_generic.png" alt="生存曲線（汎用）" loading="lazy"><span>生存曲線（汎用）</span></a>
-<a href="incidence-time.html" class="related-card"><img src="../img/epi_incidence_time.png" alt="罹患率の推移" loading="lazy"><span>罹患率の推移</span></a>
-<a href="or-forest.html" class="related-card"><img src="../img/epi_or_forest.png" alt="オッズ比フォレストプロット" loading="lazy"><span>オッズ比フォレストプロット</span></a>
-<a href="nnt.html" class="related-card"><img src="../img/epi_nnt.png" alt="NNT（治療必要数）" loading="lazy"><span>NNT（治療必要数）</span></a></div></section>
+</article>
+<aside class="related" aria-label="関連テンプレート"><h2>関連する疫学・公衆衛生テンプレート</h2><div class="related-grid"><a href="epidemic-point.html" class="related-card"><img src="../img/epi_epidemic_point.png" alt="流行曲線（点源） - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>流行曲線（点源）</span></a>
+<a href="epidemic-continuous.html" class="related-card"><img src="../img/epi_epidemic_continuous.png" alt="流行曲線（持続） - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>流行曲線（持続）</span></a>
+<a href="epidemic-propagated.html" class="related-card"><img src="../img/epi_epidemic_propagated.png" alt="流行曲線（伝播） - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>流行曲線（伝播）</span></a>
+<a href="2x2-table.html" class="related-card"><img src="../img/epi_2x2_table.png" alt="2x2分割表 - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>2x2分割表</span></a>
+<a href="survival-generic.html" class="related-card"><img src="../img/epi_survival_generic.png" alt="生存曲線（汎用） - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>生存曲線（汎用）</span></a>
+<a href="incidence-time.html" class="related-card"><img src="../img/epi_incidence_time.png" alt="罹患率の推移 - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>罹患率の推移</span></a>
+<a href="or-forest.html" class="related-card"><img src="../img/epi_or_forest.png" alt="オッズ比フォレストプロット - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>オッズ比フォレストプロット</span></a>
+<a href="nnt.html" class="related-card"><img src="../img/epi_nnt.png" alt="NNT（治療必要数） - 疫学・公衆衛生グラフテンプレート" loading="lazy"><span>NNT（治療必要数）</span></a></div></aside>
 </main>
 <footer>
-<p>MedGraph Free &mdash; CC0 (Public Domain). Free for any use.</p>
-<p><a href="../">Back to Home</a></p>
+<p>MedGraph Free &mdash; 全テンプレートCC0（パブリックドメイン）。商用利用を含むあらゆる用途に無料で使用可能。</p>
+<p><a href="../">テンプレート一覧に戻る</a> | <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
 <script>
 const B="epi_epi_incidence_bar";
 let curLang="",curStyle="",curSize="";
 function swStyle(btn,s){
-  document.querySelectorAll("#styleTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#styleTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curStyle=s==="standard"?"":"_"+s;upd();
 }
 function swLang(btn,l){
-  document.querySelectorAll("#langTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#langTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curLang=l==="en"?"":l==="ja"?"_ja":"_notxt";upd();
 }
 function swSize(btn,z){
-  document.querySelectorAll("#sizeTabs button").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
+  document.querySelectorAll("#sizeTabs button").forEach(b=>{b.classList.remove("active");b.setAttribute("aria-selected","false")});
+  btn.classList.add("active");btn.setAttribute("aria-selected","true");
   curSize=z==="standard"?"":"_"+z;upd();
 }
 function upd(){
@@ -116,7 +125,7 @@ function copyCode(){
   const c=document.getElementById("rcode").textContent;
   navigator.clipboard.writeText(c).then(()=>{
     const b=document.querySelector(".copy-btn");b.textContent="Copied!";
-    setTimeout(()=>b.textContent="Copy",2000);
+    setTimeout(()=>b.textContent="コードをコピー",2000);
   });
 }
 </script>
