@@ -3201,6 +3201,7 @@ generate_index <- function(all_t) {
 <meta name="twitter:description" content="医学部のレポート・発表用グラフテンプレートを全%d分野%d種類無料提供。著作権フリー（CC0）・Rコード付き。">
 <script type="application/ld+json">%s</script>
 <link rel="stylesheet" href="style.css">
+<script src="search-index.js" defer></script>
 </head>
 <body>
 <header class="hero" role="banner">
@@ -3212,7 +3213,7 @@ generate_index <- function(all_t) {
 <div class="stat"><div class="num">%d</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-<div class="search-box"><input type="search" id="search" placeholder="分野を検索（例: 生化学, 循環器, 薬理学）" oninput="filterCats(this.value)" aria-label="分野検索"></div>
+<div class="search-box"><input type="search" id="search" placeholder="テンプレートを検索（例: 心電図, ミカエリスメンテン, ECG）" aria-label="テンプレート検索"></div>
 </header>',
   nc, total, nc, total, total_dl, SITE_URL,
   total, nc, total, SITE_URL, SITE_URL,
@@ -3222,7 +3223,11 @@ generate_index <- function(all_t) {
   body_html <- sprintf('<main>
 <section aria-label="分野一覧">
 <div class="cats-grid">%s</div>
-<div class="no-results" id="noResults"><p>該当する分野が見つかりませんでした</p></div>
+<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p></div>
+</section>
+<section id="searchResults" class="search-results" style="display:none">
+<h2 id="searchResultsTitle" class="sr-title"></h2>
+<div id="searchResultsGrid" class="card-grid"></div>
 </section>
 <section class="seo-text" style="max-width:900px;margin:32px auto;padding:0 20px;font-size:13px;color:#666;line-height:1.8">
 <h2 style="font-size:18px;color:#1a1a1a;margin-bottom:12px;font-family:Georgia,serif;font-weight:normal">MedGraph Free について</h2>
@@ -3266,16 +3271,91 @@ generate_index <- function(all_t) {
 <p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
 <script>
-function filterCats(q){
-  q=q.toLowerCase();
-  var found=0;
-  document.querySelectorAll(".cat-card").forEach(function(c){
-    var v=c.textContent.toLowerCase().indexOf(q)>=0;
-    c.style.display=v?"":"none";
-    if(v)found++;
-  });
-  document.getElementById("noResults").classList.toggle("show",q&&found===0);
+var searchTimer=null;
+function expandQuery(q){
+  if(!window.SYNONYMS)return [q];
+  var terms=[q];
+  var ql=q.toLowerCase();
+  for(var key in SYNONYMS){
+    var kl=key.toLowerCase();
+    if(ql.indexOf(kl)>=0){
+      terms=terms.concat(SYNONYMS[key]);
+    }else{
+      for(var i=0;i<SYNONYMS[key].length;i++){
+        if(ql.indexOf(SYNONYMS[key][i].toLowerCase())>=0){
+          terms.push(key);
+          terms=terms.concat(SYNONYMS[key]);
+          break;
+        }
+      }
+    }
+  }
+  return terms;
 }
+function normalize(s){
+  return s.toLowerCase()
+    .replace(/[\\u30A1-\\u30F6]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-96);})
+    .replace(/[\\u3041-\\u3096\\u30A1-\\u30F6]/g,function(c){return c;})
+    .replace(/[\\-\\u30FB\\u00B7\\s\\.\\u3000]/g,"")
+    .replace(/[\\uff01-\\uff5e]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-65248);});
+}
+function doSearch(q){
+  if(!q){
+    document.querySelectorAll(".cat-card").forEach(function(c){c.style.display="";});
+    document.getElementById("searchResults").style.display="none";
+    document.getElementById("noResults").classList.remove("show");
+    document.querySelector(".seo-text").style.display="";
+    return;
+  }
+  var terms=expandQuery(q);
+  var normedTerms=terms.map(normalize);
+  var catFound=0;
+  document.querySelectorAll(".cat-card").forEach(function(c){
+    var txt=normalize(c.textContent);
+    var match=false;
+    for(var i=0;i<normedTerms.length;i++){
+      if(txt.indexOf(normedTerms[i])>=0){match=true;break;}
+    }
+    c.style.display=match?"":"none";
+    if(match)catFound++;
+  });
+  var sr=document.getElementById("searchResults");
+  var grid=document.getElementById("searchResultsGrid");
+  if(!window.SEARCH_INDEX){sr.style.display="none";return;}
+  var results=[];
+  for(var i=0;i<SEARCH_INDEX.length;i++){
+    var t=SEARCH_INDEX[i];
+    var haystack=normalize(t.j+" "+t.e+" "+t.d+" "+t.t+" "+t.cj+" "+t.ce);
+    var score=0;
+    for(var k=0;k<normedTerms.length;k++){
+      if(haystack.indexOf(normedTerms[k])>=0)score++;
+    }
+    if(score>0)results.push({t:t,s:score});
+  }
+  results.sort(function(a,b){return b.s-a.s;});
+  var shown=results.slice(0,30);
+  if(shown.length>0){
+    sr.style.display="block";
+    document.getElementById("searchResultsTitle").textContent=
+      "テンプレート検索結果（"+results.length+"件）";
+    var html="";
+    for(var i=0;i<shown.length;i++){
+      var t=shown[i].t;
+      var ib=t.c+"_"+t.i.replace(/-/g,"_");
+      html+="<a href=\\""+t.c+"/"+t.i+".html\\" class=\\"card\\"><img src=\\"img/"+ib+".png\\" alt=\\""+t.j+"\\" loading=\\"lazy\\" width=\\"800\\" height=\\"600\\"><div class=\\"card-body\\"><h3>"+t.j+"</h3><p>"+t.d+"</p></div></a>";
+    }
+    grid.innerHTML=html;
+  }else{
+    sr.style.display="none";
+  }
+  document.querySelector(".seo-text").style.display=(q&&shown.length>0)?"none":"";
+  document.getElementById("noResults").classList.toggle("show",catFound===0&&shown.length===0);
+}
+document.getElementById("search").addEventListener("input",function(){
+  var q=this.value.trim();
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(function(){doSearch(q);},150);
+});
 document.getElementById("requestForm").addEventListener("submit",function(e){
   e.preventDefault();
   var f=this;
@@ -3325,6 +3405,65 @@ generate_sitemap <- function(all_t) {
 
   writeLines(xml, "sitemap.xml", useBytes=TRUE)
   cat(sprintf("sitemap.xml generated (%d URLs)\n", 1 + length(cat_urls) + length(tmpl_urls)))
+}
+
+# ── Search Index Generator ──
+generate_search_index <- function(all_t) {
+  entries <- sapply(all_t, function(t) {
+    cja <- CATS[[t$cat]]$ja
+    cen <- CATS[[t$cat]]$en
+    # Combine all searchable text: ja name, en name, description, tags, category names
+    ja_safe <- gsub('"', '\\\\"', t$ja)
+    en_safe <- gsub('"', '\\\\"', t$en)
+    dj_safe <- gsub('"', '\\\\"', substr(t$dj, 1, 80))
+    tags_safe <- gsub('"', '\\\\"', t$tags)
+    sprintf('{"i":"%s","c":"%s","j":"%s","e":"%s","d":"%s","t":"%s","cj":"%s","ce":"%s"}',
+            t$id, t$cat, ja_safe, en_safe, dj_safe, tags_safe,
+            gsub('"', '\\\\"', cja), gsub('"', '\\\\"', cen))
+  })
+
+  # Synonym map for 表記ゆれ and alternative terms
+  synonyms <- '{"心電図":["ECG","EKG","electrocardiogram","しんでんず","12誘導","心電"],
+"用量反応":["dose response","dose-response","ドースレスポンス","ED50","IC50","EC50"],
+"酸素解離":["oxygen dissociation","ヘモグロビン","hemoglobin","SpO2","酸素飽和"],
+"血圧":["blood pressure","BP","収縮期","拡張期","高血圧","hypertension"],
+"ミカエリスメンテン":["ミカエリス・メンテン","michaelis-menten","michaelis menten","MM","Km","酵素反応速度"],
+"ラインウィーバーバーク":["ラインウィーバー・バーク","lineweaver-burk","lineweaver burk","二重逆数","double reciprocal"],
+"フランクスターリング":["フランク・スターリング","frank-starling","frank starling","心拍出量","前負荷","preload"],
+"活動電位":["action potential","AP","脱分極","再分極","depolarization","repolarization"],
+"薬物動態":["pharmacokinetics","PK","ADME","半減期","クリアランス","AUC","t1/2","half-life"],
+"生存曲線":["survival curve","kaplan-meier","カプランマイヤー","生存率","OS","PFS"],
+"ROC":["ROC曲線","receiver operating","感度","特異度","AUC","sensitivity","specificity"],
+"滴定":["titration","pH","酸塩基","当量点","緩衝"],
+"阻害":["inhibition","拮抗","非拮抗","不拮抗","competitive","noncompetitive","uncompetitive","インヒビター","阻害剤"],
+"成長曲線":["growth curve","成長","発育","パーセンタイル","percentile","身長","体重"],
+"散布図":["scatter","scatter plot","相関","correlation","回帰","regression"],
+"ヒストグラム":["histogram","度数分布","頻度","frequency","分布"],
+"箱ひげ図":["boxplot","box plot","ボックスプロット","四分位","quartile","中央値","median"],
+"棒グラフ":["bar chart","bar graph","バーチャート","棒","比較"],
+"ヒートマップ":["heatmap","heat map","熱図"],
+"レーダーチャート":["radar","spider","スパイダー","レーダー"],
+"肺機能":["pulmonary function","スパイロメトリー","spirometry","FEV1","FVC","肺活量"],
+"腎機能":["renal function","GFR","クレアチニン","creatinine","eGFR","腎クリアランス","clearance"],
+"血糖":["blood glucose","血糖値","HbA1c","OGTT","インスリン","insulin","糖尿病","diabetes"],
+"凝固":["coagulation","PT","APTT","INR","凝固カスケード","血栓"],
+"免疫":["immune","抗体","antibody","サイトカイン","cytokine","T細胞","B細胞","リンパ球"],
+"腫瘍":["tumor","cancer","がん","癌","オンコロジー","oncology"],
+"妊娠":["pregnancy","胎児","fetal","分娩","出産","ビショップ","bishop"],
+"眼圧":["intraocular pressure","IOP","緑内障","glaucoma","視野"],
+"骨密度":["bone density","DEXA","DXA","骨粗鬆症","osteoporosis","Tスコア"],
+"心エコー":["echocardiography","エコー","EF","駆出率","ejection fraction"],
+"PVループ":["pressure volume","圧容積","PV loop","フランク"],
+"脳波":["EEG","electroencephalogram","脳波","てんかん","epilepsy"],
+"筋電図":["EMG","electromyography","筋電","筋力"],
+"dermatome":["デルマトーム","皮膚分節","神経支配"],
+"尿検査":["urinalysis","尿","蛋白尿","血尿","尿沈渣"]}'
+
+  js <- paste0("window.SEARCH_INDEX=[", paste(entries, collapse=","), "];\n",
+               "window.SYNONYMS=", synonyms, ";\n")
+
+  writeLines(js, "search-index.js", useBytes=TRUE)
+  cat(sprintf("search-index.js generated (%d entries)\n", length(entries)))
 }
 
 # ── 404 Page Generator ──
@@ -3386,7 +3525,10 @@ generate_index(TEMPLATES)
 # 5. Generate sitemap
 generate_sitemap(TEMPLATES)
 
-# 6. Generate 404 page
+# 6. Generate search index
+generate_search_index(TEMPLATES)
+
+# 7. Generate 404 page
 generate_404()
 
 cat(sprintf("\n=== BUILD COMPLETE ===\nTime: %s\n", Sys.time()))
