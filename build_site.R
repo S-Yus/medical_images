@@ -3284,7 +3284,7 @@ document.getElementById("requestForm").addEventListener("submit",function(e){
   var dt=document.getElementById("req-detail").value||"なし";
   var em=document.getElementById("req-email").value||"なし";
   var title=encodeURIComponent("Template Request: "+nm);
-  var body=encodeURIComponent("テンプレート名: "+nm+"\n分野: "+cat+"\n用途・説明: "+dt+"\n連絡先: "+em);
+  var body=encodeURIComponent("テンプレート名: "+nm+"\\n分野: "+cat+"\\n用途・説明: "+dt+"\\n連絡先: "+em);
   window.open("https://github.com/S-Yus/medical_images/issues/new?title="+title+"&labels=request&body="+body,"_blank");
   f.style.display="none";
   document.getElementById("requestSuccess").style.display="block";
