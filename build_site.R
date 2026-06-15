@@ -3146,32 +3146,14 @@ generate_index <- function(all_t) {
   total <- length(all_t)
   total_dl <- total * 45  # 5 styles * 3 sizes * 3 languages
 
-  # Category cards
+  # Category cards with English subtitle
   cat_cards <- paste(sapply(names(by_cat), function(cn) {
     ts <- by_cat[[cn]]
     cja <- CATS[[cn]]$ja
-    sprintf('<a href="c/%s.html" class="cat-card"><div class="cat-name">%s</div><div class="cat-count">%d種類</div></a>',
-            cn, cja, length(ts))
-  }), collapse="\n")
-
-  # All template cards grouped by category
-  all_cards <- paste(sapply(names(by_cat), function(cn) {
-    cja <- CATS[[cn]]$ja
     cen <- CATS[[cn]]$en
-    ts <- by_cat[[cn]]
-    tcards <- paste(sapply(ts, function(t) {
-      ib <- sprintf("%s_%s", t$cat, gsub("-","_",t$id))
-      sprintf('<a href="%s/%s.html" class="card"><img src="img/%s.png" alt="%s - %sグラフテンプレート" loading="lazy" width="800" height="600"><div class="card-body"><h3>%s</h3><p>%s</p></div></a>',
-              t$cat, t$id, ib, t$ja, cja, t$ja, substr(t$dj,1,60))
-    }), collapse="\n")
-    sprintf('<section class="cat-section" id="%s"><h2><a href="c/%s.html">%s（%s）- %d種類</a></h2><div class="card-grid">%s</div></section>',
-            cn, cn, cja, cen, length(ts), tcards)
+    sprintf('<a href="c/%s.html" class="cat-card" id="%s"><div class="cat-name">%s</div><div class="cat-en">%s</div><div class="cat-count">%d種類</div></a>',
+            cn, cn, cja, cen, length(ts))
   }), collapse="\n")
-
-  # Navigation links
-  nav_links <- paste(sapply(names(by_cat), function(cn) {
-    sprintf('<a href="#%s">%s</a>', cn, CATS[[cn]]$ja)
-  }), collapse="")
 
   # SEO: category list for structured data
   cat_list_items <- paste(sapply(seq_along(names(by_cat)), function(i) {
@@ -3192,7 +3174,9 @@ generate_index <- function(all_t) {
     SITE_URL, length(by_cat), total, SITE_URL,
     length(by_cat), cat_list_items, faq_items)
 
-  html <- sprintf('<!DOCTYPE html>
+  nc <- length(by_cat)
+
+  head_html <- sprintf('<!DOCTYPE html>
 <html lang="ja" prefix="og: https://ogp.me/ns#">
 <head>
 <meta charset="UTF-8">
@@ -3228,65 +3212,87 @@ generate_index <- function(all_t) {
 <div class="stat"><div class="num">%d</div><div class="lbl">Categories</div></div>
 <div class="stat"><div class="num">5</div><div class="lbl">Styles</div></div>
 </div>
-<div class="search-box"><input type="search" id="search" placeholder="テンプレートを検索（例: 心電図, 酵素, 用量反応）" oninput="filterCards(this.value)" aria-label="テンプレート検索"></div>
-</header>
-<nav class="nav-bar" aria-label="カテゴリナビゲーション"><div class="inner">%s</div></nav>
-<main>
-<section aria-label="カテゴリ一覧"><div class="cats-grid">%s</div></section>
-<div class="no-results" id="noResults"><p>該当するテンプレートが見つかりませんでした</p><p class="hint">別のキーワードで検索するか、<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request" target="_blank" rel="noopener">リクエスト</a>をお送りください</p></div>
-%s
+<div class="search-box"><input type="search" id="search" placeholder="分野を検索（例: 生化学, 循環器, 薬理学）" oninput="filterCats(this.value)" aria-label="分野検索"></div>
+</header>',
+  nc, total, nc, total, total_dl, SITE_URL,
+  total, nc, total, SITE_URL, SITE_URL,
+  total, nc, total, ld_json,
+  total, total_dl, nc)
+
+  body_html <- sprintf('<main>
+<section aria-label="分野一覧">
+<div class="cats-grid">%s</div>
+<div class="no-results" id="noResults"><p>該当する分野が見つかりませんでした</p></div>
+</section>
 <section class="seo-text" style="max-width:900px;margin:32px auto;padding:0 20px;font-size:13px;color:#666;line-height:1.8">
 <h2 style="font-size:18px;color:#1a1a1a;margin-bottom:12px;font-family:Georgia,serif;font-weight:normal">MedGraph Free について</h2>
 <p>MedGraph Freeは、医学部生のためのグラフテンプレート集です。<strong>生化学</strong>（ミカエリス・メンテンプロット、ラインウィーバー・バークプロット、pH滴定曲線など）、<strong>生理学</strong>（酸素解離曲線、フランク・スターリング曲線、活動電位など）、<strong>薬理学</strong>（用量反応曲線、薬物動態曲線など）をはじめ、<strong>循環器</strong>（心電図、血圧波形、PVループ）、<strong>病理学</strong>、<strong>疫学・公衆衛生</strong>、<strong>臨床統計</strong>など全%d分野・%d種類のテンプレートを収録しています。</p>
 <p>すべてのテンプレートは<strong>著作権フリー（CC0・パブリックドメイン）</strong>で、商用利用を含むあらゆる用途に許可不要・帰属表示不要で使用できます。講義レポート、実習レポート、研究発表、ポスター発表、卒業論文、学会発表スライドなどにそのままお使いいただけます。</p>
 <p>各テンプレートは<strong>5スタイル</strong>（Standard・Minimal・Classic・Presentation・Dark）× <strong>3サイズ</strong>（800×600・1200×600・700×700）× <strong>3言語</strong>（英語・日本語・テキストなし）の合計45パターンで提供。PNG形式で即ダウンロード可能です。さらに、各テンプレートには<strong>R言語（ggplot2）のコード</strong>が付属しており、自分のデータを入力するだけでグラフを再現できます。</p>
-</section>
-<section class="request-section">
+</section>', cat_cards, nc, total)
+
+  # JS kept outside sprintf to avoid escaping issues
+  tail_html <- '<section class="request-section" id="request">
 <div class="request-card">
-<h2>テンプレートのリクエスト</h2>
+<h2>テンプレートリクエスト</h2>
 <p>欲しいグラフテンプレートがありましたらお気軽にリクエストください。</p>
-<a href="https://github.com/S-Yus/medical_images/issues/new?title=Template+Request:&labels=request&body=リクエストするテンプレート名：%%0A分野：%%0A用途・説明：" class="request-btn" target="_blank" rel="noopener">リクエストを送る</a>
+<form id="requestForm" class="request-form">
+<div class="form-row">
+<label for="req-name">テンプレート名 <span class="req">*</span></label>
+<input type="text" id="req-name" name="template_name" required placeholder="例: 腎クリアランス曲線">
+</div>
+<div class="form-row">
+<label for="req-category">分野</label>
+<input type="text" id="req-category" name="category" placeholder="例: 腎臓">
+</div>
+<div class="form-row">
+<label for="req-detail">用途・説明</label>
+<textarea id="req-detail" name="detail" rows="3" placeholder="どのような場面で使いたいか、参考情報など"></textarea>
+</div>
+<div class="form-row">
+<label for="req-email">メールアドレス（任意）</label>
+<input type="email" id="req-email" name="email" placeholder="完成時に通知を受け取る場合">
+</div>
+<button type="submit" class="request-btn">リクエストを送信</button>
+</form>
+<div id="requestSuccess" class="form-success" style="display:none">
+<p>リクエストを受け付けました。ありがとうございます。</p>
+</div>
 </div>
 </section>
 </main>
 <footer>
-<p>MedGraph Free &mdash; 全テンプレートCC0（パブリックドメイン）。商用利用を含むあらゆる用途に無料で使用可能。</p>
+<p>MedGraph Free &mdash; CC0 (Public Domain). Free for any use including commercial.</p>
 <p>Generated with R + ggplot2. <a href="https://github.com/S-Yus/medical_images">GitHub</a></p>
 </footer>
 <script>
-function filterCards(q){
+function filterCats(q){
   q=q.toLowerCase();
-  let total=0;
-  document.querySelectorAll(".card").forEach(c=>{
-    const t=c.textContent.toLowerCase();
-    const v=t.includes(q);
+  var found=0;
+  document.querySelectorAll(".cat-card").forEach(function(c){
+    var v=c.textContent.toLowerCase().indexOf(q)>=0;
     c.style.display=v?"":"none";
-    if(v)total++;
+    if(v)found++;
   });
-  document.querySelectorAll(".cat-section").forEach(s=>{
-    const cards=s.querySelectorAll(".card");
-    let any=false;
-    cards.forEach(c=>{if(c.style.display!=="none")any=true;});
-    s.style.display=(any||!q)?"":"none";
-  });
-  document.querySelectorAll(".cat-card").forEach(c=>{
-    if(!q){c.style.display="";return;}
-    c.style.display=c.textContent.toLowerCase().includes(q)?"":"none";
-  });
-  const nr=document.getElementById("noResults");
-  if(nr) nr.classList.toggle("show",q&&total===0);
+  document.getElementById("noResults").classList.toggle("show",q&&found===0);
 }
+document.getElementById("requestForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  var f=this;
+  var nm=document.getElementById("req-name").value;
+  var cat=document.getElementById("req-category").value||"未指定";
+  var dt=document.getElementById("req-detail").value||"なし";
+  var em=document.getElementById("req-email").value||"なし";
+  var title=encodeURIComponent("Template Request: "+nm);
+  var body=encodeURIComponent("テンプレート名: "+nm+"\n分野: "+cat+"\n用途・説明: "+dt+"\n連絡先: "+em);
+  window.open("https://github.com/S-Yus/medical_images/issues/new?title="+title+"&labels=request&body="+body,"_blank");
+  f.style.display="none";
+  document.getElementById("requestSuccess").style.display="block";
+});
 </script>
-</body></html>',
-  length(by_cat), total,
-  length(by_cat), total, total_dl,
-  SITE_URL,
-  total, length(by_cat), total, SITE_URL, SITE_URL,
-  total, length(by_cat), total,
-  ld_json,
-  total, total_dl, length(by_cat),
-  nav_links, cat_cards, all_cards,
-  length(by_cat), total)
+</body></html>'
+
+  html <- paste0(head_html, "\n", body_html, "\n", tail_html)
 
   writeLines(html, "index.html", useBytes=TRUE)
   cat(sprintf("index.html generated (%d categories, %d templates)\n", length(by_cat), total))
