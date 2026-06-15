@@ -1,29 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a5f"/>
-      <stop offset="100%" style="stop-color:#2563eb"/>
-    </linearGradient>
-    <linearGradient id="line" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#60a5fa"/>
-      <stop offset="100%" style="stop-color:#ffffff"/>
-    </linearGradient>
-  </defs>
-  <!-- Rounded square background -->
-  <rect x="16" y="16" width="480" height="480" rx="96" ry="96" fill="url(#bg)"/>
-  <!-- Grid lines (subtle) -->
-  <line x1="120" y1="400" x2="440" y2="400" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
-  <line x1="120" y1="320" x2="440" y2="320" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-  <line x1="120" y1="240" x2="440" y2="240" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-  <line x1="120" y1="160" x2="440" y2="160" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
-  <line x1="120" y1="80" x2="120" y2="400" stroke="rgba(255,255,255,0.15)" stroke-width="3"/>
-  <!-- Sigmoid/dose-response curve (main graph line) -->
-  <path d="M120,380 C160,378 200,375 240,360 C270,348 290,310 310,250 C330,190 350,150 380,135 C400,125 420,120 440,118"
-        fill="none" stroke="url(#line)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-  <!-- Small medical cross -->
-  <rect x="355" y="55" width="60" height="20" rx="4" fill="rgba(255,255,255,0.9)"/>
-  <rect x="375" y="35" width="20" height="60" rx="4" fill="rgba(255,255,255,0.9)"/>
-  <!-- Axis arrow tips -->
-  <polygon points="440,395 440,405 455,400" fill="rgba(255,255,255,0.4)"/>
-  <polygon points="115,80 125,80 120,65" fill="rgba(255,255,255,0.4)"/>
+  <rect width="512" height="512" rx="48" fill="#1a1a1a"/>
+  <clipPath id="c"><rect width="512" height="512" rx="48"/></clipPath>
+  <g clip-path="url(#c)">
+    <rect y="450" width="512" height="62" fill="#1a5c4c"/>
+  </g>
+  <!-- Axes -->
+  <line x1="92" y1="92" x2="92" y2="410" stroke="rgba(255,255,255,0.2)" stroke-width="4"/>
+  <line x1="92" y1="410" x2="440" y2="410" stroke="rgba(255,255,255,0.2)" stroke-width="4"/>
+  <!-- Sigmoid curve -->
+  <path d="M100,395 C130,392 165,385 200,365 C235,342 260,300 290,240 C320,180 350,140 385,120 C405,110 425,105 440,103"
+        fill="none" stroke="#1a5c4c" stroke-width="22" stroke-linecap="round"/>
+  <!-- Data points -->
+  <circle cx="140" cy="390" r="14" fill="#2a8a6e"/>
+  <circle cx="220" cy="352" r="14" fill="#2a8a6e"/>
+  <circle cx="290" cy="240" r="14" fill="#2a8a6e"/>
+  <circle cx="360" cy="128" r="14" fill="#2a8a6e"/>
+  <circle cx="430" cy="105" r="14" fill="#2a8a6e"/>
+  <!-- Medical cross -->
+  <rect x="362" y="52" width="48" height="16" rx="3" fill="rgba(255,255,255,0.75)"/>
+  <rect x="378" y="36" width="16" height="48" rx="3" fill="rgba(255,255,255,0.75)"/>
 </svg>
