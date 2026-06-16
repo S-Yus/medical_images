@@ -114,13 +114,14 @@ a:hover{text-decoration:underline}
 }
 .card{background:var(--bg);border:1px solid var(--bd-l);overflow:hidden}
 .card:hover{border-color:var(--ac);text-decoration:none}
-.card img{width:100%;display:block}
+.card img{width:100%;height:auto;display:block;aspect-ratio:4/3;object-fit:cover}
 .card-body{padding:5px 8px 8px}
 .card-body h3{font-size:12px;font-weight:600;color:var(--fg);margin-bottom:1px}
 .card-body p{font-size:11px;color:var(--fg-2);line-height:1.4}
 
 /* ===== Search results ===== */
 .search-results{max-width:1100px;margin:24px auto;padding:0 20px}
+.search-results .card-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
 .sr-title{
   font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;
   font-size:16px;font-weight:normal;color:var(--fg);
