@@ -2862,10 +2862,12 @@ generate_template_page <- function(t, all_t) {
   # Tags
   tag_list <- strsplit(t$tags, ",")[[1]]
   tags_html <- paste(sapply(trimws(tag_list), function(tg) sprintf('<span>%s</span>', tg)), collapse="")
-  keywords <- paste(c(trimws(tag_list), cja, cen, "グラフテンプレート", "医学部", "CC0", "無料", "R", "ggplot2"), collapse=",")
+  keywords <- paste(c(trimws(tag_list), cja, cen, t$ja, t$en,
+    "グラフテンプレート", "台紙", "白紙", "レポート", "描き方", "書き方",
+    "医学部", "CC0", "無料", "ダウンロード", "R", "ggplot2"), collapse=",")
 
-  # SEO: enhanced description
-  seo_desc <- sprintf('%s %s（%s）の白紙グラフテンプレート。著作権フリー（CC0）で医学部レポート・発表・論文にそのまま使用可能。5スタイル×3サイズ×3言語で合計45パターン。R+ggplot2コード付き。PNG形式で即ダウンロード。',
+  # SEO: enhanced description with long-tail keywords
+  seo_desc <- sprintf('%s %s（%s）のグラフテンプレート・台紙を無料ダウンロード。医学部のレポート・実習・発表・論文にそのまま使える白紙グラフ。著作権フリー（CC0）。5スタイル×3サイズ×3言語の計45パターン。描き方のコツとR+ggplot2コード付き。',
                       t$dj, cja, cen)
 
   # SEO: BreadcrumbList + ImageObject + HowTo schema
@@ -2879,7 +2881,7 @@ generate_template_page <- function(t, all_t) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>%s テンプレート【無料・著作権フリー】| MedGraph Free</title>
+<title>%s グラフテンプレート・台紙【無料ダウンロード・著作権フリー】| MedGraph Free</title>
 <meta name="description" content="%s">
 <meta name="keywords" content="%s">
 <meta name="google-site-verification" content="Wiq_d_MCZ8j5m7XH4dvaZ4jq3i0SqZRQOSwVi4Rr5gU">
@@ -2945,6 +2947,12 @@ generate_template_page <- function(t, all_t) {
 <pre id="rcode">%s</pre>
 </section>
 </article>
+<section class="seo-text" style="max-width:900px;margin:28px auto;padding:0;font-size:13px;color:#666;line-height:1.8">
+<h2 style="font-size:16px;color:#1a1a1a;margin-bottom:8px;font-family:Georgia,serif;font-weight:normal">%sの使い方・描き方</h2>
+<p>この<strong>%s</strong>（%s）のグラフテンプレートは、<strong>%s</strong>分野の学習・レポート作成に最適な白紙台紙です。医学部の講義レポート、実習レポート、研究発表のポスター、卒業論文、学会発表スライドなどに、ダウンロードしてそのままお使いいただけます。</p>
+<p><strong>描き方・書き方：</strong>テンプレートをダウンロードし、印刷またはスライドに貼り付けた後、実験データや教科書の値をプロットしてください。Rコードを使えば、自分のデータを<code>data.frame</code>に入力するだけで同じグラフを再現できます。軸ラベルや凡例はコード内で自由に日本語・英語に変更可能です。</p>
+<p><strong>ダウンロード形式：</strong>PNG形式で5スタイル（Standard・Minimal・Classic・Presentation・Dark）×3サイズ（800×600・1200×600・700×700）×3言語（英語・日本語・テキストなし）の計<strong>45パターン</strong>から選択できます。すべて<strong>著作権フリー（CC0・パブリックドメイン）</strong>で、商用利用を含むあらゆる用途に許可不要・帰属表示不要で無料で使用できます。</p>
+</section>
 <aside class="related" aria-label="関連テンプレート"><h2>関連する%sテンプレート</h2><div class="related-grid">%s</div></aside>
 </main>
 <footer>
@@ -2997,7 +3005,9 @@ function copyCode(){
   t$ja, t$dj, tags_html,
   img_base, t$ja, cja,
   img_base,
-  r_code, cja, rel_html,
+  r_code,
+  t$ja, t$ja, t$en, cja,
+  cja, rel_html,
   img_base)
 
   dir.create(t$cat, showWarnings=FALSE, recursive=TRUE)
