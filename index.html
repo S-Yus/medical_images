@@ -167,7 +167,7 @@ function doSearch(q){
   var results=[];
   for(var i=0;i<SEARCH_INDEX.length;i++){
     var t=SEARCH_INDEX[i];
-    var haystack=normalize(t.j+" "+t.e+" "+t.d+" "+t.t+" "+t.cj+" "+t.ce);
+    var haystack=normalize(t.j+" "+t.e+" "+t.d+" "+t.t+" "+(t.a||"")+" "+t.cj+" "+t.ce);
     var score=0;
     for(var k=0;k<normedTerms.length;k++){
       if(haystack.indexOf(normedTerms[k])>=0)score++;

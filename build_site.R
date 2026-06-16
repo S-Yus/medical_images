@@ -2844,6 +2844,84 @@ ggplot(df, aes(x = x, y = y)) +
 PAGE_CSS_LINK <- '<link rel="stylesheet" href="../style.css">'
 
 # ── HTML Page Generator for Individual Templates (SEO enhanced) ──
+# ── Alias Generator: auto-generate title variations for SEO ──
+generate_aliases <- function(t) {
+  ja <- t$ja; en <- t$en; cja <- CATS[[t$cat]]$ja
+  tags <- trimws(strsplit(t$tags, ",")[[1]])
+  aliases <- c()
+
+  # 1. Japanese name variations
+  # Strip common suffixes to get the core term, then re-add variants
+  core_ja <- gsub("(プロット|グラフ|曲線|チャート|図|ダイアグラム|マップ)$", "", ja)
+  if (nchar(core_ja) > 0 && core_ja != ja) {
+    suffixes <- c("グラフ","曲線","図","チャート","プロット","ダイアグラム")
+    for (s in suffixes) {
+      v <- paste0(core_ja, s)
+      if (v != ja) aliases <- c(aliases, v)
+    }
+  }
+
+  # 2. English name as-is (already in en field)
+  aliases <- c(aliases, en)
+
+  # 3. English graph type variations
+  core_en <- gsub("\\s*(Plot|Chart|Curve|Graph|Diagram|Map|Heatmap|Histogram|Grid)$", "", en, ignore.case=TRUE)
+  if (nchar(core_en) > 0 && tolower(core_en) != tolower(en)) {
+    en_suffixes <- c("Graph","Chart","Plot","Curve","Diagram")
+    for (s in en_suffixes) {
+      v <- paste(core_en, s)
+      if (tolower(v) != tolower(en)) aliases <- c(aliases, v)
+    }
+  }
+
+  # 4. Category + name combinations
+  if (!grepl(cja, ja, fixed=TRUE)) {
+    aliases <- c(aliases, paste0(cja, " ", ja))
+  }
+  aliases <- c(aliases, paste0(ja, " テンプレート"))
+  aliases <- c(aliases, paste0(ja, " 台紙"))
+  aliases <- c(aliases, paste0(ja, " 白紙"))
+
+  # 5. Common medical abbreviation expansions from tags
+  abbrev_map <- list(
+    "ECG"=c("心電図","Electrocardiogram","EKG","心電図波形"),
+    "EEG"=c("脳波","Electroencephalogram","脳波図"),
+    "EMG"=c("筋電図","Electromyogram"),
+    "GFR"=c("糸球体濾過量","腎機能"),
+    "FEV1"=c("1秒量","肺機能"),
+    "BMI"=c("体格指数","Body Mass Index"),
+    "ROC"=c("ROC曲線","受信者動作特性","感度特異度"),
+    "PV"=c("PVループ","圧容積曲線","Pressure-Volume"),
+    "OGTT"=c("経口ブドウ糖負荷試験","糖負荷試験"),
+    "CBC"=c("血算","完全血球計算","血液検査"),
+    "ABG"=c("血液ガス","動脈血ガス分析"),
+    "PT"=c("プロトロンビン時間","凝固検査"),
+    "HbA1c"=c("ヘモグロビンA1c","糖化ヘモグロビン")
+  )
+  for (abbr in names(abbrev_map)) {
+    if (grepl(abbr, paste(ja, en, paste(tags, collapse=" ")), ignore.case=TRUE)) {
+      aliases <- c(aliases, abbrev_map[[abbr]])
+    }
+  }
+
+  # 6. Katakana/spelling variations
+  # ・(middle dot) removal
+  if (grepl("・", ja)) {
+    aliases <- c(aliases, gsub("・", "", ja))       # remove ・
+    aliases <- c(aliases, gsub("・", " ", ja))       # replace with space
+    aliases <- c(aliases, gsub("・", "-", ja))       # replace with hyphen
+  }
+  # Handle ー (long vowel) omission
+  if (grepl("ー", ja)) {
+    aliases <- c(aliases, gsub("ー", "", ja))
+  }
+
+  # Deduplicate, remove empties, remove exact match with ja
+  aliases <- unique(aliases)
+  aliases <- aliases[nchar(aliases) > 0 & aliases != ja]
+  aliases
+}
+
 generate_template_page <- function(t, all_t) {
   cja <- CATS[[t$cat]]$ja
   cen <- CATS[[t$cat]]$en
@@ -2862,18 +2940,26 @@ generate_template_page <- function(t, all_t) {
   # Tags
   tag_list <- strsplit(t$tags, ",")[[1]]
   tags_html <- paste(sapply(trimws(tag_list), function(tg) sprintf('<span>%s</span>', tg)), collapse="")
-  keywords <- paste(c(trimws(tag_list), cja, cen, t$ja, t$en,
+
+  # Generate aliases for SEO
+  aliases <- generate_aliases(t)
+  alias_str <- paste(aliases, collapse="、")
+  alias_kw <- paste(aliases, collapse=",")
+
+  keywords <- paste(c(trimws(tag_list), aliases, cja, cen, t$ja, t$en,
     "グラフテンプレート", "台紙", "白紙", "レポート", "描き方", "書き方",
     "医学部", "CC0", "無料", "ダウンロード", "R", "ggplot2"), collapse=",")
 
-  # SEO: enhanced description with long-tail keywords
-  seo_desc <- sprintf('%s %s（%s）のグラフテンプレート・台紙を無料ダウンロード。医学部のレポート・実習・発表・論文にそのまま使える白紙グラフ。著作権フリー（CC0）。5スタイル×3サイズ×3言語の計45パターン。描き方のコツとR+ggplot2コード付き。',
-                      t$dj, cja, cen)
+  # SEO: enhanced description with aliases
+  alias_desc <- if (length(aliases) >= 2) paste0("（", paste(head(aliases, 3), collapse="・"), "とも）") else ""
+  seo_desc <- sprintf('%s%s %s（%s）のグラフテンプレート・台紙を無料ダウンロード。医学部のレポート・実習・発表・論文にそのまま使える白紙グラフ。著作権フリー（CC0）。5スタイル×3サイズ×3言語の計45パターン。Rコード付き。',
+                      t$dj, alias_desc, cja, cen)
 
-  # SEO: BreadcrumbList + ImageObject + HowTo schema
-  ld_json <- sprintf('[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"%s/"},{"@type":"ListItem","position":2,"name":"%s","item":"%s/c/%s.html"},{"@type":"ListItem","position":3,"name":"%s"}]},{"@context":"https://schema.org","@type":"ImageObject","name":"%s","description":"%s","contentUrl":"%s/img/%s.png","thumbnailUrl":"%s/img/%s.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"%s/","creator":{"@type":"Organization","name":"MedGraph Free"},"copyrightNotice":"CC0 Public Domain","encodingFormat":"image/png"},{"@context":"https://schema.org","@type":"HowTo","name":"%sの使い方","description":"Rコードで%sを作成する方法","step":[{"@type":"HowToStep","name":"テンプレートをダウンロード","text":"好みのスタイル・サイズを選択してPNG画像をダウンロード"},{"@type":"HowToStep","name":"Rコードをコピー","text":"ggplot2コードをコピーしてRStudioに貼り付け"},{"@type":"HowToStep","name":"データを入力","text":"自分の実験データをdata.frameに入力して実行"}]}]',
+  # SEO: BreadcrumbList + ImageObject + HowTo schema (with alternateName)
+  alt_names_json <- paste0('["', paste(gsub('"', '\\\\"', aliases), collapse='","'), '"]')
+  ld_json <- sprintf('[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"%s/"},{"@type":"ListItem","position":2,"name":"%s","item":"%s/c/%s.html"},{"@type":"ListItem","position":3,"name":"%s"}]},{"@context":"https://schema.org","@type":"ImageObject","name":"%s","alternateName":%s,"description":"%s","contentUrl":"%s/img/%s.png","thumbnailUrl":"%s/img/%s.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","acquireLicensePage":"%s/","creator":{"@type":"Organization","name":"MedGraph Free"},"copyrightNotice":"CC0 Public Domain","encodingFormat":"image/png"},{"@context":"https://schema.org","@type":"HowTo","name":"%sの使い方","description":"Rコードで%sを作成する方法","step":[{"@type":"HowToStep","name":"テンプレートをダウンロード","text":"好みのスタイル・サイズを選択してPNG画像をダウンロード"},{"@type":"HowToStep","name":"Rコードをコピー","text":"ggplot2コードをコピーしてRStudioに貼り付け"},{"@type":"HowToStep","name":"データを入力","text":"自分の実験データをdata.frameに入力して実行"}]}]',
     SITE_URL, cja, SITE_URL, t$cat, t$ja,
-    t$ja, gsub('"', '\\\\"', t$dj), SITE_URL, img_base, SITE_URL, img_base, SITE_URL,
+    t$ja, alt_names_json, gsub('"', '\\\\"', t$dj), SITE_URL, img_base, SITE_URL, img_base, SITE_URL,
     t$ja, t$ja)
 
   html <- sprintf('<!DOCTYPE html>
@@ -2950,6 +3036,7 @@ generate_template_page <- function(t, all_t) {
 <section class="seo-text" style="max-width:900px;margin:28px auto;padding:0;font-size:13px;color:#666;line-height:1.8">
 <h2 style="font-size:16px;color:#1a1a1a;margin-bottom:8px;font-family:Georgia,serif;font-weight:normal">%sの使い方・描き方</h2>
 <p>この<strong>%s</strong>（%s）のグラフテンプレートは、<strong>%s</strong>分野の学習・レポート作成に最適な白紙台紙です。医学部の講義レポート、実習レポート、研究発表のポスター、卒業論文、学会発表スライドなどに、ダウンロードしてそのままお使いいただけます。</p>
+<p><strong>別名・関連する呼び方：</strong>%s</p>
 <p><strong>描き方・書き方：</strong>テンプレートをダウンロードし、印刷またはスライドに貼り付けた後、実験データや教科書の値をプロットしてください。Rコードを使えば、自分のデータを<code>data.frame</code>に入力するだけで同じグラフを再現できます。軸ラベルや凡例はコード内で自由に日本語・英語に変更可能です。</p>
 <p><strong>ダウンロード形式：</strong>PNG形式で5スタイル（Standard・Minimal・Classic・Presentation・Dark）×3サイズ（800×600・1200×600・700×700）×3言語（英語・日本語・テキストなし）の計<strong>45パターン</strong>から選択できます。すべて<strong>著作権フリー（CC0・パブリックドメイン）</strong>で、商用利用を含むあらゆる用途に許可不要・帰属表示不要で無料で使用できます。</p>
 </section>
@@ -3006,7 +3093,7 @@ function copyCode(){
   img_base, t$ja, cja,
   img_base,
   r_code,
-  t$ja, t$ja, t$en, cja,
+  t$ja, t$ja, t$en, cja, alias_str,
   cja, rel_html,
   img_base)
 
@@ -3335,7 +3422,7 @@ function doSearch(q){
   var results=[];
   for(var i=0;i<SEARCH_INDEX.length;i++){
     var t=SEARCH_INDEX[i];
-    var haystack=normalize(t.j+" "+t.e+" "+t.d+" "+t.t+" "+t.cj+" "+t.ce);
+    var haystack=normalize(t.j+" "+t.e+" "+t.d+" "+t.t+" "+(t.a||"")+" "+t.cj+" "+t.ce);
     var score=0;
     for(var k=0;k<normedTerms.length;k++){
       if(haystack.indexOf(normedTerms[k])>=0)score++;
@@ -3422,13 +3509,14 @@ generate_search_index <- function(all_t) {
   entries <- sapply(all_t, function(t) {
     cja <- CATS[[t$cat]]$ja
     cen <- CATS[[t$cat]]$en
-    # Combine all searchable text: ja name, en name, description, tags, category names
+    aliases <- generate_aliases(t)
     ja_safe <- gsub('"', '\\\\"', t$ja)
     en_safe <- gsub('"', '\\\\"', t$en)
     dj_safe <- gsub('"', '\\\\"', substr(t$dj, 1, 80))
     tags_safe <- gsub('"', '\\\\"', t$tags)
-    sprintf('{"i":"%s","c":"%s","j":"%s","e":"%s","d":"%s","t":"%s","cj":"%s","ce":"%s"}',
-            t$id, t$cat, ja_safe, en_safe, dj_safe, tags_safe,
+    alias_safe <- gsub('"', '\\\\"', paste(aliases, collapse=" "))
+    sprintf('{"i":"%s","c":"%s","j":"%s","e":"%s","d":"%s","t":"%s","a":"%s","cj":"%s","ce":"%s"}',
+            t$id, t$cat, ja_safe, en_safe, dj_safe, tags_safe, alias_safe,
             gsub('"', '\\\\"', cja), gsub('"', '\\\\"', cen))
   })
 
